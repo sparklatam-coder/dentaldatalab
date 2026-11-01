@@ -2,6 +2,7 @@
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';
 import {esc,fmt,icon,card,ctCount,nightDays,timeText,countText,safeWebsite,clinicUrl,SOURCE_URL,DAY_LABELS,setSnapshot,localDate,singlePhone} from '../src/shared.mjs';
 import {siteOrigin,robotsMeta,robotsText,sitemapXml} from './seo.mjs';
+import {indexNowKey} from './indexnow.mjs';
 import {collectReports} from './report-data.mjs';
 import {homePage,registerReportPages} from './report-pages.mjs';
 import {loadVerification,registerVerificationPage,clinicChannelPanel} from './verification-pages.mjs';
@@ -87,6 +88,7 @@ put('404.html',shell({route:'/404/',title:'페이지를 찾지 못했습니다',
 for(const file of ['styles.css','app.mjs','shared.mjs','content-studio.mjs','clinic-assets.mjs']){let asset=fs.readFileSync(path.join(root,'src',file));if(file==='app.mjs')asset=asset.toString('utf8').replace("'./shared.mjs'","'./shared.mjs?v="+assetVersion+"'");put('assets/'+file,asset);}
 put('favicon.svg','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#087969"/><g fill="#fff"><rect x="16" y="16" width="13" height="13" rx="3"/><rect x="35" y="16" width="13" height="13" rx="3" opacity=".5"/><rect x="16" y="35" width="13" height="13" rx="3"/><rect x="35" y="35" width="13" height="13" rx="3"/></g></svg>');
 const index=clinics.map(c=>({id:c.id,name:c.name,type:c.type,typeCode:c.typeCode,sido:c.sido,sidoCode:c.sidoCode,city:c.city,cityCode:c.cityCode,address:c.address,sp:c.doctors.specialist,ct:ctCount(c),night:nightDays(c).length>0,sat:!!(c.hours.sat.open&&c.hours.sat.close),specCodes:c.specialties.filter(s=>s.specialists>0).map(s=>s.code)}));put('data/search-index.json',json(index));put('data/source-manifest.json',JSON.stringify(manifest,null,2));put('data/regions.json',json(regionBoot));put('data/official-observations.json',json(observations));const shards=new Map();for(const c of clinics){const key=c.id.slice(2,4);if(!shards.has(key))shards.set(key,[]);shards.get(key).push(c);}for(const [k,values]of shards)put(`data/shards/${k}.json`,json(values));
+const publicIndexNowKey=indexNowKey(root);if(indexingEnabled&&publicIndexNowKey)put(publicIndexNowKey+'.txt',publicIndexNowKey+'\n');
 put('robots.txt',robotsText(domain,indexingEnabled));
 put('llms.txt',`# 치과데이터랩\n\n> 치과 공공데이터 리포트와 조건 검색. ${indexingEnabled?'공공정보 공개 빌드':'로컬 검토본이며 공개 서비스가 아닙니다.'}\n\n자료 기준일: ${snapshot}. 출처: 건강보험심사평가원 전국 병의원 및 약국 현황. 치과병원·치과의원 ${n}곳. 미확인은 실제 부재가 아니며 등록시간 비율은 실제 진료 비율이 아닙니다.\n\n- [데이터 리포트](${domain}/reports/)\n- [전국 데이터 수록 현황](${domain}/reports/national-data-coverage/)\n- [경기북부 등록시간 현황](${domain}/reports/northern-gyeonggi-hours/)\n- [출처와 수집 범위](${domain}/data/)\n- [집계·처리 기준](${domain}/methodology/)\n\n치료 추천·병원 순위·실시간 진료 여부를 제공하지 않습니다. 상세 근거와 다운로드는 각 리포트를 확인하세요.\n`);
 put('sitemap.xml',sitemapXml(routes,domain,indexingEnabled));

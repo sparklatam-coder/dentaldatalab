@@ -45,3 +45,12 @@ sitemap에는 색인 대상의 대표 URL만 넣는다. 공식 자료 기준일�
 - [Cloudflare: Pages redirects](https://developers.cloudflare.com/pages/configuration/redirects/) — domain-level source redirect 제한.
 - [Cloudflare: pages.dev를 대표 도메인으로 이동](https://developers.cloudflare.com/pages/how-to/redirect-to-custom-domain/) — 계정 Bulk Redirects 방식.
 - [Cloudflare: Pages headers](https://developers.cloudflare.com/pages/configuration/headers/) — primary/preview `pages.dev`별 noindex 패턴과 동적 응답은 Worker에서 헤더를 설정해야 하는 조건.
+
+
+## 실제 연결 결과 (2026-11-01)
+
+- dentaldatalab.com: Hostinger 등록 유지, Cloudflare NS 활성화 및 Pages apex CNAME 연결 완료.
+- Cloudflare production 변수 `DDL_SEO_PUBLIC=1`; c91f3f8 배포에서 실제 robots 허용 및 sitemap 20,669 URL 확인.
+- Google Search Console: 도메인 DNS TXT 소유확인 완료, https://dentaldatalab.com/sitemap.xml 접수 성공. 성과·색인은 데이터 처리 중으로 표시됨.
+- Cloudflare Bulk Redirects: dentaldatalab_canonical 목록 + DentalDataLab canonical host 규칙 활성화. www.dentaldatalab.com 및 dentaldatalab.pages.dev에서 apex HTTPS로301, 하위경로·쿼리 보존. preview 하위도메인은 포함하지 않음. 실제 HTTP301 Location 확인.
+- 초기 DNS 전파 중 outbound proxy가 이전 파킹 서버를 캐시할 수 있어 직접 HTTPS 접속과 권한 네임서버도 병행 확인했다.

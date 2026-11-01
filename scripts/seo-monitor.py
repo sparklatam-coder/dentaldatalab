@@ -3,6 +3,7 @@
 import argparse
 import datetime
 import fcntl
+import ipaddress
 from html.parser import HTMLParser
 import json
 import os
@@ -19,6 +20,7 @@ ROOT=Path(__file__).resolve().parents[1]
 WORK=ROOT/'data/research/seo-monitor'
 STOP=False
 CHILD=None
+DIRECT=False
 
 def stamp(): return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
 
@@ -52,13 +54,24 @@ class Page(HTMLParser):
 def public_origin(value):
     u=urllib.parse.urlsplit(value)
     if u.scheme!='https' or not u.hostname or u.username or u.password or u.port not in (None,443) or u.path not in ('','/') or u.query or u.fragment:raise ValueError('provide HTTPS origin without path, credentials or custom port')
+    if '.' not in u.hostname or u.hostname.endswith(('.localhost','.local')):raise ValueError('provide a public HTTPS origin')
+    try:address=ipaddress.ip_address(u.hostname)
+    except ValueError:address=None
+    if address is not None and not address.is_global:raise ValueError('non-public IP address')
     return 'https://'+u.netloc.rstrip('/')
 
-def fetch(url,timeout=25):
+def fetch(url,timeout=25,direct=None):
     global CHILD
     if STOP:return {'url':url,'ok':False,'error':'operator stop'}
+    # Validate request origins even when fetch is invoked independently of CLI.
+    try:
+        parsed=urllib.parse.urlsplit(url)
+        public_origin(urllib.parse.urlunsplit((parsed.scheme,parsed.netloc,'','','')))
+    except ValueError:return {'url':url,'ok':False,'error':'public HTTPS URL required'}
     # curl verifies TLS by default. Never -k; separate HTTP/TLS evidence is recorded.
     cmd=['curl','--silent','--show-error','--location','--max-redirs','3','--proto','=https','--proto-redir','=https','--connect-timeout','10','--max-time',str(timeout),'--max-filesize','2097152','--user-agent','DentalDataLab-SEO-Monitor/1.0','--dump-header','-','--write-out','\n__SEO_META__%{json}',url]
+    direct_enabled=DIRECT if direct is None else direct
+    if direct_enabled:cmd[1:1]=['--noproxy','*']
     CHILD=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
     try:out,err=CHILD.communicate(timeout=timeout+5)
     except subprocess.TimeoutExpired:
@@ -142,11 +155,14 @@ def delay(failures,healthy_seconds,failure_seconds,max_backoff):
     return healthy_seconds if not failures else min(max_backoff,failure_seconds*(2**min(failures-1,10)))
 
 def main():
+    global DIRECT
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument('--once',action='store_true');p.add_argument('--site',action='append',help='HTTPS origin; may repeat')
+    p.add_argument('--direct',action='store_true',help='connect directly to public HTTPS sites without environment proxy routing')
     p.add_argument('--canonical-origin',default='https://dentaldatalab.com')
     p.add_argument('--healthy-seconds',type=int,default=3600);p.add_argument('--failure-seconds',type=int,default=300);p.add_argument('--max-backoff-seconds',type=int,default=3600)
     args=p.parse_args()
+    DIRECT=args.direct
     if args.healthy_seconds<3600 or args.failure_seconds<300 or args.max_backoff_seconds<args.failure_seconds:p.error('healthy interval must be >=3600s, failure interval >=300s, max backoff >=failure interval')
     try:sites=[public_origin(s) for s in args.site or ['https://dentaldatalab.com']];canonical=public_origin(args.canonical_origin)
     except ValueError as e:p.error(str(e))
@@ -162,7 +178,7 @@ def main():
     failures=previous.get('consecutiveFailures',0)
     try:
         while not STOP:
-            report={'checkedAt':stamp(),'pid':os.getpid(),'sites':[],'indexing':{'google':'unverified: Search Console metrics API not connected','naver':'unverified: Naver Search Advisor metrics not connected','bing':'unverified: Bing Webmaster Tools metrics API not connected'},'readOnly':True}
+            report={'checkedAt':stamp(),'pid':os.getpid(),'sites':[],'indexing':{'google':'unverified: Search Console metrics API not connected','naver':'unverified: Naver Search Advisor metrics not connected','bing':'unverified: Bing Webmaster Tools metrics API not connected'},'readOnly':True,'networkMode':'direct' if args.direct else 'environment'}
             for origin in sites:
                 if STOP:break
                 report['sites'].append(check_site(origin,canonical))

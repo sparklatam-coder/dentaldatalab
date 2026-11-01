@@ -8,7 +8,12 @@ python3 scripts/seo-monitor.py --once
 
 # 운영 루프. 이 명령을 실제 실행해야 지속 점검한다.
 python3 scripts/seo-monitor.py
+
+# 시스템 프록시 경로 대신 공개 HTTPS 대상에 직접 연결해 확인할 때
+python3 scripts/seo-monitor.py --once --direct
 ```
+
+`--direct`는 curl에 `--noproxy '*'`를 적용한다. 환경 프록시의 오래된 DNS 경로 때문에 이전 호스팅 응답을 받는 경우, 공개 도메인의 현재 응답을 직접 확인하는 용도다. HTTPS 전용과 TLS 인증서 검증은 그대로 유지하며, 로컬 호스트·사설 IP·인증정보를 포함하는 URL은 거절한다. 프록시 설정값이나 자격 증명은 출력하지 않는다. 기본 모드는 실행 환경의 일반 네트워크 경로를 사용한다.
 
 정상은 기본 1시간 후, 실패는 5분·10분·20분·40분·최대 1시간의 지수 백오프로 재확인한다. `--healthy-seconds`, `--failure-seconds`, `--max-backoff-seconds`로 대기 시간을 늘릴 수 있다. 정상 대기 최소 1시간, 실패 대기 최소 5분은 유지한다. 검사 1회당 사이트별 홈페이지·robots·sitemap·홈페이지에서 발견한 최대 3개 내부 링크만 요청한다. 대기 중에도 프로세스는 살아 있으며 `nextCheckAfterSeconds`는 다음 주기 대기 시간을 나타낸다.
 
@@ -21,6 +26,8 @@ python3 scripts/seo-monitor.py
 - `data/research/seo-monitor/worker.lock`: `flock`으로 단일 실행을 보장하는 잠금. 종료 시 PID를 비우고 잠금을 해제한다. 파일이 남아 있는 것만으로 실행 중인 것은 아니다.
 
 SIGINT/Ctrl-C 또는 SIGTERM으로 종료한다. 실행 중인 curl 프로세스 그룹도 종료하고 상태를 `stopped`로 남긴다. 재시작하면 직전 연속 실패 횟수를 이어받는다. 예기치 않은 프로세스 강제 종료로 마지막 상태가 오래 남을 수 있으므로 PID와 기록 시각도 확인한다.
+
+현재 macOS 운영 설치는 외장 SSD에서 launchd 실행이 거절되는 문제를 피하기 위해 `~/Library/Application Support/DentalDataLab/seo-monitor/`에 복사되어 있다. 실제 실행 파일은 그 아래 `scripts/seo-monitor.py`이고 상태·기록은 그 아래 `data/research/seo-monitor/`에 저장된다. LaunchAgent는 `~/Library/LaunchAgents/com.dentaldatalab.seo-monitor.plist`이며 설치 후 실행 상태가 확인되었다. 저장소의 코드를 수정한 뒤에는 운영 설치에 복사하고 LaunchAgent를 재시작해야 적용된다. `--direct`를 운영에 적용하려면 LaunchAgent 실행 인자에도 해당 옵션을 추가한다. 이 문서나 저장소 코드 변경만으로 실행 중인 프로세스의 인자가 바뀌지는 않는다.
 
 주 도메인에서 `noindex`가 발견되면 `index_directive` 경고를 남긴다. `dentaldatalab.pages.dev` 등 보조 도메인은 중복 방지를 위한 noindex 또는 주 도메인으로의 301 전환이 정상 정책이므로 기본 모니터 대상에서 제외한다. `--site`로 추가하는 대상에는 주 도메인과 같은 색인 허용 검사를 적용하므로 보조 도메인을 추가하지 않는다. 모니터가 noindex를 제거하거나 소스를 수정하지는 않는다. 도메인 연결 전 DNS·TLS 경고도 동일하게 기록된다. 한 번 실패했다고 검색엔진 페널티나 검색 누락이 입증되는 것은 아니다.
 

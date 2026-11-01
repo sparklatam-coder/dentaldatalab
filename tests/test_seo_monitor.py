@@ -62,4 +62,28 @@ class SeoMonitorTest(unittest.TestCase):
             self.assertIn('not connected',state['indexing']['google'])
             self.assertNotIn('access required',state['indexing']['google'])
 
+    def test_direct_option_sets_noproxy_and_preserves_tls_checks(self):
+        payload=b'HTTP/2 200\r\ncontent-type: text/html\r\n\r\n<title>OK</title>\n__SEO_META__{"http_code":200,"ssl_verify_result":0}'
+        for direct in (False,True):
+            with patch.object(m.subprocess,'Popen') as popen:
+                popen.return_value.communicate.return_value=(payload,b'')
+                popen.return_value.returncode=0
+                result=m.fetch(ORIGIN+'/',direct=direct)
+                cmd=popen.call_args.args[0]
+                self.assertEqual('--noproxy' in cmd,direct)
+                if direct:self.assertEqual(cmd[cmd.index('--noproxy')+1],'*')
+                self.assertNotIn('--insecure',cmd);self.assertNotIn('-k',cmd)
+                self.assertTrue(result['ok']);self.assertTrue(result['tlsVerified'])
+
+    def test_direct_rejects_non_public_and_plain_http_without_network(self):
+        with patch.object(m.subprocess,'Popen') as popen:
+            for url in ('http://dentaldatalab.com/','https://127.0.0.1/','https://localhost/','https://192.168.1.1/'):
+                self.assertFalse(m.fetch(url,direct=True)['ok'])
+            popen.assert_not_called()
+
+    def test_direct_cli_flag_is_recorded_in_runtime(self):
+        with tempfile.TemporaryDirectory() as work, patch.object(m,'WORK',Path(work)), patch.object(m,'DIRECT',False), patch.object(m,'check_site',return_value={'origin':ORIGIN,'checks':[],'requests':[],'ok':True}), patch('sys.argv',['seo-monitor','--once','--direct']):
+            self.assertEqual(m.main(),0)
+            self.assertTrue(m.DIRECT)
+
 if __name__=='__main__':unittest.main()
