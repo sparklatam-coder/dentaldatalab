@@ -1,0 +1,25 @@
+name: Search access checks
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: dentaldatalab-search-access
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Check HTTPS, robots, canonical, sitemap and core links
+        run: python3 scripts/seo-monitor.py --once --direct
+      - name: Save diagnostic evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: search-access-diagnostics
+          path: data/research/seo-monitor/state.json
+          retention-days: 7

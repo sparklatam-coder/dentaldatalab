@@ -38,3 +38,10 @@ python3 -m unittest discover -s tests -p test_seo_monitor.py
 ```
 
 검증은 정상 응답, noindex 메타·헤더, 검색봇 전체 차단, 잘못된 canonical·sitemap·링크, TLS 실패, 백오프와 실행 인자 검증을 포함한다. 테스트는 외부 요청 없이 실행된다.
+
+
+## GitHub에서 매시간 실행
+
+`.github/workflows/seo-monitor.yml`은 매시17분 UTC에 공개 사이트를 검사한다. GitHub Actions 스케줄은 서비스 상황에 따라 지연될 수 있다. 로컬 Mac이 꺼지거나 잠자기 상태여도 GitHub 작업은 별도로 실행된다. 수동 재검사도 Actions의 Run workflow로 실행할 수 있다. 오류는 실패한 작업과 진단 artifact로 남는다. 색인·순위 API 데이터 수집 및 자동 소스 수정은 하지 않는다.
+
+Cloudflare가 robots 차단을 제거한 현재 사이트를 대상으로 실제 HTTP 검사와 Google 실시간 URL 검사를 통과했다. Google·Bing의 수집/색인 보고서 갱신은 검색 서비스 처리 대기와 구분해 확인한다.
