@@ -74,3 +74,9 @@ sitemap에는 색인 대상의 대표 URL만 넣는다. 공식 자료 기준일�
 Google sitemap은 처리 성공·발견 URL 20,669개로 확인했다. 홈페이지 실시간 검사에서 색인 가능 응답과 색인 요청 접수를 확인했다. Bing은 소유확인·sitemap 접수 후 처리 대기다. IndexNow는 선별한 7개 URL을 한 번 제출해 HTTP 202를 받았으며 실제 색인 결과와 구분한다. 매시간 Mac LaunchAgent와 GitHub Actions에서 robots·sitemap·canonical·HTTP 응답을 감시하지만 계정별 검색 성과나 순위까지 자동 확인하는 것은 아니다.
 
 공식 근거: [Google 사이트 이름](https://developers.google.com/search/docs/appearance/site-names), [Organization 구조화 데이터](https://developers.google.com/search/docs/appearance/structured-data/organization), [유용한 콘텐츠](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). 기술 설정만으로 순위를 보장하지 않으며, 향후 실제 Search Console 성과에 따라 유용한 원자료 분석·정보 갱신과 페이지 품질을 개선한다.
+
+### 9baa6a5 배포 확인
+
+Cloudflare production 배포 성공 후 홈페이지·지역 목록·기관 표본의 HTML SHA-256이 검증용 clean build와 일치했다. robots 수집 허용과 sitemap 20,669 URL도 실제 도메인에서 재확인했다. 공유 이미지·PNG 로고는 HTTP 200이다. `/assets/*`에 1시간 캐시를 요청했지만 실서비스 PNG 응답은 Cloudflare 정책에 따라 `max-age=14400`(4시간)으로 관측되었다. 로고·공유 이미지의 내용은 고정 브랜드 자료다.
+
+새 내용으로 변경된 대표 7개 URL은 배포본 일치 확인 후 IndexNow에 통지했고, 이번 응답은 **HTTP 200 received**였다. 초기 HTTP 202 요청과 구분하며 검색 결과 색인 완료를 뜻하지 않는다. 전체 JS 단위 테스트 134개와 SEO 모니터 Python 테스트 10개가 통과했고, 생성 HTML 20,676개에서 공유 메타가 1회씩 존재하며 전체 기관 JSON-LD가 파싱되는지 확인했다.
