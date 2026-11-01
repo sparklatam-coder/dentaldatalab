@@ -119,6 +119,8 @@ https://:project.pages.dev/*
 https://:version.:project.pages.dev/*
   X-Robots-Tag: noindex, nofollow
 ${NOINDEX_ROUTES.map(route => `${route}*\n  X-Robots-Tag: noindex, follow\n`).join('\n')}
+/assets/*
+  Cache-Control: public, max-age=3600
 /data/cloudflare/*
   X-Robots-Tag: noindex, nofollow
 /data/clinic-assets/*

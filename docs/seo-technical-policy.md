@@ -30,6 +30,16 @@ DDL_SEO_PUBLIC=1 SITE_ORIGIN=https://dentaldatalab.com npm run build:cloudflare
 
 sitemap에는 색인 대상의 대표 URL만 넣는다. 공식 자료 기준일이나 매 빌드 시각을 모든 문서의 수정일로 오인하지 않도록 `lastmod`는 생략한다. 실제 내용별 변경 이력을 관리하게 되면 그 날짜를 사용할 수 있다.
 
+## 기존 목록·상세 콘텐츠 개선
+
+기존 지역 경로와 기관 경로를 유지하면서 시도·시군구 첫 목록에 같은 분기 자료의 치과의원·치과병원 수, 치과전문의 1명 이상 등록 수, 유효한 시작·종료 시간쌍 수를 직접 집계한다. 전문의 미확인은 0명 등록과 구분하고, 자료 기준일·수록 범위·현재 운영 미확인을 함께 표시한다. 시간 유효성은 공공데이터 리포트의 `hasValidHours`와 같은 함수를 사용한다. 새로운 치료·동네 키워드용 대량 페이지는 만들지 않는다.
+
+기관 제목은 기관명을 먼저 쓰고 원자료의 지역·읍면동으로 구분한다. 설명은 실제 주소, 형식이 확인되는 신고 전화, 전문의 등록 수 및 기준일을 사용한다. 전화 형식 확인은 현재 연결 여부의 검증을 뜻하지 않으며, 홈페이지·진료시간의 출처 구분을 유지한다. 확인되지 않은 평가·가격·시술 전문성·후기를 설명에 추가하지 않는다.
+
+시군구 페이지의 설명은 해당 페이지에서 실제 표시하는 가나다순 범위와 첫·마지막 기관명으로 구분한다. 2페이지 이상은 시군구 첫 목록으로 연결하는 breadcrumb와 통계 링크를 제공한다. 페이지 이동은 실제 `href`가 있는 이전·다음·번호 링크로 만들고, 현재 페이지와 이동 목적을 접근성 이름으로 표시한다. 상세 페이지에도 해당 시군구·시도 및 원래 정보 섹션으로 향하는 내부 링크를 제공한다.
+
+관련 근거는 [Google 제목 링크](https://developers.google.com/search/docs/appearance/title-link), [Google 설명 문구](https://developers.google.com/search/docs/appearance/snippet), [Google 크롤링 가능한 링크](https://developers.google.com/search/docs/crawling-indexing/links-crawlable), [네이버 사이트 제작 가이드](https://searchadvisor.naver.com/guide/seo-basic-create)다. 구체적이고 해당 문서 내용에 맞는 제목·설명, 실제 링크와 대표 주소를 적용하며 검색엔진의 노출 문구나 순위를 보장하지 않는다.
+
 ## 검증 및 한계
 
 `test/seo.test.mjs`는 검토본/공개본 정책, 의료초안 제외, sitemap 일치, origin 유효성, compact Worker의 실제 HTML·JSON·404 응답 헤더를 검증한다. 공개 배포 후에는 최종 도메인의 robots.txt, sitemap.xml, HTTP 헤더, canonical, 개별 치과 페이지의 HTML 본문을 다시 확인해야 한다.
@@ -54,3 +64,13 @@ sitemap에는 색인 대상의 대표 URL만 넣는다. 공식 자료 기준일�
 - Google Search Console: 도메인 DNS TXT 소유확인 완료, https://dentaldatalab.com/sitemap.xml 접수 성공. 성과·색인은 데이터 처리 중으로 표시됨.
 - Cloudflare Bulk Redirects: dentaldatalab_canonical 목록 + DentalDataLab canonical host 규칙 활성화. www.dentaldatalab.com 및 dentaldatalab.pages.dev에서 apex HTTPS로301, 하위경로·쿼리 보존. preview 하위도메인은 포함하지 않음. 실제 HTTP301 Location 확인.
 - 초기 DNS 전파 중 outbound proxy가 이전 파킹 서버를 캐시할 수 있어 직접 HTTPS 접속과 권한 네임서버도 병행 확인했다.
+
+## 검색 식별·공유 이미지 및 추가 등록 (2026-11-01)
+
+사이트명·대체 이름과 브랜드 발행자 `Organization`을 `WebSite`에 연결하고, 실제 브랜드 로고·1200×630 공유 이미지·PNG 파비콘을 제공한다. 법인명·주소·검토자·연락처는 확인 없이 생성하지 않는다. 공유 이미지는 검색 순위 상승을 보장하는 수단이 아니라 링크를 공유할 때 사이트를 식별하는 자료다. 정적 `/assets/*`는 1시간 캐시하며 HTML·기관 Worker의 정책은 유지한다.
+
+네이버 HTML 태그 소유확인은 `NAVER_SITE_VERIFICATION` 환경변수 또는 `data/content/site-verification.json`의 `naver` 문자열로 설정한다. 실제 공개 확인 코드만 허용하며 빈 값은 태그를 출력하지 않는다. 등록 페이지의 meta 태그에서 content 값만 사용한다. 코드 배포 후 네이버 콘솔에서 소유확인을 완료하고 sitemap을 제출해야 하며, 코드 준비 자체가 등록 완료를 뜻하지 않는다. 현재 브라우저 제어 연결 오류로 네이버 콘솔 조작은 진행하지 못했으며 다른 PC에서 공개 확인 태그를 전달받는 단계다.
+
+Google sitemap은 처리 성공·발견 URL 20,669개로 확인했다. 홈페이지 실시간 검사에서 색인 가능 응답과 색인 요청 접수를 확인했다. Bing은 소유확인·sitemap 접수 후 처리 대기다. IndexNow는 선별한 7개 URL을 한 번 제출해 HTTP 202를 받았으며 실제 색인 결과와 구분한다. 매시간 Mac LaunchAgent와 GitHub Actions에서 robots·sitemap·canonical·HTTP 응답을 감시하지만 계정별 검색 성과나 순위까지 자동 확인하는 것은 아니다.
+
+공식 근거: [Google 사이트 이름](https://developers.google.com/search/docs/appearance/site-names), [Organization 구조화 데이터](https://developers.google.com/search/docs/appearance/structured-data/organization), [유용한 콘텐츠](https://developers.google.com/search/docs/fundamentals/creating-helpful-content). 기술 설정만으로 순위를 보장하지 않으며, 향후 실제 Search Console 성과에 따라 유용한 원자료 분석·정보 갱신과 페이지 품질을 개선한다.
