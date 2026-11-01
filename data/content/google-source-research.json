@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "title": "대한민국 Google 치과 키워드 검색량 조사 방법과 출처 확인 기록",
+  "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+  "locale": "ko-KR",
+  "researchStatus": "official_documentation_reviewed",
+  "volumeAcquisition": {
+    "status": "not_acquired",
+    "keywordMonthlyVolumes": null,
+    "marketRanking": null,
+    "authenticatedAccountAccessed": false,
+    "apiCalled": false,
+    "credentialsCreated": false,
+    "accountCreated": false,
+    "billingEntered": false,
+    "purchaseMade": false,
+    "note": "공개 공식 문서를 탐색해 획득 방법과 측정 의미를 확인했다. Keyword Planner 계정 화면이나 Google Ads API에서 치과 키워드별 검색량을 받은 것은 아니다."
+  },
+  "sources": [
+    {
+      "id": "g01",
+      "url": "https://support.google.com/google-ads/answer/7337243?hl=ko",
+      "title": "키워드 플래너 사용하기",
+      "publisher": "Google Ads 고객센터",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "새 키워드 찾기는 단어·웹사이트에서 아이디어를 발굴하고, 검색량 및 예상 실적 조회하기는 기존 목록을 붙여넣거나 CSV로 올리는 기능이다. 기본 아이디어 기능에도 결제 정보를 포함한 계정 설정 완료가 필요하다고 안내한다. 저검색량·민감 키워드가 누락될 수 있고 건강 분야 결과 제한을 명시한다. 문서에 있는 예측 다운로드와 과거 검색량 자료를 구별해야 한다.",
+      "evidenceSections": ["키워드 플래너를 사용하는 방법", "새 키워드에 대한 아이디어 얻기", "검색량 및 예상 실적 조회하기", "건강 또는 금융과 같은 민감한 카테고리의 키워드에 대한 결과를 찾을 수 없는 이유는 무엇인가요?"],
+      "actualSearchQueries": ["site:support.google.com/google-ads/answer \"download\" \"keyword ideas\""],
+      "foundPath": ["이전 조사에서 확보한 공식 도움말 URL을 한국어로 직접 열었다.", "공식 도메인 제한 검색에서도 같은 문서를 확인하고, 본문과 FAQ를 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g02",
+      "url": "https://support.google.com/google-ads/answer/3022575?hl=ko",
+      "title": "키워드 플래너의 예측에 대한 정보",
+      "publisher": "Google Ads 고객센터",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "월평균 검색량은 지정한 월·위치·검색 네트워크에서 키워드와 유사 검색어가 검색된 평균이며 기본 기간은 12개월이다. 문서는 기본 검색 횟수를 언어에 관계없이 집계한다고 설명하고 검색량 통계의 반올림을 명시한다. 광고 노출 예측은 입찰·예산 등의 영향을 받으므로 검색량을 대신하지 못하며 광고 경쟁률도 검색 인기도 순위가 아니다.",
+      "evidenceSections": ["이전 측정항목의 의미", "이전 측정항목과 관련하여 유의해야 할 사항", "키워드 예측의 의미"],
+      "actualSearchQueries": ["\"Keyword Planner\" \"limited\" \"search volume\" site:support.google.com/google-ads/answer"],
+      "foundPath": ["이전 조사에서 확보한 공식 URL을 직접 열었다.", "g01의 '키워드 플래너의 예측' 링크와 같은 문서임을 확인했다.", "영어 검색 결과의 원문도 대조했다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g03",
+      "url": "https://support.google.com/google-ads/answer/6325025",
+      "title": "Refine your new keywords in Keyword Planner",
+      "publisher": "Google Ads Help",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "위치·언어·네트워크와 기간을 설정하고 월평균 검색량 등으로 결과를 필터링할 수 있다. 네트워크의 Google은 Google Search, Google and search partners는 파트너 등을 포함하는 별도 범위다. 위치를 모두 제거하면 전 세계가 된다.",
+      "evidenceSections": ["Narrow by location", "Customize by date range", "Filter and refine by category"],
+      "actualSearchQueries": [],
+      "foundPath": ["g01 본문의 '키워드 목록 수정' 링크를 실제 클릭했다.", "도착한 문서에서 Language·Network·date range를 찾아 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g04",
+      "url": "https://support.google.com/google-ads/answer/9327909",
+      "title": "Keyword Planner changes finalized",
+      "publisher": "Google Ads Help / Jane Kim, Product Manager",
+      "publishedOn": "2019-05-01",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "Google의 제품 공지는 개별 키워드 추세 데이터 다운로드 기능을 확인해 준다. 2019년 공지이므로 현재 계정 화면의 버튼 위치나 CSV 열 구성을 검증한 자료로 사용하지 않는다.",
+      "evidenceSections": ["This new version now allows you to"],
+      "actualSearchQueries": ["site:support.google.com/google-ads \"download\" \"historical metrics\" \"CSV\""],
+      "foundPath": ["검색에서 Google Ads New features & announcements를 찾았다.", "https://support.google.com/google-ads/announcements/9048695?hl=en 에서 'Keyword Planner changes finalized'를 찾았다.", "해당 항목의 Read more를 클릭해 제품 담당자 명의 원문을 읽었다."],
+      "verification": "historical_official_announcement_read"
+    },
+    {
+      "id": "g05",
+      "url": "https://developers.google.com/google-ads/api/docs/keyword-planning/generate-keyword-ideas",
+      "title": "Generate keyword ideas",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "GenerateKeywordIdeas는 키워드·URL·사이트를 시작점으로 새 후보와 과거 지표를 반환한다. 위치·언어·네트워크·기간을 지정할 수 있으며 결과에는 대표 text, close_variants와 keyword_idea_metrics가 있다. 결과 수가 적어 보여도 next_page_token이 있으면 다음 페이지가 남아 있다.",
+      "evidenceSections": ["Generate ideas", "Request and response field reference"],
+      "actualSearchQueries": ["site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"],
+      "foundPath": ["공식 개발자 문서 검색 결과에서 찾았다.", "본문과 요청·응답 필드 표를 열어 페이지네이션과 지표 포함 여부를 확인했다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g06",
+      "url": "https://developers.google.com/google-ads/api/docs/keyword-planning/generate-historical-metrics",
+      "title": "Generate historical metrics",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "GenerateKeywordHistoricalMetrics는 기존 목록의 과거 월평균·월별 검색량을 조회하며 요청당 최대 10,000개 키워드를 받는다. 검색량은 근사치다. close_variants가 병합되므로 요청한 개수보다 결과가 적을 수 있다. 새 아이디어 응답에도 과거 지표가 포함된다.",
+      "evidenceSections": ["Generate metrics", "Map to the UI"],
+      "actualSearchQueries": ["site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"],
+      "foundPath": ["검색 결과의 공식 문서를 열었다.", "Generate metrics 설명과 실제 예제의 대표 키워드·유사 검색어·null 처리 부분을 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g07",
+      "url": "https://developers.google.com/google-ads/api/reference/rpc/v25/GenerateKeywordHistoricalMetricsRequest",
+      "title": "GenerateKeywordHistoricalMetricsRequest",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "language는 지정 언어가 키워드에 속한 언어 집합에 포함되는지에 따른 키워드 필터다. 이를 한국어 사용자만의 검색량으로 해석하지 않는다. keyword_plan_network를 생략하면 Google Search And Partners가 사용되므로 GOOGLE_SEARCH를 명시해야 한다.",
+      "evidenceSections": ["language", "keyword_plan_network", "keywords[]"],
+      "actualSearchQueries": ["site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"],
+      "foundPath": ["검색 결과에 나온 v25 요청 참조 문서를 열었다.", "language와 keyword_plan_network 필드 정의를 직접 확인했다."],
+      "verification": "page_body_read",
+      "versionNote": "찾은 문서는 v25다. 실행 시 사용하는 API 버전의 같은 필드를 다시 확인한다."
+    },
+    {
+      "id": "g08",
+      "url": "https://developers.google.com/google-ads/api/reference/rpc/v26/HistoricalMetricsOptions",
+      "title": "HistoricalMetricsOptions",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "year_month_range를 생략하면 최근 12개월을 반환하며 과거 4년 이내 지표를 지원한다. 요청한 기간 전체가 없으면 가능한 부분 기간만 반환할 수 있으므로 반환된 월 목록을 검증해야 한다.",
+      "evidenceSections": ["year_month_range"],
+      "actualSearchQueries": [],
+      "foundPath": ["g06 본문의 year_month_range 링크를 클릭했다.", "도착한 v26 HistoricalMetricsOptions의 필드 설명을 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g09",
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "title": "Access levels and permissible use",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "현재 본문은 Google Cloud 프로젝트별 Test·Explorer·Basic·Standard 접근 수준을 설명한다. Test는 테스트 계정용이며 실제 계정 접근에는 적절한 수준이 필요하다. Standard의 키워드 연구 허용 용도는 광고 캠페인 생성·관리를 돕는 제안 도구를 전제로 설명하므로 공개 콘텐츠 서비스의 이용 적합성을 별도로 확인해야 한다.",
+      "evidenceSections": ["Access levels", "Permissible use"],
+      "actualSearchQueries": ["site:developers.google.com/google-ads/api access levels developer token keyword planning permissible use OAuth prerequisites"],
+      "foundPath": ["공식 도메인 검색으로 찾고 영어 본문을 열었다.", "hl=en URL 재열람은 일시 timeout이 있었으나 기본 URL 본문에서 접근 수준과 허용 용도를 확인했다."],
+      "verification": "page_body_read",
+      "documentCaveat": "자동 Page Summary에는 옛 developer-token 설명이 남아 있어 본문 및 g10·g11을 우선했다."
+    },
+    {
+      "id": "g10",
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/developer-token",
+      "title": "Developer token",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "공식 이행 문서는 developer token이 2026-09-09 종료되었고 새 이용자는 토큰이나 관리자 계정 없이 Cloud 프로젝트 중심으로 시작한다고 명시한다. 접근 수준은 OAuth 인증 정보를 만든 프로젝트에 연결된다. 옛 토큰 헤더는 선택 사항이며 서버에서 무시한다고 설명한다.",
+      "evidenceSections": ["What's changing?", "API access levels are associated with Google Cloud projects"],
+      "actualSearchQueries": [],
+      "foundPath": ["g09 본문의 'sunset on September 9, 2026' 링크를 실제 클릭했다.", "이행 문서의 본문과 관련 FAQ에서 날짜·현재 접근 방식·헤더 처리를 교차 확인했다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g11",
+      "url": "https://developers.google.com/google-ads/api/docs/get-started/make-first-call?hl=en",
+      "title": "Quick start",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "현재 시작 문서는 Cloud 프로젝트에서 API를 활성화하고 접근 수준을 확인하는 절차를 안내한다. 예제는 OAuth 서비스 계정 인증과 접근 가능한 Google Ads 계정을 사용한다. 문서를 읽었다는 사실만으로 이 프로젝트나 사용자의 계정이 실제 검색량 API를 호출할 권한이 있다는 뜻은 아니다.",
+      "evidenceSections": ["Prerequisites", "Configure your Cloud project for Google Ads API access", "Explorer, Basic & Standard access levels"],
+      "actualSearchQueries": ["site:developers.google.com/google-ads/api access levels developer token keyword planning permissible use OAuth prerequisites"],
+      "foundPath": ["공식 검색 결과에서 Quick start를 열었다.", "g09·g10이 안내하는 같은 시작 문서임을 확인하고 prerequisites를 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g12",
+      "url": "https://developers.google.com/google-ads/api/rest/auth",
+      "title": "Authorization and HTTP Headers",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "API 호출은 OAuth 2.0 사용자 인증 또는 서비스 계정 인증을 지원한다. 본문은 OAuth를 설명하지만 자동 Page Summary에는 옛 developer-token 필수 문구가 남아 있다. 토큰 요건은 g10의 명시적 이행 안내와 대조해 해석했다.",
+      "evidenceSections": ["OAuth 2.0 credentials", "Page Summary"],
+      "actualSearchQueries": ["site:developers.google.com/google-ads/api access levels developer token keyword planning permissible use OAuth prerequisites"],
+      "foundPath": ["공식 검색 결과에서 인증 문서를 열었다.", "자동 요약과 본문을 나누어 읽고 이행 문서와 불일치를 기록했다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g13",
+      "url": "https://developers.google.com/google-ads/api/docs/keyword-planning/overview",
+      "title": "Keyword planning",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "아이디어와 과거 지표 조회는 영구 KeywordPlan 리소스 생성 없이 가능하다. KeywordPlanIdeaService에는 더 엄격한 호출 속도 제한이 있고 과거 검색량은 월 단위로 갱신되므로 결과를 저장·재사용하도록 권한다. 광고 캠페인 실행과 자료 조회는 구분할 수 있다.",
+      "evidenceSections": ["Keyword planning", "Workflow"],
+      "actualSearchQueries": ["site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"],
+      "foundPath": ["공식 검색 결과에서 개요 문서를 열었다.", "영구 리소스 없이 가능한 작업과 갱신·호출 제한 설명을 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g14",
+      "url": "https://support.google.com/trends/answer/4365533?hl=ko",
+      "title": "Google 트렌드 데이터 관련 FAQ",
+      "publisher": "Google 검색 트렌드 고객센터",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "Trends는 검색 표본을 지역·기간의 총검색 대비 비중으로 정규화한 뒤 0~100으로 표시한다. 낮은 검색량은 0으로 표시될 수 있다. 따라서 절대 월검색량이나 서로 다른 비교 묶음의 통합 시장 순위를 직접 제공하는 자료로 사용하지 않는다.",
+      "evidenceSections": ["Google 트렌드 데이터는 어떻게 정규화되나요?", "Google 트렌드에는 어떤 검색이 포함되나요?"],
+      "actualSearchQueries": ["site:support.google.com/trends \"sample\" \"0 to 100\" \"searches\""],
+      "foundPath": ["공식 도움말 검색 결과의 영어 문서를 확인했다.", "같은 문서의 한국어 URL을 열어 정규화와 저검색량 설명을 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g15",
+      "url": "https://support.google.com/webmasters/answer/7576553?hl=ko",
+      "title": "실적 보고서(Google 검색 결과): 개요 및 기본 설정",
+      "publisher": "Google Search Console 도움말",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "Search Console 실적은 내 사이트가 Google 검색에서 받은 노출·클릭 등의 지표다. 내 사이트가 나타나지 않은 시장 검색까지 세는 자료가 아니므로 한국 치과 검색 전체의 검색량 순위로 사용할 수 없다. 운영 후 실제 유입 질문을 발굴하는 별도 자료로 적합하다.",
+      "evidenceSections": ["측정항목 선택", "측정기준 선택"],
+      "actualSearchQueries": ["site:support.google.com/webmasters performance report queries anonymized clicks impressions own site"],
+      "foundPath": ["공식 도메인 검색에서 실적 보고서 문서를 찾았다.", "한국어 문서를 열어 각 지표의 사이트 기준 정의를 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g16",
+      "url": "https://support.google.com/webmasters/answer/17010575?hl=ko",
+      "title": "실적 보고서(Google 검색 결과): 데이터 불일치 문제 해결",
+      "publisher": "Google Search Console 도움말",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "Search Console 표에는 익명화된 희귀 검색어와 행 제한에 따른 누락이 있다. 표 합계가 차트 합계와 다를 수 있으므로 누락을 실제 검색 0으로 치환하지 않는다.",
+      "evidenceSections": ["차트 총계와 표 총계 간의 불일치", "Search Console과 다른 도구 간의 불일치"],
+      "actualSearchQueries": ["site:support.google.com/webmasters performance report queries anonymized clicks impressions own site"],
+      "foundPath": ["같은 공식 검색에서 데이터 불일치 문서를 찾았다.", "한국어 본문에서 표 행 한도와 익명 검색어 항목을 읽었다."],
+      "verification": "page_body_read"
+    },
+    {
+      "id": "g17",
+      "url": "https://developers.google.com/google-ads/api/data/geotargets",
+      "title": "Geo targets",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "claim": "공식 위치 참조는 geo_target_constant 조회 또는 배포 ZIP CSV로 국가·지역 ID를 확인하도록 안내한다. 국가 코드와 Target Type을 확인해 대한민국 국가 항목을 고른다. 이번에는 ZIP 링크만 확인했으며 대한민국 ID를 추출하거나 API로 조회하지 않았다.",
+      "evidenceSections": ["Download CSV of geo targets", "Columns"],
+      "actualSearchQueries": [],
+      "foundPath": ["g06 예제에 적힌 공식 geotargets 참조 URL을 열었으며 /api/data/geotargets로 이동했다.", "Latest zipped CSV (2026-10-06)를 클릭했으나 웹 열람 도구가 application/zip을 지원하지 않았다."],
+      "verification": "reference_page_read_zip_not_parsed",
+      "observedDownloadUrl": "https://developers.google.com/static/google-ads/api/data/geo/geotargets-2026-10-06.csv.zip"
+    }
+  ],
+  "reproducibleProcedure": {
+    "status": "proposed_not_executed",
+    "scope": "대한민국 위치 설정에서 수집한 한국어 치과 치료 관련 후보 키워드의 Google Search 과거 검색량 비교",
+    "populationClaim": "발굴한 후보군 내부 비교이며 모든 실제 치과 검색어를 포괄한 모집단이라고 보장하지 않는다.",
+    "steps": [
+      {"order": 1, "action": "포함 기준을 먼저 정한다. 환자용 치료·비용·통증·과정·관리 질문을 대상으로 하고, 구인·주식·제품 구매·기관 탐색 등 제외 범주와 이유를 기록한다. 현재 100개 질문은 시작 목록으로 보존한다.", "basis": "editorial_design", "sourceIds": []},
+      {"order": 2, "action": "치료 분류별 대표어·일상 표현·증상·비용 표현을 seed로 만든다. 새 키워드 찾기 또는 GenerateKeywordIdeas로 후보를 확장하고, 기존 자동완성 관찰어와 공개 환자 안내 URL도 시작점 후보로 검토한다. seed와 발견 경로를 남긴다.", "basis": "editorial_design_using_documented_features", "sourceIds": ["g01", "g05"]},
+      {"order": 3, "action": "대한민국, 한국어 아이디어 설정, Google Search만, 동일한 시작월·종료월을 고정한다. 최근 완료된 12개월을 기본 비교안으로 삼되 실제 제공된 월을 확인해 확정한다. 한국어 설정을 한국어 사용자만의 측정으로 표시하지 않는다.", "basis": "editorial_design_using_documented_features", "sourceIds": ["g02", "g03", "g07", "g08"]},
+      {"order": 4, "action": "전체 후보를 내보내거나 API의 모든 결과 페이지를 수집한다. 원본 파일·응답, 실행 시각, 설정, seed, API 버전, 누락·오류를 저장한다. 다음 페이지가 남거나 일부 seed가 실패하면 수집 완료로 표시하지 않는다.", "basis": "editorial_design_using_documented_features", "sourceIds": ["g04", "g05"]},
+      {"order": 5, "action": "후보 목록을 NFC와 기본 공백 정리로 정규화하되 원문을 보존한다. 치료 관련성 판정과 제외 이유를 남기고, 같은 기간·설정으로 기존 후보의 과거 지표를 확보한다. 합쳐진 close_variants는 한 묶음으로 연결하고 검색량을 중복 합산하지 않는다.", "basis": "editorial_design_using_documented_features", "sourceIds": ["g06"]},
+      {"order": 6, "action": "월별 데이터가 같은 비교 기간을 충족하는지 확인한다. 누락·정책 제한·부분 기간·구간 표시를 구별해 보관한다. 빈칸을 0으로 만들거나 범위의 중간값을 만들어 순위를 정하지 않는다.", "basis": "editorial_quality_rule", "sourceIds": ["g01", "g08"]},
+      {"order": 7, "action": "비교 가능한 월평균 근사치만 내림차순으로 정렬한다. 같은 값은 동순위로 두고 화면 정렬 보조값은 가나다순임을 밝힌다. 범위만 확보되면 범위군 비교로 제한하고 군 내부의 정확한 순위는 미확인으로 둔다.", "basis": "editorial_quality_rule", "sourceIds": ["g02"]},
+      {"order": 8, "action": "후보군 전체 순위와 분야별 추천을 따로 만든다. 상위 키워드 묶음을 환자 질문으로 연결하되 한 키워드 검색량을 여러 질문에 각각 합산하지 않는다. 현재의 분류별 10개 배분은 편집 구성임을 밝힌다.", "basis": "editorial_design", "sourceIds": []},
+      {"order": 9, "action": "페이지에 원출처·획득일·기간·지역·네트워크·언어 해석·후보 및 제외 수·유사어 묶음·누락 수를 표시한다. 월 단위 새 자료와 원본 해시를 보존해 같은 절차를 재실행한다.", "basis": "editorial_design_using_documented_features", "sourceIds": ["g13"]}
+    ]
+  },
+  "recommendedAcquisitionOrder": [
+    {"priority": 1, "method": "사용자가 이미 접근 가능한 Keyword Planner에서 후보 확장 후 과거 지표 파일 확보", "why": "첫 1회 자료의 열과 설정을 직접 검토하기 쉬워 초기 경로로 권한다.", "condition": "계정 접근 가능 여부와 현재 내보내기 메뉴·표시 정밀도를 실제로 확인해야 한다.", "sourceIds": ["g01", "g04"]},
+    {"priority": 2, "method": "Google Ads API 아이디어와 과거 지표 조회 자동화", "why": "정기 갱신이 필요하고 적절한 접근 권한과 허용 용도가 확인된 뒤 적용한다.", "condition": "Cloud 프로젝트 접근 수준, OAuth 인증, Google Ads 계정 권한과 서비스 이용 조건을 확인한다.", "sourceIds": ["g09", "g10", "g11", "g12"]},
+    {"priority": 3, "method": "Trends와 Search Console은 별도 보조 지표로 유지", "why": "상대 추세 또는 내 사이트 유입을 설명하는 자료로 구별한다.", "condition": "절대 월검색량의 대체값으로 변환하지 않는다.", "sourceIds": ["g14", "g15", "g16"]}
+  ],
+  "unresolvedOrLimited": [
+    {"topic": "계정별 검색량 범위와 숫자 정밀도", "status": "not_verified_for_user_account", "finding": "공식 문서에서 검색량 반올림은 확인했다. 범위 표시를 숫자 표시로 바꾸는 광고비 임계값은 이번 공식 1차 자료 조사에서 검증하지 못했다. 커뮤니티 이용자 경험을 Google의 보장으로 사용하지 않았다.", "actualSearchQueries": ["site:support.google.com/google-ads \"search volume ranges\" \"Keyword Planner\"", "site:support.google.com/google-ads \"ranges\" \"monthly searches\" \"volume\"", "\"Keyword Planner\" \"ranges\" site:blog.google"], "sourceIds": ["g02"]},
+    {"topic": "현재 Keyword Planner 과거 지표 다운로드 UI", "status": "logged_in_ui_not_inspected", "finding": "기능의 공식 발표는 확인했으나 현재 화면의 정확한 메뉴명과 파일 열은 계정에서 확인하지 않았다. 예측 자료만 내려받았을 때 과거 검색량을 확보했다고 판정하면 안 된다.", "sourceIds": ["g01", "g04"]},
+    {"topic": "광고 API 접근 문서의 옛 요약", "status": "body_cross_checked", "finding": "developer token이 필수라고 남아 있는 자동 요약을 그대로 사용하지 않았다. 현재 본문과 이행 안내는 Cloud 프로젝트 중심 접근으로 설명한다.", "sourceIds": ["g09", "g10", "g12"]},
+    {"topic": "한국어·한국 거주자 범위", "status": "measurement_scope_limited", "finding": "대한민국 위치 타겟과 한국어 키워드 후보는 설정할 수 있다. 이것만으로 한국 거주 한국어 사용자 전체의 순수 표본이나 모든 한국어 치과 검색을 확보했다고 주장하지 않는다.", "sourceIds": ["g02", "g03", "g07"]},
+    {"topic": "건강 분야 누락", "status": "documented_limitation", "finding": "치과 관련 키워드는 건강 분야 제한이나 저검색량 누락에 영향을 받을 수 있다. 반환되지 않은 항목은 검색량 0으로 확정하지 않는다.", "sourceIds": ["g01"]}
+  ],
+  "suggestedPublicStatus": {
+    "currentLabel": "검색량 수집 방법 검증 완료 · 키워드별 수치 미확보",
+    "currentDescription": "Google 공식 자료에서 후보 발굴, 과거 검색량 조회, 집계 조건과 제한을 확인했습니다. 현재 질문 목록의 순서는 검색량 순위가 아닙니다.",
+    "futureRankingLabel": "수집 후보 중 Google 월평균 검색량 기준 순위",
+    "requiredContext": ["후보군 수와 발굴 범위", "대한민국 위치 설정", "한국어 후보 선정 기준", "Google Search 네트워크", "비교 기간과 확보일", "반올림·유사 검색어 병합", "동순위와 누락 처리"]
+  }
+}

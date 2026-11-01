@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-31T14:04:49.129Z",
+  "status": "passed",
+  "server": "npm run dev",
+  "base": "http://127.0.0.1:4173",
+  "checks": [
+    {
+      "url": "/",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "noindex": true,
+      "bytes": 17002
+    },
+    {
+      "url": "/reports/",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "noindex": true,
+      "bytes": 9915
+    },
+    {
+      "url": "/reports/national-data-coverage/",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "noindex": true,
+      "bytes": 16300
+    },
+    {
+      "url": "/reports/northern-gyeonggi-hours/",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "noindex": true,
+      "bytes": 20903
+    },
+    {
+      "url": "/find/",
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "noindex": true,
+      "bytes": 45343
+    },
+    {
+      "url": "/data/reports/northern-gyeonggi-hours.csv",
+      "status": 200,
+      "mime": "text/csv; charset=utf-8",
+      "noindex": true,
+      "bytes": 32865
+    },
+    {
+      "url": "/data/reports/national-data-coverage.json",
+      "status": 200,
+      "mime": "application/json; charset=utf-8",
+      "noindex": true,
+      "bytes": 5038
+    },
+    {
+      "url": "/assets/app.mjs",
+      "status": 200,
+      "mime": "text/javascript; charset=utf-8",
+      "noindex": true,
+      "bytes": 12029
+    },
+    {
+      "url": "/llms.txt",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "noindex": true,
+      "bytes": 904
+    },
+    {
+      "url": "/missing-local-review-page/",
+      "status": 404,
+      "mime": "text/html; charset=utf-8",
+      "noindex": true,
+      "bytes": 7040
+    },
+    {
+      "url": "/reports/",
+      "method": "HEAD",
+      "status": 200
+    },
+    {
+      "url": "/reports/",
+      "method": "POST",
+      "status": 405
+    },
+    {
+      "url": "/reports?test=1",
+      "status": 308,
+      "location": "/reports/?test=1"
+    }
+  ]
+}

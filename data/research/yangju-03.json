@@ -1,0 +1,1118 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+  "scope": "양주시 가나다순 47~67번째 21개 기관; 전국 전수 확인 아님",
+  "policy": "채널의 발견·홈페이지 본문 관찰·Naver 본문 확인은 구분. 미발굴은 부재 아님. 공공 스냅샷 덮어쓰기 금지.",
+  "records": [
+    {
+      "clinicId": "c-e2b19dfec279",
+      "name": "연세웰치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/19810066",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 평화로 1437",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-8347cdeeeb70",
+      "name": "옥정공감치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1384418060",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 옥정로 218 신운정튼튼프라자 3층 302호",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-6a0d8d75bdc1",
+      "name": "옥정든든치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1105187689",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 옥정로 139 다올스퀘어 2층",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-997def5ce9a5",
+      "name": "옥정아트치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": "http://www.artdentistry.co.kr/",
+          "status": "verified",
+          "evidenceUrls": [
+            "http://www.artdentistry.co.kr/",
+            "https://okjeongdentalclinic.co.kr/"
+          ],
+          "notes": "홈페이지 본문의 기관명·주소·전화번호를 공공자료와 대조. 홈페이지 자체 안내 확인이며 전화 연결·현장 영업 확인은 아님.",
+          "bodyVerified": true,
+          "identityVerified": true
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1058443430",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 옥정로 196 파스텔시티 5층",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": "https://blog.naver.com/art_dentistry",
+          "status": "blocked",
+          "evidenceUrls": [
+            "http://www.artdentistry.co.kr/"
+          ],
+          "notes": "주소·전화가 일치하는 홈페이지의 아트치과 블로그 링크 확인. 블로그 본문은 접근 제한.",
+          "bodyVerified": false,
+          "identityVerified": false
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "경기도 양주시 옥정로 196, 파스텔시티 5층",
+          "sourceUrl": "http://www.artdentistry.co.kr/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "도로명·건물번호 일치. 층·호수 및 표기 차이는 원문 유지.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-868-2879",
+          "sourceUrl": "http://www.artdentistry.co.kr/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "website",
+          "value": "http://www.artdentistry.co.kr/",
+          "sourceUrl": "http://www.artdentistry.co.kr/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "공공자료 홈페이지 빈 값을 보충하는 별도 관찰. 원자료는 변경하지 않음.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "hoursSummary",
+          "value": "월·화·목·금 09:00~18:00, 수 10:00~21:00, 토 10:00~14:00. 점심 13:00~14:00, 토요일 점심 없음, 일·공휴일 휴진.",
+          "sourceUrl": "http://www.artdentistry.co.kr/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "기관 홈페이지 자체 안내. https://okjeongdentalclinic.co.kr/의 일부 시간 표기는 달라 추가 확인 대상.",
+          "sourceEvidenceMode": "direct_page"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님.",
+      "alternatives": [
+        {
+          "url": "https://okjeongdentalclinic.com/location",
+          "status": "candidate",
+          "notes": "기관명·주소·전화 일치하지만 사이트 운영주체 별도 확인 전."
+        },
+        {
+          "url": "https://okjeongdentalclinic.co.kr/",
+          "status": "candidate",
+          "notes": "artdentistry.co.kr를 홈페이지로 연결. 시간표가 일부 달라 단일 최신 정보로 합치지 않음."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-f03aab4b3617",
+      "name": "옥정온가족치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": "https://www.onfamdent.com/",
+          "status": "verified",
+          "evidenceUrls": [
+            "https://www.onfamdent.com/"
+          ],
+          "notes": "홈페이지 본문의 기관명·주소·전화번호를 공공자료와 대조. 홈페이지 자체 안내 확인이며 전화 연결·현장 영업 확인은 아님.",
+          "bodyVerified": true,
+          "identityVerified": true
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/2034496778?placePath=/home",
+          "status": "blocked",
+          "evidenceUrls": [
+            "https://www.onfamdent.com/",
+            "https://www.onfamdent.com/page.asp?m=naver_map"
+          ],
+          "notes": "홈페이지 연결 및 리디렉션 목적지 확인. 네이버 플레이스 본문 접근 제한.",
+          "bodyVerified": false,
+          "identityVerified": false
+        },
+        "naverBlog": {
+          "url": "https://blog.naver.com/onfam_dent",
+          "status": "blocked",
+          "evidenceUrls": [
+            "https://www.onfamdent.com/",
+            "https://www.onfamdent.com/page.asp?m=naver_blog"
+          ],
+          "notes": "홈페이지 연결 및 리디렉션 목적지 확인. 블로그 본문 접근 제한.",
+          "bodyVerified": false,
+          "identityVerified": false
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "경기도 양주시 회천로 84, 2층 일부(옥정동)",
+          "sourceUrl": "https://www.onfamdent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "도로명·건물번호 일치. 층·호수 및 표기 차이는 원문 유지.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-858-2828",
+          "sourceUrl": "https://www.onfamdent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "website",
+          "value": "https://www.onfamdent.com/",
+          "sourceUrl": "https://www.onfamdent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "공공자료 홈페이지 빈 값을 보충하는 별도 관찰. 원자료는 변경하지 않음.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "hoursSummary",
+          "value": "월·수·금 10:00~19:00, 화·목 21:00까지(본문에서 시작시각 미확인), 토 09:30~14:00(점심 없이), 일요일 휴진.",
+          "sourceUrl": "https://www.onfamdent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "기관 홈페이지 자체 안내. 본문에 없는 화·목 시작시각과 공휴일 운영은 추정하지 않음.",
+          "sourceEvidenceMode": "direct_page"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-5dee71e5f3d6",
+      "name": "옥정JS치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": "http://ojjsdental.com/",
+          "status": "blocked",
+          "evidenceUrls": [
+            "https://www.data.go.kr/data/15051059/fileData.do"
+          ],
+          "notes": "공공자료 등록 URL. 직접 요청은 DNS 이름 해석 실패. 폐쇄 또는 폐업이라고 단정하지 않음.",
+          "bodyVerified": false,
+          "identityVerified": false
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1723903624",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 옥정서로 227 2층 204호, 205호",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-eb195e3002df",
+      "name": "우리들치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": "https://wooridul.quv.kr/",
+          "status": "verified",
+          "evidenceUrls": [
+            "https://wooridul.quv.kr/"
+          ],
+          "notes": "홈페이지 본문의 기관명·주소·전화번호를 공공자료와 대조. 홈페이지 자체 안내 확인이며 전화 연결·현장 영업 확인은 아님.",
+          "bodyVerified": true,
+          "identityVerified": true
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/36161352",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 광적면 백은로 259 3층",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "경기도 양주시 광적면 백은로 259, 3층",
+          "sourceUrl": "https://wooridul.quv.kr/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "도로명·건물번호 일치. 층·호수 및 표기 차이는 원문 유지.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-838-2808",
+          "sourceUrl": "https://wooridul.quv.kr/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "website",
+          "value": "https://wooridul.quv.kr/",
+          "sourceUrl": "https://wooridul.quv.kr/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "공공자료 홈페이지 빈 값을 보충하는 별도 관찰. 원자료는 변경하지 않음.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-838-2808",
+          "sourceUrl": "https://m.booking.naver.com/booking/13/bizes/386872?area=ple",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님.",
+      "additionalChannels": [
+        {
+          "type": "naverBooking",
+          "url": "https://m.booking.naver.com/booking/13/bizes/386872?area=ple",
+          "status": "verified",
+          "evidenceUrls": [
+            "https://wooridul.quv.kr/"
+          ],
+          "notes": "예약 페이지 본문 주소·전화 일치. 예약을 수행하지 않음."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-be42ae28ae35",
+      "name": "우리치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/13236522",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 평화로 1426 301호",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-dc63e9f5fc1f",
+      "name": "이빛나는치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1709162580",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 옥정로7길 9-19 2층",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "양주시 옥정로7길 9-19, 201호",
+          "sourceUrl": "https://www.yangju.go.kr/www/contents.do?key=3499",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "search_index"
+        },
+        {
+          "field": "phone",
+          "value": "031-928-7331",
+          "sourceUrl": "https://www.yangju.go.kr/www/contents.do?key=3499",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "search_index"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-5671c973376f",
+      "name": "이종훈치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/13236154",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 광적면 가래비12길 10 HJ빌딩 3층 이종훈치과의원",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-e1fb836feb2e",
+      "name": "이튼튼소아치과치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1134950580",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 옥정로 200 시네마엠디프라자 305호",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "양주시 옥정로 200, 305호",
+          "sourceUrl": "https://www.yangju.go.kr/www/contents.do?key=3499",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "search_index"
+        },
+        {
+          "field": "phone",
+          "value": "031-867-2877",
+          "sourceUrl": "https://www.yangju.go.kr/www/contents.do?key=3499",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "search_index"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-0cbaef26c19a",
+      "name": "이편한치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1457149467",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 평화로 1713 이마트 3층",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-2b9993c12d81",
+      "name": "조은이플란트치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+          "status": "verified",
+          "evidenceUrls": [
+            "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/"
+          ],
+          "notes": "홈페이지 본문의 기관명·주소·전화번호를 공공자료와 대조. 홈페이지 자체 안내 확인이며 전화 연결·현장 영업 확인은 아님.",
+          "bodyVerified": true,
+          "identityVerified": true
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1195813901",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 부흥로 2152-4 2층",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": "https://blog.naver.com/chooneeplant",
+          "status": "blocked",
+          "evidenceUrls": [
+            "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/"
+          ],
+          "notes": "홈페이지가 블로그로 연결한 실제 URL. 블로그 본문 접근 제한.",
+          "bodyVerified": false,
+          "identityVerified": false
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "경기도 양주시 부흥로 2152-4 2층",
+          "sourceUrl": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "도로명·건물번호 일치. 층·호수 및 표기 차이는 원문 유지.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-847-5550",
+          "sourceUrl": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "website",
+          "value": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+          "sourceUrl": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "공공자료 홈페이지 빈 값을 보충하는 별도 관찰. 원자료는 변경하지 않음.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "hoursSummary",
+          "value": "월·화·목·금 09:30~18:30, 수 09:30~19:30, 토 09:30~14:00. 점심13:00~14:00(토 없음), 일·공휴일 휴진.",
+          "sourceUrl": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-b08c334a0ece",
+      "name": "좋은얼굴치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/13546847",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 고읍남로 1",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-5554dc5ca79b",
+      "name": "주내다나치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/13236298",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 고읍로 76 양주농협 덕현지점",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-3ef8b931b29f",
+      "name": "즐거운치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/13236464",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 고암길 306-77 황금프라자",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-76938909f739",
+      "name": "큰별치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": "https://www.bigstardent.com/",
+          "status": "verified",
+          "evidenceUrls": [
+            "https://www.bigstardent.com/"
+          ],
+          "notes": "홈페이지 본문의 기관명·주소·전화번호를 공공자료와 대조. 홈페이지 자체 안내 확인이며 전화 연결·현장 영업 확인은 아님.",
+          "bodyVerified": true,
+          "identityVerified": true
+        },
+        "naverPlace": {
+          "url": "https://m.place.naver.com/hospital/2014773846/home",
+          "status": "verified",
+          "evidenceUrls": [
+            "https://www.bigstardent.com/",
+            "https://m.place.naver.com/hospital/2014773846/review/visitor",
+            "https://m.place.naver.com/hospital/2014773846/home"
+          ],
+          "notes": "홈페이지 리뷰 링크에서 플레이스 홈으로 이동. 본문 주소·전화·홈페이지 역링크 일치.",
+          "bodyVerified": true,
+          "identityVerified": true
+        },
+        "naverBlog": {
+          "url": "https://blog.naver.com/bigstardent",
+          "status": "blocked",
+          "evidenceUrls": [
+            "https://m.place.naver.com/hospital/2014773846/home"
+          ],
+          "notes": "주소·전화 일치한 네이버 플레이스의 블로그 연결. 블로그 본문 접근 제한.",
+          "bodyVerified": false,
+          "identityVerified": false
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "경기도 양주시 옥정동로 187 3층 301·302·303호",
+          "sourceUrl": "https://www.bigstardent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "도로명·건물번호 일치. 층·호수 및 표기 차이는 원문 유지.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-894-5828",
+          "sourceUrl": "https://www.bigstardent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "website",
+          "value": "https://www.bigstardent.com/",
+          "sourceUrl": "https://www.bigstardent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "공공자료 홈페이지 빈 값을 보충하는 별도 관찰. 원자료는 변경하지 않음.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "hoursSummary",
+          "value": "월·수·금10:00~18:30(점심13:00~14:00), 화·목12:00~20:30(휴게17:00~18:00), 토10:00~14:00(13:30접수마감), 일요일휴진.",
+          "sourceUrl": "https://www.bigstardent.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "supplement",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "address",
+          "value": "경기 양주시 옥정동로 187 3층 301, 302, 303호",
+          "sourceUrl": "https://m.place.naver.com/hospital/2014773846/home",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-894-5828",
+          "sourceUrl": "https://m.place.naver.com/hospital/2014773846/home",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-59e51fdbaa8d",
+      "name": "튼튼이치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/19524253",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 삼숭로38번길 102 양주프라자3차 2층",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-5920bde2f098",
+      "name": "화이트라인치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/1677130038",
+          "status": "candidate",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "화이트라인치과의원 양주 표기의 실제 href. 회천남로 88 M타워3층 일치. 네이버 본문 직접 대조 전."
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-724525341dbf",
+      "name": "화인치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/78147088",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 옥정동로 274",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    },
+    {
+      "clinicId": "c-19e62cb7beb3",
+      "name": "THE(더) 조은 치과의원",
+      "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+      "channels": {
+        "website": {
+          "url": "http://www.thejoeun.org/",
+          "status": "verified",
+          "evidenceUrls": [
+            "http://www.thejoeun.org/",
+            "https://thejoeun.tistory.com/"
+          ],
+          "notes": "공공자료 URL의 frameset이 thejoeun.tistory.com을 표시. 해당 티스토리에서 주소·전화 일치 확인. 네이버 블로그와 구분.",
+          "bodyVerified": true,
+          "identityVerified": true
+        },
+        "naverPlace": {
+          "url": "https://map.naver.com/p/entry/place/19494490",
+          "status": "blocked",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "notes": "제3자 디렉토리의 실제 링크와 기관명·도로명·건물번호 일치. 네이버 URL 직접 열기는 접근 제한. 네이버 본문으로 동일 기관 여부를 확정하지 못한 후보.",
+          "directoryAddress": "경기 양주시 고읍남로 2 해동월드타워",
+          "sourceType": "third_party_directory"
+        },
+        "naverBlog": {
+          "url": null,
+          "status": "not_found",
+          "bodyVerified": false,
+          "identityVerified": false,
+          "evidenceUrls": [],
+          "notes": "검색한 범위에서 동일 기관의 URL을 발굴하지 못함. 해당 채널이 없다는 뜻은 아님."
+        }
+      },
+      "facts": [
+        {
+          "field": "address",
+          "value": "경기도 양주시 고읍남로 2 해동월드타워 4층",
+          "sourceUrl": "https://thejoeun.tistory.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "도로명·건물번호 일치. 층·호수 및 표기 차이는 원문 유지.",
+          "sourceEvidenceMode": "direct_page"
+        },
+        {
+          "field": "phone",
+          "value": "031-843-2080",
+          "sourceUrl": "https://thejoeun.tistory.com/",
+          "checkedAt": "2026-10-31T14:23:47.104099+00:00",
+          "status": "observed",
+          "comparison": "matched",
+          "notes": "",
+          "sourceEvidenceMode": "direct_page"
+        }
+      ],
+      "searchScope": "기관명·양주 또는 등록 전화번호로 홈페이지/지도/블로그 검색, 발견 홈페이지의 공개 연결 링크 대조. 전국 채널 전수조사 아님."
+    }
+  ]
+}

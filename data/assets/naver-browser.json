@@ -1,0 +1,2864 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-31T21:40:03.710Z",
+  "scope": {
+    "region": "경기도 양주시",
+    "targetCount": 67,
+    "method": "Chrome 공개 UI의 기본 사업정보 직접 관찰",
+    "excluded": [
+      "찾아오는길",
+      "소개문구",
+      "공지본문",
+      "리뷰본문",
+      "사진"
+    ],
+    "observedCount": 67,
+    "limitations": [
+      "네이버 표시값의 관찰이며 실제 영업 여부를 실시간 검증한 것은 아니다.",
+      "미표시·미확보 필드는 다른 출처로 채우지 않았다.",
+      "네이버 홈페이지 항목의 표시 URL과 클릭 후 이동 URL·대상 본문 확인은 구분했다.",
+      "공공자료 종별과 네이버 카테고리 치과는 별도 필드다."
+    ]
+  },
+  "records": [
+    {
+      "clinicId": "c-f8b41f196f7e",
+      "name": "서울송추치과의원",
+      "checkedAt": "2026-10-31T21:31:48.604Z",
+      "assets": [
+        {
+          "kind": "instagram",
+          "label": "네이버 플레이스 연결 인스타그램",
+          "url": "https://www.instagram.com/ssjdent",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/13236065"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울송추치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13236065"
+            },
+            {
+              "field": "phone",
+              "value": "031-829-2876",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13236065"
+            },
+            {
+              "field": "officialLink",
+              "value": "인스타그램 버튼 클릭 후 주소창에서 URL 확인",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13236065"
+            }
+          ],
+          "notes": "네이버 플레이스의 버튼으로 열린 대상 URL을 Chrome 주소창에서 확인했다. 인스타그램 게시물·후기는 수집하지 않았다."
+        },
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://ssjdent.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/13236065"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울송추치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13236065"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 장흥면 가마골로 4 2층 서울송추치과",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13236065"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13236065"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236065",
+          "checkedAt": "2026-10-31T21:31:48.605Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울송추치과의원",
+            "address": "경기 양주시 장흥면 가마골로 4 2층 서울송추치과",
+            "phone": "031-829-2876",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:00 13:00 - 14:00 휴게시간 화 09:00 - 18:00 13:00 - 14:00 휴게시간 수 09:00 - 20:00 13:00 - 14:00 휴게시간 목 정기휴무 (매주 목요일) 금 09:00 - 18:00 13:00 - 14:00 휴게시간 토 09:00 - 13:00",
+            "website": "https://ssjdent.com",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-22fda844c356",
+      "name": "서울수려한치과병원",
+      "checkedAt": "2026-10-31T21:32:24.023Z",
+      "assets": [
+        {
+          "kind": "instagram",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://instagram.com/srh_dental/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1529488632"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울수려한치과병원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1529488632"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 222 옥정스카이타워 401호~405호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1529488632"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1529488632"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1529488632",
+          "checkedAt": "2026-10-31T21:32:24.023Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울수려한치과병원",
+            "address": "경기 양주시 옥정로 222 옥정스카이타워 401호~405호",
+            "phone": "0507-1325-5098",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 20:30 13:00 - 14:00 휴게시간 20:00 접수마감 수 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 09:30 - 20:30 13:00 - 14:00 휴게시간 20:00 접수마감 금 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:00 - 13:30 13:00 접수마감",
+            "website": "http://instagram.com/srh_dental/",
+            "amenities": "무선 인터넷, 남/녀 화장실 구분, 예약, 유아시설 (놀이방), 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "유튜브",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-eff3f4509c95",
+      "name": "서울온맘치과의원",
+      "checkedAt": "2026-10-31T21:32:34.389Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/onmaeumdental",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1613774009"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울온맘치과의원 양주",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1613774009"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 140 진산메디프라자 3층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1613774009"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1613774009"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1613774009",
+          "checkedAt": "2026-10-31T21:32:34.389Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울온맘치과의원 양주",
+            "address": "경기 양주시 덕계로 140 진산메디프라자 3층",
+            "phone": "0507-1339-2884",
+            "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 17:00 월 09:30 - 20:00 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 20:00 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 정기휴무 (매주 토요일)",
+            "website": "https://blog.naver.com/onmaeumdental",
+            "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 명칭의 지역 접미사 양주를 제외하면 서울온맘치과의원으로 일치한다. 원자료와 네이버에서 덕계로 140 진산메디프라자 3층 주소가 일치한다. 네이버 0507 전화는 원자료 031 대표전화와 별도이며 전화 일치로 판단하지 않았다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-fd2732bdd99d",
+      "name": "서울수치과의원",
+      "checkedAt": "2026-10-31T21:33:02.471Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://seoulsoodentalclinic.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/13180284"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울수치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13180284"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 삼숭로38번길 71 자이프라자 2차 3308-3310호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13180284"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13180284"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13180284",
+          "checkedAt": "2026-10-31T21:33:02.471Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울수치과의원",
+            "address": "경기 양주시 삼숭로38번길 71 자이프라자 2차 3308-3310호",
+            "phone": "0507-1460-2828",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 12:30 - 14:00 휴게시간 17:30 접수마감 화 09:30 - 20:00 12:30 - 14:00 휴게시간 19:30 접수마감 수 09:30 - 13:00 12:30 접수마감 목 09:30 - 20:00 12:30 - 14:00 휴게시간 19:30 접수마감 금 09:30 - 18:00 12:30 - 14:00 휴게시간 17:30 접수마감 토 09:30 - 12:30 12:00 접수마감",
+            "website": "https://seoulsoodentalclinic.com",
+            "amenities": "남/녀 화장실 구분, 대기공간, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3993510b47f4",
+      "name": "서울아임치과의원",
+      "checkedAt": "2026-10-31T21:33:04.744Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://simdental.co.kr/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1009965126"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울아임치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1009965126"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로4길 4 K타워 4층 401호, 402호, 403호, 404호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1009965126"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1009965126"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1009965126",
+          "checkedAt": "2026-10-31T21:33:04.744Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울아임치과의원",
+            "address": "경기 양주시 덕계로4길 4 K타워 4층 401호, 402호, 403호, 404호",
+            "phone": "031-866-2879",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 20:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 13:30",
+            "website": "http://simdental.co.kr/",
+            "amenities": "단체 이용 가능, 예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-17941b76d0b8",
+      "name": "서울올곧은치과의원",
+      "checkedAt": "2026-10-31T21:34:04.579Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/seoulstraight",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1588554072"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울올곧은치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1588554072"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 백석읍 양주산성로 573 4층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1588554072"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1588554072"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1588554072",
+          "checkedAt": "2026-10-31T21:34:04.579Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울올곧은치과의원",
+            "address": "경기 양주시 백석읍 양주산성로 573 4층",
+            "phone": "031-872-2228",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 20:00 13:00 - 14:00 휴게시간 19:30 접수마감 수 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감",
+            "website": "https://blog.naver.com/seoulstraight",
+            "amenities": "예약, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-68a9fd6d807e",
+      "name": "서울좋은치과의원",
+      "checkedAt": "2026-10-31T21:34:07.642Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/31996021",
+          "checkedAt": "2026-10-31T21:34:07.642Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울좋은치과의원",
+            "address": "경기 양주시 삼숭로38번길 80 3층 2304호",
+            "phone": "031-846-2842",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 13:30",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e8a792f4a666",
+      "name": "서울치과의원",
+      "checkedAt": "2026-10-31T21:34:10.196Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/18076713",
+          "checkedAt": "2026-10-31T21:34:10.196Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울치과의원",
+            "address": "경기 양주시 회정로 135",
+            "phone": "031-864-2845",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 18:30 13:00 - 14:30 휴게시간 화 10:00 - 20:00 13:00 - 14:30 휴게시간 수 10:00 - 18:30 13:00 - 14:30 휴게시간 목 10:00 - 20:00 13:00 - 14:30 휴게시간 금 10:00 - 18:30 13:00 - 14:30 휴게시간 토 10:00 - 13:30",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-6b7c24eea93a",
+      "name": "세브란스에스치과의원",
+      "checkedAt": "2026-10-31T21:34:12.441Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://www.severance-s.co.kr/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1201891139"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "세브란스에스치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1201891139"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 226 제일타워 4층 401,402호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1201891139"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1201891139"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1201891139",
+          "checkedAt": "2026-10-31T21:34:12.441Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "세브란스에스치과의원",
+            "address": "경기 양주시 옥정로 226 제일타워 4층 401,402호",
+            "phone": "0507-1307-6828",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 20:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 14:00 - 20:30 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:30",
+            "website": "http://www.severance-s.co.kr/",
+            "amenities": "남/녀 화장실 구분, 무선 인터넷, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램",
+              "유튜브",
+              "페이스북"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-4464eef9846c",
+      "name": "스마일치과의원",
+      "checkedAt": "2026-10-31T21:34:14.808Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/32721176",
+          "checkedAt": "2026-10-31T21:34:14.808Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "스마일치과의원",
+            "address": "경기 양주시 고읍남로 18 가보프라자",
+            "phone": "0507-1408-2754",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 17:30 12:30 - 14:00 휴게시간 화 10:00 - 17:00 12:30 - 14:00 휴게시간 수 10:00 - 17:30 12:30 - 14:00 휴게시간 목 14:00 - 20:00 금 10:00 - 17:30 12:30 - 14:00 휴게시간 토 10:00 - 13:00",
+            "amenities": "예약, 주차, 무선 인터넷, 남/녀 화장실 구분",
+            "parking": "주차가능",
+            "naverCategory": "치과",
+            "hoursAdditional": "둘째,넷째주 토요일 격주휴무"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-0ec29ac7c301",
+      "name": "아름다운내일치과의원",
+      "checkedAt": "2026-10-31T21:34:26.491Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236062",
+          "checkedAt": "2026-10-31T21:34:26.491Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "아름다운내일치과의원",
+            "address": "경기 양주시 회정로 134 두리테크 덕정타운",
+            "phone": "031-827-2875",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 09:30 - 16:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 정기휴무 (매주 토요일)",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c53d79741667",
+      "name": "양주베스트치과의원",
+      "checkedAt": "2026-10-31T21:34:31.821Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1874272754",
+          "checkedAt": "2026-10-31T21:34:31.821Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "양주베스트치과의원",
+            "address": "경기 양주시 회정로 107",
+            "phone": "0507-1362-2835",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "amenities": "주차",
+            "parking": "주차가능",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c937bc56dc57",
+      "name": "양주아이온소아치과의원",
+      "checkedAt": "2026-10-31T21:34:34.307Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/pediatrlee_dr",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/2002064332"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "양주아이온소아치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2002064332"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 148 한강프라자 4층 401호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2002064332"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2002064332"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/2002064332",
+          "checkedAt": "2026-10-31T21:34:34.307Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "양주아이온소아치과의원",
+            "address": "경기 양주시 덕계로 148 한강프라자 4층 401호",
+            "phone": "031-838-7582",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 12:30 - 14:00 휴게시간 18:40 접수마감 화 14:00 - 20:30 20:10 접수마감 수 10:00 - 19:00 12:30 - 14:00 휴게시간 18:40 접수마감 목 10:00 - 19:00 12:30 - 14:00 휴게시간 18:40 접수마감 금 10:00 - 19:00 12:30 - 14:00 휴게시간 18:40 접수마감 토 09:00 - 14:00 13:40 접수마감",
+            "website": "https://blog.naver.com/pediatrlee_dr",
+            "amenities": "예약, 무선 인터넷, 유아시설 (놀이방), 대기공간, 유아의자, 남/녀 화장실 구분, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e555e89c70c8",
+      "name": "양주이지치과의원",
+      "checkedAt": "2026-10-31T21:34:37.123Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://양주이지치과.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1845344263"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "양주이지치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1845344263"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회천중앙로 236 3층 2, 3, 4호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1845344263"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1845344263"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1845344263",
+          "checkedAt": "2026-10-31T21:34:37.123Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "양주이지치과의원",
+            "address": "경기 양주시 회천중앙로 236 3층 2, 3, 4호",
+            "phone": "0507-1331-2275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 화 10:00 - 21:00 13:00 - 14:00 휴게시간 수 10:00 - 19:00 13:00 - 14:00 휴게시간 목 10:00 - 21:00 13:00 - 14:00 휴게시간 금 10:00 - 19:00 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "http://양주이지치과.com",
+            "amenities": "무선 인터넷, 예약, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "유튜브",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-fcd4969ba92c",
+      "name": "연세365치과의원",
+      "checkedAt": "2026-10-31T21:34:53.761Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://www.yonsei365dental.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1149916618"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세365치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1149916618"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 200",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1149916618"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1149916618"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1149916618",
+          "checkedAt": "2026-10-31T21:34:53.761Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세365치과의원",
+            "address": "경기 양주시 옥정로 200",
+            "phone": "031-868-2275",
+            "hours": "진료 전10시 30분에 진료 시작 일 10:30 - 16:00 월 10:00 - 19:00 12:30 - 14:00 휴게시간 화 10:00 - 19:00 12:30 - 14:00 휴게시간 수 정기휴무 (매주 수요일) 목 10:00 - 20:30 12:30 - 14:00 휴게시간 금 10:00 - 19:00 12:30 - 14:00 휴게시간 토 10:30 - 16:00",
+            "website": "http://www.yonsei365dental.com",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과",
+            "hoursAdditional": "토,일 12:30분 접수마감, 평일 5:30분 접수마감"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-d67e31fb64ff",
+      "name": "아이보듬소아치과의원",
+      "checkedAt": "2026-10-31T21:35:34.442Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://kidshugdc.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1163500721"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "아이보듬 소아치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1163500721"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 208 선양프라자 501, 502, 503호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1163500721"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1163500721"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1163500721",
+          "checkedAt": "2026-10-31T21:35:34.442Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "아이보듬 소아치과의원",
+            "address": "경기 양주시 옥정로 208 선양프라자 501, 502, 503호",
+            "phone": "031-857-7975",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 수 09:30 - 20:30 13:00 - 14:00 휴게시간 20:00 접수마감 목 09:30 - 20:30 12:00 - 13:00 휴게시간 20:00 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:00 - 14:00 13:30 접수마감",
+            "website": "http://kidshugdc.com/",
+            "amenities": "예약, 주차, 유아시설 (놀이방), 무선 인터넷, 남/녀 화장실 구분",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "아이보듬소아치과의원과 아이보듬 소아치과의원은 띄어쓰기 차이다. 두 출처의 전화 031-857-7975 및 옥정로 208 선양프라자 501~503호 주소가 일치한다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-9363219ea471",
+      "name": "연세가온치과의원",
+      "checkedAt": "2026-10-31T21:35:36.986Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://sites.google.com/view/yagaon/%ED%99%88",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1950754624"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세가온치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1950754624"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 208 선양프라자 6층 603, 604, 605호 연세가온치과",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1950754624"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1950754624"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1950754624",
+          "checkedAt": "2026-10-31T21:35:36.986Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세가온치과의원",
+            "address": "경기 양주시 옥정로 208 선양프라자 6층 603, 604, 605호 연세가온치과",
+            "phone": "0507-1390-4504",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 18:30 접수마감 화 10:00 - 19:00 18:30 접수마감 수 10:00 - 19:00 18:30 접수마감 목 10:00 - 14:00 13:30 접수마감 금 10:00 - 21:00 20:30 접수마감 토 정기휴무 (매주 토요일)",
+            "website": "https://sites.google.com/view/yagaon/%ED%99%88",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-bb2283279949",
+      "name": "연세리더스치과의원",
+      "checkedAt": "2026-10-31T21:35:39.964Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1256775236",
+          "checkedAt": "2026-10-31T21:35:39.964Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세리더스치과의원",
+            "address": "경기 양주시 옥정동로4길 3 이레프라자 301호",
+            "phone": "031-867-2879",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 정기휴무 (매주 목요일) 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 13:30",
+            "amenities": "무선 인터넷, 남/녀 화장실 구분, 주차, 예약",
+            "parking": "주차가능",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-05f0f9d82ad8",
+      "name": "연세林(림)치과의원",
+      "checkedAt": "2026-10-31T21:35:42.889Z",
+      "assets": [
+        {
+          "kind": "instagram",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://www.instagram.com/yslimdc",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/20149931"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세림치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/20149931"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 고읍남로 6 4층 연세림치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/20149931"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/20149931"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/20149931",
+          "checkedAt": "2026-10-31T21:35:42.889Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세림치과의원",
+            "address": "경기 양주시 고읍남로 6 4층 연세림치과의원",
+            "phone": "0507-1365-2879",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 12:30 - 14:00 휴게시간 17:15 접수마감 화 09:30 - 20:30 12:30 - 14:00 휴게시간 17:00 - 18:00 휴게시간 19:45 접수마감 수(11/4) 휴무 목 09:30 - 18:00 12:30 - 14:00 휴게시간 17:15 접수마감 금 09:30 - 18:00 12:30 - 14:00 휴게시간 17:15 접수마감 토 09:30 - 13:00 12:15 접수마감 11/14 , 11/21 휴무",
+            "website": "https://www.instagram.com/yslimdc",
+            "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "원자료 연세林(림)치과의원의 한자·괄호 표기를 한글로 풀면 네이버 연세림치과의원과 일치한다. 두 출처에서 고읍남로 6의 4층(원자료 402호) 주소가 일치한다. 0507 전화와 031 대표전화는 별도 표시다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-5c08c2bb08c3",
+      "name": "연세미치과의원",
+      "checkedAt": "2026-10-31T21:35:46.091Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236424",
+          "checkedAt": "2026-10-31T21:35:46.091Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세미치과의원",
+            "address": "경기 양주시 회정로 132 파르코프라자 301호",
+            "phone": "031-857-3200",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 20:30 12:30 - 14:00 휴게시간 20:00 접수마감 화 10:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 금 10:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 13:00 12:30 접수마감",
+            "amenities": "예약, 주차",
+            "parking": "주차가능 무료",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3b189ea451e8",
+      "name": "연세세브란스치과의원 양주",
+      "checkedAt": "2026-10-31T21:36:06.483Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://yonsevyj.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/2067807343?placePath=/home"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세세브란스치과의원 양주",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2067807343?placePath=/home"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 138-32 4층 414~418호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2067807343?placePath=/home"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2067807343?placePath=/home"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/2067807343?placePath=/home",
+          "checkedAt": "2026-10-31T21:36:06.483Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세세브란스치과의원 양주",
+            "address": "경기 양주시 덕계로 138-32 4층 414~418호",
+            "phone": "031-838-2267",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 20:30 13:00 - 14:00 휴게시간 20:00 접수마감 수 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 09:30 - 20:30 13:00 - 14:00 휴게시간 20:00 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감",
+            "website": "https://yonsevyj.com/",
+            "amenities": "예약, 무선 인터넷, 대기공간, 남/녀 화장실 구분, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-1dab1bc951f5",
+      "name": "연세센터원치과의원",
+      "checkedAt": "2026-10-31T21:36:09.240Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://www.yscenter1.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1794363728"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세센터원치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1794363728"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회천남로 92 센타프라자 5층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1794363728"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1794363728"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1794363728",
+          "checkedAt": "2026-10-31T21:36:09.240Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세센터원치과의원",
+            "address": "경기 양주시 회천남로 92 센타프라자 5층",
+            "phone": "0507-1320-2119",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 20:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:00 - 14:00",
+            "website": "http://www.yscenter1.com",
+            "amenities": "무선 인터넷, 남/녀 화장실 구분, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램",
+              "유튜브",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-2e60c349b067",
+      "name": "연세쉼표치과의원",
+      "checkedAt": "2026-10-31T21:36:11.892Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://www.commadental.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1905328741"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세쉼표치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1905328741"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 214 pop타워 5층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1905328741"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1905328741"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1905328741",
+          "checkedAt": "2026-10-31T21:36:11.892Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세쉼표치과의원",
+            "address": "경기 양주시 옥정로 214 pop타워 5층",
+            "phone": "031-857-9069",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 13:00 - 21:00 17:00 - 18:00 휴게시간 화 13:00 - 21:00 17:00 - 18:00 휴게시간 수 13:00 - 21:00 17:00 - 18:00 휴게시간 목 13:00 - 21:00 17:00 - 18:00 휴게시간 금 13:00 - 21:00 17:00 - 18:00 휴게시간 토 정기휴무 (매주 토요일)",
+            "website": "http://www.commadental.com/",
+            "amenities": "남/녀 화장실 구분, 장애인 편의시설, 주차, 무선 인터넷, 예약",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-00e964567fee",
+      "name": "강남연세치과의원",
+      "checkedAt": "2026-10-31T21:36:14.107Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://yonsei-gangnam.co.kr",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1984826113"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "강남연세치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1984826113"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 204 한길프라자 3층 303호, 304호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1984826113"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1984826113"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1984826113",
+          "checkedAt": "2026-10-31T21:36:14.107Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "강남연세치과의원",
+            "address": "경기 양주시 옥정로 204 한길프라자 3층 303호, 304호",
+            "phone": "031-865-2875",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 13:30",
+            "website": "http://yonsei-gangnam.co.kr",
+            "amenities": "주차, 남/녀 화장실 구분, 무선 인터넷, 예약",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-bb63ccfaf425",
+      "name": "강호플러스치과의원",
+      "checkedAt": "2026-10-31T21:36:16.631Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236498",
+          "checkedAt": "2026-10-31T21:36:16.631Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "강호플러스치과의원",
+            "address": "경기 양주시 평화로 1440 스타프라자 3층 301호",
+            "phone": "031-863-3840",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 13:00 - 14:00 휴게시간 화 09:30 - 18:00 13:00 - 14:00 휴게시간 수 09:30 - 18:00 13:00 - 14:00 휴게시간 목 14:00 - 19:00 금 09:30 - 18:00 13:00 - 14:00 휴게시간 토 09:30 - 13:00",
+            "amenities": "주차, 무선 인터넷, 남/녀 화장실 구분, 예약",
+            "parking": "주차가능",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-59b36bbd3d31",
+      "name": "고읍미소치과의원",
+      "checkedAt": "2026-10-31T21:36:24.394Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/37991643",
+          "checkedAt": "2026-10-31T21:36:24.394Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "고읍미소치과의원",
+            "address": "경기 양주시 고읍남로 20 필립프라자",
+            "phone": "031-841-2275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 18:30 13:00 - 14:00 휴게시간 화 10:00 - 18:30 13:00 - 14:00 휴게시간 수 10:00 - 18:30 13:00 - 14:00 휴게시간 목 10:00 - 18:30 13:00 - 14:00 휴게시간 금 10:00 - 18:30 13:00 - 14:00 휴게시간 토 10:00 - 14:00",
+            "amenities": "예약, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-aeee409c9a5a",
+      "name": "곽기재치과의원",
+      "checkedAt": "2026-10-31T21:36:27.194Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1672951538",
+          "checkedAt": "2026-10-31T21:36:27.194Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "곽기재치과",
+            "address": "경기 양주시 남면 개나리길 79-2 곽기재치과의원",
+            "hours": "일요일 휴무 공휴일 휴무 평일 10:00 - 18:00점심시간13시~14시 화요일 10:00 - 17:00 목요일 10:00 - 17:00 토요일 10:00 - 13:00매달 2,4째 토요일 휴무",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다. 전화번호 항목이 홈 화면에 표시되지 않아 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 짧은 명칭 곽기재치과와 원자료 곽기재치과의원은 동일 고유명칭이다. 네이버 주소에도 곽기재치과의원이라고 표시되며 남면 개나리길 79-2가 원자료와 일치한다. 네이버 전화는 표시되지 않아 전화 대조 근거로 사용하지 않았다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e61f478dfb00",
+      "name": "광적치과의원",
+      "checkedAt": "2026-10-31T21:36:29.364Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1286118420",
+          "checkedAt": "2026-10-31T21:36:29.364Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "광적치과의원",
+            "address": "경기 양주시 광적면 가래비길 98",
+            "phone": "031-871-2870",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:20 - 17:40 13:00 - 14:00 휴게시간 화 09:20 - 17:40 13:00 - 14:00 휴게시간 수 09:20 - 17:40 13:00 - 14:00 휴게시간 목 09:20 - 17:40 13:00 - 14:00 휴게시간 금 09:20 - 17:40 13:00 - 14:00 휴게시간 토 정기휴무 (매주 토요일)",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e479a317352d",
+      "name": "늘사랑치과의원",
+      "checkedAt": "2026-10-31T21:36:32.191Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/33904285",
+          "checkedAt": "2026-10-31T21:36:32.191Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "늘사랑치과의원",
+            "address": "경기 양주시 고읍남로 6-16 광장프라자 2층 204호",
+            "phone": "031-847-7528",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 화 09:30 - 20:30 13:00 - 14:00 휴게시간 18:00 - 18:30 휴게시간 19:30 접수마감 수 09:30 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 목 09:30 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 금 09:30 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 토 09:30 - 14:00 13:00 접수마감",
+            "amenities": "예약, 대기공간, 남/녀 화장실 구분, 무선 인터넷, 주차",
+            "parking": "주차가능 무료",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-d3f7a2e14832",
+      "name": "더라이프치과의원",
+      "checkedAt": "2026-10-31T21:36:34.850Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://thelifedc.co.kr/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1837176355"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "더라이프치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1837176355"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회천남로 76 3층 302호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1837176355"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1837176355"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1837176355",
+          "checkedAt": "2026-10-31T21:36:34.850Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "더라이프치과의원",
+            "address": "경기 양주시 회천남로 76 3층 302호",
+            "phone": "0507-1377-2275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 20:30 12:30 - 14:00 휴게시간 20:00 접수마감 화 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 수 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 목 09:30 - 20:30 12:30 - 14:00 휴게시간 20:00 접수마감 금 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감 11/12 , 11/21 휴무",
+            "website": "http://thelifedc.co.kr/",
+            "amenities": "단체 이용 가능, 예약, 유아시설 (놀이방), 무선 인터넷, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-99e1bd1c8c31",
+      "name": "더스탠다드치과의원",
+      "checkedAt": "2026-10-31T21:36:43.083Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://thestandardc.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1463095068"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "더스탠다드치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1463095068"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 고읍남로 15 마들프라자 201호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1463095068"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1463095068"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1463095068",
+          "checkedAt": "2026-10-31T21:36:43.083Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "더스탠다드치과의원",
+            "address": "경기 양주시 고읍남로 15 마들프라자 201호",
+            "phone": "031-846-2888",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 12:30 - 14:00 휴게시간 화 09:30 - 20:30 12:30 - 14:00 휴게시간 수 09:30 - 18:30 12:30 - 14:00 휴게시간 목 09:30 - 18:30 12:30 - 14:00 휴게시간 금 09:30 - 18:30 12:30 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "http://thestandardc.com/",
+            "amenities": "주차",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-1be6fae19937",
+      "name": "덕계베스트치과의원",
+      "checkedAt": "2026-10-31T21:36:45.544Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://www.dgbest.kr",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1959429493"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "덕계베스트치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1959429493"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 132-12 제이타워 3층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1959429493"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1959429493"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1959429493",
+          "checkedAt": "2026-10-31T21:36:45.544Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "덕계베스트치과의원",
+            "address": "경기 양주시 덕계로 132-12 제이타워 3층",
+            "phone": "031-858-2275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:30 - 14:30 휴게시간 화 10:00 - 20:30 13:30 - 14:30 휴게시간 수 10:00 - 19:00 13:30 - 14:30 휴게시간 목 10:00 - 20:30 13:30 - 14:30 휴게시간 금 10:00 - 19:00 13:30 - 14:30 휴게시간 토 09:30 - 14:30",
+            "website": "http://www.dgbest.kr",
+            "amenities": "무선 인터넷, 남/녀 화장실 구분, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-84400bad284c",
+      "name": "덕계치과의원",
+      "checkedAt": "2026-10-31T21:36:47.810Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/19533122",
+          "checkedAt": "2026-10-31T21:36:47.810Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "덕계치과의원",
+            "address": "경기 양주시 평화로 1410",
+            "phone": "031-863-0414",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:40 - 17:20 12:30 - 14:00 휴게시간 16:50 접수마감 화 09:40 - 17:20 12:30 - 14:00 휴게시간 16:50 접수마감 수 09:40 - 20:20 12:30 - 14:00 휴게시간 19:50 접수마감 목 09:40 - 17:20 12:30 - 14:00 휴게시간 16:50 접수마감 금 09:40 - 17:20 12:30 - 14:00 휴게시간 16:50 접수마감 토 09:40 - 11:20 10:50 접수마감",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c935e0b8bf84",
+      "name": "덕정통치과의원",
+      "checkedAt": "2026-10-31T21:36:51.072Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/djtongdent",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1209483903"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "덕정통치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1209483903"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 화합로 1363 아트시티 301호, 302호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1209483903"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1209483903"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1209483903",
+          "checkedAt": "2026-10-31T21:36:51.072Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "덕정통치과의원",
+            "address": "경기 양주시 화합로 1363 아트시티 301호, 302호",
+            "phone": "0507-1323-8280",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:00 13:00 - 14:00 휴게시간 화 09:00 - 18:00 13:00 - 14:00 휴게시간 수 14:00 - 20:30 18:00 - 18:30 휴게시간 목 09:00 - 18:00 13:00 - 14:00 휴게시간 금(11/6) 휴무 토(11/7) 휴무",
+            "website": "https://blog.naver.com/djtongdent",
+            "amenities": "남/녀 화장실 구분, 대기공간, 무선 인터넷, 단체 이용 가능, 예약, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-53ec190cb715",
+      "name": "리온치과의원",
+      "checkedAt": "2026-10-31T21:36:53.434Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://reondc.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1254887348"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "리온치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1254887348"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 130 4층 (부경타워)",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1254887348"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1254887348"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1254887348",
+          "checkedAt": "2026-10-31T21:36:53.434Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "리온치과의원",
+            "address": "경기 양주시 덕계로 130 4층 (부경타워)",
+            "phone": "031-863-7522",
+            "hours": "진료 전9시 30분에 진료 시작 일 09:30 - 14:00 13:30 접수마감 월 09:30 - 20:30 13:00 - 14:00 휴게시간 20:00 접수마감 화 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 수 09:30 - 20:30 13:00 - 14:00 휴게시간 20:00 접수마감 목 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감 매달 5번째 일요일 정기 휴무",
+            "website": "https://reondc.com/",
+            "amenities": "예약, 대기공간, 무선 인터넷, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "유튜브",
+              "인스타그램",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-814dcd94f579",
+      "name": "미소치과의원",
+      "checkedAt": "2026-10-31T21:37:00.875Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/19528176",
+          "checkedAt": "2026-10-31T21:37:00.875Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "미소치과의원",
+            "address": "경기 양주시 백석읍 양주산성로 564",
+            "phone": "031-877-2830",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 13:00 - 14:00 휴게시간 화 09:30 - 18:00 13:00 - 14:00 휴게시간 수 09:30 - 18:00 13:00 - 14:00 휴게시간 목 09:30 - 18:00 13:00 - 14:00 휴게시간 금 09:30 - 18:00 13:00 - 14:00 휴게시간 토 09:30 - 13:00",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3205917c7339",
+      "name": "바로나치과의원",
+      "checkedAt": "2026-10-31T21:37:03.877Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://baronadc.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1472875833"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바로나치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1472875833"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회천중앙로 248 2층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1472875833"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1472875833"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1472875833",
+          "checkedAt": "2026-10-31T21:37:03.877Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "바로나치과의원",
+            "address": "경기 양주시 회천중앙로 248 2층",
+            "phone": "0507-1434-7529",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "http://baronadc.com/",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-4d695a511e15",
+      "name": "백석튼튼치과의원",
+      "checkedAt": "2026-10-31T21:37:06.858Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/31323336",
+          "checkedAt": "2026-10-31T21:37:06.858Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "백석튼튼치과의원",
+            "address": "경기 양주시 백석읍 양주산성로 564-1 2층",
+            "phone": "031-875-2825",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 17:00 12:30 - 13:45 휴게시간 화 09:30 - 17:00 12:30 - 13:45 휴게시간 수 09:30 - 17:00 12:30 - 13:45 휴게시간 목 정기휴무 (매주 목요일) 금 09:30 - 17:00 12:30 - 13:45 휴게시간 토 09:30 - 14:00",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-f5b42f564b5c",
+      "name": "백이부부치과의원",
+      "checkedAt": "2026-10-31T21:37:09.458Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236457",
+          "checkedAt": "2026-10-31T21:37:09.458Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "백이부부치과의원",
+            "address": "경기 양주시 회정로 114",
+            "phone": "031-859-2875",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 화 09:30 - 20:00 수 09:30 - 18:30 목 09:30 - 20:00 금 09:30 - 18:30 토 09:30 - 14:00",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3e681c29ac55",
+      "name": "비룡치과의원",
+      "checkedAt": "2026-10-31T21:37:10.717Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1226091552",
+          "checkedAt": "2026-10-31T21:37:10.717Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "비룡치과의원",
+            "address": "경기 양주시 남면 감악산로 226 통합생활관 건물 1층 일부",
+            "phone": "031-863-5613",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다. 방문 당시 홈 화면에 운영시간 항목이 표시되지 않아 수집하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3119420e05a7",
+      "name": "서울 탑 치과의원",
+      "checkedAt": "2026-10-31T21:37:21.225Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/37912892",
+          "checkedAt": "2026-10-31T21:37:21.225Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울탑치과의원",
+            "address": "경기 양주시 백석읍 양주산성로 645 가동 2층",
+            "phone": "031-879-2777",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 12:30 - 14:00 휴게시간 화 정기휴무 (매주 화요일) 수 09:30 - 18:00 12:30 - 14:00 휴게시간 목 09:30 - 20:00 12:30 - 14:00 휴게시간 금 09:30 - 18:00 12:30 - 14:00 휴게시간 토 09:30 - 14:00",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "서울 탑 치과의원과 서울탑치과의원은 띄어쓰기 차이다. 두 출처의 전화 031-879-2777 및 백석읍 양주산성로 645 가동 2층 주소가 일치한다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-33684ea3dfbc",
+      "name": "서울늘봄치과의원",
+      "checkedAt": "2026-10-31T21:37:24.032Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/seoulneulbomdental",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1754848323"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울늘봄치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1754848323"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 광적면 가래비12길 11-15 4층 서울늘봄치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1754848323"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1754848323"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1754848323",
+          "checkedAt": "2026-10-31T21:37:24.032Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울늘봄치과의원",
+            "address": "경기 양주시 광적면 가래비12길 11-15 4층 서울늘봄치과의원",
+            "phone": "0507-1460-2875",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 화 09:00 - 19:30 13:00 - 14:00 휴게시간 18:30 접수마감 수 09:00 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 목 09:00 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 금 09:00 - 19:30 13:00 - 14:00 휴게시간 18:30 접수마감 토 09:00 - 14:00 13:00 접수마감",
+            "website": "https://blog.naver.com/seoulneulbomdental",
+            "amenities": "주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e85fb1c2f406",
+      "name": "서울명문치과의원",
+      "checkedAt": "2026-10-31T21:37:26.596Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1222132703",
+          "checkedAt": "2026-10-31T21:37:26.596Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울명문치과의원",
+            "address": "경기 양주시 고읍남로 6-10 한솔프라자 2층 서울명문치과의원",
+            "phone": "031-894-7528",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 20:00 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-2221e782abd8",
+      "name": "서울베스트치과의원",
+      "checkedAt": "2026-10-31T21:37:31.045Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1503746518",
+          "checkedAt": "2026-10-31T21:37:31.045Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울베스트치과의원",
+            "address": "경기 양주시 백석읍 호명로 69 2층",
+            "phone": "0507-1323-2275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 18:00 17:30 접수마감 화 10:00 - 18:00 17:30 접수마감 수 10:00 - 18:00 17:30 접수마감 목 10:00 - 21:00 20:30 접수마감 금 10:00 - 18:00 17:30 접수마감 토 10:00 - 14:00 13:30 접수마감",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-6db53519ff3b",
+      "name": "서울솔치과의원",
+      "checkedAt": "2026-10-31T21:37:44.668Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/19533091",
+          "checkedAt": "2026-10-31T21:37:44.668Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울솔치과의원",
+            "address": "경기 양주시 회정로 91",
+            "phone": "031-861-2870",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 12:30 - 14:00 휴게시간 17:30 접수마감 화 09:30 - 20:00 12:30 - 14:00 휴게시간 19:00 접수마감 수 정기휴무 (매주 수요일) 목 09:30 - 20:00 12:30 - 14:00 휴게시간 19:00 접수마감 금 09:30 - 18:30 12:30 - 14:00 휴게시간 17:30 접수마감 토 09:30 - 13:30 12:30 접수마감",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e2b19dfec279",
+      "name": "연세웰치과의원",
+      "checkedAt": "2026-10-31T21:37:47.246Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/19810066",
+          "checkedAt": "2026-10-31T21:37:47.246Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세웰치과의원",
+            "address": "경기 양주시 평화로 1437",
+            "phone": "031-866-2876",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 13:00 - 14:00 휴게시간 화 09:30 - 17:00 13:00 - 14:00 휴게시간 수 09:30 - 13:00 목 09:30 - 18:00 13:00 - 14:00 휴게시간 금 09:30 - 18:00 13:00 - 14:00 휴게시간 토 09:30 - 13:00",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-8347cdeeeb70",
+      "name": "옥정공감치과의원",
+      "checkedAt": "2026-10-31T21:37:50.059Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://www.ggdent.co.kr",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1384418060"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "옥정공감치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1384418060"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 218 신운정튼튼프라자 3층 302호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1384418060"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1384418060"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1384418060",
+          "checkedAt": "2026-10-31T21:37:50.059Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "옥정공감치과의원",
+            "address": "경기 양주시 옥정로 218 신운정튼튼프라자 3층 302호",
+            "phone": "0507-1388-3100",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:30 휴게시간 12:00, 18:00 접수마감 화 10:00 - 21:00 13:00 - 14:30 휴게시간 12:00, 20:00 접수마감 수 10:00 - 19:00 13:00 - 14:30 휴게시간 12:00, 18:00 접수마감 목 10:00 - 19:00 13:00 - 14:30 휴게시간 12:00, 18:00 접수마감 금 10:00 - 19:00 13:00 - 14:30 휴게시간 12:00, 18:00 접수마감 토 09:00 - 13:00 12:00 접수마감",
+            "website": "http://www.ggdent.co.kr",
+            "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-6a0d8d75bdc1",
+      "name": "옥정든든치과의원",
+      "checkedAt": "2026-10-31T21:37:52.776Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/okjeong_dentist",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1105187689"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "옥정든든치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1105187689"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 139 다올스퀘어 2층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1105187689"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1105187689"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1105187689",
+          "checkedAt": "2026-10-31T21:37:52.776Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "옥정든든치과의원",
+            "address": "경기 양주시 옥정로 139 다올스퀘어 2층",
+            "phone": "031-526-7528",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 화 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 수 09:30 - 20:30 13:00 - 14:00 휴게시간 12:00, 19:30 접수마감 목 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 토 09:30 - 14:00 13:00 접수마감",
+            "website": "https://blog.naver.com/okjeong_dentist",
+            "amenities": "예약, 주차, 무선 인터넷, 남/녀 화장실 구분",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-997def5ce9a5",
+      "name": "옥정아트치과의원",
+      "checkedAt": "2026-10-31T21:37:55.324Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/art_dentistry",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1058443430"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "옥정아트치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1058443430"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 196 파스텔시티 5층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1058443430"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1058443430"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1058443430",
+          "checkedAt": "2026-10-31T21:37:55.324Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "옥정아트치과의원",
+            "address": "경기 양주시 옥정로 196 파스텔시티 5층",
+            "phone": "031-868-2879",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 12:30 - 14:00 휴게시간 화 09:30 - 18:30 12:30 - 14:00 휴게시간 수 09:30 - 21:00 12:30 - 14:00 휴게시간 18:00 - 18:30 휴게시간 목 정기휴무 (매주 목요일) 금 09:30 - 18:30 12:30 - 14:00 휴게시간 토 09:30 - 14:00 11/20-11/21 휴무",
+            "website": "https://blog.naver.com/art_dentistry",
+            "amenities": "남/녀 화장실 구분, 예약, 무선 인터넷, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-4141dbc2bbfd",
+      "name": "서울바른성장치과의원",
+      "checkedAt": "2026-10-31T21:38:02.978Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://sbarungrow.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1607270635"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울바른성장치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1607270635"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 214 pop타워 3층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1607270635"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1607270635"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1607270635",
+          "checkedAt": "2026-10-31T21:38:02.978Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울바른성장치과의원",
+            "address": "경기 양주시 옥정로 214 pop타워 3층",
+            "phone": "0507-1410-2080",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 수 정기휴무 (매주 수요일) 목 14:00 - 20:30 20:00 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감",
+            "website": "https://sbarungrow.com/",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 유아시설 (놀이방), 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-f03aab4b3617",
+      "name": "옥정온가족치과의원",
+      "checkedAt": "2026-10-31T21:38:13.593Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://onfamdent.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/2034496778?placePath=/home"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "옥정온가족치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2034496778?placePath=/home"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회천로 84 마트킹 2층 옥정온가족치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2034496778?placePath=/home"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/2034496778?placePath=/home"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/2034496778?placePath=/home",
+          "checkedAt": "2026-10-31T21:38:13.593Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "옥정온가족치과의원",
+            "address": "경기 양주시 회천로 84 마트킹 2층 옥정온가족치과의원",
+            "phone": "031-858-2828",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 20:30 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 20:30 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 토 09:30 - 14:00 13:30 접수마감",
+            "website": "https://onfamdent.com/",
+            "amenities": "유아시설 (놀이방), 남/녀 화장실 구분, 유아의자, 대기공간, 무선 인터넷, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-5dee71e5f3d6",
+      "name": "옥정JS치과의원",
+      "checkedAt": "2026-10-31T21:38:16.175Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/ojjsd",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1723903624"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "옥정JS치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1723903624"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정서로 227 2층 204호, 205호",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1723903624"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1723903624"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1723903624",
+          "checkedAt": "2026-10-31T21:38:16.175Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "옥정JS치과의원",
+            "address": "경기 양주시 옥정서로 227 2층 204호, 205호",
+            "phone": "031-928-5275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 18:00 13:00 - 14:00 휴게시간 화 10:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 수 10:00 - 18:00 13:00 - 14:00 휴게시간 목 10:00 - 18:00 13:00 - 14:00 휴게시간 금 10:00 - 18:00 13:00 - 14:00 휴게시간 토(11/7) 휴무 11/21 휴무",
+            "website": "https://blog.naver.com/ojjsd",
+            "amenities": "주차, 예약, 남/녀 화장실 구분, 무선 인터넷",
+            "parking": "주차가능",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-eb195e3002df",
+      "name": "우리들치과의원",
+      "checkedAt": "2026-10-31T21:38:18.959Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://wooridledental.com/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/36161352"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "우리들치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/36161352"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 광적면 백은로 259 3층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/36161352"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/36161352"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/36161352",
+          "checkedAt": "2026-10-31T21:38:18.959Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "우리들치과의원",
+            "address": "경기 양주시 광적면 백은로 259 3층",
+            "phone": "0507-1362-2808",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 17:00 13:00 - 14:00 휴게시간 16:00 접수마감 화 09:00 - 17:00 13:00 - 14:00 휴게시간 16:00 접수마감 수 09:00 - 20:00 13:00 - 14:00 휴게시간 17:00 - 18:00 휴게시간 19:00 접수마감 목 정기휴무 (매주 목요일) 금 09:00 - 17:00 13:00 - 14:00 휴게시간 16:00 접수마감 토 09:00 - 12:30 11:30 접수마감",
+            "website": "http://wooridledental.com/",
+            "amenities": "예약, 주차, 무선 인터넷, 남/녀 화장실 구분",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-be42ae28ae35",
+      "name": "우리치과의원",
+      "checkedAt": "2026-10-31T21:38:21.642Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236522",
+          "checkedAt": "2026-10-31T21:38:21.642Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "우리치과의원",
+            "address": "경기 양주시 평화로 1426 301호",
+            "phone": "031-865-0505",
+            "hours": "진료 전9시 30분에 진료 시작 일 09:30 - 14:00 월 09:30 - 18:00 12:30 - 14:00 휴게시간 화 09:30 - 20:00 12:30 - 14:00 휴게시간 수 09:30 - 18:00 12:30 - 14:00 휴게시간 목 09:30 - 18:00 12:30 - 14:00 휴게시간 금 09:30 - 18:00 12:30 - 14:00 휴게시간 토 정기휴무 (매주 토요일) - 2,4,5주 일요일 휴진",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-dc63e9f5fc1f",
+      "name": "이빛나는치과의원",
+      "checkedAt": "2026-10-31T21:38:24.612Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/e-shinedental",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1709162580"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "이빛나는치과의원 옥정",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1709162580"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로7길 9-19 2층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1709162580"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1709162580"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1709162580",
+          "checkedAt": "2026-10-31T21:38:24.612Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "이빛나는치과의원 옥정",
+            "address": "경기 양주시 옥정로7길 9-19 2층",
+            "phone": "031-928-7331",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 21:00 13:00 - 14:00 휴게시간 화 10:00 - 19:00 수 10:00 - 19:00 목 10:00 - 21:00 13:00 - 14:00 휴게시간 금 10:00 - 19:00 토 09:30 - 14:00",
+            "website": "https://blog.naver.com/e-shinedental",
+            "amenities": "남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 명칭의 지역 접미사 옥정을 제외하면 이빛나는치과의원으로 일치한다. 두 출처의 전화 031-928-7331 및 옥정로7길 9-19 2층 주소가 일치한다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-5671c973376f",
+      "name": "이종훈치과의원",
+      "checkedAt": "2026-10-31T21:38:42.993Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236154",
+          "checkedAt": "2026-10-31T21:38:42.993Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "이종훈치과의원",
+            "address": "경기 양주시 광적면 가래비12길 10 HJ빌딩 3층 이종훈치과의원",
+            "phone": "031-837-0102",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:00 13:00 - 14:00 휴게시간 17:30 접수마감 화 09:30 - 18:00 13:00 - 14:00 휴게시간 17:30 접수마감 수 09:30 - 13:00 12:30 접수마감 목 09:30 - 20:00 13:00 - 14:00 휴게시간 19:30 접수마감 금 09:30 - 18:00 13:00 - 14:00 휴게시간 17:30 접수마감 토 09:30 - 13:00 12:30 접수마감",
+            "amenities": "예약, 주차",
+            "parking": "주차가능 무료",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e1fb836feb2e",
+      "name": "이튼튼소아치과치과의원",
+      "checkedAt": "2026-10-31T21:38:46.443Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1134950580",
+          "checkedAt": "2026-10-31T21:38:46.443Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "이튼튼소아치과치과의원",
+            "address": "경기 양주시 옥정로 200 시네마엠디프라자 305호",
+            "phone": "031-867-2877",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 12:30 - 14:00 휴게시간 화 09:30 - 18:30 12:30 - 14:00 휴게시간 수 09:30 - 18:30 12:30 - 14:00 휴게시간 목 정기휴무 (매주 목요일) 금 09:30 - 18:30 12:30 - 14:00 휴게시간 토 09:30 - 13:00",
+            "amenities": "남/녀 화장실 구분, 무선 인터넷, 유아시설 (놀이방), 주차",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-0cbaef26c19a",
+      "name": "이편한치과의원",
+      "checkedAt": "2026-10-31T21:38:48.552Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1457149467",
+          "checkedAt": "2026-10-31T21:38:48.552Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "이편한치과의원",
+            "address": "경기 양주시 평화로 1713 이마트 3층",
+            "phone": "031-859-2879",
+            "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 17:00 12:30 - 14:00 휴게시간 월 10:00 - 19:30 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 화 10:00 - 19:30 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 수 10:00 - 17:30 12:30 - 14:00 휴게시간 목 10:00 - 19:30 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 금 10:00 - 17:30 12:30 - 14:00 휴게시간 토 정기휴무 (매주 토요일) 11/11 휴무",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-2b9993c12d81",
+      "name": "조은이플란트치과의원",
+      "checkedAt": "2026-10-31T21:38:51.412Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://양주조은이플란트치과.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1195813901"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "조은이플란트치과의원 양주",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1195813901"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 부흥로 2152-4 2층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1195813901"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1195813901"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1195813901",
+          "checkedAt": "2026-10-31T21:38:51.412Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "조은이플란트치과의원 양주",
+            "address": "경기 양주시 부흥로 2152-4 2층",
+            "phone": "031-847-5550",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 19:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "https://양주조은이플란트치과.com",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 명칭의 지역 접미사 양주를 제외하면 조은이플란트치과의원으로 일치한다. 두 출처의 전화 031-847-5550 및 부흥로 2152-4 2층 주소가 일치한다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-b08c334a0ece",
+      "name": "좋은얼굴치과의원",
+      "checkedAt": "2026-10-31T21:38:54.164Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13546847",
+          "checkedAt": "2026-10-31T21:38:54.164Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "좋은얼굴치과의원",
+            "address": "경기 양주시 고읍남로 1",
+            "phone": "031-857-2804",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:10 - 17:30 12:30 - 14:00 휴게시간 화 09:10 - 17:30 12:30 - 14:00 휴게시간 수 09:10 - 17:30 12:30 - 14:00 휴게시간 목 09:10 - 17:30 12:30 - 14:00 휴게시간 금 09:10 - 17:30 12:30 - 14:00 휴게시간 토 09:30 - 13:00",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-5554dc5ca79b",
+      "name": "주내다나치과의원",
+      "checkedAt": "2026-10-31T21:39:01.924Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236298",
+          "checkedAt": "2026-10-31T21:39:01.924Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "주내다나치과의원",
+            "address": "경기 양주시 고읍로 76 양주농협 덕현지점",
+            "phone": "031-848-0025",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 17:00 12:30 - 14:00 휴게시간 16:30 접수마감 화 09:30 - 17:00 12:30 - 14:00 휴게시간 16:30 접수마감 수 09:30 - 17:00 12:30 - 14:00 휴게시간 16:30 접수마감 목 09:30 - 16:30 12:30 - 14:00 휴게시간 16:00 접수마감 금 09:30 - 17:00 12:30 - 14:00 휴게시간 16:30 접수마감 토 09:30 - 13:00 12:30 접수마감",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3ef8b931b29f",
+      "name": "즐거운치과의원",
+      "checkedAt": "2026-10-31T21:39:04.806Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236464",
+          "checkedAt": "2026-10-31T21:39:04.806Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "즐거운치과의원",
+            "address": "경기 양주시 고암길 306-77 황금프라자",
+            "phone": "031-859-6600",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 수 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 목 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 금 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-76938909f739",
+      "name": "큰별치과의원",
+      "checkedAt": "2026-10-31T21:39:07.305Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://www.bigstardent.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://m.place.naver.com/hospital/2014773846/home"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "큰별치과의원",
+              "sourceUrl": "https://m.place.naver.com/hospital/2014773846/home"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정동로 187 3층 301, 302, 303호",
+              "sourceUrl": "https://m.place.naver.com/hospital/2014773846/home"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://m.place.naver.com/hospital/2014773846/home"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://m.place.naver.com/hospital/2014773846/home",
+          "checkedAt": "2026-10-31T21:39:40.288Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "큰별치과의원",
+            "phone": "031-894-5828",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 12:00 - 20:30 17:00 - 18:00 휴게시간 20:00 접수마감 수 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 12:00 - 20:30 17:00 - 18:00 휴게시간 20:00 접수마감 금 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 14:00 13:30 접수마감",
+            "website": "https://www.bigstardent.com",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과",
+            "address": "경기 양주시 옥정동로 187 3층 301, 302, 303호"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-59e51fdbaa8d",
+      "name": "튼튼이치과의원",
+      "checkedAt": "2026-10-31T21:39:10.195Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/19524253",
+          "checkedAt": "2026-10-31T21:39:10.195Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "튼튼이치과의원",
+            "address": "경기 양주시 삼숭로38번길 102 양주프라자3차 2층",
+            "phone": "031-821-2875",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 19:00 13:00 - 14:00 휴게시간 화 09:30 - 19:00 13:00 - 14:00 휴게시간 수 09:30 - 21:00 13:00 - 14:00 휴게시간 목 정기휴무 (매주 목요일) 금 09:30 - 19:00 13:00 - 14:00 휴게시간 토 09:30 - 13:00",
+            "amenities": "예약",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-5920bde2f098",
+      "name": "화이트라인치과의원",
+      "checkedAt": "2026-10-31T21:39:13.254Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://whitelinedent.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/1677130038"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트라인치과의원 양주",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1677130038"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회천남로 88 M타워 3층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1677130038"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/1677130038"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1677130038",
+          "checkedAt": "2026-10-31T21:39:13.254Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "화이트라인치과의원 양주",
+            "address": "경기 양주시 회천남로 88 M타워 3층",
+            "phone": "0507-1418-7716",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 정기휴무 (매주 수요일) 목 09:30 - 20:30 13:00 - 14:00 휴게시간 금 09:30 - 18:00 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "http://whitelinedent.com",
+            "amenities": "무선 인터넷, 남/녀 화장실 구분, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 명칭의 지역 접미사 양주를 제외하면 화이트라인치과의원으로 일치한다. 두 출처에서 회천남로 88 M타워 3층(원자료 301,302호) 주소가 일치한다. 0507 전화와 원자료 031 대표전화는 별도 표시다."
+          }
+        }
+      ]
+    },
+    {
+      "clinicId": "c-724525341dbf",
+      "name": "화인치과의원",
+      "checkedAt": "2026-10-31T21:39:21.993Z",
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "https://blog.naver.com/okjungfinedental",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/78147088"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화인치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/78147088"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정동로 274",
+              "sourceUrl": "https://map.naver.com/p/entry/place/78147088"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/78147088"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/78147088",
+          "checkedAt": "2026-10-31T21:39:21.993Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "화인치과의원",
+            "address": "경기 양주시 옥정동로 274",
+            "phone": "031-862-2879",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 화 10:00 - 19:00 13:00 - 14:00 휴게시간 수 10:00 - 20:30 13:00 - 14:00 휴게시간 목 10:00 - 19:00 13:00 - 14:00 휴게시간 금 10:00 - 19:00 13:00 - 14:00 휴게시간 토 10:00 - 14:00",
+            "website": "https://blog.naver.com/okjungfinedental",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-19e62cb7beb3",
+      "name": "THE(더) 조은 치과의원",
+      "checkedAt": "2026-10-31T21:39:24.329Z",
+      "assets": [
+        {
+          "kind": "website",
+          "label": "네이버 홈페이지 항목 표시 URL",
+          "url": "http://www.thejoeun.org/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/19494490"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "THE조은치과의원",
+              "sourceUrl": "https://map.naver.com/p/entry/place/19494490"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 고읍남로 2 해동월드타워 4층",
+              "sourceUrl": "https://map.naver.com/p/entry/place/19494490"
+            },
+            {
+              "field": "officialLink",
+              "value": "네이버 홈페이지 항목의 버튼에 표시된 URL",
+              "sourceUrl": "https://map.naver.com/p/entry/place/19494490"
+            }
+          ],
+          "notes": "Chrome 네이버 플레이스 본문에 표시된 홈페이지 URL이다. 버튼 클릭 후 이동한 주소나 대상 본문을 확인한 것은 아니며, 실제 대상의 운영주체·콘텐츠는 별도 확인이 필요하다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/19494490",
+          "checkedAt": "2026-10-31T21:39:24.329Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "THE조은치과의원",
+            "address": "경기 양주시 고읍남로 2 해동월드타워 4층",
+            "phone": "031-843-2080",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 20:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 20:30 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "http://www.thejoeun.org/",
+            "amenities": "남/녀 화장실 구분, 유아시설 (놀이방), 대기공간, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈 및 정보 탭의 핵심 사업정보를 읽었다. 소개·찾아오는 길·공지·리뷰 본문은 수집하지 않았다. 표시 시점의 안내이며 실시간 영업 보장은 아니다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 THE조은치과의원은 원자료 THE(더) 조은 치과의원의 한글 병기·띄어쓰기 차이다. 두 출처의 전화 031-843-2080 및 고읍남로 2 해동월드타워 4층(원자료 401,402호)이 일치한다."
+          }
+        }
+      ]
+    }
+  ]
+}

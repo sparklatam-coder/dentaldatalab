@@ -1,0 +1,23 @@
+{
+  "name": "dentaldatalab",
+  "version": "0.7.0",
+  "private": true,
+  "type": "module",
+  "description": "Korean dental public-data reports and condition search. Local review build.",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/server.mjs",
+    "test": "node --test test/*.test.mjs && node scripts/qa.mjs",
+    "test:unit": "node --test test/*.test.mjs",
+    "test:site": "node scripts/qa.mjs",
+    "verify:research": "node scripts/audit-research.mjs",
+    "verify:source": "python3 scripts/verify-official-source.py",
+    "test:naver-discovery": "python3 -m unittest discover -s test -p test_naver_directory.py",
+    "collect:linked-homepages": "node scripts/prepare-discovered-homepages.mjs && python3 scripts/crawl-discovered-homepages.py",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

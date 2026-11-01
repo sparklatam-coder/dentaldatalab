@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "manual_official_homepage_review",
+  "checkedAt": "2026-11-01T09:45:00+09:00",
+  "scope": "의정부 ㄷ~ㅁ 기관 홈페이지 본문 및 검색 색인 조사. 각 출처의 시간 표기는 네이버지도 관찰이 아님.",
+  "records": [
+    {
+      "clinicId": "c-c6a92bf2aacd", "name": "미담은치과의원", "researched": true,
+      "assets": [
+        {"kind":"website","url":"https://www.midameun.com/","label":"공식 홈페이지","ownership":"official","bodyStatus":"read","evidenceUrls":["https://www.midameun.com/"],"identityEvidence":[{"field":"name","value":"미담은치과의원","sourceUrl":"https://www.midameun.com/"},{"field":"address","value":"경기도 의정부시 추동로 93 대성빌딩 3층 301, 302호","sourceUrl":"https://www.midameun.com/"},{"field":"phone","value":"031-853-2875","sourceUrl":"https://www.midameun.com/"}],"notes":"기관명·주소·전화 대조. 홈페이지 안내: 월·화·수·금 09:30–18:30, 목 09:30–20:30, 토 09:30–14:00, 점심 13:00–14:00, 일·공휴일 휴진, 대체휴일 진료. 네이버지도 정보와 별도."},
+        {"kind":"naverBlog","url":"https://blog.naver.com/correspond11548","label":"네이버 블로그","ownership":"linked","bodyStatus":"not_read","evidenceUrls":["https://www.midameun.com/"],"identityEvidence":[{"field":"officialLink","value":"기관 홈페이지의 네이버 블로그 링크","sourceUrl":"https://www.midameun.com/"}]},
+        {"kind":"kakaoChannel","url":"https://pf.kakao.com/_PPSUb","label":"카카오톡 채널","ownership":"linked","bodyStatus":"not_read","evidenceUrls":["https://www.midameun.com/"],"identityEvidence":[{"field":"officialLink","value":"기관 홈페이지의 카카오톡 링크","sourceUrl":"https://www.midameun.com/"}]},
+        {"kind":"other","url":"https://naver.me/xXwydedL","label":"네이버 단축 링크","ownership":"linked","bodyStatus":"not_read","evidenceUrls":["https://www.midameun.com/"],"identityEvidence":[{"field":"officialLink","value":"기관 홈페이지에 표시된 네이버 단축 링크","sourceUrl":"https://www.midameun.com/"}],"notes":"최종 목적지 미확인."}
+      ]
+    },
+    {
+      "clinicId": "c-2728bdb0efd7", "name": "든든치과의원", "researched": true,
+      "assets": [
+        {"kind":"website","url":"https://www.dndndental.com/","label":"공식 홈페이지 (.com)","ownership":"official","bodyStatus":"read","evidenceUrls":["https://www.dndndental.com/"],"identityEvidence":[{"field":"name","value":"든든치과의원","sourceUrl":"https://www.dndndental.com/"},{"field":"address","value":"경기도 의정부시 태평로 78 3층","sourceUrl":"https://www.dndndental.com/"},{"field":"phone","value":"031-825-7575","sourceUrl":"https://www.dndndental.com/"}],"notes":"기관명·주소·전화 대조. 진료시간은 .kr 홈페이지와 서로 달라 최신 여부 미확인. .com 진료안내: 월·목 09:30–20:30, 화·수·금 09:30–18:30, 토·일 09:30–13:30, 공휴일 휴진. 전화 확인 필요."},
+        {"kind":"website","url":"https://dndndental.kr/","label":"공식 홈페이지 (.kr)","ownership":"official","bodyStatus":"read","evidenceUrls":["https://dndndental.kr/"],"identityEvidence":[{"field":"name","value":"든든치과의원","sourceUrl":"https://dndndental.kr/"},{"field":"address","value":"경기도 의정부시 태평로 78 3층","sourceUrl":"https://dndndental.kr/"},{"field":"phone","value":"031-825-7575","sourceUrl":"https://dndndental.kr/"}],"notes":"기관명·주소·전화 대조. .kr 홈페이지 표기 평일 09:30–18:30, 토 09:30–14:00, 일·공휴일 휴진. .com 사이트 시간과 충돌하므로 최신 여부 전화 확인 필요."}
+      ]
+    },
+    {
+      "clinicId":"c-a9e82f03b6a1", "name":"또앙또앙키즈치과의원", "researched":true,
+      "assets":[{"kind":"website","url":"https://www.ttoangdental.com/","label":"홈페이지 후보","ownership":"candidate","bodyStatus":"not_read","evidenceUrls":["https://www.ttoangdental.com/"],"identityEvidence":[],"notes":"검색엔진 색인에 기관명, 의정부시 천보로 56 해동2타워 6층 및 031-825-2224가 표시됨. 직접 본문 열람은 시간 초과되어 현재 소유 및 운영 여부는 미확인."}]
+    }
+  ]
+}

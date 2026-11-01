@@ -1,0 +1,310 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T00:19:43.898Z",
+  "scope": "의정부 치과의 홈페이지 실물과 공공 원자료를 대조하고 표시된 외부 주소를 수집.",
+  "records": [
+    {
+      "clinicId": "c-491b03c6aaea",
+      "name": "서울바른치과교정과치과의원",
+      "checkedAt": "2026-11-01T00:19:43.898Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "서울바른치과교정과치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지 본문의 이름·주소·전화를 원자료와 대조했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://www.seoulbarunujb.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:19:43.898Z",
+          "evidenceUrls": [
+            "https://www.seoulbarunujb.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울바른치과교정과",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 청사로 41 601호",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-852-8575",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 명칭·주소·전화를 공공 원자료와 대조했습니다. 확인 당시 자료이며 현재 운영은 별도 확인이 필요합니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오 채널",
+          "url": "http://pf.kakao.com/_AyFcb",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:19:43.898Z",
+          "evidenceUrls": [
+            "https://www.seoulbarunujb.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울바른치과교정과",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 청사로 41 601호",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-852-8575",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널의 소유 및 본문은 별도로 확인하지 않았습니다."
+        },
+        {
+          "kind": "youtube",
+          "label": "홈페이지 연결 영상 목록",
+          "url": "https://www.youtube.com/playlist?list=PLExNk57mHyX9oxXAaJGuvg5DZypMfGjFj",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:19:43.898Z",
+          "evidenceUrls": [
+            "https://www.seoulbarunujb.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울바른치과교정과",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 청사로 41 601호",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-852-8575",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://www.seoulbarunujb.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널의 소유 및 본문은 별도로 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-48cc7ca32d73",
+      "name": "서울랩치과의원",
+      "checkedAt": "2026-11-01T00:19:43.898Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "서울랩치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지 본문의 이름·주소·전화를 원자료와 대조했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://seoullab-dental.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:19:43.898Z",
+          "evidenceUrls": [
+            "https://seoullab-dental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울랩치과의원",
+              "sourceUrl": "https://seoullab-dental.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 신곡로 46-9 MK빌딩 3층",
+              "sourceUrl": "https://seoullab-dental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-875-2228",
+              "sourceUrl": "https://seoullab-dental.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 명칭·주소·전화를 공공 원자료와 대조했습니다. 확인 당시 자료이며 현재 운영은 별도 확인이 필요합니다."
+        },
+        {
+          "kind": "website",
+          "label": "추가 기관 홈페이지",
+          "url": "https://slddentalclinic.com/index.php",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:19:43.898Z",
+          "evidenceUrls": [
+            "https://slddentalclinic.com/index.php"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울랩치과의원",
+              "sourceUrl": "https://slddentalclinic.com/index.php"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 신곡동 720-9 mk빌딩 3층",
+              "sourceUrl": "https://slddentalclinic.com/index.php"
+            },
+            {
+              "field": "phone",
+              "value": "031-875-2228",
+              "sourceUrl": "https://slddentalclinic.com/index.php"
+            }
+          ],
+          "notes": "공개 홈페이지에 같은 기관명·대표자·전화와 신곡동 720-9 MK빌딩 3층이 표시됩니다. 별도 웹사이트이며 현재 주 사용 여부는 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-6c9a40c523d2",
+      "name": "연세맘스키즈치과의원",
+      "checkedAt": "2026-11-01T00:19:43.898Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "연세맘스키즈치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지 본문의 이름·주소·전화를 원자료와 대조했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://tomatoad.wixsite.com/momskids",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:19:43.898Z",
+          "evidenceUrls": [
+            "https://tomatoad.wixsite.com/momskids"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세맘스키즈치과",
+              "sourceUrl": "https://tomatoad.wixsite.com/momskids"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 금오동 470-5 (홈플러스 맞은편 우리은행건물 4층)",
+              "sourceUrl": "https://tomatoad.wixsite.com/momskids"
+            },
+            {
+              "field": "phone",
+              "value": "031-851-2754",
+              "sourceUrl": "https://tomatoad.wixsite.com/momskids"
+            }
+          ],
+          "notes": "기관 홈페이지의 명칭·주소·전화를 공공 원자료와 대조했습니다. 확인 당시 자료이며 현재 운영은 별도 확인이 필요합니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "http://blog.naver.com/dr_momskids",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:19:43.898Z",
+          "evidenceUrls": [
+            "https://tomatoad.wixsite.com/momskids"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세맘스키즈치과",
+              "sourceUrl": "https://tomatoad.wixsite.com/momskids"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 금오동 470-5 (홈플러스 맞은편 우리은행건물 4층)",
+              "sourceUrl": "https://tomatoad.wixsite.com/momskids"
+            },
+            {
+              "field": "phone",
+              "value": "031-851-2754",
+              "sourceUrl": "https://tomatoad.wixsite.com/momskids"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://tomatoad.wixsite.com/momskids"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널의 소유 및 본문은 별도로 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-2820ff39a3ab",
+      "name": "연세W치과의원",
+      "checkedAt": "2026-11-01T00:20:02.880Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "연세W치과 의정부점 031-837-9775",
+          "outcome": "의정부점 전용 홈페이지에서 명칭·전화·구성타워 5층을 공공 원자료와 대조했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "연세W치과 의정부점 홈페이지",
+          "url": "https://wdent.co.kr/%EC%97%B0%EC%84%B8w%EC%B9%98%EA%B3%BC-%EC%9D%98%EC%A0%95%EB%B6%80%EC%A0%90/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:20:02.880Z",
+          "evidenceUrls": [
+            "https://wdent.co.kr/%EC%97%B0%EC%84%B8w%EC%B9%98%EA%B3%BC-%EC%9D%98%EC%A0%95%EB%B6%80%EC%A0%90/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세W치과 의정부점",
+              "sourceUrl": "https://wdent.co.kr/%EC%97%B0%EC%84%B8w%EC%B9%98%EA%B3%BC-%EC%9D%98%EC%A0%95%EB%B6%80%EC%A0%90/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 의정부동 431-24 구성타워 5F",
+              "sourceUrl": "https://wdent.co.kr/%EC%97%B0%EC%84%B8w%EC%B9%98%EA%B3%BC-%EC%9D%98%EC%A0%95%EB%B6%80%EC%A0%90/"
+            },
+            {
+              "field": "phone",
+              "value": "031-837-9775",
+              "sourceUrl": "https://wdent.co.kr/%EC%97%B0%EC%84%B8w%EC%B9%98%EA%B3%BC-%EC%9D%98%EC%A0%95%EB%B6%80%EC%A0%90/"
+            }
+          ],
+          "notes": "기관의 의정부점 전용 안내에서 이름, 구성타워 5층, 전화가 원자료와 일치합니다. 홈페이지 지번과 원자료 도로명은 표기 방식이 다릅니다."
+        }
+      ]
+    }
+  ]
+}

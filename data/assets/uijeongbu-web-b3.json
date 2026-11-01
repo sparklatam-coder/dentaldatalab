@@ -1,0 +1,451 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T00:20:46.580Z",
+  "scope": "의정부 ㅂ 구간 기관의 공개 홈페이지 기관명·주소·전화 대조 및 링크 수집.",
+  "records": [
+    {
+      "clinicId": "c-aae42c37c5d0",
+      "name": "바른손치과의원",
+      "checkedAt": "2026-11-01T00:20:46.580Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "바른손치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지의 명칭·주소·전화와 공공 원자료를 대조했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "blog",
+          "label": "기관 자체 블로그",
+          "url": "https://blog.brsdent.co.kr/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://blog.brsdent.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른손치과",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 동일로 468, 2층(신곡동)",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-848-2879",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지 본문의 명칭, 주소, 전화가 원자료와 일치합니다. 확인 시점 이후 운영 변동은 별도 확인이 필요합니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/653893",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://blog.brsdent.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른손치과",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 동일로 468, 2층(신곡동)",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-848-2879",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오 채널",
+          "url": "https://pf.kakao.com/_xnDcMG",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://blog.brsdent.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른손치과",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 동일로 468, 2층(신곡동)",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-848-2879",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "instagram",
+          "label": "인스타그램",
+          "url": "https://www.instagram.com/brs.dent/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://blog.brsdent.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른손치과",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 동일로 468, 2층(신곡동)",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-848-2879",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://blog.brsdent.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-a3e0c4a31b3a",
+      "name": "바른얼굴치과교정과치과의원",
+      "checkedAt": "2026-11-01T00:20:46.580Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "바른얼굴치과교정과치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지의 명칭·주소·전화와 공공 원자료를 대조했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://brugdent.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://brugdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른얼굴교정치과",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 68 월드II타워 4층 401·402호(민락동)",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2828",
+              "sourceUrl": "https://brugdent.com/"
+            }
+          ],
+          "notes": "기관 홈페이지 본문의 명칭, 주소, 전화가 원자료와 일치합니다. 확인 시점 이후 운영 변동은 별도 확인이 필요합니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/pupulily",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://brugdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른얼굴교정치과",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 68 월드II타워 4층 401·402호(민락동)",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2828",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://brugdent.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/1208464",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://brugdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른얼굴교정치과",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 68 월드II타워 4층 401·402호(민락동)",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2828",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://brugdent.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오톡 상담",
+          "url": "https://pf.kakao.com/_hjCQG/chat",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://brugdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른얼굴교정치과",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 68 월드II타워 4층 401·402호(민락동)",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2828",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://brugdent.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "youtube",
+          "label": "유튜브",
+          "url": "https://www.youtube.com/@BareunFace",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://brugdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른얼굴교정치과",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 68 월드II타워 4층 401·402호(민락동)",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2828",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://brugdent.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "blog",
+          "label": "교정치료 기준 노트",
+          "url": "https://blog.brugdent.com",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://brugdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바른얼굴교정치과",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 68 월드II타워 4층 401·402호(민락동)",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2828",
+              "sourceUrl": "https://brugdent.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://brugdent.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-5e8763d3a459",
+      "name": "보스톤미소치과의원",
+      "checkedAt": "2026-11-01T00:20:46.580Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "보스톤미소치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지의 명칭·주소·전화와 공공 원자료를 대조했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://boston-miso.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:20:46.580Z",
+          "evidenceUrls": [
+            "https://boston-miso.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "보스톤미소치과의원",
+              "sourceUrl": "https://boston-miso.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 신흥로240번길 26, 동양레쉬빌II 2층",
+              "sourceUrl": "https://boston-miso.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-871-2275",
+              "sourceUrl": "https://boston-miso.com/"
+            }
+          ],
+          "notes": "기관 홈페이지 본문의 명칭, 주소, 전화가 원자료와 일치합니다. 확인 시점 이후 운영 변동은 별도 확인이 필요합니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c8fa4189dcbc",
+      "name": "보스톤치과의원",
+      "checkedAt": "2026-11-01T00:21:06.898Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "보스톤치과 의정부 031-855-2875",
+          "outcome": "검색 색인의 21cimplant.com 홈페이지에서 기관명·광장타워 2층·전화가 일치하나, 본문 접근은 403으로 확인하지 못했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "홈페이지 후보",
+          "url": "https://21cimplant.com/",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "checkedAt": "2026-11-01T00:21:06.898Z",
+          "evidenceUrls": [
+            "https://21cimplant.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "의정부 보스톤치과",
+              "sourceUrl": "https://21cimplant.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 시민로 83 광장타워 2층",
+              "sourceUrl": "https://21cimplant.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-855-2875",
+              "sourceUrl": "https://21cimplant.com/"
+            }
+          ],
+          "notes": "검색 색인상 주소·전화와 원자료가 일치하나 직접 열기는 HTTP 403으로 실패해 후보로 남깁니다. 색인된 다른 안내에 031-855-2895도 표시돼 전화 차이는 확인 전입니다."
+        }
+      ]
+    }
+  ]
+}

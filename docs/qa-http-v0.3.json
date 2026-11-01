@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-31T14:26:52.657Z",
+  "status": "passed",
+  "checks": [
+    {
+      "path": "/verification/",
+      "status": 200,
+      "noindex": true,
+      "bytes": 256945
+    },
+    {
+      "path": "/data/verification.json",
+      "status": 200,
+      "noindex": true,
+      "bytes": 144643
+    },
+    {
+      "path": "/clinics/c-76938909f739/",
+      "status": 200,
+      "noindex": true,
+      "bytes": 35279
+    },
+    {
+      "path": "/clinics/c-f03aab4b3617/",
+      "status": 200,
+      "noindex": true,
+      "bytes": 36803
+    },
+    {
+      "path": "/data/",
+      "status": 200,
+      "noindex": true,
+      "bytes": 16291
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "official_website_review",
+  "checkedAt": "2026-11-01T00:35:16.068Z",
+  "scope": "양산시 신규 홈페이지 발굴 3개 기관. 공식 홈페이지 본문의 기관명·주소·전화를 공공 원자료와 대조. 네이버·SNS 목적지 본문은 요청하지 않음.",
+  "discoverySources": [
+    {
+      "url": "https://local-dent.com/gyeongnam/yangsan",
+      "role": "홈페이지 후보 발굴에만 사용; 순위·리뷰·진료시간은 검증 자료로 사용하지 않음"
+    }
+  ],
+  "collectionMethod": "공개 웹 검색과 목록의 실제 홈페이지 href 확인 → 홈페이지 본문 대조 → 공식 홈페이지 HTML의 외부 href 기록. 목적지 귀속은 linked로 구분. 홈페이지 홍보 문구와 공공 원자료를 합치지 않음.",
+  "records": [
+    {
+      "clinicId": "c-e800ce80be73",
+      "name": "바룸치과의원",
+      "checkedAt": "2026-11-01T00:35:16.068Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://www.barumdental.com/main/main.php",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.barumdental.com/main/main.php"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "바룸치과",
+              "sourceUrl": "https://www.barumdental.com/main/main.php"
+            },
+            {
+              "field": "address",
+              "value": "경상남도 양산시 양산역1길 14 에이스프라자 5F",
+              "sourceUrl": "https://www.barumdental.com/main/main.php"
+            },
+            {
+              "field": "phone",
+              "value": "055-372-6000",
+              "sourceUrl": "https://www.barumdental.com/main/main.php"
+            }
+          ],
+          "notes": "홈페이지 하단의 기관명·도로명주소·전화가 공공 원자료와 일치합니다. 홈페이지 표기 층수는 5층이며 공공 원자료의 3·4·5층 표기와 구별해 보존합니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-2e819a75a6e5",
+      "name": "서울에스원치과의원",
+      "checkedAt": "2026-11-01T00:35:16.068Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://www.seoulsone.com/html/main/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.seoulsone.com/html/main/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울에스원치과의원",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            },
+            {
+              "field": "address",
+              "value": "경상남도 양산시 양산역 6길 21 단독건물, 1,2층",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            },
+            {
+              "field": "phone",
+              "value": "055-785-2872",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            }
+          ],
+          "notes": "홈페이지 하단 기관명·주소·전화 대조 완료. 홈페이지의 외과·일반진료 안내: 월·화·수·금 10:00~20:00, 목 10:00~18:30, 토 09:30~13:30, 점심 12:30~14:00. 교정과: 화·수·목·금 14:00~20:00, 토 09:30~13:30. 네이버지도 진료시간으로 간주하지 않습니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "홈페이지에 연결된 카카오 채널",
+          "url": "https://pf.kakao.com/_PPJLb",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.seoulsone.com/html/main/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        },
+        {
+          "kind": "booking",
+          "label": "홈페이지에 연결된 네이버예약",
+          "url": "https://booking.naver.com/booking/13/bizes/700879",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.seoulsone.com/html/main/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        },
+        {
+          "kind": "instagram",
+          "label": "홈페이지에 연결된 인스타그램",
+          "url": "https://www.instagram.com/s1dental/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.seoulsone.com/html/main/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "홈페이지에 연결된 네이버 블로그",
+          "url": "https://blog.naver.com/gkswjddne1",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.seoulsone.com/html/main/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        },
+        {
+          "kind": "kakaoMap",
+          "label": "홈페이지에 연결된 카카오맵",
+          "url": "https://place.map.kakao.com/2062450542",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.seoulsone.com/html/main/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        },
+        {
+          "kind": "other",
+          "label": "홈페이지에 연결된 네이버지도 단축주소",
+          "url": "https://naver.me/5M5BhtFX",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.seoulsone.com/html/main/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.seoulsone.com/html/main/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-db20551a20bb",
+      "name": "늘푸른치과의원",
+      "checkedAt": "2026-11-01T00:35:16.068Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://www.xn--si2b67ob3dc8b09wejd.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.xn--si2b67ob3dc8b09wejd.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "양산 늘푸른치과의원",
+              "sourceUrl": "https://www.xn--si2b67ob3dc8b09wejd.com/"
+            },
+            {
+              "field": "address",
+              "value": "경상남도 양산시 삼일로 65 양산현대타운 2층",
+              "sourceUrl": "https://www.xn--si2b67ob3dc8b09wejd.com/"
+            },
+            {
+              "field": "phone",
+              "value": "055-386-5500",
+              "sourceUrl": "https://www.xn--si2b67ob3dc8b09wejd.com/"
+            }
+          ],
+          "notes": "공식 진료 안내 페이지의 기관명·도로명주소·전화가 공공 원자료와 일치합니다. 홈페이지는 진료시간을 네이버 플레이스 또는 전화로 확인하도록 안내하며 이 페이지에서 요일별 시간을 확인하지 못했습니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "홈페이지에 연결된 카카오 채널",
+          "url": "https://pf.kakao.com/_xiWYQu",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.xn--si2b67ob3dc8b09wejd.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.xn--si2b67ob3dc8b09wejd.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "홈페이지에 연결된 네이버 블로그",
+          "url": "http://blog.naver.com/nplkim_",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.xn--si2b67ob3dc8b09wejd.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.xn--si2b67ob3dc8b09wejd.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "홈페이지에 연결된 네이버 플레이스",
+          "url": "https://m.place.naver.com/hospital/12964281/home",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:16.068Z",
+          "evidenceUrls": [
+            "https://www.xn--si2b67ob3dc8b09wejd.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML의 실제 연결 주소",
+              "sourceUrl": "https://www.xn--si2b67ob3dc8b09wejd.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 href를 확인했습니다. 연결 목적지는 요청하지 않았으며 본문은 미확인입니다."
+        }
+      ]
+    }
+  ]
+}

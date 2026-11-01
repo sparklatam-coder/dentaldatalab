@@ -1,0 +1,505 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-31T14:21:51.849105+00:00",
+  "overallStatus": "official_snapshot_matched; current_institution_facts_not_verified",
+  "summary": "공식 원본 재다운로드·해시·기관 모집단·주요 필드 대조 완료. 현재 기관 영업정보의 전수 검증은 아님.",
+  "reproduceCommand": "python3 scripts/verify-official-source.py",
+  "reproductionOutput": "docs/source-verification-recheck.json",
+  "sourceVerification": {
+    "schemaVersion": 1,
+    "checkedAt": "2026-10-31T14:21:31.546230+00:00",
+    "expectedSnapshotDate": "2026-09-30",
+    "status": "official_snapshot_matched",
+    "currentInstitutionFacts": "not_verified",
+    "originalLocalFilesOverwritten": false,
+    "catalog": {
+      "url": "https://www.data.go.kr/data/15051059/fileData.do",
+      "httpStatus": 200,
+      "contentType": "text/html;charset=UTF-8",
+      "name": "건강보험심사평가원_전국 병의원 및 약국 현황_20260930",
+      "dateCreated": "2026-10-19",
+      "dateModified": "2026-10-20",
+      "license": "공공저작물 : 출처표시 (제 1유형)",
+      "sha256": "ac4a815785b8179361f53148a558636b38ae55ea27e8afdedf420254d2fde831"
+    },
+    "downloadAccessCheck": {
+      "needCaptcha": false
+    },
+    "download": {
+      "url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000007735984&fileDetailSn=1&dataNm=%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EC%8B%AC%EC%82%AC%ED%8F%89%EA%B0%80%EC%9B%90_%EC%A0%84%EA%B5%AD+%EB%B3%91%EC%9D%98%EC%9B%90+%EB%B0%8F+%EC%95%BD%EA%B5%AD+%ED%98%84%ED%99%A9_20260930",
+      "httpStatus": 200,
+      "contentType": "application/octet-stream; charset=UTF-8",
+      "checkedAt": "2026-10-31T14:21:34.881814+00:00",
+      "officialOriginalFileName": "전국 병의원 및 약국 현황 2026.9.zip",
+      "size": 20609715,
+      "sha256": "ceff684b8eb1dc9059b668ec56bc91d2a643997420733b2996a0bc5d8910f9c3",
+      "expectedSha256": "ceff684b8eb1dc9059b668ec56bc91d2a643997420733b2996a0bc5d8910f9c3",
+      "archiveMatchesManifest": true,
+      "downloadPath": "/var/folders/jc/jgfk7mpn1295f1pm8k09j_rw0000gn/T/ddl-official-source-a4dy2avk/official-hira.zip",
+      "apiKeyUsed": false,
+      "loginUsed": false
+    },
+    "comparison": {
+      "method": "Independent Python zipfile/CP949 csv parsing; no project importer used",
+      "allInstitutionRows": 79899,
+      "dentalRows": 19681,
+      "localRows": 19681,
+      "byType": {
+        "치과의원": 19433,
+        "치과병원": 248
+      },
+      "comparedFields": [
+        "name",
+        "typeCode",
+        "sidoCode",
+        "sido",
+        "cityCode",
+        "city",
+        "address",
+        "phone",
+        "website",
+        "openedOn",
+        "dong",
+        "postalCode",
+        "doctors.general",
+        "doctors.intern",
+        "doctors.resident",
+        "doctors.specialist",
+        "doctors.total",
+        "specialties",
+        "equipment",
+        "hours.mon..sun",
+        "hoursNotes.unclearHours",
+        "lat",
+        "lon",
+        "sourceIds"
+      ],
+      "mismatchCount": 0,
+      "mismatchExamples": [],
+      "extraLocalIds": [],
+      "sourceRegion360000Names": {
+        "전남광주": 1193,
+        "전남": 2
+      },
+      "sourceRegion240000Names": {
+        "광주": 2
+      },
+      "archiveEntries": [
+        {
+          "name": "1.병원정보서비스(2026.9.).csv",
+          "size": 22549219,
+          "sha256": "9b81b8dc3304785a2c713182c72b94e7960778c4e07ed32d86f27a0e684142b1"
+        },
+        {
+          "name": "2.약국정보서비스(2026.9.).csv",
+          "size": 6242116,
+          "sha256": "74771f397cbecb92aa28a3415ddafb308369106e7da1489ac884775d3170bd15"
+        },
+        {
+          "name": "3.의료기관별상세정보서비스_01_시설정보(2026.9.).csv",
+          "size": 27895527,
+          "sha256": "fedee9ba0eef278580c4a6ed3729eaa32972df54e2f8a53300a9e2482db775f9"
+        },
+        {
+          "name": "4.의료기관별상세정보서비스_02_세부정보(2026.9.).csv",
+          "size": 6500178,
+          "sha256": "9fb3172eacd6aa76f8fc7c1502327ec763037cd351e241996562e8aee9d42357"
+        },
+        {
+          "name": "5.의료기관별상세정보서비스_03_진료과목정보(2026.9.).csv",
+          "size": 50418357,
+          "sha256": "572d21ef9f73028dc139b3f95e52f095bcabaffa0b02c468dfd145cb1c65bf37"
+        },
+        {
+          "name": "6.의료기관별상세정보서비스_04_교통정보(2026.9.).csv",
+          "size": 5844255,
+          "sha256": "c8aa005e822101dfd3aba63e7eccc81fb31934523db997a3dab033f50cec08e5"
+        },
+        {
+          "name": "7.의료기관별상세정보서비스_05_의료장비정보(2026.9.).csv",
+          "size": 7537079,
+          "sha256": "991ea17a6882152c5446421cdc747bd26e4c457527d323e4f4bbb563d40f26c8"
+        },
+        {
+          "name": "8.의료기관별상세정보서비스_06_식대가산정보(2026.9.).csv",
+          "size": 1785401,
+          "sha256": "d1f3c577c12b38e5d7e4bc87702f58548f82b644a535479e03511289154f0559"
+        },
+        {
+          "name": "9.의료기관별상세정보서비스_07_간호등급정보(2026.9.).csv",
+          "size": 1492842,
+          "sha256": "073f7b470afef994c315345ac2e628b690a5f37b10ec06213dae5786923f8a69"
+        },
+        {
+          "name": "10.의료기관별상세정보서비스_08_특수진료정보서비스(2026.9.).csv",
+          "size": 8923646,
+          "sha256": "0a36517b5a4fd14791a5a308e70777798bada046971ba3bee446f7ac31928cb7"
+        },
+        {
+          "name": "11.의료기관별상세정보서비스_09_전문병원지정분야(2026.9.).csv",
+          "size": 12242,
+          "sha256": "e74914f9b1e0e20834ce929bf2c8af24d70389ad5a5aaa890c329abd8c6c7863"
+        },
+        {
+          "name": "12.의료기관별상세정보서비스_10_기타인력정보(2026.9.).csv",
+          "size": 4845488,
+          "sha256": "7b9c4c4f1d246d7ad174c6037d726d2a30d764295ef0c6ff60dbfbc895ecc603"
+        }
+      ]
+    },
+    "completedAt": "2026-10-31T14:21:36.738406+00:00",
+    "meaning": "공식 분기 원본과 로컬 가공 결과의 일치 여부만 검사합니다. 현재 영업·진료·전화·홈페이지 운영의 사실 확인이 아닙니다."
+  },
+  "evidence": [
+    {
+      "id": "official-catalog",
+      "status": "directly_confirmed",
+      "url": "https://www.data.go.kr/data/15051059/fileData.do",
+      "machineReadableUrl": "https://www.data.go.kr/catalog/15051059/fileData.json",
+      "checkedAt": "2026-10-31T14:21:51.849105+00:00",
+      "name": "건강보험심사평가원_전국 병의원 및 약국 현황_20260930",
+      "provider": "건강보험심사평가원",
+      "dataReferenceDate": "2026-09-30",
+      "publishedOn": "2026-10-19",
+      "modifiedOn": "2026-10-20",
+      "license": "공공저작물 : 출처표시 (제 1유형)",
+      "method": "공식 HTML/JSON-LD HTTPS 수신 및 web 도구 공식 catalog JSON 열람",
+      "limits": [
+        "분기 API 추출 자료이며 월말 기준 집계와 차이가 있을 수 있음",
+        "게시일·수정일·수집일은 자료 기준일과 별개",
+        "현재 운영 현황 전수 확인 아님"
+      ]
+    },
+    {
+      "id": "official-download",
+      "status": "directly_confirmed",
+      "url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000007735984&fileDetailSn=1&dataNm=%EA%B1%B4%EA%B0%95%EB%B3%B4%ED%97%98%EC%8B%AC%EC%82%AC%ED%8F%89%EA%B0%80%EC%9B%90_%EC%A0%84%EA%B5%AD+%EB%B3%91%EC%9D%98%EC%9B%90+%EB%B0%8F+%EC%95%BD%EA%B5%AD+%ED%98%84%ED%99%A9_20260930",
+      "checkedAt": "2026-10-31T14:21:34.881814+00:00",
+      "size": 20609715,
+      "sha256": "ceff684b8eb1dc9059b668ec56bc91d2a643997420733b2996a0bc5d8910f9c3",
+      "matchesLocalArchive": true,
+      "officialOriginalFileName": "전국 병의원 및 약국 현황 2026.9.zip",
+      "method": "공식 다운로드 버튼 메타데이터 → 정상 접근 제한 확인(needCaptcha=false) → 파일 수신. 인증키·로그인 없이 가능했음.",
+      "localOriginalOverwritten": false
+    },
+    {
+      "id": "independent-csv-comparison",
+      "status": "directly_confirmed",
+      "checkedAt": "2026-10-31T14:21:36.738406+00:00",
+      "dentalCount": 19681,
+      "typeCounts": {
+        "치과의원": 19433,
+        "치과병원": 248
+      },
+      "mismatchCount": 0,
+      "comparedFields": [
+        "name",
+        "typeCode",
+        "sidoCode",
+        "sido",
+        "cityCode",
+        "city",
+        "address",
+        "phone",
+        "website",
+        "openedOn",
+        "dong",
+        "postalCode",
+        "doctors.general",
+        "doctors.intern",
+        "doctors.resident",
+        "doctors.specialist",
+        "doctors.total",
+        "specialties",
+        "equipment",
+        "hours.mon..sun",
+        "hoursNotes.unclearHours",
+        "lat",
+        "lon",
+        "sourceIds"
+      ],
+      "method": "Independent Python zipfile/CP949 csv parsing; no project importer used",
+      "limits": "원자료와 변환값의 일치 검사. 신고 내용의 현재 정확성은 별도 검증 대상"
+    },
+    {
+      "id": "hira-region-notice",
+      "status": "directly_confirmed",
+      "url": "https://www.hira.or.kr/bbsDummy.do?brdBltNo=12152&brdScnBltNo=4&pageIndex=1&pgmid=HIRAA020002000100",
+      "checkedAt": "2026-10-31T14:21:51.849105+00:00",
+      "title": "전남광주통합특별시 행정체계 개편(2026.7.1.시행)에 따른 수가 산정 안내",
+      "publishedOn": "2026-07-02",
+      "effectiveOn": "2026-07-01",
+      "method": "web 도구로 HIRA 공지 본문 직접 열람",
+      "finding": "통합 지명과 시행일이 공식 공지에 존재한다. 이 명칭만으로 원본 위조나 가공 오류라 판단할 수 없다.",
+      "unverified": "원자료에 잔존한 광주·전남 코드의 개별 원인과 모든 기관의 현행 행정코드 재분류는 이 공지만으로 확인되지 않음"
+    }
+  ],
+  "regionFindings": {
+    "source360000Names": {
+      "전남광주": 1193,
+      "전남": 2
+    },
+    "source240000Names": {
+      "광주": 2
+    },
+    "interpretation": "17은 현재 시도 개수가 아니라 원자료에서 발견된 시도코드 개수다. 개편 지명과 잔존 명칭이 함께 있어 원문 보존과 현재 분류를 구분해야 한다."
+  },
+  "accessAttempts": [
+    {
+      "url": "https://www.data.go.kr/data/15051059/fileData.do",
+      "method": "web.open",
+      "status": "tool_fetch_failed",
+      "reason": "Unsupported content-type: text/markdown",
+      "resolvedBy": "직접 HTTPS HTML GET 및 공식 catalog JSON web.open 성공"
+    },
+    {
+      "url": "https://www.data.go.kr/data/15001698/openapi.do",
+      "method": "web.open",
+      "status": "tool_fetch_failed",
+      "reason": "Unsupported content-type: text/markdown",
+      "resolvedBy": "직접 HTTPS HTML GET 및 내장 Swagger 명세 확인"
+    },
+    {
+      "url": "https://www.hira.or.kr/bbsDummy.do?brdBltNo=12152&brdScnBltNo=4&pageIndex=1&pgmid=HIRAA020002000100",
+      "method": "Python urllib GET",
+      "status": "access_failed",
+      "reason": "30초 읽기 timeout",
+      "note": "web 도구 본문 열람은 성공. 이 실패를 공식 공지 내용 미확인과 혼동하지 않음"
+    }
+  ],
+  "apiAccess": {
+    "officialFileDownload": {
+      "status": "directly_confirmed",
+      "apiKeyRequiredInObservedFlow": false,
+      "loginRequiredInObservedFlow": false
+    },
+    "liveServices": [
+      {
+        "id": "15001698",
+        "sourceUrl": "https://www.data.go.kr/data/15001698/openapi.do",
+        "baseUrl": "https://apis.data.go.kr/B551182/hospInfoServicev2",
+        "methods": [
+          {
+            "path": "/getHospBasisList",
+            "summary": "병원기본목록",
+            "requiredParameters": [
+              {
+                "name": "ServiceKey",
+                "in": "query",
+                "description": "서비스키"
+              }
+            ]
+          }
+        ],
+        "checkedAgainst": "Official page embedded Swagger 2.0 specification",
+        "status": "documentation_directly_checked",
+        "liveRequests": "not_attempted; no service key supplied or used in this verification"
+      },
+      {
+        "id": "15001699",
+        "sourceUrl": "https://www.data.go.kr/data/15001699/openapi.do",
+        "baseUrl": "https://apis.data.go.kr/B551182/MadmDtlInfoService2.8",
+        "methods": [
+          {
+            "path": "/getEqpInfo2.8",
+            "summary": "시설정보",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getSpclDiagInfo2.8",
+            "summary": "특수진료정보(진료가능분야조회)",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              }
+            ]
+          },
+          {
+            "path": "/getTrnsprtInfo2.8",
+            "summary": "교통정보",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getDtlInfo2.8",
+            "summary": "세부정보",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getSpcSbjtSdrInfo2.8",
+            "summary": "전문과목별 전문의 수",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getDgsbjtInfo2.8",
+            "summary": "진료과목정보",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getMedOftInfo2.8",
+            "summary": "의료장비정보",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getFoepAddcInfo2.8",
+            "summary": "식대가산정보",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getNursigGrdInfo2.8",
+            "summary": "간호등급정보",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getSpclHospAsgFldList2.8",
+            "summary": "전문병원지정분야",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          },
+          {
+            "path": "/getEtcHstInfo2.8",
+            "summary": "기타인력수",
+            "requiredParameters": [
+              {
+                "name": "serviceKey",
+                "in": "query",
+                "description": "공공데이터포털에서 받은 인증키"
+              },
+              {
+                "name": "pageNo",
+                "in": "query",
+                "description": "페이지번호"
+              },
+              {
+                "name": "numOfRows",
+                "in": "query",
+                "description": "한 페이지 결과 수"
+              },
+              {
+                "name": "ykiho",
+                "in": "query",
+                "description": "암호화된 요양기호(확인방법: 건강보험심사평가원 오픈API[병원정보서비스>병원기본목록(getHospBasisList1)](암호화된요양기호(ykiho)))"
+              }
+            ]
+          }
+        ],
+        "checkedAgainst": "Official page embedded Swagger 2.0 specification",
+        "status": "documentation_directly_checked",
+        "liveRequests": "not_attempted; no service key supplied or used in this verification"
+      }
+    ],
+    "credentialNote": "실시간 API는 공공데이터포털 계정의 해당 서비스 활용신청·승인과 발급 인증키 필요. 병원정보는 ServiceKey, 상세정보는 serviceKey와 ykiho 필수(현재 공식 Swagger 표기). 본 검증에서는 인증키를 제출받거나 사용하지 않았음.",
+    "accountApplicationOrPaymentPerformed": false
+  },
+  "notVerified": [
+    "현재 기관별 영업·폐업·이전 여부",
+    "신고 전화번호 연결과 실제 진료시간",
+    "각 홈페이지 운영·소유·공식성·최신성",
+    "잔존 지역코드의 개별 원인과 완전한 현행 코드 매핑",
+    "실시간 API와 기존 자료의 기관키 유지율"
+  ],
+  "displayGuidance": [
+    "데이터 기준일 2026-09-30과 외부 원본 검증일을 별도 표시",
+    "원본 일치 검증 완료라고 표시하되 현재 진료정보 검증 완료로 표시하지 않기",
+    "추가 홈페이지·지도·블로그 관찰은 출처·확인일·매칭 근거를 보존하고 신고값을 덮어쓰지 않기"
+  ]
+}

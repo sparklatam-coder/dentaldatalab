@@ -1,0 +1,38 @@
+{
+  "checkedAt": "2026-10-31T14:26:38.145Z",
+  "inputFiles": [
+    "yangju-01.json",
+    "yangju-02.json",
+    "yangju-03.json"
+  ],
+  "nationalPopulation": 19681,
+  "researchedInstitutions": 67,
+  "notResearchedInstitutions": 19614,
+  "allThreeChannelsVerified": 0,
+  "byChannel": {
+    "website": {
+      "verified": 16,
+      "candidate": 1,
+      "blocked": 8,
+      "not_found": 42,
+      "discovered": 25
+    },
+    "naverPlace": {
+      "verified": 1,
+      "candidate": 41,
+      "blocked": 25,
+      "not_found": 0,
+      "discovered": 67
+    },
+    "naverBlog": {
+      "verified": 0,
+      "candidate": 0,
+      "blocked": 15,
+      "not_found": 52,
+      "discovered": 15
+    }
+  },
+  "publicWebsiteSeeds": 1596,
+  "currentOperatingStatusVerified": 0,
+  "note": "URL 발굴 수는 현재 영업 또는 모든 정보가 맞다고 확인한 기관 수가 아닙니다. 후보·접근 제한·미발굴·조사 대기는 별도 상태입니다."
+}

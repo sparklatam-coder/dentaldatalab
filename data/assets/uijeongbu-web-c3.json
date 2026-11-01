@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T00:22:19.361Z",
+  "sourceType": "manual_directory_review",
+  "scope": "의정부시 ㅈ~ㅎ 제3자 디렉터리 후보",
+  "records": [
+    {
+      "clinicId": "c-5cf09eb0f59b",
+      "name": "정운봉치과의원",
+      "checkedAt": "2026-11-01T00:22:19.361Z",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그 후보",
+          "url": "https://blog.naver.com/wnhee67",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:22:19.361Z",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/uijeongbu/howon"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "정운봉치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/howon"
+            },
+            {
+              "field": "phone",
+              "value": "031-873-2875",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/howon"
+            },
+            {
+              "field": "address",
+              "value": "의정부시 평화로 382 전원빌딩 5층",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/howon"
+            }
+          ],
+          "notes": "제3자 치과 목록이 해당 기관의 홈페이지로 연결합니다. 블로그 본문 및 실제 운영 주체는 확인하지 않아 후보로 표시합니다.",
+          "provenance": [
+            {
+              "type": "manual_directory_review",
+              "checkedAt": "2026-11-01T00:22:19.361Z",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/howon",
+              "bodySha256": "ab88936c5877c6c04cc6dc9a7a4aaa9fd9a1d5de475dabae5ad56fcd341b47a4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clinicId": "c-bf193a7ec9b7",
+      "name": "탑석훈치과의원",
+      "checkedAt": "2026-11-01T00:22:19.361Z",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그 후보",
+          "url": "https://blog.naver.com/tapseokhun",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:22:19.361Z",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/uijeongbu/yonghyeon"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "탑석훈치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/yonghyeon"
+            },
+            {
+              "field": "phone",
+              "value": "031-847-2275",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/yonghyeon"
+            },
+            {
+              "field": "address",
+              "value": "의정부시 오목로 37 3, 4층",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/yonghyeon"
+            }
+          ],
+          "notes": "제3자 치과 목록이 해당 기관의 홈페이지로 연결합니다. 블로그 본문 및 실제 운영 주체는 확인하지 않아 후보로 표시합니다.",
+          "provenance": [
+            {
+              "type": "manual_directory_review",
+              "checkedAt": "2026-11-01T00:22:19.361Z",
+              "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/yonghyeon",
+              "bodySha256": "38f112f04e079c2fc0a908fecd422ce04f73c31dd01abacaf4442ba271c01d5a"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

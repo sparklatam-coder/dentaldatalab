@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-31T21:10:04.443Z",
+  "status": "passed",
+  "scope": "Local review content studio and downloads",
+  "paths": [
+    {
+      "path": "/questions/",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/data/content/questions-100.json",
+      "status": 200,
+      "type": "application/json; charset=utf-8"
+    },
+    {
+      "path": "/data/content/questions-100.txt",
+      "status": 200,
+      "type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/data/content/keyword-planner-seeds.txt",
+      "status": 200,
+      "type": "text/plain; charset=utf-8"
+    },
+    {
+      "path": "/data/content/search-evidence.json",
+      "status": 200,
+      "type": "application/json; charset=utf-8"
+    }
+  ],
+  "contentSummary": {
+    "total": 100,
+    "exactAutocomplete": 32,
+    "seedOnly": 68,
+    "editorialOnly": 0,
+    "medicalSourceCount": 59
+  },
+  "categoryCounts": [
+    {
+      "id": "implant",
+      "label": "임플란트",
+      "count": 10
+    },
+    {
+      "id": "orthodontics",
+      "label": "치아교정",
+      "count": 10
+    },
+    {
+      "id": "caries",
+      "label": "충치·레진·인레이",
+      "count": 10
+    },
+    {
+      "id": "endodontics",
+      "label": "신경치료",
+      "count": 10
+    },
+    {
+      "id": "extraction",
+      "label": "사랑니·발치",
+      "count": 10
+    },
+    {
+      "id": "prosthetics",
+      "label": "크라운·브릿지·틀니",
+      "count": 10
+    },
+    {
+      "id": "periodontal",
+      "label": "스케일링·잇몸치료",
+      "count": 10
+    },
+    {
+      "id": "cosmetic",
+      "label": "미백·라미네이트",
+      "count": 10
+    },
+    {
+      "id": "pediatric",
+      "label": "소아·예방치료",
+      "count": 10
+    },
+    {
+      "id": "safety",
+      "label": "치과공포·응급·치료안전",
+      "count": 10
+    }
+  ],
+  "rankingStatus": "not_measured",
+  "clinicalReviewStatus": "pending",
+  "autocompleteObservations": 20,
+  "autocompleteKeywords": 198
+}

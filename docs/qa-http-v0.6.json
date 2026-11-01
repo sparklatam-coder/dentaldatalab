@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-10-31T21:42:40.323Z",
+  "status": "passed",
+  "checks": [
+    {
+      "path": "/clinic-assets/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/index.json",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/summary.json",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/records/c-f8b41f196f7e.json",
+      "status": 200,
+      "type": "application/json; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/clinics/c-f8b41f196f7e/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "path": "/assets/clinic-assets.mjs",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "summary": {
+    "total": 19681,
+    "byType": {
+      "치과병원": 248,
+      "치과의원": 19433
+    },
+    "registeredWebsiteFields": 1718,
+    "validRegisteredUrls": 1596,
+    "withAssets": 1656,
+    "withoutAssets": 18025,
+    "manuallyResearched": 67,
+    "assetCount": 2932,
+    "byKind": {
+      "website": 1567,
+      "naverMap": 131,
+      "naverBlog": 479,
+      "blog": 13,
+      "youtube": 92,
+      "instagram": 148,
+      "facebook": 68,
+      "kakaoChannel": 228,
+      "kakaoMap": 19,
+      "googleMap": 2,
+      "booking": 116,
+      "linkHub": 0,
+      "other": 69
+    },
+    "byOwnership": {
+      "official": 75,
+      "linked": 83,
+      "registered": 685,
+      "candidate": 2087,
+      "third_party": 2
+    },
+    "naverInspected": 67,
+    "naverRead": 67,
+    "naverMatched": 67,
+    "naverWithFields": 67,
+    "naverFieldCoverage": {
+      "address": 67,
+      "phone": 66,
+      "hours": 66,
+      "website": 37,
+      "amenities": 57,
+      "parking": 46
+    },
+    "homepageUrlsChecked": 1518,
+    "homepageHtmlRead": 852,
+    "generatedAt": "2026-10-31T21:42:27.869Z",
+    "snapshotDate": "2026-09-30"
+  },
+  "source": "Local HTTP, generated public data JSON and HTML assertions",
+  "ui": {
+    "desktop": "허브 배치·한글 검색 1건·기관 에셋 이동·네이버 관찰값과 주간시간 표 확인",
+    "mobile": "미확인"
+  }
+}

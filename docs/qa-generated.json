@@ -1,0 +1,69 @@
+{
+  "checkedAt": "2026-11-01T00:46:31.948Z",
+  "mode": "private-review",
+  "status": "passed",
+  "inspectedHtmlPages": 20675,
+  "clinicPages": 19681,
+  "jsonLdBlocks": 20675,
+  "internalLinkOccurrences": 703135,
+  "uniqueInternalTargets": 40376,
+  "checks": [
+    {
+      "name": "19,681 institutions and unique IDs",
+      "status": "passed"
+    },
+    {
+      "name": "Only 41 and 51 are included",
+      "status": "passed"
+    },
+    {
+      "name": "Zero is not missing, absent equipment is not zero",
+      "status": "passed"
+    },
+    {
+      "name": "Basic output escaping",
+      "status": "passed"
+    },
+    {
+      "name": "Malformed phone numbers are not dialled",
+      "status": "passed"
+    },
+    {
+      "name": "Separate homepage observations match real institutions",
+      "status": "passed"
+    },
+    {
+      "name": "Search filter baseline",
+      "status": "passed"
+    },
+    {
+      "name": "Static routes are unique",
+      "status": "passed"
+    },
+    {
+      "name": "All generated HTML: H1, canonical, noindex, JSON-LD, no invalid values",
+      "status": "passed"
+    },
+    {
+      "name": "All internal link targets exist",
+      "status": "passed"
+    },
+    {
+      "name": "All institution profile pages generated",
+      "status": "passed"
+    },
+    {
+      "name": "Comparison shards cover every institution",
+      "status": "passed"
+    },
+    {
+      "name": "No quality ranking or fake reviews in JSON-LD",
+      "status": "passed"
+    },
+    {
+      "name": "Local public-data integrity",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}

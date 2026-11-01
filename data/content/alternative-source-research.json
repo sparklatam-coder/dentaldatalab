@@ -1,0 +1,672 @@
+{
+  "schemaVersion": 1,
+  "researchedAt": "2026-10-31 21:16:59 UTC",
+  "checkedOnKst": "2026-11-01",
+  "scope": {
+    "country": "KR",
+    "queryLanguage": "ko",
+    "purpose": "한국 Google 치과치료 후보 검색어의 월간 수요 비교에 사용할 공식 문서 기반 대체 소스 조사",
+    "notClaimed": "전체 Google 치과 검색어를 빠짐없이 포함한 상위 100 또는 정확한 원시 검색 건수"
+  },
+  "constraints": {
+    "officialSourcesOnly": true,
+    "accountsCreated": 0,
+    "loginsUsed": 0,
+    "apiCredentialsUsed": false,
+    "paymentsMade": false,
+    "authenticatedDataCallsMade": false,
+    "accessRestrictionsBypassed": false
+  },
+  "summary": {
+    "actualDentalKeywordNumbersAcquired": false,
+    "keywordNumberCount": 0,
+    "searchRank": null,
+    "bestGoogleOriginAlternative": "dataforseo_google_ads_conditional_on_credentials_and_language_check",
+    "allAlternativesPaidOnly": false,
+    "separateNaverSeriesRequired": true
+  },
+  "recommendation": {
+    "judgmentType": "analyst_inference_from_official_documentation",
+    "preferredSourceOrder": [
+      "Google Keyword Planner export or authorized direct Google Ads historical metrics",
+      "DataForSEO Google Ads search_volume/live",
+      "Ahrefs or Semrush, separately labelled model estimates"
+    ],
+    "reason": "Google 원천 계열 비교가 목적이면 Google Ads 기반 경로가 모델 혼합 서비스보다 해석이 단순하다. DataForSEO 한국 지역은 공식 CSV로 확인했으나 한국어 언어 목록과 실제 검색량 응답은 미확인이다. 일부 후보 조회만으로 전체 시장 상위 100을 증명할 수 없다.",
+    "nextAuthorizedCollection": {
+      "candidateUniverse": "치과치료 정의에 맞게 확장한 후보군과 제외 규칙을 동결하고 후보군 내 순위로 표시",
+      "country": "KR / DataForSEO location_code 2410",
+      "language": "한국어 후보 문자열. language_code=ko는 해당 endpoint 목록 확인 후 설정. 한국어 사용자만의 집계로 주장하지 않음",
+      "network": "Google only; DataForSEO search_partners=false",
+      "period": "동일하게 가용한 최근 12개 완결 월. 최근 월 미제공 시 임의 보간 금지",
+      "retain": [
+        "provider",
+        "engine",
+        "sourceMethod",
+        "location",
+        "languageParameter",
+        "searchPartners",
+        "periodStart",
+        "periodEnd",
+        "retrievedAt",
+        "keywordRequested",
+        "keywordReturned",
+        "closeVariantGrouping",
+        "rawMonthlyValues",
+        "averageDefinition",
+        "missingReason"
+      ],
+      "ranking": "확보된 후보군 안의 근사 월평균 순위로 한정. 동률 유지, null·<10·누락을 0으로 바꾸지 않음"
+    },
+    "naverUse": "별도 엔진·기간·단위로 게시. Google과 더하거나 환산하지 않음."
+  },
+  "providers": [
+    {
+      "id": "dataforseo_google_ads",
+      "name": "DataForSEO Google Ads Keywords Data",
+      "engine": "google",
+      "seriesClass": "google_ads_source_via_third_party",
+      "metric": {
+        "name": "approximate_monthly_search_volume",
+        "fields": [
+          "search_volume",
+          "monthly_searches"
+        ],
+        "period": "명시한 공통 기간; 기본 최근 12개월. 최근 월 가용성 확인 필요",
+        "exactCensus": false,
+        "closeVariantsMayBeGrouped": true,
+        "missingIsZero": false
+      },
+      "koreaSupport": {
+        "countryStatus": "confirmed_public_csv",
+        "locationCode": 2410,
+        "countryIso": "KR",
+        "languageStatus": "not_confirmed_for_this_endpoint",
+        "intendedLanguageCode": "ko",
+        "languageNote": "Google Ads Languages 공개 문서에 한국어 행이 없고 무인증 API가 401을 반환했다. 다른 DataForSEO 제품의 한국어 지원을 직접 증거로 대체하지 않았다."
+      },
+      "access": {
+        "publicDocs": true,
+        "publicLocationCsv": true,
+        "publicAnonymousKeywordNumbersConfirmed": false,
+        "accountRequired": true,
+        "credentials": "DataForSEO API login/password, Basic Authorization",
+        "volumeRequests": "charged_per_request",
+        "locationLanguageRequests": "no_endpoint_charge_but_authentication_required",
+        "signupOrPaymentPerformed": false
+      },
+      "actualNumbers": {
+        "acquired": false,
+        "keywordCount": 0,
+        "values": null,
+        "reason": "계정/인증정보를 사용하지 않았고 검색량 POST 요청을 실행하지 않았다."
+      },
+      "sourceIds": [
+        "dfs-volume",
+        "dfs-locations",
+        "dfs-location-csv",
+        "dfs-languages",
+        "dfs-auth",
+        "dfs-status",
+        "google-definition"
+      ],
+      "suitability": "조건부 우선 대안. 한국어 언어 목록과 이용 권한 확보 후 Google Ads 원천 계열로 후보군을 비교할 수 있다."
+    },
+    {
+      "id": "ahrefs",
+      "name": "Ahrefs Keywords Explorer / Free Keyword Generator",
+      "engine": "google",
+      "seriesClass": "vendor_model_estimate",
+      "metric": {
+        "name": "estimated_average_monthly_search_volume",
+        "period": "최근 12개월",
+        "origin": "Google Keyword Planner + clickstream model",
+        "exactCensus": false
+      },
+      "koreaSupport": {
+        "status": "confirmed_official_locale_list",
+        "locale": "ko-KR",
+        "country": "South Korea"
+      },
+      "access": {
+        "publicDocs": true,
+        "publicFreeToolPage": true,
+        "anonymousKoreanDentalResultsTested": false,
+        "freeToolCaveat": "공개 입력 UI는 확인했으나 한국 치과어 결과 조회의 CAPTCHA/추가 조건은 실행 검증하지 않았다.",
+        "fullWorkspace": "계정 및 이용 가능한 요금제/한도 필요",
+        "api": "2026-09 공식 문서상 Lite 이상 구독, API 키, 사용량 한도 필요",
+        "signupOrPaymentPerformed": false
+      },
+      "actualNumbers": {
+        "acquired": false,
+        "keywordCount": 0,
+        "values": null,
+        "reason": "공개 문서/도구 페이지 조사만 수행. 한국 치과어 결과 및 인증 API 호출은 실행하지 않았다."
+      },
+      "sourceIds": [
+        "ahrefs-method",
+        "ahrefs-period",
+        "ahrefs-korea",
+        "ahrefs-free",
+        "ahrefs-api-plan",
+        "ahrefs-api",
+        "ahrefs-api-keys",
+        "ahrefs-api-test"
+      ],
+      "suitability": "한국 후보 발굴과 독립 추정 시리즈의 교차 점검용. Google 원자료 값으로 재명명하거나 합산하지 않는다."
+    },
+    {
+      "id": "semrush",
+      "name": "Semrush Keyword Overview / Keyword Magic / SEO API",
+      "engine": "google",
+      "seriesClass": "vendor_model_estimate",
+      "metric": {
+        "name": "estimated_average_monthly_search_volume",
+        "period": "최근 12개월",
+        "origin": "search-engine/third-party data + historical clickstream + machine-learning model",
+        "devices": "desktop_and_mobile_combined",
+        "exactCensus": false
+      },
+      "koreaSupport": {
+        "status": "confirmed_official_country_database_list",
+        "database": "kr",
+        "country": "South Korea"
+      },
+      "access": {
+        "publicDocs": true,
+        "freeAccount": "카드 없이 가입 가능한 제한 무료 계정; 로그인 필요",
+        "documentedFreeLimits": {
+          "keywordQueriesPerDay": 10,
+          "resultsPerReport": 10
+        },
+        "freeTrial": "무료 계정과 별개; 공식 문서는 체험에 카드 필요 명시",
+        "keywordReportApi": "SEO Business 구독 + 별도 API 유닛 + API 키",
+        "signupOrPaymentPerformed": false
+      },
+      "actualNumbers": {
+        "acquired": false,
+        "keywordCount": 0,
+        "values": null,
+        "reason": "무료 계정도 새로 만들거나 로그인하지 않았다. 인증 API 호출 없음."
+      },
+      "sourceIds": [
+        "semrush-method",
+        "semrush-korea",
+        "semrush-free",
+        "semrush-free-limit",
+        "semrush-api"
+      ],
+      "suitability": "한국 DB를 사용한 후보 발굴/추정 비교. 무료 제한 UI와 유료 API를 구분하며 Google 자체 검색량으로 표시하지 않는다."
+    },
+    {
+      "id": "naver_searchad",
+      "name": "NAVER SearchAd RelKwdStat / keywordstool",
+      "engine": "naver",
+      "seriesClass": "naver_first_party_recent_30_day_count",
+      "metric": {
+        "fields": [
+          "monthlyPcQcCnt",
+          "monthlyMobileQcCnt"
+        ],
+        "period": "최근 30일 합계(API 명세 기준)",
+        "devices": "separate_pc_mobile",
+        "smallCount": "<10 is censored, not 0 or 10",
+        "calendarMonthOrTwelveMonthMean": false,
+        "origin": "NAVER search-ad keyword statistics"
+      },
+      "koreaSupport": {
+        "status": "native_naver_search_service",
+        "geographyNote": "한국 Google 검색 또는 한국 거주자만의 검색과 동일한 모집단이 아니다."
+      },
+      "access": {
+        "publicDocs": true,
+        "ui": "광고주센터 로그인 → 검색광고 → 도구 → 키워드 도구; 전체 엑셀 다운로드",
+        "api": "검색광고 회원 + API 서비스 신청 + 액세스라이선스/비밀키 등 인증정보",
+        "paymentRequirement": "읽은 공식 자료에서 API 별도 과금/최소 광고 지출을 확정하지 못함. 유료 전용이라고 단정하지 않음",
+        "signupOrPaymentPerformed": false
+      },
+      "actualNumbers": {
+        "acquired": false,
+        "keywordCount": 0,
+        "values": null,
+        "reason": "공식 API 명세만 수신했으며 회원/키를 사용하지 않았다."
+      },
+      "sourceIds": [
+        "naver-access",
+        "naver-ui",
+        "naver-spec",
+        "naver-ui-terminology"
+      ],
+      "suitability": "네이버 최근 30일 PC·모바일 수요 보조 시리즈. Google 12개월 평균과 합산 금지. 양쪽이 숫자일 때만 기기 합계 계산; <10은 구간으로 보존."
+    },
+    {
+      "id": "naver_datalab",
+      "name": "NAVER DataLab Search Trend",
+      "engine": "naver",
+      "seriesClass": "naver_relative_index",
+      "metric": {
+        "field": "ratio",
+        "scale": "relative_max_100_per_response_context",
+        "absoluteMonthlySearchCount": false,
+        "period": "사용자가 지정한 기간/일·주·월 단위",
+        "grouping": "한 주제의 검색어들을 묶은 추이"
+      },
+      "koreaSupport": {
+        "status": "native_naver_integrated_search",
+        "geographyNote": "네이버 이용 신호이며 Google 국가 KR 표본을 대체하지 않는다."
+      },
+      "access": {
+        "publicDocs": true,
+        "publicUiOpened": true,
+        "api": "비로그인 방식은 사용자 OAuth 불필요라는 뜻. 개발자 앱 등록 및 Client ID/Secret은 필수",
+        "documentedDailyCallLimit": 1000,
+        "paymentRequirement": "읽은 공식 문서에서 별도 과금 요건을 확인하지 못함; 공개 UI와 인증 API를 구분",
+        "signupOrPaymentPerformed": false
+      },
+      "actualNumbers": {
+        "acquired": false,
+        "keywordCount": 0,
+        "values": null,
+        "reason": "웹 입력 폼과 공식 문서 확인만 수행. 조회 결과 및 API 호출은 실행하지 않았다."
+      },
+      "sourceIds": [
+        "naver-datalab-api",
+        "naver-datalab-ui"
+      ],
+      "suitability": "계절성·주제 추이 보조 지표. 절대 검색량으로 변환하거나 다른 비교 묶음의 100을 동일 수요로 연결하지 않는다."
+    }
+  ],
+  "sources": [
+    {
+      "id": "dfs-volume",
+      "publisherType": "first_party",
+      "title": "DataForSEO Google Ads Search Volume Live",
+      "url": "https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/live/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 API 문서 직접 열기",
+      "finding": "Google Ads API 기반, 최대 1,000개/요청. 근사 월평균과 월별 값, 유사어 묶음·누락 가능. 요청당 과금."
+    },
+    {
+      "id": "dfs-locations",
+      "publisherType": "first_party",
+      "title": "DataForSEO Google Ads Locations",
+      "url": "https://docs.dataforseo.com/v3/keywords_data/google_ads/locations/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "Search Volume 문서 locations 링크",
+      "finding": "지역 목록 API 호출료 없음. 공식 CSV 링크 제공."
+    },
+    {
+      "id": "dfs-location-csv",
+      "publisherType": "first_party",
+      "title": "Google Ads Keywords Data supported locations CSV",
+      "url": "https://cdn.dataforseo.com/v3/locations/locations_kwrd_2026_09_01.csv",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "downloaded_and_parsed_public_data",
+      "discoveryPath": "Locations 문서 download full list 링크",
+      "finding": "공개 CSV에서 KR, 2410, South Korea, Country 행을 직접 파싱."
+    },
+    {
+      "id": "dfs-languages",
+      "publisherType": "first_party",
+      "title": "DataForSEO Google Ads Languages",
+      "url": "https://docs.dataforseo.com/v3/keywords_data/google_ads/languages/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "Search Volume 문서 languages 링크",
+      "finding": "언어 목록 호출료 없음. 공개 문서에서 Korean 항목은 직접 확인하지 못함."
+    },
+    {
+      "id": "dfs-auth",
+      "publisherType": "first_party",
+      "title": "DataForSEO Authentication",
+      "url": "https://docs.dataforseo.com/v3/auth/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 인증 문서 직접 열기",
+      "finding": "무료 계정의 별도 API login/password와 Basic 인증 필요. 무료 가입과 검색량 호출 과금은 별개."
+    },
+    {
+      "id": "dfs-status",
+      "publisherType": "first_party",
+      "title": "DataForSEO Google Ads Status",
+      "url": "https://docs.dataforseo.com/v3/keywords_data/google_ads/status/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "Google Ads 문서 메뉴",
+      "finding": "실제 수집 전 최근 월의 가용성 확인 경로. 상태 API를 실행하지 않음."
+    },
+    {
+      "id": "ahrefs-method",
+      "publisherType": "first_party",
+      "title": "Ahrefs search volume modelling explanation",
+      "url": "https://help.ahrefs.com/en/articles/431381-why-don-t-the-organic-traffic-numbers-reported-by-ahrefs-match-those-i-see-in-google-analytics-or-gsc",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 도움말 검색: search volume clickstream",
+      "finding": "검색량 모델은 Google Keyword Planner와 클릭스트림을 결합."
+    },
+    {
+      "id": "ahrefs-period",
+      "publisherType": "first_party",
+      "title": "Ahrefs metric update frequency",
+      "url": "https://help.ahrefs.com/en/articles/1077603-how-often-is-the-data-in-keywords-explorer-and-site-explorer-updated",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 검색 결과에서 열기",
+      "finding": "국가별 최근 12개월 평균; 최소 월 1회 검색량 갱신."
+    },
+    {
+      "id": "ahrefs-korea",
+      "publisherType": "first_party",
+      "title": "Ahrefs supported languages/locales",
+      "url": "https://help.ahrefs.com/en/articles/2127127-what-languages-does-ahrefs-keywords-explorer-support",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 검색: Ahrefs Keywords Explorer South Korea",
+      "finding": "Keywords Explorer 지원 목록에 South Korea - Korean (ko-KR) 명시."
+    },
+    {
+      "id": "ahrefs-free",
+      "publisherType": "first_party",
+      "title": "Ahrefs Free Keyword Generator",
+      "url": "https://ahrefs.com/keyword-generator",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 도구 페이지 직접 열기",
+      "finding": "공개 무료 페이지에 Google·국가 선택·키워드 입력 UI와 월간 검색량 추정 설명. 한국 치과어 결과 미실행."
+    },
+    {
+      "id": "ahrefs-api-plan",
+      "publisherType": "first_party",
+      "title": "Ahrefs About API v3",
+      "url": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 도움말 검색: API plans 2026",
+      "finding": "2026-09-23 문서는 Lite 이상 API/MCP/Connect와 공통 API 한도 명시. 과거 Enterprise 전용 요건을 재사용하면 안 됨."
+    },
+    {
+      "id": "ahrefs-api",
+      "publisherType": "first_party",
+      "title": "Ahrefs API introduction",
+      "url": "https://docs.ahrefs.com/en/api/docs/introduction",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "구 문서 URL에서 현 URL로 리디렉션",
+      "finding": "키워드별 지표·검색량 이력·국가별 검색량·아이디어 보고서 API 존재."
+    },
+    {
+      "id": "ahrefs-api-keys",
+      "publisherType": "first_party",
+      "title": "Ahrefs API keys creation and management",
+      "url": "https://docs.ahrefs.com/en/api/docs/api-keys-creation-and-management",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "API introduction의 API keys 링크",
+      "finding": "공식 키 관리 문서. 이번 조사에서 키 생성/사용 없음."
+    },
+    {
+      "id": "ahrefs-api-test",
+      "publisherType": "first_party",
+      "title": "Ahrefs Free test queries",
+      "url": "https://docs.ahrefs.com/en/api/docs/free-test-queries",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "API introduction의 Free test queries 링크",
+      "finding": "무료 테스트 문서 존재가 임의 한국 치과어의 무인증 무료 API를 뜻하지 않음."
+    },
+    {
+      "id": "semrush-method",
+      "publisherType": "first_party",
+      "title": "What is Search Volume in Semrush?",
+      "url": "https://www.semrush.com/kb/683-what-is-search-volume-in-semrush",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 KB 직접 열기",
+      "finding": "지난 12개월 평균. 제3자/검색엔진 데이터와 과거 클릭스트림을 모델에 적용. PC·모바일 합산."
+    },
+    {
+      "id": "semrush-korea",
+      "publisherType": "first_party",
+      "title": "What countries does Semrush cover?",
+      "url": "https://www.semrush.com/kb/287-what-countries-does-semrush-cover",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 검색: Semrush database South Korea",
+      "finding": "국가 DB 목록에 South Korea - KR 명시."
+    },
+    {
+      "id": "semrush-free",
+      "publisherType": "first_party",
+      "title": "What Can You Do with a Free Semrush Account?",
+      "url": "https://www.semrush.com/blog/what-can-i-do-with-a-free-account-from-semrush/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공급자 공식 무료 계정 안내 검색",
+      "finding": "무료 계정은 로그인/가입 필요, 카드 불필요. 제한 조회 가능. 무료 체험에는 별도로 카드 필요."
+    },
+    {
+      "id": "semrush-free-limit",
+      "publisherType": "first_party",
+      "title": "Getting Started with Semrush",
+      "url": "https://www.semrush.com/blog/semrush-getting-started-guide/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공급자 공식 무료 계정 안내 검색",
+      "finding": "무료 계정 키워드 조회 하루 10회, 보고서당 10개 결과 안내."
+    },
+    {
+      "id": "semrush-api",
+      "publisherType": "first_party",
+      "title": "Semrush Standard API access",
+      "url": "https://developer.semrush.com/api/v3/get-started/api-access/",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 개발문서 검색: API key Business",
+      "finding": "키워드 보고서 Standard API는 SEO Business 구독, 별도 API 유닛 구매와 키 필요."
+    },
+    {
+      "id": "naver-access",
+      "publisherType": "first_party",
+      "title": "검색광고 API를 사용하고 싶어요",
+      "url": "https://ads.naver.com/help/faq/991",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "네이버 공식 도움말 검색",
+      "finding": "검색광고 회원이 로그인 후 서비스 신청/약관 확인으로 라이선스·비밀키 발급. 별도 호출료/최소 광고 지출은 이 문서로 확정 불가."
+    },
+    {
+      "id": "naver-ui",
+      "publisherType": "first_party",
+      "title": "파워링크 키워드 도구 연관키워드 조회",
+      "url": "https://ads.naver.com/help/faq/1406",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "네이버 공식 도움말 검색: 월간검색수",
+      "finding": "광고주센터에서 월간검색수 조회·전체 엑셀 다운로드·키워드별 최근 1년 월별 추이 제공."
+    },
+    {
+      "id": "naver-spec",
+      "publisherType": "first_party",
+      "title": "NAVER SearchAd KeywordTool Swagger",
+      "url": "https://naver.github.io/searchad-apidoc/assets/json/ncc-keywordstool.json",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "downloaded_and_parsed_public_data",
+      "discoveryPath": "공식 API UI → app/config.js swaggerJson 목록 → 공개 JSON",
+      "finding": "GET /keywordstool, 최대 5개 hintKeywords. PC/모바일 검색수는 최근 30일 합계; 10 미만은 <10. showDetail=0도 검색수 포함."
+    },
+    {
+      "id": "naver-ui-terminology",
+      "publisherType": "first_party",
+      "title": "검색광고 키워드 도구 화면 도움말",
+      "url": "https://ads.naver.com/help/faq/1639",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "네이버 공식 도움말 검색: 월간검색수",
+      "finding": "AI작성 공식 도움말은 월평균이라는 표현. API는 더 구체적인 Swagger 최근 30일 정의 채택."
+    },
+    {
+      "id": "naver-datalab-api",
+      "publisherType": "first_party",
+      "title": "NAVER 통합 검색어 트렌드 API",
+      "url": "https://developers.naver.com/docs/serviceapi/datalab/search/search.md",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "NAVER Developers 공식 문서 직접 열기",
+      "finding": "ratio는 요청 구간 최대 100 상대값. 하루 1,000회, 최대 5주제/주제당 20검색어. 비로그인 방식도 앱 등록·Client ID/Secret 필요."
+    },
+    {
+      "id": "naver-datalab-ui",
+      "publisherType": "first_party",
+      "title": "네이버 데이터랩 검색어트렌드",
+      "url": "https://datalab.naver.com/keyword/trendSearch.naver",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "공식 웹 UI 직접 열기",
+      "finding": "공개 웹 폼 열기 성공; 기간·기기·연령·성별·5주제 설정. 치과어 결과 미수집."
+    },
+    {
+      "id": "google-definition",
+      "publisherType": "first_party",
+      "title": "Google Keyword Planner historical metrics",
+      "url": "https://support.google.com/google-ads/answer/3022575?hl=ko",
+      "checkedOn": "2026-11-01",
+      "accessStatus": "read_public_document",
+      "discoveryPath": "기존 검색증거 공식 출처 재확인",
+      "finding": "선택한 기간·위치·네트워크의 키워드와 유사어 평균이며 반올림. 기본 12개월이고 언어와 무관한 집계 설명이 있어 한국어 사용자만의 표본으로 단정 금지."
+    }
+  ],
+  "searchLog": [
+    {
+      "query": "DataForSEO Google Ads locations \"South Korea\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "Ahrefs Keywords Explorer \"South Korea\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "Semrush database \"South Korea\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:help.ahrefs.com \"search volume\" \"clickstream\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:help.ahrefs.com \"API\" \"plans\" \"2026\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:semrush.com \"free account\" \"10\" \"Keyword\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:developer.semrush.com \"API key\" \"Business\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:docs.dataforseo.com/v3/keywords_data/google_ads/languages/ \"ko\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:dataforseo.com \"Korean\" \"Google Ads\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:ads.naver.com/help \"월간검색수\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:github.com/naver/searchad-apidoc \"RelKwdStat\" \"showDetail\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    }
+  ],
+  "accessObservations": [
+    {
+      "url": "https://cdn.dataforseo.com/v3/locations/locations_kwrd_2026_09_01.csv",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "bytes": 5866413,
+      "sha256": "0afa2016e348e8d801dd113c1fad3e6f0fbf71611fbed7c92b89d38f7428596c",
+      "result": "KR country row parsed; location_code 2410",
+      "webReaderAttempt": "web tool unsupported application/octet-stream; ordinary public download succeeded",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://api.dataforseo.com/v3/keywords_data/google_ads/languages",
+      "method": "anonymous_GET_no_authorization_header",
+      "httpStatus": 401,
+      "providerStatusCode": 40100,
+      "result": "인증 필요. 중단했고 재시도/우회/키 탐색 없음. 한국어 언어 행 미확보.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://naver.github.io/searchad-apidoc/",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "result": "웹 리더 readable line 없음. 공개 HTML에 app/config.js 링크 존재.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://naver.github.io/searchad-apidoc/app/config.js",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "result": "swaggerJson 목록에 assets/json/ncc-keywordstool.json 명시.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://naver.github.io/searchad-apidoc/assets/json/ncc-keywordstool.json",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "sha256": "2b740259ce6939317684e66bf6fd767fb806a613f7b1d78fcc254be7a77689fa",
+      "result": "공식 API 명세 파싱. 실제 치과 검색어 결과가 아님.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://help.ahrefs.com/en/articles/72571-where-does-ahrefs-get-the-data-from",
+      "method": "web_open",
+      "status": "tool_access_failed",
+      "result": "접근 가능한 공식 모델링 도움말을 대신 사용. 이 실패 URL을 근거로 쓰지 않음.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://docs.ahrefs.com/docs/api/reference/authentication",
+      "method": "web_open",
+      "status": "tool_access_failed",
+      "result": "공식 API introduction과 그 key-management 링크로 접근.",
+      "checkedOn": "2026-11-01"
+    }
+  ],
+  "unverified": [
+    "실제 한국 치과 검색어의 모든 공급자 검색량",
+    "DataForSEO Google Ads languages의 ko 행 및 실제 한국어 요청 성공",
+    "Ahrefs 무료 도구의 한국 치과어 결과·CAPTCHA/결과 한도",
+    "네이버 API 별도 사용료 또는 최소 광고 지출 요건",
+    "검색량 재배포 권한: 실제 사용 계약의 확인 범위 밖"
+  ]
+}

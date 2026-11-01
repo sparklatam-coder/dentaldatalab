@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-01T00:26:59.930+00:00",
+  "checkedAt": "2026-11-01T00:44:29.246+00:00",
+  "scope": "기관에서 연결한 공개 홈페이지 본문 1회 확인. 네이버 등 플랫폼은 접근하지 않음. 자동 일치는 귀속 후보이며 수동 검토 필요.",
+  "requestPolicy": "공개 IP/표준 포트 검증, 직렬 처리, 요청당 체크포인트, 401/403/429 또는 challenge 즉시 전체 중단, 자동 재시도 없음.",
+  "state": "stopped",
+  "results": [
+    {
+      "url": "http://neulbomdental.com/",
+      "checkedAt": "2026-11-01T00:26:59.940+00:00",
+      "clinicIds": [
+        "c-33684ea3dfbc"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-33684ea3dfbc": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://pcmap.place.naver.com/hospital/1754848323/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010740&locale=ko&svcName=map_pcv5",
+        "https://pcmap.place.naver.com/hospital/1754848323/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010740&locale=ko&svcName=map_pcv5"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://neulbomdental.com/",
+      "truncated": false,
+      "bodySha256": "09097c6ac4e6fb0d0c7dece8e219f5036faceeb3f35bb5d68bfd80627a24631f",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "https://okjeongdentalclinic.com/",
+      "checkedAt": "2026-11-01T00:28:06.565+00:00",
+      "clinicIds": [
+        "c-997def5ce9a5"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-997def5ce9a5": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://pcmap.place.naver.com/hospital/1058443430/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010753&locale=ko&svcName=map_pcv5",
+        "https://pcmap.place.naver.com/hospital/1058443430/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010748&locale=ko&svcName=map_pcv5",
+        "https://okjeongdentalclinic.com/location",
+        "https://okjeongdentalclinic.co.kr/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://okjeongdentalclinic.com/",
+      "truncated": false,
+      "bodySha256": "0332efe4414f21d1ed439f05060d384f5ae87d870f3507a87a913ca7783e98a2",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://yangjuiondent.com/",
+      "checkedAt": "2026-11-01T00:28:09.276+00:00",
+      "clinicIds": [
+        "c-c937bc56dc57"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "booking",
+          "url": "https://booking.naver.com/booking/13/bizes/1607525"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_AxbwqX"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/pediatrlee_dr"
+        },
+        {
+          "kind": "kakaoMap",
+          "url": "https://kko.to/OJqMwNs6bY"
+        },
+        {
+          "kind": "other",
+          "url": "https://naver.me/5t7V9JsN"
+        }
+      ],
+      "matches": {
+        "c-c937bc56dc57": {
+          "name": true,
+          "phone": true,
+          "address": false
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://pcmap.place.naver.com/hospital/2002064332/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010744&locale=ko&svcName=map_pcv5",
+        "https://pcmap.place.naver.com/hospital/2002064332/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010744&locale=ko&svcName=map_pcv5"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://yangjuiondent.com/",
+      "truncated": false,
+      "bodySha256": "11821fa1b6f6a12ca2747b9d271a1f45b041051f36b6a1602efaa4dfd30f7c02",
+      "observedLinkCount": 5
+    },
+    {
+      "url": "http://www.e-shine.kr/",
+      "checkedAt": "2026-11-01T00:28:09.784+00:00",
+      "clinicIds": [
+        "c-dc63e9f5fc1f"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/e-shinedental"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/eshinedental?igshid=OGQ5ZDc2ODk2ZA=="
+        }
+      ],
+      "matches": {
+        "c-dc63e9f5fc1f": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://pcmap.place.naver.com/hospital/1709162580/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010749&locale=ko&svcName=map_pcv5",
+        "https://pcmap.place.naver.com/hospital/1709162580/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010749&locale=ko&svcName=map_pcv5"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://www.e-shine.kr/",
+      "truncated": false,
+      "bodySha256": "b24f38c12832caf94622bb8b94dfa9cb14c007f392fb106f5fd1eaa541fbe2e9",
+      "observedLinkCount": 2
+    }
+  ],
+  "stopReason": "signal"
+}

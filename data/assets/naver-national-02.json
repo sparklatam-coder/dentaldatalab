@@ -1,0 +1,429 @@
+{
+  "schemaVersion": 1,
+  "scope": "사용자가 지적한 1945김근치과의 홈페이지·네이버지도·채널 직접 재조사",
+  "records": [
+    {
+      "clinicId": "c-f1e05c9ae9d2",
+      "name": "1945김근치과의원",
+      "assets": [
+        {
+          "kind": "instagram",
+          "url": "https://instagram.com/1945kkdent",
+          "label": "네이버지도에 연결된 인스타그램",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/13021314",
+            "https://instagram.com/1945kkdent"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "기관 식별을 대조한 네이버지도 인스타그램 버튼에서 실제 이동한 주소",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13021314"
+            }
+          ],
+          "notes": "네이버지도 버튼의 실제 도착 주소입니다. 목적지는 ‘Profile을(를) 이용할 수 없습니다’로 표시되어 계정 본문을 확인하지 못했습니다.",
+          "checkedAt": "2026-10-31T22:19:49.407Z"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://facebook.com/1945kk",
+          "label": "네이버지도에 연결된 페이스북",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://map.naver.com/p/entry/place/13021314",
+            "https://facebook.com/1945kk"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "기관 식별을 대조한 네이버지도 페이스북 버튼에서 실제 이동한 주소",
+              "sourceUrl": "https://map.naver.com/p/entry/place/13021314"
+            }
+          ],
+          "notes": "실제 도착 페이지의 제목은 ‘1945김근치과 | Busan’입니다. 로그인 안내로 계정 본문 확인은 제한되었습니다.",
+          "checkedAt": "2026-10-31T22:19:49.407Z"
+        },
+        {
+          "kind": "website",
+          "label": "1945김근치과 홈페이지",
+          "url": "http://1945kk.co.kr/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-10-31T22:18:59.534+00:00",
+          "evidenceUrls": [
+            "http://1945kk.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "1945김근치과의원",
+              "sourceUrl": "http://1945kk.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "부산 부산진구 가야대로 767-1 원광메디컬센터 5층",
+              "sourceUrl": "http://1945kk.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "Tel : 051. 809. 4707",
+              "sourceUrl": "http://1945kk.co.kr/"
+            }
+          ],
+          "notes": "실제 HTTP 홈페이지 HTML에서 기관명·도로명 주소·전화번호와 기관 명의 푸터를 확인했습니다. 현재 접속 성공이며 홈페이지 내용의 최신성까지 보증하지는 않습니다. Chrome에서 이 HTTP 주소를 열면 보안 연결을 지원하지 않는다는 안내가 표시되어 진행하지 않았습니다. 앞서 HTTP 본문을 수신한 결과와 구분합니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_read",
+              "sourceUrl": "http://1945kk.co.kr/",
+              "httpStatus": 200,
+              "bodySha256": "aeb536f386ecde29de831a7a34eff4ddd31b7e259598569b236b7a2673c406eb",
+              "checkedAt": "2026-10-31T22:18:59.534+00:00"
+            }
+          ],
+          "browserAccess": {
+            "checkedAt": "2026-10-31T22:23:34.016Z",
+            "status": "security_warning_not_bypassed",
+            "message": "Chrome displayed an insecure-connection warning for the observed HTTP URL; returned without proceeding."
+          }
+        },
+        {
+          "kind": "other",
+          "label": "홈페이지에 삽입된 Vimeo 영상 429219719",
+          "url": "https://player.vimeo.com/video/429219719?title=0&byline=0&portrait=0&background=1&autoplay=1&loop=1&muted=1",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-10-31T22:18:59.534+00:00",
+          "evidenceUrls": [
+            "http://1945kk.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지 HTML의 실제 iframe src",
+              "sourceUrl": "http://1945kk.co.kr/"
+            }
+          ],
+          "notes": "영상 대상 페이지와 영상 내용은 열람하거나 다운로드하지 않았습니다.",
+          "provenance": [
+            {
+              "type": "homepage_iframe_src",
+              "sourceUrl": "http://1945kk.co.kr/",
+              "bodySha256": "aeb536f386ecde29de831a7a34eff4ddd31b7e259598569b236b7a2673c406eb",
+              "checkedAt": "2026-10-31T22:18:59.534+00:00"
+            }
+          ]
+        },
+        {
+          "kind": "other",
+          "label": "홈페이지에 삽입된 Vimeo 영상 423462862",
+          "url": "https://player.vimeo.com/video/423462862?title=0&byline=0&portrait=0",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-10-31T22:18:59.534+00:00",
+          "evidenceUrls": [
+            "http://1945kk.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지 HTML의 실제 iframe src",
+              "sourceUrl": "http://1945kk.co.kr/"
+            }
+          ],
+          "notes": "영상 대상 페이지와 영상 내용은 열람하거나 다운로드하지 않았습니다.",
+          "provenance": [
+            {
+              "type": "homepage_iframe_src",
+              "sourceUrl": "http://1945kk.co.kr/",
+              "bodySha256": "aeb536f386ecde29de831a7a34eff4ddd31b7e259598569b236b7a2673c406eb",
+              "checkedAt": "2026-10-31T22:18:59.534+00:00"
+            }
+          ]
+        },
+        {
+          "kind": "other",
+          "label": "홈페이지에 삽입된 Vimeo 영상 423463084",
+          "url": "https://player.vimeo.com/video/423463084?title=0&byline=0&portrait=0",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-10-31T22:18:59.534+00:00",
+          "evidenceUrls": [
+            "http://1945kk.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지 HTML의 실제 iframe src",
+              "sourceUrl": "http://1945kk.co.kr/"
+            }
+          ],
+          "notes": "영상 대상 페이지와 영상 내용은 열람하거나 다운로드하지 않았습니다.",
+          "provenance": [
+            {
+              "type": "homepage_iframe_src",
+              "sourceUrl": "http://1945kk.co.kr/",
+              "bodySha256": "aeb536f386ecde29de831a7a34eff4ddd31b7e259598569b236b7a2673c406eb",
+              "checkedAt": "2026-10-31T22:18:59.534+00:00"
+            }
+          ]
+        },
+        {
+          "kind": "naverBlog",
+          "label": "사람인 기업정보에 등록된 블로그 후보",
+          "url": "http://blog.naver.com/1945dent",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-10-31T22:18:59.534+00:00",
+          "evidenceUrls": [
+            "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "1945김근치과의원",
+              "sourceUrl": "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y"
+            },
+            {
+              "field": "address",
+              "value": "부산 부산진구 가야대로 767-1, 5층",
+              "sourceUrl": "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y"
+            }
+          ],
+          "notes": "사람인 해당 기업정보의 SNS 블로그 실제 href입니다. 사람인은 SNS 출처를 기업 직접입력으로 표시하지만 이 계정 본문·현재 운영 주체는 확인하지 않았습니다. 검색 도구에서 blog.naver.com 접근 제한이 표시되어 대상 HTTP 요청은 하지 않았습니다.",
+          "provenance": [
+            {
+              "type": "third_party_company_profile_href",
+              "sourceUrl": "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y",
+              "bodySha256": "bb7d75d113ac0c9b6d6846610fa16a019aea1dca8cb5da6bfaf89d3318096d93",
+              "checkedAt": "2026-10-31T22:18:59.534+00:00"
+            }
+          ]
+        },
+        {
+          "kind": "website",
+          "label": "사람인 기업정보에 등록된 이전 홈페이지 후보",
+          "url": "http://1945dent.co.kr",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "checkedAt": "2026-10-31T22:18:59.534+00:00",
+          "evidenceUrls": [
+            "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "1945김근치과의원",
+              "sourceUrl": "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y"
+            },
+            {
+              "field": "address",
+              "value": "부산 부산진구 가야대로 767-1, 5층",
+              "sourceUrl": "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y"
+            }
+          ],
+          "notes": "실제 등록 링크이지만 일반 HTTP 요청이 DNS 이름 확인 오류로 실패했습니다. 기관이 직접 접속을 차단했다는 의미가 아닙니다.",
+          "provenance": [
+            {
+              "type": "third_party_company_profile_href",
+              "sourceUrl": "https://www.saramin.co.kr/zf_user/company-info/view?csn=aTZPWGRFcHE1V3psbW9tQXp4NHgzUT09&popup_yn=y",
+              "bodySha256": "bb7d75d113ac0c9b6d6846610fa16a019aea1dca8cb5da6bfaf89d3318096d93",
+              "checkedAt": "2026-10-31T22:18:59.534+00:00"
+            }
+          ]
+        }
+      ],
+      "searches": [
+        {
+          "query": "네이버지도 place 13021314 홈·주간 영업시간·정보·SNS 연결",
+          "outcome": "서면 접미사와 동일 도로명/건물번호를 대조하고 표시된 채널 버튼을 직접 열어 이동 주소를 확인했다."
+        },
+        {
+          "query": "1945김근치과의원 홈페이지 051 809 4707",
+          "outcome": "동일 주소·전화의 기관 디렉토리 결과를 확인."
+        },
+        {
+          "query": "1945김근치과 블로그 인스타그램 유튜브",
+          "outcome": "기관 채널 URL을 특정하지 못함."
+        },
+        {
+          "query": "\"1945김근치과\"",
+          "outcome": "부산시·기관 디렉토리 결과 확인."
+        },
+        {
+          "query": "\"김근치과\" 홈페이지",
+          "outcome": "별도 분당 기관 ykkdental.com 및 과거 채용정보 발견."
+        },
+        {
+          "query": "\"1945김근치과\" 블로그",
+          "outcome": "홈페이지 후보를 표시한 디렉토리 검색 결과 확인."
+        },
+        {
+          "query": "\"051-809-4707\" 홈페이지",
+          "outcome": "동일 기관 식별용 주소·전화 검색 결과 확인."
+        },
+        {
+          "query": "\"1945 김근치과\"",
+          "outcome": "http://1945kk.co.kr/ 를 표시한 디렉토리 검색 결과 확인."
+        },
+        {
+          "query": "\"김근치과\" \"blog.naver.com\"",
+          "outcome": "직접 검증할 블로그 결과 미확보."
+        },
+        {
+          "query": "\"김근치과\" \"홈페이지\" -site:medical -site:hospital24.kr",
+          "outcome": "사람인 기업정보의 이전 도메인 발견."
+        },
+        {
+          "query": "\"1945김근치과\" \"인스타그램\"",
+          "outcome": "기관 Instagram URL 미확보."
+        },
+        {
+          "query": "\"1945김근치과\" \"블로그\"",
+          "outcome": "독립 검색 결과만으로 공식 블로그를 특정하지 못함."
+        },
+        {
+          "query": "\"1945kk.co.kr\"",
+          "outcome": "홈페이지 URL 표시 검색 결과 확인."
+        },
+        {
+          "query": "\"1945dent.co.kr\"",
+          "outcome": "사람인 회사정보에서 홈페이지와 SNS 블로그 항목 발견."
+        },
+        {
+          "query": "\"1945김근치과\" site:blog.naver.com",
+          "outcome": "검색 도구가 blog.naver.com robots 제한을 알림. 이후 해당 호스트 대상 HTTP 열람 시도 없음."
+        },
+        {
+          "query": "\"김근치과\" site:instagram.com",
+          "outcome": "기관 계정 검색 결과 미확보."
+        },
+        {
+          "query": "\"김근치과\" site:youtube.com",
+          "outcome": "기관 채널 검색 결과 미확보."
+        },
+        {
+          "query": "\"1945dent\" \"블로그\"",
+          "outcome": "추가 검색 결과 없음."
+        },
+        {
+          "query": "\"1945kkdent\"",
+          "outcome": "추가 검색 결과 없음."
+        },
+        {
+          "query": "\"김근치과\" \"youtube\"",
+          "outcome": "추가 검색 결과 없음."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/13021314/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:17:54.439Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "1945김근치과의원 서면",
+            "address": "부산 부산진구 가야대로 767-1 원광메디컬센터",
+            "phone": "0507-1408-4707",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 화 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 수 정기휴무 (매주 수요일) 목 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 금 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 토 09:30 - 13:00 12:00 접수마감",
+            "website": "http://1945kk.co.kr/",
+            "naverBlog": "https://blog.naver.com/yeonseidentist",
+            "instagram": "https://instagram.com/1945kkdent",
+            "facebook": "https://facebook.com/1945kk",
+            "naverCategory": "치과",
+            "displayedChannelButtons": [
+              "홈페이지",
+              "블로그",
+              "페이스북",
+              "인스타그램"
+            ],
+            "amenities": [
+              "예약",
+              "무선 인터넷",
+              "남/녀 화장실 구분"
+            ],
+            "parking": "주차가능",
+            "paymentMethods": [
+              "제로페이"
+            ]
+          },
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 기관명은 공공 원자료의 1945김근치과의원 뒤에 지역명 서면이 붙은 표기다. 부산 부산진구 가야대로 767-1 원광메디컬센터가 원자료 주소와 일치한다. 연결된 http://1945kk.co.kr/ 본문에서도 동일 주소와 공공 신고번호 051-809-4707을 확인했다. 네이버 0507-1408-4707은 신고번호와 구분해 보존한다."
+          },
+          "fieldSources": {
+            "amenities": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+            "parking": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+            "paymentMethods": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5"
+          },
+          "notes": "Chrome 공개 UI에서 주간시간을 펼쳐 확인했다. SNS 버튼을 직접 열어 도착 주소를 확인했고, 블로그의 당시 페이지 제목은 ‘연세김근치과의원’이었다. 목적지 운영 주체를 독립 인증한 것은 아니다. 편의·주차·결제는 정보 탭에서 확인했다. 소개·찾아오는 길·리뷰 본문은 저장하지 않았다."
+        },
+        {
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/13021314/home?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:27:04.161Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "1945김근치과의원 서면",
+            "address": "부산 부산진구 가야대로 767-1 원광메디컬센터",
+            "phone": "0507-1408-4707",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 화 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 수 정기휴무 (매주 수요일) 목 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 금 09:30 - 17:30 13:00 - 14:00 휴게시간 16:30 접수마감 토 09:30 - 13:00 12:00 접수마감",
+            "website": "http://1945kk.co.kr/",
+            "naverBlog": "https://blog.naver.com/yeonseidentist",
+            "instagram": "https://instagram.com/1945kkdent",
+            "facebook": "https://facebook.com/1945kk",
+            "naverCategory": "치과",
+            "displayedChannelButtons": [
+              "홈페이지",
+              "블로그",
+              "페이스북",
+              "인스타그램"
+            ],
+            "amenities": [
+              "예약",
+              "무선 인터넷",
+              "남/녀 화장실 구분"
+            ],
+            "parking": "주차가능",
+            "paymentMethods": [
+              "제로페이"
+            ],
+            "description": "3/7 휴진입니다.\n네이버 예약시 네이버 예약과 병원 예약이 연동되어 있지 않아\n확인 후 연락을 드립니다.\n확정이 되어야 최종예약이 된것이기 때문에 참고 부탁드립니다.\n\n내원시 신분증 가지고 내원 부탁드립니다.\n실물 신분증 or 모바일 건강보험증\n\n위치 : 부산 서면 롯데백화점 부산점 맞은편 원광메디컬센터 5층\n예약전화 : 051-809-4707\n\n1945년 개원이래 3대째 가업을 이어내려오는,\n전통과 역사가 함께 자리 잡은 1945김근치과입니다.\n\n풍부한 임상경험의 70년의 노하우와\n25년의 임플란트 경력을 가지고 있으며,\n신뢰와 원칙 부분을 슬로건으로 언제나 환자분들에게 최선을 다하고 있습니다.\n\n- 1945김근치과의 핵심기술 '임플란트'\n환자의 구강상태에 따라 조절되는 맞춤형 임플란트를 식립하며,\n내 것 같이 자연스러운 임플란트를 위해 끊임없이 연구하고 있습니다.\n\n- 초정밀 3D CT 장비\n3차원 입체영상을 통해 환자의 치아 상태를 정확하게 파악할 수 있어\n임플란트, 교정 등 각종 질환들을 광범위하게 진단할 수 있습니다.\n\n성공적인 결과를 위해 정확한 진단과 원칙을 지키고 있으며,\n과잉진료 없이 환자분께 꼭 필요한 진료를 진행해 드리고 있습니다.\n한 분 한 분 내 가족을 치료하는 마음으로 임하고 있습니다.\n\n[김재영 원장 약력]\n- 연세대학교 치과대학 졸업\n- 신촌 세브란스 치과병원 통합진료과 레지던트\n- 통합치의학과 전문의\n\n- 오스템 임플란트 연구자문의사\n- 전 대한공중보건의사협회 회장, 법제이사\n- 전 대한치과의사협회 군무위원\n- 전 대한심미치과학회 이사\n- 대한보철학회 정회원\n- KAOMI(대한구강악안면 임플란트 학회) 정회원\n- 통합치의학과 전문의\n\n[김경용 원장 약력]\n- 경희대학교 치과대학 졸업\n- 대한치과이식학회 (KAID) 정회원\n- 대한치과이식학회 (KAID) 교육지도의 35호\n- 대한치과이식학회 (KAID) 인정의 35호\n- 전 대한치과이식학회 임플란트 학회 부산지부 총무이사\n- 대한보철학회 정회원\n  통합치과전문임상의",
+            "representativeKeywords": [
+              "서면치과",
+              "사랑니",
+              "임플란트",
+              "충치발치잇몸치료",
+              "틀니치아"
+            ],
+            "directions": "승용차 기준 네비게이션 : 부산광역시 부산진구 가야대로 767-1 원광메디컬센터 지하철 이용시 : 부산지하철 1, 2, 3호선 서면역(환승역) 롯데백화점 지하도 까지 온 뒤 롯데백화점 맞은편 출구 버스 이용시 : 원광메디컬 정문 _ 내리면 바로 1945 김근치과의원 33, 67, 68, 77, 108, 108-1, 85, 31, 31-1, 129, 110-1, 128, 133 138, 110, 201, 309, 129, 62번 : 롯데백화점 정문 _ 지하도를 통해 롯데백화점 맞은편 133, 141, 157-2, 160, 201, 503, 85, 31, 31-1, 33, 62, 77, 79, 87 98, 110, 110-1, 129, 1129-1, 129-2번"
+          },
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 기관명은 공공 원자료의 1945김근치과의원 뒤에 지역명 서면이 붙은 표기다. 부산 부산진구 가야대로 767-1 원광메디컬센터가 원자료 주소와 일치한다. 연결된 http://1945kk.co.kr/ 본문에서도 동일 주소와 공공 신고번호 051-809-4707을 확인했다. 네이버 0507-1408-4707은 신고번호와 구분해 보존한다."
+          },
+          "fieldSources": {
+            "amenities": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+            "parking": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+            "paymentMethods": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+            "description": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+            "representativeKeywords": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+            "directions": "https://pcmap.place.naver.com/hospital/13021314/home?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5"
+          },
+          "notes": "공개 네이버 홈의 주간시간과 길안내를 펼쳐 재확인했다. 정보 탭의 소개를 끝까지 펼쳐 대표키워드와 함께 저장했다. 소개의 예약·내원·연도 없는 휴진·진료 설명·의료진 약력은 업체 작성 원문이며 객관적 사실이나 현재 진료 일정으로 재해석하지 않는다. 방문자 리뷰 본문은 수집하지 않았다.",
+          "publisherTextCapture": {
+            "description": "소개 펼치기 후 AX 첫 구간과 화면 하단을 순차 대조. AX 긴 텍스트가 중간에서 잘려 이후 CT 설명·의료진 약력·마지막 접기 버튼까지 화면으로 확인했다. 화면 줄바꿈은 읽기 가능한 문단 단위로 보존했다.",
+            "directions": "홈의 찾아가는길 펼침 버튼 전체 접근성 텍스트. 노선·번호를 원문대로 보존하며 현재 운행 여부를 검증하거나 교정하지 않았다.",
+            "reservationNotice": "별도 항목이 아니라 소개에 포함되어 있으므로 소개 원문에 보존하고 중복 필드를 만들지 않았다.",
+            "publisherAuthored": true,
+            "claimsIndependentlyVerified": false,
+            "dateInterpretation": "3/7에 연도가 없어 특정 연도 휴진 일정으로 변환하지 않았다.",
+            "excluded": "방문자 리뷰 본문은 수집하지 않았다."
+          }
+        }
+      ],
+      "checkedAt": "2026-10-31T22:27:04.161Z"
+    }
+  ],
+  "checkedAt": "2026-10-31T22:27:04.161Z"
+}

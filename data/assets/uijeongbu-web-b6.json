@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "official_website_review",
+  "checkedAt": "2026-11-01T00:36:40.167785+00:00",
+  "scope": "Five unresolved official asset searches. Third-party directories are evidence only, not clinic assets.",
+  "records": [
+    {
+      "clinicId": "c-b4e12746b5ed",
+      "name": "사랑으로치과의원",
+      "checkedAt": "2026-11-01T00:36:40.167785+00:00",
+      "researched": false,
+      "reviewStatus": "official_asset_unresolved",
+      "assets": [],
+      "researchAttempts": [
+        {
+          "method": "web_search",
+          "queries": [
+            "\"사랑으로치과\" \"의정부\"",
+            "\"031-876-2870\"",
+            "\"사랑으로치과\" \"평화로\" \"블로그\""
+          ],
+          "result": "Third-party listings only. Official assets unresolved. No direct Naver requests."
+        }
+      ],
+      "directoryEvidence": [
+        {
+          "sourceUrl": "https://medieus.com/sub_detail/hospital_detail.asp?hos_num=45110",
+          "sourceType": "third_party_directory",
+          "bodyStatus": "read",
+          "name": "사랑으로치과의원",
+          "address": "경기도 의정부시 평화로 375, 4층 (호원동, 회룡프라자)",
+          "phone": "031-876-2870",
+          "notes": "기관명·평화로375 4층 회룡프라자·전화 대조. 안양 동명기관 페이지에 의정부 전화가 혼재한 검색결과는 채택하지 않음."
+        }
+      ],
+      "notes": "Official asset review remains unresolved; researched=false. Empty assets do not establish absence."
+    },
+    {
+      "clinicId": "c-44f088352109",
+      "name": "삼성열린치과의원",
+      "checkedAt": "2026-11-01T00:36:40.167785+00:00",
+      "researched": false,
+      "reviewStatus": "official_asset_unresolved",
+      "assets": [],
+      "researchAttempts": [
+        {
+          "method": "web_search",
+          "queries": [
+            "\"삼성열린치과\" \"의정부\"",
+            "\"삼성열린치과의원\" \"031-846-2882\"",
+            "\"삼성열린치과\" \"블로그\""
+          ],
+          "result": "Third-party listings only. Official assets unresolved. No direct Naver requests."
+        }
+      ],
+      "directoryEvidence": [
+        {
+          "sourceUrl": "https://dentstat.com/clinic/uijeongbusi-samseongyeolrinchigwauiweon",
+          "sourceType": "third_party_directory",
+          "bodyStatus": "read",
+          "name": "삼성열린치과의원",
+          "address": "경기도 의정부시 평화로 647, 미건메디컬프라자 203호 (의정부동)",
+          "phone": "031-846-2882",
+          "notes": "기관명·평화로647 미건메디컬프라자203호·전화 대조. 기관 직접 홈페이지 연결 미발굴."
+        }
+      ],
+      "notes": "Official asset review remains unresolved; researched=false. Empty assets do not establish absence."
+    },
+    {
+      "clinicId": "c-3615d7443ca9",
+      "name": "삼성치과의원",
+      "checkedAt": "2026-11-01T00:36:40.167785+00:00",
+      "researched": false,
+      "reviewStatus": "official_asset_unresolved",
+      "assets": [],
+      "researchAttempts": [
+        {
+          "method": "web_search",
+          "queries": [
+            "\"삼성치과\" \"민락동\" 홈페이지",
+            "\"031-853-7528\""
+          ],
+          "result": "Third-party listings only. Official assets unresolved. No direct Naver requests."
+        }
+      ],
+      "directoryEvidence": [
+        {
+          "sourceUrl": "https://mobile.hidoc.co.kr/find/result/view/H0000190253",
+          "sourceType": "third_party_directory",
+          "bodyStatus": "read",
+          "name": "삼성치과의원",
+          "address": "경기도 의정부시 용현로 148, 2층 (민락동, 대경빌딩)",
+          "phone": "031-853-7528",
+          "notes": "기관명·용현로148 2층 대경빌딩·전화 대조. 하이닥 공통 추가정보는 체크 여부가 불명확하므로 채택하지 않음."
+        }
+      ],
+      "notes": "Official asset review remains unresolved; researched=false. Empty assets do not establish absence."
+    },
+    {
+      "clinicId": "c-48363291bf40",
+      "name": "삼익치과의원",
+      "checkedAt": "2026-11-01T00:36:40.167785+00:00",
+      "researched": false,
+      "reviewStatus": "official_asset_unresolved",
+      "assets": [],
+      "researchAttempts": [
+        {
+          "method": "web_search",
+          "queries": [
+            "\"삼익치과\" \"의정부\" 홈페이지",
+            "\"삼익치과의원\" \"031-879-6875\""
+          ],
+          "result": "Third-party listings only. Official assets unresolved. No direct Naver requests."
+        }
+      ],
+      "directoryEvidence": [
+        {
+          "sourceUrl": "https://mobile.hidoc.co.kr/find/result/view/H0000190284",
+          "sourceType": "third_party_directory",
+          "bodyStatus": "read",
+          "name": "삼익치과의원",
+          "address": "경기도 의정부시 호동로 72, 304호 (호원동, 원가든2차아파트상가)",
+          "phone": "031-879-6875",
+          "notes": "기관명·호동로72 304호·전화 대조. 다른 제3자 자료의 호동로70 표기와 충돌하여 원자료를 수정하지 않음."
+        }
+      ],
+      "notes": "Official asset review remains unresolved; researched=false. Empty assets do not establish absence."
+    },
+    {
+      "clinicId": "c-ab4eaaa64985",
+      "name": "상쾌한치과의원",
+      "checkedAt": "2026-11-01T00:36:40.167785+00:00",
+      "researched": false,
+      "reviewStatus": "official_asset_unresolved",
+      "assets": [],
+      "researchAttempts": [
+        {
+          "method": "web_search",
+          "queries": [
+            "\"상쾌한치과\" \"의정부\"",
+            "\"상쾌한치과의원\" \"031-841-7528\"",
+            "\"상쾌한치과\" \"용민로\" \"블로그\""
+          ],
+          "result": "Third-party listings only. Official assets unresolved. No direct Naver requests."
+        }
+      ],
+      "directoryEvidence": [
+        {
+          "sourceUrl": "https://mobile.hidoc.co.kr/find/result/view/H0000190377",
+          "sourceType": "third_party_directory",
+          "bodyStatus": "read",
+          "name": "상쾌한치과의원",
+          "address": "경기도 의정부시 용민로 1, 4층 (용현동, 도원빌딩)",
+          "phone": "031-841-7528",
+          "notes": "기관명·용민로1 도원빌딩4층·전화 대조. 기관 직접 운영 홈페이지나 블로그 확정 근거 미발굴."
+        }
+      ],
+      "notes": "Official asset review remains unresolved; researched=false. Empty assets do not establish absence."
+    }
+  ]
+}

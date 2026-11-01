@@ -1,0 +1,2391 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-31T22:12:50Z",
+  "scope": {
+    "candidateClinicCount": 40,
+    "uniquePlaceCount": 41,
+    "method": "Chrome 공개 UI에서 기본 사업정보 관찰. 기관별 원자료 주소·전화 대조. 리뷰·소개·공지·길안내 미수집.",
+    "observedUniquePages": 41,
+    "pageBodyReadCount": 29,
+    "identityConfirmedClinics": 25,
+    "unresolvedClinics": 15,
+    "incorrectBranchLinksCorrected": 18,
+    "limitations": [
+      "전국 19,681기관 전체의 네이버 수집이 아니라 기존 실제 URL 후보 40기관의 1차 배치다.",
+      "41개 실제 URL을 열어 29페이지에서 이름 등 본문을 읽었고, 그중 원자료 기관 귀속을 확인한 25기관만 기관별 확인값에 연결했다.",
+      "검색 화면의 다중 프레임 보완 중 컴퓨터 도구 타임아웃 및 다른 Chrome 작업과의 초점 경합으로 추가 UI 조사를 종료했다.",
+      "읽은 페이지가 다른 지점이면 원자료 기관의 운영시간으로 사용하지 않았다.",
+      "운영시간은 당시 네이버의 펼친 주간 안내이며 실제 영업·예약 가능 여부를 실시간 보장하지 않는다."
+    ]
+  },
+  "records": [
+    {
+      "clinicId": "c-01e9787eaf94",
+      "name": "신플란트치과의원",
+      "checkedAt": "2026-10-31T22:06:48.994Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1429744407",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1429744407/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010706&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:06:48.994Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "신플란트치과의원",
+            "address": "경기 용인시 처인구 남사읍 한숲로 45 한숲스퀘어옐로우 B동 312호",
+            "phone": "031-323-2279",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:00 13:00 - 14:00 휴게시간 화 09:00 - 18:00 13:00 - 14:00 휴게시간 수 09:00 - 18:00 13:00 - 14:00 휴게시간 목 09:00 - 18:00 13:00 - 14:00 휴게시간 금 09:00 - 18:00 13:00 - 14:00 휴게시간 토 09:00 - 13:00",
+            "website": "https://yonginshinplant-mo.imweb.me/",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-091426879f4c",
+      "name": "365플러스치과의원",
+      "checkedAt": "2026-10-31T22:12:50Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://m.place.naver.com/hospital/1961059686/review/visitor",
+          "sourceUrl": "https://m.place.naver.com/hospital/1961059686/home",
+          "checkedAt": "2026-10-31T22:06:55.041Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "365플러스치과의원 하남미사",
+            "address": "경기 하남시 미사강변동로84번길 39 에코타워 4층 405, 406, 407호일부 408호",
+            "phone": "0507-1326-2870",
+            "hours": "오늘 휴무11/01 휴무 일(11/1) 휴무 월 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 10:00 - 20:30 13:00 - 14:00 휴게시간 18:30 - 19:00 휴게시간 20:00 접수마감 수 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 20:30 13:00 - 14:00 휴게시간 18:30 - 19:00 휴게시간 20:00 접수마감 금 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 14:30 14:00 접수마감 11/21-11/22 휴무",
+            "website": "https://blog.naver.com/anatole0613",
+            "amenities": "남/녀 화장실 구분, 무선 인터넷, 예약, 단체 이용 가능, 유아시설 (놀이방), 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "유튜브"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 명칭의 하남미사 접미사를 제외하면 365플러스치과의원으로 일치한다. 양쪽 주소가 하남시 미사강변동로84번길 39 에코타워 4층으로 일치한다. 호실 범위에는 일부 차이가 있어 원문을 그대로 보존하며, 네이버 0507 번호를 원자료 031 대표전화와 같은 번호로 보지 않았다."
+          }
+        }
+      ],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://m.place.naver.com/hospital/1961059686/home",
+          "outcome": "명칭 표기 차이를 수동 검토한 결과 주소가 일치하여 이 기관에 연결했다. 구체적 대조 근거는 identityReview에 기록했다."
+        }
+      ],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-0f579341de16",
+      "name": "담소치과의원",
+      "checkedAt": "2026-10-31T22:06:56.721Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1972034399?lng=127.0184577&lat=37.6263701&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F1388326%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://map.naver.com/p/entry/place/1972034399?lng=127.0184577&lat=37.6263701&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F1388326%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:06:56.721Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-0fd3807c5ede",
+      "name": "돌담구강악안면외과치과의원",
+      "checkedAt": "2026-10-31T22:07:00.230Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/4391301978",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/4391301978/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010706&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:07:00.230Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "돌담구강악안면외과치과의원",
+            "address": "대전 서구 둔산로123번길 14 5층 돌담구강악안면외과",
+            "phone": "042-483-2222",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 12:30 - 14:00 휴게시간 화 09:30 - 20:00 12:30 - 14:00 휴게시간 수 정기휴무 (매주 수요일) 목 09:30 - 18:30 12:30 - 14:00 휴게시간 금 09:30 - 20:00 12:30 - 14:00 휴게시간 토 09:00 - 13:00",
+            "website": "https://doldamdent.com/",
+            "amenities": "예약, 무선 인터넷, 대기공간, 남/녀 화장실 구분, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-14fd88c17f18",
+      "name": "서울여건봉치과의원",
+      "checkedAt": "2026-10-31T22:07:02.000Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/13402123?lng=126.9511614&lat=37.5456571&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F250710%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://map.naver.com/p/entry/place/13402123?lng=126.9511614&lat=37.5456571&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F250710%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:07:02.000Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-16a4f89265b0",
+      "name": "내추럴치과의원",
+      "checkedAt": "2026-10-31T22:07:04.804Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/12951218",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/12951218/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:07:04.804Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "내추럴치과의원 부평",
+            "address": "인천 부평구 부평대로 75 한화생명빌딩 B1",
+            "phone": "032-523-2080",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:15 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 20:15 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:15 접수마감 목 10:00 - 19:00 13:00 - 14:00 휴게시간 18:15 접수마감 금 10:00 - 21:00 13:00 - 14:00 휴게시간 20:15 접수마감 토 09:00 - 14:00 13:15 접수마감",
+            "website": "http://www.naturaltooth.com/",
+            "amenities": "예약, 주차, 무선 인터넷, 남/녀 화장실 구분",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램",
+              "페이스북"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "기관명 표기 차이가 있으나 동일 지역의 도로명·건물번호 부평대로 75 및 전화 032-523-2080가 원자료와 네이버 본문에서 일치한다."
+          }
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-1b7fe6568971",
+      "name": "이정광치과의원",
+      "checkedAt": "2026-10-31T22:07:17.128Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1649294369?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0786639&lat=35.2184634&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1649294369/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:07:17.128Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "이정광치과의원",
+            "address": "부산 동래구 금강공원로 53 3층",
+            "phone": "0507-1434-2412",
+            "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 14:00 13:30 접수마감 월 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 수 09:30 - 20:00 12:30 - 14:00 휴게시간 19:30 접수마감 목 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 금 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감",
+            "website": "https://blog.naver.com/leejkdental",
+            "amenities": "예약, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-1ea01d9a7d47",
+      "name": "해미인치과교정과치과의원",
+      "checkedAt": "2026-10-31T22:07:21.768Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://pcmap.place.naver.com/hospital/36028972/review/visitor?entry=plt&from=map&fromPanelNum=1%C3%97tamp=202401161326&x=129.0998216&y=35.1369207",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/36028972/home?entry=plt&fromPanelNum=1%C3%97tamp%3D202401161326&x=129.0998216&y=35.1369207",
+          "checkedAt": "2026-10-31T22:07:21.768Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "해미인치과교정과치과의원",
+            "address": "부산 남구 수영로 306",
+            "phone": "051-623-7552",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 12:30 - 14:00 휴게시간 화 10:00 - 19:00 12:30 - 14:00 휴게시간 수 10:00 - 20:00 12:30 - 14:00 휴게시간 목 10:00 - 19:00 12:30 - 14:00 휴게시간 금 10:00 - 19:00 12:30 - 14:00 휴게시간 토 09:30 - 14:00 11/12-11/13 휴무",
+            "website": "https://blog.naver.com/haemiin28",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "페이스북",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-276c3a168602",
+      "name": "미사랑치과의원",
+      "checkedAt": "2026-10-31T22:07:23.664Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/v5/search/%EB%AF%B8%EC%82%AC%EB%9E%91%EC%B9%98%EA%B3%BC/place/11532297?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&c=14140268.8036795,4517841.4168142,15,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EB%AF%B8%EC%82%AC%EB%9E%91%EC%B9%98%EA%B3%BC&x=127.02419587903782&y=37.56276100000067&clientX=126.909304&clientY=37.514683&display=70&ts=1793484442245&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EB%AF%B8%EC%82%AC%EB%9E%91%EC%B9%98%EA%B3%BC%2Fplace%2F11532297",
+          "checkedAt": "2026-10-31T22:07:23.664Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-29085cb3132e",
+      "name": "연세희망치과의원",
+      "checkedAt": "2026-10-31T22:07:26.700Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/2053051034?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.8426901&lat=37.6194496&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/2053051034/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:07:26.700Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세희망치과의원",
+            "address": "경기 고양시 덕양구 중앙로 478 3층",
+            "phone": "031-972-3285",
+            "hours": "진료 전9시 30분에 진료 시작 일 09:30 - 14:00 13:45 접수마감 월 09:30 - 18:30 12:30 - 13:30 휴게시간 18:15 접수마감 화 09:30 - 18:30 12:30 - 13:30 휴게시간 18:15 접수마감 수 09:30 - 20:30 12:30 - 13:30 휴게시간 20:15 접수마감 목 09:30 - 18:30 12:30 - 13:30 휴게시간 18:15 접수마감 금 09:30 - 20:30 12:30 - 13:30 휴게시간 20:15 접수마감 토 09:30 - 14:00 13:45 접수마감",
+            "website": "https://blog.naver.com/yshopedental",
+            "amenities": "남/녀 화장실 구분, 대기공간, 유아시설 (놀이방), 무선 인터넷, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-2e3716a21016",
+      "name": "이살리는치과의원",
+      "checkedAt": "2026-10-31T22:07:47.440Z",
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://m.place.naver.com/hospital/2036878791/home",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://m.place.naver.com/hospital/2036878791/home"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "이살리는치과의원 신논현역점",
+              "sourceUrl": "https://m.place.naver.com/hospital/2036878791/home"
+            },
+            {
+              "field": "address",
+              "value": "서울 서초구 강남대로 449 2층",
+              "sourceUrl": "https://m.place.naver.com/hospital/2036878791/home"
+            }
+          ],
+          "notes": "네이버 본문은 이살리는치과의원 신논현역점 / 서울 서초구 강남대로 449 2층이다. 원자료 이살리는치과의원 / 서울특별시 강남구 선릉로93길 22, 2층 (역삼동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다. 동일 법적 기관의 이전인지까지는 확인하지 못했으므로 원자료 기관의 현재 영업정보로 확정하지 않는다."
+        }
+      ],
+      "naverPlaceObservations": [],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://m.place.naver.com/hospital/2036878791/home",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        }
+      ],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-2e437413de61",
+      "name": "민플란트치과의원",
+      "checkedAt": "2026-10-31T22:07:49.415Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EB%AF%BC%ED%94%8C%EB%9E%80%ED%8A%B8/place/1181421319?c=14.86,0,0,0,dh&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%25253A%25252F%25252Fm.booking.naver.com%25252Fbooking%25252F13%25252Fbizes%25252F1184346%25253Ftheme%25253Dplace%252526service-target%25253Dmap-pc%252526entry%25253Dbmp",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EB%AF%BC%ED%94%8C%EB%9E%80%ED%8A%B8&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484468102&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EB%AF%BC%ED%94%8C%EB%9E%80%ED%8A%B8%2Fplace%2F1181421319",
+          "checkedAt": "2026-10-31T22:07:49.415Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-374ff1518681",
+      "name": "예온치과병원",
+      "checkedAt": "2026-10-31T22:07:53.006Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://m.place.naver.com/hospital/1134532954/location?filter=location&selected_place_id=1134532954",
+          "sourceUrl": "https://m.place.naver.com/hospital/1134532954/home",
+          "checkedAt": "2026-10-31T22:07:53.006Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "예온치과병원 인천검단365점",
+            "address": "인천 검단구 이음4로 6 KR법조타워 5층",
+            "phone": "1551-2870",
+            "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 17:00 13:00 - 14:00 휴게시간 12:00, 16:00 접수마감 월 10:00 - 18:30 13:00 - 14:30 휴게시간 12:00, 17:30 접수마감 화 10:00 - 20:30 13:00 - 14:30 휴게시간 12:00, 19:30 접수마감 수 10:00 - 18:30 13:00 - 14:30 휴게시간 12:00, 17:30 접수마감 목 10:00 - 20:30 13:00 - 14:30 휴게시간 12:00, 19:30 접수마감 금 10:00 - 18:30 13:00 - 14:30 휴게시간 12:00, 17:30 접수마감 토 10:00 - 17:00 13:00 - 14:00 휴게시간 12:00, 16:00 접수마감",
+            "website": "https://gd365.ye-on.com/",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 유아시설 (놀이방), 단체 이용 가능, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "기관명 표기 차이가 있으나 동일 지역의 도로명·건물번호 이음4로 6 및 전화 1551-2870가 원자료와 네이버 본문에서 일치한다."
+          }
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-37b109b90fd6",
+      "name": "연세미래치과의원",
+      "checkedAt": "2026-10-31T22:07:56.117Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/13163174",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/13163174/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:07:56.117Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "연세미래치과의원",
+            "address": "서울 관악구 신림로 330 타임스트림(구 포도몰) 6층",
+            "phone": "02-881-8250",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:30 - 21:00 13:00 - 14:00 휴게시간 19:30 접수마감 화 10:30 - 21:00 13:00 - 14:00 휴게시간 19:30 접수마감 수 10:30 - 19:00 13:00 - 14:00 휴게시간 17:30 접수마감 목 10:30 - 21:00 13:00 - 14:00 휴게시간 19:30 접수마감 금 10:30 - 19:00 13:00 - 14:00 휴게시간 17:30 접수마감 토 10:00 - 15:00 13:30 접수마감",
+            "website": "http://www.ysmirae.com/",
+            "amenities": "예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-3e48622667c3",
+      "name": "강북다인치과의원",
+      "checkedAt": "2026-10-31T22:07:59.930Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/12071622?lng=127.0352869&lat=37.6490239&placePath=/review?additionalHeight=76&fromPanelNum=1&locale=ko&svcName=map_pcv5%C3%97tamp=202509080949&additionalHeight=76%C3%97tamp=202509080949&locale=ko&svcName=map_pcv5&fromPanelNum=1&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/12071622/home?additionalHeight=76&fromPanelNum=1&locale=ko&svcName=map_pcv5&timestamp=202611010707",
+          "checkedAt": "2026-10-31T22:07:59.930Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "강북다인치과의원",
+            "address": "서울 도봉구 도봉로 488 대명빌딩 2F, 5F,7F",
+            "phone": "02-903-3444",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 20:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 20:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "http://www.daindental.co.kr/",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-480ee9499c32",
+      "name": "신세계치과의원",
+      "checkedAt": "2026-10-31T22:08:05.055Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD/place/11728138?placePath=?bk_query=%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD&entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484483404&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD%2Fplace%2F11728138",
+          "checkedAt": "2026-10-31T22:08:05.055Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-53f24d8b5e3c",
+      "name": "화이트이치과의원",
+      "checkedAt": "2026-10-31T22:12:50Z",
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1233617475?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0596176&lat=35.1547419&c=14.98,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 서면",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 부산진구 중앙대로 694 5층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 서면 / 부산 부산진구 중앙대로 694 5층이다. 원자료 화이트이치과의원 / 부산광역시 북구 만덕대로 11-1, 1, 2층 (덕천동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1309864455?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.9067286&lat=37.5168733&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 영등포",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "서울 영등포구 영중로2길 1 9, 10층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 영등포 / 서울 영등포구 영중로2길 1 9, 10층이다. 원자료 화이트이치과의원 / 부산광역시 북구 만덕대로 11-1, 1, 2층 (덕천동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1371105094?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0294506&lat=37.4930750&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 강남",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "서울 서초구 강남대로 337 7층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 강남 / 서울 서초구 강남대로 337 7층이다. 원자료 화이트이치과의원 / 부산광역시 북구 만덕대로 11-1, 1, 2층 (덕천동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1747577717?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.1751521&lat=35.1727514&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 해운대",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 해운대구 좌동로 93 3층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 해운대 / 부산 해운대구 좌동로 93 3층이다. 원자료 화이트이치과의원 / 부산광역시 북구 만덕대로 11-1, 1, 2층 (덕천동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC/place/1223344086?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484516142&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC%2Fplace%2F1223344086",
+          "checkedAt": "2026-10-31T22:08:37.329Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        },
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1022188628?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0064606&lat=35.2105777&c=16.13,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:08:08.066Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "화이트이치과의원 덕천",
+            "address": "부산 북구 만덕대로 11-1 1, 2층",
+            "phone": "0507-1439-2820",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 21:00 13:00 - 14:00 휴게시간 17:00 - 17:30 휴게시간 20:00 접수마감 화 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:00 - 14:00 13:00 접수마감",
+            "website": "https://www.youtube.com/@white_e",
+            "amenities": "예약, 남/녀 화장실 구분, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "페이스북",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "브랜드 공통 링크 중 덕천 지점만 원자료 부산 북구 만덕대로 11-1의 1·2층 주소와 일치한다. 네이버 명칭의 덕천은 지점 접미사다. 0507 번호와 원자료 051 번호는 별도다."
+          }
+        }
+      ],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "명칭 표기 차이를 수동 검토한 결과 주소가 일치하여 이 기관에 연결했다. 구체적 대조 근거는 identityReview에 기록했다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        }
+      ],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-6c50cff57d10",
+      "name": "여디디야치과교정과치과의원",
+      "checkedAt": "2026-10-31T22:08:40.538Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1886586219?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76%C3%97tamp=202603180956&locale=ko&svcName=map_pcv5&searchType=place&lng=126.9550930&lat=37.4801190&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1886586219/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:08:40.538Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "여디디야치과교정과치과의원",
+            "address": "서울 관악구 남부순환로 1848 4층 여디디야 치과교정과 치과의원",
+            "phone": "0507-1313-0275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:30 - 18:30 화 14:00 - 20:00 수 10:30 - 18:30 목 정기휴무 (매주 목요일) 금 10:30 - 18:30 토 10:00 - 14:30",
+            "website": "http://www.jedidiah.or.kr",
+            "amenities": "주차, 예약",
+            "parking": "주차가능",
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-72374a443274",
+      "name": "신사이살리는치과의원",
+      "checkedAt": "2026-10-31T22:08:43.124Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://m.place.naver.com/hospital/2077557128/home",
+          "sourceUrl": "https://m.place.naver.com/hospital/2077557128/home",
+          "checkedAt": "2026-10-31T22:08:43.124Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "신사이살리는치과의원",
+            "address": "서울 강남구 도산대로 123 4층",
+            "phone": "070-7174-2882",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 정기휴무 (매주 월요일) 화 14:00 - 21:00 17:00 - 18:00 휴게시간 20:00 접수마감 수 11:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:00 접수마감 목 10:00 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 금 10:00 - 21:00 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:00 접수마감 토 10:00 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 11/12 휴무",
+            "website": "https://www.instagram.com/saveteeth_minish/",
+            "amenities": "대기공간, 반려동물 동반, 무선 인터넷, 예약, 간편결제",
+            "parking": "주차 불가",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-a1c4834b1115",
+      "name": "에투알드서울치과의원",
+      "checkedAt": "2026-10-31T22:08:46.167Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/13571109?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0400803&lat=37.5251256&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/13571109/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:08:46.167Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "에투알드서울치과의원",
+            "address": "서울 강남구 선릉로 820 남한강빌딩 3층 에투알드서울치과",
+            "phone": "02-1577-3036",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 정기휴무 (매주 월요일) 화 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 15:00 14:00 접수마감",
+            "website": "https://www.youtube.com/@cheeterior",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차, 발렛파킹",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "페이스북",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-a250b86a41d3",
+      "name": "화이트이치과의원",
+      "checkedAt": "2026-10-31T22:08:37.329Z",
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1022188628?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0064606&lat=35.2105777&c=16.13,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 덕천",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 북구 만덕대로 11-1 1, 2층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 덕천 / 부산 북구 만덕대로 11-1 1, 2층이다. 원자료 화이트이치과의원 / 경기도 용인시 처인구 금령로 95, 3~4층 (김량장동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1233617475?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0596176&lat=35.1547419&c=14.98,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 서면",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 부산진구 중앙대로 694 5층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 서면 / 부산 부산진구 중앙대로 694 5층이다. 원자료 화이트이치과의원 / 경기도 용인시 처인구 금령로 95, 3~4층 (김량장동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1309864455?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.9067286&lat=37.5168733&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 영등포",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "서울 영등포구 영중로2길 1 9, 10층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 영등포 / 서울 영등포구 영중로2길 1 9, 10층이다. 원자료 화이트이치과의원 / 경기도 용인시 처인구 금령로 95, 3~4층 (김량장동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1371105094?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0294506&lat=37.4930750&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 강남",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "서울 서초구 강남대로 337 7층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 강남 / 서울 서초구 강남대로 337 7층이다. 원자료 화이트이치과의원 / 경기도 용인시 처인구 금령로 95, 3~4층 (김량장동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1747577717?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.1751521&lat=35.1727514&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 해운대",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 해운대구 좌동로 93 3층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 해운대 / 부산 해운대구 좌동로 93 3층이다. 원자료 화이트이치과의원 / 경기도 용인시 처인구 금령로 95, 3~4층 (김량장동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC/place/1223344086?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484516142&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC%2Fplace%2F1223344086",
+          "checkedAt": "2026-10-31T22:08:37.329Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        }
+      ],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-a33b24c37794",
+      "name": "목동나무치과의원",
+      "checkedAt": "2026-10-31T22:08:50.416Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC/place/2044280423",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484529213&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC%2Fplace%2F2044280423&svcName=map_pcv5&searchText=%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC",
+          "checkedAt": "2026-10-31T22:08:50.416Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-a7d3c6a0b5e1",
+      "name": "다이아몬드치과의원",
+      "checkedAt": "2026-10-31T22:08:53.797Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/31501224",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/31501224/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:08:53.797Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "다이아몬드치과의원",
+            "address": "인천 남동구 논고개로 86 (논현동,모아프라자) 3층",
+            "phone": "0507-1370-7275",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 화 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 수 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 목 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 금 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 토 09:00 - 13:30 13:00 접수마감",
+            "website": "https://diadental.kr",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-ab87b2a9046e",
+      "name": "원흥탑치과의원",
+      "checkedAt": "2026-10-31T22:08:55.956Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC/place/1875433693?placePath=?bk_query=%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC&entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/list?query=%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484534313&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC%2Fplace%2F1875433693",
+          "checkedAt": "2026-10-31T22:08:55.956Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-b23da64725f1",
+      "name": "이(e)스타치과의원",
+      "checkedAt": "2026-10-31T22:12:50Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/12950091",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/12950091/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:08:58.996Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "이스타치과의원",
+            "address": "서울 구로구 새말로 89 3층",
+            "phone": "0507-1446-5403",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 화 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 수 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 목 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 금 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 토 09:00 - 13:00 12:30 접수마감",
+            "website": "http://www.e-starclinic.com",
+            "amenities": "예약, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "원자료 이(e)스타치과의원과 네이버 이스타치과의원은 영문 병기 차이다. 두 출처의 서울 구로구 새말로 89 3층 주소가 일치한다. 0507 번호와 원자료 02 대표전화는 별도다."
+          }
+        }
+      ],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/12950091/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "명칭 표기 차이를 수동 검토한 결과 주소가 일치하여 이 기관에 연결했다. 구체적 대조 근거는 identityReview에 기록했다."
+        }
+      ],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-cb3993af60f9",
+      "name": "명동콤비치과의원",
+      "checkedAt": "2026-10-31T22:09:02.340Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/v5/entry/place/36782930?c=14135204.0868804,4518110.6308534,15,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/36782930/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:09:02.340Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "명동콤비치과의원",
+            "address": "서울 중구 남대문로 84 하이드파크 8층",
+            "phone": "02-6272-2114",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 20:30 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 20:30 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 토 09:30 - 14:00 13:30 접수마감",
+            "website": "http://www.combident.co.kr/",
+            "amenities": "예약, 주차, 무선 인터넷, 남/녀 화장실 구분",
+            "parking": "주차가능",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-cc8d8521f82b",
+      "name": "화이트이치과의원",
+      "checkedAt": "2026-10-31T22:12:50Z",
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1022188628?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0064606&lat=35.2105777&c=16.13,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 덕천",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 북구 만덕대로 11-1 1, 2층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 덕천 / 부산 북구 만덕대로 11-1 1, 2층이다. 원자료 화이트이치과의원 / 부산광역시 해운대구 좌동로 93, 해운대농협 3층 (좌동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1233617475?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0596176&lat=35.1547419&c=14.98,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 서면",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 부산진구 중앙대로 694 5층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 서면 / 부산 부산진구 중앙대로 694 5층이다. 원자료 화이트이치과의원 / 부산광역시 해운대구 좌동로 93, 해운대농협 3층 (좌동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1309864455?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.9067286&lat=37.5168733&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 영등포",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "서울 영등포구 영중로2길 1 9, 10층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 영등포 / 서울 영등포구 영중로2길 1 9, 10층이다. 원자료 화이트이치과의원 / 부산광역시 해운대구 좌동로 93, 해운대농협 3층 (좌동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1371105094?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0294506&lat=37.4930750&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 강남",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "서울 서초구 강남대로 337 7층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 강남 / 서울 서초구 강남대로 337 7층이다. 원자료 화이트이치과의원 / 부산광역시 해운대구 좌동로 93, 해운대농협 3층 (좌동)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC/place/1223344086?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484516142&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC%2Fplace%2F1223344086",
+          "checkedAt": "2026-10-31T22:08:37.329Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        },
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1747577717?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.1751521&lat=35.1727514&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:08:35.602Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "화이트이치과의원 해운대",
+            "address": "부산 해운대구 좌동로 93 3층",
+            "phone": "0507-1354-2630",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 화 09:30 - 20:00 13:00 - 14:00 휴게시간 12:00, 19:00 접수마감 수 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 목 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 토 09:30 - 13:30 12:30 접수마감",
+            "website": "https://www.youtube.com/@white_e",
+            "amenities": "남/녀 화장실 구분, 무선 인터넷, 예약, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램",
+              "페이스북"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "브랜드 공통 링크 중 해운대 지점만 원자료 부산 해운대구 좌동로 93 3층 주소와 일치한다. 네이버 명칭의 해운대는 지점 접미사다. 0507 번호와 원자료 051 번호는 별도다."
+          }
+        }
+      ],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "명칭 표기 차이를 수동 검토한 결과 주소가 일치하여 이 기관에 연결했다. 구체적 대조 근거는 identityReview에 기록했다."
+        }
+      ],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-cd04cda260f2",
+      "name": "강남샘치과의원",
+      "checkedAt": "2026-10-31T22:09:08.953Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/11485504",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/11485504/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:09:08.953Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "강남샘치과의원",
+            "address": "서울 강남구 강남대로 242 크리스탈빌딩 5층",
+            "phone": "0507-1437-8030",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 12:00, 18:00 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 12:00, 20:00 접수마감 수 10:00 - 18:00 13:00 - 14:00 휴게시간 12:00, 17:00 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 12:00, 20:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 12:00, 18:00 접수마감 토 09:30 - 15:00 14:00 접수마감",
+            "website": "http://www.gsdent.co.kr/",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램",
+              "페이스북"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-d9c03c371ff1",
+      "name": "서울로하스치과의원",
+      "checkedAt": "2026-10-31T22:09:12.130Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/v5/entry/place/1993380057?c=15,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1993380057/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:09:12.130Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "서울로하스치과의원",
+            "address": "대전 대덕구 대청로 38 301호",
+            "phone": "042-931-2875",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 19:30 13:00 - 14:00 휴게시간 19:00 접수마감 수 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 09:30 - 19:30 13:00 - 14:00 휴게시간 19:00 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 13:30 13:00 접수마감",
+            "website": "https://seoullohas.com",
+            "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 대기공간, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-da7760208682",
+      "name": "지디치과의원",
+      "checkedAt": "2026-10-31T22:09:13.958Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC/place/1467695280?placePath=/home?entry=pll&from=nx&fromNxList=true&fromPanelNum=2%C3%97tamp=202507141453&locale=ko&svcName=map_pcv5&searchText=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484552626&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC%2Fplace%2F1467695280",
+          "checkedAt": "2026-10-31T22:09:13.958Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-daffd09b4d5e",
+      "name": "수영본치과의원",
+      "checkedAt": "2026-10-31T22:09:17.580Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://pcmap.place.naver.com/hospital/1006733661/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76%C3%97tamp=202501150205&locale=ko",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1006733661/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76%C3%97tamp=202501150205&locale=ko",
+          "checkedAt": "2026-10-31T22:09:17.580Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "수영본치과의원",
+            "address": "부산 수영구 수영로 637-3 2층",
+            "phone": "051-759-8083",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 금 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 13:00 12:30 접수마감",
+            "website": "https://bondental.kr",
+            "amenities": "무선 인터넷, 대기공간, 예약, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램",
+              "블로그",
+              "유튜브"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-dd3baa6c9458",
+      "name": "정성치과의원",
+      "checkedAt": "2026-10-31T22:12:50Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1318902982?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=%20%20%20%20%20%20%20%20%20%20%20%2076%C3%97tamp=202506041629&locale=ko&svcName=map_pcv5&searchType=place&lng=126.9536436&lat=37.3910581&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1318902982/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:09:20.654Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "정성치과의원 안양",
+            "address": "경기 안양시 동안구 평촌대로223번길 36 3층",
+            "phone": "0507-1388-5505",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 20:00 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 20:00 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:30",
+            "website": "https://youtube.com/@안양정성치과",
+            "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "네이버 명칭의 안양 접미사를 제외하면 정성치과의원으로 일치한다. 두 출처의 안양시 동안구 평촌대로223번길 36 3층 주소가 일치한다. 0507 번호와 원자료 031 대표전화는 별도다."
+          }
+        }
+      ],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1318902982/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+          "outcome": "명칭 표기 차이를 수동 검토한 결과 주소가 일치하여 이 기관에 연결했다. 구체적 대조 근거는 identityReview에 기록했다."
+        }
+      ],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-deaabc02e0c0",
+      "name": "하얀치과의원",
+      "checkedAt": "2026-10-31T22:09:24.459Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC/place/20182831?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202609151523%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484562952&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC%2Fplace%2F20182831",
+          "checkedAt": "2026-10-31T22:09:24.459Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-e098e4deec28",
+      "name": "춘천예치과의원",
+      "checkedAt": "2026-10-31T22:09:26.359Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/v5/search/%EC%B6%98%EC%B2%9C%EC%98%88%EC%B9%98%EA%B3%BC/place/1671201687?c=14219668.6350718,4558619.4439099,15,0,0,0,dh&placePath=%2Fbooking%3FbookingRedirectUrl=https:%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F256980%3Ftheme=place%26entry=pll%26entry=pll&area=pll",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1671201687/booking?theme=place&entry=pll&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5&searchText=%EC%B6%98%EC%B2%9C%EC%98%88%EC%B9%98%EA%B3%BC",
+          "checkedAt": "2026-10-31T22:09:26.359Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-e61739974ed5",
+      "name": "연세치과의원",
+      "checkedAt": "2026-10-31T22:09:29.081Z",
+      "assets": [],
+      "naverPlaceObservations": [],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://m.place.naver.com/hospital/11549214/review/visitor",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        }
+      ],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-e9567e69753a",
+      "name": "하시온치과의원",
+      "checkedAt": "2026-10-31T22:09:32.500Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1028197673?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.1121411&lat=37.6504946&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1028197673/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:09:32.500Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "하시온치과의원",
+            "address": "경기 남양주시 별내5로5번길 15-1 진영프라자 5층",
+            "phone": "0507-1341-2045",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 20:30 13:00 - 14:00 휴게시간 18:00 - 18:30 휴게시간 목 정기휴무 (매주 목요일) 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+            "website": "https://www.hazionimplant.com/",
+            "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "블로그",
+              "인스타그램"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-eff50996fad9",
+      "name": "뉴욕M치과의원",
+      "checkedAt": "2026-10-31T22:09:35.021Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC/place/13550548?placePath=/home?entry=pll&from=map&fromNxList=true&fromPanelNum=2%C3%97tamp=202510101220&locale=ko&svcName=map_pcv5&searchText=%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/list?query=%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484572994&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC%2Fplace%2F13550548",
+          "checkedAt": "2026-10-31T22:09:35.021Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    },
+    {
+      "clinicId": "c-f2e5d80adda0",
+      "name": "홍선생치과교정과치과의원",
+      "checkedAt": "2026-10-31T22:09:45.582Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/759208852?c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/759208852/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:09:45.582Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "홍선생치과교정과치과의원",
+            "address": "서울 은평구 통일로 869 2층",
+            "phone": "0507-1443-9018",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 14:00 - 21:00 19:30 접수마감 화 10:00 - 19:00 12:30 - 14:00 휴게시간 17:30 접수마감 수 14:00 - 21:00 19:30 접수마감 목 10:00 - 19:00 12:30 - 14:00 휴게시간 17:30 접수마감 금 10:00 - 19:00 12:30 - 14:00 휴게시간 17:30 접수마감 토 09:30 - 14:00 12:30 접수마감",
+            "website": "https://hong-faculty-records.merryghost.chatgpt.site",
+            "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약",
+              "인스타그램",
+              "블로그"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-f7b9cff3e929",
+      "name": "화이트이치과의원",
+      "checkedAt": "2026-10-31T22:12:50Z",
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1022188628?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0064606&lat=35.2105777&c=16.13,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 덕천",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 북구 만덕대로 11-1 1, 2층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 덕천 / 부산 북구 만덕대로 11-1 1, 2층이다. 원자료 화이트이치과의원 / 서울특별시 영등포구 영중로2길 1, 9,10층 (영등포동3가)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1233617475?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0596176&lat=35.1547419&c=14.98,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 서면",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 부산진구 중앙대로 694 5층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 서면 / 부산 부산진구 중앙대로 694 5층이다. 원자료 화이트이치과의원 / 서울특별시 영등포구 영중로2길 1, 9,10층 (영등포동3가)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1371105094?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0294506&lat=37.4930750&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 강남",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "서울 서초구 강남대로 337 7층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 강남 / 서울 서초구 강남대로 337 7층이다. 원자료 화이트이치과의원 / 서울특별시 영등포구 영중로2길 1, 9,10층 (영등포동3가)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "기관 귀속 제외: 다른 주소·지점",
+          "url": "https://map.naver.com/p/entry/place/1747577717?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.1751521&lat=35.1727514&c=15.00,0,0,0,dh",
+          "checkedAt": "2026-10-31T22:12:50Z",
+          "ownership": "third_party",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "화이트이치과의원 해운대",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            },
+            {
+              "field": "address",
+              "value": "부산 해운대구 좌동로 93 3층",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+            }
+          ],
+          "notes": "네이버 본문은 화이트이치과의원 해운대 / 부산 해운대구 좌동로 93 3층이다. 원자료 화이트이치과의원 / 서울특별시 영등포구 영중로2길 1, 9,10층 (영등포동3가)와 다른 주소·지점이므로 이 기관에 귀속시키던 자동 링크 후보를 제외한다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC/place/1223344086?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484516142&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC%2Fplace%2F1223344086",
+          "checkedAt": "2026-10-31T22:08:37.329Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        },
+        {
+          "discoveryUrl": "https://map.naver.com/p/entry/place/1309864455?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.9067286&lat=37.5168733&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-10-31T22:08:14.050Z",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "화이트이치과의원 영등포",
+            "address": "서울 영등포구 영중로2길 1 9, 10층",
+            "phone": "0507-1404-0856",
+            "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 화 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:30 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 토 10:00 - 15:00 14:30 접수마감",
+            "website": "http://white2ydp.com/",
+            "amenities": "단체 이용 가능, 무선 인터넷, 남/녀 화장실 구분, 예약, 주차",
+            "parking": "주차가능 무료",
+            "displayedChannelButtons": [
+              "예약"
+            ],
+            "naverCategory": "치과"
+          },
+          "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다.",
+          "identityReview": {
+            "confirmed": true,
+            "reason": "브랜드 공통 링크 중 영등포 지점만 원자료 서울 영등포구 영중로2길 1의 9·10층 주소와 일치한다. 네이버 명칭의 영등포는 지점 접미사다. 0507 번호와 원자료 대표번호는 별도다."
+          }
+        }
+      ],
+      "searches": [
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "명칭 표기 차이를 수동 검토한 결과 주소가 일치하여 이 기관에 연결했다. 구체적 대조 근거는 identityReview에 기록했다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        },
+        {
+          "query": "공유 브랜드 또는 홈페이지에서 발견한 네이버 후보 기관 대조",
+          "url": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+          "outcome": "본문의 이름·주소·전화가 원자료 기관 일치 조건을 충족하지 않아 이 기관의 확정 정보에 넣지 않았다. 관찰 페이지는 별도 pageObservations에 남겼다."
+        }
+      ],
+      "researchOutcome": "identity_confirmed"
+    },
+    {
+      "clinicId": "c-fed5b369379d",
+      "name": "서울지디치과의원",
+      "checkedAt": "2026-10-31T22:09:13.958Z",
+      "assets": [],
+      "naverPlaceObservations": [
+        {
+          "discoveryUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC/place/1467695280?placePath=/home?entry=pll&from=nx&fromNxList=true&fromPanelNum=2%C3%97tamp=202507141453&locale=ko&svcName=map_pcv5&searchText=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC&searchType=place&c=15.00,0,0,0,dh",
+          "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484552626&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC%2Fplace%2F1467695280",
+          "checkedAt": "2026-10-31T22:09:13.958Z",
+          "bodyStatus": "not_read",
+          "fields": {},
+          "notes": "Chrome 공개 URL을 열었으나 기관 기본정보를 확보하지 못했다. 예약 경로의 빈 화면 또는 검색 목록·상세 프레임 구분 과정에서 수집을 완료하지 못했으며, 사이트 차단으로 판정하지 않는다. 추정값을 넣지 않았다."
+        }
+      ],
+      "searches": [],
+      "researchOutcome": "unresolved"
+    }
+  ],
+  "pageObservations": [
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1429744407",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1429744407/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010706&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:06:48.994Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "신플란트치과의원",
+        "address": "경기 용인시 처인구 남사읍 한숲로 45 한숲스퀘어옐로우 B동 312호",
+        "phone": "031-323-2279",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:00 13:00 - 14:00 휴게시간 화 09:00 - 18:00 13:00 - 14:00 휴게시간 수 09:00 - 18:00 13:00 - 14:00 휴게시간 목 09:00 - 18:00 13:00 - 14:00 휴게시간 금 09:00 - 18:00 13:00 - 14:00 휴게시간 토 09:00 - 13:00",
+        "website": "https://yonginshinplant-mo.imweb.me/",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://m.place.naver.com/hospital/1961059686/review/visitor",
+      "sourceUrl": "https://m.place.naver.com/hospital/1961059686/home",
+      "checkedAt": "2026-10-31T22:06:55.041Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "365플러스치과의원 하남미사",
+        "address": "경기 하남시 미사강변동로84번길 39 에코타워 4층 405, 406, 407호일부 408호",
+        "phone": "0507-1326-2870",
+        "hours": "오늘 휴무11/01 휴무 일(11/1) 휴무 월 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 10:00 - 20:30 13:00 - 14:00 휴게시간 18:30 - 19:00 휴게시간 20:00 접수마감 수 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 20:30 13:00 - 14:00 휴게시간 18:30 - 19:00 휴게시간 20:00 접수마감 금 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 14:30 14:00 접수마감 11/21-11/22 휴무",
+        "website": "https://blog.naver.com/anatole0613",
+        "amenities": "남/녀 화장실 구분, 무선 인터넷, 예약, 단체 이용 가능, 유아시설 (놀이방), 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "유튜브"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1972034399?lng=127.0184577&lat=37.6263701&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F1388326%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://map.naver.com/p/entry/place/1972034399?lng=127.0184577&lat=37.6263701&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F1388326%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+      "checkedAt": "2026-10-31T22:06:56.721Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/4391301978",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/4391301978/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010706&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:07:00.230Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "돌담구강악안면외과치과의원",
+        "address": "대전 서구 둔산로123번길 14 5층 돌담구강악안면외과",
+        "phone": "042-483-2222",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 12:30 - 14:00 휴게시간 화 09:30 - 20:00 12:30 - 14:00 휴게시간 수 정기휴무 (매주 수요일) 목 09:30 - 18:30 12:30 - 14:00 휴게시간 금 09:30 - 20:00 12:30 - 14:00 휴게시간 토 09:00 - 13:00",
+        "website": "https://doldamdent.com/",
+        "amenities": "예약, 무선 인터넷, 대기공간, 남/녀 화장실 구분, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "인스타그램",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/13402123?lng=126.9511614&lat=37.5456571&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F250710%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://map.naver.com/p/entry/place/13402123?lng=126.9511614&lat=37.5456571&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%3A%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F250710%3Ftheme%3Dplace%26entry%3Dpll%26lang%3Dko%26entry%3Dpll&area=pll&c=15.00,0,0,0,dh",
+      "checkedAt": "2026-10-31T22:07:02.000Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/12951218",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/12951218/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:07:04.804Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "내추럴치과의원 부평",
+        "address": "인천 부평구 부평대로 75 한화생명빌딩 B1",
+        "phone": "032-523-2080",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:15 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 20:15 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:15 접수마감 목 10:00 - 19:00 13:00 - 14:00 휴게시간 18:15 접수마감 금 10:00 - 21:00 13:00 - 14:00 휴게시간 20:15 접수마감 토 09:00 - 14:00 13:15 접수마감",
+        "website": "http://www.naturaltooth.com/",
+        "amenities": "예약, 주차, 무선 인터넷, 남/녀 화장실 구분",
+        "parking": "주차가능",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그",
+          "인스타그램",
+          "페이스북"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1649294369?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0786639&lat=35.2184634&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1649294369/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:07:17.128Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "이정광치과의원",
+        "address": "부산 동래구 금강공원로 53 3층",
+        "phone": "0507-1434-2412",
+        "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 14:00 13:30 접수마감 월 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 수 09:30 - 20:00 12:30 - 14:00 휴게시간 19:30 접수마감 목 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 금 09:30 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 14:00 13:30 접수마감",
+        "website": "https://blog.naver.com/leejkdental",
+        "amenities": "예약, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "인스타그램"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://pcmap.place.naver.com/hospital/36028972/review/visitor?entry=plt&from=map&fromPanelNum=1%C3%97tamp=202401161326&x=129.0998216&y=35.1369207",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/36028972/home?entry=plt&fromPanelNum=1%C3%97tamp%3D202401161326&x=129.0998216&y=35.1369207",
+      "checkedAt": "2026-10-31T22:07:21.768Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "해미인치과교정과치과의원",
+        "address": "부산 남구 수영로 306",
+        "phone": "051-623-7552",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 12:30 - 14:00 휴게시간 화 10:00 - 19:00 12:30 - 14:00 휴게시간 수 10:00 - 20:00 12:30 - 14:00 휴게시간 목 10:00 - 19:00 12:30 - 14:00 휴게시간 금 10:00 - 19:00 12:30 - 14:00 휴게시간 토 09:30 - 14:00 11/12-11/13 휴무",
+        "website": "https://blog.naver.com/haemiin28",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "페이스북",
+          "인스타그램"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/v5/search/%EB%AF%B8%EC%82%AC%EB%9E%91%EC%B9%98%EA%B3%BC/place/11532297?placePath=%3Fentry=pll%26from=nx%26fromNxList=true&c=14140268.8036795,4517841.4168142,15,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EB%AF%B8%EC%82%AC%EB%9E%91%EC%B9%98%EA%B3%BC&x=127.02419587903782&y=37.56276100000067&clientX=126.909304&clientY=37.514683&display=70&ts=1793484442245&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EB%AF%B8%EC%82%AC%EB%9E%91%EC%B9%98%EA%B3%BC%2Fplace%2F11532297",
+      "checkedAt": "2026-10-31T22:07:23.664Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/2053051034?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.8426901&lat=37.6194496&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/2053051034/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:07:26.700Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "연세희망치과의원",
+        "address": "경기 고양시 덕양구 중앙로 478 3층",
+        "phone": "031-972-3285",
+        "hours": "진료 전9시 30분에 진료 시작 일 09:30 - 14:00 13:45 접수마감 월 09:30 - 18:30 12:30 - 13:30 휴게시간 18:15 접수마감 화 09:30 - 18:30 12:30 - 13:30 휴게시간 18:15 접수마감 수 09:30 - 20:30 12:30 - 13:30 휴게시간 20:15 접수마감 목 09:30 - 18:30 12:30 - 13:30 휴게시간 18:15 접수마감 금 09:30 - 20:30 12:30 - 13:30 휴게시간 20:15 접수마감 토 09:30 - 14:00 13:45 접수마감",
+        "website": "https://blog.naver.com/yshopedental",
+        "amenities": "남/녀 화장실 구분, 대기공간, 유아시설 (놀이방), 무선 인터넷, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "인스타그램"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://m.place.naver.com/hospital/2036878791/home",
+      "sourceUrl": "https://m.place.naver.com/hospital/2036878791/home",
+      "checkedAt": "2026-10-31T22:07:47.440Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "이살리는치과의원 신논현역점",
+        "address": "서울 서초구 강남대로 449 2층",
+        "phone": "070-4138-2854",
+        "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 18:00 13:00 - 14:00 휴게시간 17:30 접수마감 월 10:00 - 21:00 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:30 접수마감 화 10:00 - 21:00 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:30 접수마감 수 11:00 - 21:00 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:30 접수마감 목 10:00 - 21:00 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:30 접수마감 금 10:00 - 21:00 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:30 접수마감 토 10:00 - 16:00 13:00 - 14:00 휴게시간 15:30 접수마감",
+        "website": "https://www.instagram.com/saveteeth_minish/",
+        "amenities": "대기공간, 무선 인터넷, 예약, 반려동물 동반, 간편결제",
+        "parking": "주차 불가",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%EB%AF%BC%ED%94%8C%EB%9E%80%ED%8A%B8/place/1181421319?c=14.86,0,0,0,dh&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%25253A%25252F%25252Fm.booking.naver.com%25252Fbooking%25252F13%25252Fbizes%25252F1184346%25253Ftheme%25253Dplace%252526service-target%25253Dmap-pc%252526entry%25253Dbmp",
+      "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EB%AF%BC%ED%94%8C%EB%9E%80%ED%8A%B8&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484468102&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EB%AF%BC%ED%94%8C%EB%9E%80%ED%8A%B8%2Fplace%2F1181421319",
+      "checkedAt": "2026-10-31T22:07:49.415Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://m.place.naver.com/hospital/1134532954/location?filter=location&selected_place_id=1134532954",
+      "sourceUrl": "https://m.place.naver.com/hospital/1134532954/home",
+      "checkedAt": "2026-10-31T22:07:53.006Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "예온치과병원 인천검단365점",
+        "address": "인천 검단구 이음4로 6 KR법조타워 5층",
+        "phone": "1551-2870",
+        "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 17:00 13:00 - 14:00 휴게시간 12:00, 16:00 접수마감 월 10:00 - 18:30 13:00 - 14:30 휴게시간 12:00, 17:30 접수마감 화 10:00 - 20:30 13:00 - 14:30 휴게시간 12:00, 19:30 접수마감 수 10:00 - 18:30 13:00 - 14:30 휴게시간 12:00, 17:30 접수마감 목 10:00 - 20:30 13:00 - 14:30 휴게시간 12:00, 19:30 접수마감 금 10:00 - 18:30 13:00 - 14:30 휴게시간 12:00, 17:30 접수마감 토 10:00 - 17:00 13:00 - 14:00 휴게시간 12:00, 16:00 접수마감",
+        "website": "https://gd365.ye-on.com/",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 유아시설 (놀이방), 단체 이용 가능, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/13163174",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13163174/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010707&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:07:56.117Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "연세미래치과의원",
+        "address": "서울 관악구 신림로 330 타임스트림(구 포도몰) 6층",
+        "phone": "02-881-8250",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:30 - 21:00 13:00 - 14:00 휴게시간 19:30 접수마감 화 10:30 - 21:00 13:00 - 14:00 휴게시간 19:30 접수마감 수 10:30 - 19:00 13:00 - 14:00 휴게시간 17:30 접수마감 목 10:30 - 21:00 13:00 - 14:00 휴게시간 19:30 접수마감 금 10:30 - 19:00 13:00 - 14:00 휴게시간 17:30 접수마감 토 10:00 - 15:00 13:30 접수마감",
+        "website": "http://www.ysmirae.com/",
+        "amenities": "예약, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/12071622?lng=127.0352869&lat=37.6490239&placePath=/review?additionalHeight=76&fromPanelNum=1&locale=ko&svcName=map_pcv5%C3%97tamp=202509080949&additionalHeight=76%C3%97tamp=202509080949&locale=ko&svcName=map_pcv5&fromPanelNum=1&searchType=place&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/12071622/home?additionalHeight=76&fromPanelNum=1&locale=ko&svcName=map_pcv5&timestamp=202611010707",
+      "checkedAt": "2026-10-31T22:07:59.930Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "강북다인치과의원",
+        "address": "서울 도봉구 도봉로 488 대명빌딩 2F, 5F,7F",
+        "phone": "02-903-3444",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 20:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 18:30 13:00 - 14:00 휴게시간 금 09:30 - 20:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+        "website": "http://www.daindental.co.kr/",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD/place/11728138?placePath=?bk_query=%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD&entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484483404&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%8B%A0%EC%84%B8%EA%B3%84%EC%B9%98%EA%B3%BC%20%ED%8F%AC%ED%95%AD%2Fplace%2F11728138",
+      "checkedAt": "2026-10-31T22:08:05.055Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1022188628?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0064606&lat=35.2105777&c=16.13,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1022188628/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:08.066Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "화이트이치과의원 덕천",
+        "address": "부산 북구 만덕대로 11-1 1, 2층",
+        "phone": "0507-1439-2820",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 21:00 13:00 - 14:00 휴게시간 17:00 - 17:30 휴게시간 20:00 접수마감 화 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:00 - 14:00 13:00 접수마감",
+        "website": "https://www.youtube.com/@white_e",
+        "amenities": "예약, 남/녀 화장실 구분, 대기공간, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그",
+          "페이스북",
+          "인스타그램"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1233617475?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.0596176&lat=35.1547419&c=14.98,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1233617475/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:11.123Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "화이트이치과의원 서면",
+        "address": "부산 부산진구 중앙대로 694 5층",
+        "phone": "0507-1381-4886",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 12:00, 18:00 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 12:00, 16:30, 20:00 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 12:00, 18:00 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 12:00, 16:30, 20:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 12:00, 18:00 접수마감 토 09:30 - 14:30 13:30 접수마감",
+        "website": "https://www.youtube.com/@white_e",
+        "amenities": "단체 이용 가능, 예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 주차, 반려동물 동반",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그",
+          "인스타그램",
+          "페이스북"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1309864455?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=126.9067286&lat=37.5168733&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:14.050Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "화이트이치과의원 영등포",
+        "address": "서울 영등포구 영중로2길 1 9, 10층",
+        "phone": "0507-1404-0856",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 화 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:30 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 토 10:00 - 15:00 14:30 접수마감",
+        "website": "http://white2ydp.com/",
+        "amenities": "단체 이용 가능, 무선 인터넷, 남/녀 화장실 구분, 예약, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1371105094?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0294506&lat=37.4930750&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1371105094/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:17.133Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "화이트이치과의원 강남",
+        "address": "서울 서초구 강남대로 337 7층",
+        "phone": "070-4519-2600",
+        "hours": "진료 전10시 0분에 진료 시작 일 10:00 - 15:00 14:00 접수마감 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 화 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 15:00 14:00 접수마감",
+        "website": "https://booking.naver.com/booking/13/bizes/609632",
+        "amenities": "단체 이용 가능, 예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "인스타그램",
+          "페이스북",
+          "유튜브",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1747577717?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=129.1751521&lat=35.1727514&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1747577717/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:35.602Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "화이트이치과의원 해운대",
+        "address": "부산 해운대구 좌동로 93 3층",
+        "phone": "0507-1354-2630",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 화 09:30 - 20:00 13:00 - 14:00 휴게시간 12:00, 19:00 접수마감 수 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 목 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 12:00, 17:30 접수마감 토 09:30 - 13:30 12:30 접수마감",
+        "website": "https://www.youtube.com/@white_e",
+        "amenities": "남/녀 화장실 구분, 무선 인터넷, 예약, 대기공간, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그",
+          "인스타그램",
+          "페이스북"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC/place/1223344086?placePath=?entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484516142&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%ED%99%94%EC%9D%B4%ED%8A%B8%EC%9D%B4%EC%B9%98%EA%B3%BC%20%EB%82%A8%ED%8F%AC%2Fplace%2F1223344086",
+      "checkedAt": "2026-10-31T22:08:37.329Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1886586219?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76%C3%97tamp=202603180956&locale=ko&svcName=map_pcv5&searchType=place&lng=126.9550930&lat=37.4801190&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1886586219/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:40.538Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "여디디야치과교정과치과의원",
+        "address": "서울 관악구 남부순환로 1848 4층 여디디야 치과교정과 치과의원",
+        "phone": "0507-1313-0275",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:30 - 18:30 화 14:00 - 20:00 수 10:30 - 18:30 목 정기휴무 (매주 목요일) 금 10:30 - 18:30 토 10:00 - 14:30",
+        "website": "http://www.jedidiah.or.kr",
+        "amenities": "주차, 예약",
+        "parking": "주차가능",
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://m.place.naver.com/hospital/2077557128/home",
+      "sourceUrl": "https://m.place.naver.com/hospital/2077557128/home",
+      "checkedAt": "2026-10-31T22:08:43.124Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "신사이살리는치과의원",
+        "address": "서울 강남구 도산대로 123 4층",
+        "phone": "070-7174-2882",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 정기휴무 (매주 월요일) 화 14:00 - 21:00 17:00 - 18:00 휴게시간 20:00 접수마감 수 11:00 - 21:00 13:00 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:00 접수마감 목 10:00 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 금 10:00 - 21:00 12:30 - 14:00 휴게시간 17:30 - 18:00 휴게시간 20:00 접수마감 토 10:00 - 18:00 13:00 - 14:00 휴게시간 17:00 접수마감 11/12 휴무",
+        "website": "https://www.instagram.com/saveteeth_minish/",
+        "amenities": "대기공간, 반려동물 동반, 무선 인터넷, 예약, 간편결제",
+        "parking": "주차 불가",
+        "displayedChannelButtons": [
+          "예약"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/13571109?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0400803&lat=37.5251256&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13571109/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:46.167Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "에투알드서울치과의원",
+        "address": "서울 강남구 선릉로 820 남한강빌딩 3층 에투알드서울치과",
+        "phone": "02-1577-3036",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 정기휴무 (매주 월요일) 화 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 15:00 14:00 접수마감",
+        "website": "https://www.youtube.com/@cheeterior",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차, 발렛파킹",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그",
+          "페이스북",
+          "인스타그램"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC/place/2044280423",
+      "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484529213&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC%2Fplace%2F2044280423&svcName=map_pcv5&searchText=%EB%AA%A9%EB%8F%99%EB%82%98%EB%AC%B4%EC%B9%98%EA%B3%BC",
+      "checkedAt": "2026-10-31T22:08:50.416Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/31501224",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/31501224/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:53.797Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "다이아몬드치과의원",
+        "address": "인천 남동구 논고개로 86 (논현동,모아프라자) 3층",
+        "phone": "0507-1370-7275",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 화 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 수 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 목 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 금 09:00 - 18:00 12:30 - 13:50 휴게시간 12:00, 17:30 접수마감 토 09:00 - 13:30 13:00 접수마감",
+        "website": "https://diadental.kr",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC/place/1875433693?placePath=?bk_query=%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC&entry=pll&from=nx&fromNxList=true&searchType=place&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/list?query=%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484534313&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%82%BC%EC%86%A1%EC%B9%98%EA%B3%BC%2Fplace%2F1875433693",
+      "checkedAt": "2026-10-31T22:08:55.956Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/12950091",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/12950091/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:08:58.996Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "이스타치과의원",
+        "address": "서울 구로구 새말로 89 3층",
+        "phone": "0507-1446-5403",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 화 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 수 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 목 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 금 09:00 - 18:30 12:30 - 14:00 휴게시간 18:00 접수마감 토 09:00 - 13:00 12:30 접수마감",
+        "website": "http://www.e-starclinic.com",
+        "amenities": "예약, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/v5/entry/place/36782930?c=14135204.0868804,4518110.6308534,15,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/36782930/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:09:02.340Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "명동콤비치과의원",
+        "address": "서울 중구 남대문로 84 하이드파크 8층",
+        "phone": "02-6272-2114",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 20:30 접수마감 수 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 20:30 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 18:30 접수마감 토 09:30 - 14:00 13:30 접수마감",
+        "website": "http://www.combident.co.kr/",
+        "amenities": "예약, 주차, 무선 인터넷, 남/녀 화장실 구분",
+        "parking": "주차가능",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/11485504",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/11485504/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:09:08.953Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "강남샘치과의원",
+        "address": "서울 강남구 강남대로 242 크리스탈빌딩 5층",
+        "phone": "0507-1437-8030",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 19:00 13:00 - 14:00 휴게시간 12:00, 18:00 접수마감 화 10:00 - 21:00 13:00 - 14:00 휴게시간 12:00, 20:00 접수마감 수 10:00 - 18:00 13:00 - 14:00 휴게시간 12:00, 17:00 접수마감 목 10:00 - 21:00 13:00 - 14:00 휴게시간 12:00, 20:00 접수마감 금 10:00 - 19:00 13:00 - 14:00 휴게시간 12:00, 18:00 접수마감 토 09:30 - 15:00 14:00 접수마감",
+        "website": "http://www.gsdent.co.kr/",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그",
+          "인스타그램",
+          "페이스북"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/v5/entry/place/1993380057?c=15,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1993380057/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:09:12.130Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "서울로하스치과의원",
+        "address": "대전 대덕구 대청로 38 301호",
+        "phone": "042-931-2875",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 09:30 - 19:30 13:00 - 14:00 휴게시간 19:00 접수마감 수 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 09:30 - 19:30 13:00 - 14:00 휴게시간 19:00 접수마감 금 09:30 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 09:30 - 13:30 13:00 접수마감",
+        "website": "https://seoullohas.com",
+        "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 대기공간, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "블로그",
+          "인스타그램"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC/place/1467695280?placePath=/home?entry=pll&from=nx&fromNxList=true&fromPanelNum=2%C3%97tamp=202507141453&locale=ko&svcName=map_pcv5&searchText=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC&searchType=place&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484552626&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%84%9C%EC%9A%B8%EC%A7%80%EB%94%94%EC%B9%98%EA%B3%BC%2Fplace%2F1467695280",
+      "checkedAt": "2026-10-31T22:09:13.958Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://pcmap.place.naver.com/hospital/1006733661/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76%C3%97tamp=202501150205&locale=ko",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1006733661/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76%C3%97tamp=202501150205&locale=ko",
+      "checkedAt": "2026-10-31T22:09:17.580Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "수영본치과의원",
+        "address": "부산 수영구 수영로 637-3 2층",
+        "phone": "051-759-8083",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 화 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 수 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 목 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 금 10:00 - 18:30 13:00 - 14:00 휴게시간 18:00 접수마감 토 10:00 - 13:00 12:30 접수마감",
+        "website": "https://bondental.kr",
+        "amenities": "무선 인터넷, 대기공간, 예약, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "인스타그램",
+          "블로그",
+          "유튜브"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1318902982?placePath=/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=%20%20%20%20%20%20%20%20%20%20%20%2076%C3%97tamp=202506041629&locale=ko&svcName=map_pcv5&searchType=place&lng=126.9536436&lat=37.3910581&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1318902982/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:09:20.654Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "정성치과의원 안양",
+        "address": "경기 안양시 동안구 평촌대로223번길 36 3층",
+        "phone": "0507-1388-5505",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 20:00 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 18:30 13:00 - 14:00 휴게시간 목 09:30 - 20:00 13:00 - 14:00 휴게시간 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:30",
+        "website": "https://youtube.com/@안양정성치과",
+        "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "인스타그램",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC/place/20182831?c=15.00,0,0,0,dh&placePath=%2Fhome%3Fbk_query%3D%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC%26entry%3Dbmp%26from%3Dmap%26fromPanelNum%3D2%26timestamp%3D202609151523%26locale%3Dko%26svcName%3Dmap_pcv5%26searchText%3D%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC",
+      "sourceUrl": "https://pcmap.place.naver.com/place/list?query=%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484562952&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%A0%84%EC%A3%BC%20%ED%95%98%EC%96%80%EC%B9%98%EA%B3%BC%2Fplace%2F20182831",
+      "checkedAt": "2026-10-31T22:09:24.459Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/v5/search/%EC%B6%98%EC%B2%9C%EC%98%88%EC%B9%98%EA%B3%BC/place/1671201687?c=14219668.6350718,4558619.4439099,15,0,0,0,dh&placePath=%2Fbooking%3FbookingRedirectUrl=https:%2F%2Fm.booking.naver.com%2Fbooking%2F13%2Fbizes%2F256980%3Ftheme=place%26entry=pll%26entry=pll&area=pll",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1671201687/booking?theme=place&entry=pll&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5&searchText=%EC%B6%98%EC%B2%9C%EC%98%88%EC%B9%98%EA%B3%BC",
+      "checkedAt": "2026-10-31T22:09:26.359Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://m.place.naver.com/place/11549214/review/visitor",
+      "sourceUrl": "https://m.place.naver.com/hospital/11549214/review/visitor",
+      "checkedAt": "2026-10-31T22:09:29.081Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "연세치과의원",
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/1028197673?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.1121411&lat=37.6504946&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1028197673/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:09:32.500Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "하시온치과의원",
+        "address": "경기 남양주시 별내5로5번길 15-1 진영프라자 5층",
+        "phone": "0507-1341-2045",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 09:30 - 18:30 13:00 - 14:00 휴게시간 화 09:30 - 18:30 13:00 - 14:00 휴게시간 수 09:30 - 20:30 13:00 - 14:00 휴게시간 18:00 - 18:30 휴게시간 목 정기휴무 (매주 목요일) 금 09:30 - 18:30 13:00 - 14:00 휴게시간 토 09:30 - 14:00",
+        "website": "https://www.hazionimplant.com/",
+        "amenities": "예약, 남/녀 화장실 구분, 무선 인터넷, 대기공간, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "블로그",
+          "인스타그램"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/search/%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC/place/13550548?placePath=/home?entry=pll&from=map&fromNxList=true&fromPanelNum=2%C3%97tamp=202510101220&locale=ko&svcName=map_pcv5&searchText=%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC&searchType=place&c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/list?query=%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC&x=126.909304&y=37.514683&clientX=126.909304&clientY=37.514683&display=70&ts=1793484572994&additionalHeight=76&locale=ko&mapUrl=https%3A%2F%2Fmap.naver.com%2Fp%2Fsearch%2F%EC%88%98%EC%9C%A0%EC%97%AD%20%EC%B9%98%EA%B3%BC%2Fplace%2F13550548",
+      "checkedAt": "2026-10-31T22:09:35.021Z",
+      "bodyStatus": "not_read",
+      "fields": {},
+      "notes": "Chrome 공개 UI에서 기관 기본정보 본문을 확보하지 못했다."
+    },
+    {
+      "discoveryUrl": "https://map.naver.com/p/entry/place/759208852?c=15.00,0,0,0,dh",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/759208852/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5",
+      "checkedAt": "2026-10-31T22:09:45.582Z",
+      "bodyStatus": "read",
+      "fields": {
+        "name": "홍선생치과교정과치과의원",
+        "address": "서울 은평구 통일로 869 2층",
+        "phone": "0507-1443-9018",
+        "hours": "오늘 휴무매주 일요일 휴무 일 정기휴무 (매주 일요일) 월 14:00 - 21:00 19:30 접수마감 화 10:00 - 19:00 12:30 - 14:00 휴게시간 17:30 접수마감 수 14:00 - 21:00 19:30 접수마감 목 10:00 - 19:00 12:30 - 14:00 휴게시간 17:30 접수마감 금 10:00 - 19:00 12:30 - 14:00 휴게시간 17:30 접수마감 토 09:30 - 14:00 12:30 접수마감",
+        "website": "https://hong-faculty-records.merryghost.chatgpt.site",
+        "amenities": "예약, 무선 인터넷, 남/녀 화장실 구분, 대기공간, 간편결제, 주차",
+        "parking": "주차가능 무료",
+        "displayedChannelButtons": [
+          "예약",
+          "인스타그램",
+          "블로그"
+        ],
+        "naverCategory": "치과"
+      },
+      "notes": "Chrome 공개 UI에서 홈·정보 탭의 기본 사업정보를 관찰했다. 기관 귀속은 이름·주소·전화 대조 후 별도로 판단한다. 소개·길안내·공지·리뷰 본문은 수집하지 않았다."
+    }
+  ]
+}

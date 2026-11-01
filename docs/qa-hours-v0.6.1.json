@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-31T21:59:09.856Z",
+  "status": "passed",
+  "path": "/clinics/c-00e964567fee/",
+  "naverHoursProfiles": 66,
+  "checks": [
+    "HTTP 200 and noindex",
+    "Naver is primary hours source with source/date",
+    "Tuesday and Saturday match actual observations",
+    "HIRA unknown rows occur only inside collapsed source comparison",
+    "Hours precede marketing assets and have a jump link",
+    "Public source data hash unchanged"
+  ],
+  "desktopUi": "Chrome: Naver hours table visible after refresh; HIRA comparison collapsed",
+  "mobileUi": "not_checked",
+  "sourceDataSha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc"
+}

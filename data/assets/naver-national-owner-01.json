@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-31T23:48:44.205Z",
+  "sourceType": "naver_business_owner_browser_capture",
+  "scope": "전국 기관의 실제 브라우저 UI 관찰. 원문·항목별 출처·열람 상태 보존. 지정 수집범위 완료는 기관 전체 정보의 조사 완료나 사실 검증이 아님.",
+  "sourceSnapshot": {
+    "file": "data/clinics.json",
+    "sha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc"
+  },
+  "inputFiles": [
+    {
+      "path": "data/research/national-owner-captures/11736894-ui-20261101.json",
+      "sha256": "75cf91f2c2745674475a921ef30d6a99de09ea3c1e5fe627d032a7c76572da04",
+      "clinicId": "c-000029b3fb02",
+      "checkedAt": "2026-11-01T08:48:11+09:00"
+    }
+  ],
+  "records": [
+    {
+      "clinicId": "c-000029b3fb02",
+      "name": "유어스치과병원",
+      "checkedAt": "2026-11-01T08:48:11+09:00",
+      "researched": true,
+      "assets": [],
+      "searches": [],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://pcmap.place.naver.com/hospital/11736894/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+          "checkedAt": "2026-11-01T08:48:11+09:00",
+          "bodyStatus": "read",
+          "fields": {
+            "name": "유어스치과병원",
+            "address": "경남 양산시 양산역로 71 노바메디칼센터 8F~9F",
+            "phone": "055-364-7600",
+            "hours": "일 정기휴무 (매주 일요일)\n월 09:30 - 18:30 12:30 - 13:30 휴게시간 17:50 접수마감\n화 09:30 - 18:30 12:30 - 13:30 휴게시간 17:50 접수마감\n수 09:30 - 18:30 12:30 - 13:30 휴게시간 17:50 접수마감\n목 09:30 - 18:30 12:30 - 13:30 휴게시간 17:50 접수마감\n금 09:30 - 18:30 12:30 - 13:30 휴게시간 17:50 접수마감\n토 09:00 - 15:00 14:20 접수마감\n매주 일요일 , 공휴일은 휴무입니다.",
+            "directions": "부산 지하철 2호선 양산역 하차 / 1번출구 도보 500m",
+            "representativeKeywords": [
+              "양산치과",
+              "양산임플란트",
+              "디지털임플란트",
+              "양산전문의치과",
+              "양산교정치과"
+            ],
+            "parking": "주차가능 무료\n건물 내 기계식 주차 가능 , 하나은행 건물 씨티타워 주차장 6층 주차 가능합니다.",
+            "paymentMethods": "제로페이"
+          },
+          "fieldStatus": {
+            "name": "read",
+            "address": "read",
+            "phone": "read",
+            "hours": "read",
+            "directions": "read",
+            "representativeKeywords": "read",
+            "parking": "read",
+            "paymentMethods": "read",
+            "description": "incomplete"
+          },
+          "fieldSources": {
+            "name": "https://pcmap.place.naver.com/hospital/11736894/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "address": "https://pcmap.place.naver.com/hospital/11736894/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "phone": "https://pcmap.place.naver.com/hospital/11736894/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "hours": "https://pcmap.place.naver.com/hospital/11736894/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "directions": "https://pcmap.place.naver.com/hospital/11736894/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "representativeKeywords": "https://pcmap.place.naver.com/hospital/11736894/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "parking": "https://pcmap.place.naver.com/hospital/11736894/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "paymentMethods": "https://pcmap.place.naver.com/hospital/11736894/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+            "description": "https://pcmap.place.naver.com/hospital/11736894/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5"
+          },
+          "fieldCheckedAt": {
+            "name": "2026-11-01T08:48:11+09:00",
+            "address": "2026-11-01T08:48:11+09:00",
+            "phone": "2026-11-01T08:48:11+09:00",
+            "hours": "2026-11-01T08:48:11+09:00",
+            "directions": "2026-11-01T08:48:11+09:00",
+            "representativeKeywords": "2026-11-01T08:48:11+09:00",
+            "parking": "2026-11-01T08:48:11+09:00",
+            "paymentMethods": "2026-11-01T08:48:11+09:00",
+            "description": "2026-11-01T08:48:11+09:00"
+          },
+          "fieldCaptureMethod": {
+            "name": "browser_ui_accessibility",
+            "address": "browser_ui_accessibility",
+            "phone": "browser_ui_accessibility",
+            "hours": "browser_ui_accessibility",
+            "directions": "browser_ui_accessibility",
+            "representativeKeywords": "browser_ui_accessibility",
+            "parking": "browser_ui_accessibility",
+            "paymentMethods": "browser_ui_accessibility",
+            "description": "browser_ui_accessibility"
+          },
+          "captureMethod": "browser_ui_accessibility",
+          "captureScope": [
+            "name",
+            "address",
+            "phone",
+            "hours",
+            "directions",
+            "representativeKeywords",
+            "parking",
+            "paymentMethods",
+            "description"
+          ],
+          "declaredScopeComplete": false,
+          "provenance": [
+            {
+              "type": "local_browser_capture_import",
+              "inputFile": "data/research/national-owner-captures/11736894-ui-20261101.json",
+              "inputSha256": "75cf91f2c2745674475a921ef30d6a99de09ea3c1e5fe627d032a7c76572da04"
+            }
+          ],
+          "observedChannelLinks": [
+            {
+              "kind": "instagram",
+              "url": "https://www.instagram.com/yours.dental_/",
+              "label": "인스타그램",
+              "sourceUrl": "https://pcmap.place.naver.com/hospital/11736894/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010847&locale=ko&svcName=map_pcv5",
+              "checkedAt": "2026-11-01T08:48:11+09:00"
+            }
+          ],
+          "captureNotes": {
+            "description": "정보 탭 소개 출력이 잘려 전문 확인을 마치지 못함."
+          }
+        }
+      ]
+    }
+  ]
+}

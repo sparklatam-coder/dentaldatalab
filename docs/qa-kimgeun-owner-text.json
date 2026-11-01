@@ -1,0 +1,73 @@
+{
+  "checkedAt": "2026-10-31T22:32:44.784Z",
+  "status": "passed",
+  "clinicId": "c-f1e05c9ae9d2",
+  "sourceObservationAt": "2026-10-31T22:27:04.161Z",
+  "ownerText": {
+    "descriptionChars": 992,
+    "representativeKeywords": [
+      "서면치과",
+      "사랑니",
+      "임플란트",
+      "충치발치잇몸치료",
+      "틀니치아"
+    ],
+    "directionsChars": 372,
+    "sourceUrls": {
+      "amenities": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+      "parking": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+      "paymentMethods": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+      "description": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+      "representativeKeywords": "https://pcmap.place.naver.com/hospital/13021314/information?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5",
+      "directions": "https://pcmap.place.naver.com/hospital/13021314/home?fromPanelNum=1&additionalHeight=76&timestamp=202611010717&locale=ko&svcName=map_pcv5"
+    },
+    "reservationNotice": "Preserved within description; no invented separate field",
+    "yearlessClosure": "3/7 preserved without assigning a year or weekly-hours rule"
+  },
+  "preserved": {
+    "historicalObservations": 1,
+    "registeredWebsite": null,
+    "socialBlockedStates": [
+      "instagram",
+      "facebook"
+    ],
+    "sourceSha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc"
+  },
+  "currentNationalCoverage": {
+    "address": 93,
+    "phone": 92,
+    "hours": 92,
+    "website": 63,
+    "amenities": 83,
+    "parking": 72,
+    "description": 1,
+    "representativeKeywords": 2,
+    "directions": 1
+  },
+  "browserReview": "Chrome refresh, accessibility tree and screenshot confirmed opened authored-content section, reservation/ID instructions, per-field source links, date and readable multiline text",
+  "http": [
+    {
+      "path": "/clinics/c-f1e05c9ae9d2/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/records/c-f1e05c9ae9d2.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/summary.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    }
+  ],
+  "validation": {
+    "nodeTests": 92,
+    "staticChecks": 14,
+    "errors": 0
+  }
+}

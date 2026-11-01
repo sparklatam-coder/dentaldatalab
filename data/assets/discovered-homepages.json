@@ -1,0 +1,845 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-10-31T22:22:14.262+00:00",
+  "checkedAt": "2026-10-31T22:22:22.137+00:00",
+  "scope": "기관 페이지에서 발견된 새 홈페이지 seed만 1회 확인. 플랫폼 본문과 이전 실패 URL 재요청 제외. 자동 대조와 실제 href는 검토 후보이며 공식 소유 인증이 아님.",
+  "seedSource": "data/research/discovered-homepage-seeds.json",
+  "seedSha256": "4249d6e997ba106bb245a310bf31d2651e5367fa774caf60cdbf06df07729e68",
+  "requestPolicy": "Public DNS and standard ports; 3 workers, per-host lock and delay; no retries; platform redirects not followed; all prior attempts skipped; no browser or credentials.",
+  "unrequestedRegistrations": [],
+  "results": [
+    {
+      "url": "http://yonsei-gangnam.co.kr/",
+      "checkedAt": "2026-10-31T22:22:14.266+00:00",
+      "clinicIds": [
+        "c-00e964567fee"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/misoyangju"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://www.instagram.com/gangnam_yonsei_dental"
+        },
+        {
+          "kind": "naverMap",
+          "url": "https://m.place.naver.com/hospital/1984826113/home?entry=pll&from=PLACE_AD&n_ad_group_type=10&n_query=%EC%98%A5%EC%A0%95%EB%8F%99%EC%B9%98%EA%B3%BC"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_wXEdK"
+        }
+      ],
+      "matches": {
+        "c-00e964567fee": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1984826113"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://yonsei-gangnam.co.kr/home",
+      "truncated": false,
+      "bodySha256": "ba0ee89ce9ae697518c2dd59d320625f32ba9948aa7fe46ad34d727f622b8fe7",
+      "observedLinkCount": 4
+    },
+    {
+      "url": "http://www.dgbest.kr/",
+      "checkedAt": "2026-10-31T22:22:14.266+00:00",
+      "clinicIds": [
+        "c-1be6fae19937"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-1be6fae19937": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1959429493"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://www.dgbest.kr/",
+      "truncated": false,
+      "bodySha256": "d555595b9504689c17bb0054c922caab30a6d383436f838714f0d7e3419ae779",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://www.yscenter1.com/",
+      "checkedAt": "2026-10-31T22:22:14.266+00:00",
+      "clinicIds": [
+        "c-1dab1bc951f5"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "youtube",
+          "url": "https://www.youtube.com/@%EA%B5%90%EC%A0%95%EB%A7%9B%EC%A7%91%EC%96%91%EC%A3%BC%EC%97%B0%EC%84%B8%EC%84%BC%ED%84%B0"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/yscenterone"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://www.youtube.com/@user-sz7yh2zo8y"
+        }
+      ],
+      "matches": {
+        "c-1dab1bc951f5": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1794363728",
+        "http://www.yscenter1.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://www.yscenter1.com/",
+      "truncated": false,
+      "bodySha256": "ccb2bf3d20f57c4ef2214b7dc8b047a24c4c5a370663b193590d79491e974ce3",
+      "observedLinkCount": 3
+    },
+    {
+      "url": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+      "checkedAt": "2026-10-31T22:22:14.733+00:00",
+      "clinicIds": [
+        "c-2b9993c12d81"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "booking",
+          "url": "https://booking.naver.com/booking/13/bizes/860783?tr=bnm"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_FMavxj/chat"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/chooneeplant"
+        }
+      ],
+      "matches": {
+        "c-2b9993c12d81": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1195813901",
+        "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://xn--vb0bk3rwlljtbph07c81az72a80jizf.com/",
+      "truncated": false,
+      "bodySha256": "3216d6a3819a76885cf23da2f2388e4003aafbba091a8be1c138e3372df0af7f",
+      "observedLinkCount": 3
+    },
+    {
+      "url": "http://www.commadental.com/",
+      "checkedAt": "2026-10-31T22:22:14.864+00:00",
+      "clinicIds": [
+        "c-2e60c349b067"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-2e60c349b067": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1905328741",
+        "http://www.commadental.com/",
+        "https://www.commadental.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://www.commadental.com/",
+      "truncated": false,
+      "bodySha256": "c0bb940652a440672f089d909ebd6792de8ca3fec61348529d0a3887c2757df3",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://baronadc.com/",
+      "checkedAt": "2026-10-31T22:22:15.391+00:00",
+      "clinicIds": [
+        "c-3205917c7339"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "booking",
+          "url": "https://booking.naver.com/booking/13/bizes/930250"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://www.instagram.com/baronadc_dental"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/baronadent1"
+        }
+      ],
+      "matches": {
+        "c-3205917c7339": {
+          "name": true,
+          "phone": false,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1472875833",
+        "https://local-dent.com/gyeonggi/yangju"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://baronadc.com/",
+      "truncated": false,
+      "bodySha256": "0811e3e9f865d922eb9574af2016542846a32dadefbf6a1ec567fa86cb783545",
+      "observedLinkCount": 3
+    },
+    {
+      "url": "http://simdental.co.kr/",
+      "checkedAt": "2026-10-31T22:22:15.489+00:00",
+      "clinicIds": [
+        "c-3993510b47f4"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/seoulimdental"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_Vxiwxan"
+        }
+      ],
+      "matches": {
+        "c-3993510b47f4": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1009965126"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://simdental.co.kr/",
+      "truncated": false,
+      "bodySha256": "8f0d0ddbb7bd1466a5df96250227ff618d4b45f669e7cba0d7f0af925056a262",
+      "observedLinkCount": 2
+    },
+    {
+      "url": "https://yonsevyj.com/",
+      "checkedAt": "2026-10-31T22:22:15.858+00:00",
+      "clinicIds": [
+        "c-3b189ea451e8"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/yonsevyj26"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://www.instagram.com/yonsevyj/"
+        },
+        {
+          "kind": "other",
+          "url": "https://naver.me/5dhQXmd3"
+        }
+      ],
+      "matches": {
+        "c-3b189ea451e8": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/2067807343?placePath=/home",
+        "https://yonsevyj.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://yonsevyj.com/",
+      "truncated": false,
+      "bodySha256": "cac0bd30dbf950da6e55dd5f52111e85cf0f5b6d1650c6735cb2077e1ec8c247",
+      "observedLinkCount": 3
+    },
+    {
+      "url": "https://sbarungrow.com/",
+      "checkedAt": "2026-10-31T22:22:15.923+00:00",
+      "clinicIds": [
+        "c-4141dbc2bbfd"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "naverMap",
+          "url": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EB%B0%94%EB%A5%B8%EC%84%B1%EC%9E%A5%EC%B9%98%EA%B3%BC/place/1607270635"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/goodenmom"
+        }
+      ],
+      "matches": {
+        "c-4141dbc2bbfd": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1607270635",
+        "https://sbarungrow.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://sbarungrow.com/",
+      "truncated": false,
+      "bodySha256": "c015929477bb0d9ac2e674600d7d6e73042fb498571e242dfdcaa73bcb94cb08",
+      "observedLinkCount": 2
+    },
+    {
+      "url": "https://reondc.com/",
+      "checkedAt": "2026-10-31T22:22:15.951+00:00",
+      "clinicIds": [
+        "c-53ec190cb715"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "other",
+          "url": "https://naver.me/FXwxJG1P"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_SGCwn"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://www.instagram.com/re_on_dentalclinic/"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://m.blog.naver.com/reondc?tab=1"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/reondc"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/bagaza"
+        }
+      ],
+      "matches": {
+        "c-53ec190cb715": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1254887348",
+        "https://www.reondc.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://reondc.com/",
+      "truncated": false,
+      "bodySha256": "a2d4f76bc14e2890bac660201f98565dd07521d3e3a327af496bc89b072471d7",
+      "observedLinkCount": 6
+    },
+    {
+      "url": "http://whitelinedent.com/",
+      "checkedAt": "2026-10-31T22:22:16.436+00:00",
+      "clinicIds": [
+        "c-5920bde2f098"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-5920bde2f098": {
+          "name": true,
+          "phone": false,
+          "address": false
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1677130038"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://whitelinedent.com/",
+      "truncated": false,
+      "bodySha256": "276d3313a951b0f39cecc18e3cd26aab4c5af7855a4e71f0ac1abecfa3715116",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://www.severance-s.co.kr/",
+      "checkedAt": "2026-10-31T22:22:16.455+00:00",
+      "clinicIds": [
+        "c-6b7c24eea93a"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "kakaoChannel",
+          "url": "http://pf.kakao.com/_hXNqK"
+        },
+        {
+          "kind": "booking",
+          "url": "https://booking.naver.com/booking/13/bizes/401930/items/3564249"
+        },
+        {
+          "kind": "youtube",
+          "url": "https://www.youtube.com/channel/UCcPmpWjzZkMu5hSamECQ3Tg"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://www.instagram.com/severancesdental/?hl=ko"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://www.facebook.com/severanceSdentalclinic"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/severances"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_hXNqK"
+        }
+      ],
+      "matches": {
+        "c-6b7c24eea93a": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1201891139"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://www.severance-s.co.kr/",
+      "truncated": false,
+      "bodySha256": "f9f975a442992f9d65e8d1ca07159762e407861a6baa5757a8f4a15e88ab2aa8",
+      "observedLinkCount": 7
+    },
+    {
+      "url": "https://www.bigstardent.com/",
+      "checkedAt": "2026-10-31T22:22:16.463+00:00",
+      "clinicIds": [
+        "c-76938909f739"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-76938909f739": {
+          "name": true,
+          "phone": false,
+          "address": false
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://m.place.naver.com/hospital/2014773846/home",
+        "https://www.bigstardent.com/",
+        "https://m.place.naver.com/hospital/2014773846/information"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://www.bigstardent.com/",
+      "truncated": true,
+      "bodySha256": "fe683fc815377ec3ffa65e975de1a72fffc2297809543912b687417443e0b14b",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://www.ggdent.co.kr/",
+      "checkedAt": "2026-10-31T22:22:16.971+00:00",
+      "clinicIds": [
+        "c-8347cdeeeb70"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "booking",
+          "url": "https://booking.naver.com/booking/13/bizes/185262"
+        },
+        {
+          "kind": "facebook",
+          "url": "https://www.facebook.com/%EC%98%A5%EC%A0%95%EA%B3%B5%EA%B0%90%EC%B9%98%EA%B3%BC-470568833415254/"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_SUdxoC"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/gonggamdent"
+        }
+      ],
+      "matches": {
+        "c-8347cdeeeb70": {
+          "name": true,
+          "phone": false,
+          "address": false
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1384418060"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://www.ggdent.co.kr/",
+      "truncated": false,
+      "bodySha256": "6ca6de1b787e9d4f7e56ab997d7ca71ef6ac60b9b363e2d3ec8da167b8d91afe",
+      "observedLinkCount": 4
+    },
+    {
+      "url": "https://sites.google.com/view/yagaon/%ED%99%88",
+      "checkedAt": "2026-10-31T22:22:16.974+00:00",
+      "clinicIds": [
+        "c-9363219ea471"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-9363219ea471": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1950754624"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://sites.google.com/view/yagaon/%ED%99%88",
+      "truncated": false,
+      "bodySha256": "1cce81a0584eca5041f36e38c6d0446ae76dda1a6a5c029f0e054b53c1d4dd60",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://thestandardc.com/",
+      "checkedAt": "2026-10-31T22:22:17.090+00:00",
+      "clinicIds": [
+        "c-99e1bd1c8c31"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/thestandard10/223039636916"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/thestandard10/222973411797"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/thestandard10/223024123877"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/thestandard10/222917892170"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/thestandard10/222917000842"
+        },
+        {
+          "kind": "booking",
+          "url": "https://booking.naver.com/booking/13/bizes/788049?theme=place&area=pll"
+        },
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/thestandard10"
+        },
+        {
+          "kind": "instagram",
+          "url": "https://www.instagram.com/the_standard_dental/"
+        },
+        {
+          "kind": "naverMap",
+          "url": "https://map.naver.com/v5/entry/place/1463095068?c=14146476.1923267,4550467.5201930,13,0,0,0,dh&placePath=%2Fhome%3Fentry=plt"
+        }
+      ],
+      "matches": {
+        "c-99e1bd1c8c31": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1463095068",
+        "https://local-dent.com/gyeonggi/yangju/gwangsa"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://thestandardc.com/",
+      "truncated": false,
+      "bodySha256": "c9b1ef2b5f8636aac8a2b0f13af8399516331dbf356c81adc0e3405d7aac51be",
+      "observedLinkCount": 9
+    },
+    {
+      "url": "http://thelifedc.co.kr/",
+      "checkedAt": "2026-10-31T22:22:17.432+00:00",
+      "clinicIds": [
+        "c-d3f7a2e14832"
+      ],
+      "status": "error",
+      "links": [],
+      "matches": {},
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1837176355"
+      ],
+      "error": "gaierror",
+      "detail": "[Errno 8] nodename nor servname provided, or not known"
+    },
+    {
+      "url": "http://kidshugdc.com/",
+      "checkedAt": "2026-10-31T22:22:17.617+00:00",
+      "clinicIds": [
+        "c-d67e31fb64ff"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-d67e31fb64ff": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1163500721",
+        "https://www.kidshugdc.com/",
+        "https://kidshugdc.com/",
+        "https://oneframe.kr/88",
+        "http://www.kidshugdc.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://kidshugdc.com/",
+      "truncated": false,
+      "bodySha256": "d62b7230e87542727d0eb43485f87f7b8468d54d51b4b9de7c4fa63cdeb2e311",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://wooridledental.com/",
+      "checkedAt": "2026-10-31T22:22:17.846+00:00",
+      "clinicIds": [
+        "c-eb195e3002df"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-eb195e3002df": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/36161352",
+        "https://m.booking.naver.com/booking/13/bizes/386872?area=ple"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://wooridledental.com/",
+      "truncated": false,
+      "bodySha256": "0666ec71096c482269956e9e619c09ecf9a1c7812d176787e047887e95aca624",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "https://onfamdent.com/",
+      "checkedAt": "2026-10-31T22:22:18.242+00:00",
+      "clinicIds": [
+        "c-f03aab4b3617"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-f03aab4b3617": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/2034496778?placePath=/home",
+        "https://www.onfamdent.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://onfamdent.com/",
+      "truncated": false,
+      "bodySha256": "3f11f25a94de5e4a90dd6d999b2a6918c54b42af5054a3c06a5abcc4e7a9bb6e",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "https://hong-faculty-records.merryghost.chatgpt.site/",
+      "checkedAt": "2026-10-31T22:22:18.344+00:00",
+      "clinicIds": [
+        "c-f2e5d80adda0"
+      ],
+      "status": "blocked",
+      "links": [],
+      "matches": {},
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://pcmap.place.naver.com/hospital/759208852/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010709&locale=ko&svcName=map_pcv5"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://hong-faculty-records.merryghost.chatgpt.site/",
+      "truncated": false,
+      "bodySha256": "4f649f780fce9c50a012973679d242a3a8c97192c4c6d077f18f4d96bc2a5cc6",
+      "detail": "challenge_or_access_denied_page"
+    },
+    {
+      "url": "http://white2ydp.com/",
+      "checkedAt": "2026-10-31T22:22:18.452+00:00",
+      "clinicIds": [
+        "c-f7b9cff3e929"
+      ],
+      "status": "blocked",
+      "links": [],
+      "matches": {},
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://pcmap.place.naver.com/hospital/1309864455/home?entry=plt&from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010708&locale=ko&svcName=map_pcv5"
+      ],
+      "httpStatus": 403
+    },
+    {
+      "url": "https://ssjdent.com/",
+      "checkedAt": "2026-10-31T22:22:18.792+00:00",
+      "clinicIds": [
+        "c-f8b41f196f7e"
+      ],
+      "status": "read",
+      "links": [],
+      "matches": {
+        "c-f8b41f196f7e": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/13236065",
+        "https://ssjdent.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://ssjdent.com/",
+      "truncated": false,
+      "bodySha256": "3c14e841c8535d27202f8738530cb4cd898b604dcd1403cc10b68cd300a847ec",
+      "observedLinkCount": 0
+    },
+    {
+      "url": "http://www.yonsei365dental.com/",
+      "checkedAt": "2026-10-31T22:22:18.907+00:00",
+      "clinicIds": [
+        "c-fcd4969ba92c"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "booking",
+          "url": "https://booking.naver.com/booking/13/bizes/675482"
+        }
+      ],
+      "matches": {
+        "c-fcd4969ba92c": {
+          "name": true,
+          "phone": true,
+          "address": true
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/1149916618"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "http://www.yonsei365dental.com/",
+      "truncated": false,
+      "bodySha256": "3e788826850d2c97d6c106262b5dc941910dedac9f5ee92fde122f92c5bc8c58",
+      "observedLinkCount": 1
+    },
+    {
+      "url": "https://seoulsoodentalclinic.com/",
+      "checkedAt": "2026-10-31T22:22:19.377+00:00",
+      "clinicIds": [
+        "c-fd2732bdd99d"
+      ],
+      "status": "read",
+      "links": [
+        {
+          "kind": "naverBlog",
+          "url": "https://blog.naver.com/bimplant"
+        },
+        {
+          "kind": "kakaoChannel",
+          "url": "https://pf.kakao.com/_xdgGxgG"
+        },
+        {
+          "kind": "other",
+          "url": "https://naver.me/xq3tSVnX"
+        }
+      ],
+      "matches": {
+        "c-fd2732bdd99d": {
+          "name": true,
+          "phone": false,
+          "address": false
+        }
+      },
+      "sourceType": "discovered_homepage",
+      "discoveryEvidenceUrls": [
+        "https://map.naver.com/p/entry/place/13180284",
+        "https://local-dent.com/gyeonggi/yangju",
+        "https://seoulsoodentalclinic.com/"
+      ],
+      "httpStatus": 200,
+      "finalUrl": "https://seoulsoodentalclinic.com/",
+      "truncated": true,
+      "bodySha256": "efc92e265e4db511ee26ca7f86fa620b96e6f1b64e2b107773c32e5005b39f5e",
+      "observedLinkCount": 3
+    }
+  ]
+}

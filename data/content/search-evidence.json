@@ -1,0 +1,4785 @@
+{
+  "schemaVersion": 1,
+  "collectedAt": "2026-10-31T21:04:44.779586+00:00",
+  "completedAt": "2026-10-31T21:05:20.343064+00:00",
+  "market": {
+    "country": "KR",
+    "language": "ko",
+    "regionScopeNote": "Autocomplete의 hl=ko/gl=kr 요청 문맥. 한국 거주자만의 측정 표본이나 기간별 한국 검색량을 뜻하지 않음."
+  },
+  "methodology": {
+    "purpose": "한국어 치과 질문·콘텐츠의 주제 발굴 근거. 검색량 상위 100개 확정 자료가 아님.",
+    "seedSelection": "편집자가 정한 치과 10분류별 2개 seed. Google 인기 순위로 선택한 seed가 아님.",
+    "autocompletePeriod": null,
+    "autocompletePeriodNote": "조회 시점의 예상 검색어이며 최근 12개월 집계가 아님.",
+    "ranking": "검색량·인기도 순위는 확인하지 못해 모든 searchRank를 null로 둠. 응답 순서를 검색빈도 순서로 해석하지 않음.",
+    "monthlySearchVolume": "미확보. 모든 avgMonthlySearches는 null이며 외부 추정치를 대신 넣지 않음.",
+    "normalization": "Unicode NFC + 양끝 공백 제거 + 연속 공백 한 칸. 다른 띄어쓰기나 유사어는 자동 병합하지 않음.",
+    "contentMatching": "normalizedKeyword와 정확히 같은 표현만 exact 관찰. seed 연관성으로 새로 만든 질문은 seed 기반 편집안으로 구분.",
+    "medicalTruth": "자동완성의 문구는 의학적 사실·안전성·치료 권고의 근거가 아님. 자극적인 예상 검색어를 진실로 재인용하지 않음.",
+    "accessPolicy": "익명 공개 요청, 요청 간 지연, 접근제한 시 중단. 계정/결제/API키 생성·프록시/세션/접근제한 우회 없음."
+  },
+  "officialSources": [
+    {
+      "id": "keyword-planner-access",
+      "title": "키워드 플래너 사용하기",
+      "url": "https://support.google.com/google-ads/answer/7337243?hl=ko-KR",
+      "reviewedOn": "2026-11-01",
+      "finding": "기본 기능 이용에도 결제 정보를 포함한 계정 설정 완료가 필요하다고 안내. 건강 등 민감한 카테고리는 결과가 제한될 수 있음."
+    },
+    {
+      "id": "keyword-planner-metrics",
+      "title": "키워드 플래너의 예측에 대한 정보",
+      "url": "https://support.google.com/google-ads/answer/3022575?hl=ko",
+      "reviewedOn": "2026-11-01",
+      "finding": "월평균 검색량은 선택 기간·지역·검색 네트워크에 따른 키워드 및 유사 검색어의 평균이며 반올림된 통계. 기본 평균은 언어에 관계없이 12개월 기준. 광고 노출 예측과 검색량은 별개."
+    },
+    {
+      "id": "trends-data",
+      "title": "Google 트렌드 데이터 관련 FAQ",
+      "url": "https://support.google.com/trends/answer/4365533?hl=ko",
+      "reviewedOn": "2026-11-01",
+      "finding": "지역·기간에 따른 상대 관심도 0~100이며 절대 월검색량이 아님. 다른 비교 묶음의 100을 서로 비교하면 안 됨. 낮은 검색량의 0은 실제 검색이 전혀 없었다는 보장이 아님."
+    },
+    {
+      "id": "autocomplete-data",
+      "title": "Google 자동 완성 예상 검색어의 작동 방식",
+      "url": "https://support.google.com/websearch/answer/7368877?hl=ko",
+      "reviewedOn": "2026-11-01",
+      "finding": "실제 검색어와 언어·위치·관심사·검색 이력·정책 필터 등의 영향을 받는 예상 검색어. 단순 검색 빈도순이나 가장 인기 있는 검색어 목록이 아님."
+    }
+  ],
+  "keywordPlanner": {
+    "status": "not_accessed_account_setup_required",
+    "sourceUrl": "https://support.google.com/google-ads/answer/7337243?hl=ko-KR",
+    "monthlySearchVolume": null,
+    "searchRank": null,
+    "accountOrBillingCreated": false,
+    "note": "사용자 계정에 접근하거나 결제 정보를 입력하지 않음. 계정별 실제 이용 가능 여부는 확인하지 않음."
+  },
+  "googleTrends": {
+    "geo": "KR",
+    "language": "ko",
+    "period": "today 12-m",
+    "searchProperty": "web",
+    "requestedTerms": [
+      "임플란트",
+      "치아교정",
+      "신경치료",
+      "스케일링",
+      "사랑니 발치"
+    ],
+    "requestUrl": "https://trends.google.com/trends/explore?date=today+12-m&geo=KR&q=%EC%9E%84%ED%94%8C%EB%9E%80%ED%8A%B8%2C%EC%B9%98%EC%95%84%EA%B5%90%EC%A0%95%2C%EC%8B%A0%EA%B2%BD%EC%B9%98%EB%A3%8C%2C%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81%2C%EC%82%AC%EB%9E%91%EB%8B%88+%EB%B0%9C%EC%B9%98&hl=ko",
+    "observedAt": "2026-10-31T21:05:19.789155+00:00",
+    "values": null,
+    "absoluteMonthlySearchVolume": null,
+    "crossBatchComparisonAllowed": false,
+    "status": "access_restricted",
+    "httpStatus": 429,
+    "error": "HTTP Error 429: unknown",
+    "languageScopeNote": "hl=ko는 화면 언어이며 한국어 검색만의 별도 표본 필터가 아님. 비교 검색어를 한국어로 지정함."
+  },
+  "autocomplete": {
+    "seeds": [
+      {
+        "id": "implant-1",
+        "category": "implant",
+        "query": "임플란트"
+      },
+      {
+        "id": "implant-2",
+        "category": "implant",
+        "query": "임플란트 뼈이식"
+      },
+      {
+        "id": "orthodontics-1",
+        "category": "orthodontics",
+        "query": "치아교정"
+      },
+      {
+        "id": "orthodontics-2",
+        "category": "orthodontics",
+        "query": "투명교정"
+      },
+      {
+        "id": "caries-1",
+        "category": "caries",
+        "query": "충치치료"
+      },
+      {
+        "id": "caries-2",
+        "category": "caries",
+        "query": "치과 레진"
+      },
+      {
+        "id": "endodontics-1",
+        "category": "endodontics",
+        "query": "신경치료"
+      },
+      {
+        "id": "endodontics-2",
+        "category": "endodontics",
+        "query": "치근단절제술"
+      },
+      {
+        "id": "extraction-1",
+        "category": "extraction",
+        "query": "사랑니 발치"
+      },
+      {
+        "id": "extraction-2",
+        "category": "extraction",
+        "query": "발치 후"
+      },
+      {
+        "id": "prosthetics-1",
+        "category": "prosthetics",
+        "query": "치과 크라운"
+      },
+      {
+        "id": "prosthetics-2",
+        "category": "prosthetics",
+        "query": "틀니"
+      },
+      {
+        "id": "periodontal-1",
+        "category": "periodontal",
+        "query": "스케일링"
+      },
+      {
+        "id": "periodontal-2",
+        "category": "periodontal",
+        "query": "잇몸치료"
+      },
+      {
+        "id": "cosmetic-1",
+        "category": "cosmetic",
+        "query": "치아미백"
+      },
+      {
+        "id": "cosmetic-2",
+        "category": "cosmetic",
+        "query": "라미네이트"
+      },
+      {
+        "id": "pediatric-1",
+        "category": "pediatric",
+        "query": "어린이 충치"
+      },
+      {
+        "id": "pediatric-2",
+        "category": "pediatric",
+        "query": "불소도포"
+      },
+      {
+        "id": "safety-1",
+        "category": "safety",
+        "query": "치과 수면마취"
+      },
+      {
+        "id": "safety-2",
+        "category": "safety",
+        "query": "치통"
+      }
+    ],
+    "observations": [
+      {
+        "id": "google-autocomplete-implant-1",
+        "seedId": "implant-1",
+        "category": "implant",
+        "seed": "임플란트",
+        "observedAt": "2026-10-31T21:04:44.779846+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%9E%84%ED%94%8C%EB%9E%80%ED%8A%B8",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "임플란트",
+          "임플란트 비용",
+          "임플란트 수명",
+          "임플란트 과정",
+          "임플란트 하지 마세요",
+          "임플란트 가격",
+          "임플란트 사망",
+          "임플란트 통증",
+          "임플란트 1개 가격",
+          "임플란트 보험"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%9E%84%ED%94%8C%EB%9E%80%ED%8A%B8",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "a5afd9fc42d7840ca7560d2cc9f40e9c71f8ce4a7d8852a0ff8a39af87534359",
+        "rawResponse": [
+          "임플란트",
+          [
+            "임플란트",
+            "임플란트 비용",
+            "임플란트 수명",
+            "임플란트 과정",
+            "임플란트 하지 마세요",
+            "임플란트 가격",
+            "임플란트 사망",
+            "임플란트 통증",
+            "임플란트 1개 가격",
+            "임플란트 보험"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512,
+                433
+              ],
+              [
+                512,
+                433
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-implant-2",
+        "seedId": "implant-2",
+        "category": "implant",
+        "seed": "임플란트 뼈이식",
+        "observedAt": "2026-10-31T21:04:46.587343+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%9E%84%ED%94%8C%EB%9E%80%ED%8A%B8+%EB%BC%88%EC%9D%B4%EC%8B%9D",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "임플란트 뼈이식",
+          "임플란트 뼈이식 실패 증상",
+          "임플란트 뼈이식 후 식사",
+          "임플란트 뼈이식 실패 디시",
+          "임플란트 뼈이식 비용",
+          "임플란트 뼈이식 과정",
+          "임플란트 뼈이식 기간",
+          "임플란트 뼈이식 후 관리",
+          "임플란트 뼈이식 담배 디시",
+          "임플란트 뼈이식 통증 디시"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%9E%84%ED%94%8C%EB%9E%80%ED%8A%B8+%EB%BC%88%EC%9D%B4%EC%8B%9D",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "f202682e9e6cee01dde58e794bbb7c266c21ed35f65487b4039d3f9ca8120017",
+        "rawResponse": [
+          "임플란트 뼈이식",
+          [
+            "임플란트 뼈이식",
+            "임플란트 뼈이식 실패 증상",
+            "임플란트 뼈이식 후 식사",
+            "임플란트 뼈이식 실패 디시",
+            "임플란트 뼈이식 비용",
+            "임플란트 뼈이식 과정",
+            "임플란트 뼈이식 기간",
+            "임플란트 뼈이식 후 관리",
+            "임플란트 뼈이식 담배 디시",
+            "임플란트 뼈이식 통증 디시"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-orthodontics-1",
+        "seedId": "orthodontics-1",
+        "category": "orthodontics",
+        "seed": "치아교정",
+        "observedAt": "2026-10-31T21:04:48.394100+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EC%95%84%EA%B5%90%EC%A0%95",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "치아교정",
+          "치아교정하면 안되는 얼굴",
+          "치아교정 비용",
+          "치아교정 영어로",
+          "치아교정 기간",
+          "치아교정 얼굴 변화 디시",
+          "치아교정 비용 디시",
+          "치아교정 얼굴 변화",
+          "치아교정 디시",
+          "치아교정 유지장치 평생"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EC%95%84%EA%B5%90%EC%A0%95",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "f370af30bf200604c3f89095a7032b66c7989f798f41d6ebe6a53b4c213d1dd3",
+        "rawResponse": [
+          "치아교정",
+          [
+            "치아교정",
+            "치아교정하면 안되는 얼굴",
+            "치아교정 비용",
+            "치아교정 영어로",
+            "치아교정 기간",
+            "치아교정 얼굴 변화 디시",
+            "치아교정 비용 디시",
+            "치아교정 얼굴 변화",
+            "치아교정 디시",
+            "치아교정 유지장치 평생"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-orthodontics-2",
+        "seedId": "orthodontics-2",
+        "category": "orthodontics",
+        "seed": "투명교정",
+        "observedAt": "2026-10-31T21:04:50.214085+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%ED%88%AC%EB%AA%85%EA%B5%90%EC%A0%95",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "투명교정",
+          "투명교정 후회",
+          "투명교정 가격",
+          "투명교정 디시",
+          "투명교정장치",
+          "투명교정기",
+          "투명교정 후기 디시",
+          "투명교정 후기",
+          "투명교정 장단점",
+          "투명교정 장치 가격"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%ED%88%AC%EB%AA%85%EA%B5%90%EC%A0%95",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "b582835b78b3271fd72af4eecf1a5ca024a0bfa38e8404fbd15f031532aab902",
+        "rawResponse": [
+          "투명교정",
+          [
+            "투명교정",
+            "투명교정 후회",
+            "투명교정 가격",
+            "투명교정 디시",
+            "투명교정장치",
+            "투명교정기",
+            "투명교정 후기 디시",
+            "투명교정 후기",
+            "투명교정 장단점",
+            "투명교정 장치 가격"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-caries-1",
+        "seedId": "caries-1",
+        "category": "caries",
+        "seed": "충치치료",
+        "observedAt": "2026-10-31T21:04:52.037663+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B6%A9%EC%B9%98%EC%B9%98%EB%A3%8C",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "충치치료 비용",
+          "충치치료",
+          "충치치료 가격",
+          "충치치료 아픈가요",
+          "충치치료 후 식사",
+          "충치치료 시간",
+          "충치치료 실비",
+          "충치치료 보험",
+          "충치치료 레진",
+          "충치치료 술"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B6%A9%EC%B9%98%EC%B9%98%EB%A3%8C",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "c3df36a91d2486550914039eb0c6051ad929ffc38fb660ce39a3bcdc52b78e8e",
+        "rawResponse": [
+          "충치치료",
+          [
+            "충치치료 비용",
+            "충치치료",
+            "충치치료 가격",
+            "충치치료 아픈가요",
+            "충치치료 후 식사",
+            "충치치료 시간",
+            "충치치료 실비",
+            "충치치료 보험",
+            "충치치료 레진",
+            "충치치료 술"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-caries-2",
+        "seedId": "caries-2",
+        "category": "caries",
+        "seed": "치과 레진",
+        "observedAt": "2026-10-31T21:04:53.855279+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B3%BC+%EB%A0%88%EC%A7%84",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "치과 레진",
+          "치과 레진 가격",
+          "치과 레진 치료 비용",
+          "치과 레진 뜻",
+          "치과 레진 수명",
+          "치과 레진 치료",
+          "치과 레진 종류",
+          "치과 레진 치료 후 식사",
+          "치과 레진 디시",
+          "치과 레진 보험"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B3%BC+%EB%A0%88%EC%A7%84",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "54dae4cbcc10231b019b112747cf12efe4ed4ba58d094decf2fd649b363decc9",
+        "rawResponse": [
+          "치과 레진",
+          [
+            "치과 레진",
+            "치과 레진 가격",
+            "치과 레진 치료 비용",
+            "치과 레진 뜻",
+            "치과 레진 수명",
+            "치과 레진 치료",
+            "치과 레진 종류",
+            "치과 레진 치료 후 식사",
+            "치과 레진 디시",
+            "치과 레진 보험"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-endodontics-1",
+        "seedId": "endodontics-1",
+        "category": "endodontics",
+        "seed": "신경치료",
+        "observedAt": "2026-10-31T21:04:55.686176+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%8B%A0%EA%B2%BD%EC%B9%98%EB%A3%8C",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "신경치료",
+          "신경치료 비용",
+          "신경치료 통증",
+          "신경치료 하지 마라",
+          "신경치료 후 통증",
+          "신경치료 하면 안되는 이유",
+          "신경치료 하면 안되는 이유 디시",
+          "신경치료 후 크라운 비용",
+          "신경치료 과정",
+          "신경치료 디시"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%8B%A0%EA%B2%BD%EC%B9%98%EB%A3%8C",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "fbfe9632cb9dcb85633b13e82c53ae6a9d73495cc1fd26f5a62dc425cac9682e",
+        "rawResponse": [
+          "신경치료",
+          [
+            "신경치료",
+            "신경치료 비용",
+            "신경치료 통증",
+            "신경치료 하지 마라",
+            "신경치료 후 통증",
+            "신경치료 하면 안되는 이유",
+            "신경치료 하면 안되는 이유 디시",
+            "신경치료 후 크라운 비용",
+            "신경치료 과정",
+            "신경치료 디시"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-endodontics-2",
+        "seedId": "endodontics-2",
+        "category": "endodontics",
+        "seed": "치근단절제술",
+        "observedAt": "2026-10-31T21:04:57.507668+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B7%BC%EB%8B%A8%EC%A0%88%EC%A0%9C%EC%88%A0",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "치근단절제술",
+          "치근단절제술 비용",
+          "치근단절제술 후기",
+          "치근단절제술 디시",
+          "치근단절제술 고통",
+          "치근단절제술 대학병원",
+          "치근단절제술 영어로",
+          "치근단절제술 통증",
+          "치근단절제술 성공률",
+          "치근단절제술 실패"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B7%BC%EB%8B%A8%EC%A0%88%EC%A0%9C%EC%88%A0",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "19099505abc612b69a09c3a52d9728eb22ea79a71a7c7f81e38abeabb92a368e",
+        "rawResponse": [
+          "치근단절제술",
+          [
+            "치근단절제술",
+            "치근단절제술 비용",
+            "치근단절제술 후기",
+            "치근단절제술 디시",
+            "치근단절제술 고통",
+            "치근단절제술 대학병원",
+            "치근단절제술 영어로",
+            "치근단절제술 통증",
+            "치근단절제술 성공률",
+            "치근단절제술 실패"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-extraction-1",
+        "seedId": "extraction-1",
+        "category": "extraction",
+        "seed": "사랑니 발치",
+        "observedAt": "2026-10-31T21:04:59.325594+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%82%AC%EB%9E%91%EB%8B%88+%EB%B0%9C%EC%B9%98",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "사랑니 발치",
+          "사랑니 발치 후 통증",
+          "사랑니 발치 후",
+          "사랑니 발치 가격",
+          "사랑니 발치 후 식사",
+          "사랑니 발치 후 양치",
+          "사랑니 발치 통증",
+          "사랑니 발치 후 통증 강도 디시",
+          "사랑니 발치 후 음식",
+          "사랑니 발치 후 음주"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%82%AC%EB%9E%91%EB%8B%88+%EB%B0%9C%EC%B9%98",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "0f841fc2081e7cc4c8769a29096973c7bceef6d5dd42468e34fb4852be83fa75",
+        "rawResponse": [
+          "사랑니 발치",
+          [
+            "사랑니 발치",
+            "사랑니 발치 후 통증",
+            "사랑니 발치 후",
+            "사랑니 발치 가격",
+            "사랑니 발치 후 식사",
+            "사랑니 발치 후 양치",
+            "사랑니 발치 통증",
+            "사랑니 발치 후 통증 강도 디시",
+            "사랑니 발치 후 음식",
+            "사랑니 발치 후 음주"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-extraction-2",
+        "seedId": "extraction-2",
+        "category": "extraction",
+        "seed": "발치 후",
+        "observedAt": "2026-10-31T21:05:01.155146+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EB%B0%9C%EC%B9%98+%ED%9B%84",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "발치 후 흡연 후기 디시",
+          "발치 후 음식",
+          "발치 후 임플란트 과정",
+          "발치 후 식사",
+          "발치 후 임플란트 기간",
+          "발치 후 음주",
+          "발치 후 흡연",
+          "발치 후 음식 추천",
+          "발치 후 양치",
+          "발치 후 피가 안 멈춤"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EB%B0%9C%EC%B9%98+%ED%9B%84",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "53564c920127351af8bcdb5dbe0bc030a0973295f2cb0dec75183c5945f50494",
+        "rawResponse": [
+          "발치 후",
+          [
+            "발치 후 흡연 후기 디시",
+            "발치 후 음식",
+            "발치 후 임플란트 과정",
+            "발치 후 식사",
+            "발치 후 임플란트 기간",
+            "발치 후 음주",
+            "발치 후 흡연",
+            "발치 후 음식 추천",
+            "발치 후 양치",
+            "발치 후 피가 안 멈춤"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-prosthetics-1",
+        "seedId": "prosthetics-1",
+        "category": "prosthetics",
+        "seed": "치과 크라운",
+        "observedAt": "2026-10-31T21:05:02.976036+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B3%BC+%ED%81%AC%EB%9D%BC%EC%9A%B4",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "치과 크라운",
+          "치과 크라운 가격",
+          "치과 크라운 비용",
+          "치과 크라운 뜻",
+          "치과 크라운 종류",
+          "치과 크라운 치료",
+          "치과 크라운 디시",
+          "치과 크라운 보험",
+          "치과 크라운 영어로",
+          "치과 크라운 재료"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B3%BC+%ED%81%AC%EB%9D%BC%EC%9A%B4",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "e6bc26207f1a3aaf1bb3fbfe6bde6a2489cc55f20ea85832979f97c0d0e7473e",
+        "rawResponse": [
+          "치과 크라운",
+          [
+            "치과 크라운",
+            "치과 크라운 가격",
+            "치과 크라운 비용",
+            "치과 크라운 뜻",
+            "치과 크라운 종류",
+            "치과 크라운 치료",
+            "치과 크라운 디시",
+            "치과 크라운 보험",
+            "치과 크라운 영어로",
+            "치과 크라운 재료"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512,
+                433
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-prosthetics-2",
+        "seedId": "prosthetics-2",
+        "category": "prosthetics",
+        "seed": "틀니",
+        "observedAt": "2026-10-31T21:05:04.799420+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%ED%8B%80%EB%8B%88",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "틀니",
+          "틀니 가격",
+          "틀니 비용",
+          "틀니 영어로",
+          "틀니세정제",
+          "틀니 접착제",
+          "틀니앙",
+          "틀니 잘하는 치과",
+          "틀니 짤",
+          "틀니 보관법"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%ED%8B%80%EB%8B%88",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "84eee7e6b3a8422d3a1ef3ef0506e4ee0c5348c01944dc90334a00bb47a29f06",
+        "rawResponse": [
+          "틀니",
+          [
+            "틀니",
+            "틀니 가격",
+            "틀니 비용",
+            "틀니 영어로",
+            "틀니세정제",
+            "틀니 접착제",
+            "틀니앙",
+            "틀니 잘하는 치과",
+            "틀니 짤",
+            "틀니 보관법"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-periodontal-1",
+        "seedId": "periodontal-1",
+        "category": "periodontal",
+        "seed": "스케일링",
+        "observedAt": "2026-10-31T21:05:06.622310+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "스케일링",
+          "스케일링 비용",
+          "스케일링 보험",
+          "스케일링 후 식사",
+          "스케일링 하지마세요 디시",
+          "스케일링 시간",
+          "스케일링 보험 없이 가격",
+          "스케일링 무료",
+          "스케일링 후 주의사항",
+          "스케일링 아픔"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "dba15b21be5b0b000375c540a4d33bd8651a35ab7c6acd7fe6ddaff92302d18e",
+        "rawResponse": [
+          "스케일링",
+          [
+            "스케일링",
+            "스케일링 비용",
+            "스케일링 보험",
+            "스케일링 후 식사",
+            "스케일링 하지마세요 디시",
+            "스케일링 시간",
+            "스케일링 보험 없이 가격",
+            "스케일링 무료",
+            "스케일링 후 주의사항",
+            "스케일링 아픔"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512,
+                433
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-periodontal-2",
+        "seedId": "periodontal-2",
+        "category": "periodontal",
+        "seed": "잇몸치료",
+        "observedAt": "2026-10-31T21:05:08.460775+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%9E%87%EB%AA%B8%EC%B9%98%EB%A3%8C",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "잇몸치료",
+          "잇몸치료 비용",
+          "잇몸치료 고통",
+          "잇몸치료 안 해주는 이유",
+          "잇몸치료 안 해주는 이유 디시",
+          "잇몸치료 디시",
+          "잇몸치료 꼭 받아야 하나요",
+          "잇몸치료 나눠서 하는 이유",
+          "잇몸치료 단점",
+          "잇몸치료 후 식사"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%9E%87%EB%AA%B8%EC%B9%98%EB%A3%8C",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "11a7f747a040d0515c6e2001bc3fa9f75ce04da5f97fde2b8830bb16539091a6",
+        "rawResponse": [
+          "잇몸치료",
+          [
+            "잇몸치료",
+            "잇몸치료 비용",
+            "잇몸치료 고통",
+            "잇몸치료 안 해주는 이유",
+            "잇몸치료 안 해주는 이유 디시",
+            "잇몸치료 디시",
+            "잇몸치료 꼭 받아야 하나요",
+            "잇몸치료 나눠서 하는 이유",
+            "잇몸치료 단점",
+            "잇몸치료 후 식사"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512,
+                433
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-cosmetic-1",
+        "seedId": "cosmetic-1",
+        "category": "cosmetic",
+        "seed": "치아미백",
+        "observedAt": "2026-10-31T21:05:10.303961+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EC%95%84%EB%AF%B8%EB%B0%B1",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "치아미백",
+          "치아미백 가격",
+          "치아미백 부작용",
+          "치아미백 디시",
+          "치아미백 더쿠",
+          "치아미백 비용",
+          "치아미백제",
+          "치아미백기",
+          "치아미백 후회",
+          "치아미백 치약"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EC%95%84%EB%AF%B8%EB%B0%B1",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "791cbc5bc3d5cd92da585ee6192ac16e80d73cccf2cc3ee2e7e39510886da291",
+        "rawResponse": [
+          "치아미백",
+          [
+            "치아미백",
+            "치아미백 가격",
+            "치아미백 부작용",
+            "치아미백 디시",
+            "치아미백 더쿠",
+            "치아미백 비용",
+            "치아미백제",
+            "치아미백기",
+            "치아미백 후회",
+            "치아미백 치약"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-cosmetic-2",
+        "seedId": "cosmetic-2",
+        "category": "cosmetic",
+        "seed": "라미네이트",
+        "observedAt": "2026-10-31T21:05:12.140671+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%9D%B4%ED%8A%B8",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "라미네이트",
+          "라미네이트 뜻",
+          "라미네이트 부작용",
+          "라미네이트 가격",
+          "라미네이트 하지마라",
+          "라미네이트 후회",
+          "라미네이트 디시",
+          "라미네이트 후회 디시",
+          "라미네이트 영어로",
+          "라미네이트란"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EB%9D%BC%EB%AF%B8%EB%84%A4%EC%9D%B4%ED%8A%B8",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "75ee3d19ba4951bd113702cef2d52a67e36abaf719d268b6c5aeb4644f0c4a56",
+        "rawResponse": [
+          "라미네이트",
+          [
+            "라미네이트",
+            "라미네이트 뜻",
+            "라미네이트 부작용",
+            "라미네이트 가격",
+            "라미네이트 하지마라",
+            "라미네이트 후회",
+            "라미네이트 디시",
+            "라미네이트 후회 디시",
+            "라미네이트 영어로",
+            "라미네이트란"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512,
+                433
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-pediatric-1",
+        "seedId": "pediatric-1",
+        "category": "pediatric",
+        "seed": "어린이 충치",
+        "observedAt": "2026-10-31T21:05:13.965286+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%96%B4%EB%A6%B0%EC%9D%B4+%EC%B6%A9%EC%B9%98",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "어린이 충치",
+          "어린이 충치 사진",
+          "어린이 충치 치료",
+          "어린이 충치치료 비용",
+          "어린이 충치예방",
+          "어린이 충치 교육",
+          "어린이 어금니 충치",
+          "어린이 치과 충치 치료"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%96%B4%EB%A6%B0%EC%9D%B4+%EC%B6%A9%EC%B9%98",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "daf5fd17d3d421c63dcbc8d3bf2e92e5ae568116d0b69926c3a7912e7ef67472",
+        "rawResponse": [
+          "어린이 충치",
+          [
+            "어린이 충치",
+            "어린이 충치 사진",
+            "어린이 충치 치료",
+            "어린이 충치치료 비용",
+            "어린이 충치예방",
+            "어린이 충치 교육",
+            "어린이 어금니 충치",
+            "어린이 치과 충치 치료"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                30
+              ],
+              [
+                30
+              ],
+              [
+                30
+              ],
+              [
+                8,
+                30
+              ],
+              [
+                8,
+                30
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-pediatric-2",
+        "seedId": "pediatric-2",
+        "category": "pediatric",
+        "seed": "불소도포",
+        "observedAt": "2026-10-31T21:05:15.803429+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EB%B6%88%EC%86%8C%EB%8F%84%ED%8F%AC",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "불소도포",
+          "불소도포 후 주의사항",
+          "불소도포 비용",
+          "불소도포 부작용",
+          "불소도포 효과",
+          "불소도포 후 침",
+          "불소도포 후 양치",
+          "불소도포 주기",
+          "불소도포 디시",
+          "불소도포 후 밥"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EB%B6%88%EC%86%8C%EB%8F%84%ED%8F%AC",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "a0f2496b893ad79ad9c2e970137557f9cd55438afef1ca948da51395cb964b9f",
+        "rawResponse": [
+          "불소도포",
+          [
+            "불소도포",
+            "불소도포 후 주의사항",
+            "불소도포 비용",
+            "불소도포 부작용",
+            "불소도포 효과",
+            "불소도포 후 침",
+            "불소도포 후 양치",
+            "불소도포 주기",
+            "불소도포 디시",
+            "불소도포 후 밥"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-safety-1",
+        "seedId": "safety-1",
+        "category": "safety",
+        "seed": "치과 수면마취",
+        "observedAt": "2026-10-31T21:05:17.625014+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B3%BC+%EC%88%98%EB%A9%B4%EB%A7%88%EC%B7%A8",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "치과 수면마취",
+          "치과 수면마취 후기 디시",
+          "치과 수면마취 비용",
+          "치과 수면마취 사망 디시",
+          "치과 수면마취 사망",
+          "치과 수면마취 디시",
+          "치과 수면마취 후기",
+          "치과 수면마취 더쿠",
+          "치과 수면마취 비용 디시",
+          "치과 수면마취 사망 어디"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%EA%B3%BC+%EC%88%98%EB%A9%B4%EB%A7%88%EC%B7%A8",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "4677245214c6e174c4ecee1b519b550415afcc9634e2019557e1b6f670a1cab4",
+        "rawResponse": [
+          "치과 수면마취",
+          [
+            "치과 수면마취",
+            "치과 수면마취 후기 디시",
+            "치과 수면마취 비용",
+            "치과 수면마취 사망 디시",
+            "치과 수면마취 사망",
+            "치과 수면마취 디시",
+            "치과 수면마취 후기",
+            "치과 수면마취 더쿠",
+            "치과 수면마취 비용 디시",
+            "치과 수면마취 사망 어디"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      },
+      {
+        "id": "google-autocomplete-safety-2",
+        "seedId": "safety-2",
+        "category": "safety",
+        "seed": "치통",
+        "observedAt": "2026-10-31T21:05:19.455669+00:00",
+        "source": "google_autocomplete",
+        "requestUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%ED%86%B5",
+        "requestedLanguage": "ko",
+        "requestedCountry": "KR",
+        "period": null,
+        "suggestions": [
+          "치통",
+          "치통 진통제",
+          "치통 심할때",
+          "치통 타이레놀",
+          "치통 너무 심할 때 진통제 디시",
+          "치통 원인",
+          "치통 너무 심할 때 디시",
+          "치통약",
+          "치통에 좋은 진통제",
+          "치통 너무 심할 때"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null,
+        "status": "observed",
+        "httpStatus": 200,
+        "finalUrl": "https://suggestqueries.google.com/complete/search?client=firefox&hl=ko&gl=kr&q=%EC%B9%98%ED%86%B5",
+        "contentType": "text/javascript; charset=UTF-8",
+        "responseSha256": "bbffa51bce7f2f3b9918f18a8df848a65269c18961dbb0b81e3a95c8292266e4",
+        "rawResponse": [
+          "치통",
+          [
+            "치통",
+            "치통 진통제",
+            "치통 심할때",
+            "치통 타이레놀",
+            "치통 너무 심할 때 진통제 디시",
+            "치통 원인",
+            "치통 너무 심할 때 디시",
+            "치통약",
+            "치통에 좋은 진통제",
+            "치통 너무 심할 때"
+          ],
+          [],
+          {
+            "google:suggestsubtypes": [
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ],
+              [
+                512
+              ]
+            ]
+          }
+        ]
+      }
+    ],
+    "keywords": [
+      {
+        "keyword": "임플란트",
+        "normalizedKeyword": "임플란트",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 비용",
+        "normalizedKeyword": "임플란트 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 수명",
+        "normalizedKeyword": "임플란트 수명",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 과정",
+        "normalizedKeyword": "임플란트 과정",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 하지 마세요",
+        "normalizedKeyword": "임플란트 하지 마세요",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 가격",
+        "normalizedKeyword": "임플란트 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 사망",
+        "normalizedKeyword": "임플란트 사망",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 통증",
+        "normalizedKeyword": "임플란트 통증",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 1개 가격",
+        "normalizedKeyword": "임플란트 1개 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 보험",
+        "normalizedKeyword": "임플란트 보험",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-1"
+        ],
+        "seedIds": [
+          "implant-1"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식",
+        "normalizedKeyword": "임플란트 뼈이식",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 실패 증상",
+        "normalizedKeyword": "임플란트 뼈이식 실패 증상",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 후 식사",
+        "normalizedKeyword": "임플란트 뼈이식 후 식사",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 실패 디시",
+        "normalizedKeyword": "임플란트 뼈이식 실패 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 비용",
+        "normalizedKeyword": "임플란트 뼈이식 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 과정",
+        "normalizedKeyword": "임플란트 뼈이식 과정",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 기간",
+        "normalizedKeyword": "임플란트 뼈이식 기간",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 후 관리",
+        "normalizedKeyword": "임플란트 뼈이식 후 관리",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 담배 디시",
+        "normalizedKeyword": "임플란트 뼈이식 담배 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "임플란트 뼈이식 통증 디시",
+        "normalizedKeyword": "임플란트 뼈이식 통증 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-implant-2"
+        ],
+        "seedIds": [
+          "implant-2"
+        ],
+        "categories": [
+          "implant"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정",
+        "normalizedKeyword": "치아교정",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정하면 안되는 얼굴",
+        "normalizedKeyword": "치아교정하면 안되는 얼굴",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 비용",
+        "normalizedKeyword": "치아교정 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 영어로",
+        "normalizedKeyword": "치아교정 영어로",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 기간",
+        "normalizedKeyword": "치아교정 기간",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 얼굴 변화 디시",
+        "normalizedKeyword": "치아교정 얼굴 변화 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 비용 디시",
+        "normalizedKeyword": "치아교정 비용 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 얼굴 변화",
+        "normalizedKeyword": "치아교정 얼굴 변화",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 디시",
+        "normalizedKeyword": "치아교정 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아교정 유지장치 평생",
+        "normalizedKeyword": "치아교정 유지장치 평생",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-1"
+        ],
+        "seedIds": [
+          "orthodontics-1"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정",
+        "normalizedKeyword": "투명교정",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정 후회",
+        "normalizedKeyword": "투명교정 후회",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정 가격",
+        "normalizedKeyword": "투명교정 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정 디시",
+        "normalizedKeyword": "투명교정 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정장치",
+        "normalizedKeyword": "투명교정장치",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정기",
+        "normalizedKeyword": "투명교정기",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정 후기 디시",
+        "normalizedKeyword": "투명교정 후기 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정 후기",
+        "normalizedKeyword": "투명교정 후기",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정 장단점",
+        "normalizedKeyword": "투명교정 장단점",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "투명교정 장치 가격",
+        "normalizedKeyword": "투명교정 장치 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-orthodontics-2"
+        ],
+        "seedIds": [
+          "orthodontics-2"
+        ],
+        "categories": [
+          "orthodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 비용",
+        "normalizedKeyword": "충치치료 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료",
+        "normalizedKeyword": "충치치료",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 가격",
+        "normalizedKeyword": "충치치료 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 아픈가요",
+        "normalizedKeyword": "충치치료 아픈가요",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 후 식사",
+        "normalizedKeyword": "충치치료 후 식사",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 시간",
+        "normalizedKeyword": "충치치료 시간",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 실비",
+        "normalizedKeyword": "충치치료 실비",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 보험",
+        "normalizedKeyword": "충치치료 보험",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 레진",
+        "normalizedKeyword": "충치치료 레진",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "충치치료 술",
+        "normalizedKeyword": "충치치료 술",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-1"
+        ],
+        "seedIds": [
+          "caries-1"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진",
+        "normalizedKeyword": "치과 레진",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 가격",
+        "normalizedKeyword": "치과 레진 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 치료 비용",
+        "normalizedKeyword": "치과 레진 치료 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 뜻",
+        "normalizedKeyword": "치과 레진 뜻",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 수명",
+        "normalizedKeyword": "치과 레진 수명",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 치료",
+        "normalizedKeyword": "치과 레진 치료",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 종류",
+        "normalizedKeyword": "치과 레진 종류",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 치료 후 식사",
+        "normalizedKeyword": "치과 레진 치료 후 식사",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 디시",
+        "normalizedKeyword": "치과 레진 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 레진 보험",
+        "normalizedKeyword": "치과 레진 보험",
+        "sourceObservationIds": [
+          "google-autocomplete-caries-2"
+        ],
+        "seedIds": [
+          "caries-2"
+        ],
+        "categories": [
+          "caries"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료",
+        "normalizedKeyword": "신경치료",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 비용",
+        "normalizedKeyword": "신경치료 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 통증",
+        "normalizedKeyword": "신경치료 통증",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 하지 마라",
+        "normalizedKeyword": "신경치료 하지 마라",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 후 통증",
+        "normalizedKeyword": "신경치료 후 통증",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 하면 안되는 이유",
+        "normalizedKeyword": "신경치료 하면 안되는 이유",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 하면 안되는 이유 디시",
+        "normalizedKeyword": "신경치료 하면 안되는 이유 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 후 크라운 비용",
+        "normalizedKeyword": "신경치료 후 크라운 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 과정",
+        "normalizedKeyword": "신경치료 과정",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "신경치료 디시",
+        "normalizedKeyword": "신경치료 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-1"
+        ],
+        "seedIds": [
+          "endodontics-1"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술",
+        "normalizedKeyword": "치근단절제술",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 비용",
+        "normalizedKeyword": "치근단절제술 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 후기",
+        "normalizedKeyword": "치근단절제술 후기",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 디시",
+        "normalizedKeyword": "치근단절제술 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 고통",
+        "normalizedKeyword": "치근단절제술 고통",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 대학병원",
+        "normalizedKeyword": "치근단절제술 대학병원",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 영어로",
+        "normalizedKeyword": "치근단절제술 영어로",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 통증",
+        "normalizedKeyword": "치근단절제술 통증",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 성공률",
+        "normalizedKeyword": "치근단절제술 성공률",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치근단절제술 실패",
+        "normalizedKeyword": "치근단절제술 실패",
+        "sourceObservationIds": [
+          "google-autocomplete-endodontics-2"
+        ],
+        "seedIds": [
+          "endodontics-2"
+        ],
+        "categories": [
+          "endodontics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치",
+        "normalizedKeyword": "사랑니 발치",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 후 통증",
+        "normalizedKeyword": "사랑니 발치 후 통증",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 후",
+        "normalizedKeyword": "사랑니 발치 후",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 가격",
+        "normalizedKeyword": "사랑니 발치 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 후 식사",
+        "normalizedKeyword": "사랑니 발치 후 식사",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 후 양치",
+        "normalizedKeyword": "사랑니 발치 후 양치",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 통증",
+        "normalizedKeyword": "사랑니 발치 통증",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 후 통증 강도 디시",
+        "normalizedKeyword": "사랑니 발치 후 통증 강도 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 후 음식",
+        "normalizedKeyword": "사랑니 발치 후 음식",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "사랑니 발치 후 음주",
+        "normalizedKeyword": "사랑니 발치 후 음주",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-1"
+        ],
+        "seedIds": [
+          "extraction-1"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 흡연 후기 디시",
+        "normalizedKeyword": "발치 후 흡연 후기 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 음식",
+        "normalizedKeyword": "발치 후 음식",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 임플란트 과정",
+        "normalizedKeyword": "발치 후 임플란트 과정",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 식사",
+        "normalizedKeyword": "발치 후 식사",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 임플란트 기간",
+        "normalizedKeyword": "발치 후 임플란트 기간",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 음주",
+        "normalizedKeyword": "발치 후 음주",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 흡연",
+        "normalizedKeyword": "발치 후 흡연",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 음식 추천",
+        "normalizedKeyword": "발치 후 음식 추천",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 양치",
+        "normalizedKeyword": "발치 후 양치",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "발치 후 피가 안 멈춤",
+        "normalizedKeyword": "발치 후 피가 안 멈춤",
+        "sourceObservationIds": [
+          "google-autocomplete-extraction-2"
+        ],
+        "seedIds": [
+          "extraction-2"
+        ],
+        "categories": [
+          "extraction"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운",
+        "normalizedKeyword": "치과 크라운",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 가격",
+        "normalizedKeyword": "치과 크라운 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 비용",
+        "normalizedKeyword": "치과 크라운 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 뜻",
+        "normalizedKeyword": "치과 크라운 뜻",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 종류",
+        "normalizedKeyword": "치과 크라운 종류",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 치료",
+        "normalizedKeyword": "치과 크라운 치료",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 디시",
+        "normalizedKeyword": "치과 크라운 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 보험",
+        "normalizedKeyword": "치과 크라운 보험",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 영어로",
+        "normalizedKeyword": "치과 크라운 영어로",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 크라운 재료",
+        "normalizedKeyword": "치과 크라운 재료",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-1"
+        ],
+        "seedIds": [
+          "prosthetics-1"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니",
+        "normalizedKeyword": "틀니",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니 가격",
+        "normalizedKeyword": "틀니 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니 비용",
+        "normalizedKeyword": "틀니 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니 영어로",
+        "normalizedKeyword": "틀니 영어로",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니세정제",
+        "normalizedKeyword": "틀니세정제",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니 접착제",
+        "normalizedKeyword": "틀니 접착제",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니앙",
+        "normalizedKeyword": "틀니앙",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니 잘하는 치과",
+        "normalizedKeyword": "틀니 잘하는 치과",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니 짤",
+        "normalizedKeyword": "틀니 짤",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "틀니 보관법",
+        "normalizedKeyword": "틀니 보관법",
+        "sourceObservationIds": [
+          "google-autocomplete-prosthetics-2"
+        ],
+        "seedIds": [
+          "prosthetics-2"
+        ],
+        "categories": [
+          "prosthetics"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링",
+        "normalizedKeyword": "스케일링",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 비용",
+        "normalizedKeyword": "스케일링 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 보험",
+        "normalizedKeyword": "스케일링 보험",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 후 식사",
+        "normalizedKeyword": "스케일링 후 식사",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 하지마세요 디시",
+        "normalizedKeyword": "스케일링 하지마세요 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 시간",
+        "normalizedKeyword": "스케일링 시간",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 보험 없이 가격",
+        "normalizedKeyword": "스케일링 보험 없이 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 무료",
+        "normalizedKeyword": "스케일링 무료",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 후 주의사항",
+        "normalizedKeyword": "스케일링 후 주의사항",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "스케일링 아픔",
+        "normalizedKeyword": "스케일링 아픔",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-1"
+        ],
+        "seedIds": [
+          "periodontal-1"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료",
+        "normalizedKeyword": "잇몸치료",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 비용",
+        "normalizedKeyword": "잇몸치료 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 고통",
+        "normalizedKeyword": "잇몸치료 고통",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 안 해주는 이유",
+        "normalizedKeyword": "잇몸치료 안 해주는 이유",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 안 해주는 이유 디시",
+        "normalizedKeyword": "잇몸치료 안 해주는 이유 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 디시",
+        "normalizedKeyword": "잇몸치료 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 꼭 받아야 하나요",
+        "normalizedKeyword": "잇몸치료 꼭 받아야 하나요",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 나눠서 하는 이유",
+        "normalizedKeyword": "잇몸치료 나눠서 하는 이유",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 단점",
+        "normalizedKeyword": "잇몸치료 단점",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "잇몸치료 후 식사",
+        "normalizedKeyword": "잇몸치료 후 식사",
+        "sourceObservationIds": [
+          "google-autocomplete-periodontal-2"
+        ],
+        "seedIds": [
+          "periodontal-2"
+        ],
+        "categories": [
+          "periodontal"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백",
+        "normalizedKeyword": "치아미백",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백 가격",
+        "normalizedKeyword": "치아미백 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백 부작용",
+        "normalizedKeyword": "치아미백 부작용",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백 디시",
+        "normalizedKeyword": "치아미백 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백 더쿠",
+        "normalizedKeyword": "치아미백 더쿠",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백 비용",
+        "normalizedKeyword": "치아미백 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백제",
+        "normalizedKeyword": "치아미백제",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백기",
+        "normalizedKeyword": "치아미백기",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백 후회",
+        "normalizedKeyword": "치아미백 후회",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치아미백 치약",
+        "normalizedKeyword": "치아미백 치약",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-1"
+        ],
+        "seedIds": [
+          "cosmetic-1"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트",
+        "normalizedKeyword": "라미네이트",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 뜻",
+        "normalizedKeyword": "라미네이트 뜻",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 부작용",
+        "normalizedKeyword": "라미네이트 부작용",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 가격",
+        "normalizedKeyword": "라미네이트 가격",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 하지마라",
+        "normalizedKeyword": "라미네이트 하지마라",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 후회",
+        "normalizedKeyword": "라미네이트 후회",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 디시",
+        "normalizedKeyword": "라미네이트 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 후회 디시",
+        "normalizedKeyword": "라미네이트 후회 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트 영어로",
+        "normalizedKeyword": "라미네이트 영어로",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "라미네이트란",
+        "normalizedKeyword": "라미네이트란",
+        "sourceObservationIds": [
+          "google-autocomplete-cosmetic-2"
+        ],
+        "seedIds": [
+          "cosmetic-2"
+        ],
+        "categories": [
+          "cosmetic"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 충치",
+        "normalizedKeyword": "어린이 충치",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 충치 사진",
+        "normalizedKeyword": "어린이 충치 사진",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 충치 치료",
+        "normalizedKeyword": "어린이 충치 치료",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 충치치료 비용",
+        "normalizedKeyword": "어린이 충치치료 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 충치예방",
+        "normalizedKeyword": "어린이 충치예방",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 충치 교육",
+        "normalizedKeyword": "어린이 충치 교육",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 어금니 충치",
+        "normalizedKeyword": "어린이 어금니 충치",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "어린이 치과 충치 치료",
+        "normalizedKeyword": "어린이 치과 충치 치료",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-1"
+        ],
+        "seedIds": [
+          "pediatric-1"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포",
+        "normalizedKeyword": "불소도포",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 후 주의사항",
+        "normalizedKeyword": "불소도포 후 주의사항",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 비용",
+        "normalizedKeyword": "불소도포 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 부작용",
+        "normalizedKeyword": "불소도포 부작용",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 효과",
+        "normalizedKeyword": "불소도포 효과",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 후 침",
+        "normalizedKeyword": "불소도포 후 침",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 후 양치",
+        "normalizedKeyword": "불소도포 후 양치",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 주기",
+        "normalizedKeyword": "불소도포 주기",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 디시",
+        "normalizedKeyword": "불소도포 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "불소도포 후 밥",
+        "normalizedKeyword": "불소도포 후 밥",
+        "sourceObservationIds": [
+          "google-autocomplete-pediatric-2"
+        ],
+        "seedIds": [
+          "pediatric-2"
+        ],
+        "categories": [
+          "pediatric"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취",
+        "normalizedKeyword": "치과 수면마취",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 후기 디시",
+        "normalizedKeyword": "치과 수면마취 후기 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 비용",
+        "normalizedKeyword": "치과 수면마취 비용",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 사망 디시",
+        "normalizedKeyword": "치과 수면마취 사망 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 사망",
+        "normalizedKeyword": "치과 수면마취 사망",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 디시",
+        "normalizedKeyword": "치과 수면마취 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 후기",
+        "normalizedKeyword": "치과 수면마취 후기",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 더쿠",
+        "normalizedKeyword": "치과 수면마취 더쿠",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 비용 디시",
+        "normalizedKeyword": "치과 수면마취 비용 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치과 수면마취 사망 어디",
+        "normalizedKeyword": "치과 수면마취 사망 어디",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-1"
+        ],
+        "seedIds": [
+          "safety-1"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통",
+        "normalizedKeyword": "치통",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통 진통제",
+        "normalizedKeyword": "치통 진통제",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통 심할때",
+        "normalizedKeyword": "치통 심할때",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통 타이레놀",
+        "normalizedKeyword": "치통 타이레놀",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통 너무 심할 때 진통제 디시",
+        "normalizedKeyword": "치통 너무 심할 때 진통제 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통 원인",
+        "normalizedKeyword": "치통 원인",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통 너무 심할 때 디시",
+        "normalizedKeyword": "치통 너무 심할 때 디시",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통약",
+        "normalizedKeyword": "치통약",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통에 좋은 진통제",
+        "normalizedKeyword": "치통에 좋은 진통제",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      },
+      {
+        "keyword": "치통 너무 심할 때",
+        "normalizedKeyword": "치통 너무 심할 때",
+        "sourceObservationIds": [
+          "google-autocomplete-safety-2"
+        ],
+        "seedIds": [
+          "safety-2"
+        ],
+        "categories": [
+          "safety"
+        ],
+        "searchRank": null,
+        "avgMonthlySearches": null
+      }
+    ],
+    "summary": {
+      "requestedSeedCount": 20,
+      "successfulSeedCount": 20,
+      "rawSuggestionCount": 198,
+      "uniqueKeywordCount": 198,
+      "rankedKeywordCount": 0
+    }
+  }
+}

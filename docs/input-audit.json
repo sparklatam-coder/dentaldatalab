@@ -1,0 +1,445 @@
+{
+  "checkedAt": "2026-10-31T14:00:41.863046+00:00",
+  "scope": "Local handoff package, complete raw CSV archive, isolated reimport, and historical static archive. No external sources were fetched.",
+  "checks": [
+    {
+      "name": "Handoff SHA-256 manifest",
+      "status": "passed",
+      "filesChecked": 31
+    },
+    {
+      "name": "Outer handoff ZIP CRC",
+      "status": "passed",
+      "entries": 32
+    },
+    {
+      "name": "Outer archive has safe unique paths",
+      "status": "passed"
+    },
+    {
+      "name": "Raw archive matches source manifest",
+      "status": "passed",
+      "sha256": "ceff684b8eb1dc9059b668ec56bc91d2a643997420733b2996a0bc5d8910f9c3",
+      "bytes": 20609715
+    },
+    {
+      "name": "Raw archive CRC",
+      "status": "passed",
+      "entries": 12
+    },
+    {
+      "name": "All 12 CSV schemas and row widths",
+      "status": "passed",
+      "files": 12,
+      "totalRows": 915009
+    },
+    {
+      "name": "Isolated raw import",
+      "status": "passed",
+      "exitCode": 0,
+      "durationSeconds": 2.015,
+      "output": "clinics=19681 types={\"51 치과의원\":19433,\"41 치과병원\":248} sido=17 city=258\nhours=4826 specialties=19651 equipment=16775 discrepancy=1283\nelapsed=1.9s",
+      "error": ""
+    },
+    {
+      "name": "Reimported clinics byte equality",
+      "status": "passed",
+      "expectedSha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc",
+      "actualSha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc",
+      "clinicCount": 19681
+    },
+    {
+      "name": "Reimported manifest semantic equality excluding processing timestamp",
+      "status": "passed",
+      "excludedFields": [
+        "importedAt"
+      ]
+    },
+    {
+      "name": "Existing root data unchanged",
+      "status": "passed"
+    },
+    {
+      "name": "Static archive CRC",
+      "status": "passed"
+    },
+    {
+      "name": "Static archive has safe unique paths",
+      "status": "passed"
+    },
+    {
+      "name": "Static manifest route inventory",
+      "status": "passed",
+      "routes": 20668,
+      "missingRoutes": []
+    },
+    {
+      "name": "Static manifest counts follow original builder semantics",
+      "status": "passed",
+      "filesIncludingManifest": 20937,
+      "manifestDeclaredFiles": 20937,
+      "bytesIncludingManifest": 593630211,
+      "manifestDeclaredBytes": 592964504,
+      "manifestBytes": 665707,
+      "fileCountSemantics": "Includes build-manifest.json (written.size + 1).",
+      "totalBytesSemantics": "Excludes build-manifest.json; bytes recorded before serializing it."
+    },
+    {
+      "name": "Static manifest HTML and clinic counts",
+      "status": "passed",
+      "htmlPages": 20669,
+      "clinicPages": 19681
+    },
+    {
+      "name": "Static manifest source hashes",
+      "status": "passed"
+    },
+    {
+      "name": "Static search index size",
+      "status": "passed"
+    },
+    {
+      "name": "Conversation export counts",
+      "status": "passed",
+      "fullTextMessages": 170,
+      "projectTextMessages": 52,
+      "userMessages": 39
+    },
+    {
+      "name": "Static search record count",
+      "status": "passed",
+      "records": 19681
+    }
+  ],
+  "notes": [
+    "The static archive is the historical private-review output, not the current developing site.",
+    "Raw CSV schema inspection uses Python csv and strict CP949 decoding, independently of the Node importer.",
+    "SHA256SUMS.txt is an integrity list, not an authenticated signature.",
+    "No institution-level records or conversation text are copied into this audit.",
+    "Reimported processing timestamp changes by design; source observation date is preserved.",
+    "Historical builder fileCount includes the manifest while totalBytes excludes it. Both values match those documented code semantics."
+  ],
+  "rawCsvInventory": [
+    {
+      "fileName": "1.병원정보서비스(2026.9.).csv",
+      "bytes": 22549219,
+      "sha256": "9b81b8dc3304785a2c713182c72b94e7960778c4e07ed32d86f27a0e684142b1",
+      "columns": 30,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "종별코드",
+        "종별코드명",
+        "시도코드",
+        "시도코드명",
+        "시군구코드",
+        "시군구코드명",
+        "읍면동",
+        "우편번호",
+        "주소",
+        "전화번호",
+        "병원홈페이지",
+        "개설일자",
+        "총의사수",
+        "의과일반의 인원수",
+        "의과인턴 인원수",
+        "의과레지던트 인원수",
+        "의과전문의 인원수",
+        "치과일반의 인원수",
+        "치과인턴 인원수",
+        "치과레지던트 인원수",
+        "치과전문의 인원수",
+        "한방일반의 인원수",
+        "한방인턴 인원수",
+        "한방레지던트 인원수",
+        "한방전문의 인원수",
+        "조산사 인원수",
+        "좌표(X)",
+        "좌표(Y)"
+      ],
+      "rows": 79899,
+      "uniqueInstitutionKeys": 79899,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": true
+    },
+    {
+      "fileName": "2.약국정보서비스(2026.9.).csv",
+      "bytes": 6242116,
+      "sha256": "74771f397cbecb92aa28a3415ddafb308369106e7da1489ac884775d3170bd15",
+      "columns": 15,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "종별코드",
+        "종별코드명",
+        "시도코드",
+        "시도코드명",
+        "시군구코드",
+        "시군구코드명",
+        "읍면동",
+        "우편번호",
+        "주소",
+        "전화번호",
+        "개설일자",
+        "좌표(X)",
+        "좌표(Y)"
+      ],
+      "rows": 25850,
+      "uniqueInstitutionKeys": 25850,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    },
+    {
+      "fileName": "3.의료기관별상세정보서비스_01_시설정보(2026.9.).csv",
+      "bytes": 27895527,
+      "sha256": "fedee9ba0eef278580c4a6ed3729eaa32972df54e2f8a53300a9e2482db775f9",
+      "columns": 30,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "종별코드",
+        "종별코드명",
+        "설립구분코드",
+        "설립구분코드명",
+        "시도코드",
+        "시도코드명",
+        "시군구코드",
+        "시군구코드명",
+        "읍면동",
+        "우편번호",
+        "주소",
+        "전화번호",
+        "개설일자",
+        "일반입원실상급병상수",
+        "일반입원실일반병상수",
+        "성인중환자병상수",
+        "소아중환자병상수",
+        "신생아중환자병상수",
+        "분만실병상수",
+        "수술실병상수",
+        "응급실병상수",
+        "물리치료실병상수",
+        "정신과폐쇄상급병상수",
+        "정신과폐쇄일반병상수",
+        "정신과개방상급병상수",
+        "정신과개방일반병상수",
+        "격리병실병상수",
+        "무균치료실병상수"
+      ],
+      "rows": 105749,
+      "uniqueInstitutionKeys": 105749,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    },
+    {
+      "fileName": "4.의료기관별상세정보서비스_02_세부정보(2026.9.).csv",
+      "bytes": 6500178,
+      "sha256": "9fb3172eacd6aa76f8fc7c1502327ec763037cd351e241996562e8aee9d42357",
+      "columns": 34,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "위치_공공건물(장소)명",
+        "위치_방향",
+        "위치_거리",
+        "주차_가능대수",
+        "주차_비용 부담여부",
+        "주차_기타 안내사항",
+        "휴진안내_일요일",
+        "휴진안내_공휴일",
+        "응급실_주간_운영여부",
+        "응급실_주간_전화번호1",
+        "응급실_주간_전화번호2",
+        "응급실_야간_운영여부",
+        "응급실_야간_전화번호1",
+        "응급실_야간_전화번호2",
+        "점심시간_평일",
+        "점심시간_토요일",
+        "접수시간_평일",
+        "접수시간_토요일",
+        "진료시작시간_일요일",
+        "진료종료시간_일요일",
+        "진료시작시간_월요일",
+        "진료종료시간_월요일",
+        "진료시작시간_화요일",
+        "진료종료시간_화요일",
+        "진료시작시간_수요일",
+        "진료종료시간_수요일",
+        "진료시작시간_목요일",
+        "진료종료시간_목요일",
+        "진료시작시간_금요일",
+        "진료종료시간_금요일",
+        "진료시작시간_토요일",
+        "진료종료시간_토요일"
+      ],
+      "rows": 25079,
+      "uniqueInstitutionKeys": 25079,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": true
+    },
+    {
+      "fileName": "5.의료기관별상세정보서비스_03_진료과목정보(2026.9.).csv",
+      "bytes": 50418357,
+      "sha256": "572d21ef9f73028dc139b3f95e52f095bcabaffa0b02c468dfd145cb1c65bf37",
+      "columns": 6,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "진료과목코드",
+        "진료과목코드명",
+        "과목별 전문의수",
+        "선택진료 의사수"
+      ],
+      "rows": 435675,
+      "uniqueInstitutionKeys": 76799,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": true
+    },
+    {
+      "fileName": "6.의료기관별상세정보서비스_04_교통정보(2026.9.).csv",
+      "bytes": 5844255,
+      "sha256": "c8aa005e822101dfd3aba63e7eccc81fb31934523db997a3dab033f50cec08e5",
+      "columns": 8,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "교통편명",
+        "노선번호",
+        "하차지점",
+        "방향",
+        "거리",
+        "비고"
+      ],
+      "rows": 40192,
+      "uniqueInstitutionKeys": 10482,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    },
+    {
+      "fileName": "7.의료기관별상세정보서비스_05_의료장비정보(2026.9.).csv",
+      "bytes": 7537079,
+      "sha256": "991ea17a6882152c5446421cdc747bd26e4c457527d323e4f4bbb563d40f26c8",
+      "columns": 5,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "장비코드",
+        "장비코드명",
+        "장비대수"
+      ],
+      "rows": 63460,
+      "uniqueInstitutionKeys": 42220,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": true
+    },
+    {
+      "fileName": "8.의료기관별상세정보서비스_06_식대가산정보(2026.9.).csv",
+      "bytes": 1785401,
+      "sha256": "d1f3c577c12b38e5d7e4bc87702f58548f82b644a535479e03511289154f0559",
+      "columns": 7,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "유형코드",
+        "유형코드명",
+        "일반식 가산여부",
+        "산정인원수",
+        "치료식 등급"
+      ],
+      "rows": 15534,
+      "uniqueInstitutionKeys": 7767,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    },
+    {
+      "fileName": "9.의료기관별상세정보서비스_07_간호등급정보(2026.9.).csv",
+      "bytes": 1492842,
+      "sha256": "073f7b470afef994c315345ac2e628b690a5f37b10ec06213dae5786923f8a69",
+      "columns": 5,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "유형코드",
+        "유형코드명",
+        "간호등급"
+      ],
+      "rows": 12722,
+      "uniqueInstitutionKeys": 3848,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    },
+    {
+      "fileName": "10.의료기관별상세정보서비스_08_특수진료정보서비스(2026.9.).csv",
+      "bytes": 8923646,
+      "sha256": "0a36517b5a4fd14791a5a308e70777798bada046971ba3bee446f7ac31928cb7",
+      "columns": 4,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "검색코드",
+        "검색코드명"
+      ],
+      "rows": 66494,
+      "uniqueInstitutionKeys": 35053,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    },
+    {
+      "fileName": "11.의료기관별상세정보서비스_09_전문병원지정분야(2026.9.).csv",
+      "bytes": 12242,
+      "sha256": "e74914f9b1e0e20834ce929bf2c8af24d70389ad5a5aaa890c329abd8c6c7863",
+      "columns": 4,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "검색코드",
+        "검색코드명"
+      ],
+      "rows": 110,
+      "uniqueInstitutionKeys": 110,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    },
+    {
+      "fileName": "12.의료기관별상세정보서비스_10_기타인력정보(2026.9.).csv",
+      "bytes": 4845488,
+      "sha256": "7b9c4c4f1d246d7ad174c6037d726d2a30d764295ef0c6ff60dbfbc895ecc603",
+      "columns": 5,
+      "headers": [
+        "암호화요양기호",
+        "요양기관명",
+        "기타인력코드",
+        "기타인력코드명",
+        "기타인력수"
+      ],
+      "rows": 44245,
+      "uniqueInstitutionKeys": 38951,
+      "widthMismatchCount": 0,
+      "widthMismatchLines": [],
+      "usedByCurrentImporter": false
+    }
+  ],
+  "staticArchive": {
+    "sha256": "470e1000e41175bf5ee54abd0e78216f7d8d39e7ad110f4b884545e971909cac",
+    "bytes": 119507700,
+    "zipEntries": 41780,
+    "files": 20937,
+    "htmlPages": 20669,
+    "clinicPages": 19681,
+    "mode": "private-review",
+    "sourceDate": "2026-09-30",
+    "builtAt": "2026-10-31T11:16:12.597Z"
+  },
+  "status": "passed"
+}

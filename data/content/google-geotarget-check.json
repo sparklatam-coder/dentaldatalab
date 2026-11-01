@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-10-31T21:17:30.815343+00:00",
+  "sourceUrl": "https://developers.google.com/static/google-ads/api/data/geo/geotargets-2026-10-06.csv.zip",
+  "referencePage": "https://developers.google.com/google-ads/api/data/geotargets",
+  "sha256": "90172fb3c7c7bc9967f24d0ced519e6422041501d99550a8cbd3ed6d9f0f85ee",
+  "bytes": 3482503,
+  "file": "third_party/devsite/developers/en/google-ads/api/data/geo/geotargets-2026-10-06.csv",
+  "filter": {
+    "Country Code": "KR",
+    "Target Type": "Country"
+  },
+  "matchingRows": [
+    {
+      "Criteria ID": "2410",
+      "Name": "South Korea",
+      "Canonical Name": "South Korea",
+      "Parent ID": "",
+      "Country Code": "KR",
+      "Target Type": "Country",
+      "Status": "Active"
+    }
+  ],
+  "scope": "Public geographic reference only; no keyword search volumes retrieved"
+}

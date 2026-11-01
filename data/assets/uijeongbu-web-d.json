@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "official_website_review",
+  "checkedAt": "2026-11-01T00:18:16Z",
+  "scope": "홈페이지 공개 본문과 공공 원자료 기관명·주소 대조. 전화 차이는 확인이 필요합니다.",
+  "records": [
+    {
+      "clinicId": "c-ab61cc7fe120",
+      "name": "닥터뷰치과의원의정부역점",
+      "checkedAt": "2026-11-01T00:18:16Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://drvu2828.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:18:16Z",
+          "evidenceUrls": ["https://drvu2828.com/"],
+          "identityEvidence": [
+            {"field": "name", "value": "닥터뷰치과 의정부역점", "sourceUrl": "https://drvu2828.com/"},
+            {"field": "address", "value": "경기도 의정부시 신흥로 219, 2층", "sourceUrl": "https://drvu2828.com/"}
+          ],
+          "notes": "홈페이지에 기관명과 주소가 일치합니다. 홈페이지에 표기된 전화 032-825-2828은 공공 원자료 031-825-2828과 달라 별도 대조가 필요합니다. 홈페이지에서 네이버 예약·카카오 상담 문구가 보이나 실제 목적지 URL은 확인하지 못했습니다."
+        }
+      ]
+    }
+  ]
+}

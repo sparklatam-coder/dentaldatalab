@@ -1,0 +1,8 @@
+{
+  "checkedAt": "2026-10-31T21:33:43.039368+00:00",
+  "sourceUrl": "https://pcmap.place.naver.com/hospital/13236065/home",
+  "method": "single unauthenticated public HTTP request",
+  "status": 429,
+  "outcome": "stopped_without_retry",
+  "notes": "직접 HTTP는429이므로 반복·우회하지 않음. 정상 공개 브라우저UI에서 실제보인값은 별도 관찰 기록."
+}

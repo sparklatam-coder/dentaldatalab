@@ -1,0 +1,1140 @@
+{
+  "questions": [
+    {
+      "id": "A051",
+      "category": "prosthetics",
+      "keyword": "크라운 필요성",
+      "question": "충치가 크면 무조건 크라운을 씌워야 하나요?",
+      "hookTitle": "큰 충치, 때우는 치료와 크라운은 어떻게 고를까요?",
+      "intent": "치료 선택",
+      "answer": "남은 치아가 적거나 약해져 깨질 위험이 있으면 크라운으로 보호할 수 있습니다. 충치 크기만으로 결정하지 않고 남은 치아 구조와 씹는 기능을 함께 평가합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/crowns",
+          "title": "Crowns"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치아를 삭제하는 치료 전 선택 기준을 이해하는 데 필요합니다."
+    },
+    {
+      "id": "A052",
+      "category": "prosthetics",
+      "keyword": "치과 크라운 가격",
+      "question": "크라운 가격은 어디서 비교하고 무엇을 확인해야 하나요?",
+      "hookTitle": "크라운 견적, 표시된 가격이 총비용일까요?",
+      "intent": "비용",
+      "answer": "심평원 비급여 진료비용 정보에서 의료기관별 공개 가격과 세부사항을 확인할 수 있습니다. 공개 금액과 실제 총진료비는 추가 진료·재료나 가격 변경에 따라 달라질 수 있으므로 포함 항목을 치과에 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.hira.or.kr/npay/index.do?WT.gnb=%EB%B9%84%EA%B8%89%EC%97%AC%EC%A7%84%EB%A3%8C%EB%B9%84%EC%A0%95%EB%B3%B4",
+          "title": "비급여 진료비용 정보"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "가격 숫자만 비교하면서 생길 수 있는 총비용 오해를 줄입니다."
+    },
+    {
+      "id": "A053",
+      "category": "prosthetics",
+      "keyword": "치과 크라운 치료",
+      "question": "크라운은 왜 본을 뜬 뒤 다시 방문하나요?",
+      "hookTitle": "크라운 만드는 동안 임시 치아가 필요한 이유",
+      "intent": "치료 과정",
+      "answer": "치아를 다듬고 본을 뜬 뒤 맞춤 크라운을 제작하는 과정이 필요합니다. 제작 중에는 임시 크라운으로 치아를 보호하며, 최종 장착 일정은 제작 방식과 치아 상태에 따라 달라집니다.",
+      "answerSources": [
+        {
+          "url": "https://www.leedsth.nhs.uk/patients/resources/crowns/",
+          "title": "Crowns"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "치료 일정과 임시 보철의 역할을 미리 이해하도록 돕습니다."
+    },
+    {
+      "id": "A054",
+      "category": "prosthetics",
+      "keyword": "크라운 수명",
+      "question": "크라운은 일정 기간이 지나면 꼭 교체해야 하나요?",
+      "hookTitle": "크라운 수명, 사용 연수만으로 결정할 수 있을까요?",
+      "intent": "회복·관리",
+      "answer": "크라운의 사용 기간은 구강 위생, 식습관, 정기검진 등 관리 상태에 영향을 받습니다. 일정 연수가 모든 사람의 교체 시점이나 수명을 보장하는 기준은 아니므로 검진에서 상태를 평가받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.leedsth.nhs.uk/patients/resources/crowns/",
+          "title": "Crowns"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "정해진 수명에 대한 오해를 줄이고 상태에 따른 관리를 안내합니다."
+    },
+    {
+      "id": "A055",
+      "category": "prosthetics",
+      "keyword": "크라운 빠짐",
+      "question": "크라운이 빠졌는데 아프지 않으면 기다려도 되나요?",
+      "hookTitle": "빠진 크라운, 버리지 말고 챙겨야 하는 이유",
+      "intent": "치료 과정",
+      "answer": "빠진 크라운을 보관해 치과에 가져가고 치아 상태를 확인받으세요. 진료 전에는 해당 치아로 단단한 음식을 씹지 말고, 다시 붙일 수 있는지 또는 새 보철이 필요한지 평가받아야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://111.wales.nhs.uk/encyclopaedia/l/article/lostfillingorcrown",
+          "title": "Lost Filling or Crown"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "보철 탈락 후 손상을 줄이고 재치료 판단에 필요한 행동을 안내합니다."
+    },
+    {
+      "id": "A056",
+      "category": "prosthetics",
+      "keyword": "브릿지 틀니 차이",
+      "question": "브릿지와 부분틀니는 무엇이 다른가요?",
+      "hookTitle": "빠진 치아를 채우는 방법, 고정식과 탈착식의 차이",
+      "intent": "치료 선택",
+      "answer": "일반적인 브릿지는 주변 치아의 지지를 받아 빠진 자리를 채우는 고정식 보철입니다. 부분틀니는 스스로 빼고 끼울 수 있으며, 남은 치아와 잇몸 상태를 보고 적합한 방법을 정합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+          "title": "Bridges"
+        },
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/dentures/",
+          "title": "Dentures (false teeth)"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "서로 다른 보철 방식을 비교하는 기본 정보를 제공합니다."
+    },
+    {
+      "id": "A057",
+      "category": "prosthetics",
+      "keyword": "틀니 통증",
+      "question": "새 틀니가 아프거나 헐거우면 적응할 때까지 참아야 하나요?",
+      "hookTitle": "새 틀니의 어색함과 조정이 필요한 통증 구분하기",
+      "intent": "회복·관리",
+      "answer": "새 틀니에 익숙해지는 데 시간이 걸릴 수 있지만, 통증이나 반복적인 빠짐은 치과에서 맞음새를 확인해야 합니다. 익숙해질 때까지는 부드러운 음식부터 먹되 지속되는 불편을 참기만 하지 마세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/dentures/",
+          "title": "Dentures (false teeth)"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "적응 과정과 진료가 필요한 불편을 구분하도록 돕습니다."
+    },
+    {
+      "id": "A058",
+      "category": "prosthetics",
+      "keyword": "틀니 보관법",
+      "question": "틀니를 끼고 자도 되나요?",
+      "hookTitle": "틀니도 밤에는 쉬어야 할까요?",
+      "intent": "회복·관리",
+      "answer": "치과에서 별도로 지시하지 않았다면 틀니는 밤에 빼고 자는 것이 원칙입니다. 뺀 틀니는 치과와 제품의 안내에 맞게 물이나 적절한 보관 용액에 보관하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/dentures/",
+          "title": "Dentures (false teeth)"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "매일 반복되는 사용 습관과 구강 위생 관리에 필요한 내용입니다."
+    },
+    {
+      "id": "A059",
+      "category": "prosthetics",
+      "keyword": "틀니 세척",
+      "question": "틀니를 일반 치약으로 닦아도 되나요?",
+      "hookTitle": "틀니 세척, 자연치아와 같은 방법이면 될까요?",
+      "intent": "회복·관리",
+      "answer": "일반 치약은 틀니 표면을 손상시킬 수 있어 틀니에 맞는 세척 방법을 사용해야 합니다. 부드럽게 닦고 식후에는 음식물을 씻어내며, 떨어뜨려 깨지지 않도록 수건이나 물이 담긴 세면대 위에서 다루세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/dentures/",
+          "title": "Dentures (false teeth)"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "세척 중 보철 손상과 위생 문제를 예방하도록 돕습니다."
+    },
+    {
+      "id": "A060",
+      "category": "prosthetics",
+      "keyword": "틀니 보험",
+      "question": "한국 건강보험으로 틀니를 만들 수 있는 조건은 무엇인가요?",
+      "hookTitle": "틀니 보험, 나이 외에 확인할 조건은?",
+      "intent": "보험",
+      "answer": "공단 안내상 만 65세 이상 건강보험 가입자·피부양자는 정해진 종류의 완전틀니나 부분틀니에 급여를 적용받을 수 있습니다. 원칙적인 급여 주기는 7년이며 예외가 있으므로, 제작 전 기존 급여 이력과 본인 적용 조건을 치과나 공단에 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0217.html",
+          "title": "노인틀니 급여안내(국민건강보험법 시행령 제19조 제1항 별표2)"
+        },
+        {
+          "url": "https://www.nhis.or.kr/static/alim/paper/oldpaper/202404/sub/section1_5.html",
+          "title": "건강보험 웹진 2024년 4월호"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "고령자의 치료비 계획에 필요한 자격과 이력 확인을 안내합니다."
+    },
+    {
+      "id": "A061",
+      "category": "periodontal",
+      "keyword": "잇몸치료 꼭 받아야 하나요",
+      "question": "스케일링을 했는데 왜 잇몸치료를 더 받아야 하나요?",
+      "hookTitle": "치석을 제거했는데 추가 잇몸치료가 필요한 이유",
+      "intent": "치료 선택",
+      "answer": "잇몸 아래 깊은 공간에 치태와 치석이 남아 있으면 일반적인 세정만으로 충분하지 않을 수 있습니다. 잇몸 상태에 따라 치근활택술 등 더 깊은 부위의 치료가 필요합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/scaling-and-root-planing?c=381714921",
+          "title": "Scaling and Root Planing"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "스케일링과 치주치료의 목적 차이를 이해하도록 돕습니다."
+    },
+    {
+      "id": "A062",
+      "category": "periodontal",
+      "keyword": "양치 잇몸 피",
+      "question": "양치할 때 잇몸에서 피가 나면 양치를 쉬어야 하나요?",
+      "hookTitle": "피가 나는 잇몸, 칫솔을 멈추기 전에 확인할 것",
+      "intent": "회복·관리",
+      "answer": "양치할 때 반복되는 잇몸 출혈은 잇몸질환의 신호일 수 있어 치과 검진이 필요합니다. 청결 관리를 중단하기보다는 올바른 칫솔질과 치아 사이 청소 방법을 안내받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/conditions/gum-disease/",
+          "title": "Gum disease"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "반복 출혈을 방치하거나 위생 관리를 중단하는 오해를 줄입니다."
+    },
+    {
+      "id": "A063",
+      "category": "periodontal",
+      "keyword": "스케일링 후 시림",
+      "question": "치석제거와 잇몸치료 후 이가 시릴 수 있나요?",
+      "hookTitle": "잇몸치료 후 시림, 언제 치과에 알려야 할까요?",
+      "intent": "통증",
+      "answer": "치석제거·치근활택술 뒤에는 일시적인 시림과 잇몸의 불편감이 생길 수 있습니다. 불편이 심하거나 가라앉지 않으면 치료한 치과에 알려 상태를 확인받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/scaling-and-root-planing?c=381714921",
+          "title": "Scaling and Root Planing"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치료 후 흔한 반응과 추가 확인의 필요성을 함께 안내합니다."
+    },
+    {
+      "id": "A064",
+      "category": "periodontal",
+      "keyword": "스케일링 주기",
+      "question": "스케일링은 누구나 같은 주기로 받아야 하나요?",
+      "hookTitle": "스케일링 간격, 보험 횟수와 같을까요?",
+      "intent": "회복·관리",
+      "answer": "정기적인 전문 세정은 중요하지만 필요한 간격은 개인의 잇몸 상태와 위험요인에 따라 달라집니다. 보험 적용 횟수와 치료상 필요한 횟수를 같은 의미로 보지 말고 검진 때 관리 일정을 정하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.cdc.gov/oral-health/about/gum-periodontal-disease.html",
+          "title": "About Periodontal (Gum) Disease"
+        },
+        {
+          "url": "https://www.nhis.or.kr/static/alim/paper/oldpaper/202404/sub/section1_5.html",
+          "title": "건강보험 웹진 2024년 4월호"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "보험 횟수를 모든 환자의 치료 주기로 오해하지 않도록 합니다."
+    },
+    {
+      "id": "A065",
+      "category": "periodontal",
+      "keyword": "스케일링 보험",
+      "question": "스케일링 건강보험은 언제 한 번씩 적용되나요?",
+      "hookTitle": "스케일링 보험, 지난 진료일부터 1년을 세나요?",
+      "intent": "보험",
+      "answer": "후속 잇몸치료 없이 전악 치석제거만으로 끝나는 경우, 만 19세 이상 건강보험 가입자·피부양자는 매년 1월 1일부터 12월 31일까지 1회 급여 대상입니다. 올해 이용 여부는 치과나 공단에서 확인할 수 있으며, 질환 치료에 필요한 치석제거는 적용 기준을 따로 확인해야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0218.html",
+          "title": "치석제거 급여안내"
+        },
+        {
+          "url": "https://www.nhis.or.kr/static/alim/paper/oldpaper/202404/sub/section1_5.html",
+          "title": "건강보험 웹진 2024년 4월호"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "달력 연도 기준과 질환 치료의 별도 기준을 구분합니다."
+    },
+    {
+      "id": "A066",
+      "category": "periodontal",
+      "keyword": "잇몸치료 나눠서 하는 이유",
+      "question": "잇몸치료는 마취하고 여러 번 나눠서 하나요?",
+      "hookTitle": "잇몸치료가 한 번에 끝나지 않을 수 있는 이유",
+      "intent": "치료 과정",
+      "answer": "깊은 부위의 치석제거·치근활택술은 국소마취가 필요할 수 있고 여러 번 방문해 진행하기도 합니다. 치료 범위와 잇몸 상태를 확인한 뒤 횟수와 마취 계획을 정합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/scaling-and-root-planing?c=381714921",
+          "title": "Scaling and Root Planing"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "분할 치료와 국소마취의 필요성을 설명합니다."
+    },
+    {
+      "id": "A067",
+      "category": "periodontal",
+      "keyword": "치석 제거 양치",
+      "question": "양치만 열심히 하면 치석도 없어지나요?",
+      "hookTitle": "치태와 치석, 칫솔로 없앨 수 있는 것은?",
+      "intent": "회복·관리",
+      "answer": "치태가 굳어 생긴 치석은 칫솔질만으로 제거하기 어렵고 전문적인 제거가 필요합니다. 칫솔질과 치아 사이 청소는 새로운 치태가 쌓이는 것을 줄이는 데 중요합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+          "title": "Periodontal (Gum) Disease"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "자가 관리의 역할과 치과에서 필요한 처치를 구분합니다."
+    },
+    {
+      "id": "A068",
+      "category": "periodontal",
+      "keyword": "잇몸 수술",
+      "question": "치주염 진단을 받으면 반드시 잇몸 수술을 해야 하나요?",
+      "hookTitle": "치주염 치료, 수술 전에 살펴보는 단계",
+      "intent": "치료 선택",
+      "answer": "치주염 치료는 염증의 범위와 진행 정도에 따라 달라지며 깊은 부위의 세정 등 비수술 치료를 먼저 고려할 수 있습니다. 진행된 경우에는 수술이 필요할 수 있고, 어떤 치료를 받더라도 일상적인 청결 관리가 중요합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+          "title": "Periodontal (Gum) Disease"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "진단명만으로 수술 필요성을 단정하지 않도록 돕습니다."
+    },
+    {
+      "id": "A069",
+      "category": "periodontal",
+      "keyword": "치주염 재발",
+      "question": "잇몸치료가 끝나면 치주염 관리도 끝인가요?",
+      "hookTitle": "통증이 없어져도 잇몸 관리를 이어가야 하는 이유",
+      "intent": "회복·관리",
+      "answer": "치주염으로 잃은 지지 조직이 치료만으로 모두 원래대로 돌아오는 것은 아닙니다. 진행을 억제하고 상태를 유지하려면 집에서의 위생 관리와 정기적인 전문 관리가 필요합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.cdc.gov/oral-health/about/gum-periodontal-disease.html",
+          "title": "About Periodontal (Gum) Disease"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치료 종료 후에도 관리가 필요한 만성 질환의 특성을 설명합니다."
+    },
+    {
+      "id": "A070",
+      "category": "periodontal",
+      "keyword": "당뇨 잇몸치료",
+      "question": "당뇨가 있으면 잇몸 검진을 더 신경 써야 하나요?",
+      "hookTitle": "혈당 관리와 잇몸 검진을 함께 챙겨야 할 때",
+      "intent": "회복·관리",
+      "answer": "당뇨는 치주질환과 관련된 위험요인이며, 치료하지 않은 치주염도 당뇨 관리에 영향을 줄 수 있습니다. 당뇨 상태를 치과에 알리고 혈당 관리와 잇몸 관리를 함께 이어가세요.",
+      "answerSources": [
+        {
+          "url": "https://www.cdc.gov/oral-health/about/gum-periodontal-disease.html",
+          "title": "About Periodontal (Gum) Disease"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "전신질환과 구강 관리가 연결되는 환자의 의사결정을 돕습니다."
+    },
+    {
+      "id": "A071",
+      "category": "cosmetic",
+      "keyword": "미백 크라운",
+      "question": "미백하면 크라운이나 앞니 레진도 같이 하얘지나요?",
+      "hookTitle": "미백 후 기존 보철물 색이 달라 보일 수 있는 이유",
+      "intent": "치료 선택",
+      "answer": "미백은 자연치아의 색에 작용하며 기존 레진·크라운·라미네이트의 색은 같은 방식으로 밝아지지 않습니다. 앞니에 보철물이 있다면 미백 후 색 차이를 치료 전에 함께 살펴보세요.",
+      "answerSources": [
+        {
+          "url": "https://www.bristol.ac.uk/dental/treatment/patient-information/tooth-whitening/",
+          "title": "Tooth whitening"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "기존 보철물이 있는 환자의 결과 기대를 조정합니다."
+    },
+    {
+      "id": "A072",
+      "category": "cosmetic",
+      "keyword": "치아미백 부작용",
+      "question": "미백 중 이가 시리거나 잇몸이 따가울 수 있나요?",
+      "hookTitle": "미백 중 시림, 참으면서 계속해야 할까요?",
+      "intent": "통증",
+      "answer": "미백 중에는 치아가 예민해지거나 잇몸이 자극받는 부작용이 생길 수 있습니다. 불편이 있으면 사용을 무리하게 이어가기보다 담당 치과에 알려 제품과 사용 방법을 점검하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+          "title": "Teeth whitening"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "불편을 무시한 반복 사용을 줄이도록 안내합니다."
+    },
+    {
+      "id": "A073",
+      "category": "cosmetic",
+      "keyword": "치아 미백 유지기간",
+      "question": "한 번 미백하면 치아 색이 계속 유지되나요?",
+      "hookTitle": "미백은 한 번으로 끝날까요?",
+      "intent": "회복·관리",
+      "answer": "미백 효과는 영구적이지 않아 시간이 지나면서 다시 색이 어두워질 수 있습니다. 재미백이 필요한지는 현재 치아 색과 상태를 확인한 뒤 결정하며 모든 사람에게 같은 유지 기간을 약속할 수는 없습니다.",
+      "answerSources": [
+        {
+          "url": "https://www.bristol.ac.uk/dental/treatment/patient-information/tooth-whitening/",
+          "title": "Tooth whitening"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "유지 기간과 반복 치료에 대한 현실적인 기대를 제공합니다."
+    },
+    {
+      "id": "A074",
+      "category": "cosmetic",
+      "keyword": "치아미백제",
+      "question": "인터넷 미백 제품을 검진 없이 써도 되나요?",
+      "hookTitle": "셀프 미백 전에 치아와 잇몸부터 확인하는 이유",
+      "intent": "치료 선택",
+      "answer": "제품이나 사용 방법이 적절하지 않으면 치아와 잇몸에 손상이 생길 수 있습니다. 미백을 시작하기 전에 치아·잇몸이 건강한지 확인하고 제품별 사용법을 지키는 것이 중요합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+          "title": "Teeth whitening"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "자가 시술 전 상태 평가와 올바른 사용의 중요성을 안내합니다."
+    },
+    {
+      "id": "A075",
+      "category": "cosmetic",
+      "keyword": "미백 라미네이트 차이",
+      "question": "미백과 라미네이트는 어떻게 다른가요?",
+      "hookTitle": "치아 색을 바꿀지, 앞면을 덮을지 먼저 구분하세요",
+      "intent": "치료 선택",
+      "answer": "미백은 자연치아의 색을 밝게 하는 방법이고, 라미네이트는 얇은 재료로 치아 앞면을 덮어 색이나 형태를 바꾸는 방법입니다. 라미네이트는 치아 삭제가 필요할 수 있으므로 바꾸려는 문제와 남길 치아 조직을 함께 고려해야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.bristol.ac.uk/dental/treatment/patient-information/tooth-whitening/",
+          "title": "Tooth whitening"
+        },
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/veneers",
+          "title": "Veneers"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "심미적 목표와 치아 삭제가 수반되는 선택을 구분합니다."
+    },
+    {
+      "id": "A076",
+      "category": "cosmetic",
+      "keyword": "라미네이트 치아 삭제",
+      "question": "라미네이트를 제거하면 원래 치아로 돌아가나요?",
+      "hookTitle": "라미네이트 전 확인할 치아 삭제의 의미",
+      "intent": "치료 선택",
+      "answer": "법랑질을 삭제해 붙이는 라미네이트는 제거한다고 원래 치아로 돌아가는 치료가 아닙니다. 예상 삭제량과 덜 삭제하는 대안을 치료 전에 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/veneers",
+          "title": "Veneers"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "되돌리기 어려운 치료 선택에 필요한 정보를 제공합니다."
+    },
+    {
+      "id": "A077",
+      "category": "cosmetic",
+      "keyword": "라미네이트 부작용",
+      "question": "라미네이트도 깨지거나 떨어질 수 있나요?",
+      "hookTitle": "라미네이트를 오래 쓰려면 알아둘 수리 가능성",
+      "intent": "회복·관리",
+      "answer": "라미네이트는 시간이 지나며 깨짐·마모·탈락이 생겨 수리나 교체가 필요할 수 있습니다. 영구적인 보철로 생각하기보다 상태를 정기적으로 확인하는 치료로 이해하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/veneers",
+          "title": "Veneers"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "장기 관리와 추가 치료 가능성을 설명합니다."
+    },
+    {
+      "id": "A078",
+      "category": "cosmetic",
+      "keyword": "라미네이트 이갈이",
+      "question": "이갈이가 있어도 라미네이트를 할 수 있나요?",
+      "hookTitle": "앞니 모양을 바꾸기 전 이갈이를 말해야 하는 이유",
+      "intent": "치료 선택",
+      "answer": "이를 악물거나 가는 습관, 깊게 물리는 교합이 있으면 라미네이트가 적합하지 않을 수 있습니다. 겉모양뿐 아니라 씹는 힘과 교합을 먼저 평가해야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/veneers",
+          "title": "Veneers"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "기능적 위험요인을 확인한 뒤 심미치료를 선택하도록 돕습니다."
+    },
+    {
+      "id": "A079",
+      "category": "cosmetic",
+      "keyword": "미백 전 충치치료",
+      "question": "충치나 잇몸 염증이 있어도 미백부터 할 수 있나요?",
+      "hookTitle": "미백보다 먼저 확인해야 하는 치아 상태",
+      "intent": "치료 과정",
+      "answer": "미백 전에는 치아와 잇몸이 건강한지 확인해야 합니다. 충치나 잇몸 문제가 있다면 그 문제를 먼저 평가·치료하고 미백 가능 여부를 결정하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+          "title": "Teeth whitening"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "미백보다 우선 평가할 구강질환을 안내합니다."
+    },
+    {
+      "id": "A080",
+      "category": "cosmetic",
+      "keyword": "임신 치아 미백",
+      "question": "임신 중에 치아 미백을 받아도 되나요?",
+      "hookTitle": "임신 중 선택적 미백과 필요한 치과 진료 구분하기",
+      "intent": "치료 선택",
+      "answer": "임신 중 선택적인 치아 미백은 권장되지 않아 출산 후로 미루는 편이 좋습니다. 다만 통증·감염 치료나 필요한 치과 검진까지 미룰 이유는 없으므로 임신 사실을 알리고 진료받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+          "title": "Teeth whitening"
+        },
+        {
+          "url": "https://www.ada.org/resources/ada-library/oral-health-topics/pregnancy",
+          "title": "Pregnancy"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "선택적 심미치료와 필요한 구강 진료를 혼동하지 않도록 합니다."
+    },
+    {
+      "id": "A081",
+      "category": "pediatric",
+      "keyword": "아기 첫 치과",
+      "question": "아기는 언제 처음 치과에 가야 하나요?",
+      "hookTitle": "치아가 몇 개 없어도 첫 치과 검진이 필요할까요?",
+      "intent": "치료 과정",
+      "answer": "첫 치아가 나온 뒤 치과 방문을 계획하고 늦어도 첫돌 무렵까지 첫 검진을 받는 것이 권고됩니다. 충치뿐 아니라 치아·잇몸 발달과 보호자의 관리 방법을 함께 확인합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids/first-dental-visit-for-baby",
+          "title": "First Dental Visit for Baby"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "통증이 생기기 전 예방적 첫 방문을 안내합니다."
+    },
+    {
+      "id": "A082",
+      "category": "pediatric",
+      "keyword": "어린이 충치 치료",
+      "question": "어차피 빠질 유치의 충치도 치료해야 하나요?",
+      "hookTitle": "빠질 치아인데도 충치를 확인해야 하는 이유",
+      "intent": "치료 선택",
+      "answer": "유치의 충치를 치료하지 않으면 통증과 감염이 생겨 먹기나 말하기 등에 영향을 줄 수 있습니다. 자연 탈락을 기다려도 되는지 스스로 정하지 말고 충치 정도와 교환 시기를 치과에서 평가받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html",
+          "title": "Oral Health Tips for Children"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "유치라는 이유로 통증과 감염을 방치하는 오해를 줄입니다."
+    },
+    {
+      "id": "A083",
+      "category": "pediatric",
+      "keyword": "아기 불소치약",
+      "question": "어린아이에게 불소치약을 얼마나 써야 하나요?",
+      "hookTitle": "아이 치약은 칫솔 가득 짜지 않아도 됩니다",
+      "intent": "회복·관리",
+      "answer": "첫 치아부터 불소치약을 사용하되 3세 미만은 쌀알 정도, 3~6세는 완두콩 정도의 소량이 권고됩니다. 보호자가 양을 조절하고 삼키지 않도록 도와주며 하루 두 번 닦아주세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids/healthy-habits-babies-and-kids/",
+          "title": "Healthy Habits - Babies and Kids"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "충치 예방과 어린아이의 치약 삼킴을 함께 고려합니다."
+    },
+    {
+      "id": "A084",
+      "category": "pediatric",
+      "keyword": "아이 양치 도움",
+      "question": "아이가 혼자 양치하면 부모가 다시 확인하지 않아도 되나요?",
+      "hookTitle": "혼자 닦는 아이, 잘 닦았는지 확인하는 기준",
+      "intent": "회복·관리",
+      "answer": "혼자 칫솔을 잡는 것과 치아 전체를 충분히 닦는 것은 다릅니다. 아이가 능숙해질 때까지 보호자가 돕고, 혼자 닦기 시작한 뒤에도 빠진 부위와 시간을 확인해주세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/live-well/healthy-teeth-and-gums/taking-care-of-childrens-teeth/",
+          "title": "Children’s teeth"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "아이의 실제 칫솔질 능력에 맞춘 보호자 도움을 안내합니다."
+    },
+    {
+      "id": "A085",
+      "category": "pediatric",
+      "keyword": "어린이 치아 홈메우기",
+      "question": "치아 홈메우기는 어떤 치아에 하는 치료인가요?",
+      "hookTitle": "어금니 홈, 칫솔이 닿기 어려운 곳을 보호하는 방법",
+      "intent": "치료 선택",
+      "answer": "홈메우기는 어금니 씹는 면의 깊은 홈을 얇은 재료로 덮어 충치를 예방하는 방법입니다. 영구 어금니가 올라오면 홈의 상태와 충치 위험을 확인해 적용 여부를 정합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nidcr.nih.gov/health-info/dental-sealants",
+          "title": "Dental Sealants"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "예방 처치의 대상과 목적을 설명합니다."
+    },
+    {
+      "id": "A086",
+      "category": "pediatric",
+      "keyword": "실란트 유지기간",
+      "question": "홈메우기를 한 뒤에는 다시 확인할 필요가 없나요?",
+      "hookTitle": "실란트도 정기검진에서 확인하는 이유",
+      "intent": "회복·관리",
+      "answer": "홈메우기 재료는 여러 해 유지될 수 있지만 상태에 따라 보충이 필요합니다. 정기검진에서 재료가 잘 남아 있는지 확인하고 칫솔질도 계속해야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/sealants",
+          "title": "Sealants"
+        },
+        {
+          "url": "https://www.nidcr.nih.gov/health-info/dental-sealants",
+          "title": "Dental Sealants"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "예방 처치 이후의 관리가 필요함을 안내합니다."
+    },
+    {
+      "id": "A087",
+      "category": "pediatric",
+      "keyword": "불소도포 홈메우기 차이",
+      "question": "불소도포와 홈메우기는 같은 치료인가요?",
+      "hookTitle": "바르는 불소와 메우는 실란트, 역할이 다릅니다",
+      "intent": "치료 선택",
+      "answer": "불소도포는 치아 표면이 충치에 더 잘 견디도록 돕고, 홈메우기는 어금니의 홈을 물리적으로 덮어 보호합니다. 서로 역할이 달라 아이의 치아 상태와 충치 위험에 따라 함께 고려할 수 있습니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/live-well/healthy-teeth-and-gums/taking-care-of-childrens-teeth/",
+          "title": "Children’s teeth"
+        },
+        {
+          "url": "https://www.nidcr.nih.gov/health-info/dental-sealants",
+          "title": "Dental Sealants"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "서로 다른 예방 치료를 중복 처치로 오해하지 않도록 합니다."
+    },
+    {
+      "id": "A088",
+      "category": "pediatric",
+      "keyword": "아이 치과 무서움",
+      "question": "아이가 치과를 무서워하면 첫 방문을 어떻게 준비하나요?",
+      "hookTitle": "아이 첫 치과, 치료 전에 익숙해지는 시간 만들기",
+      "intent": "치료 과정",
+      "answer": "아이의 컨디션이 좋은 시간에 예약하고 집에서 입 벌리기를 가볍게 연습해볼 수 있습니다. 첫 방문에 대한 걱정을 의료진에게 미리 알리고 아이를 진정시키는 방법을 함께 정하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids/first-dental-visit-for-baby",
+          "title": "First Dental Visit for Baby"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "치료 협조를 강요하기보다 방문 준비를 돕습니다."
+    },
+    {
+      "id": "A089",
+      "category": "pediatric",
+      "keyword": "유치 빠짐 사고",
+      "question": "넘어져서 유치가 통째로 빠지면 다시 끼워야 하나요?",
+      "hookTitle": "사고로 빠진 유치, 다시 심으면 안 되는 이유",
+      "intent": "응급",
+      "answer": "외상으로 빠진 유치는 밑에서 자라는 영구치에 손상을 줄 수 있어 다시 심지 않습니다. 즉시 치과에 연락해 다친 부위를 확인하고, 유치인지 영구치인지 불확실해도 억지로 끼우지 마세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/conditions/knocked-out-tooth/",
+          "title": "Knocked-out tooth"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "유치 외상에서 잘못된 재식을 막는 핵심 응급 정보입니다."
+    },
+    {
+      "id": "A090",
+      "category": "pediatric",
+      "keyword": "아이 치실",
+      "question": "아이도 치실을 써야 하나요?",
+      "hookTitle": "아이 치실의 시작은 나이보다 치아 사이입니다",
+      "intent": "회복·관리",
+      "answer": "서로 맞닿는 치아가 생기면 치아 사이도 매일 청소하는 것이 권고됩니다. 아이가 스스로 잘 다루기 전에는 보호자가 돕고 적절한 방법을 치과에서 배워보세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids/healthy-habits-babies-and-kids/",
+          "title": "Healthy Habits - Babies and Kids"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "칫솔만으로 관리하기 어려운 치아 사이의 위생을 안내합니다."
+    },
+    {
+      "id": "A091",
+      "category": "safety",
+      "keyword": "치과 공포증",
+      "question": "치과가 너무 무서우면 수면치료만 방법인가요?",
+      "hookTitle": "치과 공포, 진정치료 전에 함께 정할 수 있는 것들",
+      "intent": "치료 선택",
+      "answer": "치과 불안에는 설명과 행동적 접근, 필요한 경우 진정치료 등 여러 방법이 있습니다. 예약할 때 두려운 상황과 건강 상태를 알려 자신에게 맞는 방법을 의료진과 정하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.england.nhs.uk/long-read/clinical-guide-for-dental-anxiety-management/",
+          "title": "Clinical standards for dental anxiety management"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치과 공포로 진료를 미루는 환자에게 선택 가능한 접근을 안내합니다."
+    },
+    {
+      "id": "A092",
+      "category": "safety",
+      "keyword": "치과 수면마취",
+      "question": "수면치과의 진정치료는 전신마취와 같은가요?",
+      "hookTitle": "수면치과라는 말만으로 마취 방식을 알 수 있을까요?",
+      "intent": "치료 선택",
+      "answer": "진정치료는 불안과 긴장을 줄이는 방법이며 의식을 없애는 전신마취와 구분됩니다. 진정 깊이와 투여 방법이 다르고 통증 조절을 위한 국소마취가 함께 필요할 수 있으므로 예정된 방식을 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.guysandstthomas.nhs.uk/health-information/sedation-options-dental-treatment",
+          "title": "Sedation options for dental treatment"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "진정과 전신마취·국소마취를 혼동하지 않도록 설명합니다."
+    },
+    {
+      "id": "A093",
+      "category": "safety",
+      "keyword": "수면치과 운전",
+      "question": "정맥 진정치료를 받고 혼자 운전해도 되나요?",
+      "hookTitle": "정맥 진정 후 귀가, 괜찮게 느껴져도 준비할 것",
+      "intent": "회복·관리",
+      "answer": "정맥 진정 후에는 판단력과 움직임에 영향이 남을 수 있어 보통 24시간 운전을 피하고 보호자의 도움이 필요합니다. 술이나 중요한 결정도 피하고 실제 귀가·관찰 시간은 치료기관의 지시를 따르세요.",
+      "answerSources": [
+        {
+          "url": "https://www.therotherhamft.nhs.uk/patients-and-visitors/patient-information/dental-IV-sedation",
+          "title": "Dental intravenous (IV) sedation: Instructions for a patient / parent / carer after sedation"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "진정 후 귀가와 일상 복귀 과정의 안전 행동을 안내합니다."
+    },
+    {
+      "id": "A094",
+      "category": "safety",
+      "keyword": "임산부 치과치료",
+      "question": "임신 중 치아가 아프면 출산할 때까지 기다려야 하나요?",
+      "hookTitle": "임신 중 치통, 미루지 말고 먼저 알려야 할 것",
+      "intent": "치료 선택",
+      "answer": "필요한 치과 진료는 임신 중에도 가능하며 응급치료를 미루면 문제가 복잡해질 수 있습니다. 임신 주수와 건강 상태를 알리면 필요한 검사·국소마취·치료를 평가해 진행하고, 약물은 임의로 선택하지 마세요.",
+      "answerSources": [
+        {
+          "url": "https://www.ada.org/resources/ada-library/oral-health-topics/pregnancy",
+          "title": "Pregnancy"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "임신 때문에 필요한 통증·감염 치료를 지연하는 오해를 줄입니다."
+    },
+    {
+      "id": "A095",
+      "category": "safety",
+      "keyword": "혈전약 치과치료",
+      "question": "아스피린이나 항응고제를 먹으면 치과 가기 전에 끊어야 하나요?",
+      "hookTitle": "피를 묽게 하는 약, 치과 예약 전 임의로 끊지 마세요",
+      "intent": "치료 과정",
+      "answer": "항혈소판제·항응고제를 복용한다고 스스로 약을 중단하면 안 됩니다. 많은 치과 처치는 약을 유지하며 지혈로 대응할 수 있고, 변경이 필요하면 치과와 처방 의료진이 치료 종류·출혈 위험을 함께 판단해야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.ada.org/resources/ada-library/oral-health-topics/oral-anticoagulant-and-antiplatelet-medications-and-dental-procedures",
+          "title": "Oral Anticoagulant and Antiplatelet Medications and Dental Procedures"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "임의 약물 중단으로 생길 수 있는 위험을 줄이는 핵심 안내입니다."
+    },
+    {
+      "id": "A096",
+      "category": "safety",
+      "keyword": "치통 얼굴 부음",
+      "question": "치통과 얼굴 붓기가 있는데 언제 응급실에 가야 하나요?",
+      "hookTitle": "얼굴이 붓고 숨쉬기나 삼키기가 어렵다면",
+      "intent": "응급",
+      "answer": "치통과 얼굴 붓기는 감염 가능성이 있어 신속한 치과 평가가 필요합니다. 숨쉬기·삼키기·말하기가 어렵거나 눈 주위 붓기·통증 또는 갑작스러운 시력 문제가 있으면 즉시 응급실로 가세요. 입안이 많이 붓거나 입을 벌리기 어려울 때도 응급 평가를 받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/conditions/dental-abscess/?src=conditionswidget",
+          "title": "Dental abscess"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "호흡기와 눈 주위로 진행하는 감염의 응급 신호를 구분합니다."
+    },
+    {
+      "id": "A097",
+      "category": "safety",
+      "keyword": "영구치 빠짐 응급처치",
+      "question": "영구치가 사고로 통째로 빠졌을 때 어떻게 가져가야 하나요?",
+      "hookTitle": "빠진 영구치, 뿌리를 문지르지 말고 바로 치과로",
+      "intent": "응급",
+      "answer": "치아는 치관 부분만 잡고, 더러우면 우유나 생리식염수로 살짝 헹구되 뿌리를 문지르지 마세요. 영구치임이 확실하고 쉽게 들어갈 때만 제자리에 넣고, 어렵거나 구분이 안 되면 우유에 담아 즉시 치과로 가세요. 빠진 유치는 다시 심지 않습니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/conditions/knocked-out-tooth/",
+          "title": "Knocked-out tooth"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "영구치 보존 가능성에 영향을 주는 즉각적인 행동과 유치 구분을 안내합니다."
+    },
+    {
+      "id": "A098",
+      "category": "safety",
+      "keyword": "골다공증약 치과치료",
+      "question": "골다공증약을 먹거나 주사 맞고 있으면 치과에 알려야 하나요?",
+      "hookTitle": "골다공증 약, 치과에서 이름과 투여 이력을 묻는 이유",
+      "intent": "치료 과정",
+      "answer": "일부 골다공증약은 드물게 턱뼈 괴사와 관련될 수 있어 약 이름과 투여 이력을 치과에 알려야 합니다. 필요한 치과 진료를 일괄 미루거나 약을 임의로 끊지는 마세요. 발치 등 처치는 약 종류와 전신 상태를 치과·처방 의료진이 함께 확인해 계획합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.ada.org/resources/ada-library/oral-health-topics/osteoporosis-medications",
+          "title": "Osteoporosis Medications and Medication-Related Osteonecrosis of the Jaw"
+        },
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/osteoporosis-and-oral-health",
+          "title": "Osteoporosis and Oral Health"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "골다공증 치료제별 위험 평가와 임의 중단 방지를 안내합니다."
+    },
+    {
+      "id": "A099",
+      "category": "safety",
+      "keyword": "구내염 오래 지속",
+      "question": "입안이 헐고 3주가 지나도 낫지 않으면 어떻게 해야 하나요?",
+      "hookTitle": "오래 가는 입안 상처, 연고만 바르며 기다려도 될까요?",
+      "intent": "치료 선택",
+      "answer": "흔한 입안 궤양은 대개 1~2주 안에 낫지만 3주 넘게 지속되면 치과나 의료기관에서 원인을 확인해야 합니다. 평소와 다른 모양이거나 출혈·통증·붉어짐이 심해질 때도 진료받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/conditions/mouth-ulcers/",
+          "title": "Mouth ulcers"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "오래 지속되거나 변화하는 점막 병변의 진료 시점을 안내합니다."
+    },
+    {
+      "id": "A100",
+      "category": "safety",
+      "keyword": "치과 엑스레이 주기",
+      "question": "치과에 갈 때마다 엑스레이를 찍어야 하나요?",
+      "hookTitle": "치과 엑스레이, 정해진 횟수보다 검사 목적이 먼저",
+      "intent": "치료 과정",
+      "answer": "촬영 간격은 나이, 증상, 충치 등 질환 위험과 이전 영상에 따라 달라지며 모든 방문에 필요한 것은 아닙니다. 이번 영상이 어떤 진단·치료 결정에 필요한지 설명을 듣고 이전 촬영 자료가 있으면 알려주세요.",
+      "answerSources": [
+        {
+          "url": "https://www.ada.org/resources/ada-library/oral-health-topics/x-rays-radiographs",
+          "title": "X-Rays/Radiographs"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "필요한 영상검사와 불필요한 반복 촬영을 구분하는 질문을 돕습니다."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/crowns",
+      "title": "Crowns",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.leedsth.nhs.uk/patients/resources/crowns/",
+      "title": "Crowns",
+      "publisher": "Leeds Teaching Hospitals NHS Trust",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.hira.or.kr/npay/index.do?WT.gnb=%EB%B9%84%EA%B8%89%EC%97%AC%EC%A7%84%EB%A3%8C%EB%B9%84%EC%A0%95%EB%B3%B4",
+      "title": "비급여 진료비용 정보",
+      "publisher": "건강보험심사평가원",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://111.wales.nhs.uk/encyclopaedia/l/article/lostfillingorcrown",
+      "title": "Lost Filling or Crown",
+      "publisher": "NHS 111 Wales",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/bridges",
+      "title": "Bridges",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nhs.uk/tests-and-treatments/dentures/",
+      "title": "Dentures (false teeth)",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nhis.or.kr/static/alim/paper/oldpaper/202404/sub/section1_5.html",
+      "title": "건강보험 웹진 2024년 4월호",
+      "publisher": "국민건강보험공단",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/scaling-and-root-planing?c=381714921",
+      "title": "Scaling and Root Planing",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/gum-disease/",
+      "title": "Gum disease",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.cdc.gov/oral-health/about/gum-periodontal-disease.html",
+      "title": "About Periodontal (Gum) Disease",
+      "publisher": "미국 질병통제예방센터(CDC)",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nidcr.nih.gov/health-info/gum-disease",
+      "title": "Periodontal (Gum) Disease",
+      "publisher": "미국 국립치과두개안면연구소(NIDCR)",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nhs.uk/tests-and-treatments/teeth-whitening/",
+      "title": "Teeth whitening",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.bristol.ac.uk/dental/treatment/patient-information/tooth-whitening/",
+      "title": "Tooth whitening",
+      "publisher": "University of Bristol Dental School",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/veneers",
+      "title": "Veneers",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.ada.org/resources/ada-library/oral-health-topics/pregnancy",
+      "title": "Pregnancy",
+      "publisher": "American Dental Association",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids/first-dental-visit-for-baby",
+      "title": "First Dental Visit for Baby",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.cdc.gov/oral-health/prevention/oral-health-tips-for-children.html",
+      "title": "Oral Health Tips for Children",
+      "publisher": "미국 질병통제예방센터(CDC)",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/life-stages/babies-and-kids/healthy-habits-babies-and-kids/",
+      "title": "Healthy Habits - Babies and Kids",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nhs.uk/live-well/healthy-teeth-and-gums/taking-care-of-childrens-teeth/",
+      "title": "Children’s teeth",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nidcr.nih.gov/health-info/dental-sealants",
+      "title": "Dental Sealants",
+      "publisher": "미국 국립치과두개안면연구소(NIDCR)",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/sealants",
+      "title": "Sealants",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/knocked-out-tooth/",
+      "title": "Knocked-out tooth",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.england.nhs.uk/long-read/clinical-guide-for-dental-anxiety-management/",
+      "title": "Clinical standards for dental anxiety management",
+      "publisher": "NHS England",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.guysandstthomas.nhs.uk/health-information/sedation-options-dental-treatment",
+      "title": "Sedation options for dental treatment",
+      "publisher": "Guy’s and St Thomas’ NHS Foundation Trust",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.therotherhamft.nhs.uk/patients-and-visitors/patient-information/dental-IV-sedation",
+      "title": "Dental intravenous (IV) sedation: Instructions for a patient / parent / carer after sedation",
+      "publisher": "The Rotherham NHS Foundation Trust",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.ada.org/resources/ada-library/oral-health-topics/oral-anticoagulant-and-antiplatelet-medications-and-dental-procedures",
+      "title": "Oral Anticoagulant and Antiplatelet Medications and Dental Procedures",
+      "publisher": "American Dental Association",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/dental-abscess/?src=conditionswidget",
+      "title": "Dental abscess",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:08:46Z"
+    },
+    {
+      "url": "https://www.ada.org/resources/ada-library/oral-health-topics/x-rays-radiographs",
+      "title": "X-Rays/Radiographs",
+      "publisher": "American Dental Association",
+      "checkedAt": "2026-10-31T21:07:00Z"
+    },
+    {
+      "url": "https://www.ada.org/resources/ada-library/oral-health-topics/osteoporosis-medications",
+      "title": "Osteoporosis Medications and Medication-Related Osteonecrosis of the Jaw",
+      "publisher": "American Dental Association",
+      "checkedAt": "2026-10-31T21:08:46Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/osteoporosis-and-oral-health",
+      "title": "Osteoporosis and Oral Health",
+      "publisher": "American Dental Association / MouthHealthy",
+      "checkedAt": "2026-10-31T21:08:46Z"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/mouth-ulcers/",
+      "title": "Mouth ulcers",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:08:46Z"
+    },
+    {
+      "url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0217.html",
+      "title": "노인틀니 급여안내(국민건강보험법 시행령 제19조 제1항 별표2)",
+      "publisher": "국민건강보험공단",
+      "checkedAt": "2026-10-31T21:08:46Z"
+    },
+    {
+      "url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0218.html",
+      "title": "치석제거 급여안내",
+      "publisher": "국민건강보험공단",
+      "checkedAt": "2026-10-31T21:08:46Z"
+    }
+  ]
+}

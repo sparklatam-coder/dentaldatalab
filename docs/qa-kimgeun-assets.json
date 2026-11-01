@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-31T22:24:30.797Z",
+  "status": "passed",
+  "clinicId": "c-f1e05c9ae9d2",
+  "assetCount": 10,
+  "naverIdentityMatched": true,
+  "sourceSha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc",
+  "homepage": "http://1945kk.co.kr/",
+  "newHomepageScan": {
+    "attempts": 25,
+    "read": 22,
+    "outboundHrefs": 50
+  },
+  "browserReview": {
+    "localWebsiteRowAndHoursAndAssets": "confirmed in Chrome AX and screenshot",
+    "homepageHttpLink": "Chrome security warning; returned without bypassing",
+    "instagram": "Profile unavailable",
+    "facebook": "title observed; login notice",
+    "deferredContent": "No introduction/directions/review body saved"
+  },
+  "http": [
+    {
+      "path": "/clinics/c-f1e05c9ae9d2/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/records/c-f1e05c9ae9d2.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/summary.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "path": "/data/clinic-assets/naver-hours-coverage.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    },
+    {
+      "path": "/clinic-assets/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow"
+    }
+  ]
+}

@@ -1,0 +1,1108 @@
+{
+  "schemaVersion": 1,
+  "locale": "ko-KR",
+  "audience": "대한민국 거주 환자·보호자",
+  "searchMarket": "Google 한국어",
+  "searchVolumeStatus": "unverified",
+  "rankingClaim": false,
+  "editorialNote": "질문과 우선순위는 편집 제안이며 검색량 순위가 아니다. 일반 의학 근거를 짧게 요약한 임상 검토 전 초안이며, 해외 보험·가격·응급 연락체계를 국내에 적용하지 않았다.",
+  "createdAt": "2026-10-31T21:06:48.763Z",
+  "questions": [
+    {
+      "id": "A001",
+      "category": "implant",
+      "keyword": "임플란트 비용",
+      "question": "임플란트 비용을 비교할 때 무엇을 확인해야 하나요?",
+      "hookTitle": "임플란트 견적, 총액 전에 확인할 항목",
+      "intent": "비용",
+      "answer": "임플란트 비용은 필요한 개수와 보철 방식, 추가 치료에 따라 달라질 수 있습니다. 같은 재료·치료 범위를 기준으로 견적의 포함 항목을 확인하고, 공개 비급여 금액과 실제 총비용이 같은지도 치과에 물어보세요.",
+      "answerSources": [
+        {
+          "url": "https://www.cuh.nhs.uk/patient-information/dental-implants-in-restorative-dentistry/",
+          "title": "Dental implants in restorative dentistry"
+        },
+        {
+          "url": "https://www.hira.or.kr/npay/index.do?WT.gnb=%EB%B9%84%EA%B8%89%EC%97%AC%EC%A7%84%EB%A3%8C%EB%B9%84%EC%A0%95%EB%B3%B4",
+          "title": "비급여 진료비용 정보"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치료 전 비용 범위와 비교 기준을 확인하는 의사결정 질문."
+    },
+    {
+      "id": "A002",
+      "category": "implant",
+      "keyword": "임플란트 보험",
+      "question": "임플란트 건강보험 적용은 치료 전에 어떻게 확인하나요?",
+      "hookTitle": "임플란트 보험, 시작 전에 확인할 등록 절차",
+      "intent": "보험",
+      "answer": "치과에서 급여 대상 여부를 판정받고 대상자 등록 결과를 확인한 뒤 보험 치료를 진행합니다. 연령·남아 있는 치아·기존 급여 이력에 따른 적용 여부와 남은 인정 개수를 시술 전에 확인해 달라고 요청하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0221.html",
+          "title": "치과임플란트 급여안내"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "사전 대상 판정과 등록 절차를 놓치지 않도록 돕는 질문."
+    },
+    {
+      "id": "A003",
+      "category": "implant",
+      "keyword": "임플란트 뼈이식",
+      "question": "임플란트 뼈이식은 누구나 해야 하나요?",
+      "hookTitle": "임플란트 뼈이식이 필요한 경우",
+      "intent": "치료 선택",
+      "answer": "모든 임플란트에 뼈이식이 필요한 것은 아닙니다. 임플란트를 지지할 뼈의 양과 형태를 검사해 필요성을 판단하며, 이식 규모에 따라 임플란트와 함께 하거나 먼저 진행할 수 있습니다.",
+      "answerSources": [
+        {
+          "url": "https://www.leedsth.nhs.uk/patients/resources/dental-implants/",
+          "title": "Dental Implants"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "추가 수술의 필요성과 진행 순서를 이해하는 핵심 선택 질문."
+    },
+    {
+      "id": "A004",
+      "category": "implant",
+      "keyword": "임플란트 수명",
+      "question": "임플란트는 한 번 하면 평생 사용할 수 있나요?",
+      "hookTitle": "임플란트 수명, 오래 쓰려면 확인할 것",
+      "intent": "회복·관리",
+      "answer": "임플란트를 평생 사용한다고 보장할 수는 없으며, 잇몸 상태·위생 관리·씹는 힘 등이 장기 유지에 영향을 줍니다. 임플란트 위 보철물이나 연결 부품은 마모되어 수리·교체가 필요할 수 있어 정기적인 확인이 중요합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.cuh.nhs.uk/patient-information/dental-implants-in-restorative-dentistry/",
+          "title": "Dental implants in restorative dentistry"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "평생 보장 오해를 줄이고 장기 유지관리의 필요성을 설명."
+    },
+    {
+      "id": "A005",
+      "category": "implant",
+      "keyword": "임플란트 기간",
+      "question": "임플란트 치료는 왜 여러 달 걸리나요?",
+      "hookTitle": "임플란트 치료 기간이 달라지는 이유",
+      "intent": "치료 과정",
+      "answer": "턱뼈에 심은 임플란트가 뼈와 결합할 시간이 필요하고 이후 인공치아를 제작하는 과정이 이어집니다. 뼈 상태와 치료 방식에 따라 기다리는 기간이 달라지므로 수술일과 최종 보철 완성일을 나누어 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+          "title": "Implants"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "수술과 최종 보철 완성의 시점을 구분해 일정 계획을 도움."
+    },
+    {
+      "id": "A006",
+      "category": "implant",
+      "keyword": "임플란트 통증",
+      "question": "임플란트 수술 후 통증과 붓기는 어느 정도 생기나요?",
+      "hookTitle": "임플란트 후 통증과 붓기, 회복 중 확인할 점",
+      "intent": "통증",
+      "answer": "수술 뒤에는 뻐근함·붓기·멍이 생길 수 있고 정도는 사람마다 다릅니다. 치과에서 받은 통증 관리와 상처 관리 안내를 따르고, 예상보다 심하거나 호전되지 않는 증상은 치료한 치과에 문의하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.guysandstthomas.nhs.uk/health-information/dental-implants/after-having-dental-implant",
+          "title": "After having a dental implant"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "회복 반응을 설명하면서 무통·일률적인 회복 기간을 약속하지 않음."
+    },
+    {
+      "id": "A007",
+      "category": "implant",
+      "keyword": "당뇨 임플란트",
+      "question": "당뇨병이 있어도 임플란트를 할 수 있나요?",
+      "hookTitle": "당뇨가 있을 때 임플란트 전에 나눌 이야기",
+      "intent": "치료 선택",
+      "answer": "당뇨병은 수술 후 치유에 영향을 줄 수 있어 임플란트 가능 여부를 개별적으로 평가해야 합니다. 당뇨 치료 상태와 복용약을 치과에 알리고 필요하면 담당 의사와 함께 수술 적합성을 검토하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+          "title": "Implants"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "전신질환을 일괄 금기 또는 가능으로 단정하지 않도록 안내."
+    },
+    {
+      "id": "A008",
+      "category": "implant",
+      "keyword": "발치 즉시 임플란트",
+      "question": "이를 뽑는 날 바로 임플란트를 심을 수 있나요?",
+      "hookTitle": "발치 즉시 임플란트, 가능한 조건부터",
+      "intent": "치료 선택",
+      "answer": "조건이 맞으면 발치와 임플란트 식립을 같은 날 진행할 수 있지만 모든 경우에 가능한 것은 아닙니다. 잇몸과 뼈가 먼저 아물 시간을 두는 방법도 있으므로 검사 결과에 따른 이유를 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.leedsth.nhs.uk/patients/resources/dental-implants/",
+          "title": "Dental Implants"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "즉시 식립을 보편적인 치료나 우월한 선택으로 오해하지 않도록 함."
+    },
+    {
+      "id": "A009",
+      "category": "implant",
+      "keyword": "임플란트 흡연",
+      "question": "흡연은 임플란트 유지에 영향을 주나요?",
+      "hookTitle": "임플란트와 흡연, 수술 전부터 확인하세요",
+      "intent": "회복·관리",
+      "answer": "흡연은 임플란트의 치유와 장기 유지에 불리하게 작용할 수 있습니다. 수술 전부터 금연 계획을 상담하고, 수술 후에도 금연과 구강위생 관리를 이어가는 것이 중요합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.cuh.nhs.uk/patient-information/dental-implants-in-restorative-dentistry/",
+          "title": "Dental implants in restorative dentistry"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "환자가 조절할 수 있는 위험 요인을 설명하는 관리 질문."
+    },
+    {
+      "id": "A010",
+      "category": "implant",
+      "keyword": "임플란트 주위염",
+      "question": "임플란트 주변 잇몸에서 피가 나면 괜찮은가요?",
+      "hookTitle": "임플란트 주변 출혈, 점검이 필요한 이유",
+      "intent": "회복·관리",
+      "answer": "임플란트 주변에도 잇몸 염증이나 뼈 손실이 생길 수 있어 반복되는 출혈을 정상으로 단정하면 안 됩니다. 원인을 확인할 수 있도록 치과에서 점검받고, 임플란트 주변을 청결하게 유지하는 방법을 안내받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.leedsth.nhs.uk/patients/resources/dental-implants/",
+          "title": "Dental Implants"
+        },
+        {
+          "url": "https://www.cuh.nhs.uk/patient-information/dental-implants-in-restorative-dentistry/",
+          "title": "Dental implants in restorative dentistry"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "주변 조직의 문제를 방치하지 않고 점검하도록 돕는 질문."
+    },
+    {
+      "id": "A011",
+      "category": "orthodontics",
+      "keyword": "성인 치아교정",
+      "question": "성인이 된 뒤에도 치아교정을 할 수 있나요?",
+      "hookTitle": "성인 교정, 나이보다 먼저 살펴볼 상태",
+      "intent": "치료 선택",
+      "answer": "성인도 필요한 경우 치아교정을 받을 수 있습니다. 치아 배열뿐 아니라 잇몸·치아 건강과 맞물림을 검사한 뒤 가능한 치료 범위와 목표를 정합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/orthodontic-treatment",
+          "title": "Orthodontic treatment"
+        },
+        {
+          "url": "https://bos.org.uk/patients/treatments/orthodontics-for-adults/everything-you-need-to-know-before-having-your-teeth-straightened/",
+          "title": "Everything you need to know before having your teeth straightened"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "성인이라는 이유만으로 치료 가능성을 단정하지 않도록 설명."
+    },
+    {
+      "id": "A012",
+      "category": "orthodontics",
+      "keyword": "치아교정 비용",
+      "question": "교정 비용 상담에서 추가 비용은 무엇을 물어봐야 하나요?",
+      "hookTitle": "교정 견적에서 유지장치 비용까지 확인하기",
+      "intent": "비용",
+      "answer": "교정 상담에서는 전체 치료비에 장치 수리나 유지장치가 포함되는지 확인하세요. 비급여 항목과 금액을 설명받고, 치료 중 비용이 달라지는 조건도 미리 정리하는 것이 좋습니다.",
+      "answerSources": [
+        {
+          "url": "https://bos.org.uk/patients/treatments/orthodontics-for-adults/everything-you-need-to-know-before-having-your-teeth-straightened/",
+          "title": "Everything you need to know before having your teeth straightened"
+        },
+        {
+          "url": "https://www.nhis.or.kr/nbinfo/htmc_guide.do",
+          "title": "비급여 이용 가이드"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "초기 장치 가격과 전체 치료비를 혼동하지 않도록 함."
+    },
+    {
+      "id": "A013",
+      "category": "orthodontics",
+      "keyword": "치아교정 기간",
+      "question": "교정 치료 기간은 모두 비슷한가요?",
+      "hookTitle": "교정 기간, 내 계획에서 확인할 변수",
+      "intent": "치료 과정",
+      "answer": "교정은 치아를 점진적으로 이동시키는 치료여서 사람마다 필요한 기간이 다릅니다. 치료 중 정기 방문이 필요하고 장치 착용 지침을 지키는 것이 중요하므로, 내 예상 일정과 방문 간격을 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/braces-and-orthodontics/",
+          "title": "Braces and orthodontics"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "단기간 결과를 약속하지 않고 치료 일정에 대한 현실적인 이해를 도움."
+    },
+    {
+      "id": "A014",
+      "category": "orthodontics",
+      "keyword": "치아교정 통증",
+      "question": "교정 장치를 붙이거나 조인 뒤 이가 아픈 이유는 무엇인가요?",
+      "hookTitle": "교정 조절 후 뻐근함이 생기는 이유",
+      "intent": "통증",
+      "answer": "치아가 움직이기 시작하거나 장치를 조절한 뒤에는 씹을 때 뻐근하고 예민할 수 있습니다. 불편감은 대개 며칠 사이 줄지만 개인차가 있으므로 심하거나 오래가는 통증은 담당 치과에 알리세요.",
+      "answerSources": [
+        {
+          "url": "https://bos.org.uk/patients/treatments/orthodontics-for-adults/everything-you-need-to-know-before-having-your-teeth-straightened/",
+          "title": "Everything you need to know before having your teeth straightened"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "흔한 불편감과 추가 상담이 필요한 상황을 함께 안내."
+    },
+    {
+      "id": "A015",
+      "category": "orthodontics",
+      "keyword": "투명교정",
+      "question": "투명교정과 고정식 교정은 무엇이 다른가요?",
+      "hookTitle": "투명교정 선택 전에 알아둘 착용 차이",
+      "intent": "치료 선택",
+      "answer": "고정식 장치는 치아에 붙여 사용하고, 투명교정 장치는 식사와 세척 때 빼는 탈착식 방식입니다. 투명교정도 정해진 시간 동안 꾸준히 착용해야 하므로 눈에 덜 띄는지만 보고 선택하지 말고 치료 적합성을 평가받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/braces-and-orthodontics/",
+          "title": "Braces and orthodontics"
+        },
+        {
+          "url": "https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/orthodontic-treatment",
+          "title": "Orthodontic treatment"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "장치 외관 외에 착용 방식과 협조도를 고려하도록 안내."
+    },
+    {
+      "id": "A016",
+      "category": "orthodontics",
+      "keyword": "발치 교정",
+      "question": "교정할 때 꼭 이를 뽑아야 하나요?",
+      "hookTitle": "발치 교정과 비발치 교정, 선택 이유 확인하기",
+      "intent": "치료 선택",
+      "answer": "모든 교정에 발치가 필요한 것은 아니지만, 일부 경우에는 치아를 배열하거나 맞물림을 개선할 공간을 위해 필요합니다. 내 상태에서 발치를 권하는 이유와 가능한 대안의 한계를 함께 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://bos.org.uk/patients/treatments/orthodontics-for-adults/everything-you-need-to-know-before-having-your-teeth-straightened/",
+          "title": "Everything you need to know before having your teeth straightened"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "발치 여부에 대한 일률적 판단을 피하고 계획의 근거를 확인."
+    },
+    {
+      "id": "A017",
+      "category": "orthodontics",
+      "keyword": "치아교정 유지장치 평생",
+      "question": "교정이 끝나도 유지장치를 계속 써야 하나요?",
+      "hookTitle": "교정이 끝난 뒤 유지장치가 필요한 이유",
+      "intent": "회복·관리",
+      "answer": "교정이 끝난 치아도 원래 위치로 움직이려는 경향이 있어 유지장치가 필요합니다. 착용 시간과 기간은 장치와 상태에 따라 정하므로 임의로 줄이지 말고 담당 치과의 안내를 따르세요.",
+      "answerSources": [
+        {
+          "url": "https://www.uhsussex.nhs.uk/services/oral-maxillofacial/orthodontics/",
+          "title": "Orthodontics"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치료 후 유지 단계의 중요성과 개별 착용 계획을 안내."
+    },
+    {
+      "id": "A018",
+      "category": "orthodontics",
+      "keyword": "교정 음식",
+      "question": "교정 중에는 어떤 음식을 조심해야 하나요?",
+      "hookTitle": "교정 장치와 치아를 위해 조심할 음식",
+      "intent": "회복·관리",
+      "answer": "딱딱하거나 끈적한 음식은 교정 장치에 달라붙거나 손상을 줄 수 있습니다. 당분이 많은 간식과 음료도 줄이고, 사용하는 장치에 맞는 식사·세척 방법을 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/orthodontic-treatment",
+          "title": "Orthodontic treatment"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "장치 파손과 충치 위험을 줄이는 일상 관리 질문."
+    },
+    {
+      "id": "A019",
+      "category": "orthodontics",
+      "keyword": "교정 충치",
+      "question": "교정 중에도 충치 검진을 따로 받아야 하나요?",
+      "hookTitle": "교정 진료 중에도 충치 검진이 필요한 이유",
+      "intent": "회복·관리",
+      "answer": "교정 장치 주변에는 음식물과 치태가 남기 쉬워 세심한 관리가 필요합니다. 교정 조절을 받고 있더라도 충치와 잇몸 상태를 살피는 정기 치과 검진은 계속 받아야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/braces-and-orthodontics/",
+          "title": "Braces and orthodontics"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "장치 조절과 일반 구강 검진이 같은 역할이라는 오해를 예방."
+    },
+    {
+      "id": "A020",
+      "category": "orthodontics",
+      "keyword": "교정 부작용",
+      "question": "교정 전에 어떤 부작용을 상담해야 하나요?",
+      "hookTitle": "교정 시작 전 확인할 치아와 잇몸의 위험",
+      "intent": "치료 선택",
+      "answer": "교정에는 치아 뿌리가 짧아지는 변화나 잇몸 퇴축, 치료 후 치아가 다시 움직이는 위험이 있습니다. 내 치아·잇몸 상태에서 어떤 위험이 중요한지, 어떻게 관찰할지 치료 전에 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.leedsth.nhs.uk/services/orthodontic-dentistry/benefits-and-risks-of-orthodontic-dentistry/",
+          "title": "Benefits and risks of Orthodontic Dentistry"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "불안을 자극하지 않고 개인별 위험과 관찰 계획을 확인하도록 함."
+    },
+    {
+      "id": "A021",
+      "category": "caries",
+      "keyword": "치과 레진 치료 비용",
+      "question": "레진 치료 비용은 왜 치과마다 다른가요?",
+      "hookTitle": "레진 비용을 비교할 때 재료와 범위를 보세요",
+      "intent": "비용",
+      "answer": "비급여는 의료기관이 정한 금액이 적용될 수 있고, 충치의 크기·위치와 선택 재료도 치료 계획에 영향을 줍니다. 같은 치아와 치료 범위인지 확인한 뒤 급여 여부와 본인이 낼 금액을 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhis.or.kr/nbinfo/htmc_under.do",
+          "title": "비급여 이해하기"
+        },
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-filling-options",
+          "title": "Dental Filling Options"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "가격 차이를 재료와 치료 범위에 연결해 비교하도록 도움."
+    },
+    {
+      "id": "A022",
+      "category": "caries",
+      "keyword": "레진 인레이 차이",
+      "question": "레진과 인레이는 어떤 차이가 있나요?",
+      "hookTitle": "레진과 인레이, 만드는 방식부터 다릅니다",
+      "intent": "치료 선택",
+      "answer": "직접 레진 충전은 입안에서 재료를 채워 모양을 만들고, 인레이는 치아에 맞춘 수복물을 제작해 붙이는 방식입니다. 손상 범위와 남은 치아 상태를 살펴 어떤 방식이 적합한지 결정합니다.",
+      "answerSources": [
+        {
+          "url": "https://my.clevelandclinic.org/health/treatments/17002-dental-fillings",
+          "title": "Dental Fillings: Types, Materials & What They’re For"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치료 이름만으로 우열을 정하지 않고 적용 이유를 이해하도록 함."
+    },
+    {
+      "id": "A023",
+      "category": "caries",
+      "keyword": "안 아픈 충치",
+      "question": "이가 아프지 않아도 충치일 수 있나요?",
+      "hookTitle": "통증이 없어도 충치 검진이 필요한 이유",
+      "intent": "치료 선택",
+      "answer": "초기 충치는 증상이 없을 수 있어 통증 유무만으로 판단하기 어렵습니다. 검진에서 충치가 의심된다면 위치와 진행 정도를 확인하고 관찰 또는 치료가 필요한 이유를 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/conditions/tooth-decay/",
+          "title": "Tooth decay"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "통증이 없으면 충치가 없다는 오해를 줄이는 질문."
+    },
+    {
+      "id": "A024",
+      "category": "caries",
+      "keyword": "초기 충치 치료",
+      "question": "초기 충치는 꼭 깎아서 치료해야 하나요?",
+      "hookTitle": "초기 충치, 회복을 도울 수 있는 단계가 있습니다",
+      "intent": "치료 선택",
+      "answer": "표면에 구멍이 생기기 전의 초기 탈회는 불소와 위생·식습관 관리로 진행을 멈추거나 회복을 도울 수 있습니다. 이미 치아가 무너져 구멍이 생긴 경우와는 다르므로 현재 단계부터 확인해야 합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nidcr.nih.gov/health-info/dental-fillings",
+          "title": "Dental Fillings"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "비수복 관리가 가능한 초기 단계와 실제 와동을 구분."
+    },
+    {
+      "id": "A025",
+      "category": "caries",
+      "keyword": "충치 치료 재료",
+      "question": "충치 치료 재료는 비싼 것이 더 좋은가요?",
+      "hookTitle": "충치 재료 선택, 가격 외에 볼 기준",
+      "intent": "치료 선택",
+      "answer": "충전 재료는 충치의 크기와 위치, 씹는 힘, 외관과 비용 등을 함께 고려해 선택합니다. 한 재료가 모든 치아에 가장 좋은 것은 아니므로 내 치아에 권하는 이유를 물어보세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-filling-options",
+          "title": "Dental Filling Options"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "고가 재료를 모든 상황의 최선으로 해석하지 않도록 함."
+    },
+    {
+      "id": "A026",
+      "category": "caries",
+      "keyword": "레진 후 통증",
+      "question": "레진 치료 뒤 시리거나 씹을 때 아프면 어떻게 하나요?",
+      "hookTitle": "레진 후 시림과 씹는 통증, 확인할 차이",
+      "intent": "통증",
+      "answer": "충전 뒤 일시적으로 시릴 수 있지만 씹을 때 높게 닿거나 통증이 오래가면 다시 확인해야 합니다. 통증이 심해지거나 뜨겁고 찬 자극 뒤 오래 지속되면 치료한 치과에 문의하세요.",
+      "answerSources": [
+        {
+          "url": "https://my.clevelandclinic.org/health/treatments/17002-dental-fillings",
+          "title": "Dental Fillings: Types, Materials & What They’re For"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "회복 중 민감함을 모두 정상으로 단정하지 않도록 안내."
+    },
+    {
+      "id": "A027",
+      "category": "caries",
+      "keyword": "치과 레진 치료 후 식사",
+      "question": "레진 치료를 받고 바로 밥을 먹어도 되나요?",
+      "hookTitle": "레진 후 식사, 마취가 남아 있다면",
+      "intent": "회복·관리",
+      "answer": "마취가 남아 있으면 볼이나 혀를 깨물기 쉬우므로 감각이 돌아온 뒤 식사하는 편이 안전합니다. 사용한 재료와 치료 범위에 따른 식사 안내는 담당 치과에서 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://my.clevelandclinic.org/health/treatments/17002-dental-fillings",
+          "title": "Dental Fillings: Types, Materials & What They’re For"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "치료 직후 식사에서 마취와 재료별 안내를 구분."
+    },
+    {
+      "id": "A028",
+      "category": "caries",
+      "keyword": "치과 레진 수명",
+      "question": "레진이나 충전물은 언제 교체해야 하나요?",
+      "hookTitle": "오래된 충전물, 날짜만으로 교체할까요?",
+      "intent": "회복·관리",
+      "answer": "충전물은 영구적이지 않아 시간이 지나 수리나 교체가 필요할 수 있습니다. 일정 기간이 지났다는 이유만으로 스스로 판단하지 말고, 검진으로 충전물과 치아 상태를 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nidcr.nih.gov/health-info/dental-fillings",
+          "title": "Dental Fillings"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "수명을 단일 숫자로 보장하거나 일괄 교체하도록 유도하지 않음."
+    },
+    {
+      "id": "A029",
+      "category": "caries",
+      "keyword": "레진 떨어짐",
+      "question": "레진이 깨지거나 떨어지면 기다려도 되나요?",
+      "hookTitle": "충전물이 떨어졌을 때 치과에 알려야 할 것",
+      "intent": "회복·관리",
+      "answer": "충전물이 깨지거나 떨어졌다면 치과에 연락해 치아와 수복 상태를 확인받으세요. 심한 통증·얼굴 부종·발열이 함께 있으면 신속한 평가가 필요합니다.",
+      "answerSources": [
+        {
+          "url": "https://my.clevelandclinic.org/health/treatments/17002-dental-fillings",
+          "title": "Dental Fillings: Types, Materials & What They’re For"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "수복물 손상 뒤 진료 지연과 동반 증상 방치를 줄이는 질문."
+    },
+    {
+      "id": "A030",
+      "category": "caries",
+      "keyword": "충치 신경치료",
+      "question": "충치가 깊으면 레진 대신 신경치료가 필요한가요?",
+      "hookTitle": "깊은 충치, 치료가 달라지는 기준",
+      "intent": "치료 선택",
+      "answer": "충치가 치아 안쪽 치수까지 영향을 주면 단순 충전만으로 해결되지 않아 신경치료가 필요할 수 있습니다. 깊어 보인다는 설명만으로 결론을 내리기보다 검사 결과와 치수 상태를 함께 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/conditions/tooth-decay/",
+          "title": "Tooth decay"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "충전과 근관치료의 결정 기준이 통증이나 겉모양만이 아님을 안내."
+    },
+    {
+      "id": "A031",
+      "category": "endodontics",
+      "keyword": "신경치료 비용",
+      "question": "신경치료 견적에 크라운 비용도 포함되나요?",
+      "hookTitle": "신경치료 비용, 마지막 수복까지 확인하기",
+      "intent": "비용",
+      "answer": "신경치료 뒤에는 치아를 보호하는 충전이나 크라운 등 추가 수복이 필요할 수 있습니다. 처음 견적에 어디까지 포함되는지와 급여·비급여 항목을 구분해 설명받고 최종 본인부담을 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/root-canal-treatment/",
+          "title": "Root canal treatment"
+        },
+        {
+          "url": "https://www.nhis.or.kr/nbinfo/htmc_guide.do",
+          "title": "비급여 이용 가이드"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "근관치료와 최종 수복을 하나의 금액으로 오해하지 않도록 함."
+    },
+    {
+      "id": "A032",
+      "category": "endodontics",
+      "keyword": "신경치료 통증",
+      "question": "신경치료는 마취를 해도 많이 아픈가요?",
+      "hookTitle": "신경치료 중 통증, 참기 전에 알려주세요",
+      "intent": "통증",
+      "answer": "신경치료는 보통 국소마취로 통증을 조절하며, 치료 중 압박감이나 움직임은 느낄 수 있습니다. 날카로운 통증이 느껴지면 참지 말고 즉시 알려 마취와 치료 상태를 확인받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.aae.org/patients/root-canal-treatment/root-canal-pain/",
+          "title": "Root Canal Pain: What to Expect"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치료 공포를 완화하되 무통을 보장하지 않는 안내."
+    },
+    {
+      "id": "A033",
+      "category": "endodontics",
+      "keyword": "신경치료 횟수",
+      "question": "신경치료를 여러 번 나누어 받는 이유는 무엇인가요?",
+      "hookTitle": "신경치료 방문 횟수는 왜 달라질까요?",
+      "intent": "치료 과정",
+      "answer": "신경치료는 감염된 치수를 제거하고 치근관 내부를 정리·세척한 뒤 채워 밀봉하는 과정입니다. 여러 차례 방문하거나 중간에 임시 충전을 할 수 있으므로 내 치료 단계와 다음 방문 목적을 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/root-canal-treatment/",
+          "title": "Root canal treatment"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "방문 횟수를 과잉치료의 단독 지표로 보지 않도록 과정 설명."
+    },
+    {
+      "id": "A034",
+      "category": "endodontics",
+      "keyword": "신경치료 크라운",
+      "question": "신경치료 후에는 꼭 크라운을 해야 하나요?",
+      "hookTitle": "신경치료 후 크라운, 남은 치아를 살펴봅니다",
+      "intent": "치료 선택",
+      "answer": "신경치료 뒤에는 남은 치아를 보호하고 다시 오염되지 않게 최종 수복을 해야 합니다. 크라운이 필요한지는 치아 위치와 남은 구조에 따라 달라지므로 어떤 수복을 권하는지 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+          "title": "Root Canal Explained: Step-by-Step Treatment Guide"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "치료 종료를 근관 충전만으로 보지 않고 수복 계획을 확인."
+    },
+    {
+      "id": "A035",
+      "category": "endodontics",
+      "keyword": "신경치료 후 통증",
+      "question": "신경치료 후 씹을 때 아프면 실패한 건가요?",
+      "hookTitle": "신경치료 후 통증, 다시 연락할 신호",
+      "intent": "통증",
+      "answer": "치료 후 며칠간 주변이 예민하거나 뻐근할 수 있어 통증만으로 실패를 단정할 수 없습니다. 심한 통증이 지속되거나 붓기·높게 물리는 느낌·이전 증상의 재발이 있으면 치과에 바로 알리세요.",
+      "answerSources": [
+        {
+          "url": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+          "title": "Root Canal Post Treatment Care"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "일시적 불편과 재평가 신호를 구분하도록 도움."
+    },
+    {
+      "id": "A036",
+      "category": "endodontics",
+      "keyword": "신경치료 중단",
+      "question": "통증이 없어지면 신경치료를 중단해도 되나요?",
+      "hookTitle": "통증이 줄어도 신경치료를 마무리해야 하는 이유",
+      "intent": "치료 과정",
+      "answer": "통증이 줄어든 것과 치아 내부를 정리하고 밀봉하는 치료가 끝난 것은 다릅니다. 임시 충전 상태에서 임의로 중단하지 말고 예정된 치료와 후속 수복 일정을 담당 치과와 확인하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/root-canal-treatment/",
+          "title": "Root canal treatment"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "통증 호전만을 근거로 치료를 중단하는 행동을 예방."
+    },
+    {
+      "id": "A037",
+      "category": "endodontics",
+      "keyword": "신경치료 재치료",
+      "question": "예전에 신경치료한 치아가 다시 아프면 뽑아야 하나요?",
+      "hookTitle": "다시 아픈 신경치료 치아, 재치료 가능성부터",
+      "intent": "치료 선택",
+      "answer": "이전에 치료한 치아도 새 충치나 보철물 손상 등으로 다시 감염되거나 문제가 생길 수 있습니다. 상태에 따라 재신경치료 등 보존 방법이 가능하므로 발치 여부를 결정하기 전에 원인을 평가받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.aae.org/patients/root-canal-treatment/endodontic-treatment-options/endodontic-retreatment/",
+          "title": "Endodontic Retreatment"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "재발을 곧바로 발치 필요로 해석하지 않도록 선택지를 설명."
+    },
+    {
+      "id": "A038",
+      "category": "endodontics",
+      "keyword": "치통 항생제",
+      "question": "항생제만 먹으면 신경치료를 피할 수 있나요?",
+      "hookTitle": "치통의 항생제, 치과 치료를 대신할까요?",
+      "intent": "치료 선택",
+      "answer": "항생제가 모든 치통의 원인을 해결하지는 않으며 감염 부위에 대한 치과 치료가 필요할 수 있습니다. 발열 등 감염이 퍼진 신호와 전신 상태에 따라 처방이 달라지므로, 남은 약을 임의로 먹거나 처방약을 스스로 바꾸지 마세요.",
+      "answerSources": [
+        {
+          "url": "https://www.mouthhealthy.org/all-topics-a-z/antibiotics-for-pain-and-swelling",
+          "title": "Antibiotics for Pain and Swelling"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "항생제의 역할을 설명하고 자가 복용이나 치료 대체를 예방."
+    },
+    {
+      "id": "A039",
+      "category": "endodontics",
+      "keyword": "신경치료 후 식사",
+      "question": "신경치료 중인 치아로 음식을 씹어도 되나요?",
+      "hookTitle": "신경치료 중 식사, 임시 충전 치아를 보호하세요",
+      "intent": "회복·관리",
+      "answer": "최종 수복 전 치아는 보호가 필요하므로 그 치아로 딱딱한 음식을 씹거나 강하게 깨무는 것은 피하세요. 임시 충전이 빠졌거나 씹는 느낌이 달라졌다면 치과에 연락해 확인받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+          "title": "Root Canal Post Treatment Care"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "최종 수복 전 치아와 임시 충전물을 보호하는 관리 질문."
+    },
+    {
+      "id": "A040",
+      "category": "endodontics",
+      "keyword": "신경치료 발치",
+      "question": "신경치료로 살리는 것과 발치 중 무엇을 기준으로 결정하나요?",
+      "hookTitle": "신경치료와 발치, 내 치아의 보존 가능성 확인하기",
+      "intent": "치료 선택",
+      "answer": "신경치료는 감염된 내부 조직을 치료하면서 자연치아를 보존하는 방법이고, 발치는 치아를 제거하는 방법입니다. 남은 치아를 유지할 수 있는지와 발치 후 대체 치료의 필요성까지 포함해 각 선택의 이점과 한계를 설명받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-vs-extraction/",
+          "title": "Root Canal vs Extraction"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "보존 여부와 발치 후 치료를 함께 고려하도록 도움."
+    },
+    {
+      "id": "A041",
+      "category": "extraction",
+      "keyword": "사랑니 발치 가격",
+      "question": "사랑니 발치 비용은 왜 사람마다 다른가요?",
+      "hookTitle": "사랑니 발치 비용, 검사와 수술 범위 확인하기",
+      "intent": "비용",
+      "answer": "사랑니는 위치와 매복 상태에 따라 필요한 검사와 발치 방식이 달라질 수 있습니다. 진료비는 급여 본인부담과 비급여를 구분해 확인하고, 내 계획에 포함된 검사·수술 항목별 예상 비용을 치과에 물어보세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/",
+          "title": "Wisdom tooth removal"
+        },
+        {
+          "url": "https://www.nhis.or.kr/nbinfo/htmc_under.do",
+          "title": "비급여 이해하기"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "개별 수술 범위와 국내 진료비 구조를 구분해 안내."
+    },
+    {
+      "id": "A042",
+      "category": "extraction",
+      "keyword": "사랑니 꼭 뽑아야 하나요",
+      "question": "사랑니는 아프지 않아도 모두 뽑아야 하나요?",
+      "hookTitle": "사랑니 발치, 통증보다 먼저 확인할 상태",
+      "intent": "치료 선택",
+      "answer": "사랑니가 문제를 일으키지 않으면 정기 검진으로 관찰하는 경우도 있습니다. 통증뿐 아니라 충치·잇몸 염증·주변 치아와의 관계를 검사해 발치가 필요한지 결정합니다.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/",
+          "title": "Wisdom tooth removal"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "모든 사랑니의 예방적 발치를 일괄 권하지 않도록 함."
+    },
+    {
+      "id": "A043",
+      "category": "extraction",
+      "keyword": "사랑니 발치 통증",
+      "question": "사랑니를 뽑을 때 많이 아픈가요?",
+      "hookTitle": "사랑니 발치 전 마취 방법을 확인하세요",
+      "intent": "통증",
+      "answer": "대개 국소마취로 발치 부위의 통증을 조절하며, 어려운 발치나 불안이 큰 경우에는 추가적인 진정 방법을 검토할 수 있습니다. 어떤 마취를 사용하는지 미리 설명받고 치료 중 아프면 바로 알리세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/",
+          "title": "Wisdom tooth removal"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "마취를 통한 통증 조절을 설명하되 경험을 보장하지 않음."
+    },
+    {
+      "id": "A044",
+      "category": "extraction",
+      "keyword": "사랑니 붓기",
+      "question": "사랑니를 뽑은 뒤 얼굴이 붓는 것은 정상인가요?",
+      "hookTitle": "사랑니 발치 후 붓기, 좋아지는 흐름을 보세요",
+      "intent": "회복·관리",
+      "answer": "발치 뒤 붓기와 턱의 뻣뻣함은 생길 수 있고 초기 며칠 더 두드러질 수 있습니다. 붓기가 계속 심해지거나 발열·심한 통증이 동반되면 회복 과정이라고 넘기지 말고 치과에 연락하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhsinform.scot/tests-and-treatments/dental-treatments/wisdom-tooth-removal",
+          "title": "Wisdom tooth removal"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "초기 부종과 악화 신호를 구별하도록 도움."
+    },
+    {
+      "id": "A045",
+      "category": "extraction",
+      "keyword": "발치 후 피가 안 멈춤",
+      "question": "발치 후 피가 계속 나면 어떻게 해야 하나요?",
+      "hookTitle": "발치 후 출혈, 압박해도 멈추지 않을 때",
+      "intent": "응급",
+      "answer": "치과에서 안내한 대로 깨끗한 거즈로 발치 부위를 눌러 지혈하세요. 출혈이 많거나 압박해도 멈추지 않으면 즉시 치료한 치과 또는 응급진료를 받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/teeth-gums/wisdom-teeth",
+          "title": "Wisdom teeth"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "지속 출혈에서 자가 관찰만 이어가지 않도록 안전 행동을 안내."
+    },
+    {
+      "id": "A046",
+      "category": "extraction",
+      "keyword": "사랑니 발치 후 식사",
+      "question": "사랑니를 뽑은 뒤 무엇을 먹고 마셔야 하나요?",
+      "hookTitle": "발치 후 첫 식사, 상처를 자극하지 않게",
+      "intent": "회복·관리",
+      "answer": "처음에는 부드러운 음식을 발치 반대쪽으로 조심스럽게 씹으세요. 마취가 남아 있으면 볼·혀를 깨물지 않도록 주의하고, 뜨거운 음료와 딱딱한 음식은 피하세요.",
+      "answerSources": [
+        {
+          "url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/teeth-gums/wisdom-teeth",
+          "title": "Wisdom teeth"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "마취와 상처 회복을 고려한 초기 식사 방법을 설명."
+    },
+    {
+      "id": "A047",
+      "category": "extraction",
+      "keyword": "발치 후 흡연",
+      "question": "사랑니를 뽑은 뒤 담배를 피워도 되나요?",
+      "hookTitle": "발치 후 흡연을 피해야 하는 이유",
+      "intent": "회복·관리",
+      "answer": "회복 중 흡연은 감염이나 치유 지연, 드라이소켓 위험을 높일 수 있습니다. 흡연을 재개해도 되는 시간을 스스로 정하기보다 금연을 유지하고 치과의 수술 후 안내를 따르세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhsinform.scot/tests-and-treatments/dental-treatments/wisdom-tooth-removal",
+          "title": "Wisdom tooth removal"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "고정된 재흡연 허용 시간을 제시하지 않고 회복 위험을 안내."
+    },
+    {
+      "id": "A048",
+      "category": "extraction",
+      "keyword": "드라이소켓",
+      "question": "발치 며칠 뒤 통증이 더 심해지면 드라이소켓인가요?",
+      "hookTitle": "며칠 뒤 심해진 발치 통증, 다시 확인하세요",
+      "intent": "통증",
+      "answer": "발치 부위를 덮는 혈병이 제대로 유지되지 않으면 드라이소켓이 생겨 며칠 뒤 통증이 심해질 수 있습니다. 증상만으로 진단하지 말고 치과에서 원인을 확인받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.nhsinform.scot/tests-and-treatments/dental-treatments/wisdom-tooth-removal",
+          "title": "Wisdom tooth removal"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "지연성 통증을 자가 진단하거나 방치하지 않도록 도움."
+    },
+    {
+      "id": "A049",
+      "category": "extraction",
+      "keyword": "사랑니 발치 후 감각 이상",
+      "question": "사랑니 발치 후 입술이나 혀가 계속 저리면 어떻게 하나요?",
+      "hookTitle": "발치 후 감각이 돌아오지 않을 때 알릴 증상",
+      "intent": "회복·관리",
+      "answer": "사랑니 주변 신경이 영향을 받으면 입술·혀·턱에 저림이나 감각 저하가 생길 수 있습니다. 마취가 풀린 뒤에도 증상이 지속되면 수술한 치과에 알려 평가받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/teeth-gums/wisdom-teeth",
+          "title": "Wisdom teeth"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P1",
+      "priorityReason": "회복 기간을 단정하지 않고 신경 증상 보고와 평가를 안내."
+    },
+    {
+      "id": "A050",
+      "category": "extraction",
+      "keyword": "사랑니 발치 후 음주",
+      "question": "발치 후 바로 운동하거나 술을 마셔도 되나요?",
+      "hookTitle": "발치 당일 운동과 음주를 미루는 이유",
+      "intent": "회복·관리",
+      "answer": "발치 직후의 격한 운동과 음주는 상처를 보호하는 혈병과 회복에 영향을 줄 수 있어 피하는 것이 좋습니다. 다시 시작할 시점은 발치 난이도와 회복 상태에 따라 치과에서 안내받으세요.",
+      "answerSources": [
+        {
+          "url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/teeth-gums/wisdom-teeth",
+          "title": "Wisdom teeth"
+        }
+      ],
+      "clinicalReviewStatus": "pending",
+      "editorialPriority": "P2",
+      "priorityReason": "회복 초기 행동과 개인별 재개 시점 상담을 안내."
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.hira.or.kr/npay/index.do?WT.gnb=%EB%B9%84%EA%B8%89%EC%97%AC%EC%A7%84%EB%A3%8C%EB%B9%84%EC%A0%95%EB%B3%B4",
+      "title": "비급여 진료비용 정보",
+      "publisher": "건강보험심사평가원",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.cuh.nhs.uk/patient-information/dental-implants-in-restorative-dentistry/",
+      "title": "Dental implants in restorative dentistry",
+      "publisher": "Cambridge University Hospitals NHS Foundation Trust",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhis.or.kr/static/html/wbma/c/wbmac0221.html",
+      "title": "치과임플란트 급여안내",
+      "publisher": "국민건강보험공단",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.leedsth.nhs.uk/patients/resources/dental-implants/",
+      "title": "Dental Implants",
+      "publisher": "Leeds Teaching Hospitals NHS Trust",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/implants",
+      "title": "Implants",
+      "publisher": "American Dental Association",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.guysandstthomas.nhs.uk/health-information/dental-implants/after-having-dental-implant",
+      "title": "After having a dental implant",
+      "publisher": "Guy’s and St Thomas’ NHS Foundation Trust",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.betterhealth.vic.gov.au/health/conditionsandtreatments/orthodontic-treatment",
+      "title": "Orthodontic treatment",
+      "publisher": "Department of Health, State Government of Victoria",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhis.or.kr/nbinfo/htmc_guide.do",
+      "title": "비급여 이용 가이드",
+      "publisher": "국민건강보험공단",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://bos.org.uk/patients/treatments/orthodontics-for-adults/everything-you-need-to-know-before-having-your-teeth-straightened/",
+      "title": "Everything you need to know before having your teeth straightened",
+      "publisher": "British Orthodontic Society",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhs.uk/tests-and-treatments/braces-and-orthodontics/",
+      "title": "Braces and orthodontics",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.uhsussex.nhs.uk/services/oral-maxillofacial/orthodontics/",
+      "title": "Orthodontics",
+      "publisher": "University Hospitals Sussex NHS Foundation Trust",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.leedsth.nhs.uk/services/orthodontic-dentistry/benefits-and-risks-of-orthodontic-dentistry/",
+      "title": "Benefits and risks of Orthodontic Dentistry",
+      "publisher": "Leeds Teaching Hospitals NHS Trust",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhis.or.kr/nbinfo/htmc_under.do",
+      "title": "비급여 이해하기",
+      "publisher": "국민건강보험공단",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/dental-filling-options",
+      "title": "Dental Filling Options",
+      "publisher": "American Dental Association",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://my.clevelandclinic.org/health/treatments/17002-dental-fillings",
+      "title": "Dental Fillings: Types, Materials & What They’re For",
+      "publisher": "Cleveland Clinic",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhs.uk/conditions/tooth-decay/",
+      "title": "Tooth decay",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nidcr.nih.gov/health-info/dental-fillings",
+      "title": "Dental Fillings",
+      "publisher": "National Institute of Dental and Craniofacial Research, NIH",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhs.uk/tests-and-treatments/root-canal-treatment/",
+      "title": "Root canal treatment",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.aae.org/patients/root-canal-treatment/root-canal-pain/",
+      "title": "Root Canal Pain: What to Expect",
+      "publisher": "American Association of Endodontists",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-explained/",
+      "title": "Root Canal Explained: Step-by-Step Treatment Guide",
+      "publisher": "American Association of Endodontists",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.aae.org/patients/your-office-visit/post-treatment-care/",
+      "title": "Root Canal Post Treatment Care",
+      "publisher": "American Association of Endodontists",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.aae.org/patients/root-canal-treatment/endodontic-treatment-options/endodontic-retreatment/",
+      "title": "Endodontic Retreatment",
+      "publisher": "American Association of Endodontists",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.mouthhealthy.org/all-topics-a-z/antibiotics-for-pain-and-swelling",
+      "title": "Antibiotics for Pain and Swelling",
+      "publisher": "American Dental Association",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.aae.org/patients/root-canal-treatment/what-is-a-root-canal/root-canal-vs-extraction/",
+      "title": "Root Canal vs Extraction",
+      "publisher": "American Association of Endodontists",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhs.uk/tests-and-treatments/wisdom-tooth-removal/",
+      "title": "Wisdom tooth removal",
+      "publisher": "NHS",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.nhsinform.scot/tests-and-treatments/dental-treatments/wisdom-tooth-removal",
+      "title": "Wisdom tooth removal",
+      "publisher": "NHS inform",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    },
+    {
+      "url": "https://www.healthnz.govt.nz/health-topics/keeping-healthy/teeth-gums/wisdom-teeth",
+      "title": "Wisdom teeth",
+      "publisher": "Health New Zealand",
+      "checkedAt": "2026-10-31T21:06:48.763Z"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "manual_search_review",
+  "checkedAt": "2026-11-01T00:36:45.490936Z",
+  "scope": "의정부시 ㅈ~ㅎ 미조사 5곳 공식채널 검색. 소유자채널 미발견을 실제 부재로 단정하지 않으며 제3자 리뷰를 에셋으로 등록하지 않음.",
+  "records": [
+    {
+      "clinicId": "c-9e48aa718ce6",
+      "name": "정다운치과의원",
+      "checkedAt": "2026-11-01T00:36:45.490936Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "정다운치과의원 의정부 홈페이지 블로그",
+          "outcome": "기관명·호국로1115·전화031-876-2275 일치. 해당 제3자 페이지 홈페이지 필드는 등록 없음. 검색 결과에서 소유자 채널 href 미발굴. 이번 검색에서 미발견이며 실제 채널 부재를 뜻하지 않습니다. Naver 직접 요청 없음.",
+          "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/ganeung",
+          "sourceBodyStatus": "read",
+          "sourceType": "third_party_directory"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "clinicId": "c-45e3f9163c31",
+      "name": "정직을심는치과의원",
+      "checkedAt": "2026-11-01T00:36:45.490936Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "정직을심는치과의원 의정부 홈페이지 블로그",
+          "outcome": "기관명·평화로660 동진빌딩3층·전화031-841-0399 일치. 공식 홈페이지 href 미발굴. 가능동 비교목록 전화0507-1407-2893는 원자료와 직접 일치하지 않음. 이번 검색에서 미발견이며 실제 채널 부재를 뜻하지 않습니다. Naver 직접 요청 없음.",
+          "sourceUrl": "https://dentstat.com/clinic/uijeongbusi-jeongjikeulsimneunchigwauiweon",
+          "sourceBodyStatus": "read",
+          "sourceType": "third_party_directory"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "clinicId": "c-30245ccd2883",
+      "name": "조은이치과의원",
+      "checkedAt": "2026-11-01T00:36:45.490936Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "조은이치과의원 의정부 홈페이지 블로그",
+          "outcome": "기관명·호국로1137·전화031-875-4283 일치. 홈페이지 필드 등록 없음. 마포구·청주시 동명 치과 결과는 제외. 이번 검색에서 미발견이며 실제 채널 부재를 뜻하지 않습니다. Naver 직접 요청 없음.",
+          "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/ganeung",
+          "sourceBodyStatus": "read",
+          "sourceType": "third_party_directory"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "clinicId": "c-21f668506c4d",
+      "name": "행복한꿈드림치과의원",
+      "checkedAt": "2026-11-01T00:36:45.490936Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "행복한꿈드림치과의원 의정부 홈페이지 블로그",
+          "outcome": "기관명·신흥로353·전화031-873-7528 일치. 홈페이지 필드 등록 없음. 블로그리뷰는 소유자 채널로 채택하지 않음. 이번 검색에서 미발견이며 실제 채널 부재를 뜻하지 않습니다. Naver 직접 요청 없음.",
+          "sourceUrl": "https://local-dent.com/gyeonggi/uijeongbu/ganeung",
+          "sourceBodyStatus": "read",
+          "sourceType": "third_party_directory"
+        }
+      ],
+      "assets": []
+    },
+    {
+      "clinicId": "c-2ccaf0023311",
+      "name": "티엠디(TMD)치과의원",
+      "checkedAt": "2026-11-01T00:36:45.490936Z",
+      "researched": true,
+      "searches": [
+        {
+          "query": "티엠디(TMD)치과의원 의정부 홈페이지 블로그",
+          "outcome": "기관명·시민로80 센트럴타워13층·전화031-841-2875 대조. 원자료 1305호와 목록13층은 층 수준에서만 일치. 홈페이지 필드 등록 없음. 이번 검색에서 미발견이며 실제 채널 부재를 뜻하지 않습니다. Naver 직접 요청 없음.",
+          "sourceUrl": "https://dentalindexing.com/stations/gyeonggi/uijeongbusicheong",
+          "sourceBodyStatus": "read",
+          "sourceType": "third_party_directory"
+        }
+      ],
+      "assets": []
+    }
+  ]
+}

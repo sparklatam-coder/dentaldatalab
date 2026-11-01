@@ -1,0 +1,168 @@
+{
+  "checkedAt": "2026-10-31T22:13:58.029Z",
+  "status": "passed",
+  "sourceSha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc",
+  "profilePagesChecked": 19681,
+  "naverPrimaryHoursPages": 91,
+  "registeredFallbackPages": 19590,
+  "coverage": {
+    "total": 19681,
+    "byStage": {
+      "hours_available": 91,
+      "hours_missing": 1,
+      "identity_review": 0,
+      "access_failed": 0,
+      "place_ready": 17586,
+      "place_discovery": 2003
+    },
+    "naverHoursAvailable": 91,
+    "pending": 19590
+  },
+  "assets": {
+    "total": 19681,
+    "byType": {
+      "치과병원": 248,
+      "치과의원": 19433
+    },
+    "registeredWebsiteFields": 1718,
+    "validRegisteredUrls": 1596,
+    "withAssets": 17924,
+    "withoutAssets": 1757,
+    "manuallyResearched": 107,
+    "assetCount": 20512,
+    "byKind": {
+      "website": 1569,
+      "naverMap": 17706,
+      "naverBlog": 480,
+      "blog": 13,
+      "youtube": 93,
+      "instagram": 149,
+      "facebook": 68,
+      "kakaoChannel": 228,
+      "kakaoMap": 19,
+      "googleMap": 2,
+      "booking": 116,
+      "linkHub": 0,
+      "other": 69
+    },
+    "byOwnership": {
+      "official": 100,
+      "linked": 108,
+      "registered": 685,
+      "candidate": 19599,
+      "third_party": 20
+    },
+    "naverInspected": 105,
+    "naverRead": 92,
+    "naverMatched": 92,
+    "naverWithFields": 92,
+    "naverFieldCoverage": {
+      "address": 92,
+      "phone": 91,
+      "hours": 91,
+      "website": 62,
+      "amenities": 82,
+      "parking": 71
+    },
+    "homepageUrlsChecked": 1518,
+    "homepageHtmlRead": 852,
+    "generatedAt": "2026-10-31T22:13:21.787Z",
+    "snapshotDate": "2026-09-30"
+  },
+  "directory": {
+    "regionLinksObserved": 232,
+    "regionPagesAttempted": 232,
+    "requestStatuses": {
+      "read": 233
+    },
+    "directoryRowsObserved": 19729,
+    "uniquePlaceIdsObserved": 19687,
+    "candidateInstitutions": 17667,
+    "byProvince": {
+      "강원": 413,
+      "경기": 4615,
+      "경남": 905,
+      "경북": 653,
+      "대구": 939,
+      "대전": 545,
+      "부산": 1275,
+      "서울": 4027,
+      "세종": 93,
+      "울산": 366,
+      "인천": 970,
+      "전남광주": 1101,
+      "전북": 537,
+      "제주": 239,
+      "충남": 607,
+      "충북": 382
+    }
+  },
+  "pendingRows": 19590,
+  "cityCount": 258,
+  "http": [
+    {
+      "path": "/clinic-assets/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 26833
+    },
+    {
+      "path": "/data/clinic-assets/naver-hours-coverage.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 14186270
+    },
+    {
+      "path": "/data/clinic-assets/naver-hours-pending.jsonl",
+      "status": 200,
+      "contentType": "application/octet-stream",
+      "noindex": "noindex, nofollow",
+      "bytes": 14007737
+    },
+    {
+      "path": "/data/clinic-assets/naver-directory-discovery.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 8848057
+    },
+    {
+      "path": "/data/clinic-assets/summary.json",
+      "status": 200,
+      "contentType": "application/json; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 1038
+    },
+    {
+      "path": "/clinics/c-00e964567fee/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 46334
+    },
+    {
+      "path": "/clinics/c-01e9787eaf94/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 41986
+    },
+    {
+      "path": "/clinics/c-000029b3fb02/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 31799
+    },
+    {
+      "path": "/clinics/c-00041fd9e8b2/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "noindex": "noindex, nofollow",
+      "bytes": 32287
+    }
+  ],
+  "visualCheck": "이 변경은 HTML·전체 기관 상태·브라우저 코드 회귀로 검증. 동시 브라우저 작업으로 신규 화면 시각 검사는 미실시."
+}

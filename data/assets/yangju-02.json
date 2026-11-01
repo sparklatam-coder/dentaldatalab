@@ -1,0 +1,2046 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-31T21:30:11Z",
+  "scope": {
+    "region": "경기도 양주시",
+    "sourceRecordFile": "data/research/yangju-02.json",
+    "clinicCount": 23,
+    "method": "공개 웹 검색, 기관 홈페이지 본문·실제 외부 링크, 제3자 디렉터리의 이름·주소 대조, 네이버 지도 URL 직접 열람. 본문 접근 실패는 우회하지 않고 기록.",
+    "limitations": [
+      "공식 홈페이지의 외부 링크 확인은 대상 채널 본문 확인과 다르다.",
+      "candidate는 기관 동일성 또는 운영주체가 미확정인 발견 URL이다.",
+      "naverPlaceObservations의 빈 fields는 해당 네이버 본문 수집 실패이며 정보 부재를 뜻하지 않는다.",
+      "미발굴은 이번 공개 검색 범위에서 발견하지 못했다는 뜻이다. 전체 채널을 빠짐없이 확인했다는 뜻이 아니다.",
+      "리뷰 작성자·개인 후기·환자 사진과 이미지 파일은 수집·재배포하지 않았다."
+    ]
+  },
+  "records": [
+    {
+      "clinicId": "c-f8b41f196f7e",
+      "name": "서울송추치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울송추치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울송추치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/13236065",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "서울송추치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "https://ssjdent.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://ssjdent.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://ssjdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울송추치과의원",
+              "sourceUrl": "https://ssjdent.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-829-2876",
+              "sourceUrl": "https://ssjdent.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/ssjdent",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://ssjdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 연결 URL",
+              "sourceUrl": "https://ssjdent.com/"
+            }
+          ],
+          "notes": "공식 홈페이지의 블로그 버튼(data-ep-wrapper-link)에 연결된 URL. 대상은 web 도구 접근 실패로 본문 미확인."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://naver.me/Fw7quqsK",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://ssjdent.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 지도 연결 URL",
+              "sourceUrl": "https://ssjdent.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236065",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-22fda844c356",
+      "name": "서울수려한치과병원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울수려한치과병원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울수려한치과병원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1529488632",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "서울수려한치과병원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "https://www.sooryehandental.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://www.sooryehandental.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울수려한치과병원",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-928-5098",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/srhdent02",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 연결 URL",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1529488632",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 지도 연결 URL",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "googleMap",
+          "label": "구글 지도",
+          "url": "https://www.google.com/maps/place/서울수려한치과병원/data=!4m2!3m1!1s0x0:0x2365115b5cd0fc4d",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "구글 지도 연결 URL",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/1076752",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 예약 연결 URL",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "youtube",
+          "label": "유튜브 채널",
+          "url": "https://www.youtube.com/channel/UCvXwRVYNZW6815p-otVv1ew",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "유튜브 채널 연결 URL",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "instagram",
+          "label": "인스타그램",
+          "url": "https://www.instagram.com/srh_dental/",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "인스타그램 연결 URL",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오톡 채널",
+          "url": "https://pf.kakao.com/_sSJGn",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://www.sooryehandental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "카카오톡 채널 연결 URL",
+              "sourceUrl": "https://www.sooryehandental.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1529488632",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-fd2732bdd99d",
+      "name": "서울수치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울수치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울수치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/13180284",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "서울수치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "https://seoulsoodentalclinic.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://seoulsoodentalclinic.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://seoulsoodentalclinic.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울수치과의원",
+              "sourceUrl": "https://seoulsoodentalclinic.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-848-2828",
+              "sourceUrl": "https://seoulsoodentalclinic.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://m.booking.naver.com/booking/13/bizes/1064348?theme=place&service-target=map-pc&lang=ko&area=pll",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://seoulsoodentalclinic.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 예약 연결 URL",
+              "sourceUrl": "https://seoulsoodentalclinic.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/bimplant",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://seoulsoodentalclinic.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 연결 URL",
+              "sourceUrl": "https://seoulsoodentalclinic.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오톡 채널",
+          "url": "https://pf.kakao.com/_xdgGxgG",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://seoulsoodentalclinic.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "카카오톡 채널 연결 URL",
+              "sourceUrl": "https://seoulsoodentalclinic.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://naver.me/xq3tSVnX",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://seoulsoodentalclinic.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 지도 연결 URL",
+              "sourceUrl": "https://seoulsoodentalclinic.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "kakaoMap",
+          "label": "카카오 지도",
+          "url": "https://map.kakao.com/?map_type=TYPE_MAP&map_attribute=ROADVIEW&itemId=10504720&q=%EC%84%9C%EC%9A%B8%EC%88%98%EC%B9%98%EA%B3%BC%EC%9D%98%EC%9B%90&tab=place&page=2&urlLevel=1&urlX=523148&urlY=1193563",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://seoulsoodentalclinic.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "카카오 지도 연결 URL",
+              "sourceUrl": "https://seoulsoodentalclinic.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13180284",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3993510b47f4",
+      "name": "서울아임치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울아임치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울아임치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1009965126",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"서울아임치과\" 양주 블로그 홈페이지",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1009965126",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울아임치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로4길 4 K타워 4층 401호, 402호, 403호, 404호",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1009965126",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-eff3f4509c95",
+      "name": "서울온맘치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울온맘치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울온맘치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1613774009",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"서울온맘치과\" 양주 블로그 카카오",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1613774009",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울온맘치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 140 진산메디프라자 3층",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그 후보",
+          "url": "https://blog.naver.com/onmaeumdental",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울온맘치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 140 진산메디프라자 3층",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "동일 이름·주소의 제3자 디렉터리 홈페이지 항목에서 발견했다. 기관의 공식 소유 또는 직접 운영 여부는 확인하지 못했고 대상 본문도 접근 실패했다. 제3자 후기를 기관 블로그로 분류한 것이 아니다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1613774009",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-17941b76d0b8",
+      "name": "서울올곧은치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울올곧은치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울올곧은치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1588554072",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "서울올곧은치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "https://www.seoulstraight.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://www.seoulstraight.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://www.seoulstraight.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울올곧은치과의원",
+              "sourceUrl": "https://www.seoulstraight.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-872-2228",
+              "sourceUrl": "https://www.seoulstraight.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/seoulstraight",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://www.seoulstraight.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 연결 URL",
+              "sourceUrl": "https://www.seoulstraight.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도·예약",
+          "url": "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%EC%98%AC%EA%B3%A7%EC%9D%80%EC%B9%98%EA%B3%BC/place/1588554072?c=15.00,0,0,0,dh&placePath=%2Fbooking%3FbookingRedirectUrl%3Dhttps%25253A%25252F%25252Fm.booking.naver.com%25252Fbooking%25252F13%25252Fbizes%25252F1419038%25253Ftheme%25253Dplace%252526service-target%25253Dmap-pc%252526entry%25253Dpll%252526lang%25253Dko%26entry%3Dpll",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://www.seoulstraight.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 지도·예약 연결 URL",
+              "sourceUrl": "https://www.seoulstraight.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1588554072",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-68a9fd6d807e",
+      "name": "서울좋은치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울좋은치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울좋은치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/31996021",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"서울좋은치과\" 양주 삼숭 블로그",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/31996021",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울좋은치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 삼숭로38번길 80 3층 2304호",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/31996021",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e8a792f4a666",
+      "name": "서울치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "서울치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "서울치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/18076713",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"서울치과\" 양주 \"031-864-2845\"",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/18076713",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회정로 135",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/18076713",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-6b7c24eea93a",
+      "name": "세브란스에스치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "세브란스에스치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "세브란스에스치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1201891139",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"세브란스에스치과\" 블로그 인스타그램 홈페이지",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1201891139",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "세브란스에스치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 226 제일타워 4층 401,402호",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1201891139",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-4464eef9846c",
+      "name": "스마일치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "스마일치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "스마일치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/32721176",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"스마일치과\" 양주 \"고읍남로\" 블로그",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/32721176",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "스마일치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 고읍남로 18 가보프라자",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/32721176",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-0ec29ac7c301",
+      "name": "아름다운내일치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "아름다운내일치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "아름다운내일치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/13236062",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"아름다운내일치과\" 홈페이지 블로그",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/13236062",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "아름다운내일치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회정로 134 두리테크 덕정타운",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236062",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-d67e31fb64ff",
+      "name": "아이보듬소아치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "아이보듬소아치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "아이보듬소아치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1163500721",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "아이보듬소아치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "http://www.kidshugdc.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "http://www.kidshugdc.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "http://www.kidshugdc.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "아이보듬소아치과의원",
+              "sourceUrl": "http://www.kidshugdc.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-857-7975",
+              "sourceUrl": "http://www.kidshugdc.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/kidshug_dc",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "http://www.kidshugdc.com/",
+            "http://www.kidshugdc.com/page.asp?m=naver_blog"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 버튼의 HTTP 302 Location",
+              "sourceUrl": "http://www.kidshugdc.com/page.asp?m=naver_blog"
+            }
+          ],
+          "notes": "공식 홈페이지의 실제 상대 링크를 열어 HTTP 302 Location으로 대상 URL을 확인했다. 대상 서비스 본문은 미확인이며 블로그는 web 도구에서 접근 실패했다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://naver.me/5FZ9VqTz",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "http://www.kidshugdc.com/",
+            "http://www.kidshugdc.com/page.asp?m=naver_map"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 지도 버튼의 HTTP 302 Location",
+              "sourceUrl": "http://www.kidshugdc.com/page.asp?m=naver_map"
+            }
+          ],
+          "notes": "공식 홈페이지의 실제 상대 링크를 열어 HTTP 302 Location으로 대상 URL을 확인했다. 대상 서비스 본문은 미확인이다."
+        },
+        {
+          "kind": "googleMap",
+          "label": "구글 지도",
+          "url": "https://goo.gl/maps/ATTju4Ui5K9fdk9N7",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "http://www.kidshugdc.com/",
+            "http://www.kidshugdc.com/page.asp?m=google_map"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "구글 지도 버튼의 HTTP 302 Location",
+              "sourceUrl": "http://www.kidshugdc.com/page.asp?m=google_map"
+            }
+          ],
+          "notes": "공식 홈페이지의 실제 상대 링크를 열어 HTTP 302 Location으로 대상 URL을 확인했다. 대상 서비스 본문은 미확인이다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/885367",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "http://www.kidshugdc.com/",
+            "http://www.kidshugdc.com/page.asp?m=naver_reservation"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 예약 버튼의 HTTP 302 Location",
+              "sourceUrl": "http://www.kidshugdc.com/page.asp?m=naver_reservation"
+            }
+          ],
+          "notes": "공식 홈페이지의 실제 상대 링크를 열어 HTTP 302 Location으로 대상 URL을 확인했다. 대상 서비스 본문은 미확인이다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1163500721",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c53d79741667",
+      "name": "양주베스트치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "양주베스트치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "양주베스트치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1874272754",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"양주베스트치과\" 홈페이지 블로그",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1874272754",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "양주베스트치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회정로 107",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1874272754",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c937bc56dc57",
+      "name": "양주아이온소아치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "양주아이온소아치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "양주아이온소아치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/2002064332",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"양주아이온소아치과\" 블로그 홈페이지",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/2002064332",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "양주아이온소아치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 덕계로 148 한강프라자 4층 401호",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/2002064332",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e555e89c70c8",
+      "name": "양주이지치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "양주이지치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "양주이지치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1845344263",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "양주이지치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "https://xn--vb0b497bokb14bb2av5r.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://xn--vb0b497bokb14bb2av5r.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://xn--vb0b497bokb14bb2av5r.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "양주이지치과의원",
+              "sourceUrl": "https://xn--vb0b497bokb14bb2av5r.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2275",
+              "sourceUrl": "https://xn--vb0b497bokb14bb2av5r.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://m.booking.naver.com/booking/13/bizes/1243920?theme=place&area=pll",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://xn--vb0b497bokb14bb2av5r.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 예약 연결 URL",
+              "sourceUrl": "https://xn--vb0b497bokb14bb2av5r.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오톡 채널",
+          "url": "https://pf.kakao.com/_jardX",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://xn--vb0b497bokb14bb2av5r.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "카카오톡 채널 연결 URL",
+              "sourceUrl": "https://xn--vb0b497bokb14bb2av5r.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/ezdentalclinic",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://xn--vb0b497bokb14bb2av5r.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 연결 URL",
+              "sourceUrl": "https://xn--vb0b497bokb14bb2av5r.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1845344263?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.0530529&lat=37.8188888&c=15.00,0,0,0,dh",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://xn--vb0b497bokb14bb2av5r.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 지도 연결 URL",
+              "sourceUrl": "https://xn--vb0b497bokb14bb2av5r.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1845344263",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-fcd4969ba92c",
+      "name": "연세365치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세365치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세365치과의원 네이버 지도 본문 열람",
+          "url": "https://m.place.naver.com/hospital/1149916618",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "연세365치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "https://yonsei365dental.kr/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://yonsei365dental.kr/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://yonsei365dental.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세365치과의원",
+              "sourceUrl": "https://yonsei365dental.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-868-2275",
+              "sourceUrl": "https://yonsei365dental.kr/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://m.booking.naver.com/booking/13/bizes/675482",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://yonsei365dental.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 예약 연결 URL",
+              "sourceUrl": "https://yonsei365dental.kr/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 플레이스",
+          "url": "https://m.place.naver.com/hospital/1149916618",
+          "ownership": "linked",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://yonsei365dental.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 플레이스 연결 URL",
+              "sourceUrl": "https://yonsei365dental.kr/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://m.place.naver.com/hospital/1149916618",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-9363219ea471",
+      "name": "연세가온치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세가온치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세가온치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1950754624",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"연세가온치과\" 양주 블로그 인스타그램",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1950754624",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세가온치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 208 선양프라자 6층 603, 604, 605호 연세가온치과",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오톡 채널 후보",
+          "url": "https://pf.kakao.com/_ZKTxhG",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://pf.kakao.com/_ZKTxhG",
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세가온치과의원",
+              "sourceUrl": "https://pf.kakao.com/_ZKTxhG"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 208 선양프라자 6층 603, 604, 605호 연세가온치과",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "공개 검색에서 발견. 카카오 응답의 제목·메타데이터는 연세가온치과의원이며 구조화 메타데이터에 official 표시가 있다. 다만 동적 본문의 전화·주소를 직접 읽지 못해 이 기관과의 최종 일치 및 채널 본문 확인을 완료하지 않은 후보로 둔다. 주소 근거는 별도 디렉터리다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1950754624",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-bb2283279949",
+      "name": "연세리더스치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세리더스치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세리더스치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1256775236",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"연세리더스치과\" 양주 \"옥정동로4길\" 블로그",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1256775236",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세리더스치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정동로4길 3 이레프라자 301호",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1256775236",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-05f0f9d82ad8",
+      "name": "연세林(림)치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세林(림)치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세林(림)치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/20149931",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"연세림치과\" 양주 블로그 홈페이지",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        },
+        {
+          "query": "연세林(림)치과의원 기존 등록 홈페이지 접근",
+          "url": "http://www.yonseilim.com",
+          "outcome": "공개 요청 DNS 오류로 현재 홈페이지 본문 확인 실패. 이 등록 URL은 확인된 자산으로 추가하지 않았다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/20149931",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세림치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 고읍남로 6 4층 연세림치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        },
+        {
+          "kind": "instagram",
+          "label": "인스타그램 후보",
+          "url": "https://www.instagram.com/yslimdc",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://dentalindexing.com/gyeonggi/yangju/gwangsa"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세림치과의원",
+              "sourceUrl": "https://dentalindexing.com/gyeonggi/yangju/gwangsa"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 고읍남로 6 4층 연세림치과의원",
+              "sourceUrl": "https://dentalindexing.com/gyeonggi/yangju/gwangsa"
+            }
+          ],
+          "notes": "동일 이름·주소의 제3자 디렉터리 홈페이지 항목에서 발견했다. 인스타그램 직접 열람은 도구의 Online fetch throttled 오류로 실패해 계정의 운영주체·본문을 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/20149931",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-5c08c2bb08c3",
+      "name": "연세미치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세미치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세미치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/13236424",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"연세미치과\" 양주 \"031-857-3200\"",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/13236424",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세미치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회정로 132 파르코프라자 301호",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/13236424",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3b189ea451e8",
+      "name": "연세세브란스치과의원 양주",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세세브란스치과의원 양주 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세세브란스치과의원 양주 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/2067807343?placePath=/home",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "연세세브란스치과의원 양주 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "https://yonsevyj.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://yonsevyj.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://yonsevyj.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세세브란스치과의원 양주",
+              "sourceUrl": "https://yonsevyj.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-2267",
+              "sourceUrl": "https://yonsevyj.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://m.booking.naver.com/booking/16/bizes/1723180",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://yonsevyj.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 예약 연결 URL",
+              "sourceUrl": "https://yonsevyj.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/yonsevyj26",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://yonsevyj.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 연결 URL",
+              "sourceUrl": "https://yonsevyj.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "instagram",
+          "label": "인스타그램",
+          "url": "https://www.instagram.com/yonsevyj/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://yonsevyj.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "인스타그램 연결 URL",
+              "sourceUrl": "https://yonsevyj.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://naver.me/5dhQXmd3",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://yonsevyj.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 지도 연결 URL",
+              "sourceUrl": "https://yonsevyj.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "blog",
+          "label": "홈페이지 의료진 칼럼",
+          "url": "https://yonsevyj.com/column/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://yonsevyj.com/",
+            "https://yonsevyj.com/column/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세세브란스치과 양주",
+              "sourceUrl": "https://yonsevyj.com/column/"
+            },
+            {
+              "field": "officialLink",
+              "value": "의료진 칼럼 메뉴",
+              "sourceUrl": "https://yonsevyj.com/"
+            }
+          ],
+          "notes": "대표전화가 일치하는 공식 홈페이지의 의료진 칼럼 메뉴로 연결되며, 동일 도메인의 칼럼 목록 본문과 기관명을 확인했다. 게시글 전문이나 의료광고 문구는 복제하지 않았다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/2067807343?placePath=/home",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-1dab1bc951f5",
+      "name": "연세센터원치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세센터원치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세센터원치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1794363728",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "연세센터원치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "http://www.yscenter1.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "http://www.yscenter1.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "http://www.yscenter1.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세센터원치과의원",
+              "sourceUrl": "http://www.yscenter1.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-861-2119",
+              "sourceUrl": "http://www.yscenter1.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1794363728",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세센터원치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 회천남로 92 센타프라자 5층",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/yscenterone",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "http://www.yscenter1.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "네이버 블로그 연결 URL",
+              "sourceUrl": "http://www.yscenter1.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "youtube",
+          "label": "유튜브 채널: 교정맛집양주연세센터",
+          "url": "https://www.youtube.com/@교정맛집양주연세센터",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "http://www.yscenter1.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "유튜브 채널: 교정맛집양주연세센터 연결 URL",
+              "sourceUrl": "http://www.yscenter1.com/"
+            }
+          ],
+          "notes": "기관명·대표전화가 일치한 공식 홈페이지에서 연결한 URL이다. 대상 서비스의 기관 정보 본문은 별도 확인하지 못했다."
+        },
+        {
+          "kind": "youtube",
+          "label": "유튜브 채널: 홈페이지 추가 링크",
+          "url": "https://www.youtube.com/@user-sz7yh2zo8y",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "http://www.yscenter1.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "유튜브 채널: 홈페이지 추가 링크 연결 URL",
+              "sourceUrl": "http://www.yscenter1.com/"
+            }
+          ],
+          "notes": "공식 홈페이지에서 별도로 발견한 유튜브 핸들 URL. 다른 유튜브 링크와 동일 채널인지 또는 별도 채널인지는 확인하지 않았다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1794363728",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-2e60c349b067",
+      "name": "연세쉼표치과의원",
+      "checkedAt": "2026-10-31T21:30:11Z",
+      "searches": [
+        {
+          "query": "연세쉼표치과의원 지도 링크와 주소 대조",
+          "url": "https://local-dent.com/gyeonggi/yangju",
+          "outcome": "제3자 디렉터리에서 이름·양주시 주소가 해당 원자료 기관과 맞는 네이버 지도 링크를 발견했다. 디렉터리의 순위·후기·진료시간은 수집하지 않았다."
+        },
+        {
+          "query": "연세쉼표치과의원 네이버 지도 본문 열람",
+          "url": "https://map.naver.com/p/entry/place/1905328741",
+          "outcome": "접근 실패: web 도구가 not accessible via this tool을 반환했다. 공개 사업정보 필드 미수집."
+        },
+        {
+          "query": "\"연세쉼표치과\" 블로그 인스타그램",
+          "outcome": "공개 웹 검색을 수행했다. 기관으로 연결할 근거가 있는 발견 URL만 아래에 기록했으며, 나머지 홈페이지·일반 블로그·SNS는 이번 검색 범위에서 추가 미발굴이다. 미발굴은 채널 부재를 뜻하지 않는다."
+        },
+        {
+          "query": "연세쉼표치과의원 홈페이지 본문 및 외부 채널 링크 확인",
+          "url": "http://www.commadental.com/",
+          "outcome": "공개 홈페이지 HTTP 200 본문에서 기관명·전화번호를 원자료와 대조했다. 링크 대상 본문 열람 여부는 자산별로 별도 기록했다."
+        },
+        {
+          "query": "연세쉼표치과 홈페이지 블로그·카카오 버튼 확인",
+          "url": "http://www.commadental.com/",
+          "outcome": "네이버 블로그 및 카카오 버튼은 준비 중 알림만 있는 #none 링크였다. 실제 계정 URL로 취급하지 않았다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "http://www.commadental.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "http://www.commadental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세쉼표치과의원",
+              "sourceUrl": "http://www.commadental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-857-9069",
+              "sourceUrl": "http://www.commadental.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문에서 기관명 및 원자료와 일치하는 대표전화 확인. 홈페이지의 자체 안내이며 실제 영업·예약 가능 여부를 실시간 검증한 것은 아니다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 지도",
+          "url": "https://map.naver.com/p/entry/place/1905328741",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "evidenceUrls": [
+            "https://local-dent.com/gyeonggi/yangju"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세쉼표치과의원",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            },
+            {
+              "field": "address",
+              "value": "경기 양주시 옥정로 214 pop타워 5층",
+              "sourceUrl": "https://local-dent.com/gyeonggi/yangju"
+            }
+          ],
+          "notes": "제3자 디렉터리의 해당 기관 행에서 발견한 링크. 이름·주소는 원자료와 대조했으나 네이버 플레이스 본문과 운영주체는 확인하지 못했다."
+        }
+      ],
+      "naverPlaceObservations": [
+        {
+          "sourceUrl": "https://map.naver.com/p/entry/place/1905328741",
+          "checkedAt": "2026-10-31T21:30:11Z",
+          "bodyStatus": "blocked",
+          "fields": {},
+          "notes": "공개 URL을 web 도구로 직접 열었으나 \"not accessible via this tool\"로 본문을 받지 못했다. 원인(사이트 차단·도구 제한 등)은 확정하지 않았다. 전화번호·주소·운영시간·홈페이지·SNS를 네이버 본문 확인값으로 수집하지 않았으며 다른 출처의 값으로 대체하지 않았다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T09:18:40+09:00",
+  "sourceType": "manual_homepage_review",
+  "scope": "의정부 개별 홈페이지 본문 대조. 링크 대상 본문은 미확인.",
+  "records": [
+    {
+      "clinicId": "c-4a18b75dae57",
+      "name": "청담i(아이)치과의원",
+      "checkedAt": "2026-11-01T09:18:40+09:00",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "홈페이지",
+          "url": "https://cdios.co.kr/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:18:40+09:00",
+          "evidenceUrls": [
+            "https://cdios.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "청담i(아이)치과의원",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-837-1111",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 신흥로 240번길 21, 가연타워 3층, 4층",
+              "sourceUrl": "https://cdios.co.kr/"
+            }
+          ],
+          "notes": "홈페이지 본문의 기관명과 전화번호를 공공 원자료와 대조했습니다. 주소 표기는 원문 그대로 기록했습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_review",
+              "checkedAt": "2026-11-01T09:18:40+09:00",
+              "bodySha256": "bfa5ad7d4c1e342fa645baf91d5175df371bde761e3f6d0edc91035915483ac8",
+              "sourceUrl": "https://cdios.co.kr/"
+            }
+          ]
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오 상담",
+          "url": "https://pf.kakao.com/_dPkCl",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:40+09:00",
+          "evidenceUrls": [
+            "https://cdios.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "청담i(아이)치과의원",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-837-1111",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 신흥로 240번길 21, 가연타워 3층, 4층",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "확인된 기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://cdios.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 직접 연결된 주소. 대상 페이지 내용은 읽지 않았습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://cdios.co.kr/",
+              "checkedAt": "2026-11-01T09:18:40+09:00",
+              "bodySha256": "bfa5ad7d4c1e342fa645baf91d5175df371bde761e3f6d0edc91035915483ac8"
+            }
+          ]
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://m.booking.naver.com/booking/13/bizes/285198",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:40+09:00",
+          "evidenceUrls": [
+            "https://cdios.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "청담i(아이)치과의원",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-837-1111",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 신흥로 240번길 21, 가연타워 3층, 4층",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "확인된 기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://cdios.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 직접 연결된 주소. 대상 페이지 내용은 읽지 않았습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://cdios.co.kr/",
+              "checkedAt": "2026-11-01T09:18:40+09:00",
+              "bodySha256": "bfa5ad7d4c1e342fa645baf91d5175df371bde761e3f6d0edc91035915483ac8"
+            }
+          ]
+        },
+        {
+          "kind": "other",
+          "label": "네이버 톡톡",
+          "url": "https://talk.naver.com/ct/wc4fz9",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:40+09:00",
+          "evidenceUrls": [
+            "https://cdios.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "청담i(아이)치과의원",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-837-1111",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 신흥로 240번길 21, 가연타워 3층, 4층",
+              "sourceUrl": "https://cdios.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "확인된 기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://cdios.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 직접 연결된 주소. 대상 페이지 내용은 읽지 않았습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://cdios.co.kr/",
+              "checkedAt": "2026-11-01T09:18:40+09:00",
+              "bodySha256": "bfa5ad7d4c1e342fa645baf91d5175df371bde761e3f6d0edc91035915483ac8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clinicId": "c-bcbf63e011b1",
+      "name": "중앙수치과의원",
+      "checkedAt": "2026-11-01T09:18:40+09:00",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "홈페이지",
+          "url": "http://www.soo-dental.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:18:40+09:00",
+          "evidenceUrls": [
+            "http://www.soo-dental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "중앙수치과의원",
+              "sourceUrl": "http://www.soo-dental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-848-4288",
+              "sourceUrl": "http://www.soo-dental.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 의정부동 180-4 매성빌딩 2층",
+              "sourceUrl": "http://www.soo-dental.com/"
+            }
+          ],
+          "notes": "홈페이지 본문의 기관명과 전화번호를 공공 원자료와 대조했습니다. 주소 표기는 원문 그대로 기록했습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_review",
+              "checkedAt": "2026-11-01T09:18:40+09:00",
+              "bodySha256": "d49c2910112f4596c67f0d77e273d8ecefc5dbf07ac93ae5235b2f35a98c5f45",
+              "sourceUrl": "http://www.soo-dental.com/"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c497e299e801",
+      "name": "행복치과의원",
+      "checkedAt": "2026-11-01T09:18:40+09:00",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "홈페이지",
+          "url": "http://www.hdcdental.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:18:40+09:00",
+          "evidenceUrls": [
+            "http://www.hdcdental.com/landing/index.jsp"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "행복치과의원",
+              "sourceUrl": "http://www.hdcdental.com/landing/index.jsp"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-2804",
+              "sourceUrl": "http://www.hdcdental.com/landing/index.jsp"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 청사로45, 403호 플래티넘 프라자-1",
+              "sourceUrl": "http://www.hdcdental.com/landing/index.jsp"
+            }
+          ],
+          "notes": "홈페이지 본문의 기관명과 전화번호를 공공 원자료와 대조했습니다. 주소 표기는 원문 그대로 기록했습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_review",
+              "checkedAt": "2026-11-01T09:18:40+09:00",
+              "bodySha256": "01400238f10aabcc6e2128c54e9b811d908ecbe08058ab2663a396c51ea08ac0",
+              "sourceUrl": "http://www.hdcdental.com/landing/index.jsp"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

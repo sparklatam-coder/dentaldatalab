@@ -1,0 +1,442 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T09:18:12+09:00",
+  "scope": "의정부 병원별 홈페이지 기관명·주소·전화 대조와 실제 연결 href. 채널 대상 본문 미열람.",
+  "records": [
+    {
+      "clinicId": "c-740a532da499",
+      "name": "서울오라클치과병원",
+      "checkedAt": "2026-11-01T09:18:12+09:00",
+      "researched": true,
+      "searches": [
+        {
+          "query": "서울오라클치과병원 의정부 홈페이지",
+          "outcome": "기관 홈페이지 본문에서 이름·주소·전화와 공공 원자료를 대조했습니다. 홈페이지의 실제 외부 링크를 수록했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://oracle031.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://oracle031.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울오라클치과병원",
+              "sourceUrl": "https://oracle031.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 시민로 80, 센트럴타워 8층 802호",
+              "sourceUrl": "https://oracle031.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-870-2275",
+              "sourceUrl": "https://oracle031.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문의 기관명·주소·전화와 공공 원자료를 대조했습니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "공식 블로그",
+          "url": "https://blog.naver.com/chstop",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://oracle031.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울오라클치과병원",
+              "sourceUrl": "https://oracle031.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 시민로 80, 센트럴타워 8층 802호",
+              "sourceUrl": "https://oracle031.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-870-2275",
+              "sourceUrl": "https://oracle031.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://oracle031.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3391db9ea4b6",
+      "name": "서울진정치과의원",
+      "checkedAt": "2026-11-01T09:18:12+09:00",
+      "researched": true,
+      "searches": [
+        {
+          "query": "서울진정치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지 본문에서 이름·주소·전화와 공공 원자료를 대조했습니다. 홈페이지의 실제 외부 링크를 수록했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://www.seouljinjung.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://www.seouljinjung.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울진정치과의원",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 천보로 44, 8층 (민락동)",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-7528",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문의 기관명·주소·전화와 공공 원자료를 대조했습니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "임상 블로그",
+          "url": "https://blog.naver.com/doctorperio",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://www.seouljinjung.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울진정치과의원",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 천보로 44, 8층 (민락동)",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-7528",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "instagram",
+          "label": "인스타그램",
+          "url": "https://www.instagram.com/jinjung_dental/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://www.seouljinjung.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울진정치과의원",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 천보로 44, 8층 (민락동)",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-7528",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오톡",
+          "url": "http://pf.kakao.com/_ySnGn",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://www.seouljinjung.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울진정치과의원",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 천보로 44, 8층 (민락동)",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-7528",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://m.booking.naver.com/booking/13/bizes/1360026",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://www.seouljinjung.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울진정치과의원",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 천보로 44, 8층 (민락동)",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-7528",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "other",
+          "label": "오시는 길",
+          "url": "https://naver.me/53laBvG1",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://www.seouljinjung.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울진정치과의원",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 천보로 44, 8층 (민락동)",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-838-7528",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://www.seouljinjung.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-f792ed693862",
+      "name": "연세스탠다드치과의원",
+      "checkedAt": "2026-11-01T09:18:12+09:00",
+      "researched": true,
+      "searches": [
+        {
+          "query": "연세스탠다드치과의원 의정부 홈페이지",
+          "outcome": "기관 홈페이지 본문에서 이름·주소·전화와 공공 원자료를 대조했습니다. 홈페이지의 실제 외부 링크를 수록했습니다."
+        }
+      ],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://ystandard.co.kr/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://ystandard.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세스탠다드치과의원",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 64 그린메디타워 3층 307~309호",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-827-0075",
+              "sourceUrl": "https://ystandard.co.kr/"
+            }
+          ],
+          "notes": "공개 홈페이지 본문의 기관명·주소·전화와 공공 원자료를 대조했습니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "블로그",
+          "url": "https://blog.naver.com/ystandard",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://ystandard.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세스탠다드치과의원",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 64 그린메디타워 3층 307~309호",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-827-0075",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://ystandard.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오톡",
+          "url": "http://pf.kakao.com/_IxidYxj",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://ystandard.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세스탠다드치과의원",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 64 그린메디타워 3층 307~309호",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-827-0075",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://ystandard.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/901254",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:18:12+09:00",
+          "evidenceUrls": [
+            "https://ystandard.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세스탠다드치과의원",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 천보로 64 그린메디타워 3층 307~309호",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-827-0075",
+              "sourceUrl": "https://ystandard.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 표시된 실제 링크",
+              "sourceUrl": "https://ystandard.co.kr/"
+            }
+          ],
+          "notes": "기관 홈페이지에서 연결된 주소입니다. 대상 채널 본문은 직접 확인하지 않았습니다."
+        }
+      ]
+    }
+  ]
+}

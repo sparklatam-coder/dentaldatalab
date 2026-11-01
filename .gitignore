@@ -1,0 +1,32 @@
+# Generated local builds and tooling
+/dist/
+/.dev-dist/
+/node_modules/
+/artifacts/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+
+# Original handoff archives and conversation records stay local.
+/*.zip
+/*전체대화*.md
+/*개발인수인계*.md
+/*개발인수인계_20261031_v1/
+
+# Hosting outputs and local collection evidence
+/.cloudflare-dist/
+/.cloudflare-build/
+/.wrangler/
+__pycache__/
+*.pyc
+/data/research/*
+!/data/research/yangju-01.json
+!/data/research/yangju-02.json
+!/data/research/yangju-03.json
+!/data/research/naver-national-directory.json
+/docs/evidence/
+# Local project strategy and chronological handoff notes
+/dentaldatalab-plan.md
+/*인수인계*.md

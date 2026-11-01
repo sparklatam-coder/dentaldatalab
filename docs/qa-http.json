@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-10-31T11:23:39.239Z",
+  "status": "passed",
+  "archivePreview": true,
+  "checks": [
+    {
+      "route": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "route": "/find/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "route": "/data/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "route": "/assets/app.mjs?v=79eec46f63f3",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "route": "/assets/shared.mjs?v=79eec46f63f3",
+      "status": 200,
+      "type": "text/javascript; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "route": "/clinics/c-22fda844c356/",
+      "status": 200,
+      "type": "text/html; charset=utf-8",
+      "robots": "noindex, nofollow"
+    },
+    {
+      "route": "/qa-route-does-not-exist/",
+      "status": 404,
+      "type": "text/html; charset=utf-8",
+      "robots": "noindex, nofollow"
+    }
+  ],
+  "searchRecords": 19681,
+  "postStatus": 405,
+  "clinicCount": 19681,
+  "htmlPages": 20669
+}

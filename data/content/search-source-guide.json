@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "title": "검색량 순위의 출처와 만드는 법",
+  "checkedAt": "2026-10-31T21:18:25.242590+00:00",
+  "recommendation": {
+    "title": "첫 수집은 Google 키워드 플래너의 과거 검색량",
+    "text": "지역·기간·검색망을 맞춘 과거 월평균 검색량으로 비교를 시작합니다. Google의 근사 통계이며, 제3자 모델 추정은 별도 시리즈로 둡니다.",
+    "references": [
+      "g02",
+      "ahrefs-method",
+      "semrush-method"
+    ]
+  },
+  "sources": [
+    {
+      "id": "keyword-planner",
+      "name": "Google 키워드 플래너",
+      "kind": "google",
+      "label": "첫 수집 추천 · Google 제공",
+      "scope": "대한민국 위치 설정의 Google 검색",
+      "metric": "유사 검색어를 포함한 월평균 검색량 · 반올림된 과거 통계",
+      "access": "Google Ads 로그인·계정 설정. 기본 기능에도 결제 정보가 필요하다는 공식 안내가 있으며 계정별 표시 정밀도는 미확인입니다.",
+      "finding": "새 후보를 발굴하고 과거 검색량을 비교하는 첫 경로입니다. 광고 클릭·노출 예측과는 구분합니다.",
+      "use": "첫 후보군 발굴과 월평균 검색량 비교",
+      "entryUrl": "https://ads.google.com/aw/keywordplanner/home",
+      "references": [
+        "g01",
+        "g02",
+        "g03"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "키워드 플래너 열기"
+    },
+    {
+      "id": "google-ads-api",
+      "name": "Google Ads API",
+      "kind": "google",
+      "label": "반복 수집 · Google 제공",
+      "scope": "요청에 지정한 국가·네트워크·기간",
+      "metric": "키워드 아이디어와 과거 월평균·월별 검색량 근사치",
+      "access": "Google Ads 계정 접근, Cloud 프로젝트·OAuth 인증과 적절한 API 접근 수준·허용 용도 확인이 필요합니다.",
+      "finding": "아이디어 발굴과 기존 목록의 과거 지표 조회가 가능합니다. 유사어가 묶여 반환되고 일부 월이 없을 수 있으므로 원응답을 보존합니다.",
+      "use": "조건을 고정한 정기 갱신·원응답 저장",
+      "entryUrl": "https://developers.google.com/google-ads/api/docs/keyword-planning/overview",
+      "references": [
+        "g05",
+        "g06",
+        "g07",
+        "g08",
+        "g09",
+        "g11",
+        "g13"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "Google API 수집 문서"
+    },
+    {
+      "id": "dataforseo",
+      "name": "DataForSEO Google Ads",
+      "kind": "google_proxy",
+      "label": "대안 · Google 원천 중계",
+      "scope": "한국 위치 2410 확인 · 해당 언어 목록은 미확인",
+      "metric": "제공사 설명상 Google Ads API 기반 월평균·월별 근사 검색량",
+      "access": "계정·API 인증 필요, 검색량 요청당 과금. 위치·언어 목록의 호출료와 인증 요건은 별개입니다.",
+      "finding": "자체 Google Ads API 접근을 준비하는 대신 검토할 수 있는 중계 경로입니다. 공식 CSV에서 한국 국가 코드를 확인했지만 언어 API는 무인증 요청에 401을 반환했습니다.",
+      "use": "접근 조건 확인 후 Google Ads 계열 자료 수집",
+      "entryUrl": "https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/live/",
+      "references": [
+        "dfs-volume",
+        "dfs-location-csv",
+        "dfs-languages",
+        "dfs-auth"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "검색량 API 문서"
+    },
+    {
+      "id": "ahrefs",
+      "name": "Ahrefs",
+      "kind": "model",
+      "label": "별도 시리즈 · 모델 추정",
+      "scope": "South Korea – Korean 지원 목록 확인",
+      "metric": "Google Keyword Planner·클릭스트림을 결합한 검색량 추정",
+      "access": "공개 무료 키워드 도구가 있습니다. 전체 기능·API는 계정·요금제·한도에 따릅니다. 무료 도구의 한국 치과어 결과는 미실행입니다.",
+      "finding": "한국 후보 발굴과 교차 점검에 사용할 수 있습니다. Google이 직접 제공한 값으로 이름을 바꾸거나 다른 제공사 수치와 합치지 않습니다.",
+      "use": "제공사를 명시한 독립 추정 순위·추가 후보 발굴",
+      "entryUrl": "https://ahrefs.com/keyword-generator",
+      "references": [
+        "ahrefs-method",
+        "ahrefs-korea",
+        "ahrefs-free",
+        "ahrefs-api-plan"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "무료 키워드 도구 열기"
+    },
+    {
+      "id": "semrush",
+      "name": "Semrush",
+      "kind": "model",
+      "label": "별도 시리즈 · 모델 추정",
+      "scope": "South Korea / KR 데이터베이스 확인",
+      "metric": "검색엔진·외부 데이터와 모델을 이용한 최근 12개월 평균 추정",
+      "access": "카드 없이 만드는 무료 로그인 계정은 조회가 제한됩니다. 키워드 보고서 API는 별도 유료 구독·유닛·키가 필요합니다.",
+      "finding": "한국 DB에서 후보와 추정 수요를 살펴보는 보조 경로입니다. 무료 계정과 카드가 필요한 무료 체험은 다른 조건입니다.",
+      "use": "한국 DB의 후보 발굴·추정값 비교",
+      "entryUrl": "https://www.semrush.com/kb/683-what-is-search-volume-in-semrush",
+      "references": [
+        "semrush-method",
+        "semrush-korea",
+        "semrush-free",
+        "semrush-api"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "검색량 정의와 서비스 안내"
+    },
+    {
+      "id": "google-trends",
+      "name": "Google Trends",
+      "kind": "relative",
+      "label": "보조 · 상대 관심도",
+      "scope": "같은 지역·기간·비교 묶음",
+      "metric": "정규화한 0~100 상대 관심도",
+      "access": "공개 웹 도구. 기존 자동 수집 요청은 HTTP 429여서 이번 자료의 추세 수치를 확보하지 못했습니다.",
+      "finding": "계절성과 최근 관심의 변화를 보는 자료입니다. 다른 묶음의 100을 동일한 검색량으로 비교하거나 월간 건수로 환산하지 않습니다.",
+      "use": "월간 검색량과 분리한 관심 추세",
+      "entryUrl": "https://trends.google.com/trends/",
+      "references": [
+        "g14"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "Google Trends 열기"
+    },
+    {
+      "id": "search-console",
+      "name": "Google Search Console",
+      "kind": "own_site",
+      "label": "보조 · 내 사이트 실적",
+      "scope": "접근 권한이 있는 사이트",
+      "metric": "내 사이트의 검색 노출·클릭·평균 게재순위",
+      "access": "사이트 속성에 대한 확인 또는 권한이 필요합니다. 이번에 연결하거나 실적을 조회하지 않았습니다.",
+      "finding": "내 사이트가 검색에 나타난 범위를 관찰합니다. 시장 전체 검색량이 아니며 익명 검색어와 표 제한으로 누락도 있습니다.",
+      "use": "사이트 운영 후 실제 유입 질문 발굴",
+      "entryUrl": "https://search.google.com/search-console/",
+      "references": [
+        "g15",
+        "g16"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "Search Console 열기"
+    },
+    {
+      "id": "autocomplete",
+      "name": "Google 자동완성",
+      "kind": "discovery",
+      "label": "현재 확보 · 검색어 발굴",
+      "scope": "한국어·대한민국 요청 문맥의 예상 검색어",
+      "metric": "조회 시점의 검색어 제안 · 검색 건수 없음",
+      "access": "공개 예상 검색어 응답에서 관찰했습니다. 정식 검색량 API나 전체 검색 수요 명세로 취급하지 않습니다.",
+      "finding": "20개 시작 검색어에서 198개 고유 제안을 확보했습니다. 노출 순서는 검색 빈도 순위가 아니고 문구 자체가 의학적 사실인 것도 아닙니다.",
+      "use": "사람들이 쓰는 표현과 후보 주제 발굴",
+      "entryUrl": "https://support.google.com/websearch/answer/7368877?hl=ko",
+      "references": [
+        "autocomplete-help"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "자동완성 작동 방식"
+    },
+    {
+      "id": "naver-searchad",
+      "name": "네이버 검색광고 키워드 도구",
+      "kind": "naver",
+      "label": "별도 엔진 · 네이버 검색수",
+      "scope": "네이버 PC·모바일 검색",
+      "metric": "API 명세상 최근 30일 검색수 · PC/모바일 별도 · 10 미만은 <10",
+      "access": "광고주센터 로그인. API는 검색광고 회원·서비스 신청·인증정보가 필요합니다. 별도 호출료·최소 광고비는 확인한 문서로 확정하지 않았습니다.",
+      "finding": "국내 수요를 함께 살피는 별도 시리즈입니다. Google의 12개월 평균과 기간·엔진이 다르며 <10을 0이나 10으로 바꾸지 않습니다.",
+      "use": "네이버 수요를 따로 비교",
+      "entryUrl": "https://ads.naver.com/help/faq/1406",
+      "references": [
+        "naver-access",
+        "naver-ui",
+        "naver-spec"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "키워드 도구 조회 안내"
+    },
+    {
+      "id": "naver-datalab",
+      "name": "네이버 데이터랩",
+      "kind": "relative",
+      "label": "보조 · 네이버 상대지수",
+      "scope": "네이버 통합검색의 주제 묶음",
+      "metric": "선택 기간 내 최대값을 100으로 둔 상대 비율",
+      "access": "공개 웹 폼이 있습니다. API의 비로그인 방식도 앱 등록·Client ID/Secret이 필요합니다.",
+      "finding": "기간·기기·성별·연령별 관심 변화를 비교합니다. 절대 검색 횟수 또는 Google 검색량으로 사용할 수 없습니다.",
+      "use": "네이버의 계절성·독자별 관심 추이",
+      "entryUrl": "https://datalab.naver.com/keyword/trendSearch.naver",
+      "references": [
+        "naver-datalab-api",
+        "naver-datalab-ui"
+      ],
+      "volumeAcquired": false,
+      "entryLabel": "데이터랩 검색어 트렌드 열기"
+    }
+  ],
+  "references": [
+    {
+      "id": "g01",
+      "url": "https://support.google.com/google-ads/answer/7337243?hl=ko",
+      "title": "키워드 플래너 사용하기",
+      "publisher": "Google Ads 고객센터",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "단어·웹사이트에서 후보를 발굴하고 기존 목록을 조회할 수 있다. 계정 설정에 결제 정보를 요구하며 건강·저검색량 키워드가 제한될 수 있다.",
+      "foundVia": "이전 조사에서 확보한 공식 도움말 URL을 한국어로 직접 열었다. → 공식 도메인 제한 검색에서도 같은 문서를 확인하고, 본문과 FAQ를 읽었다.",
+      "query": "site:support.google.com/google-ads/answer \"download\" \"keyword ideas\""
+    },
+    {
+      "id": "g02",
+      "url": "https://support.google.com/google-ads/answer/3022575?hl=ko",
+      "title": "키워드 플래너의 예측에 대한 정보",
+      "publisher": "Google Ads 고객센터",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "월평균은 위치·기간·검색망에 따른 유사어 포함 평균이고 반올림된다. 기본 12개월 평균은 언어와 무관하며 광고 예측과는 다르다.",
+      "foundVia": "이전 조사에서 확보한 공식 URL을 직접 열었다. → g01의 '키워드 플래너의 예측' 링크와 같은 문서임을 확인했다. → 영어 검색 결과의 원문도 대조했다.",
+      "query": "\"Keyword Planner\" \"limited\" \"search volume\" site:support.google.com/google-ads/answer"
+    },
+    {
+      "id": "g03",
+      "url": "https://support.google.com/google-ads/answer/6325025",
+      "title": "Refine your new keywords in Keyword Planner",
+      "publisher": "Google Ads Help",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "위치·언어·네트워크와 기간을 설정하고 월평균 검색량 등으로 결과를 필터링할 수 있다. 네트워크의 Google은 Google Search, Google and search partners는 파트너 등을 포함하는 별도 범위다. 위치를 모두 제거하면 전 세계가 된다.",
+      "foundVia": "g01 본문의 '키워드 목록 수정' 링크를 실제 클릭했다. → 도착한 문서에서 Language·Network·date range를 찾아 읽었다.",
+      "query": ""
+    },
+    {
+      "id": "g04",
+      "url": "https://support.google.com/google-ads/answer/9327909",
+      "title": "Keyword Planner changes finalized",
+      "publisher": "Google Ads Help / Jane Kim, Product Manager",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "Google의 제품 공지는 개별 키워드 추세 데이터 다운로드 기능을 확인해 준다. 2019년 공지이므로 현재 계정 화면의 버튼 위치나 CSV 열 구성을 검증한 자료로 사용하지 않는다.",
+      "foundVia": "검색에서 Google Ads New features & announcements를 찾았다. → https://support.google.com/google-ads/announcements/9048695?hl=en 에서 'Keyword Planner changes finalized'를 찾았다. → 해당 항목의 Read more를 클릭해 제품 담당자 명의 원문을 읽었다.",
+      "query": "site:support.google.com/google-ads \"download\" \"historical metrics\" \"CSV\""
+    },
+    {
+      "id": "g05",
+      "url": "https://developers.google.com/google-ads/api/docs/keyword-planning/generate-keyword-ideas",
+      "title": "Generate keyword ideas",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "GenerateKeywordIdeas는 키워드·URL·사이트를 시작점으로 새 후보와 과거 지표를 반환한다. 위치·언어·네트워크·기간을 지정할 수 있으며 결과에는 대표 text, close_variants와 keyword_idea_metrics가 있다. 결과 수가 적어 보여도 next_page_token이 있으면 다음 페이지가 남아 있다.",
+      "foundVia": "공식 개발자 문서 검색 결과에서 찾았다. → 본문과 요청·응답 필드 표를 열어 페이지네이션과 지표 포함 여부를 확인했다.",
+      "query": "site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"
+    },
+    {
+      "id": "g06",
+      "url": "https://developers.google.com/google-ads/api/docs/keyword-planning/generate-historical-metrics",
+      "title": "Generate historical metrics",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "기존 키워드의 월평균·월별 근사 검색량을 조회한다. 유사어가 묶여 결과 수가 줄어들 수 있고 요청당 최대 10,000개를 받는다.",
+      "foundVia": "검색 결과의 공식 문서를 열었다. → Generate metrics 설명과 실제 예제의 대표 키워드·유사 검색어·null 처리 부분을 읽었다.",
+      "query": "site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"
+    },
+    {
+      "id": "g07",
+      "url": "https://developers.google.com/google-ads/api/reference/rpc/v25/GenerateKeywordHistoricalMetricsRequest",
+      "title": "GenerateKeywordHistoricalMetricsRequest",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "language는 지정 언어가 키워드에 속한 언어 집합에 포함되는지에 따른 키워드 필터다. 이를 한국어 사용자만의 검색량으로 해석하지 않는다. keyword_plan_network를 생략하면 Google Search And Partners가 사용되므로 GOOGLE_SEARCH를 명시해야 한다.",
+      "foundVia": "검색 결과에 나온 v25 요청 참조 문서를 열었다. → language와 keyword_plan_network 필드 정의를 직접 확인했다.",
+      "query": "site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"
+    },
+    {
+      "id": "g08",
+      "url": "https://developers.google.com/google-ads/api/reference/rpc/v26/HistoricalMetricsOptions",
+      "title": "HistoricalMetricsOptions",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "year_month_range를 생략하면 최근 12개월을 반환하며 과거 4년 이내 지표를 지원한다. 요청한 기간 전체가 없으면 가능한 부분 기간만 반환할 수 있으므로 반환된 월 목록을 검증해야 한다.",
+      "foundVia": "g06 본문의 year_month_range 링크를 클릭했다. → 도착한 v26 HistoricalMetricsOptions의 필드 설명을 읽었다.",
+      "query": ""
+    },
+    {
+      "id": "g09",
+      "url": "https://developers.google.com/google-ads/api/docs/api-policy/access-levels",
+      "title": "Access levels and permissible use",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "현재 본문은 Google Cloud 프로젝트별 Test·Explorer·Basic·Standard 접근 수준을 설명한다. Test는 테스트 계정용이며 실제 계정 접근에는 적절한 수준이 필요하다. Standard의 키워드 연구 허용 용도는 광고 캠페인 생성·관리를 돕는 제안 도구를 전제로 설명하므로 공개 콘텐츠 서비스의 이용 적합성을 별도로 확인해야 한다.",
+      "foundVia": "공식 도메인 검색으로 찾고 영어 본문을 열었다. → hl=en URL 재열람은 일시 timeout이 있었으나 기본 URL 본문에서 접근 수준과 허용 용도를 확인했다.",
+      "query": "site:developers.google.com/google-ads/api access levels developer token keyword planning permissible use OAuth prerequisites"
+    },
+    {
+      "id": "g11",
+      "url": "https://developers.google.com/google-ads/api/docs/get-started/make-first-call?hl=en",
+      "title": "Quick start",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "현재 시작 문서는 Cloud 프로젝트에서 API를 활성화하고 접근 수준을 확인하는 절차를 안내한다. 예제는 OAuth 서비스 계정 인증과 접근 가능한 Google Ads 계정을 사용한다. 문서를 읽었다는 사실만으로 이 프로젝트나 사용자의 계정이 실제 검색량 API를 호출할 권한이 있다는 뜻은 아니다.",
+      "foundVia": "공식 검색 결과에서 Quick start를 열었다. → g09·g10이 안내하는 같은 시작 문서임을 확인하고 prerequisites를 읽었다.",
+      "query": "site:developers.google.com/google-ads/api access levels developer token keyword planning permissible use OAuth prerequisites"
+    },
+    {
+      "id": "g13",
+      "url": "https://developers.google.com/google-ads/api/docs/keyword-planning/overview",
+      "title": "Keyword planning",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "아이디어와 과거 지표 조회는 영구 KeywordPlan 리소스 생성 없이 가능하다. KeywordPlanIdeaService에는 더 엄격한 호출 속도 제한이 있고 과거 검색량은 월 단위로 갱신되므로 결과를 저장·재사용하도록 권한다. 광고 캠페인 실행과 자료 조회는 구분할 수 있다.",
+      "foundVia": "공식 검색 결과에서 개요 문서를 열었다. → 영구 리소스 없이 가능한 작업과 갱신·호출 제한 설명을 읽었다.",
+      "query": "site:developers.google.com/google-ads/api historical metrics keyword plan historical metrics language close variants monthly search volumes"
+    },
+    {
+      "id": "g14",
+      "url": "https://support.google.com/trends/answer/4365533?hl=ko",
+      "title": "Google 트렌드 데이터 관련 FAQ",
+      "publisher": "Google 검색 트렌드 고객센터",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "Trends는 검색 표본을 지역·기간의 총검색 대비 비중으로 정규화한 뒤 0~100으로 표시한다. 낮은 검색량은 0으로 표시될 수 있다. 따라서 절대 월검색량이나 서로 다른 비교 묶음의 통합 시장 순위를 직접 제공하는 자료로 사용하지 않는다.",
+      "foundVia": "공식 도움말 검색 결과의 영어 문서를 확인했다. → 같은 문서의 한국어 URL을 열어 정규화와 저검색량 설명을 읽었다.",
+      "query": "site:support.google.com/trends \"sample\" \"0 to 100\" \"searches\""
+    },
+    {
+      "id": "g15",
+      "url": "https://support.google.com/webmasters/answer/7576553?hl=ko",
+      "title": "실적 보고서(Google 검색 결과): 개요 및 기본 설정",
+      "publisher": "Google Search Console 도움말",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "Search Console 실적은 내 사이트가 Google 검색에서 받은 노출·클릭 등의 지표다. 내 사이트가 나타나지 않은 시장 검색까지 세는 자료가 아니므로 한국 치과 검색 전체의 검색량 순위로 사용할 수 없다. 운영 후 실제 유입 질문을 발굴하는 별도 자료로 적합하다.",
+      "foundVia": "공식 도메인 검색에서 실적 보고서 문서를 찾았다. → 한국어 문서를 열어 각 지표의 사이트 기준 정의를 읽었다.",
+      "query": "site:support.google.com/webmasters performance report queries anonymized clicks impressions own site"
+    },
+    {
+      "id": "g16",
+      "url": "https://support.google.com/webmasters/answer/17010575?hl=ko",
+      "title": "실적 보고서(Google 검색 결과): 데이터 불일치 문제 해결",
+      "publisher": "Google Search Console 도움말",
+      "checkedAt": "2026-10-31T21:15:45.760176+00:00",
+      "finding": "Search Console 표에는 익명화된 희귀 검색어와 행 제한에 따른 누락이 있다. 표 합계가 차트 합계와 다를 수 있으므로 누락을 실제 검색 0으로 치환하지 않는다.",
+      "foundVia": "같은 공식 검색에서 데이터 불일치 문서를 찾았다. → 한국어 본문에서 표 행 한도와 익명 검색어 항목을 읽었다.",
+      "query": "site:support.google.com/webmasters performance report queries anonymized clicks impressions own site"
+    },
+    {
+      "id": "g17",
+      "url": "https://developers.google.com/google-ads/api/data/geotargets",
+      "title": "Geo targets",
+      "publisher": "Google for Developers",
+      "checkedAt": "2026-10-31T21:17:30.815343+00:00",
+      "finding": "공식 위치 ZIP을 내려받아 Country Code=KR, Target Type=Country로 필터링했다. Active 상태의 South Korea 국가 ID 2410을 확인했다. 위치 참조 자료이며 검색량 자료는 아니다.",
+      "foundVia": "g06 예제에 적힌 공식 geotargets 참조 URL을 열었으며 /api/data/geotargets로 이동했다. → Latest zipped CSV (2026-10-06)를 클릭했으나 웹 열람 도구가 application/zip을 지원하지 않았다. → 공식 ZIP을 익명 다운로드한 뒤 CSV의 KR 국가 행을 직접 파싱했다.",
+      "query": ""
+    },
+    {
+      "id": "dfs-volume",
+      "url": "https://docs.dataforseo.com/v3/keywords_data/google_ads/search_volume/live/",
+      "title": "DataForSEO Google Ads Search Volume Live",
+      "publisher": "DataForSEO",
+      "checkedAt": "2026-11-01",
+      "finding": "Google Ads API 기반, 최대 1,000개/요청. 근사 월평균과 월별 값, 유사어 묶음·누락 가능. 요청당 과금.",
+      "foundVia": "공식 API 문서 직접 열기",
+      "query": ""
+    },
+    {
+      "id": "dfs-location-csv",
+      "url": "https://cdn.dataforseo.com/v3/locations/locations_kwrd_2026_09_01.csv",
+      "title": "Google Ads Keywords Data supported locations CSV",
+      "publisher": "DataForSEO",
+      "checkedAt": "2026-11-01",
+      "finding": "공개 CSV에서 KR, 2410, South Korea, Country 행을 직접 파싱.",
+      "foundVia": "Locations 문서 download full list 링크",
+      "query": ""
+    },
+    {
+      "id": "dfs-languages",
+      "url": "https://docs.dataforseo.com/v3/keywords_data/google_ads/languages/",
+      "title": "DataForSEO Google Ads Languages",
+      "publisher": "DataForSEO",
+      "checkedAt": "2026-11-01",
+      "finding": "언어 목록 호출료 없음. 공개 문서에서 Korean 항목은 직접 확인하지 못함.",
+      "foundVia": "Search Volume 문서 languages 링크",
+      "query": ""
+    },
+    {
+      "id": "dfs-auth",
+      "url": "https://docs.dataforseo.com/v3/auth/",
+      "title": "DataForSEO Authentication",
+      "publisher": "DataForSEO",
+      "checkedAt": "2026-11-01",
+      "finding": "무료 계정의 별도 API login/password와 Basic 인증 필요. 무료 가입과 검색량 호출 과금은 별개.",
+      "foundVia": "공식 인증 문서 직접 열기",
+      "query": ""
+    },
+    {
+      "id": "ahrefs-method",
+      "url": "https://help.ahrefs.com/en/articles/431381-why-don-t-the-organic-traffic-numbers-reported-by-ahrefs-match-those-i-see-in-google-analytics-or-gsc",
+      "title": "Ahrefs search volume modelling explanation",
+      "publisher": "Ahrefs",
+      "checkedAt": "2026-11-01",
+      "finding": "검색량 모델은 Google Keyword Planner와 클릭스트림을 결합.",
+      "foundVia": "공식 도움말 검색: search volume clickstream",
+      "query": "site:help.ahrefs.com \"search volume\" \"clickstream\""
+    },
+    {
+      "id": "ahrefs-korea",
+      "url": "https://help.ahrefs.com/en/articles/2127127-what-languages-does-ahrefs-keywords-explorer-support",
+      "title": "Ahrefs supported languages/locales",
+      "publisher": "Ahrefs",
+      "checkedAt": "2026-11-01",
+      "finding": "Keywords Explorer 지원 목록에 South Korea - Korean (ko-KR) 명시.",
+      "foundVia": "공식 검색: Ahrefs Keywords Explorer South Korea",
+      "query": "Ahrefs Keywords Explorer \"South Korea\""
+    },
+    {
+      "id": "ahrefs-free",
+      "url": "https://ahrefs.com/keyword-generator",
+      "title": "Ahrefs Free Keyword Generator",
+      "publisher": "Ahrefs",
+      "checkedAt": "2026-11-01",
+      "finding": "공개 무료 페이지에 Google·국가 선택·키워드 입력 UI와 월간 검색량 추정 설명. 한국 치과어 결과 미실행.",
+      "foundVia": "공식 도구 페이지 직접 열기",
+      "query": ""
+    },
+    {
+      "id": "ahrefs-api-plan",
+      "url": "https://help.ahrefs.com/en/articles/6559232-about-api-v3",
+      "title": "Ahrefs About API v3",
+      "publisher": "Ahrefs",
+      "checkedAt": "2026-11-01",
+      "finding": "2026-09-23 문서는 Lite 이상 API/MCP/Connect와 공통 API 한도 명시. 과거 Enterprise 전용 요건을 재사용하면 안 됨.",
+      "foundVia": "공식 도움말 검색: API plans 2026",
+      "query": "site:help.ahrefs.com \"API\" \"plans\" \"2026\""
+    },
+    {
+      "id": "semrush-method",
+      "url": "https://www.semrush.com/kb/683-what-is-search-volume-in-semrush",
+      "title": "What is Search Volume in Semrush?",
+      "publisher": "Semrush",
+      "checkedAt": "2026-11-01",
+      "finding": "지난 12개월 평균. 제3자/검색엔진 데이터와 과거 클릭스트림을 모델에 적용. PC·모바일 합산.",
+      "foundVia": "공식 KB 직접 열기",
+      "query": ""
+    },
+    {
+      "id": "semrush-korea",
+      "url": "https://www.semrush.com/kb/287-what-countries-does-semrush-cover",
+      "title": "What countries does Semrush cover?",
+      "publisher": "Semrush",
+      "checkedAt": "2026-11-01",
+      "finding": "국가 DB 목록에 South Korea - KR 명시.",
+      "foundVia": "공식 검색: Semrush database South Korea",
+      "query": "Semrush database \"South Korea\""
+    },
+    {
+      "id": "semrush-free",
+      "url": "https://www.semrush.com/blog/what-can-i-do-with-a-free-account-from-semrush/",
+      "title": "What Can You Do with a Free Semrush Account?",
+      "publisher": "Semrush",
+      "checkedAt": "2026-11-01",
+      "finding": "무료 계정은 로그인/가입 필요, 카드 불필요. 제한 조회 가능. 무료 체험에는 별도로 카드 필요.",
+      "foundVia": "공급자 공식 무료 계정 안내 검색",
+      "query": "site:semrush.com \"free account\" \"10\" \"Keyword\""
+    },
+    {
+      "id": "semrush-api",
+      "url": "https://developer.semrush.com/api/v3/get-started/api-access/",
+      "title": "Semrush Standard API access",
+      "publisher": "Semrush",
+      "checkedAt": "2026-11-01",
+      "finding": "키워드 보고서 Standard API는 SEO Business 구독, 별도 API 유닛 구매와 키 필요.",
+      "foundVia": "공식 개발문서 검색: API key Business",
+      "query": "site:developer.semrush.com \"API key\" \"Business\""
+    },
+    {
+      "id": "naver-access",
+      "url": "https://ads.naver.com/help/faq/991",
+      "title": "검색광고 API를 사용하고 싶어요",
+      "publisher": "NAVER",
+      "checkedAt": "2026-11-01",
+      "finding": "검색광고 회원이 로그인 후 서비스 신청/약관 확인으로 라이선스·비밀키 발급. 별도 호출료/최소 광고 지출은 이 문서로 확정 불가.",
+      "foundVia": "네이버 공식 도움말 검색",
+      "query": ""
+    },
+    {
+      "id": "naver-ui",
+      "url": "https://ads.naver.com/help/faq/1406",
+      "title": "파워링크 키워드 도구 연관키워드 조회",
+      "publisher": "NAVER",
+      "checkedAt": "2026-11-01",
+      "finding": "광고주센터에서 월간검색수 조회·전체 엑셀 다운로드·키워드별 최근 1년 월별 추이 제공.",
+      "foundVia": "네이버 공식 도움말 검색: 월간검색수",
+      "query": "site:ads.naver.com/help \"월간검색수\""
+    },
+    {
+      "id": "naver-spec",
+      "url": "https://naver.github.io/searchad-apidoc/assets/json/ncc-keywordstool.json",
+      "title": "NAVER SearchAd KeywordTool Swagger",
+      "publisher": "NAVER",
+      "checkedAt": "2026-11-01",
+      "finding": "GET /keywordstool, 최대 5개 hintKeywords. PC/모바일 검색수는 최근 30일 합계; 10 미만은 <10. showDetail=0도 검색수 포함.",
+      "foundVia": "공식 API UI → app/config.js swaggerJson 목록 → 공개 JSON",
+      "query": ""
+    },
+    {
+      "id": "naver-datalab-api",
+      "url": "https://developers.naver.com/docs/serviceapi/datalab/search/search.md",
+      "title": "NAVER 통합 검색어 트렌드 API",
+      "publisher": "NAVER",
+      "checkedAt": "2026-11-01",
+      "finding": "ratio는 요청 구간 최대 100 상대값. 하루 1,000회, 최대 5주제/주제당 20검색어. 비로그인 방식도 앱 등록·Client ID/Secret 필요.",
+      "foundVia": "NAVER Developers 공식 문서 직접 열기",
+      "query": ""
+    },
+    {
+      "id": "naver-datalab-ui",
+      "url": "https://datalab.naver.com/keyword/trendSearch.naver",
+      "title": "네이버 데이터랩 검색어트렌드",
+      "publisher": "NAVER",
+      "checkedAt": "2026-11-01",
+      "finding": "공개 웹 폼 열기 성공; 기간·기기·연령·성별·5주제 설정. 치과어 결과 미수집.",
+      "foundVia": "공식 웹 UI 직접 열기",
+      "query": ""
+    },
+    {
+      "id": "autocomplete-help",
+      "url": "https://support.google.com/websearch/answer/7368877?hl=ko",
+      "title": "Google 자동 완성 예상 검색어의 작동 방식",
+      "publisher": "Google 검색 고객센터",
+      "checkedAt": "2026-11-01",
+      "finding": "실제 검색어와 언어·위치·관심사·검색 이력·정책 필터 등의 영향을 받는 예상 검색어. 단순 검색 빈도순이나 가장 인기 있는 검색어 목록이 아님.",
+      "foundVia": "기존 자동완성 조사에 기록한 공식 도움말을 따라 지표의 의미를 확인했다.",
+      "query": ""
+    }
+  ],
+  "workflow": [
+    {
+      "title": "범위를 먼저 정합니다",
+      "text": "대상은 대한민국 위치 설정의 Google 검색에서 치과치료를 찾는 한국어 키워드 후보입니다. 치료·증상·비용·회복 질문을 포함하고 채용·재료 도매·의료기관 브랜드 등 제외 범위와 사유를 기록합니다. 이는 이 사이트의 편집 설계입니다.",
+      "references": []
+    },
+    {
+      "title": "100개에서 멈추지 않고 후보를 넓힙니다",
+      "text": "현재 질문 100개와 관찰 검색어를 시작점으로 삼습니다. 플래너의 새 키워드 찾기에 치료별 단어 또는 관련 웹페이지를 넣고 결과를 검토합니다. API라면 GenerateKeywordIdeas와 다음 페이지 결과까지 수집합니다.",
+      "references": [
+        "g01",
+        "g05"
+      ]
+    },
+    {
+      "title": "지역·검색망·기간을 맞춥니다",
+      "text": "대한민국, Google 검색망, 제공되는 동일한 완료 월 12개를 목표로 설정합니다. 실제 반환된 시작·종료 월과 월수를 확인합니다. 한국어 후보·화면 언어·언어 옵션은 따로 기록하며 한국어 사용자만의 검색량이라고 표현하지 않습니다.",
+      "references": [
+        "g02",
+        "g03",
+        "g07",
+        "g08"
+      ]
+    },
+    {
+      "title": "예측이 아닌 과거 검색량을 확보합니다",
+      "text": "기존 후보는 검색량 및 예상 실적 조회하기에 입력합니다. 월평균·월별 과거 지표가 담긴 원본 파일을 보존하거나 API의 GenerateKeywordHistoricalMetrics를 사용합니다. 현재 로그인 UI의 내보내기 버튼 위치와 파일 열은 미검증이며 실제 화면·파일에서 확인합니다.",
+      "references": [
+        "g01",
+        "g04",
+        "g06"
+      ]
+    },
+    {
+      "title": "원문과 처리 이력을 남깁니다",
+      "text": "수집 시각, 제공사, 요청 조건, 원본 파일 해시, 대표 검색어와 close variants를 기록합니다. 제외한 후보와 이유도 별도로 남깁니다. 개인 계정 식별자와 인증정보는 공개 자료에 포함하지 않습니다.",
+      "references": [
+        "g06"
+      ]
+    },
+    {
+      "title": "같은 조건의 값만 정렬하고 범위를 공개합니다",
+      "text": "유사어 묶음 중복과 빠진 월·키워드를 확인한 후 월평균 수치 내림차순으로 정렬합니다. 동률·범위·누락은 아래 규칙으로 남깁니다. 제목에는 수집·검토한 후보 안의 순위라고 표시하며 전체 Google 검색어를 빠짐없이 조사했다고 주장하지 않습니다.",
+      "references": []
+    }
+  ],
+  "rankingRules": [
+    {
+      "title": "같은 수치는 공동 순위",
+      "text": "반올림된 값이 같으면 공동 순위로 둡니다. 소수점이나 임의 가중치로 앞뒤를 만들지 않습니다. 100번째에서 동률이면 동률 항목을 함께 보여주거나 별도 편집 선택임을 표시합니다.",
+      "references": [
+        "g02"
+      ]
+    },
+    {
+      "title": "구간을 정확한 한 숫자로 바꾸지 않습니다",
+      "text": "예를 들어 100~1,000처럼 받은 범위는 그대로 표시합니다. 구간이 겹치는 항목에 정밀 순위를 매기거나 중간값으로 실제 검색량을 채우지 않습니다. 이는 범위 자료를 다루기 위한 사이트의 표시 규칙입니다.",
+      "references": []
+    },
+    {
+      "title": "누락은 0과 다릅니다",
+      "text": "민감한 건강 키워드·낮은 검색량·일부 기간 미제공은 실제 검색이 없다는 뜻이 아닙니다. 미제공 사유와 비교 가능한 월수를 남기고, 비교 조건이 다른 행은 같은 순위표에서 제외합니다.",
+      "references": [
+        "g01",
+        "g08"
+      ]
+    },
+    {
+      "title": "유사어 묶음은 중복 합산하지 않습니다",
+      "text": "원천에서 같은 대표 검색어와 close variants로 묶인 값은 중복 집계하지 않습니다. 띄어쓰기·동의어가 비슷해 보인다는 이유만으로 독립된 원자료 값을 임의로 더하거나 병합하지 않습니다.",
+      "references": [
+        "g06"
+      ]
+    },
+    {
+      "title": "원천과 엔진을 섞지 않습니다",
+      "text": "Google 제공 통계, 제3자 모델 추정, 네이버 최근 30일 검색수를 다른 시리즈로 둡니다. Trends·데이터랩 상대지수, 자동완성 순서, Search Console 내 사이트 실적도 월간 검색량을 대신하지 않습니다.",
+      "references": [
+        "g14",
+        "g15",
+        "autocomplete-help",
+        "naver-spec",
+        "naver-datalab-api"
+      ]
+    }
+  ],
+  "investigation": [
+    {
+      "title": "공식 도움말에서 지표의 정의를 확인했습니다",
+      "text": "기존 Google 도움말에서 새 키워드 찾기 → 목록 수정 → 지표 정의를 따라갔습니다. 각 원문에 실제 검색어와 이동 경로를 남겼습니다.",
+      "references": [
+        "g01",
+        "g02",
+        "g03"
+      ]
+    },
+    {
+      "title": "플래너 진입 링크를 직접 열었습니다",
+      "text": "공식 도움말의 키워드 플래너 열기 링크를 익명으로 방문했을 때 Google Ads 로그인 화면으로 연결됐습니다. 이는 익명 접근 결과이며 사용자 계정의 이용 가능 여부나 수치 표시 범위는 확인하지 않았습니다.",
+      "references": []
+    },
+    {
+      "title": "API 원문과 한국 위치 자료를 확인했습니다",
+      "text": "Google 개발자 문서의 아이디어·과거 지표·기간 필드를 읽었습니다. 공식 위치 ZIP을 실제로 내려받아 KR 국가 행과 Active 상태의 2410을 확인했습니다. 한국 코드 확인은 키워드 검색량 확보와 구분합니다.",
+      "references": [
+        "g05",
+        "g06",
+        "g08",
+        "g17"
+      ]
+    },
+    {
+      "title": "대체 제공사의 원천·한국 지원·접근 조건을 대조했습니다",
+      "text": "공급자 공식 문서만 채택했습니다. DataForSEO 위치 CSV도 KR=2410을 확인했고 언어 API는 401에서 중단했습니다. Ahrefs 한국 로케일과 Semrush 한국 DB를 확인했으며 실제 한국 치과어 결과는 조회하지 않았습니다.",
+      "references": [
+        "dfs-location-csv",
+        "dfs-languages",
+        "ahrefs-korea",
+        "semrush-korea"
+      ]
+    },
+    {
+      "title": "네이버 명세까지 따라가 지표를 구분했습니다",
+      "text": "네이버 도움말에서 공식 API 화면으로 이동하고, 공개 설정 파일이 가리키는 KeywordTool 명세 JSON을 읽었습니다. 최근 30일 PC·모바일 검색수와 <10 표기를 확인했으며 네이버 실제 검색수는 수집하지 않았습니다.",
+      "references": [
+        "naver-ui",
+        "naver-spec",
+        "naver-datalab-api"
+      ]
+    },
+    {
+      "title": "기존 수집 결과와 미확보 항목을 함께 공개합니다",
+      "text": "기존 자동완성은 시작 검색어 20개·고유 제안 198개를 보존했습니다. Google Trends 요청은 HTTP 429였고 관심도 수치는 없습니다. 새 계정·유료 조회·키 사용 없이 출처 조사를 진행했으며, 현재 질문 100개 모두 월간 검색량과 검색 순위가 미확인입니다.",
+      "references": [
+        "autocomplete-help",
+        "g14"
+      ]
+    }
+  ],
+  "acquisitionAttempts": [
+    {
+      "checkedOn": "2026-11-01",
+      "url": "https://ads.google.com/aw/keywordplanner/home",
+      "method": "anonymous_web_open_from_official_help_link",
+      "result": "Google Ads sign-in screen",
+      "volumeAcquired": false,
+      "userAccountAccessChecked": false
+    },
+    {
+      "checkedAt": "2026-10-31T21:17:30.815343+00:00",
+      "sourceUrl": "https://developers.google.com/static/google-ads/api/data/geo/geotargets-2026-10-06.csv.zip",
+      "referencePage": "https://developers.google.com/google-ads/api/data/geotargets",
+      "sha256": "90172fb3c7c7bc9967f24d0ced519e6422041501d99550a8cbd3ed6d9f0f85ee",
+      "bytes": 3482503,
+      "file": "third_party/devsite/developers/en/google-ads/api/data/geo/geotargets-2026-10-06.csv",
+      "filter": {
+        "Country Code": "KR",
+        "Target Type": "Country"
+      },
+      "matchingRows": [
+        {
+          "Criteria ID": "2410",
+          "Name": "South Korea",
+          "Canonical Name": "South Korea",
+          "Parent ID": "",
+          "Country Code": "KR",
+          "Target Type": "Country",
+          "Status": "Active"
+        }
+      ],
+      "scope": "Public geographic reference only; no keyword search volumes retrieved"
+    },
+    {
+      "url": "https://cdn.dataforseo.com/v3/locations/locations_kwrd_2026_09_01.csv",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "bytes": 5866413,
+      "sha256": "0afa2016e348e8d801dd113c1fad3e6f0fbf71611fbed7c92b89d38f7428596c",
+      "result": "KR country row parsed; location_code 2410",
+      "webReaderAttempt": "web tool unsupported application/octet-stream; ordinary public download succeeded",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://api.dataforseo.com/v3/keywords_data/google_ads/languages",
+      "method": "anonymous_GET_no_authorization_header",
+      "httpStatus": 401,
+      "providerStatusCode": 40100,
+      "result": "인증 필요. 중단했고 재시도/우회/키 탐색 없음. 한국어 언어 행 미확보.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://naver.github.io/searchad-apidoc/",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "result": "웹 리더 readable line 없음. 공개 HTML에 app/config.js 링크 존재.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://naver.github.io/searchad-apidoc/app/config.js",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "result": "swaggerJson 목록에 assets/json/ncc-keywordstool.json 명시.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://naver.github.io/searchad-apidoc/assets/json/ncc-keywordstool.json",
+      "method": "anonymous_GET",
+      "httpStatus": 200,
+      "sha256": "2b740259ce6939317684e66bf6fd767fb806a613f7b1d78fcc254be7a77689fa",
+      "result": "공식 API 명세 파싱. 실제 치과 검색어 결과가 아님.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://help.ahrefs.com/en/articles/72571-where-does-ahrefs-get-the-data-from",
+      "method": "web_open",
+      "status": "tool_access_failed",
+      "result": "접근 가능한 공식 모델링 도움말을 대신 사용. 이 실패 URL을 근거로 쓰지 않음.",
+      "checkedOn": "2026-11-01"
+    },
+    {
+      "url": "https://docs.ahrefs.com/docs/api/reference/authentication",
+      "method": "web_open",
+      "status": "tool_access_failed",
+      "result": "공식 API introduction과 그 key-management 링크로 접근.",
+      "checkedOn": "2026-11-01"
+    }
+  ],
+  "searchQueries": [
+    {
+      "query": "DataForSEO Google Ads locations \"South Korea\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "Ahrefs Keywords Explorer \"South Korea\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "Semrush database \"South Korea\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:help.ahrefs.com \"search volume\" \"clickstream\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:help.ahrefs.com \"API\" \"plans\" \"2026\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:semrush.com \"free account\" \"10\" \"Keyword\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:developer.semrush.com \"API key\" \"Business\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:docs.dataforseo.com/v3/keywords_data/google_ads/languages/ \"ko\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:dataforseo.com \"Korean\" \"Google Ads\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:ads.naver.com/help \"월간검색수\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    },
+    {
+      "query": "site:github.com/naver/searchad-apidoc \"RelKwdStat\" \"showDetail\"",
+      "checkedOn": "2026-11-01",
+      "method": "web_search",
+      "acceptedSources": "공급자 소유 공식 문서/제품 안내만 채택; 사용자 작성 GitHub issue 본문은 근거에서 제외"
+    }
+  ],
+  "rankingStatus": "not_measured",
+  "monthlyVolumes": null,
+  "scope": "한국어 치과치료 키워드 후보의 Google 검색 수요. 전체 Google 질의 전수조사 아님."
+}

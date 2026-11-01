@@ -1,0 +1,641 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T09:20:12+09:00",
+  "sourceType": "manual_homepage_review",
+  "scope": "의정부 개별 홈페이지 본문 대조. 외부 링크 대상 본문 미확인.",
+  "records": [
+    {
+      "clinicId": "c-a543a5da8bf7",
+      "name": "진심담은치과의원",
+      "checkedAt": "2026-11-01T09:20:12+09:00",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "홈페이지",
+          "url": "http://jinsimdental.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "http://jinsimdental.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진심담은치과의원",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-821-8828",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 636 대호빌딩 4층",
+              "sourceUrl": "http://jinsimdental.com/"
+            }
+          ],
+          "notes": "HTTP 본문에 기관명, 주소 및 전화번호가 표시됩니다. HTTPS 연결은 인증서 이름 불일치로 실패했습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_review",
+              "checkedAt": "2026-11-01T09:20:12+09:00",
+              "bodySha256": "006ff72a8654ac5a3e9eb9bc39def0300b7ac8ba32b3336d44b52519e84bae40",
+              "sourceUrl": "http://jinsimdental.com/"
+            }
+          ]
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "https://blog.naver.com/jinsim_dentalclinic",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "http://jinsimdental.com/",
+            "http://jinsimdental.com/page.asp?m=naver_blog"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진심담은치과의원",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-821-8828",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 636 대호빌딩 4층",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지 실제 링크가 응답 Location으로 연결한 주소",
+              "sourceUrl": "http://jinsimdental.com/page.asp?m=naver_blog"
+            }
+          ],
+          "notes": "홈페이지에 표시된 내부 링크의 HTTP Location 목적지입니다. 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "http://jinsimdental.com/page.asp?m=naver_blog",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "instagram",
+          "label": "인스타그램",
+          "url": "https://www.instagram.com/jinsimdentalclinic/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "http://jinsimdental.com/",
+            "http://jinsimdental.com/page.asp?m=instagram"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진심담은치과의원",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-821-8828",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 636 대호빌딩 4층",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지 실제 링크가 응답 Location으로 연결한 주소",
+              "sourceUrl": "http://jinsimdental.com/page.asp?m=instagram"
+            }
+          ],
+          "notes": "홈페이지에 표시된 내부 링크의 HTTP Location 목적지입니다. 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "http://jinsimdental.com/page.asp?m=instagram",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/814497",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "http://jinsimdental.com/",
+            "http://jinsimdental.com/page.asp?m=naver_reservation"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진심담은치과의원",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-821-8828",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 636 대호빌딩 4층",
+              "sourceUrl": "http://jinsimdental.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지 실제 링크가 응답 Location으로 연결한 주소",
+              "sourceUrl": "http://jinsimdental.com/page.asp?m=naver_reservation"
+            }
+          ],
+          "notes": "홈페이지에 표시된 내부 링크의 HTTP Location 목적지입니다. 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "http://jinsimdental.com/page.asp?m=naver_reservation",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clinicId": "c-0af84b42f0d7",
+      "name": "진플란트치과의원",
+      "checkedAt": "2026-11-01T09:20:12+09:00",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "홈페이지",
+          "url": "https://jinplant.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://jinplant.com/sub-1/index.asp?m=1"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진플란트치과의원",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "phone",
+              "value": "031-855-2828",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 239 3층",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            }
+          ],
+          "notes": "기관 홈페이지 본문의 이름, 주소, 전화를 공공 원자료와 대조했습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_review",
+              "checkedAt": "2026-11-01T09:20:12+09:00",
+              "bodySha256": "9bf1bb5db34c28e163ee4d89951bd31be75db1fd67e65cbb3718751c24ab74e9",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            }
+          ]
+        },
+        {
+          "kind": "naverBlog",
+          "label": "공식 블로그",
+          "url": "https://blog.naver.com/jinplant_2828",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://jinplant.com/sub-1/index.asp?m=1"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진플란트치과의원",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "phone",
+              "value": "031-855-2828",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 239 3층",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "naverBlog",
+          "label": "대표원장 블로그",
+          "url": "https://blog.naver.com/prodentk",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://jinplant.com/sub-1/index.asp?m=1"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진플란트치과의원",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "phone",
+              "value": "031-855-2828",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 239 3층",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "instagram",
+          "label": "인스타그램",
+          "url": "https://www.instagram.com/dental_jinplant/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://jinplant.com/sub-1/index.asp?m=1"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진플란트치과의원",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "phone",
+              "value": "031-855-2828",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 239 3층",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오 예약",
+          "url": "https://pf.kakao.com/_bxhxizG",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://jinplant.com/sub-1/index.asp?m=1"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진플란트치과의원",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "phone",
+              "value": "031-855-2828",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 239 3층",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/840799",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://jinplant.com/sub-1/index.asp?m=1"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "진플란트치과의원",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "phone",
+              "value": "031-855-2828",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 평화로 239 3층",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://jinplant.com/sub-1/index.asp?m=1",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "clinicId": "c-165662466c0c",
+      "name": "탑석센트럴치과의원",
+      "checkedAt": "2026-11-01T09:20:12+09:00",
+      "researched": true,
+      "searches": [],
+      "assets": [
+        {
+          "kind": "website",
+          "label": "홈페이지",
+          "url": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "탑석센트럴치과의원",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-9275",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 충의로 25 천지연스퀘어 4층",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            }
+          ],
+          "notes": "기관 홈페이지 본문의 이름, 주소, 전화를 공공 원자료와 대조했습니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_review",
+              "checkedAt": "2026-11-01T09:20:12+09:00",
+              "bodySha256": "9ab1a4d45b7934b8da5dcb1d5c866e0633723f0d002de336fba94a31f4bf5811",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            }
+          ]
+        },
+        {
+          "kind": "naverBlog",
+          "label": "블로그",
+          "url": "https://blog.naver.com/tscdental",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "탑석센트럴치과의원",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-9275",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 충의로 25 천지연스퀘어 4층",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "카카오 채널",
+          "url": "http://pf.kakao.com/_Gsxgsn",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "탑석센트럴치과의원",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-9275",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 충의로 25 천지연스퀘어 4층",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "other",
+          "label": "네이버 톡톡",
+          "url": "https://talk.naver.com/ct/wiam9na",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "탑석센트럴치과의원",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-9275",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 충의로 25 천지연스퀘어 4층",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버지도",
+          "url": "https://map.naver.com/p/entry/place/1804916158?c=17.56,0,0,0,dh",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T09:20:12+09:00",
+          "evidenceUrls": [
+            "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "탑석센트럴치과의원",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-9275",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 충의로 25 천지연스퀘어 4층",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/"
+            }
+          ],
+          "notes": "기관 홈페이지의 실제 링크이며 대상 본문은 미확인입니다.",
+          "provenance": [
+            {
+              "type": "manual_homepage_link",
+              "sourceUrl": "https://www.xn--vb0b01s8lhtd321eopdq5d.com/",
+              "checkedAt": "2026-11-01T09:20:12+09:00"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

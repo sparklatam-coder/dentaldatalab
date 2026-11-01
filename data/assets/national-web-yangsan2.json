@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "official_website_review",
+  "checkedAt": "2026-11-01T00:36:51.468Z",
+  "scope": "양산 2차: 기존 1차 배치 제외 신규 기관 6곳 조사. 홈페이지 본문 대조 성공 2곳과 본문 대조 미완료 후보 4곳을 구분. 네이버 목적지 요청 금지, 실패 URL 재요청 없음.",
+  "collectionMethod": "기관명·지역명·전화 공개 검색으로 실제 후보 URL 발굴 → 해당 홈페이지 첫 열람 → 상호와 위치·전화 대조 → 성공한 홈페이지 실제 외부 href 기록. 시간초과·빈 본문·접근 실패는 후보로 보존.",
+  "records": [
+    {
+      "clinicId": "c-b0102437f9d6",
+      "name": "더이로운치과병원",
+      "checkedAt": "2026-11-01T00:36:51.468Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://thebeneficial.kr/webuser/page/main.html",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://thebeneficial.kr/webuser/page/main.html"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "더이로운치과병원",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            },
+            {
+              "field": "address",
+              "value": "경상남도 양산시 양산대로 886 2층 더이로운치과병원",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            },
+            {
+              "field": "phone",
+              "value": "1660-2875",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            }
+          ],
+          "notes": "상호·양산대로 886 2층 주소가 공공 원자료와 일치합니다. 홈페이지 대표번호 1660-2875는 공공 원자료 055-785-1575와 달라 별도 보존합니다. 홈페이지 진료시간 안내: 월·수·금 09:30~18:30, 화·목 09:30~20:00, 토 09:30~13:00, 점심 12:30~14:00, 공휴일 휴진. 네이버지도 진료시간으로 합치지 않았습니다."
+        },
+        {
+          "kind": "booking",
+          "label": "홈페이지에 연결된 네이버예약",
+          "url": "https://booking.naver.com/booking/13/bizes/1227040?theme=place&entry=pll&lang=ko&area=pll",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://thebeneficial.kr/webuser/page/main.html"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML에 표시된 실제 href",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            }
+          ],
+          "notes": "홈페이지에서 실제 연결 주소만 확인했습니다. 연결 목적지는 요청하지 않았습니다."
+        },
+        {
+          "kind": "naverMap",
+          "label": "홈페이지에 연결된 네이버 플레이스",
+          "url": "https://m.place.naver.com/hospital/1270561768/review/visitor?entry=pll",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://thebeneficial.kr/webuser/page/main.html"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML에 표시된 실제 href",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            }
+          ],
+          "notes": "홈페이지에서 실제 연결 주소만 확인했습니다. 연결 목적지는 요청하지 않았습니다."
+        },
+        {
+          "kind": "other",
+          "label": "홈페이지에 연결된 네이버 톡톡",
+          "url": "https://talk.naver.com/w5ycvw?frm=nmb_detail",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://thebeneficial.kr/webuser/page/main.html"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML에 표시된 실제 href",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            }
+          ],
+          "notes": "홈페이지에서 실제 연결 주소만 확인했습니다. 연결 목적지는 요청하지 않았습니다."
+        },
+        {
+          "kind": "kakaoChannel",
+          "label": "홈페이지에 연결된 카카오 채널",
+          "url": "https://pf.kakao.com/_RfxaxiG",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://thebeneficial.kr/webuser/page/main.html"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML에 표시된 실제 href",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            }
+          ],
+          "notes": "홈페이지에서 실제 연결 주소만 확인했습니다. 연결 목적지는 요청하지 않았습니다."
+        },
+        {
+          "kind": "instagram",
+          "label": "홈페이지에 연결된 인스타그램",
+          "url": "https://www.instagram.com/the_eroun_dental/",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://thebeneficial.kr/webuser/page/main.html"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML에 표시된 실제 href",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            }
+          ],
+          "notes": "홈페이지에서 실제 연결 주소만 확인했습니다. 연결 목적지는 요청하지 않았습니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "홈페이지에 연결된 네이버 블로그",
+          "url": "https://blog.naver.com/the_eroun_yangsan",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://thebeneficial.kr/webuser/page/main.html"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "공식 홈페이지 HTML에 표시된 실제 href",
+              "sourceUrl": "https://thebeneficial.kr/webuser/page/main.html"
+            }
+          ],
+          "notes": "홈페이지에서 실제 연결 주소만 확인했습니다. 연결 목적지는 요청하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-c6e95a5c5e8f",
+      "name": "사송퍼스트치과의원",
+      "checkedAt": "2026-11-01T00:36:51.468Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공식 홈페이지",
+          "url": "https://sasong1st.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://sasong1st.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "사송퍼스트치과의원",
+              "sourceUrl": "https://sasong1st.com/"
+            },
+            {
+              "field": "address",
+              "value": "경상남도 양산시 동면 사송리 1112-2 이진타워상가 4층",
+              "sourceUrl": "https://sasong1st.com/"
+            },
+            {
+              "field": "phone",
+              "value": "055-364-1116",
+              "sourceUrl": "https://sasong1st.com/"
+            }
+          ],
+          "notes": "공개 웹 본문에서 기관명·전화가 공공 원자료와 일치하며 이진타워 4층 위치가 대응합니다. 홈페이지는 지번주소를 사용합니다. 웹 도구 본문 열람 성공 후 별도 HTML 연결주소 확인 요청은 HTTP 403으로 실패했습니다. 열람 성공 근거와 후속 접근 실패를 구분해 보존하며 목적지 href를 추정하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-000029b3fb02",
+      "name": "유어스치과병원",
+      "checkedAt": "2026-11-01T00:36:51.468Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공개 검색에서 발굴한 홈페이지 후보",
+          "url": "https://xn--vb0b731a0leurdxtbunl13b.com/",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://hsl.purpleo.co.kr/view/3659"
+          ],
+          "identityEvidence": [],
+          "notes": "제3자 공개 목록에서 양산역로 71·전화 055-364-7600과 함께 홈페이지 주소를 발굴했습니다. 홈페이지 첫 요청 시간초과. 본문 대조 실패로 후보 상태이며 재요청하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e25134c727a1",
+      "name": "박앤장치과의원",
+      "checkedAt": "2026-11-01T00:36:51.468Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공개 검색에서 발굴한 홈페이지 후보",
+          "url": "http://xn--vb0b89zj4g7jc92m.kr/",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://jsjpapa.tistory.com/entry/%EC%96%91%EC%82%B0-%EC%B9%98%EA%B3%BC%EC%B6%94%EC%B2%9C-%EC%9E%98%ED%95%98%EB%8A%94%EA%B3%B3"
+          ],
+          "identityEvidence": [],
+          "notes": "제3자 공개 목록의 새실로 42 5층 기관명과 홈페이지 주소를 발굴했습니다. 홈페이지 첫 요청 시간초과. 본문 대조 실패로 후보 상태이며 재요청하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-62852575abe7",
+      "name": "사송비티앤치과의원",
+      "checkedAt": "2026-11-01T00:36:51.468Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공개 검색에서 발굴한 홈페이지 후보",
+          "url": "https://sasongbtn.ad-media.kr/",
+          "ownership": "candidate",
+          "bodyStatus": "blocked",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://sasongbtn.ad-media.kr/"
+          ],
+          "identityEvidence": [],
+          "notes": "공식 홈페이지 검색 색인에는 기관명·내송큰들로 15·055-382-2090이 표시되어 공공 원자료와 대응합니다. 실제 페이지 첫 요청은 시간초과로 본문 열람 실패했습니다. 검색 색인만으로 공식 확인 처리하지 않았으며 재요청하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-2a9c76053908",
+      "name": "66정플란트치과의원",
+      "checkedAt": "2026-11-01T00:36:51.468Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "공개 검색에서 발굴한 홈페이지 후보",
+          "url": "https://66jungplant.com/",
+          "ownership": "candidate",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:36:51.468Z",
+          "evidenceUrls": [
+            "https://www.daangn.com/kr/local-profile/66%EC%A0%95%ED%94%8C%EB%9E%80%ED%8A%B8%EC%B9%98%EA%B3%BC%EC%9D%98%EC%9B%90-a6nsw2wvc6g6/"
+          ],
+          "identityEvidence": [],
+          "notes": "당근 공개 업체 페이지의 홈페이지 실제 주소를 발굴했습니다. 홈페이지 접근은 성공했지만 파싱 가능한 내용은 상담 입력폼·개인정보 동의뿐이어서 상호·주소·전화의 본문 대조를 완료하지 못했습니다. 따라서 공식 확인 처리하지 않았습니다."
+        }
+      ]
+    }
+  ]
+}

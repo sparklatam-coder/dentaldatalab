@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-01T00:26:21Z",
+  "sourceType": "official_website_review",
+  "scope": "공개된 채널 페이지와 기관명·주소·전화 대조; 연결 목적지 본문은 미확인",
+  "records": [
+    {
+      "clinicId": "c-09cb69236cb7",
+      "name": "미소플러스치과의원",
+      "checkedAt": "2026-11-01T00:26:21Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "linkHub",
+          "label": "기관 소개 링크 모음",
+          "url": "https://litt.ly/denphile",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "evidenceUrls": [
+            "https://litt.ly/denphile"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "미소플러스치과",
+              "sourceUrl": "https://litt.ly/denphile"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 용민로 192",
+              "sourceUrl": "https://litt.ly/denphile"
+            },
+            {
+              "field": "phone",
+              "value": "031-851-7579",
+              "sourceUrl": "https://litt.ly/denphile"
+            }
+          ],
+          "notes": "공개 페이지에서 이름·주소·전화를 공공 원자료와 대조했습니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "링크 모음의 병원 홈페이지",
+          "url": "https://blog.naver.com/denphile",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://litt.ly/denphile"
+          ],
+          "identityEvidence": [
+            {
+              "field": "officialLink",
+              "value": "기관 소개 링크 모음의 실제 병원 홈페이지 href",
+              "sourceUrl": "https://litt.ly/denphile"
+            }
+          ],
+          "notes": "기관 이름·주소·전화가 일치하는 링크 모음에 연결된 실제 주소입니다. 블로그 본문은 확인하지 않았습니다."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "링크 모음에 표시된 블로그 후보",
+          "url": "https://blog.naver.com/daenasi1131",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://litt.ly/denphile"
+          ],
+          "identityEvidence": [],
+          "notes": "일치하는 소개 페이지에 주소가 텍스트로 표시됩니다. 본문·운영 주체와 실제 링크 여부는 확인하지 않았습니다."
+        },
+        {
+          "kind": "instagram",
+          "label": "링크 모음에 표시된 인스타그램 후보",
+          "url": "https://www.instagram.com/misoplus_/",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "evidenceUrls": [
+            "https://litt.ly/denphile"
+          ],
+          "identityEvidence": [],
+          "notes": "일치하는 소개 페이지에 주소가 텍스트로 표시됩니다. 본문·운영 주체와 실제 링크 여부는 확인하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-b11bbc0bc590",
+      "name": "뚜뚜어린이치과의원",
+      "checkedAt": "2026-11-01T00:26:21Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "naverBlog",
+          "label": "제3자 목록에서 확인한 채널 후보",
+          "url": "https://blog.naver.com/ttukids",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:26:21Z",
+          "evidenceUrls": [
+            "https://lilacys.com/blog/2025/03/21/%EA%B2%BD%EA%B8%B0-%ED%8F%AC%EC%B2%9C%EC%8B%9C-%EC%B9%98%EC%95%84%EA%B5%90%EC%A0%95-%EC%8B%B8%EA%B3%A0-%EC%96%91%EC%8B%AC%EC%A0%81%EC%9D%B8-%EA%B3%B3-top-5-%EC%8A%A4%EC%BC%80%EC%9D%BC%EB%A7%81/"
+          ],
+          "identityEvidence": [],
+          "notes": "제3자 글에 기관명·민락동 정원빌딩 4층·전화 031-851-7528과 주소가 표시됩니다. 블로그 본문과 운영 주체는 확인하지 못했습니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-913f98d468cb",
+      "name": "다온치과의원",
+      "checkedAt": "2026-11-01T00:26:21Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "제3자 목록에서 확인한 채널 후보",
+          "url": "http://daondental.kr",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:26:21Z",
+          "evidenceUrls": [
+            "https://cbuy.kr/%EA%B2%BD%EA%B8%B0-%EC%9D%98%EC%A0%95%EB%B6%80%EC%8B%9C-%EC%B9%98%EA%B3%BC-%EC%97%85%EC%B2%B4%EC%A0%95%EB%B3%B4-%EC%B6%94%EC%B2%9C-top-5/"
+          ],
+          "identityEvidence": [],
+          "notes": "제3자 글에서 기관명·평화로 630의 홈페이지 후보를 표시합니다. 직접 본문 열기 실패하여 운영 주체와 현재 운영은 미확인입니다."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-49e55bd6c5cb",
+      "name": "라온플러스치과의원",
+      "checkedAt": "2026-11-01T00:26:21Z",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "제3자 목록에서 확인한 채널 후보",
+          "url": "https://raonplusdent.com/",
+          "ownership": "candidate",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:26:21Z",
+          "evidenceUrls": [
+            "https://cbuy.kr/%EA%B2%BD%EA%B8%B0-%EC%9D%98%EC%A0%95%EB%B6%80%EC%8B%9C-%EC%B9%98%EA%B3%BC-%EC%97%85%EC%B2%B4%EC%A0%95%EB%B3%B4-%EC%B6%94%EC%B2%9C-top-5/"
+          ],
+          "identityEvidence": [],
+          "notes": "제3자 글에 기관명·태평로 2의 홈페이지 후보가 표시됩니다. 직접 본문 열기 실패하여 운영 주체와 현재 운영은 미확인입니다."
+        }
+      ]
+    }
+  ]
+}

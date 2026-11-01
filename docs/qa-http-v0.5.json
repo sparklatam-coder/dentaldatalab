@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-31T21:21:15.020Z",
+  "status": "passed",
+  "paths": [
+    {
+      "path": "/",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/questions/",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/search-sources/",
+      "status": 200,
+      "type": "text/html; charset=utf-8"
+    },
+    {
+      "path": "/data/content/search-source-guide.json",
+      "status": 200,
+      "type": "application/json; charset=utf-8"
+    }
+  ],
+  "sources": 10,
+  "references": 33,
+  "currentProject": {
+    "observedSeedCount": 20,
+    "autocompleteKeywordCount": 198,
+    "contentQuestionCount": 100,
+    "measuredMonthlyKeywordCount": 0,
+    "rankingStatus": "not_measured"
+  },
+  "referenceTargetsValid": true,
+  "sourceTargetsValid": true
+}

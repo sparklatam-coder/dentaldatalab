@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "sourceType": "official_website_review",
+  "checkedAt": "2026-11-01T00:34:46.173124+00:00",
+  "scope": "의정부 ㅅ~ㅇ 기관 공식 홈페이지 확인. 등록 전화와 안내 전화가 다르면 차이를 명시. 네이버 목적지는 요청하지 않음.",
+  "records": [
+    {
+      "clinicId": "c-dd5a7d5a17f4",
+      "name": "유디치과의원",
+      "checkedAt": "2026-11-01T00:34:46.173124+00:00",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://udh.co.kr/new3/sub_branch/view.php?idx=76",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:34:46.173124+00:00",
+          "evidenceUrls": [
+            "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "유디치과의원",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 시민로 80 센트럴타워 4층 405-406호",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "phone",
+              "value": "031-877-0909",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            }
+          ],
+          "notes": "공식 네트워크 의정부 지점. HTML data-link와 tel 필드의 031-877-0909를 원자료 전화와 대조. 화면 추출의 031-877-0059는 Fax이므로 대표전화로 사용하지 않음. 평일 09:30~18:30, 점심13:00~14:00, 목 휴진(공휴일 있는 주 예외), 토09:30~14:30. 홈페이지 안내이며 네이버 시간표 미확인."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/982927",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:34:46.173124+00:00",
+          "evidenceUrls": [
+            "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "유디치과의원",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 시민로 80 센트럴타워 4층 405-406호",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "phone",
+              "value": "031-877-0909",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 연결",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            }
+          ],
+          "notes": "공식 의정부 지점 페이지의 실제 예약 링크. 목적지 미요청."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "유디 네트워크 블로그",
+          "url": "https://blog.naver.com/ud_dental",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:34:46.173124+00:00",
+          "evidenceUrls": [
+            "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "유디치과의원",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 시민로 80 센트럴타워 4층 405-406호",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "phone",
+              "value": "031-877-0909",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            },
+            {
+              "field": "officialLink",
+              "value": "기관 홈페이지에 실제 연결",
+              "sourceUrl": "https://udh.co.kr/new3/sub_branch/view.php?idx=76"
+            }
+          ],
+          "notes": "공식 홈페이지 공통 메뉴의 네트워크 전체 블로그. 의정부 지점 단독 계정이 아님. 목적지 미요청."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-3321f58c770c",
+      "name": "서울가온치과의원",
+      "checkedAt": "2026-11-01T00:34:46.173124+00:00",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://seoulgaondc.kr/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:34:46.173124+00:00",
+          "evidenceUrls": [
+            "https://seoulgaondc.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울가온치과의원",
+              "sourceUrl": "https://seoulgaondc.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기 의정부시 용민로 22 골드자이프라자 4층",
+              "sourceUrl": "https://seoulgaondc.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "0507-1325-3377",
+              "sourceUrl": "https://seoulgaondc.kr/"
+            }
+          ],
+          "notes": "홈페이지 본문 기관명·용민로22 4층 주소 일치. 홈페이지 공개 전화0507-1325-3377은 심평원031-853-3377과 다르므로 동일 전화로 확인했다고 표시하지 않음. 네이버 연결번호 여부 별도 검증 필요. 홈페이지 안내 월화수금09:30~18:30, 목20:30까지, 토14:00까지, 일·공휴일 휴진. 본문 웹도구 열람 성공, 직접 HTTP 요청은403. 예약 페이지와 내원안내 페이지 점심시간13:00/12:30 상이하므로 정규화하지 않음."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-b6bdf853a0a2",
+      "name": "서울신세계치과의원",
+      "checkedAt": "2026-11-01T00:35:00.530672+00:00",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "http://www.seoul-s.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:35:00.530672+00:00",
+          "evidenceUrls": [
+            "http://www.seoul-s.com/",
+            "http://www.seoul-s.com/images/copy.jpg",
+            "http://www.seoul-s.com/intro/intro_07.php",
+            "http://www.seoul-s.com/intro/images/07_01.jpg"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울신세계치과",
+              "sourceUrl": "http://www.seoul-s.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 시민로 83 광장타워 801호",
+              "sourceUrl": "http://www.seoul-s.com/images/copy.jpg"
+            },
+            {
+              "field": "phone",
+              "value": "031-845-2080",
+              "sourceUrl": "http://www.seoul-s.com/intro/images/07_01.jpg"
+            }
+          ],
+          "notes": "HTTP 홈페이지 cp949 본문 및 이미지 직접 열람. 하단 이미지와 오시는길 이미지의 시민로83 광장타워801호·031-845-2080을 원자료와 대조. HTTPS는502였지만 HTTP 정상 열람됨."
+        },
+        {
+          "kind": "booking",
+          "label": "네이버 예약",
+          "url": "https://booking.naver.com/booking/13/bizes/598191",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:00.530672+00:00",
+          "evidenceUrls": [
+            "http://www.seoul-s.com/url.js?v=20260601"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "서울신세계치과",
+              "sourceUrl": "http://www.seoul-s.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 시민로 83 광장타워 801호",
+              "sourceUrl": "http://www.seoul-s.com/images/copy.jpg"
+            },
+            {
+              "field": "phone",
+              "value": "031-845-2080",
+              "sourceUrl": "http://www.seoul-s.com/intro/images/07_01.jpg"
+            },
+            {
+              "field": "officialLink",
+              "value": "메인 네이버예약 버튼 함수의 실제 목적지",
+              "sourceUrl": "http://www.seoul-s.com/url.js?v=20260601"
+            }
+          ],
+          "notes": "홈페이지 naverbooking 함수 실제 주소. 네이버 목적지는 요청하지 않음."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-65041b4c442d",
+      "name": "송산치과의원",
+      "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "http://songsandc.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+          "evidenceUrls": [
+            "http://songsandc.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "송산치과의원",
+              "sourceUrl": "http://songsandc.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 용민로 76 송산빌딩 4F",
+              "sourceUrl": "http://songsandc.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-8034",
+              "sourceUrl": "http://songsandc.com/"
+            }
+          ],
+          "notes": "등록된 이전 경로 /songsan/dent.php는404. 루트 홈페이지에서 이름·주소·전화를 원자료와 대조. 월~금09:30~18:30, 토09:30~13:00, 점심13:00~14:00은 홈페이지 안내이며 네이버 시간표는 미확인."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "네이버 블로그",
+          "url": "http://blog.naver.com/songsandental",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+          "evidenceUrls": [
+            "http://songsandc.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "송산치과의원",
+              "sourceUrl": "http://songsandc.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 용민로 76 송산빌딩 4F",
+              "sourceUrl": "http://songsandc.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-853-8034",
+              "sourceUrl": "http://songsandc.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "홈페이지에 실제 표시된 링크",
+              "sourceUrl": "http://songsandc.com/"
+            }
+          ],
+          "notes": "공식 홈페이지 실제 연결 링크. 목적지 미요청."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-212f95927e04",
+      "name": "이바르게치과교정과치과의원",
+      "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "http://www.braces2you.co.kr/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+          "evidenceUrls": [
+            "http://www.braces2you.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "이바르게치과교정과치과의원",
+              "sourceUrl": "http://www.braces2you.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 시민로 145 이안 더 센트로 2층",
+              "sourceUrl": "http://www.braces2you.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-826-2885",
+              "sourceUrl": "http://www.braces2you.co.kr/"
+            }
+          ],
+          "notes": "공식 홈페이지 하단 기관명·주소·전화를 원자료와 대조. 타지역 동명 이바르게 홈페이지(ibarge.kr/ibarge.co.kr)와 구분. 동일 페이지 내 진료시간·이전 주소 안내가 서로 충돌하므로 홈페이지의 시간표를 확정값으로 정규화하지 않음."
+        },
+        {
+          "kind": "naverBlog",
+          "label": "홈페이지 연결 블로그",
+          "url": "https://blog.naver.com/orthoynh",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+          "evidenceUrls": [
+            "http://www.braces2you.co.kr/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "이바르게치과교정과치과의원",
+              "sourceUrl": "http://www.braces2you.co.kr/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 시민로 145 이안 더 센트로 2층",
+              "sourceUrl": "http://www.braces2you.co.kr/"
+            },
+            {
+              "field": "phone",
+              "value": "031-826-2885",
+              "sourceUrl": "http://www.braces2you.co.kr/"
+            },
+            {
+              "field": "officialLink",
+              "value": "홈페이지에 실제 표시된 링크",
+              "sourceUrl": "http://www.braces2you.co.kr/"
+            }
+          ],
+          "notes": "홈페이지 본문 실제 링크. 목적지 본문·운영주체는 미확인. 상단 ebarumnet은 교정 네트워크 공통 블로그이므로 기관 단독 블로그로 기록하지 않음."
+        }
+      ]
+    },
+    {
+      "clinicId": "c-e61739974ed5",
+      "name": "연세치과의원",
+      "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+      "researched": true,
+      "assets": [
+        {
+          "kind": "website",
+          "label": "기관 홈페이지",
+          "url": "https://www.yonseiden.com/",
+          "ownership": "official",
+          "bodyStatus": "read",
+          "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+          "evidenceUrls": [
+            "https://www.yonseiden.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세치과의원",
+              "sourceUrl": "https://www.yonseiden.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 충의로 62",
+              "sourceUrl": "https://www.yonseiden.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-852-2875",
+              "sourceUrl": "https://www.yonseiden.com/"
+            }
+          ],
+          "notes": "공식 홈페이지 하단 주소·전화와 기관 이름을 원자료와 대조. 홈페이지 안내 평일09:30~19:00, 토09:00~13:00, 점심13:00~14:00, 일·공휴일 휴진. 네이버 시간표는 미확인."
+        },
+        {
+          "kind": "naverMap",
+          "label": "네이버 플레이스 방문자 리뷰",
+          "url": "https://m.place.naver.com/place/11549214/review/visitor",
+          "ownership": "linked",
+          "bodyStatus": "not_read",
+          "checkedAt": "2026-11-01T00:35:22.919807+00:00",
+          "evidenceUrls": [
+            "https://www.yonseiden.com/"
+          ],
+          "identityEvidence": [
+            {
+              "field": "name",
+              "value": "연세치과의원",
+              "sourceUrl": "https://www.yonseiden.com/"
+            },
+            {
+              "field": "address",
+              "value": "경기도 의정부시 충의로 62",
+              "sourceUrl": "https://www.yonseiden.com/"
+            },
+            {
+              "field": "phone",
+              "value": "031-852-2875",
+              "sourceUrl": "https://www.yonseiden.com/"
+            },
+            {
+              "field": "officialLink",
+              "value": "홈페이지에 실제 표시된 링크",
+              "sourceUrl": "https://www.yonseiden.com/"
+            }
+          ],
+          "notes": "기관 홈페이지에 실제 연결된 네이버 플레이스 리뷰 URL만 기록. 목적지·리뷰 본문 미요청."
+        }
+      ]
+    }
+  ]
+}
