@@ -24,7 +24,7 @@ node scripts/submit-indexnow.mjs --submit
 node scripts/submit-indexnow.mjs --url https://dentaldatalab.com/ --submit
 ```
 
-기본 8개는 홈, 리포트, 지역 목록, 에셋 목록, 출처, 처리 기준, 기존 확인 대상 치과 2개다. 이 구현은 1회 최대 8개의 명시적 URL만 허용한다. 프로토콜 자체 한도는 10,000개지만, 전국 기관을 자동으로 모두 제출하는 기능은 만들지 않았다. 의료 초안, 검색·비교 도구, 임의 도메인, HTTP URL, query/fragment URL은 제출하지 않는다.
+기본 7개는 홈, 리포트, 지역 목록, 에셋 목록, 출처, 처리 기준, 기존 확인 대상 치과 1개다. 이 구현은 1회 최대 8개의 명시적 URL만 허용한다. 프로토콜 자체 한도는 10,000개지만, 전국 기관을 자동으로 모두 제출하는 기능은 만들지 않았다. 의료 초안, 검색·비교 도구, 임의 도메인, HTTP URL, query/fragment URL은 제출하지 않는다.
 
 실제 제출 전 공개 키 파일과 개별 HTML을 읽고 HTTP 200, noindex 부재, canonical 일치, 로컬 빌드와의 HTML SHA-256 일치를 확인한다. 로컬 자료가 배포 자료보다 새로우면 먼저 그 빌드를 배포해야 한다. 검증을 통과하면 `https://api.indexnow.org/indexnow`로 1회 POST한다. 별도 검색엔진별 중복 전송이나 실패 자동 재시도는 하지 않는다.
 
@@ -41,3 +41,8 @@ node scripts/submit-indexnow.mjs --url https://dentaldatalab.com/ --submit
 - [Bing: IndexNow 시작](https://www.bing.com/indexnow/getstarted) — 공개 키 파일, POST 형식, 접수 상태, 색인 보장 아님.
 - [IndexNow 프로토콜 문서](https://www.indexnow.org/documentation) — 키 형식, keyLocation, 도메인 검증과 POST 최대 10,000 URL.
 - [IndexNow](https://www.indexnow.org/) — 참여 검색엔진의 프로토콜 안내.
+
+
+## 첫 제출 결과
+
+2026-11-01 실제 배포 자료와 본문이 일치하는 대표 URL7개를 제출했고 HTTP202(키 검증 대기 접수)를 받았다. 전송 기록은 data/research/indexnow에 남아 있다. 한 기관 페이지는 Cloudflare의 HTTP→HTTPS 링크 변환 때문에 로컬 HTML과 달라져 사전 검증에서 제외됐다. 이 경우 원문 비교를 완화하거나 CDN 보안 기능을 끄지 않는다. 해당 기관도 전체 사이트맵에는 포함돼 있다.

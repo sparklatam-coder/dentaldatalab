@@ -5,7 +5,7 @@ import { isIndexableRoute } from './seo.mjs';
 
 export const INDEXNOW_ORIGIN = 'https://dentaldatalab.com';
 export const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
-export const DEFAULT_INDEXNOW_ROUTES = ['/', '/reports/', '/regions/', '/clinic-assets/', '/data/', '/methodology/', '/clinics/c-f1e05c9ae9d2/', '/clinics/c-00e964567fee/'];
+export const DEFAULT_INDEXNOW_ROUTES = ['/', '/reports/', '/regions/', '/clinic-assets/', '/data/', '/methodology/', '/clinics/c-f1e05c9ae9d2/'];
 
 export function indexNowKey(root) {
   const file = path.join(root, 'data/content/indexnow-key.txt');
