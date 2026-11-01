@@ -31,6 +31,8 @@ npm run test:unit
 npx wrangler pages dev .cloudflare-dist
 ```
 
+실제 Wrangler/workerd 환경에서도 홈·검색·두 기관 상세·기관 JSON·전체 gzip 다운로드 응답을 확인했다. Git 추적 파일만 추출한 깨끗한 디렉터리에서도 전체 빌드가 성공했다.
+
 일반 `npm run preview`는 기본 `dist`용이며 compact 출력의 Worker 실행을 지원하지 않는다. 실제 배포 후 홈페이지, 치과 검색, 기관 상세와 마케팅 에셋, 기관별 JSON 및 전체 압축 다운로드를 확인한다.
 
 ## 업로드 범위
