@@ -157,3 +157,10 @@ node scripts/import-hira.mjs \
 ```
 
 자세한 실행 설명은 [로컬 개발](docs/local-development.md), 이번 변경 범위는 [개발 기록](docs/development-log.md), 향후 공개 조건은 [출시 체크리스트](docs/launch-checklist.md)를 참고하세요. 현재는 로컬 검토 단계이며 도메인·DNS·유료 호스팅을 변경하지 않았습니다. 원본 ZIP·대화·인수인계를 웹 문서 루트에 올리지 않습니다.
+
+
+## Cloudflare Pages 배포
+
+GitHub `main` 브랜치와 연결한 뒤 빌드 명령은 `npm run build:cloudflare`, 출력 폴더는 `.cloudflare-dist`를 사용합니다. 전국 기관 상세 페이지를 유지하면서 무료 Pages 파일 제한에 맞춘 빌드입니다. 초기 배포는 검색엔진 색인을 막은 검토본입니다.
+
+연결 설정·검증·수집 결과 반영 방법은 [Cloudflare 배포 문서](docs/cloudflare-deployment.md)를 확인하세요.
