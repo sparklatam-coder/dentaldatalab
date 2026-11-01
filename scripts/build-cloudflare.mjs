@@ -5,10 +5,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { gzipSync } from 'node:zlib';
+import { NOINDEX_ROUTES } from './seo.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
-export function cloudflareWorker({ review = true } = {}) {
+export function cloudflareWorker({ review = true, canonicalOrigin = null, pagesHost = null } = {}) {
   return `// Generated Pages advanced-mode Worker. No private data or credentials.
 const headers = {
   'X-Content-Type-Options': 'nosniff',
@@ -21,11 +22,20 @@ const headers = {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const canonicalOrigin = ${JSON.stringify(canonicalOrigin)};
+    const primaryPagesHost = ${JSON.stringify(pagesHost)};
+    if (canonicalOrigin && primaryPagesHost && url.hostname === primaryPagesHost) {
+      const target = new URL(canonicalOrigin);
+      target.pathname = url.pathname;
+      target.search = url.search;
+      return new Response(null, { status: 301, headers: { ...headers, Location: target.href } });
+    }
+    const responseHeaders = { ...headers, ...(url.hostname.endsWith('.pages.dev') ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}) };
     const html = url.pathname.match(/^\\/clinics\\/(c-([a-f0-9]{3})[a-f0-9]{9})(\\/|\\/index\\.html)?$/);
     const record = url.pathname.match(/^\\/data\\/clinic-assets\\/records\\/(c-([a-f0-9]{3})[a-f0-9]{9})\\.json$/);
     if (!html && !record) return env.ASSETS.fetch(request);
     if (!['GET', 'HEAD'].includes(request.method)) {
-      return new Response('Method not allowed', { status: 405, headers: { ...headers, Allow: 'GET, HEAD' } });
+      return new Response('Method not allowed', { status: 405, headers: { ...responseHeaders, Allow: 'GET, HEAD' } });
     }
     const match = html || record;
     const shardUrl = new URL('/data/cloudflare/' + (html ? 'html/' : 'records/') + match[2] + '.json', url);
@@ -35,18 +45,18 @@ export default {
     if (!Object.hasOwn(values, match[1])) return missing(request, env);
     if (html && match[3] !== '/') {
       url.pathname = '/clinics/' + match[1] + '/';
-      return new Response(null, { status: 308, headers: { ...headers, Location: url.pathname + url.search } });
+      return new Response(null, { status: 308, headers: { ...responseHeaders, Location: url.pathname + url.search } });
     }
     const body = values[match[1]];
     return new Response(request.method === 'HEAD' ? null : body, {
-      headers: { ...headers, 'Content-Type': html ? 'text/html; charset=utf-8' : 'application/json; charset=utf-8' },
+      headers: { ...responseHeaders, ...(!html ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}), 'Content-Type': html ? 'text/html; charset=utf-8' : 'application/json; charset=utf-8' },
     });
   },
 };
 async function missing(request, env) {
   const page = await env.ASSETS.fetch(new Request(new URL('/404.html', request.url)));
   return new Response(request.method === 'HEAD' ? null : page.body, {
-    status: 404, headers: { ...headers, 'Content-Type': 'text/html; charset=utf-8' },
+    status: 404, headers: { ...headers, 'X-Robots-Tag': 'noindex, follow', 'Content-Type': 'text/html; charset=utf-8' },
   });
 }
 `;
@@ -92,7 +102,10 @@ export function compactForCloudflare(directory) {
       .replaceAll('/data/clinic-assets/inventory.json', '/data/clinic-assets/inventory.json.gz')
       .replaceAll('전체 에셋·근거 JSON', '전체 에셋·근거 JSON (gzip 압축)'));
   }
-  write('_worker.js', cloudflareWorker({ review: manifest.mode !== 'production' }));
+  const indexingEnabled = manifest.indexingEnabled ?? manifest.mode === 'production';
+  const pagesHost = process.env.DDL_PAGES_HOST || 'dentaldatalab.pages.dev';
+  if (!/^[a-z0-9-]+\.pages\.dev$/.test(pagesHost)) throw new Error('DDL_PAGES_HOST must be the primary project.pages.dev hostname.');
+  write('_worker.js', cloudflareWorker({ review: !indexingEnabled, ...(manifest.seoPublic ? { canonicalOrigin: manifest.domain, pagesHost } : {}) }));
   write('_routes.json', JSON.stringify({ version: 1, include: ['/clinics/*', '/data/clinic-assets/records/*'], exclude: [] }, null, 2));
   write('_redirects', '/data/clinic-assets/inventory.json /data/clinic-assets/inventory.json.gz 302\n');
   write('_headers', `/*
@@ -100,7 +113,22 @@ export function compactForCloudflare(directory) {
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: geolocation=(), camera=(), microphone=()
-${manifest.mode !== 'production' ? '  X-Robots-Tag: noindex, nofollow\n' : ''}
+${!indexingEnabled ? '  X-Robots-Tag: noindex, nofollow\n' : ''}
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex, nofollow
+${NOINDEX_ROUTES.map(route => `${route}*\n  X-Robots-Tag: noindex, follow\n`).join('\n')}
+/data/cloudflare/*
+  X-Robots-Tag: noindex, nofollow
+/data/clinic-assets/*
+  X-Robots-Tag: noindex, nofollow
+/data/shards/*
+  X-Robots-Tag: noindex, nofollow
+/data/content/*
+  X-Robots-Tag: noindex, nofollow
+/404.html
+  X-Robots-Tag: noindex, follow
 /data/clinic-assets/inventory.json.gz
   Content-Type: application/gzip
   Content-Disposition: attachment; filename="inventory.json.gz"
