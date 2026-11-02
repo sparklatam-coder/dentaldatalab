@@ -1,0 +1,499 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-09-30",
+  "observedAt": "2026-10-31T10:27:09.045Z",
+  "sourceSha256": "ceff684b8eb1dc9059b668ec56bc91d2a643997420733b2996a0bc5d8910f9c3",
+  "sourceUrl": "https://www.data.go.kr/data/15051059/fileData.do",
+  "scope": {
+    "name": "양주시",
+    "sidoCode": "310000",
+    "cityCode": "312700",
+    "total": 67,
+    "clinic": 66,
+    "hospital": 1
+  },
+  "registered": {
+    "hours": 4,
+    "missing": 63,
+    "night": 4,
+    "hoursPercentOfTotal": 6,
+    "nightPercentOfTotal": 6
+  },
+  "byDong": [
+    {
+      "name": "광사동",
+      "total": 9,
+      "registeredHours": 2,
+      "registeredNight": 2,
+      "naverHours": 9
+    },
+    {
+      "name": "광적면",
+      "total": 4,
+      "registeredHours": 0,
+      "registeredNight": 0,
+      "naverHours": 4
+    },
+    {
+      "name": "남면",
+      "total": 2,
+      "registeredHours": 0,
+      "registeredNight": 0,
+      "naverHours": 1
+    },
+    {
+      "name": "덕계동",
+      "total": 12,
+      "registeredHours": 1,
+      "registeredNight": 1,
+      "naverHours": 12
+    },
+    {
+      "name": "덕정동",
+      "total": 8,
+      "registeredHours": 1,
+      "registeredNight": 1,
+      "naverHours": 8
+    },
+    {
+      "name": "백석읍",
+      "total": 5,
+      "registeredHours": 0,
+      "registeredNight": 0,
+      "naverHours": 5
+    },
+    {
+      "name": "삼숭동",
+      "total": 4,
+      "registeredHours": 0,
+      "registeredNight": 0,
+      "naverHours": 4
+    },
+    {
+      "name": "옥정동",
+      "total": 21,
+      "registeredHours": 0,
+      "registeredNight": 0,
+      "naverHours": 21
+    },
+    {
+      "name": "장흥면",
+      "total": 1,
+      "registeredHours": 0,
+      "registeredNight": 0,
+      "naverHours": 1
+    },
+    {
+      "name": "회정동",
+      "total": 1,
+      "registeredHours": 0,
+      "registeredNight": 0,
+      "naverHours": 1
+    }
+  ],
+  "weekdays": [
+    {
+      "day": "mon",
+      "label": "월요일",
+      "total": 67,
+      "registered": 4,
+      "missing": 63,
+      "weekdayNineteenOrLater": 1
+    },
+    {
+      "day": "tue",
+      "label": "화요일",
+      "total": 67,
+      "registered": 4,
+      "missing": 63,
+      "weekdayNineteenOrLater": 3
+    },
+    {
+      "day": "wed",
+      "label": "수요일",
+      "total": 67,
+      "registered": 4,
+      "missing": 63,
+      "weekdayNineteenOrLater": 1
+    },
+    {
+      "day": "thu",
+      "label": "목요일",
+      "total": 67,
+      "registered": 4,
+      "missing": 63,
+      "weekdayNineteenOrLater": 2
+    },
+    {
+      "day": "fri",
+      "label": "금요일",
+      "total": 67,
+      "registered": 4,
+      "missing": 63,
+      "weekdayNineteenOrLater": 0
+    },
+    {
+      "day": "sat",
+      "label": "토요일",
+      "total": 67,
+      "registered": 4,
+      "missing": 63,
+      "weekdayNineteenOrLater": null
+    },
+    {
+      "day": "sun",
+      "label": "일요일",
+      "total": 67,
+      "registered": 1,
+      "missing": 66,
+      "weekdayNineteenOrLater": null
+    }
+  ],
+  "naver": {
+    "available": true,
+    "hours": 66,
+    "percentOfTotal": 98.5,
+    "earliestCheckedAt": "2026-10-31T22:35:53.683+00:00",
+    "latestCheckedAt": "2026-10-31T22:55:10.262+00:00",
+    "policy": "latestNaverHours: 현재 정정 이력을 통과한 동일 Place의 본문 읽음·기관 식별 일치·시간 원문·유효한 관찰시각을 모두 충족한 최신 관찰만 사용. 시간 원문을 주간 일정이나 야간 운영으로 재해석하지 않음."
+  },
+  "coverage": {
+    "both": 4,
+    "registeredOnly": 0,
+    "naverOnly": 62,
+    "neither": 1
+  },
+  "evidence": [
+    {
+      "clinicId": "c-00e964567fee",
+      "checkedAt": "2026-10-31T22:35:53.683+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1984826113/home?fromPanelNum=1&additionalHeight=76&timestamp=202611010734&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-05f0f9d82ad8",
+      "checkedAt": "2026-10-31T22:46:38.763+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/20149931/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010746&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-0cbaef26c19a",
+      "checkedAt": "2026-10-31T22:50:50.006+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1457149467/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010750&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-0ec29ac7c301",
+      "checkedAt": "2026-10-31T22:44:15.104+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236062/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010744&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-17941b76d0b8",
+      "checkedAt": "2026-10-31T22:53:04.955+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1588554072/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010752&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-19e62cb7beb3",
+      "checkedAt": "2026-10-31T22:52:52.586+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/19494490/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010752&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-1be6fae19937",
+      "checkedAt": "2026-10-31T22:38:35.718+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1959429493/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010737&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-1dab1bc951f5",
+      "checkedAt": "2026-10-31T22:47:14.420+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1794363728/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010747&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-2221e782abd8",
+      "checkedAt": "2026-10-31T22:41:23.734+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1503746518/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010741&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-22fda844c356",
+      "checkedAt": "2026-10-31T22:42:10.426+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1529488632/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010742&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-2b9993c12d81",
+      "checkedAt": "2026-10-31T22:50:57.990+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1195813901/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010750&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-2e60c349b067",
+      "checkedAt": "2026-10-31T22:47:43.931+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1905328741/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010747&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-3119420e05a7",
+      "checkedAt": "2026-10-31T22:43:39.161+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/37912892/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010743&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-3205917c7339",
+      "checkedAt": "2026-10-31T22:40:04.750+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1472875833/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010739&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-33684ea3dfbc",
+      "checkedAt": "2026-10-31T22:40:47.540+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1754848323/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010740&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-3993510b47f4",
+      "checkedAt": "2026-10-31T22:42:32.685+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1009965126/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010742&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-3b189ea451e8",
+      "checkedAt": "2026-10-31T22:47:02.438+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/2067807343/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010746&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-3ef8b931b29f",
+      "checkedAt": "2026-10-31T22:51:39.756+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236464/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010751&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-4141dbc2bbfd",
+      "checkedAt": "2026-10-31T22:41:13.115+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1607270635/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010741&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-4464eef9846c",
+      "checkedAt": "2026-10-31T22:44:04.232+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/32721176/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010743&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-4d695a511e15",
+      "checkedAt": "2026-10-31T22:40:15.048+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/31323336/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010740&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-53ec190cb715",
+      "checkedAt": "2026-10-31T22:39:40.054+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1254887348/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010739&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-5554dc5ca79b",
+      "checkedAt": "2026-10-31T22:51:23.867+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236298/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010751&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-5671c973376f",
+      "checkedAt": "2026-10-31T22:50:18.370+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236154/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010750&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-5920bde2f098",
+      "checkedAt": "2026-10-31T22:52:24.981+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1677130038/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010752&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-59b36bbd3d31",
+      "checkedAt": "2026-10-31T22:36:33.059+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/37991643/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010736&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-59e51fdbaa8d",
+      "checkedAt": "2026-10-31T22:52:06.977+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/19524253/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010751&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-5c08c2bb08c3",
+      "checkedAt": "2026-10-31T22:46:49.975+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236424/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010746&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-5dee71e5f3d6",
+      "checkedAt": "2026-10-31T22:49:16.692+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1723903624/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010749&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-68a9fd6d807e",
+      "checkedAt": "2026-10-31T22:53:20.119+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/31996021/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010753&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-6a0d8d75bdc1",
+      "checkedAt": "2026-10-31T22:48:22.244+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1105187689/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010748&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-6b7c24eea93a",
+      "checkedAt": "2026-10-31T22:43:53.003+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1201891139/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010743&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-6db53519ff3b",
+      "checkedAt": "2026-10-31T22:41:30.755+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/19533091/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010741&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-724525341dbf",
+      "checkedAt": "2026-10-31T22:52:37.995+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/78147088/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010752&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-76938909f739",
+      "checkedAt": "2026-10-31T22:55:10.262+00:00",
+      "sourceUrl": "https://m.place.naver.com/hospital/2014773846/home"
+    },
+    {
+      "clinicId": "c-814dcd94f579",
+      "checkedAt": "2026-10-31T22:39:53.386+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/19528176/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010739&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-8347cdeeeb70",
+      "checkedAt": "2026-10-31T22:48:09.703+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1384418060/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010748&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-84400bad284c",
+      "checkedAt": "2026-10-31T22:39:18.107+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/19533122/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010739&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-9363219ea471",
+      "checkedAt": "2026-10-31T22:46:12.774+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1950754624/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010746&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-997def5ce9a5",
+      "checkedAt": "2026-10-31T22:53:32.994+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1058443430/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010753&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-99e1bd1c8c31",
+      "checkedAt": "2026-10-31T22:37:34.359+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1463095068/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010737&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-aeee409c9a5a",
+      "checkedAt": "2026-10-31T22:36:44.238+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1672951538/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010736&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-b08c334a0ece",
+      "checkedAt": "2026-10-31T22:51:11.525+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13546847/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010751&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-bb2283279949",
+      "checkedAt": "2026-10-31T22:46:24.676+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1256775236/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010746&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-bb63ccfaf425",
+      "checkedAt": "2026-10-31T22:36:13.171+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236498/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010736&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-be42ae28ae35",
+      "checkedAt": "2026-10-31T22:49:51.644+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236522/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010749&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-c53d79741667",
+      "checkedAt": "2026-10-31T22:44:49.037+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1874272754/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010744&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-c935e0b8bf84",
+      "checkedAt": "2026-10-31T22:39:29.218+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1209483903/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010739&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-c937bc56dc57",
+      "checkedAt": "2026-10-31T22:45:01.089+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/2002064332/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010744&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-d3f7a2e14832",
+      "checkedAt": "2026-10-31T22:37:18.261+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1837176355/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010737&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-d67e31fb64ff",
+      "checkedAt": "2026-10-31T22:44:36.812+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1163500721/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010744&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-dc63e9f5fc1f",
+      "checkedAt": "2026-10-31T22:50:05.883+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1709162580/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010749&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-e1fb836feb2e",
+      "checkedAt": "2026-10-31T22:50:30.891+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1134950580/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010750&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-e2b19dfec279",
+      "checkedAt": "2026-10-31T22:47:56.758+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/19810066/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010747&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-e479a317352d",
+      "checkedAt": "2026-10-31T22:37:08.529+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/33904285/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010737&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-e555e89c70c8",
+      "checkedAt": "2026-10-31T22:45:13.887+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1845344263/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010745&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-e61f478dfb00",
+      "checkedAt": "2026-10-31T22:37:02.382+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1286118420/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010736&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-e85fb1c2f406",
+      "checkedAt": "2026-10-31T22:41:03.277+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1222132703/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010740&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-e8a792f4a666",
+      "checkedAt": "2026-10-31T22:43:24.274+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/18076713/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010743&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-eb195e3002df",
+      "checkedAt": "2026-10-31T22:49:29.675+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/36161352/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010749&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-eff3f4509c95",
+      "checkedAt": "2026-10-31T22:42:48.910+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1613774009/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010742&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-f03aab4b3617",
+      "checkedAt": "2026-10-31T22:49:00.438+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/2034496778/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010748&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-f5b42f564b5c",
+      "checkedAt": "2026-10-31T22:40:24.220+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236457/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010740&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-f8b41f196f7e",
+      "checkedAt": "2026-10-31T22:41:59.358+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13236065/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010741&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-fcd4969ba92c",
+      "checkedAt": "2026-10-31T22:46:02.131+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/1149916618/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010745&locale=ko&svcName=map_pcv5"
+    },
+    {
+      "clinicId": "c-fd2732bdd99d",
+      "checkedAt": "2026-10-31T22:42:21.809+00:00",
+      "sourceUrl": "https://pcmap.place.naver.com/hospital/13180284/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202611010742&locale=ko&svcName=map_pcv5"
+    }
+  ],
+  "interpretation": "두 출처의 시간 정보 수록 여부 비교이며 시간표 일치율·정확도·현재 운영 확인 비율이 아님. 네이버 미확인은 안내 부재를 뜻하지 않음. 읍면동은 원자료 표기로 묶고 주소에서 추정하지 않음."
+}

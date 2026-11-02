@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {loadYangjuArchives} from './yangju-citation.mjs';
 import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';
 import {esc,fmt,icon,card,ctCount,nightDays,timeText,countText,safeWebsite,clinicUrl,SOURCE_URL,DAY_LABELS,setSnapshot,localDate,singlePhone} from '../src/shared.mjs';
 import {siteOrigin,robotsMeta,robotsText,sitemapXml} from './seo.mjs';
@@ -59,7 +60,7 @@ const regionGrid=(list=regions)=>`<div class="region-grid">${list.map(r=>`<a cla
 const unknown='<span class="unknown">자료 미확인</span>';
 const homepage=homePage(reportData,regionGrid(),{searchSources:Boolean(searchGuide)})+`<div class="wrap">${dataQualityHomePanel(dataQuality)}</div>`;
 page('/',{title:'치과 공공데이터 리포트와 조건 검색',description:`심평원 공개 자료 ${fmt(n)}곳을 바탕으로 전국·경기북부 통계와 출처를 확인하고 치과 등록 정보를 검색하세요.`,body:homepage});
-registerReportPages({page,put,reports:reportData,domain,clinics,assetInventory});
+registerReportPages({page,put,reports:reportData,domain,clinics,assetInventory,yangjuArchives:loadYangjuArchives()});
 registerSearchStatusPage({page,put,status:searchStatus});
 registerDataQualityPage({page,put,report:dataQuality});
 registerVerificationPage({page,put,verification});

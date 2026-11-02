@@ -17,7 +17,8 @@ if(b.matches('[data-remove]')){selected=selected.filter(x=>x.id!==b.dataset.remo
 if(b.matches('[data-source]'))openEvidence(b);
 if(b.matches('[data-close-dialog]'))$('#source-dialog').close();
 if(b.matches('[data-copy-link]'))toast(await copyText(location.href)?'현재 비교 링크를 복사했습니다.':'복사할 수 없습니다. 주소창의 URL을 복사해 주세요.');
-if(b.matches('[data-copy-citation]')){const title=document.title.replace(' | 치과데이터랩','');const t=`${title}. 출처: 건강보험심사평가원, 전국 병의원 및 약국 현황(${SNAPSHOT} 기준). 치과데이터랩 가공 자료. ${location.href}`;toast(await copyText(t)?'출처와 기준일을 포함한 인용문을 복사했습니다.':'복사할 수 없습니다.');}
+if(b.matches('[data-download-chart]'))await downloadChartPng(b);
+if(b.matches('[data-copy-citation]')){const title=document.title.replace(' | 치과데이터랩','');const t=(b.dataset.citationTarget?document.getElementById(b.dataset.citationTarget)?.textContent:null)||`${title}. 출처: 건강보험심사평가원, 전국 병의원 및 약국 현황(${SNAPSHOT} 기준). 치과데이터랩 가공 자료. ${location.href}`;toast(await copyText(t)?'출처와 기준일을 포함한 인용문을 복사했습니다.':'복사할 수 없습니다.');}
 });
 $('#source-dialog')?.addEventListener('click',e=>{if(e.target===$('#source-dialog')){const r=$('#source-dialog').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('#source-dialog').close();}});
 refreshCompare();
@@ -32,3 +33,16 @@ function run({reset=false,push=false}={}){if(reset)pageNo=1;const fd=new FormDat
 $('#search-pagination').innerHTML=a.length?`${pageNo>1?`<button type="button" data-search-page="${pageNo-1}">이전</button>`:''}<span>${pageNo} / ${total}</span>${pageNo<total?`<button type="button" data-search-page="${pageNo+1}">다음</button>`:''}`:'';refreshCompare();const url=new URLSearchParams();for(const[k,v]of fd.entries()){if(v&&!(k==='sort'&&v==='name'))url.set(k,v);}if(pageNo>1)url.set('p',pageNo);history[push?'pushState':'replaceState'](null,'',`/find/${url.size?'?'+url.toString():''}`);}
 form.addEventListener('submit',e=>{e.preventDefault();run({reset:true});});form.addEventListener('change',e=>{if(e.target.name==='sido')cities();run({reset:true});});let delay;form.elements.q.addEventListener('input',()=>{clearTimeout(delay);delay=setTimeout(()=>run({reset:true}),250);});form.addEventListener('reset',()=>setTimeout(()=>{cities();run({reset:true});},0));$('#search-pagination').addEventListener('click',e=>{const b=e.target.closest('[data-search-page]');if(!b)return;pageNo=Number(b.dataset.searchPage);run();$('#search-status').focus({preventScroll:true});$('#search-status').scrollIntoView({block:'center'});});root.addEventListener('click',e=>{if(e.target.id==='reset-search-results')form.reset();});run();}
 const correction=$('#correction-form');if(correction){const q=new URLSearchParams(location.search);if(q.has('clinic'))correction.elements.clinic.value=q.get('clinic');correction.addEventListener('submit',async e=>{e.preventDefault();if(!correction.reportValidity())return;const f=new FormData(correction);if(!/^https?:\/\//i.test(String(f.get('source')??''))){$('#correction-status').textContent='근거 주소는 http 또는 https URL을 입력해 주세요.';return;}const text=`치과데이터랩 정보 정정 검토 메모\n기관: ${f.get('clinic')}\n항목: ${f.get('field')}\n현재와 수정 정보: ${f.get('value')}\n근거 URL: ${f.get('source')}\n작성일: ${new Date().toLocaleDateString('sv-SE')}\n\n검토용 로컬 메모입니다. 운영자에게 제출되거나 접수된 상태가 아닙니다.`;$('#correction-result').textContent=text;$('#correction-result').hidden=false;$('#correction-status').textContent=await copyText(text)?'메모를 만들고 복사했습니다. 제출·접수된 것은 아닙니다.':'메모를 만들었습니다. 아래 내용을 직접 복사해 주세요. 운영자에게 전송되지 않았습니다.';});$('#correction-fields').disabled=false;}
+
+async function downloadChartPng(button){
+ const img=document.getElementById(button.dataset.downloadChart),status=document.querySelector('[data-chart-status]');
+ button.disabled=true;if(status)status.textContent='PNG 이미지를 만들고 있습니다.';
+ try{
+  if(!img)throw new Error('Chart missing');await img.decode();
+  const canvas=document.createElement('canvas');canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;
+  const ctx=canvas.getContext('2d');if(!ctx)throw new Error('Canvas unavailable');ctx.drawImage(img,0,0);
+  const blob=await new Promise((resolve,reject)=>canvas.toBlob(value=>value?resolve(value):reject(new Error('PNG unavailable')),'image/png'));
+  const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=button.dataset.filename||'dentaldatalab-chart.png';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  if(status)status.textContent='PNG 저장을 요청했습니다. 출처·기준일·분모·해석 한계가 이미지에 포함되어 있습니다.';
+ }catch{if(status)status.textContent='PNG를 만들지 못했습니다. 그래프 SVG 다운로드를 이용해 주세요.';}finally{button.disabled=false;}
+}

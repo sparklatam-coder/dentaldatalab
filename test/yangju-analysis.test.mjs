@@ -112,7 +112,7 @@ test('existing report registration gains one substantial linked analysis only wh
   const pages = new Map(), files = new Map();
   registerReportPages({ reports, clinics: rows, assetInventory: f.inventory, domain: 'https://example.test', page: (route, options) => pages.set(route, options), put: (file, value) => files.set(file, value) });
   assert.equal(pages.size, 4);
-  assert.equal(files.size, 6);
+  assert.equal(files.size, 10); // Three versioned artifacts and a version index supplement existing CSV/JSON.
   assert.ok(pages.get('/reports/').body.includes(YANGJU_REPORT_ROUTE));
   assert.ok(pages.has(YANGJU_REPORT_ROUTE));
 });
