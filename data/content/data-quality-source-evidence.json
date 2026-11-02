@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-02T03:50:26Z",
+  "method": "Official catalog checked with web.open; two duplicate-candidate groups followed through primary sources. One clinic homepage was directly read with a normal unauthenticated HTTPS request following its HTTP redirect after the web reader timed out. No login, API key, telephone call, or source-data edit.",
+  "catalog": {
+    "url": "https://www.data.go.kr/catalog/15051059/fileData.json",
+    "landingUrl": "https://www.data.go.kr/data/15051059/fileData.do",
+    "status": "directly_read",
+    "publisher": "건강보험심사평가원",
+    "datasetName": "건강보험심사평가원_전국 병의원 및 약국 현황_20260930",
+    "snapshotDate": "2026-09-30",
+    "dateModified": "2026-10-20",
+    "updateFrequency": "분기",
+    "finding": "공식 카탈로그에서 분기별 API 추출 자료이며 추출일에 따라 월말 집계와 차이가 날 수 있다는 설명을 확인했다. 이번 확인은 ZIP 재다운로드나 모든 기관의 현재 상태 확인이 아니다.",
+    "landingPageAccess": "web.open failed with unsupported content-type; the separate official catalog URL was readable"
+  },
+  "institutionSamples": [
+    {
+      "name": "인천센터치과의원",
+      "clinicIds": ["c-6e876b132d73", "c-91289ed8f36c"],
+      "checkedAt": "2026-11-02T03:50:26Z",
+      "sourceUrl": "http://www.icenterdental.co.kr/",
+      "requestedUrl": "https://www.icenterdental.co.kr/",
+      "sourceKind": "institution_homepage",
+      "status": "body_read_partial_concordance",
+      "statusLabel": "기관 홈페이지 본문 직접 확인 · 일부 표기 차이",
+      "httpStatus": 200,
+      "bodySha256": "bd7315e61cbbd1dfe0ca1e81ee59d9981e9ea82bc04e4350d120360460db26c0",
+      "observed": {
+        "name": "인천센터치과의원",
+        "address": "인천광역시 서구 가정로 280 (JS노송병원 6층)",
+        "phone": "032-577-2870"
+      },
+      "result": "홈페이지의 기관명·가정로 280·6층 및 전화 뒤 7자리는 두 등록 행과 대응한다. 원자료 전화는 577-2870으로 지역번호가 생략되어 있고, 주소의 구 명칭은 원자료 서해구와 홈페이지 서구가 다르다.",
+      "limitation": "홈페이지의 자체 안내를 읽은 결과다. 두 내부 ID 중 어느 기록을 채택해야 하는지, 현행 행정구역 표기, 실제 전화 연결, 현재 영업·이전·폐업은 확정하지 않았다. 원본 두 행과 연락처를 수정하거나 병합하지 않았다.",
+      "searchQuery": "\"인천센터치과의원\" 공식 홈페이지",
+      "accessAttempts": [
+        {"url": "https://www.icenterdental.co.kr/", "method": "web.open", "result": "timeout"},
+        {"url": "https://icenterdental.co.kr/", "method": "web.open", "result": "timeout"},
+        {"url": "https://www.icenterdental.co.kr/", "method": "Python urllib standard GET; normal redirect followed", "result": "HTTP 200 at http://www.icenterdental.co.kr/; visible contact text read"}
+      ]
+    },
+    {
+      "name": "오혜명시온백년치과의원",
+      "clinicIds": ["c-6174692428a4", "c-6d609384cfd5"],
+      "checkedAt": "2026-11-02T03:50:26Z",
+      "sourceUrl": "https://www.hira.or.kr/ra/hosp/hospInfoAjax.do?ykiho=JDQ4MTYyMiM4MSMkMSMkMCMkNzIkMzgxOTYxIzIxIyQxIyQxIyQ5OSQzNjE0ODEjNTEjJDEjJDIjJDgz",
+      "sourceKind": "official_hira_institution_page",
+      "status": "direct_page_unavailable",
+      "statusLabel": "공식 기관 페이지의 현재 본문 미확인",
+      "result": "검색에서 심평원 기관 페이지를 찾았으나 직접 열기 결과에는 병원정보가 존재하지 않는다는 제목만 표시되고 읽을 수 있는 본문이 없었다. 검색 결과의 과거 요약을 현재 사실로 채택하지 않았다.",
+      "limitation": "페이지를 열지 못한 이유를 확인하지 못했으므로 폐업·이전·ID 변경 또는 중복 여부를 추정하지 않는다. 중복 의심 두 행은 그대로 유지한다.",
+      "searchQuery": "\"오혜명시온백년치과의원\" site:hira.or.kr",
+      "searchSnippetUsedAsCurrentEvidence": false
+    }
+  ],
+  "overallLimit": "기관 홈페이지 본문 관찰 1건과 공식 기관 페이지 열람 실패 1건을 전국 검증 완료로 일반화하지 않는다. 공식 분기 원본의 과거 해시·필드 대조와 이번 제한적 원문 관찰은 서로 다른 검증 범위다."
+}

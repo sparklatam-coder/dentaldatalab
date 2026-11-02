@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-11-02T03:46:14Z",
+  "scope": "기존 인용 59개 중 보험·응급·약물·임신·치료 후 관리 관련 공식 원문 8개의 제목과 본문을 이번 작업에서 재열람했습니다. 의료진 검토나 100개 답변 전체의 문장별 검증이 아닙니다. 나머지 출처는 기존 확인 기록만 유지합니다.",
+  "checks": [
+    {"url":"https://www.nhis.or.kr/static/html/wbma/c/wbmac0221.html","title":"치과임플란트 급여안내","publisher":"국민건강보험공단","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","note":"공단의 급여안내 본문을 재열람했습니다. 적용 대상·재료·예외와 답변의 일치 여부는 의료진의 문안 검토 대상으로 남깁니다."},
+    {"url":"https://www.nhis.or.kr/static/html/wbma/c/wbmac0217.html","title":"노인틀니 급여안내","publisher":"국민건강보험공단","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","note":"공단의 틀니 급여 및 유지관리 안내 본문을 재열람했습니다. 원문 열람일과 의료진 검토일은 다릅니다."},
+    {"url":"https://www.nhis.or.kr/static/html/wbma/c/wbmac0218.html","title":"치석제거 급여안내","publisher":"국민건강보험공단","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","note":"공단의 치석제거 급여안내 본문을 재열람했습니다. 현재 답변을 승인한 기록은 아닙니다."},
+    {"url":"https://www.nhs.uk/conditions/knocked-out-tooth/","title":"Knocked-out tooth","publisher":"NHS","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","sourcePageReviewedAt":"2025-02-06","note":"응급 관련 원문과 원문 페이지의 자체 검토일을 확인했습니다. 영국의 연락처·의료이용 절차를 한국에 그대로 적용하지 않도록 별도 검토가 필요합니다."},
+    {"url":"https://www.nhs.uk/conditions/dental-abscess/?src=conditionswidget","title":"Dental abscess","publisher":"NHS","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","sourcePageReviewedAt":"2026-03-18","note":"증상·진료 안내·긴급 대응 구획을 재열람했습니다. 한국용 응급 안내와 답변 범위는 의료진 검토 대상으로 남깁니다."},
+    {"url":"https://www.ada.org/resources/ada-library/oral-health-topics/oral-anticoagulant-and-antiplatelet-medications-and-dental-procedures","title":"Oral Anticoagulant and Antiplatelet Medications and Dental Procedures","publisher":"American Dental Association","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","note":"치과 처치와 약물 관련 공식 본문을 재열람했습니다. 개별 환자의 약 변경 지시나 복용량 안내를 승인한 것이 아닙니다."},
+    {"url":"https://www.aae.org/patients/your-office-visit/post-treatment-care/","title":"Post Treatment Care","publisher":"American Association of Endodontists","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","note":"치료 후 관리와 재연락 안내 본문을 재열람했습니다. 치료 단계별 예외와 현재 답변의 범위는 의료진 검토가 필요합니다."},
+    {"url":"https://www.ada.org/resources/ada-library/oral-health-topics/pregnancy","title":"Pregnancy","publisher":"American Dental Association","checkedAt":"2026-11-02T03:46:14Z","status":"read","method":"official_source_web_open","note":"임신 중 치과 진료 관련 공식 본문을 재열람했습니다. 개별 임신 상태의 치료 적합성을 판단하거나 답변을 의료적으로 승인한 기록은 아닙니다."}
+  ]
+}

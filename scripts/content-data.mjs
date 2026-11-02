@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { auditContentReview, publicSourceUrl } from './content-review-data.mjs';
 
 export const CATEGORIES = [
   ['implant', '임플란트'], ['orthodontics', '치아교정'], ['caries', '충치·레진·인레이'],
@@ -13,10 +14,7 @@ export const EVIDENCE_LABELS = {
 };
 const FORMATS = { 비용: '견적 체크리스트', 통증: '경과와 진료 필요 신호', '치료 선택': '선택 기준 비교', '치료 과정': '치료 단계 설명', '회복·관리': '회복 중 확인할 사항', 보험: '적용 조건 확인', 응급: '우선 행동 안내' };
 export const normalizeKeyword = value => String(value ?? '').normalize('NFC').trim().replace(/\s+/g, ' ');
-function safeUrl(value) {
-  try { const u = new URL(value); return ['https:', 'http:'].includes(u.protocol) && !u.username && !u.password; }
-  catch { return false; }
-}
+const safeUrl = publicSourceUrl;
 
 export function prepareContent(batches, evidence = {}, { expectedCount = 100 } = {}) {
   const questions = batches.flatMap(batch => batch.questions ?? []);
@@ -68,12 +66,15 @@ export function prepareContent(batches, evidence = {}, { expectedCount = 100 } =
   };
 }
 
-export function loadContent(root) {
+export function loadContent(root, { asOf } = {}) {
   const dir = path.join(root, 'data/content');
   const parts = ['questions-01.json', 'questions-02.json', 'search-evidence.json'];
   if (!parts.every(file => fs.existsSync(path.join(dir, file)))) return null;
   const [a, b, evidence] = parts.map(file => JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8')));
-  return { content: prepareContent([a, b], evidence), evidence };
+  const readOptional = file => fs.existsSync(path.join(dir, file)) ? JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8')) : {};
+  const content = prepareContent([a, b], evidence);
+  const review = auditContentReview(content, { ledger: readOptional('review-ledger.json'), sourceChecks: readOptional('review-source-checks.json'), ...(asOf ? { asOf } : {}) });
+  return { content, evidence, review };
 }
 
 export function contentText(content) {

@@ -32,7 +32,10 @@ test('duplicates, absent medical sources and unearned clinical review fail inste
 test('content export preserves evidence and plain text; page escapes questions and has no ranking schema', () => {
   const c = make([sample({ hookTitle: '<img onerror=alert(1)>', answer: '답변 <script>bad</script>' })]);
   let html; const files = new Map();
-  registerContentPage({ bundle: { content: c, evidence: {} }, page: (route, opts) => { html = opts.body; assert.equal(route, '/questions/'); assert.equal(opts.schema, undefined); }, put: (name, value) => files.set(name, value) });
+  const pages = new Map();
+  registerContentPage({ bundle: { content: c, evidence: {} }, page: (route, opts) => { pages.set(route, opts); assert.equal(opts.schema, undefined); }, put: (name, value) => files.set(name, value) });
+  html = pages.get('/questions/').body;
+  assert(pages.has('/questions/review/'));
   assert(html.includes('&lt;img'));
   assert(!html.includes('<script>bad'));
   assert(html.includes('검색량 순위는 아직 확인하지 않았습니다'));

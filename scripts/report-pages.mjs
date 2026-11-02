@@ -1,4 +1,6 @@
 import { esc, fmt, icon, SOURCE_URL, localDate } from '../src/shared.mjs';
+import { buildYangjuAnalysis } from './yangju-analysis.mjs';
+import { registerYangjuAnalysisPage, yangjuAnalysisCard } from './yangju-analysis-pages.mjs';
 
 export const REPORTS = [
   { slug: 'national-data-coverage', group: 'national', tag: '전국 · 데이터 수록 현황', title: '전국 치과 데이터, 어디까지 확인할 수 있을까?', description: '치과 등록 정보의 수록 범위와 빈칸을 함께 살펴봅니다.' },
@@ -58,11 +60,13 @@ function northernContent(g) {
   return `<section class="report-section"><h2>10개 시·군의 등록시간 현황</h2><p class="report-section-copy">가나다순입니다. 각 비율의 분모는 해당 행의 전체 기관 수이며, 병원이나 지역의 우수성 순위가 아닙니다.</p>${table(['시·군', '전체 기관', '하루 이상 시간 확인', '평일 19시 이후', '토요일 시간', '일요일 시간'], rows, '경기북부 시·군별 등록시간 조건 집계')}<p class="subtle-note">모바일에서는 표를 좌우로 넘겨 모든 항목을 볼 수 있습니다. 하나의 기관이 여러 조건에 중복 포함될 수 있습니다.</p></section><section class="report-section"><h2>자료가 있는 범위를 함께 읽기</h2><div class="coverage-chart">${g.cities.map(c => `<div class="coverage-chart-row"><span>${esc(c.name)}</span><div class="coverage-track" aria-hidden="true"><span style="width:${c.metrics.hours.percentOfTotal ?? 0}%"></span></div><strong>${pct(c.metrics.hours.percentOfTotal)}</strong><small>${fmt(c.metrics.hours.count)} / ${fmt(c.total)}곳</small></div>`).join('')}</div><p class="subtle-note">막대는 하루 이상 유효한 시간 자료가 있는 기관의 비율입니다. 길이가 짧아도 해당 지역에 진료 가능한 치과가 적다는 뜻은 아닙니다.</p></section><section class="report-section report-reading"><h2>같은 건수도 분모에 따라 다르게 읽힙니다</h2><p>경기북부 전체 ${fmt(g.total)}곳 중 평일 19시 이후 종료가 등록된 곳은 ${fmt(g.metrics.night.count)}곳(${pct(g.metrics.night.percentOfTotal)})입니다. 평일 시간 자료가 하루라도 있는 ${fmt(g.metrics.night.known)}곳을 분모로 하면 ${pct(g.metrics.night.percentOfKnown)}입니다.</p><p>평일 일부 요일만 등록된 기관도 있습니다. 확인되지 않은 요일은 주간 진료나 휴진으로 간주하지 않습니다. 어느 분모를 쓰더라도 현재 실제 야간 진료 비율을 뜻하지 않습니다.</p></section>`;
 }
 
-export function registerReportPages({ page, put, reports, domain }) {
+export function registerReportPages({ page, put, reports, domain, clinics, assetInventory }) {
+  const yangju = Array.isArray(clinics) && assetInventory?.records
+    ? buildYangjuAnalysis(clinics, assetInventory, reports) : null;
   page('/reports/', {
     title: '치과 공공데이터 리포트', description: '전국과 경기북부의 치과 공공데이터를 모집단·기준일·누락 범위와 함께 읽습니다.', current: 'reports',
     breadcrumb: [{ label: '데이터 리포트' }],
-    body: `<div class="wrap"><div class="page-intro"><p class="eyebrow">PUBLIC DATA REPORTS</p><h1>치과를 이해하는 데이터</h1><p>확인된 숫자와 확인되지 않은 범위를 함께 설명합니다.</p></div>${reportCards(reports)}<div class="source-banner">${icon('source')}<div><strong>모든 리포트는 ${reports.snapshotDate} 분기 자료에서 계산합니다.</strong><p>출처, 집계 기준, 분모를 공개합니다. 원자료의 등록 상태이며 현재 운영이나 진료 성과를 평가하지 않습니다.</p></div></div><div class="report-reading"><h2>다음 데이터를 준비하고 있습니다</h2><p>비급여 가격 분포, 아동 인구 대비 전문의, 디지털 현황은 필요한 원자료와 검증 절차를 마련한 뒤 추가합니다.</p><a class="text-link" href="/data/">지금 확인 가능한 데이터 ${icon('arrow')}</a></div></div>`,
+    body: `<div class="wrap"><div class="page-intro"><p class="eyebrow">PUBLIC DATA REPORTS</p><h1>치과를 이해하는 데이터</h1><p>확인된 숫자와 확인되지 않은 범위를 함께 설명합니다.</p></div>${reportCards(reports)}${yangju?.scope.total ? `<section class="section"><h2>양주에서 출처별 자료의 차이 읽기</h2><div class="report-grid">${yangjuAnalysisCard(yangju)}</div></section>` : ''}<div class="source-banner">${icon('source')}<div><strong>공공데이터 집계는 ${reports.snapshotDate} 분기 자료를 사용합니다.</strong><p>별도 네이버 관찰 분석은 각 페이지에 확인 기간을 구분합니다. 출처, 집계 기준, 분모를 공개하며 현재 운영이나 진료 성과를 평가하지 않습니다.</p></div></div><div class="report-reading"><h2>다음 데이터를 준비하고 있습니다</h2><p>비급여 가격 분포, 아동 인구 대비 전문의, 디지털 현황은 필요한 원자료와 검증 절차를 마련한 뒤 추가합니다.</p><a class="text-link" href="/data/">지금 확인 가능한 데이터 ${icon('arrow')}</a></div></div>`,
   });
 
   for (const item of REPORTS) {
@@ -83,4 +87,5 @@ export function registerReportPages({ page, put, reports, domain }) {
       body: `<article class="wrap report-article"><header class="page-intro report-heading"><span class="pill outline">${item.tag}</span><h1>${item.title}</h1><p class="report-summary">${esc(description)}</p><p class="report-meta">자료 기준 ${reports.snapshotDate} · 원본 수집 ${localDate(reports.observedAt)} · 건강보험심사평가원</p><div class="hero-actions"><a class="btn small" href="${dataPath(item, 'csv')}" download>집계표 CSV</a><a class="btn small" href="${dataPath(item, 'json')}" download>근거 포함 JSON</a><button class="btn small" data-copy-citation>출처 포함 인용문 복사</button><a class="text-link" href="#report-methodology">집계 방법</a></div></header>${summary(g)}<div class="source-banner warning">${icon('info')}<div><strong>등록된 시간의 집계이며, 실제 진료 여부를 확인한 비율이 아닙니다.</strong><p>자료가 없는 기관도 모집단에 포함합니다. 공란을 휴진으로 바꾸지 않으며 방문 전 기관에 확인해야 합니다.</p></div></div>${northern ? northernContent(g) : nationalContent(g)}${definitions(reports, northern)}<section class="report-section report-source"><h2>출처와 변경 기록</h2><p><a href="${SOURCE_URL}" target="_blank" rel="noopener noreferrer">건강보험심사평가원 · 전국 병의원 및 약국 현황 ${icon('link')}</a></p><p>원자료 이용 조건: 공공저작물 출처표시 제1유형. 치과데이터랩이 기관별 데이터를 선별·집계했습니다.</p><details><summary>재현에 사용한 원본 SHA-256</summary><code>${esc(reports.sourceSha256)}</code></details><p>리포트 집계 버전 1 · ${reports.snapshotDate} 자료로 최초 작성한 로컬 검토본. 아직 여러 분기의 변화를 비교하지 않습니다.</p><a class="text-link" href="/corrections/?clinic=${encodeURIComponent(item.title)}">집계 오류 정정 메모 ${icon('arrow')}</a></section></article>`,
     });
   }
+  if (yangju?.scope.total) registerYangjuAnalysisPage({ page, put, analysis: yangju, domain });
 }
