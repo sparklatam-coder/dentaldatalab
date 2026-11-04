@@ -9,6 +9,7 @@ const data=JSON.parse(fs.readFileSync(new URL('../data/clinics.json',import.meta
 const manifest=JSON.parse(fs.readFileSync(new URL('../data/source-manifest.json',import.meta.url),'utf8'));
 const a=buildYangjuAnalysis(data.clinics,loadAssetInventory(root,data),{snapshotDate:data.snapshotDate,observedAt:data.observedAt,sourceSha256:manifest.archive.sha256});
 const c=citationPack(a,'https://dentaldatalab.com');
-if(loadYangjuArchives().some(old=>citationPack(old,'https://dentaldatalab.com').version===c.version)){console.log('Already archived: '+c.version);process.exit(0);}
+if(loadYangjuArchives({allowEmpty:true}).some(old=>citationPack(old,'https://dentaldatalab.com').version===c.version)){console.log('Already archived: '+c.version);process.exit(0);}
+fs.mkdirSync(new URL('../data/content/report-archives/',import.meta.url),{recursive:true});
 const target=new URL('../data/content/report-archives/yangju-hours-evidence-'+c.version+'.json',import.meta.url);
 fs.writeFileSync(target,JSON.stringify(a,null,2)+'\n',{flag:'wx'});console.log('Created '+target.pathname+' — review and commit with the corresponding source release.');

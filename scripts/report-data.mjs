@@ -1,4 +1,5 @@
-import { safeWebsite, SOURCE_URL } from '../src/shared.mjs';
+import { safeWebsite, SOURCE_URL, hoursMinutes, closesAtOrAfter } from '../src/shared.mjs';
+import { DAYS, WEEKDAYS, percentage } from './common.mjs';
 
 /** Explicit HIRA source-code scope, not a guess from institution names/addresses. */
 export const NORTHERN_GYEONGGI_CITIES = Object.freeze([
@@ -14,24 +15,13 @@ export const NORTHERN_GYEONGGI_CITIES = Object.freeze([
   { id: 'pocheon', name: '포천시', cityCodes: ['312800'] },
 ].map(city => Object.freeze({ ...city, cityCodes: Object.freeze(city.cityCodes) })));
 
-const WEEKDAYS = ['mon', 'tue', 'wed', 'thu', 'fri'];
-const DAYS = [...WEEKDAYS, 'sat', 'sun'];
-
-function minutes(value) {
-  if (typeof value !== 'string' || !/^\d{2}:\d{2}$/.test(value)) return null;
-  const [hour, minute] = value.split(':').map(Number);
-  // The importer treats 00:00 as an unprovided source value, not an opening time.
-  if (hour > 24 || minute > 59 || (hour === 24 && minute !== 0) || (hour === 0 && minute === 0)) return null;
-  return hour * 60 + minute;
-}
-
+// hoursMinutes (src/shared.mjs) treats 00:00 as an unprovided source value, not an opening time.
 export function hasValidHours(hours) {
-  const open = minutes(hours?.open), close = minutes(hours?.close);
+  const open = hoursMinutes(hours?.open), close = hoursMinutes(hours?.close);
   return open !== null && close !== null && close > open;
 }
 
 const isCount = value => Number.isSafeInteger(value) && value >= 0;
-const percentage = (count, denominator) => denominator ? Math.round(count / denominator * 1000) / 10 : null;
 
 function metric(total, count, known) {
   return {
@@ -94,7 +84,7 @@ function summarize(clinics) {
     }
     if (DAYS.some(day => hasValidHours(clinic.hours?.[day]))) counts.hours++;
     if (WEEKDAYS.some(day => hasValidHours(clinic.hours?.[day]))) counts.weekdaysKnown++;
-    if (WEEKDAYS.some(day => hasValidHours(clinic.hours?.[day]) && minutes(clinic.hours[day].close) >= 19 * 60)) counts.night++;
+    if (WEEKDAYS.some(day => closesAtOrAfter(clinic.hours?.[day], '19:00'))) counts.night++;
     if (hasValidHours(clinic.hours?.sat)) counts.saturday++;
     if (hasValidHours(clinic.hours?.sun)) counts.sunday++;
     if (typeof clinic.website === 'string' && clinic.website.trim()) counts.websiteKnown++;

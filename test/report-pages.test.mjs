@@ -24,10 +24,10 @@ const fixture = () => collectReports([
   clinic('private-e', { sidoCode: '110000', cityCode: '110001' }),
 ], metadata);
 
-function render(reports) {
+function render(reports, options = {}) {
   const pages = new Map(), files = new Map();
   registerReportPages({
-    reports, domain,
+    reports, domain, ...options,
     page: (route, options) => { assert(!pages.has(route)); pages.set(route, options); },
     put: (path, value) => { assert(!files.has(path)); files.set(path, value); },
   });
@@ -147,6 +147,15 @@ test('HTML escapes labels and hashes while CSV quoted cells and JSON retain exac
   const json = JSON.parse(files.get('data/reports/northern-gyeonggi-hours.json'));
   assert.equal(json.scope.name, name);
   assert.equal(json.sourceSha256, sourceHash);
+});
+
+test('report provenance wording follows the build mode: local review copy by default, public copy when indexing is enabled', () => {
+  const route = '/reports/national-data-coverage/';
+  const local = render(fixture()).pages.get(route).body, open = render(fixture(), { indexingEnabled: true }).pages.get(route).body;
+  assert.match(local, /최초 작성한 로컬 검토본\./);
+  assert.doesNotMatch(open, /로컬 검토본/);
+  assert.match(open, /최초 작성한 공개본\./);
+  assert.equal(local.replace('로컬 검토본', '공개본'), open, 'only the provenance wording differs');
 });
 
 test('empty populations render unavailable ratios without NaN, Infinity or invalid chart widths', () => {

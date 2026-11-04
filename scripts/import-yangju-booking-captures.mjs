@@ -3,18 +3,17 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {loadAssetInventory} from './clinic-assets.mjs';
+import {hasText,isIsoTimestampShape,isCalendarValid} from './common.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const INPUT='data/research/yangju-booking-captures';
 const OUTPUT='data/assets/naver-yangju-booking-01.json';
 const METHODS=new Set(['browser_ui','browser_ui_accessibility','browser_ui_screenshot','browser_ui_accessibility_and_screenshot','browser_ui_saved_html']);
-const hasText=value=>typeof value==='string'&&value.trim().length>0;
 const plain=value=>value&&typeof value==='object'&&!Array.isArray(value);
 const fail=message=>{throw new Error(message);};
 function stamp(value,label){
-  if(!hasText(value)||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)||!Number.isFinite(Date.parse(value)))fail(`${label}: explicit ISO timestamp required`);
-  const [year,month,day,hour,minute,second]=value.slice(0,19).split(/[-T:]/).map(Number);
-  if(month<1||month>12||day<1||day>new Date(Date.UTC(year,month,0)).getUTCDate()||hour>23||minute>59||second>59)fail(`${label}: invalid calendar date`);
+  if(!isIsoTimestampShape(value))fail(`${label}: explicit ISO timestamp required`);
+  if(!isCalendarValid(value))fail(`${label}: invalid calendar date`);
 }
 export function bookingId(value){
   if(!hasText(value))return null;

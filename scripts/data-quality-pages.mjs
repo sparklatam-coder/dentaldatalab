@@ -1,11 +1,12 @@
 import {esc,fmt,localDate,SOURCE_URL} from '../src/shared.mjs';
-import {dataQualitySummary,qualityHttpUrl} from './data-quality.mjs';
+import {externalLink,reportTable} from './html.mjs';
+import {dataQualitySummary} from './data-quality.mjs';
 
 export const DATA_QUALITY_ROUTE='/data/quality/';
 const date=value=>value&&Number.isFinite(Date.parse(value))?localDate(value):'미확인';
-const link=(url,label)=>{const safe=qualityHttpUrl(url);return safe?`<a href="${esc(safe)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`:esc(label);};
+const link=(url,label)=>externalLink(url,label);
 const institution=row=>/^c-[a-f0-9]{12}$/.test(row.id??'')?`<a href="/clinics/${esc(row.id)}/">${esc(row.name??'기관명 미수록')}</a>`:esc(row.name??'기관명 미수록');
-const table=(headers,rows,caption)=>`<div class="report-table-scroll" tabindex="0" role="region" aria-label="${esc(caption)}"><table class="report-table"><caption>${esc(caption)}</caption><thead><tr>${headers.map(h=>`<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map(cell=>`<td>${cell}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+const table=(headers,rows,caption)=>reportTable(headers,rows,caption,{rowHeader:false});
 
 export function dataQualityHomePanel(report,{id='data-quality-summary'}={}){
   const s=report.summary;

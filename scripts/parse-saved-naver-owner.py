@@ -10,10 +10,13 @@ import datetime
 import hashlib
 import json
 import re
+import sys
 import time
 import urllib.parse
 from html.parser import HTMLParser
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from ddl import store, web
 
 ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'data/research/yangju-owner-html'
@@ -71,23 +74,7 @@ def source_page(raw):
     return url,match.group(1),match.group(2)
 
 
-def channel_kind(url):
-    try:
-        p=urllib.parse.urlsplit(url);host=(p.hostname or '').removeprefix('www.')
-        if p.scheme not in ('http','https') or not host or p.username or p.password or p.port not in (None,80,443):return None
-        if host in ('blog.naver.com','m.blog.naver.com'):return 'naverBlog'
-        if host in ('instagram.com',):return 'instagram'
-        if host in ('youtube.com','m.youtube.com','youtu.be'):return 'youtube'
-        if host in ('facebook.com','m.facebook.com'):return 'facebook'
-        if host in ('booking.naver.com','m.booking.naver.com') and '/bizes/' in p.path:return 'booking'
-        if host=='pf.kakao.com':return 'kakaoChannel'
-        if host in ('place.map.kakao.com','map.kakao.com','kko.to'):return 'kakaoMap'
-        if host in ('talk.naver.com','naver.me'):return 'other'
-        if host.endswith('.tistory.com') or host.endswith('.wordpress.com') or host=='brunch.co.kr':return 'blog'
-        if host in ('linktr.ee','litt.ly','instabio.cc'):return 'linkHub'
-        if host in ('map.naver.com','pcmap.place.naver.com','m.place.naver.com'):return None
-        return 'website'
-    except ValueError:return None
+def channel_kind(url):return web.kind_of(url,website=True)
 
 
 def parse(path,record):
@@ -276,8 +263,7 @@ def main():
                 # never to a silently inherited older institution judgement.
                 if previous.get('metadata',{}).get('savedHtmlSha256')==capture['metadata']['savedHtmlSha256'] and previous.get('identityReview'):
                     capture['identityReview']=previous['identityReview']
-            if not args.dry_run:
-                temporary=output.with_suffix('.json.tmp');temporary.write_text(json.dumps(capture,ensure_ascii=False,indent=2)+'\n');temporary.replace(output)
+            if not args.dry_run:store.atomic_json(output,capture)
             imported.append({'clinicId':capture['clinicId'],'name':capture['name'],'tab':tab,'output':str(output.relative_to(ROOT)),
                 'fields':list(capture['fields']),'incomplete':[key for key,status in capture['fieldStatus'].items() if status=='incomplete'],'links':len(capture['observedChannelLinks'])})
             known.add(capture['metadata']['savedHtmlSha256'])

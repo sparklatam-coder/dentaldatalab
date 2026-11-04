@@ -1,19 +1,18 @@
 import { createHash } from 'node:crypto';
+import { hasText as text, isIsoTimestamp } from './common.mjs';
 
 export const REVIEW_POLICY = {
   version: 1, sourceCheckMaxAgeDays: 90, reviewMaxAgeDays: 366,
   note: '서비스의 편집 운영 기준입니다. 법정 검토 주기나 의료적 유효기간을 뜻하지 않습니다. 기록 조건 충족은 자동 게시 또는 검색 노출 허용이 아닙니다.',
 };
 const day = 86400000;
-const text = value => typeof value === 'string' && value.trim().length > 0;
 export function publicSourceUrl(value) {
   try { const u = new URL(value); return ['https:', 'http:'].includes(u.protocol) && !u.username && !u.password && !u.port && u.hostname.includes('.') && !/^(localhost|127\.|0\.|10\.|192\.168\.|169\.254\.)/i.test(u.hostname) && !/^172\.(?:1[6-9]|2\d|3[01])\./.test(u.hostname); }
   catch { return false; }
 }
+// A review or source time must be a strict ISO timestamp that is not in the future of the audit clock.
 function validTime(value, now) {
-  if (!text(value) || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)) return false;
-  const ms = Date.parse(value), [y, m, d, h, min, sec] = value.slice(0, 19).split(/[-T:]/).map(Number);
-  return Number.isFinite(ms) && ms <= now && m >= 1 && m <= 12 && d >= 1 && d <= new Date(Date.UTC(y, m, 0)).getUTCDate() && h < 24 && min < 60 && sec < 60;
+  return isIsoTimestamp(value) && Date.parse(value) <= now;
 }
 export function contentRevision(question) {
   const fields = ['id', 'category', 'keyword', 'question', 'hookTitle', 'intent', 'answer', 'answerSources', 'editorialPriority', 'priorityReason'];

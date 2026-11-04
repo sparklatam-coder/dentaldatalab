@@ -9,7 +9,11 @@ export const fmt=n=>Number(n).toLocaleString('ko-KR');
 export const icon=(name)=>{const paths={search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/>',arrow:'<path d="M4 12h15m-6-6 6 6-6 6"/>',check:'<path d="m5 12 4 4L19 6"/>',plus:'<path d="M12 5v14M5 12h14"/>',source:'<path d="M8 3H4v18h16V3h-4M8 2h8v4H8zM8 11h8M8 16h6"/>',compare:'<path d="M5 3v18M19 3v18M2 8h6M16 15h6M10 8h5M9 15h5"/>',info:'<circle cx="12" cy="12" r="9"/><path d="M12 10v7M12 7h.01"/>',link:'<path d="M10 14 14 10m-6 5-2 2a4 4 0 0 1-5-5l4-4a4 4 0 0 1 5 0m4 1 2-2a4 4 0 0 1 5 5l-4 4a4 4 0 0 1-5 0"/>'};return `<svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${paths[name]??paths.info}</svg>`};
 export const countText=(n,unit='명')=>n==null?'자료 미확인':`${fmt(n)}${unit}`;
 export const ctCount=c=>{const a=(c.equipment??[]).filter(x=>/콘빔/.test(x.name??''));return a.length&&a.every(x=>x.count!=null)?a.reduce((s,x)=>s+x.count,0):null;};
-export const nightDays=c=>Object.entries(c.hours??{}).filter(([d,h])=>!['sat','sun'].includes(d)&&h?.open&&h?.close&&h.close>='19:00').map(([d])=>DAY_LABELS[d][0]);
+// Registered HH:MM → minutes. The importer writes 00:00 for "not provided", so it is not an opening time.
+export const hoursMinutes=value=>{if(typeof value!=='string'||!/^\d{2}:\d{2}$/.test(value))return null;const h=Number(value.slice(0,2)),m=Number(value.slice(3));if(h>24||m>59||(h===24&&m!==0)||(h===0&&m===0))return null;return h*60+m;};
+// One definition of "closes at or after HH:MM" for reports, analyses and cards: only a valid same-day pair can qualify.
+export const closesAtOrAfter=(hours,threshold)=>{const open=hoursMinutes(hours?.open),close=hoursMinutes(hours?.close),limit=hoursMinutes(threshold);return open!==null&&close!==null&&limit!==null&&close>open&&close>=limit;};
+export const nightDays=c=>Object.entries(c.hours??{}).filter(([d,h])=>!['sat','sun'].includes(d)&&closesAtOrAfter(h,'19:00')).map(([d])=>DAY_LABELS[d][0]);
 export const timeText=h=>h?.open&&h?.close?`${h.open} ~ ${h.close}`:'시간 자료 미확인';
 export const safeWebsite=v=>{if(!v)return null;try{const u=new URL(/^https?:\/\//i.test(v)?v:`https://${v}`);return ['http:','https:'].includes(u.protocol)&&u.hostname.includes('.')&&!u.username&&!u.password?u.href:null;}catch{return null;}};
 export const clinicUrl=c=>`/clinics/${typeof c==='string'?c:c.id}/`;

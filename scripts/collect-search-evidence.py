@@ -7,17 +7,22 @@ Google Trends is only checked through its ordinary public exploration URL;
 no private/token endpoints are used and an HTML shell is not counted as data.
 """
 import argparse
-from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
+import sys
 import time
 import unicodedata
 import urllib.error
 import urllib.parse
-import urllib.request
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ddl import store, web
 
 ROOT = Path(__file__).resolve().parents[1]
+USER_AGENT = web.user_agent('public search evidence collection')
+ROBOTS = web.RobotsCache(agent=USER_AGENT)
+LIMIT = 2 * 1024 * 1024
+now = store.now
 SEEDS = [
     ('implant-1', 'implant', '임플란트'), ('implant-2', 'implant', '임플란트 뼈이식'),
     ('orthodontics-1', 'orthodontics', '치아교정'), ('orthodontics-2', 'orthodontics', '투명교정'),
@@ -38,19 +43,22 @@ OFFICIAL_SOURCES = [
 ]
 
 
-def now():
-    return datetime.now(timezone.utc).isoformat()
-
-
 def normalize(value):
     return ' '.join(unicodedata.normalize('NFC', value).strip().split())
 
 
+class RobotsDisallowed(Exception):
+    pass
+
+
 def fetch(url):
-    # urllib creates an anonymous public request; no browser cookies are read.
-    with urllib.request.urlopen(url, timeout=20) as response:
-        body = response.read(2 * 1024 * 1024 + 1)
-        if len(body) > 2 * 1024 * 1024:
+    # Anonymous public request with a contact User-Agent; no browser cookies are
+    # read; the connection is pinned to a validated public address.
+    if not ROBOTS.allowed(url):
+        raise RobotsDisallowed('robots.txt disallows this URL for our agent; not requested')
+    with web.open_url(url, timeout=20, agent=USER_AGENT) as response:
+        body, truncated = web.read_limited(response, LIMIT)
+        if truncated:
             raise ValueError('Public response exceeds collection limit')
         return body, response.status, response.url, response.headers.get('Content-Type')
 
@@ -76,6 +84,8 @@ def collect(output, delay):
             except PermissionError as error:
                 item.update(status='access_restricted', error=str(error))
                 restricted = True
+            except RobotsDisallowed as error:
+                item.update(status='robots_disallowed', error=str(error))
             except urllib.error.HTTPError as error:
                 item.update(status='access_restricted' if error.code in (401, 403, 429) else 'request_failed', httpStatus=error.code, error=str(error))
                 restricted = error.code in (401, 403, 429)
@@ -102,6 +112,8 @@ def collect(output, delay):
         restricted_page = '/sorry/' in final_url or b'unusual traffic' in body.lower()
         trends.update(status='access_restricted' if restricted_page else 'page_received_no_numeric_data_extracted', httpStatus=status, finalUrl=final_url, contentType=content_type, responseSha256=hashlib.sha256(body).hexdigest(), responseBytes=len(body))
         trends['note'] = '본문 수신만으로 추세 수치 확보라 판단하지 않음. 그래프/CSV 수치 미확보; 월검색량 및 순위는 산출하지 않음.'
+    except RobotsDisallowed as error:
+        trends.update(status='robots_disallowed', error=str(error), note='trends.google.com/robots.txt가 /trends/explore? 경로를 모든 에이전트에 금지하므로 요청하지 않음. 추세 페이지 수신 여부는 이 수집의 산출물이 아니며 월검색량·순위도 산출하지 않음.')
     except urllib.error.HTTPError as error:
         trends.update(status='access_restricted' if error.code in (401, 403, 429) else 'request_failed', httpStatus=error.code, error=str(error))
     except Exception as error:
@@ -118,7 +130,7 @@ def collect(output, delay):
             'normalization': 'Unicode NFC + 양끝 공백 제거 + 연속 공백 한 칸. 다른 띄어쓰기나 유사어는 자동 병합하지 않음.',
             'contentMatching': 'normalizedKeyword와 정확히 같은 표현만 exact 관찰. seed 연관성으로 새로 만든 질문은 seed 기반 편집안으로 구분.',
             'medicalTruth': '자동완성의 문구는 의학적 사실·안전성·치료 권고의 근거가 아님. 자극적인 예상 검색어를 진실로 재인용하지 않음.',
-            'accessPolicy': '익명 공개 요청, 요청 간 지연, 접근제한 시 중단. 계정/결제/API키 생성·프록시/세션/접근제한 우회 없음.',
+            'accessPolicy': '익명 공개 요청(연락처 포함 User-Agent, robots.txt 준수), 요청 간 지연, 접근제한 시 중단. 계정/결제/API키 생성·프록시/세션/접근제한 우회 없음.',
         },
         'officialSources': OFFICIAL_SOURCES,
         'keywordPlanner': {'status': 'not_accessed_account_setup_required', 'sourceUrl': OFFICIAL_SOURCES[0]['url'], 'monthlySearchVolume': None, 'searchRank': None, 'accountOrBillingCreated': False, 'note': '사용자 계정에 접근하거나 결제 정보를 입력하지 않음. 계정별 실제 이용 가능 여부는 확인하지 않음.'},
@@ -129,10 +141,7 @@ def collect(output, delay):
             'summary': {'requestedSeedCount': len(SEEDS), 'successfulSeedCount': sum(item['status'] == 'observed' for item in observations), 'rawSuggestionCount': sum(len(item['suggestions']) for item in observations), 'uniqueKeywordCount': len(keywords), 'rankedKeywordCount': 0},
         },
     }
-    output.parent.mkdir(parents=True, exist_ok=True)
-    temporary = output.with_suffix(output.suffix + '.tmp')
-    temporary.write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
-    temporary.replace(output)
+    store.atomic_json(output, result)
     print(json.dumps({'output': str(output), **result['autocomplete']['summary'], 'trendsStatus': trends['status'], 'monthlySearchVolumeAvailable': False}, ensure_ascii=False))
     return result
 

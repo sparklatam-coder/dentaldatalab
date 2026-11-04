@@ -34,7 +34,7 @@ SIGINT/Ctrl-C 또는 SIGTERM으로 종료한다. 실행 중인 curl 프로세스
 Google Search Console, 네이버 서치어드바이저, Bing Webmaster Tools의 검색엔진 측 지표가 모니터 API에 연결되기 전이므로 실제 색인·검색 결과 노출 상태는 **미확인: 검색엔진 지표 미연결**로 표시한다. 도메인 소유 확인이나 서비스 UI에서 확인한 상태와 모니터 API 연결 여부는 별개다. 이 프로그램은 검색 결과를 스크래핑하거나 색인 요청을 보내지 않고, 코드를 자동 수정하거나 커밋하지 않는다. 노출 지표 연동은 각 서비스의 API 연결을 완료한 뒤 별도로 진행한다.
 
 ```sh
-python3 -m unittest discover -s tests -p test_seo_monitor.py
+python3 -m unittest discover -s test -p test_seo_monitor.py
 ```
 
 검증은 정상 응답, noindex 메타·헤더, 검색봇 전체 차단, 잘못된 canonical·sitemap·링크, TLS 실패, 백오프와 실행 인자 검증을 포함한다. 테스트는 외부 요청 없이 실행된다.

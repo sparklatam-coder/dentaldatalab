@@ -125,14 +125,16 @@ test('real Yangju source reconciles with the existing regional report and all in
   const inventory = loadAssetInventory(root, data);
   const a = buildYangjuAnalysis(data.clinics, inventory, provenance);
   const previous = collectReports(data.clinics, provenance).northernGyeonggi.cities.find(row => row.id === 'yangju');
-  assert.equal(a.scope.total, 67);
+  // The population size belongs to the handoff snapshot; the partition invariants hold for any import.
+  if (data.snapshotDate === '2026-09-30') assert.equal(a.scope.total, 67);
+  assert.equal(a.scope.total, previous.total);
   assert.equal(a.scope.clinic + a.scope.hospital, a.scope.total);
   assert.equal(a.registered.hours, previous.metrics.hours.count);
   assert.equal(a.registered.night, previous.metrics.night.count);
-  assert.equal(Object.values(a.coverage).reduce((sum, n) => sum + n, 0), 67);
-  assert.equal(a.byDong.reduce((sum, row) => sum + row.total, 0), 67);
+  assert.equal(Object.values(a.coverage).reduce((sum, n) => sum + n, 0), a.scope.total);
+  assert.equal(a.byDong.reduce((sum, row) => sum + row.total, 0), a.scope.total);
   assert.equal(a.byDong.reduce((sum, row) => sum + row.naverHours, 0), a.naver.hours);
   assert.equal(a.evidence.length, a.naver.hours);
-  assert.ok(a.naver.hours <= 67);
-  for (const row of a.weekdays) assert.equal(row.registered + row.missing, 67);
+  assert.ok(a.naver.hours <= a.scope.total);
+  for (const row of a.weekdays) assert.equal(row.registered + row.missing, a.scope.total);
 });

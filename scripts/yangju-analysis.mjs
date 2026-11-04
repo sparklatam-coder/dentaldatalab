@@ -1,11 +1,10 @@
 import { hasValidHours } from './report-data.mjs';
 import { latestNaverHours } from './clinic-hours.mjs';
-import { SOURCE_URL } from '../src/shared.mjs';
+import { SOURCE_URL, closesAtOrAfter } from '../src/shared.mjs';
+import { DAY_PAIRS as days, WEEKDAYS, percentage } from './common.mjs';
 
 export const YANGJU_REPORT_ROUTE = '/reports/yangju-hours-evidence/';
-const days = [['mon', '월요일'], ['tue', '화요일'], ['wed', '수요일'], ['thu', '목요일'], ['fri', '금요일'], ['sat', '토요일'], ['sun', '일요일']];
-const weekday = day => !['sat', 'sun'].includes(day);
-const percentage = (count, total) => total ? Math.round(count / total * 1000) / 10 : null;
+const weekday = day => WEEKDAYS.includes(day);
 
 export function buildYangjuAnalysis(clinics, inventory, { snapshotDate, observedAt, sourceSha256 }) {
   const selected = clinics.filter(c => c.sidoCode === '310000' && c.cityCode === '312700' && ['41', '51'].includes(c.typeCode));
@@ -21,7 +20,7 @@ export function buildYangjuAnalysis(clinics, inventory, { snapshotDate, observed
     const row = byDong.get(dong);
     row.total++;
     const hasRegistered = days.some(([day]) => hasValidHours(clinic.hours?.[day]));
-    const night = days.some(([day]) => weekday(day) && hasValidHours(clinic.hours?.[day]) && clinic.hours[day].close >= '19:00');
+    const night = days.some(([day]) => weekday(day) && closesAtOrAfter(clinic.hours?.[day], '19:00'));
     const naver = latestNaverHours(records.get(clinic.id));
     if (hasRegistered) { registered++; row.registeredHours++; }
     if (night) { registeredNight++; row.registeredNight++; }
@@ -34,7 +33,7 @@ export function buildYangjuAnalysis(clinics, inventory, { snapshotDate, observed
   const weekdays = days.map(([day, label]) => {
     const valid = selected.filter(clinic => hasValidHours(clinic.hours?.[day]));
     return { day, label, total, registered: valid.length, missing: total - valid.length,
-      weekdayNineteenOrLater: weekday(day) ? valid.filter(clinic => clinic.hours[day].close >= '19:00').length : null };
+      weekdayNineteenOrLater: weekday(day) ? valid.filter(clinic => closesAtOrAfter(clinic.hours[day], '19:00')).length : null };
   });
   const checked = evidence.map(row => row.checkedAt).sort((a, b) => Date.parse(a) - Date.parse(b));
   return {

@@ -1,8 +1,8 @@
 import {esc,localDate,safeWebsite} from '../src/shared.mjs';
 import {hoursStatusNotice} from './naver-hours-pages.mjs';
+import {hasText} from './common.mjs';
 
 const weekdays=['월','화','수','목','금','토','일'];
-const hasText=value=>typeof value==='string'&&value.trim().length>0;
 export function naverPlaceSourceUrl(value){
   if(typeof value!=='string'||!/^https?:\/\//i.test(value))return null;
   const url=safeWebsite(value);if(!url)return null;

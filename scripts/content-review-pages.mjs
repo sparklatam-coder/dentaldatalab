@@ -1,7 +1,8 @@
 import { esc, localDate } from '../src/shared.mjs';
 import { publicSourceUrl } from './content-review-data.mjs';
+import { externalLink } from './html.mjs';
 
-const sourceLink = (url, title) => publicSourceUrl(url) ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(title)}</a>` : esc(title);
+const sourceLink = (url, title) => publicSourceUrl(url) ? externalLink(url, title) : esc(title);
 const date = value => value ? esc(localDate(value)) : '기록 없음';
 
 export function registerContentReviewPage({ page, put, content, review }) {

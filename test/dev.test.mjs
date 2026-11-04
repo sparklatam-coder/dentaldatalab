@@ -28,8 +28,8 @@ test('dev rebuilds serially, preserves the last complete build on failure and le
     }
     fs.rmSync(dir, { recursive: true, force: true });
   });
-  for (const folder of ['scripts', 'data', 'src', 'dist']) fs.mkdirSync(path.join(dir, folder));
-  for (const file of ['dev.mjs', 'server.mjs']) fs.copyFileSync(path.join(project, 'scripts', file), path.join(dir, 'scripts', file));
+  for (const folder of ['scripts', 'data', 'data/research', 'src', 'dist']) fs.mkdirSync(path.join(dir, folder));
+  for (const file of ['dev.mjs', 'server.mjs', 'security-headers.mjs']) fs.copyFileSync(path.join(project, 'scripts', file), path.join(dir, 'scripts', file));
   fs.writeFileSync(path.join(dir, 'dist/kept.txt'), 'keep this production candidate');
   const input = path.join(dir, 'data/content.json');
   fs.writeFileSync(input, JSON.stringify({ text: 'first' }));
@@ -49,11 +49,12 @@ test('dev rebuilds serially, preserves the last complete build on failure and le
       fs.writeFileSync(path.join(out, 'index.html'), content.text);
       fs.writeFileSync(path.join(out, '404.html'), 'missing');
       fs.writeFileSync(path.join(out, 'build-manifest.json'), JSON.stringify({mode:process.env.DDL_PRODUCTION === '0' ? 'private-review' : 'production'}));
+      fs.writeFileSync(path.join(out, 'env.json'), JSON.stringify({production:process.env.DDL_PRODUCTION, seoPublic:process.env.DDL_SEO_PUBLIC, reviewed:process.env.DDL_LAUNCH_REVIEWED}));
     } finally { fs.unlinkSync(lock); }
   `);
   let output = '';
   child = spawn(process.execPath, ['scripts/dev.mjs'], {
-    cwd: dir, env: { ...process.env, PORT: '0', HOST: '127.0.0.1', DDL_PRODUCTION: '1', DDL_LAUNCH_REVIEWED: 'YES' },
+    cwd: dir, env: { ...process.env, PORT: '0', HOST: '127.0.0.1', DDL_PRODUCTION: '1', DDL_SEO_PUBLIC: '1', DDL_LAUNCH_REVIEWED: 'YES' },
     stdio: ['ignore', 'pipe', 'pipe'],
   });
   child.stdout.on('data', chunk => { output += chunk; });
@@ -73,6 +74,18 @@ test('dev rebuilds serially, preserves the last complete build on failure and le
   fs.writeFileSync(input, JSON.stringify({ text: 'recovered' }));
   await until(async () => (await read()).text === 'recovered', 'recovery');
   assert.equal((await read()).robots, 'noindex, nofollow');
+  // The child build never sees indexable flags, whatever the parent shell exported.
+  assert.deepEqual(await (await fetch(url + 'env.json')).json(), { production: '0', seoPublic: '', reviewed: '' });
+  // Collector output under data/research and temp files do not trigger rebuilds; a real input still does.
+  const builds = () => output.split('fixture: started').length - 1;
+  const quiet = builds();
+  fs.writeFileSync(path.join(dir, 'data/research/collector.json'), JSON.stringify({ observed: Date.now() }));
+  fs.writeFileSync(path.join(dir, 'data/content.json.tmp'), 'partial write');
+  await delay(900);
+  assert.equal(builds(), quiet, 'research and temp writes must not rebuild');
+  fs.writeFileSync(input, JSON.stringify({ text: 'final' }));
+  await until(async () => (await read()).text === 'final', 'rebuild after research noise');
+  assert.equal(builds(), quiet + 1);
   assert.equal(fs.readFileSync(path.join(dir, 'dist/kept.txt'), 'utf8'), 'keep this production candidate');
   assert(!output.includes('Concurrent build'));
   const stopped = new Promise(resolve => child.once('exit', resolve));

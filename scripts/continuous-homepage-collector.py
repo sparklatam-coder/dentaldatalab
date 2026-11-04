@@ -7,7 +7,6 @@ a time makes a 401/403/429/challenge a global stop. Existing attempted URLs are
 never automatically retried, including interrupted requests.
 """
 import argparse
-import datetime
 import importlib.util
 import json
 import os
@@ -16,6 +15,8 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ddl import store, web
 
 ROOT = Path(__file__).resolve().parent.parent
 SPEC = importlib.util.spec_from_file_location('discovered_homepages', ROOT / 'scripts/crawl-discovered-homepages.py')
@@ -28,19 +29,19 @@ PREVIOUS = [ROOT / 'data/assets/national-homepages.json', ROOT / 'data/assets/di
 STOP = False
 
 
-def now():
-    return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='milliseconds')
+now = store.now
+atomic_save = store.atomic_json
 
 
-def atomic_save(path, value):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_name(path.name + '.tmp')
-    with temporary.open('w', encoding='utf-8') as file:
-        json.dump(value, file, ensure_ascii=False, indent=2)
-        file.write('\n')
-        file.flush()
-        os.fsync(file.fileno())
-    os.replace(temporary, path)
+def mark_error(path, error):
+    """Durable failure marker so a crash never leaves a stale 'running' state."""
+    try:
+        state = load_output(path)
+    except Exception:
+        return
+    state['state'] = 'error'; state['stopReason'] = 'exception'; state['checkedAt'] = now()
+    state['error'] = {'type': type(error).__name__, 'detail': str(error)[:180], 'checkedAt': now()}
+    atomic_save(path, state)
 
 
 def load_output(path):
@@ -97,11 +98,11 @@ def seed_ok(seed, clinics):
     """Require generated linkage evidence, correct clinic identities and safe URL syntax."""
     if not isinstance(seed, dict):
         return False
-    raw = seed.get('url'); url = CRAWLER.BASE.safe_url(raw)
+    raw = seed.get('url'); url = web.safe_url(raw)
     if not url or CRAWLER.platform(url) or not seed.get('evidenceUrls'):
         return False
     # Reject DNS literals and localhost before any network request; inspect() also
-    # resolves every address and redirect through BASE.public_url.
+    # resolves every address and redirect through web.resolve_public.
     import ipaddress, urllib.parse
     host = urllib.parse.urlsplit(url).hostname or ''
     try:
@@ -147,7 +148,7 @@ def run_once(output, seeds, clinics, previous, inspect, max_requests=0, extra_bl
                'status': 'not_read', 'detail': 'scheduled_before_request', 'links': [], 'matches': {},
                'sourceType': 'discovered_homepage', 'discoveryEvidenceUrls': seed['evidenceUrls']}
         state['results'].append(row)
-        state.pop('stopReason', None)
+        state.pop('stopReason', None); state.pop('error', None)
         state['state'] = 'running'; state['checkedAt'] = now()
         atomic_save(output, state)
         attempts.add(key)
@@ -216,13 +217,20 @@ def main():
                 print(proc.stderr, file=sys.stderr)
                 print('Seed refresh failed; stopping.', file=sys.stderr); return 1
             print(proc.stdout.strip(), flush=True)
-            # prepare-discovered-homepages intentionally keeps old seed files
-            # when it finds zero new links. Never treat that stale file as current.
-            summary = json.loads(proc.stdout)
-            seeds = json.loads(SEEDS.read_text(encoding='utf-8')).get('seeds', []) if summary['newUrls'] and SEEDS.exists() else []
-            remaining = max(0, args.max_requests - total) if args.max_requests else 0
-            count, reason = run_once(OUTPUT, seeds, clinics, PREVIOUS, CRAWLER.inspect, remaining,
-                                     blocked_hosts_in_batches(ROOT / 'data/assets'))
+            try:
+                # prepare-discovered-homepages intentionally keeps old seed files
+                # when it finds zero new links. Never treat that stale file as current.
+                summary = json.loads(proc.stdout)
+                seeds = json.loads(SEEDS.read_text(encoding='utf-8')).get('seeds', []) if summary['newUrls'] and SEEDS.exists() else []
+                remaining = max(0, args.max_requests - total) if args.max_requests else 0
+                count, reason = run_once(OUTPUT, seeds, clinics, PREVIOUS, CRAWLER.inspect, remaining,
+                                         blocked_hosts_in_batches(ROOT / 'data/assets'))
+            except Exception as error:
+                # Malformed seed summary, checkpoint or asset batch JSON: record a
+                # durable error state rather than exiting while 'running'.
+                mark_error(OUTPUT, error)
+                print(json.dumps({'state': 'error', 'error': type(error).__name__, 'detail': str(error)[:180]}, ensure_ascii=False), file=sys.stderr, flush=True)
+                return 1
             total += count
             print(json.dumps({'cycleRequests': count, 'totalRequests': total, 'state': reason}, ensure_ascii=False), flush=True)
             if reason == 'blocked': return 2

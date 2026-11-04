@@ -5,16 +5,12 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {safeWebsite, singlePhone} from '../src/shared.mjs';
 import {hasValidHours} from './report-data.mjs';
+import {DAYS,DENTAL_TYPES as TYPES,hasText as present,percentage as pct,isIsoTimestamp,isIsoDate as validDate} from './common.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-const DAYS=['mon','tue','wed','thu','fri','sat','sun'];
-const TYPES={'41':'치과병원','51':'치과의원'};
-const present=v=>typeof v==='string'&&v.trim().length>0;
 const key=v=>present(v)?v.normalize('NFC').trim().replace(/\s+/gu,'').toLowerCase():null;
 const sha=value=>createHash('sha256').update(value).digest('hex');
 const count=v=>Number.isSafeInteger(v)&&v>=0;
-const pct=(n,d)=>d?Math.round(n/d*1000)/10:null;
-const validDate=v=>typeof v==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(v)&&Number.isFinite(Date.parse(v+'T00:00:00Z'))&&new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v;
 export const DATA_QUALITY_VERSION=1;
 export const QUALITY_RULES=Object.freeze({
   id_missing_or_malformed:{label:'내부 ID 형식 검토',level:'error',definition:'c-와 12자리 소문자 16진수로 된 내부 ID 형식이 아님.'},
@@ -33,7 +29,7 @@ export const QUALITY_RULES=Object.freeze({
   website_missing:{label:'신고 홈페이지 미수록',level:'missing',definition:'신고 홈페이지 원문이 비어 있음. 실제 홈페이지 부재를 뜻하지 않음.'},
   website_format_review:{label:'신고 홈페이지 URL 형식 검토',level:'review',definition:'기존 사이트의 HTTP(S) 주소 구문 검사를 통과하지 않음. 접속·소유·공식성 검사가 아님.'},
   hours_missing:{label:'유효 등록시간 미수록',level:'missing',definition:'월~일 중 유효한 같은 날 시작·종료 쌍이 하루도 없음. 휴진이나 미운영으로 추정하지 않음.'},
-  hours_value_review:{label:'등록시간 값 검토',level:'review',definition:'하나 이상의 요일에 비어 있지 않은 시각 값이 있으나 유효한 같은 날 시작·종료 쌍이 아님.'},
+  hours_value_review:{label:'등록시간 값 검토',level:'review',definition:'하나 이상의 요일에 비어 있지 않은 시각 값이 있으나 유효한 같은 날 시작·종료 쌍이 아님. 가공 단계에서 null 처리하고 hoursNotes.unclearHours에 원래 시각을 보존한 요일을 포함함.'},
   source_reference_review:{label:'출처 연결 검토',level:'error',definition:'hira-base가 없거나, 중복·알 수 없는 sourceIds 또는 필요한 상세 출처 연결이 없음.'},
   doctor_count_review:{label:'의료진 인원 값 검토',level:'review',definition:'등록 총의사수·전문의 수가 알려진 0 이상의 정수가 아님. null과 명시된 0을 구분함.'},
   same_name_address:{label:'동일 기관명·주소',level:'candidate',definition:'공백과 대소문자만 정리한 기관명과 전체 주소가 같은 서로 다른 ID. 숫자·하이픈·층·호수·괄호는 삭제하지 않음. 중복 확정이 아님.'},
@@ -61,7 +57,7 @@ function codeLabels(clinics,codeField,labelField){
 /** Pure snapshot audit. Never changes rows, deduplicates records, or infers operation/relocation. */
 export function collectDataQuality(data,{manifest={},checkedAt,sourceDataSha256=null,priorImportAudit=null,officialVerification=null,officialEvidence=null,inputFiles=[]}={}){
   if(!Array.isArray(data?.clinics)||data.clinics.some(c=>!c||typeof c!=='object'||Array.isArray(c)))throw new TypeError('clinics must be an array of records');
-  if(typeof checkedAt!=='string'||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(checkedAt)||!Number.isFinite(Date.parse(checkedAt)))throw new TypeError('checkedAt must be an explicit valid timestamp');
+  if(!isIsoTimestamp(checkedAt))throw new TypeError('checkedAt must be an explicit valid timestamp');
   const clinics=data.clinics,total=clinics.length,sourceList=Array.isArray(manifest.sources)?manifest.sources:[];
   const knownSources=new Set(sourceList.map(s=>s.id));
   const sourceCatalogIssues=sourceList.flatMap((s,i)=>[
@@ -86,7 +82,8 @@ export function collectDataQuality(data,{manifest={},checkedAt,sourceDataSha256=
     if(!/^\d{6}$/.test(c.sidoCode??'')||!/^\d{6}$/.test(c.cityCode??''))add(row,'region_code_review');
     if(!present(c.website))add(row,'website_missing');else if(!safeWebsite(c.website))add(row,'website_format_review');
     if(!DAYS.some(day=>hasValidHours(c.hours?.[day])))add(row,'hours_missing');
-    if(DAYS.some(day=>{const h=c.hours?.[day];return ((h?.open!=null&&h.open!=='')||(h?.close!=null&&h.close!==''))&&!hasValidHours(h);}))add(row,'hours_value_review');
+    // The importer nulls a day whose pair failed normalization and keeps the original values in hoursNotes.unclearHours; those rows stay visible here.
+    if(DAYS.some(day=>{const h=c.hours?.[day];return ((h?.open!=null&&h.open!=='')||(h?.close!=null&&h.close!==''))&&!hasValidHours(h);})||(Array.isArray(c.hoursNotes?.unclearHours)&&c.hoursNotes.unclearHours.length>0))add(row,'hours_value_review');
     const refs=c.sourceIds;
     if(!Array.isArray(refs)||!refs.includes('hira-base')||new Set(refs).size!==refs.length||refs.some(id=>!knownSources.has(id))||
       (c.specialties?.length&&!refs.includes('hira-specialties'))||(c.equipment?.length&&!refs.includes('hira-equipment'))||

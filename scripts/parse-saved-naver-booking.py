@@ -4,12 +4,14 @@ import argparse
 import hashlib
 import importlib.util
 import json
-import os
 import re
 import subprocess
+import sys
 import time
 import urllib.parse
 from pathlib import Path
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from ddl import store
 
 ROOT=Path(__file__).resolve().parent.parent
 SOURCE=ROOT/'data/research/yangju-booking-html'
@@ -140,8 +142,7 @@ def main():
             if len(assets)!=1:raise ValueError('Exactly one existing verified booking asset is required')
             cap=parse(path,record,assets[0],names[record['clinicId']])
             name=match.group(1)+'-booking-'+re.sub(r'\D','',cap['checkedAt'])+'.json';target=DEST/name
-            if not args.dry_run:
-                temp=target.with_suffix('.json.tmp');temp.write_text(json.dumps(cap,ensure_ascii=False,indent=2)+'\n');os.replace(temp,target)
+            if not args.dry_run:store.atomic_json(target,cap)
             results.append({'name':record['name'],'path':str(target.relative_to(ROOT)),'sections':[{'kind':s['kind'],'status':s['status']} for s in cap['metadata']['sections']]});known.add(sha)
         except Exception as error:errors.append({'path':str(path.relative_to(ROOT)),'error':str(error)})
     print(json.dumps({'captures':len(results),'alreadyCaptured':skipped,'errors':errors,'results':results},ensure_ascii=False))

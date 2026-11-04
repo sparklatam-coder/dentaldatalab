@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import { externalLink } from './html.mjs';
 import path from 'node:path';
 import { esc, icon, localDate } from '../src/shared.mjs';
 
@@ -7,7 +8,7 @@ const safeUrl = value => {
   try { const u = new URL(value); return u.protocol === 'https:' && !u.username && !u.password; }
   catch { return false; }
 };
-const external = (url, title) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(title)} ${icon('link')}</a>`;
+const external = (url, title) => externalLink(url, title, { withIcon: true });
 
 export function validateSearchGuide(guide) {
   if (guide.schemaVersion !== 1 || !guide.checkedAt || !Array.isArray(guide.sources) || !guide.sources.length) throw new Error('Missing search source guide');

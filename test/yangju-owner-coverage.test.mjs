@@ -22,7 +22,7 @@ test('current Yangju coverage counts actual source-batch tabs and distinguishes 
   registerClinicAssetsPages({inventory,assetVersion:'test',put:(path,value)=>files.set(path,value),page:(route,options)=>pages.set(route,options)});
   assert.deepEqual(JSON.parse(files.get('data/clinic-assets/yangju-owner-coverage.json')),coverage);
   const index=JSON.parse(files.get('data/clinic-assets/index.json'));
-  assert.equal(index.find(r=>r.clinicId==='outside').ownerCapture,null);
+  assert(!Object.hasOwn(index.find(r=>r.clinicId==='outside'),'ownerCapture'),'institutions outside the collection carry no ownerCapture key');
   assert.equal(index.find(r=>r.clinicId==='read').ownerCapture.descriptionStatus,'read');
   const html=pages.get('/clinic-assets/').body;
   assert.match(html,/양주 업체 작성 안내 수집현황/);

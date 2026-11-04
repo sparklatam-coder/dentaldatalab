@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 // Keep the normal static build unchanged; compact only this deployment output.
+import { SECURITY_HEADERS } from './security-headers.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -12,10 +13,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export function cloudflareWorker({ review = true, canonicalOrigin = null, pagesHost = null } = {}) {
   return `// Generated Pages advanced-mode Worker. No private data or credentials.
 const headers = {
-  'X-Content-Type-Options': 'nosniff',
-  'Referrer-Policy': 'strict-origin-when-cross-origin',
-  'X-Frame-Options': 'SAMEORIGIN',
-  'Permissions-Policy': 'geolocation=(), camera=(), microphone=()',
+${Object.entries(SECURITY_HEADERS).map(([name, value]) => `  ${JSON.stringify(name)}: ${JSON.stringify(value)},`).join('\n')}
   'Cache-Control': 'public, max-age=0, must-revalidate',
   ${review ? "'X-Robots-Tag': 'noindex, nofollow'," : ''}
 };
@@ -109,10 +107,7 @@ export function compactForCloudflare(directory) {
   write('_routes.json', JSON.stringify({ version: 1, include: ['/clinics/*', '/data/clinic-assets/records/*'], exclude: [] }, null, 2));
   write('_redirects', '/data/clinic-assets/inventory.json /data/clinic-assets/inventory.json.gz 302\n');
   write('_headers', `/*
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: strict-origin-when-cross-origin
-  X-Frame-Options: SAMEORIGIN
-  Permissions-Policy: geolocation=(), camera=(), microphone=()
+${Object.entries(SECURITY_HEADERS).map(([name, value]) => `  ${name}: ${value}`).join('\n')}
 ${!indexingEnabled ? '  X-Robots-Tag: noindex, nofollow\n' : ''}
 https://:project.pages.dev/*
   X-Robots-Tag: noindex, nofollow

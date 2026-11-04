@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { SECURITY_HEADERS } from './security-headers.mjs';
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,10 +40,7 @@ export function createPreviewServer({ directory, getDirectory = () => directory 
   return http.createServer((req, res) => {
     const headers = {
       'X-Robots-Tag': 'noindex, nofollow',
-      'X-Content-Type-Options': 'nosniff',
-      'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'X-Frame-Options': 'SAMEORIGIN',
-      'Permissions-Policy': 'geolocation=(), camera=(), microphone=()',
+      ...SECURITY_HEADERS,
       'Cache-Control': 'no-cache',
       'Vary': 'Accept-Encoding',
     };
@@ -77,6 +75,7 @@ export function createPreviewServer({ directory, getDirectory = () => directory 
       if (!fs.existsSync(file) || !fs.statSync(file).isFile()) {
         file = path.join(dir, '404.html');
         status = 404;
+        if (!fs.existsSync(file)) return respond(404, 'Not found');
       }
       const actual = fs.realpathSync(file), realDir = fs.realpathSync(dir);
       if (!actual.startsWith(realDir + path.sep)) return respond(403, 'Forbidden');

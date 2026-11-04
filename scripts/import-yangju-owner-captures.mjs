@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {loadAssetInventory,assetUrl,KINDS} from './clinic-assets.mjs';
 import {currentNaverPlaceObservations,naverPlaceSourceUrl} from './clinic-hours.mjs';
+import {hasText as text,isIsoTimestampShape,isCalendarValid} from './common.mjs';
 
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const INPUT='data/research/yangju-owner-captures';
@@ -15,13 +16,11 @@ const STATUSES=new Set(['read','not_displayed','incomplete']);
 const own=(object,key)=>Object.hasOwn(object,key);
 const plain=value=>value&&typeof value==='object'&&!Array.isArray(value);
 const fail=message=>{throw new Error(message);};
-const text=value=>typeof value==='string'&&value.trim().length>0;
 const hasValue=value=>text(value)||Array.isArray(value)&&value.length>0&&value.every(text);
 const pid=value=>naverPlaceSourceUrl(value)?new URL(value).pathname.match(/\/(?:place|hospital)\/([1-9]\d*)(?:\/|$)/)[1]:null;
 function timestamp(value,label){
-  if(!text(value)||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)||!Number.isFinite(Date.parse(value)))fail(`${label}: explicit ISO timestamp with timezone required`);
-  const [year,month,day,hour,minute,second]=value.slice(0,19).split(/[-T:]/).map(Number);
-  if(month<1||month>12||day<1||day>new Date(Date.UTC(year,month,0)).getUTCDate()||hour>23||minute>59||second>59)fail(`${label}: invalid calendar date or time`);
+  if(!isIsoTimestampShape(value))fail(`${label}: explicit ISO timestamp with timezone required`);
+  if(!isCalendarValid(value))fail(`${label}: invalid calendar date or time`);
   return value;
 }
 function source(value,label,placeId){
@@ -138,7 +137,7 @@ export function importOwnerCaptures({root=ROOT,dryRun=false,national=false}={}){
     scope:(national?'전국':'양주시')+' 기관의 실제 브라우저 UI 관찰. 원문·항목별 출처·열람 상태 보존. 지정 수집범위 완료는 기관 전체 정보의 조사 완료나 사실 검증이 아님.',
     sourceSnapshot:{file:'data/clinics.json',sha256:createHash('sha256').update(sourceBytes).digest('hex')},
     inputFiles,records:[...records.values()].sort((a,b)=>a.clinicId.localeCompare(b.clinicId))};
-  for(const record of output.records)record.naverPlaceObservations.sort((a,b)=>Date.parse(a.checkedAt)-Date.parse(b.checkedAt)||a.sourceUrl.localeCompare(b.sourceUrl));
+  for(const record of output.records)record.naverPlaceObservations.sort((a,b)=>Date.parse(a.checkedAt)-Date.parse(b.checkedAt)||a.sourceUrl.localeCompare(b.sourceUrl,'ko'));
   let written=false;
   if(!dryRun){
     const target=path.join(root,outputPath);let unchanged=false;

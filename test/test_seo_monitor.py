@@ -81,6 +81,25 @@ class SeoMonitorTest(unittest.TestCase):
                 self.assertFalse(m.fetch(url,direct=True)['ok'])
             popen.assert_not_called()
 
+    def redirect_fetch(self,payloads,addresses):
+        with patch.object(m.subprocess,'Popen') as popen, patch.object(socket,'getaddrinfo',side_effect=lambda host,*a,**k:[(None,None,None,None,(addresses[host],443))]):
+            popen.return_value.communicate.side_effect=[(p,b'') for p in payloads]
+            popen.return_value.returncode=0
+            result=m.fetch(ORIGIN+'/',direct=True)
+            return result,[call.args[0] for call in popen.call_args_list]
+
+    def test_redirect_targets_are_validated_before_curl_follows(self):
+        hop=b'HTTP/2 301\r\nlocation: https://www.dentaldatalab.com/\r\n\r\n\n__SEO_META__{"http_code":301,"ssl_verify_result":0}'
+        final=b'HTTP/2 200\r\ncontent-type: text/html\r\n\r\n<title>OK</title>\n__SEO_META__{"http_code":200,"ssl_verify_result":0}'
+        result,cmds=self.redirect_fetch([hop,final],{'www.dentaldatalab.com':'93.184.216.34'})
+        self.assertTrue(result['ok']);self.assertEqual(result['effectiveUrl'],'https://www.dentaldatalab.com/');self.assertEqual(result['url'],ORIGIN+'/')
+        self.assertEqual([c[-1] for c in cmds],[ORIGIN+'/','https://www.dentaldatalab.com/']);self.assertNotIn('--location',cmds[0])
+        for target,dns in (('https://10.0.0.1/',{}),('http://www.dentaldatalab.com/',{}),('https://internal.dentaldatalab.com/',{'internal.dentaldatalab.com':'192.168.1.1'})):
+            result,cmds=self.redirect_fetch([hop.replace(b'https://www.dentaldatalab.com/',target.encode()),final],dns)
+            self.assertFalse(result['ok']);self.assertIn('redirect target refused',result['error']);self.assertEqual(len(cmds),1,target)
+        result,cmds=self.redirect_fetch([hop]*5,{'www.dentaldatalab.com':'93.184.216.34'})
+        self.assertEqual((result['ok'],result['error'],len(cmds)),(False,'too many redirects',m.MAX_REDIRECTS+1))
+
     def test_direct_cli_flag_is_recorded_in_runtime(self):
         with tempfile.TemporaryDirectory() as work, patch.object(m,'WORK',Path(work)), patch.object(m,'DIRECT',False), patch.object(m,'check_site',return_value={'origin':ORIGIN,'checks':[],'requests':[],'ok':True}), patch('sys.argv',['seo-monitor','--once','--direct']):
             self.assertEqual(m.main(),0)

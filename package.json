@@ -7,13 +7,15 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "build": "node scripts/build.mjs",
+    "archive:yangju": "node scripts/archive-yangju-report.mjs",
     "preview": "node scripts/server.mjs",
-    "test": "node --test test/*.test.mjs && node scripts/qa.mjs",
+    "test": "npm run test:unit && npm run test:python && npm run test:site",
     "test:unit": "node --test test/*.test.mjs",
+    "test:python": "python3 -m unittest discover -s test -p 'test_*.py'",
     "test:site": "node scripts/qa.mjs",
+    "test:full": "npm run build && npm test",
     "verify:research": "node scripts/audit-research.mjs",
     "verify:source": "python3 scripts/verify-official-source.py",
-    "test:naver-discovery": "python3 -m unittest discover -s test -p test_naver_directory.py",
     "collect:linked-homepages": "node scripts/prepare-discovered-homepages.mjs && python3 scripts/crawl-discovered-homepages.py",
     "build:cloudflare": "node scripts/build-cloudflare.mjs"
   },

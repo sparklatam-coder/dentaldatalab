@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 import { esc, fmt, clinicUrl } from '../src/shared.mjs';
+import { HOURS_STAGES } from '../scripts/naver-hours-pages.mjs';
 
 // Run the actual client against a small DOM boundary without taking over the
 // research browser. Fixtures are independent of the growing national inventory.
@@ -29,14 +30,15 @@ function clinic(id, overrides = {}) {
   };
 }
 
-async function boot(rows, search = '', { ok = true } = {}) {
+// hoursStages mirrors the #site-data JSON the page ships; the index itself carries only the stage key.
+async function boot(rows, search = '', { ok = true, hoursStages = HOURS_STAGES } = {}) {
   const form = element();
   form.elements = Object.fromEntries(['q', 'type', 'sido', 'kind', 'status', 'hours', 'owner']
     .map(key => [key, element('')]));
   const results = element(), status = element(), pagination = element();
   results.innerHTML = '<article>Static clinic fallback</article>';
   let currentUrl = '/clinic-assets/' + search;
-  const nodes = { '#asset-search': form, '#asset-results': results, '#asset-status': status, '#asset-pagination': pagination };
+  const nodes = { '#asset-search': form, '#asset-results': results, '#asset-status': status, '#asset-pagination': pagination, '#site-data': { textContent: JSON.stringify({ hoursStages }) } };
   await vm.runInNewContext(client, {
     document: { querySelector: selector => nodes[selector] },
     fetch: async url => {
@@ -106,11 +108,10 @@ test('institution coverage filters distinguish attempted, read, confirmed and mi
 
 test('hours coverage deep links select every stage without restricting results to manually researched clinics', async () => {
   const stages = ['hours_available', 'hours_missing', 'identity_review', 'access_failed', 'place_ready', 'place_discovery'];
-  const rows = stages.map(stage => clinic(stage, {
-    naverHoursStage: stage, naverHoursLabel: `상태 ${stage}`, researched: stage === 'hours_available',
-  }));
+  const rows = stages.map(stage => clinic(stage, { naverHoursStage: stage, researched: stage === 'hours_available' }));
+  const hoursStages = Object.fromEntries(stages.map(stage => [stage, `상태 ${stage}`]));
   for (const stage of stages) {
-    const ui = await boot(rows, '?status=&hours=' + stage);
+    const ui = await boot(rows, '?status=&hours=' + stage, { hoursStages });
     assert.deepEqual(ui.ids(), [stage]);
     assert.equal(ui.form.elements.hours.value, stage);
     assert.equal(ui.url().searchParams.get('hours'), stage);
@@ -123,9 +124,9 @@ test('hours coverage deep links select every stage without restricting results t
 
 test('hours stage intersects other filters and changing it resets pagination without losing the selected state', async () => {
   const rows = Array.from({ length: 25 }, (_, index) => clinic(String(index).padStart(2, '0'), {
-    naverHoursStage: 'place_ready', naverHoursLabel: '지도 후보 확보 · 본문 확인 전', researched: false, kinds: ['naverMap'],
+    naverHoursStage: 'place_ready', researched: false, kinds: ['naverMap'],
   }));
-  rows.push(clinic('observed', { naverHoursStage: 'hours_available', naverHoursLabel: '시간표 확보', kinds: ['naverMap'] }));
+  rows.push(clinic('observed', { naverHoursStage: 'hours_available', kinds: ['naverMap'] }));
   rows.push(clinic('wrong-region', { naverHoursStage: 'place_ready', sido: '서울', kinds: ['naverMap'] }));
   rows.push(clinic('wrong-kind', { naverHoursStage: 'place_ready' }));
   const ui = await boot(rows, '?status=&hours=place_ready&sido=경기&kind=naverMap');
@@ -149,9 +150,16 @@ test('hours stage intersects other filters and changing it resets pagination wit
 
 test('hours status labels are escaped before being rendered in cards', async () => {
   const label = '<img src=x onerror="alert(1)">';
-  const ui = await boot([clinic('a', { naverHoursStage: 'identity_review', naverHoursLabel: label })]);
+  const ui = await boot([clinic('a', { naverHoursStage: 'identity_review' })], '', { hoursStages: { identity_review: label } });
   assert(!ui.results.innerHTML.includes('<img src=x'));
   assert(ui.results.innerHTML.includes(esc(label)));
+});
+
+test('unknown stages and a missing #site-data block fall back to the Naver body status instead of breaking', async () => {
+  const rows = [clinic('read', { naverHoursStage: 'brand_new_stage', naverRead: true }), clinic('tried', { naverHoursStage: 'brand_new_stage', naverAttempted: true }), clinic('none', { naverHoursStage: 'brand_new_stage' })];
+  const ui = await boot(rows, '', { hoursStages: undefined });
+  assert.deepEqual(ui.ids(), ['none', 'read', 'tried']);
+  for (const text of ['네이버 본문 확보', '네이버 본문 미확보', '네이버 본문 조사 전']) assert(ui.results.innerHTML.includes(text), text);
 });
 
 test('Yangju owner deep links filter current collection states and retain combined filters', async () => {

@@ -1,12 +1,12 @@
 {
-  "checkedAt": "2026-11-01T00:46:31.948Z",
+  "checkedAt": "2026-11-04T20:35:42.568Z",
   "mode": "private-review",
   "status": "passed",
-  "inspectedHtmlPages": 20675,
+  "inspectedHtmlPages": 20679,
   "clinicPages": 19681,
-  "jsonLdBlocks": 20675,
-  "internalLinkOccurrences": 703135,
-  "uniqueInternalTargets": 40376,
+  "jsonLdBlocks": 20679,
+  "internalLinkOccurrences": 806895,
+  "uniqueInternalTargets": 40391,
   "checks": [
     {
       "name": "19,681 institutions and unique IDs",
@@ -41,7 +41,11 @@
       "status": "passed"
     },
     {
-      "name": "All generated HTML: H1, canonical, noindex, JSON-LD, no invalid values",
+      "name": "Every module import is pinned to the asset version",
+      "status": "passed"
+    },
+    {
+      "name": "All generated HTML: H1, canonical, robots policy, JSON-LD, no invalid values",
       "status": "passed"
     },
     {

@@ -25,7 +25,7 @@ npm test
 npm run preview
 ```
 
-`npm test`는 집계·다운로드·로컬 서버·자동 재빌드 검사 후, 모든 생성 HTML의 링크·구조화 데이터·noindex·데이터 정합성을 검사합니다. 빠른 코드 검사만 할 때는 `npm run test:unit`, 기존 빌드의 전체 정적 검사만 할 때는 `npm run test:site`를 사용합니다.
+`npm test`는 JavaScript 유닛 테스트(`test:unit`), Python 수집기 테스트(`test:python`), 그리고 **이미 만들어진 `dist/`**(또는 `DIST_DIR`)의 모든 생성 HTML에 대한 링크·구조화 데이터·robots 정책·URL 스킴·데이터 정합성 검사(`test:site`)를 차례로 실행합니다. `test:site`는 빌드를 다시 하지 않으므로, 코드 변경을 검증하려면 `npm run test:full`(빌드 후 전체 검사)을 사용하세요. CI(`.github/workflows/tests.yml`)는 push·PR마다 유닛 테스트와 임시 폴더 빌드 + 정적 검사를 실행합니다.
 
 ## 이번 버전
 
@@ -116,7 +116,7 @@ v0.3에서 이어지는 검증·조사 기능:
 
 `python3 scripts/discover-national-naver.py --rematch`는 저장된 관찰만 재대조합니다. 네트워크 요청은 하지 않습니다. 수집 도중 중단된 작업은 `--resume`으로 미시도 지역만 이어갈 수 있고, 접근 차단 기록이 있는 작업은 재개하지 않습니다. 옵션 없는 실행은 새 공개 디렉토리 조사를 시작합니다.
 
-수집기는 `/regions`에 실제 연결된 시군구 페이지를 순차 요청하고, 기관명·주소·실제 지도 링크만 저장합니다. 네이버 대상 페이지는 요청하지 않으며, 이 자료에는 네이버 진료시간이 없습니다. `npm run test:naver-discovery`로 오귀속 방지 회귀를 검사합니다. 최신 단계별 현황과 미완료 목록은 빌드할 때 관찰 자료에서 다시 생성됩니다.
+수집기는 `/regions`에 실제 연결된 시군구 페이지를 순차 요청하고, 기관명·주소·실제 지도 링크만 저장합니다. 네이버 대상 페이지는 요청하지 않으며, 이 자료에는 네이버 진료시간이 없습니다. `python3 -m unittest discover -s test -p test_naver_directory.py`로 오귀속 방지 회귀를 검사합니다. 최신 단계별 현황과 미완료 목록은 빌드할 때 관찰 자료에서 다시 생성됩니다.
 
 ## 소스 구조
 

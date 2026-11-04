@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { CONTENT_SECURITY_POLICY } from '../scripts/security-headers.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -45,6 +46,8 @@ test('preview serves complete generations with private headers and HTTP semantic
   assert.equal(home.status, 200);
   assert.equal(home.body.toString(), '<h1>처음</h1>');
   assert.equal(home.headers['x-robots-tag'], 'noindex, nofollow');
+  assert.equal(home.headers['content-security-policy'], CONTENT_SECURITY_POLICY);
+  assert.equal(home.headers['x-content-type-options'], 'nosniff');
   const head = await request('/', { method: 'HEAD' });
   assert.equal(head.status, 200);
   assert.equal(head.body.length, 0);
@@ -73,4 +76,11 @@ test('preview serves complete generations with private headers and HTTP semantic
   assert.equal((await request('/')).body.toString(), '<h1>처음</h1>');
   active = path.join(base, 'second');
   assert.equal((await request('/')).body.toString(), '<h1>변경</h1>');
+  // A generation without 404.html still answers 404 for unknown paths rather than 503.
+  fs.unlinkSync(path.join(active, '404.html'));
+  const missing = await request('/missing');
+  assert.equal(missing.status, 404);
+  assert.equal(missing.body.toString(), 'Not found');
+  assert.equal(missing.headers['x-robots-tag'], 'noindex, nofollow');
+  assert.equal((await request('/')).status, 200);
 });

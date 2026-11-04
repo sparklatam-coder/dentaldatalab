@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Low traffic, read-only public SEO availability monitoring (not index verification)."""
 import argparse
-import datetime
 import fcntl
 import ipaddress
 from html.parser import HTMLParser
@@ -15,21 +14,19 @@ import sys
 import time
 import urllib.parse
 import xml.etree.ElementTree as ET
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from ddl import store, web
 
 ROOT=Path(__file__).resolve().parents[1]
 WORK=ROOT/'data/research/seo-monitor'
 STOP=False
 CHILD=None
 DIRECT=False
+AGENT=web.user_agent('SEO availability monitor')
+MAX_REDIRECTS=3
 
-def stamp(): return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')
-
-def save(path,value):
-    path.parent.mkdir(parents=True,exist_ok=True)
-    tmp=path.with_suffix(path.suffix+'.tmp')
-    with tmp.open('w',encoding='utf-8') as f:
-        json.dump(value,f,ensure_ascii=False,indent=2);f.write('\n');f.flush();os.fsync(f.fileno())
-    tmp.replace(path)
+stamp=store.now
+save=store.atomic_json
 
 def stop(_sig,_frame):
     global STOP
@@ -60,40 +57,56 @@ def public_origin(value):
     if address is not None and not address.is_global:raise ValueError('non-public IP address')
     return 'https://'+u.netloc.rstrip('/')
 
+def public_target(url):
+    """Public HTTPS origin and public DNS answers only; raises ValueError/OSError."""
+    parsed=urllib.parse.urlsplit(url)
+    public_origin(urllib.parse.urlunsplit((parsed.scheme,parsed.netloc,'','','')))
+    web.resolve_public(url)
+
 def fetch(url,timeout=25,direct=None):
     global CHILD
-    if STOP:return {'url':url,'ok':False,'error':'operator stop'}
+    start=url;hops=0
     # Validate request origins even when fetch is invoked independently of CLI.
     try:
         parsed=urllib.parse.urlsplit(url)
         public_origin(urllib.parse.urlunsplit((parsed.scheme,parsed.netloc,'','','')))
     except ValueError:return {'url':url,'ok':False,'error':'public HTTPS URL required'}
-    # curl verifies TLS by default. Never -k; separate HTTP/TLS evidence is recorded.
-    cmd=['curl','--silent','--show-error','--location','--max-redirs','3','--proto','=https','--proto-redir','=https','--connect-timeout','10','--max-time',str(timeout),'--max-filesize','2097152','--user-agent','DentalDataLab-SEO-Monitor/1.0','--dump-header','-','--write-out','\n__SEO_META__%{json}',url]
-    direct_enabled=DIRECT if direct is None else direct
-    if direct_enabled:cmd[1:1]=['--noproxy','*']
-    CHILD=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
-    try:out,err=CHILD.communicate(timeout=timeout+5)
-    except subprocess.TimeoutExpired:
-        os.killpg(CHILD.pid,signal.SIGKILL);CHILD.communicate();return {'url':url,'ok':False,'error':'curl process timeout'}
-    if STOP:return {'url':url,'ok':False,'error':'operator stop'}
-    if CHILD.returncode:return {'url':url,'ok':False,'error':err.decode('utf-8','replace')[:400],'curlExitCode':CHILD.returncode}
-    raw,sep,meta=out.rpartition(b'\n__SEO_META__')
-    if not sep:return {'url':url,'ok':False,'error':'curl metadata missing'}
-    try:info=json.loads(meta)
-    except ValueError:return {'url':url,'ok':False,'error':'invalid curl metadata'}
-    # -L includes every response header block. Remove leading blocks only;
-    # body contents are never interpreted as headers after the final block.
-    headers={}
-    while raw.startswith(b'HTTP/'):
-        end=raw.find(b'\r\n\r\n');width=4
-        if end<0:end=raw.find(b'\n\n');width=2
-        if end<0:break
-        block=raw[:end].decode('iso-8859-1');raw=raw[end+width:];headers={}
-        for line in block.splitlines()[1:]:
-            if ':' in line:
-                k,v=line.split(':',1);headers[k.lower()]=headers.get(k.lower(),'')+' '+v.strip()
-    return {'url':url,'effectiveUrl':info.get('url_effective',url),'status':info.get('http_code',0),'tlsVerified':info.get('ssl_verify_result')==0,'ok':200<=info.get('http_code',0)<300,'headers':headers,'body':raw.decode('utf-8','replace')}
+    while True:
+        if STOP:return {'url':start,'ok':False,'error':'operator stop'}
+        # Redirects are followed here, one hop at a time, so every target is checked
+        # (public HTTPS origin and public DNS) before curl connects. Never -k.
+        cmd=['curl','--silent','--show-error','--proto','=https','--connect-timeout','10','--max-time',str(timeout),'--max-filesize','2097152','--user-agent',AGENT,'--dump-header','-','--write-out','\n__SEO_META__%{json}',url]
+        direct_enabled=DIRECT if direct is None else direct
+        if direct_enabled:cmd[1:1]=['--noproxy','*']
+        CHILD=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True)
+        try:out,err=CHILD.communicate(timeout=timeout+5)
+        except subprocess.TimeoutExpired:
+            os.killpg(CHILD.pid,signal.SIGKILL);CHILD.communicate();return {'url':start,'effectiveUrl':url,'ok':False,'error':'curl process timeout'}
+        if STOP:return {'url':start,'ok':False,'error':'operator stop'}
+        if CHILD.returncode:return {'url':start,'effectiveUrl':url,'ok':False,'error':err.decode('utf-8','replace')[:400],'curlExitCode':CHILD.returncode}
+        raw,sep,meta=out.rpartition(b'\n__SEO_META__')
+        if not sep:return {'url':start,'effectiveUrl':url,'ok':False,'error':'curl metadata missing'}
+        try:info=json.loads(meta)
+        except ValueError:return {'url':start,'effectiveUrl':url,'ok':False,'error':'invalid curl metadata'}
+        # Remove leading header blocks (e.g. 1xx) only; body contents are never
+        # interpreted as headers after the final block.
+        headers={}
+        while raw.startswith(b'HTTP/'):
+            end=raw.find(b'\r\n\r\n');width=4
+            if end<0:end=raw.find(b'\n\n');width=2
+            if end<0:break
+            block=raw[:end].decode('iso-8859-1');raw=raw[end+width:];headers={}
+            for line in block.splitlines()[1:]:
+                if ':' in line:
+                    k,v=line.split(':',1);headers[k.lower()]=headers.get(k.lower(),'')+' '+v.strip()
+        status=info.get('http_code',0);location=headers.get('location','').strip()
+        if status in (301,302,303,307,308) and location:
+            target=urllib.parse.urljoin(url,location);hops+=1
+            if hops>MAX_REDIRECTS:return {'url':start,'effectiveUrl':target,'status':status,'ok':False,'error':'too many redirects'}
+            try:public_target(target)
+            except (ValueError,OSError) as e:return {'url':start,'effectiveUrl':target,'status':status,'tlsVerified':info.get('ssl_verify_result')==0,'ok':False,'error':'redirect target refused: '+str(e)[:120]}
+            url=target;continue
+        return {'url':start,'effectiveUrl':url,'status':status,'tlsVerified':info.get('ssl_verify_result')==0,'ok':200<=status<300,'headers':headers,'body':raw.decode('utf-8','replace')}
 
 def check_site(origin,canonical_origin,fetcher=fetch):
     checks=[];evidence=[]

@@ -1,4 +1,5 @@
 import { latestNaverHours, currentNaverPlaceObservations, naverPlaceSourceUrl as actualPlaceUrl } from './clinic-hours.mjs';
+import { hasText } from './common.mjs';
 
 export const NAVER_HOURS_STAGES = Object.freeze({
   hours_available: '네이버 시간 확보',
@@ -18,7 +19,6 @@ const nextActions = Object.freeze({
   place_discovery: 'find_place_and_verify_identity',
 });
 const failedStatuses = new Set(['blocked', 'failed', 'error']);
-const hasText = value => typeof value === 'string' && value.trim().length > 0;
 const validDate = value => hasText(value) && Number.isFinite(Date.parse(value));
 
 function newestDate(items) {
@@ -96,7 +96,8 @@ export function buildNaverHoursCoverage(clinics, inventory = {}) {
       cityCode: clinic.cityCode ?? null, city: clinic.city ?? null,
       address: clinic.address ?? null, phone: clinic.phone ?? null,
       stage, nextAction: nextActions[stage], checkedAt,
-      sourceUrls: [...new Set([...observations.map(observation => observation.sourceUrl), ...places.map(asset => asset.url)])].sort(),
+      // Observations are pages this project actually read; place candidates follow the inventory's link policy.
+      sourceUrls: [...new Set([...observations.map(observation => observation.sourceUrl), ...places.filter(asset => asset.linkable !== false).map(asset => asset.url)])].sort(),
       hours,
       searchUrl, searchUrlLabel: searchUrl ? '네이버지도 검색 · 자동 생성, 기관 미확인' : null,
     };

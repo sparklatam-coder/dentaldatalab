@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { CONTENT_SECURITY_POLICY } from '../scripts/security-headers.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
@@ -36,6 +37,7 @@ test('Pages compact output serves original clinic HTML and evidence JSON at exis
   assert.equal(fs.existsSync(path.join(dir, 'clinics')), false);
   assert.equal(fs.existsSync(path.join(dir, 'data/clinic-assets/records')), false);
   assert.match(fs.readFileSync(path.join(dir, 'clinic-assets/index.html'), 'utf8'), /inventory.json.gz/);
+  for (const file of ['_worker.js', '_headers']) assert(fs.readFileSync(path.join(dir, file), 'utf8').includes(CONTENT_SECURITY_POLICY), file + ' carries the shared CSP');
   const worker = (await import('data:text/javascript;base64,' + fs.readFileSync(path.join(dir, '_worker.js')).toString('base64'))).default;
   const env = { ASSETS: { async fetch(request) {
     const file = path.join(dir, new URL(request.url).pathname);

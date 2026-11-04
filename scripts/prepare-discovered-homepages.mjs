@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {loadAssetInventory} from './clinic-assets.mjs';
 
@@ -23,13 +24,19 @@ for(const r of inventory.records)for(const a of r.assets){
 }
 const output={schemaVersion:1,createdAt:new Date().toISOString(),scope:'기관 페이지의 실제 연결로 발굴했지만 아직 읽지 않은 홈페이지. 기존 모든 요청 및 수동 본문 확인·접근 실패 주소 제외.',seeds:[...seeds.values()]};
 const file=path.join(root,'data/research/discovered-homepage-seeds.json');
-if(!process.argv.includes('--dry-run')&&(output.seeds.length||!fs.existsSync(file))){
+// Identical seeds must not produce a new file and a new history archive on every run: compare without the clock.
+const withoutClock=({createdAt,...rest})=>JSON.stringify(rest);
+let unchanged=false;
+if(fs.existsSync(file)){try{unchanged=withoutClock(JSON.parse(fs.readFileSync(file,'utf8')))===withoutClock(output);}catch{unchanged=false;}}
+const dryRun=process.argv.includes('--dry-run');
+let written=false;
+if(!dryRun&&!unchanged&&(output.seeds.length||!fs.existsSync(file))){
   // Preserve the input behind every prior scan's seedSha256.
   if(fs.existsSync(file)){
-    const previous=fs.readFileSync(file);const {createHash}=await import('node:crypto');
+    const previous=fs.readFileSync(file);
     const archive=path.join(root,'data/research/homepage-seed-history',createHash('sha256').update(previous).digest('hex')+'.json');
     fs.mkdirSync(path.dirname(archive),{recursive:true});if(!fs.existsSync(archive))fs.writeFileSync(archive,previous);
   }
-  fs.writeFileSync(file,JSON.stringify(output,null,2)+'\n');
+  fs.writeFileSync(file,JSON.stringify(output,null,2)+'\n');written=true;
 }
-console.log(JSON.stringify({newUrls:output.seeds.length,clinics:output.seeds.reduce((n,s)=>n+s.clinics.length,0),dryRun:process.argv.includes('--dry-run'),seedFile:'data/research/discovered-homepage-seeds.json'}));
+console.log(JSON.stringify({newUrls:output.seeds.length,clinics:output.seeds.reduce((n,s)=>n+s.clinics.length,0),dryRun,unchanged,written,seedFile:'data/research/discovered-homepage-seeds.json'}));

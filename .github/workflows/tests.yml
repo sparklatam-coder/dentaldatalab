@@ -1,0 +1,46 @@
+name: Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: dentaldatalab-tests-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Toolchain versions (runner-provided; project needs Node >= 20)
+        run: node --version && python3 --version
+      - name: JavaScript unit tests
+        run: npm run test:unit
+      - name: Python unit tests
+        run: npm run test:python
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    needs: unit
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Toolchain versions (runner-provided; project needs Node >= 20)
+        run: node --version && python3 --version
+      - name: Build the full static site into a scratch directory
+        run: npm run build
+        env:
+          DIST_DIR: ${{ runner.temp }}/dist
+      - name: Static QA over every generated page
+        run: npm run test:site
+        env:
+          DIST_DIR: ${{ runner.temp }}/dist
+      - name: Save QA report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: qa-generated
+          path: docs/qa-generated.json
+          retention-days: 7

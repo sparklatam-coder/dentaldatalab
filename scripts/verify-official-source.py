@@ -14,33 +14,45 @@ import io
 import json
 from pathlib import Path
 import re
+import shutil
 import sys
 import tempfile
-from datetime import datetime, timezone
 import urllib.parse
 import urllib.request
 import zipfile
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ddl import store, web
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGE = 'https://www.data.go.kr/data/15051059/fileData.do'
 ORIGIN = 'https://www.data.go.kr'
 LIMIT = 150 * 1024 * 1024
-
-
-def now():
-    return datetime.now(timezone.utc).isoformat()
+MEMBER_LIMIT = 512 * 1024 * 1024
+ARCHIVE_LIMIT = 1024 * 1024 * 1024
+USER_AGENT = web.user_agent('official source re-verification')
+now = store.now
 
 
 def sha(data):
     return hashlib.sha256(data).hexdigest()
 
 
+class PortalRedirect(urllib.request.HTTPRedirectHandler):
+    """Follow redirects only within data.go.kr over HTTPS."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        parsed = urllib.parse.urlsplit(newurl)
+        host = parsed.hostname or ''
+        if parsed.scheme != 'https' or not (host == 'data.go.kr' or host.endswith('.data.go.kr')):
+            raise ValueError('Redirect off data.go.kr refused: ' + newurl[:120])
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
 def request(opener, url, parameters=None):
     data = urllib.parse.urlencode(parameters).encode() if parameters is not None else None
-    req = urllib.request.Request(url, data=data, headers={'Referer': PAGE})
+    req = urllib.request.Request(url, data=data, headers={'Referer': PAGE, 'User-Agent': USER_AGENT})
     with opener.open(req, timeout=30) as response:
-        body = response.read(LIMIT + 1)
-        if len(body) > LIMIT:
+        body, truncated = web.read_limited(response, LIMIT, deadline=600)
+        if truncated:
             raise ValueError('Response exceeds verification size limit')
         return body, {'url': response.url, 'httpStatus': response.status, 'contentType': response.headers.get('Content-Type')}
 
@@ -63,8 +75,20 @@ def clock_time(value):
     return value[:2] + ':' + value[2:]
 
 
+def check_members(z):
+    """Refuse oversized members before any decompression (zip-bomb guard)."""
+    total = 0
+    for info in z.infolist():
+        if info.file_size > MEMBER_LIMIT:
+            raise ValueError('Archive member exceeds size limit: ' + info.filename)
+        total += info.file_size
+    if total > ARCHIVE_LIMIT:
+        raise ValueError('Archive uncompressed size exceeds limit')
+
+
 def compare_csv(archive, local):
     z = zipfile.ZipFile(io.BytesIO(archive))
+    check_members(z)
     entries = {archive_name(info): info for info in z.infolist()}
     def rows(key):
         found = [info for name, info in entries.items() if key in name]
@@ -114,8 +138,11 @@ def compare_csv(archive, local):
         for day, ko in days.items():
             start, end = clock_time(detail.get('진료시작시간_' + ko)), clock_time(detail.get('진료종료시간_' + ko))
             hours[day] = {'open': start, 'close': end} if start and end and end > start else {'open': None, 'close': None}
+            # Mirrors scripts/import-hira.mjs normalizeHours: a non-increasing pair and a one-sided day are both preserved, never guessed.
             if start and end and end <= start:
                 unclear.append({'day': day, 'open': start, 'close': end, 'reason': '종료가 시작보다 늦지 않음. 날짜 넘김 여부 미확인.'})
+            elif start or end:
+                unclear.append({'day': day, 'open': start, 'close': end, 'reason': '시작·종료 중 한쪽만 유효한 시각. 다른 쪽은 미제공·형식 불일치로 원문 그대로 보존.'})
         expected['hours'] = hours
         if clinic['hoursNotes']['unclearHours'] != unclear:
             errors.append({'id': clinic_id, 'field': 'hoursNotes.unclearHours'})
@@ -135,12 +162,16 @@ def main():
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'data/source-manifest.json').read_text())
     local = json.loads((ROOT / 'data/clinics.json').read_text())
-    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()))
+    opener = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar()), PortalRedirect())
     report = {'schemaVersion': 1, 'checkedAt': now(), 'expectedSnapshotDate': manifest['snapshotDate'], 'status': 'not_completed', 'currentInstitutionFacts': 'not_verified', 'originalLocalFilesOverwritten': False}
+    folder = None
     try:
         body, response = request(opener, PAGE)
-        text = body.decode('utf8')
-        metadata = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', text, re.S).group(1))
+        text = body.decode('utf8', errors='replace')
+        found = re.search(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)
+        if not found:
+            raise ValueError('Catalog page has no ld+json metadata block; manual review needed')
+        metadata = json.loads(found.group(1))
         report['catalog'] = {**response, 'name': metadata['alternateName'], 'dateCreated': metadata['dateCreated'], 'dateModified': metadata['dateModified'], 'license': metadata['license']['name'], 'sha256': sha(body)}
         call = re.search(r"fn_fileDataDown\('([^']*)',\s*'([^']*)',\s*'([^']*)',\s*'([^']*)'", text)
         if not call:
@@ -165,18 +196,18 @@ def main():
         archive_path = folder / 'official-hira.zip'
         archive_path.write_bytes(body)
         matched = sha(body) == manifest['archive']['sha256'] and len(body) == manifest['archive']['size']
-        report['download'] = {**response, 'checkedAt': now(), 'officialOriginalFileName': download_metadata['fileDataRegistVO'].get('orginlFileNm'), 'size': len(body), 'sha256': sha(body), 'expectedSha256': manifest['archive']['sha256'], 'archiveMatchesManifest': matched, 'downloadPath': str(archive_path), 'apiKeyUsed': False, 'loginUsed': False}
+        report['download'] = {**response, 'checkedAt': now(), 'officialOriginalFileName': download_metadata['fileDataRegistVO'].get('orginlFileNm'), 'size': len(body), 'sha256': sha(body), 'expectedSha256': manifest['archive']['sha256'], 'archiveMatchesManifest': matched, 'temporaryCopyDeleted': True, 'apiKeyUsed': False, 'loginUsed': False}
         report['comparison'] = compare_csv(body, local)
         report['status'] = 'official_snapshot_matched' if matched and report['comparison']['mismatchCount'] == 0 else 'official_snapshot_differs_review_required'
     except Exception as error:
         report['status'] = 'verification_incomplete'
         report['error'] = {'type': type(error).__name__, 'message': str(error)}
+    finally:
+        if folder is not None:
+            shutil.rmtree(folder, ignore_errors=True)
     report['completedAt'] = now()
     report['meaning'] = '공식 분기 원본과 로컬 가공 결과의 일치 여부만 검사합니다. 현재 영업·진료·전화·홈페이지 운영의 사실 확인이 아닙니다.'
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    temporary = args.output.with_suffix(args.output.suffix + '.tmp')
-    temporary.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
-    temporary.replace(args.output)
+    store.atomic_json(args.output, report)
     print(json.dumps({'status': report['status'], 'report': str(args.output), 'currentInstitutionFacts': report['currentInstitutionFacts']}, ensure_ascii=False))
     return 0 if report['status'] == 'official_snapshot_matched' else 1
 

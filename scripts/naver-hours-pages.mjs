@@ -1,7 +1,8 @@
 import {esc,fmt,localDate} from '../src/shared.mjs';
+import {externalLink} from './html.mjs';
 
 export const HOURS_STAGES={hours_available:'시간표 확보',hours_missing:'본문 확인 · 시간 미확보',identity_review:'기관 대조 필요',access_failed:'본문 접근 실패',place_ready:'지도 후보 확보 · 본문 확인 전',place_discovery:'지도 주소 조사 전'};
-const link=(url,label)=>`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
+const link=(url,label)=>externalLink(url,label);
 
 export function hoursStatusNotice(status){
   if(!status)return '';

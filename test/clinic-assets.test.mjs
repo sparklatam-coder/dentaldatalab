@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { buildAssetInventory, loadAssetInventory, assetUrl, detectKind } from '../scripts/clinic-assets.mjs';
 import { clinicAssetsPanel, registerClinicAssetsPages, observedWebsiteRow } from '../scripts/clinic-assets-pages.mjs';
 import { buildNaverHoursCoverage } from '../scripts/naver-hours-coverage.mjs';
-import { nationalHoursPanel, HOURS_STAGES } from '../scripts/naver-hours-pages.mjs';
+import { nationalHoursPanel, HOURS_STAGES, hoursStatusNotice } from '../scripts/naver-hours-pages.mjs';
 import { esc, SOURCE_URL } from '../src/shared.mjs';
 
 const metadata = { snapshotDate: '2026-09-30', observedAt: '2026-10-31T10:00:00Z' };
@@ -572,8 +572,10 @@ test('national hours JSON, pending JSONL, index filters and visible stage links 
   const index = JSON.parse(files.get('data/clinic-assets/index.json'));
   for (const row of index) {
     assert.equal(row.naverHoursStage, row.clinicId);
-    assert.equal(row.naverHoursLabel, HOURS_STAGES[row.clinicId]);
+    assert(!Object.hasOwn(row, 'naverHoursLabel'), 'stage labels ship once in #site-data, not per index record');
+    assert.equal(row.address, clinics.find(c => c.id === row.clinicId).address, 'address stays: the client searches it');
   }
+  assert.deepEqual(pages.get('/clinic-assets/').extraData, { hoursStages: HOURS_STAGES });
   const page = pages.get('/clinic-assets/').body;
   for (const stage of Object.keys(HOURS_STAGES)) {
     assert(page.includes(`href="/clinic-assets/?status=&amp;hours=${stage}#asset-search"`));
@@ -761,4 +763,107 @@ test('the real national inventory preserves institution IDs, types, registered f
   assert.equal(sameReservation.length, 1, 'Regression: legacy mobile booking must not duplicate a newer booking as a homepage');
   assert.equal(sameReservation[0].kind, 'booking');
   assert.equal(result.summary.withAssets + result.summary.withoutAssets, result.summary.total);
+});
+
+test('investigation summaries are shown once per record, never as per-query outcomes', () => {
+  const result = inventory([clinic()], {
+    batches: [batch([], { searches: [{ query: '대조치과 홈페이지' }, { query: '대조치과 블로그' }], researchStatus: 'not_found', researchSummary: '<b>전체</b> 조사 요약' })],
+    legacy: [{ records: [{ clinicId: 'clinic-a', name: '대조치과의원', checkedAt: earlier, searchQueries: ['기존 검색어'], searchSummary: '기존 조사 요약', channels: {} }] }],
+  });
+  const record = result.records[0];
+  assert.deepEqual(record.searches, [{ query: '기존 검색어' }, { query: '대조치과 홈페이지' }, { query: '대조치과 블로그' }]);
+  assert.deepEqual(record.researchSummaries.map(s => [s.summary, s.status]), [['기존 조사 요약', null], ['<b>전체</b> 조사 요약', 'not_found']]);
+  const html = clinicAssetsPanel(record);
+  assert.equal(html.split('<p class="subtle-note">조사 요약').length - 1, 2);
+  assert(html.includes(esc('<b>전체</b> 조사 요약')) && !html.includes('<b>전체</b>'));
+  assert(!html.includes('— '));
+});
+
+test('observation precedence compares instants, so a +09:00 stamp cannot outrank a later UTC stamp', () => {
+  const official = asset({ ownership: 'official', bodyStatus: 'read', checkedAt: '2026-11-01T13:00:00Z' });
+  const stale = asset({ ownership: 'candidate', bodyStatus: 'not_read', identityEvidence: [], checkedAt: '2026-11-01T21:00:00+09:00', notes: '12:00Z로 더 오래된 관찰' });
+  for (const order of [[official, stale], [stale, official]]) {
+    const result = inventory([clinic()], { batches: order.map(a => batch([a])) });
+    const website = result.records[0].assets.find(a => a.url === source);
+    assert.equal(website.ownership, 'official');
+    assert.equal(website.checkedAt, '2026-11-01T13:00:00Z');
+  }
+  const unparseable = inventory([clinic()], { batches: [batch([asset({ checkedAt: 'not a date', ownership: 'official' })]), batch([official])] });
+  assert.equal(unparseable.records[0].assets.find(a => a.url === source).checkedAt, '2026-11-01T13:00:00Z');
+});
+
+test('an overruled observation does not keep its identity proof attached to the winner', () => {
+  const official = asset({ ownership: 'official', bodyStatus: 'read', checkedAt: earlier });
+  const correction = asset({ ownership: 'third_party', bodyStatus: 'read', identityEvidence: [], checkedAt: later, notes: '제3자 정정: 다른 기관의 채널' });
+  const result = inventory([clinic()], { batches: [batch([official]), batch([correction])] });
+  const website = result.records[0].assets.find(a => a.url === source);
+  assert.equal(website.ownership, 'third_party');
+  assert.deepEqual(website.identityEvidence, []);
+  const superseded = website.provenance.find(p => p.type === 'superseded_observation');
+  assert.equal(superseded.ownership, 'official');
+  assert.deepEqual(superseded.identityEvidence, proof());
+  assert(!clinicAssetsPanel(website && result.records[0]).includes('대조 출처'));
+});
+
+test('candidate assets render as text with a review badge and no outbound link', () => {
+  const unsafe = 'https://attacker.example/"><script>alert(1)</script>';
+  const result = inventory([clinic()], { batches: [batch([
+    asset({ url: 'https://candidate.example/', ownership: 'candidate', bodyStatus: 'read', identityEvidence: proof('https://search.example/results'), evidenceUrls: ['https://search.example/results'], notes: '자동 발굴' }),
+    asset({ ownership: 'official', bodyStatus: 'read' }),
+  ])] });
+  const html = clinicAssetsPanel(result.records[0]);
+  const items = html.split('<li class="asset-item').map(i => i.slice(0, i.indexOf('</li>')));
+  const pending = items.find(i => i.includes('candidate.example')), verified = items.find(i => i.includes('대조치과의원') && i.includes(source) && !i.includes('candidate.example'));
+  assert(pending.includes('검토 중 · 링크 비활성'));
+  assert(!pending.includes('<a '), 'candidate asset must not link to the candidate URL or its evidence pages');
+  assert(!pending.includes('search.example/results"'), 'evidence URLs of a candidate are text, not hrefs');
+  assert(verified.includes(`<a href="${source}"`));
+  assert(!verified.includes('검토 중'));
+  assert(!clinicAssetsPanel(inventory([clinic()], { batches: [batch([asset({ url: unsafe, ownership: 'candidate' })])] }).records[0]).includes('<script>'));
+});
+
+test('the type filter offers both institution types as well-formed options', () => {
+  const { pages } = render(inventory([clinic()]));
+  const html = [...pages.values()].map(p => p.body).join('');
+  assert(html.includes('<option value="51">치과의원</option>'));
+  assert(html.includes('<option value="41">치과병원</option>'));
+  assert(!/<\/[a-zA-Z][\w-]*\s+[^>\s]/.test(html), 'no malformed closing tags');
+});
+
+test('directory-matched Naver map candidates keep their link; model- or crawler-found candidates do not', () => {
+  const place = 'https://map.naver.com/p/entry/place/123456';
+  const directory = asset({ url: place, kind: 'naverMap', ownership: 'candidate', bodyStatus: 'not_read', identityEvidence: [], label: '공개 디렉토리에서 찾은 네이버지도 후보', provenance: [{ type: 'third_party_directory_discovery', sourceUrl: 'https://local-dent.com/regions' }] });
+  const researched = asset({ url: 'https://map.naver.com/p/entry/place/654321', kind: 'naverMap', ownership: 'candidate', bodyStatus: 'not_read', identityEvidence: [], provenance: [{ type: 'automated_web_research', sourceUrl: 'https://search.example/' }] });
+  const html = clinicAssetsPanel(inventory([clinic()], { batches: [batch([directory, researched])] }).records[0]);
+  const items = html.split('<li class="asset-item').map(i => i.slice(0, i.indexOf('</li>')));
+  const kept = items.find(i => i.includes('place/123456')), pending = items.find(i => i.includes('place/654321'));
+  assert(kept.includes(`<a href="${place}"`) && !kept.includes('검토 중'));
+  assert(pending.includes('검토 중 · 링크 비활성') && !pending.includes('<a '));
+});
+
+test('a malformed crawler URL is skipped instead of aborting the build, while unknown institutions still fail loudly', () => {
+  const check = { url: 'http://', finalUrl: 'javascript:alert(1)', status: 'read', httpStatus: 200, checkedAt: later, clinicIds: ['clinic-a'], matches: { 'clinic-a': { name: true, phone: true } }, links: [{ kind: 'instagram', url: 'https://instagram.com/x' }] };
+  const record = inventory([clinic('clinic-a', { website: source })], { crawl: { results: [check] } }).records[0];
+  assert.deepEqual(record.homepageChecks, []);
+  assert(!record.assets.some(a => a.kind === 'instagram'));
+  const ok = inventory([clinic('clinic-a', { website: source })], { crawl: { results: [{ ...check, url: source, finalUrl: 'not a url' }] } }).records[0];
+  assert.equal(ok.homepageChecks[0].finalUrl, source, 'an unusable final URL falls back to the validated request URL');
+  assert.throws(() => inventory([clinic()], { crawl: { results: [{ ...check, clinicIds: ['other-id'] }] } }), /Unknown crawler clinic/);
+});
+
+test('every clinic panel links its own evidence JSON with a same-origin href', () => {
+  const html = clinicAssetsPanel(inventory([clinic()]).records[0]);
+  assert(html.includes('<a href="/data/clinic-assets/records/clinic-a.json">기관별 JSON</a>'), html.slice(html.indexOf('기관별') - 120, html.indexOf('기관별') + 40));
+});
+
+test('the link policy is decided in the inventory and honoured by the hours status notice too', () => {
+  const researched = asset({ url: 'https://map.naver.com/p/entry/place/654321', kind: 'naverMap', ownership: 'candidate', bodyStatus: 'not_read', identityEvidence: [], provenance: [{ type: 'automated_web_research', sourceUrl: 'https://search.example/' }] });
+  const directory = asset({ url: 'https://map.naver.com/p/entry/place/123456', kind: 'naverMap', ownership: 'candidate', bodyStatus: 'not_read', identityEvidence: [], provenance: [{ type: 'third_party_directory_discovery', sourceUrl: 'https://local-dent.com/regions' }] });
+  const result = inventory([clinic()], { batches: [batch([researched, directory])] });
+  const assets = result.records[0].assets;
+  assert.deepEqual(assets.map(a => [a.url.slice(-6), a.linkable]).sort(), [['123456', true], ['654321', false]]);
+  const status = buildNaverHoursCoverage([clinic()], result).records[0];
+  assert(status.sourceUrls.includes('https://map.naver.com/p/entry/place/123456'));
+  assert(!status.sourceUrls.includes('https://map.naver.com/p/entry/place/654321'), 'unreviewed research candidates are not offered as map links');
+  assert(!hoursStatusNotice(status).includes('place/654321'));
 });

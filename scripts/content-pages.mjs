@@ -1,9 +1,10 @@
 import { esc, icon, localDate } from '../src/shared.mjs';
+import { externalLink } from './html.mjs';
 import { contentText, INTENTS, EVIDENCE_LABELS } from './content-data.mjs';
 import { auditContentReview } from './content-review-data.mjs';
 import { registerContentReviewPage } from './content-review-pages.mjs';
 
-const link = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)} ${icon('link')}</a>`;
+const link = (url, label) => externalLink(url, label, { withIcon: true });
 export function registerContentPage({ page, put, bundle, assetVersion = '1', searchSources = false }) {
   if (!bundle) return;
   const { content: c, evidence } = bundle;

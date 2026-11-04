@@ -7,23 +7,26 @@ The requests are sequential, paced, never retried, and stop on access blocking.
 """
 import argparse
 import collections
-import datetime
 import hashlib
 import json
 import re
+import sys
 import time
 import unicodedata
 import urllib.error
 import urllib.parse
-import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ddl import store, web
 
 ROOT = Path(__file__).resolve().parent.parent
 INDEX_URL = 'https://local-dent.com/regions'
 AUDIT_PATH = ROOT / 'data/research/naver-national-directory.json'
 BATCH_PATH = ROOT / 'data/assets/naver-national-discovery.json'
-USER_AGENT = 'DentalDataLabResearch/0.6 (public directory candidate audit)'
+USER_AGENT = web.user_agent('public directory candidate audit')
+ROBOTS = web.RobotsCache(agent=USER_AGENT)
+now = store.now
 PROVINCES = {
     '서울': ('서울', '서울특별시'), '부산': ('부산', '부산광역시'),
     '대구': ('대구', '대구광역시'), '인천': ('인천', '인천광역시'),
@@ -47,10 +50,6 @@ SLUG_PROVINCE = dict(zip(
     ['서울', '부산', '대구', '인천', '광주', '대전', '울산', '세종',
      '경기', '강원', '충북', '충남', '전북', '전남', '경북', '경남', '제주']))
 VOID_TAGS = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
-
-
-def now():
-    return datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='milliseconds')
 
 
 def text(value):
@@ -170,7 +169,7 @@ class ClinicListings(HTMLParser):
         del self.stack[depth:]
 
 
-class SameOriginRedirect(urllib.request.HTTPRedirectHandler):
+class SameOriginRedirect(web.RevalidatingRedirect):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         parsed = urllib.parse.urlsplit(newurl)
         if parsed.scheme != 'https' or parsed.hostname != 'local-dent.com':
@@ -181,20 +180,21 @@ class SameOriginRedirect(urllib.request.HTTPRedirectHandler):
 def fetch(url, timeout):
     request = {'url': url, 'checkedAt': now(), 'status': 'error', 'httpStatus': None, 'sha256': None}
     try:
-        opener = urllib.request.build_opener(SameOriginRedirect())
-        req = urllib.request.Request(url, headers={'User-Agent': USER_AGENT, 'Accept': 'text/html'})
-        with opener.open(req, timeout=timeout) as response:
-            raw = response.read(8_000_001)
+        if not ROBOTS.allowed(url):
+            request['status'] = 'robots_disallowed'
+            return request, None
+        with web.open_url(url, headers={'Accept': 'text/html'}, timeout=timeout, redirect_handler=SameOriginRedirect(), agent=USER_AGENT) as response:
+            raw, truncated = web.read_limited(response, 8_000_000, deadline=max(web.READ_DEADLINE, timeout))
             request.update(httpStatus=response.status, finalUrl=response.url, byteCount=len(raw),
                            sha256=hashlib.sha256(raw).hexdigest())
-            if len(raw) > 8_000_000:
+            if truncated:
                 request['error'] = 'response_too_large'
                 return request, None
             if 'html' not in (response.headers.get('Content-Type') or '').lower():
                 request['status'] = 'not_html'
                 return request, None
-            body = raw.decode(response.headers.get_content_charset() or 'utf-8', errors='replace')
-        if any(marker in body.lower() for marker in ['cf-chl-', 'challenge-platform', '<title>access denied', '<title>just a moment', '<title>attention required']):
+            body = web.decode_html(raw, response.headers.get_content_charset())
+        if web.is_challenge(body):
             request['status'] = 'blocked'
             request['error'] = 'challenge_or_access_denied_page'
             return request, None
@@ -208,10 +208,7 @@ def fetch(url, timeout):
 
 
 def atomic_json(path, value):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + '.tmp')
-    temporary.write_text(json.dumps(value, ensure_ascii=False, separators=(',', ':')) + '\n', encoding='utf-8')
-    temporary.replace(path)
+    store.atomic_json(path, value, indent=None, separators=(',', ':'))
 
 
 def existing_place_owners():

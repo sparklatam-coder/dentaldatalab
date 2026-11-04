@@ -36,7 +36,8 @@ async function rebuild() {
     const code = await new Promise((resolve, reject) => {
       child = spawn(process.execPath, [path.join(root, 'scripts/build.mjs')], {
         cwd: root,
-        env: { ...process.env, DIST_DIR: staging, DDL_PRODUCTION: '0', DDL_LAUNCH_REVIEWED: '' },
+        // The dev tree is never indexable: production and public-SEO flags are both forced off.
+        env: { ...process.env, DIST_DIR: staging, DDL_PRODUCTION: '0', DDL_SEO_PUBLIC: '', DDL_LAUNCH_REVIEWED: '' },
         stdio: ['ignore', 'inherit', 'inherit'],
       });
       child.once('error', reject);
@@ -59,6 +60,13 @@ async function rebuild() {
     if (requested && !stopping) { clearTimeout(timer); timer = setTimeout(rebuild, 0); }
     await cleanup();
   }
+}
+
+// data/research is written continuously by collectors and is gitignored; temp files are never build inputs.
+function ignoredChange(folder, filename) {
+  if (!filename) return false;
+  const relative = String(filename).split(path.sep).join('/');
+  return relative.endsWith('.tmp') || (folder === 'data' && (relative === 'research' || relative.startsWith('research/')));
 }
 
 function schedule() {
@@ -84,9 +92,9 @@ server.on('error', error => {
 });
 server.listen(port, host, () => {
   console.log(`[dev] http://${host.includes(':') ? '[' + host + ']' : host}:${server.address().port}/`);
-  console.log('[dev] src/, scripts/, data/ 변경을 감지합니다. Ctrl+C로 종료합니다. dist/는 유지합니다.');
+  console.log('[dev] src/, scripts/, data/ 변경을 감지합니다 (data/research와 .tmp 파일 제외). Ctrl+C로 종료합니다. dist/는 유지합니다.');
   for (const folder of ['src', 'scripts', 'data']) {
-    const watcher = fs.watch(path.join(root, folder), { recursive: true }, schedule);
+    const watcher = fs.watch(path.join(root, folder), { recursive: true }, (_event, filename) => { if (!ignoredChange(folder, filename)) schedule(); });
     watcher.on('error', error => { console.error(`[dev] 파일 감지 실패: ${error.message}`); process.exitCode = 1; stop(); });
     watchers.push(watcher);
   }

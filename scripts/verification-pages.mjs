@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { esc, fmt, icon, safeWebsite, clinicUrl, localDate, SOURCE_URL } from '../src/shared.mjs';
+import { institutionType } from './clinic-assets.mjs';
 
 const CHANNELS = { website: '홈페이지', naverPlace: '네이버 지도', naverBlog: '네이버 블로그' };
 const STATUS = {
@@ -77,7 +78,7 @@ export function prepareVerification(clinics, batches = [], source = null) {
   const records = selected.map(clinic => {
     const record = raw.get(clinic.id);
     return {
-      clinicId: clinic.id, name: clinic.name, address: clinic.address, type: ({'41':'치과병원','51':'치과의원'})[clinic.typeCode]??'종별 미확인',
+      clinicId: clinic.id, name: clinic.name, address: clinic.address, type: institutionType(clinic.typeCode),
       checkedAt: text(record?.checkedAt), researched: Boolean(record),
       channels: Object.fromEntries(Object.keys(CHANNELS).map(key => [key, normalizeChannel(record?.channels?.[key])])),
       facts: (Array.isArray(record?.facts) ? record.facts : []).map(fact => normalizeFact(fact, record.checkedAt)).filter(Boolean),

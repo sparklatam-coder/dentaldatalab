@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { safeWebsite } from '../src/shared.mjs';
+import { isIsoTimestamp } from './common.mjs';
 
 export const CHANNELS = ['website', 'naverPlace', 'naverBlog'];
 const STATES = ['verified', 'candidate', 'blocked', 'not_found'];
@@ -20,7 +21,8 @@ export function auditResearch(clinics, batches) {
     seen.add(record.clinicId);
     const clinic = known.get(record.clinicId);
     if (!clinic || clinic.name !== record.name) throw new Error(`Clinic identity mismatch: ${record.clinicId}`);
-    if (!Number.isFinite(Date.parse(record.checkedAt))) throw new Error(`Missing checkedAt: ${record.clinicId}`);
+    // The same strict ISO timestamp rule as the capture importers: no bare dates or locale strings.
+    if (!isIsoTimestamp(record.checkedAt)) throw new Error(`Missing or non-ISO checkedAt: ${record.clinicId}`);
     for (const key of CHANNELS) {
       const ch = record.channels?.[key];
       if (!ch || !STATES.includes(ch.status)) throw new Error(`Invalid status: ${record.clinicId}/${key}`);
