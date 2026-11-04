@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-02T03:53:06.904Z",
+  "checkedAt": "2026-11-04T20:21:12.196Z",
   "scope": {
     "total": 19681,
     "snapshotDate": "2026-09-30",
@@ -10,7 +10,7 @@
       "51": "치과의원"
     },
     "sourceFile": "data/clinics.json",
-    "sourceDataSha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc",
+    "sourceDataSha256": "5d1467dcbd65fae48e8c31b1f1cf754f1c29ff3517c78fc718140c28e50fc7a1",
     "originalModified": false,
     "externalAssetCollectionsIncluded": false
   },
@@ -25,7 +25,7 @@
     "total": 19681,
     "byLevel": {
       "error": 0,
-      "review": 948,
+      "review": 1177,
       "missing": 18988,
       "candidate": 8
     },
@@ -243,10 +243,10 @@
     "hours_value_review": {
       "label": "등록시간 값 검토",
       "level": "review",
-      "definition": "하나 이상의 요일에 비어 있지 않은 시각 값이 있으나 유효한 같은 날 시작·종료 쌍이 아님.",
-      "rows": 0,
+      "definition": "하나 이상의 요일에 비어 있지 않은 시각 값이 있으나 유효한 같은 날 시작·종료 쌍이 아님. 가공 단계에서 null 처리하고 hoursNotes.unclearHours에 원래 시각을 보존한 요일을 포함함.",
+      "rows": 242,
       "total": 19681,
-      "percentOfTotal": 0
+      "percentOfTotal": 1.2
     },
     "source_reference_review": {
       "label": "출처 연결 검토",
@@ -1560,20 +1560,20 @@
     "inputFiles": [
       {
         "file": "data/clinics.json",
-        "sha256": "22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc",
-        "bytes": 29871356,
+        "sha256": "5d1467dcbd65fae48e8c31b1f1cf754f1c29ff3517c78fc718140c28e50fc7a1",
+        "bytes": 29885428,
         "status": "read"
       },
       {
         "file": "data/source-manifest.json",
-        "sha256": "955508bf41bfd5fcc7668bf71c13097f30b9bd22b75fd5f847a717fc06fc114e",
-        "bytes": 5993,
+        "sha256": "776d3fea44c07fdd895aa8684e2b00fc75d0786bfbfa87119902da9d8f156073",
+        "bytes": 6092,
         "status": "read"
       },
       {
         "file": "docs/input-audit.json",
-        "sha256": "7e19235062f41da3f7aeafafc2c7c86bd4793e787e6cd63d83d302d9f08c886f",
-        "bytes": 13917,
+        "sha256": "7b18634baf370feac3cc3a41713a9a8e26a0d250e897ef790afd4d6ead79654e",
+        "bytes": 16207,
         "status": "read"
       },
       {
@@ -1660,7 +1660,7 @@
     "sourceCatalogIssues": [],
     "snapshotDateValid": true,
     "currentBytesMatchPriorImport": true,
-    "priorImportCheckedAt": "2026-10-31T14:00:41.863046+00:00",
+    "priorImportCheckedAt": "2026-11-04T20:21:12.062Z",
     "priorOfficialSnapshotMatched": true,
     "priorOfficialCheckedAt": "2026-10-31T14:21:36.738406+00:00",
     "archiveSha256": "ceff684b8eb1dc9059b668ec56bc91d2a643997420733b2996a0bc5d8910f9c3",
@@ -2089,7 +2089,8 @@
       "address": "충청남도 서산시 대산읍 충의로 1926, 2층",
       "phone": "041-681-8080",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -2241,7 +2242,8 @@
       "address": "강원특별자치도 홍천군 홍천읍 번영로 38, (2층)",
       "phone": "033-434-9355",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -2285,7 +2287,8 @@
       "phone": "042-541-6711",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -2587,7 +2590,8 @@
       "address": "부산광역시 남구 수영로 163, 6층 (대연동)",
       "phone": "051-711-2845",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -7016,7 +7020,8 @@
       "phone": "02-2652-0494",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -9169,7 +9174,8 @@
       "address": "울산광역시 남구 삼산로 14, 2층 (신정동)",
       "phone": "052-256-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -10409,7 +10415,8 @@
       "address": "제주특별자치도 제주시 연북로 22, 2층 (노형동)",
       "phone": "064-745-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -10645,7 +10652,8 @@
       "address": "서울특별시 중랑구 동일로139길 32, 2층 (중화동)",
       "phone": "02-949-3603",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -10797,7 +10805,8 @@
       "address": "부산광역시 부산진구 가야대로 600, 3층 (가야동)",
       "phone": "051-892-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -12453,7 +12462,8 @@
       "address": "서울특별시 강서구 화곡로 200, (화곡동)",
       "phone": "02-2603-3646",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -12950,7 +12960,8 @@
       "address": "경기도 구리시 경춘로 239, 리맥스빌딩 502호 (인창동)",
       "phone": "031-568-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -14381,7 +14392,8 @@
       "address": "경기도 부천시 원미구 부천로90번길 7, 3층 (원미동)",
       "phone": "032-664-9667",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -14819,7 +14831,8 @@
       "address": "서울특별시 서대문구 수색로 20, (남가좌동)",
       "phone": "02-373-1833",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -14840,7 +14853,8 @@
       "address": "전북특별자치도 전주시 덕진구 솔내로 152, 3층 303호 (송천동1가)",
       "phone": "063-254-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -15731,7 +15745,8 @@
       "address": "전남광주통합특별시 북구 서하로 175, 3층 (오치동)",
       "phone": "062-265-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -15751,7 +15766,8 @@
       "address": "서울특별시 노원구 동일로 1677, 5층 (상계동, 제성빌딩)",
       "phone": "02-930-2825",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -17286,7 +17302,8 @@
       "address": "부산광역시 중구 대청로 83, (대청동3가)",
       "phone": "051-465-2828",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -18606,7 +18623,8 @@
       "address": "대전광역시 중구 대종로 304, (문창동)",
       "phone": "042-272-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -20392,7 +20410,8 @@
       "address": "울산광역시 남구 중앙로 255-1, 2층 (신정동)",
       "phone": "052-266-5737",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -22099,7 +22118,8 @@
       "address": "경기도 파주시 문산읍 문향로 71, 신성타워 401,402,403,404호",
       "phone": "031-952-3872",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -22868,7 +22888,8 @@
       "address": "부산광역시 해운대구 좌동순환로433번길 30-1, (중동, 해운대힐스테이트위브)",
       "phone": "051-747-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -24664,7 +24685,8 @@
       "address": "경기도 남양주시 진접읍 해밀예당1로 28, 진접농협 203호",
       "phone": "031-528-2881",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -25046,7 +25068,8 @@
       "phone": "042-528-7528",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -25619,7 +25642,8 @@
       "address": "서울특별시 노원구 한글비석로 383, 2층 3,4호 (중계동, 삼창타워프라자)",
       "phone": "02-3391-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -26042,7 +26066,8 @@
       "address": "대전광역시 서구 둔산중로 50, 파이낸스빌딩 303호 (둔산동)",
       "phone": "042-489-2279",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -27737,7 +27762,8 @@
       "address": "경기도 구리시 체육관로 28, 3층 (수택동, 고덕프라자)",
       "phone": "031-565-2822",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -30256,7 +30282,8 @@
       "address": "전남광주통합특별시 동구 갈마로 58, 3층 (산수동)",
       "phone": "062-251-2808",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -30576,6 +30603,16 @@
       ]
     },
     {
+      "row": 2747,
+      "id": "c-242582cef122",
+      "name": "동성로행복을심는치과의원",
+      "address": "대구광역시 중구 국채보상로 622, (공평동)",
+      "phone": "053-252-0677",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 2748,
       "id": "c-242b2eb8f518",
       "name": "탑클래스치과의원",
@@ -30887,6 +30924,16 @@
       ]
     },
     {
+      "row": 2779,
+      "id": "c-24a6f4bc86aa",
+      "name": "이튼치과의원",
+      "address": "서울특별시 동작구 흑석한강로 27, 106동 B101호 (흑석동, 흑석한강푸르지오상가)",
+      "phone": "02-816-1616",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 2780,
       "id": "c-24a84eae3b51",
       "name": "메디스치과의원",
@@ -31153,7 +31200,8 @@
       "address": "경상남도 창원시 의창구 원이대로 587, (용호동, 정우상가)",
       "phone": "055-284-5471",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -33155,7 +33203,8 @@
       "phone": "052-286-7582",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -33807,6 +33856,16 @@
       ]
     },
     {
+      "row": 3058,
+      "id": "c-282e3500fa4b",
+      "name": "뉴톤치과의원",
+      "address": "대구광역시 수성구 달구벌대로 2360, 4층 (수성동3가)",
+      "phone": "053-424-7501",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 3059,
       "id": "c-28300642c4c1",
       "name": "시지탑치과의원",
@@ -34271,7 +34330,8 @@
       "address": "경상북도 경산시 백자로 77, 4층 (사동)",
       "phone": "053-802-2828",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -34441,7 +34501,8 @@
       "phone": "031-721-2872",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -34955,7 +35016,8 @@
       "address": "전북특별자치도 전주시 완산구 모악로 4688, 202호 (평화동2가)",
       "phone": "063-229-2822",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -35519,7 +35581,8 @@
       "address": "충청북도 청주시 흥덕구 직지대로 567, (봉명동)",
       "phone": "043-262-5603",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -35616,6 +35679,16 @@
       "rules": [
         "website_missing",
         "hours_missing"
+      ]
+    },
+    {
+      "row": 3233,
+      "id": "c-2a73520d7539",
+      "name": "e-스타치과의원",
+      "address": "서울특별시 서대문구 신촌로 79, 3층 (창천동)",
+      "phone": "02-333-2028",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -36538,7 +36611,8 @@
       "phone": "031-882-2807",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -37241,7 +37315,8 @@
       "address": "부산광역시 동래구 금강공원로 13, (온천동)",
       "phone": "051-554-4858",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -37575,7 +37650,8 @@
       "address": "서울특별시 강북구 노해로 74, (수유동, 임치과의원)",
       "phone": "02-993-8924",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -37745,7 +37821,8 @@
       "phone": "052-243-5900",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -38270,7 +38347,8 @@
       "phone": "064-764-7528",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -38741,7 +38819,8 @@
       "address": "전남광주통합특별시 광양시 공영로 25, 3층 (중동)",
       "phone": "061-795-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -39064,7 +39143,8 @@
       "address": "대구광역시 북구 중앙대로 522, (칠성동2가)",
       "phone": "053-421-1275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -40332,7 +40412,8 @@
       "rules": [
         "phone_format_review",
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -42317,7 +42398,8 @@
       "address": "서울특별시 은평구 은평로 108, 3층 (응암동)",
       "phone": "02-357-8907",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -44473,7 +44555,8 @@
       "address": "경상남도 김해시 내외중앙로 69, 2층 204, 205호 (내동)",
       "phone": "055-337-2272",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -45163,6 +45246,16 @@
       "phone": "064-748-7528",
       "rules": [
         "website_missing"
+      ]
+    },
+    {
+      "row": 4141,
+      "id": "c-35bc7f17f324",
+      "name": "e-좋은치과의원",
+      "address": "경기도 안양시 만안구 안양로 343, 2층 (안양동, 에버그린)",
+      "phone": "031-469-2842",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -47642,7 +47735,8 @@
       "phone": "446-7528",
       "rules": [
         "phone_format_review",
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -48111,6 +48205,16 @@
       ]
     },
     {
+      "row": 4428,
+      "id": "c-397c2e391dbe",
+      "name": "나비드치과의원",
+      "address": "서울특별시 중랑구 면목로 289, 농협 (면목동)",
+      "phone": "02-2207-6542",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 4429,
       "id": "c-397d2edb177b",
       "name": "서울새로이치과의원",
@@ -48130,6 +48234,16 @@
       "rules": [
         "website_missing",
         "hours_missing"
+      ]
+    },
+    {
+      "row": 4432,
+      "id": "c-39825ad16018",
+      "name": "연세어린이사랑치과의원",
+      "address": "서울특별시 동작구 상도로 301, 5층 (상도1동)",
+      "phone": "02-813-2870",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -51190,7 +51304,8 @@
       "address": "경기도 안성시 공도읍 공도로 91, (성지프라자301~302)",
       "phone": "031-691-2882",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -51449,7 +51564,8 @@
       "phone": "02-557-7528",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -51479,7 +51595,8 @@
       "address": "경기도 안산시 단원구 다문화길 18, 3층 (원곡동)",
       "phone": "031-493-2895",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -53321,7 +53438,8 @@
       "address": "대전광역시 서구 청사로 121, 8층 (월평동, 선사병원)",
       "phone": "042-476-9700",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -53513,7 +53631,8 @@
       "address": "충청남도 천안시 서북구 성거읍 성거길 85, 85",
       "phone": "041-557-5572",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -53846,7 +53965,8 @@
       "address": "서울특별시 성북구 길음로 33, 지하1층 13,14호 (길음동, 길음뉴타운8단지상가)",
       "phone": "02-943-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -54136,7 +54256,8 @@
       "address": "전남광주통합특별시 북구 하서로 428, 3층 301,302호 (용두동)",
       "phone": "062-572-1520",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -54245,7 +54366,8 @@
       "address": "인천광역시 연수구 송도과학로27번길 55, A동 303, 304호 (송도동, 롯데캐슬캠퍼스타운)",
       "phone": "032-813-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -54407,7 +54529,8 @@
       "phone": "02-2243-2828",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -54928,7 +55051,8 @@
       "address": "경상북도 구미시 신시로 63, 2층 (형곡동)",
       "phone": "054-456-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -55203,7 +55327,8 @@
       "rules": [
         "phone_format_review",
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -56388,7 +56513,8 @@
       "address": "경상북도 구미시 구미대로 409, 4층 (신평동)",
       "phone": "054-463-2828",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -58330,7 +58456,8 @@
       "address": "대전광역시 유성구 농대로 15, (궁동,C&S 빌딩  4층)",
       "phone": "042-861-6550",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -61566,7 +61693,8 @@
       "phone": "042-582-6271",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -64725,7 +64853,8 @@
       "address": "경상북도 청도군 풍각면 봉기로 136-17, (풍각면)",
       "phone": "054-373-2833",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -66525,7 +66654,8 @@
       "address": "인천광역시 부평구 마장로 156, 3층 (산곡동)",
       "phone": "032-521-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -67159,7 +67289,8 @@
       "address": "울산광역시 중구 학성로 127, (학산동)",
       "phone": "052-246-3959",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -67539,7 +67670,8 @@
       "phone": "02-817-2275",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -68054,7 +68186,8 @@
       "phone": "031-395-2804",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -68131,7 +68264,8 @@
       "phone": "051-667-8275",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -69384,7 +69518,8 @@
       "address": "서울특별시 중랑구 동일로 795, (중화동)",
       "phone": "02-437-0647",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -71821,7 +71956,8 @@
       "address": "서울특별시 종로구 삼일대로30길 10-3, 각연빌딩 2층 (낙원동)",
       "phone": "02-765-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -71981,7 +72117,8 @@
       "address": "대전광역시 중구 계룡로882번길 62, 2층 (오류동)",
       "phone": "042-255-7528",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -72198,7 +72335,8 @@
       "address": "대전광역시 중구 유천로132번길 37, (태평동)",
       "phone": "042-538-7333",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -72607,7 +72745,8 @@
       "address": "대전광역시 유성구 테크노1로 12-28, 2층 214~223호 (관평동)",
       "phone": "042-934-7528",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -73019,7 +73158,8 @@
       "phone": "404-6477",
       "rules": [
         "phone_format_review",
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -73190,7 +73330,8 @@
       "address": "경상북도 영주시 구성로 345-1, 2층 (영주동)",
       "phone": "054-633-0100",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -74085,7 +74226,8 @@
       "address": "서울특별시 광진구 용마산로 4, 2층 (중곡동)",
       "phone": "02-457-9912",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -74203,7 +74345,8 @@
       "phone": "622-2875",
       "rules": [
         "phone_format_review",
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -74248,6 +74391,16 @@
       "phone": "031-227-6075",
       "rules": [
         "hours_missing"
+      ]
+    },
+    {
+      "row": 6914,
+      "id": "c-59b4e130f360",
+      "name": "여의도베스트덴치과의원",
+      "address": "서울특별시 영등포구 63로 36, 201호 (여의도동, 리버타워)",
+      "phone": "02-6264-7528",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -75825,7 +75978,8 @@
       "address": "전남광주통합특별시 순천시 팔마로 43, 1층 (풍덕동)",
       "phone": "061-742-7528",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -77578,7 +77732,8 @@
       "address": "대구광역시 북구 팔달로 141, (노원동3가)",
       "phone": "053-355-1319",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -77974,7 +78129,8 @@
       "address": "대구광역시 동구 안심로41길 37, 대구광역시 동구 안심로41길 37, 2층 (서호동)",
       "phone": "053-961-7582",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -78685,7 +78841,8 @@
       "rules": [
         "phone_format_review",
         "website_format_review",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -79191,7 +79348,8 @@
       "address": "서울특별시 중랑구 용마산로 381, 2층 (면목동, 명진빌딩)",
       "phone": "02-437-2275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -79246,7 +79404,8 @@
       "address": "전남광주통합특별시 순천시 이수로 304, 5층 (연향동)",
       "phone": "061-723-2772",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -79632,7 +79791,8 @@
       "address": "서울특별시 강남구 역삼로 124, (역삼동, 2층일부)",
       "phone": "02-508-0086",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -80315,7 +80475,8 @@
       "address": "대구광역시 수성구 수성로 105, 5층 (상동)",
       "phone": "053-768-3906",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -82385,7 +82546,8 @@
       "phone": "864-2275",
       "rules": [
         "phone_format_review",
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -82633,7 +82795,8 @@
       "address": "울산광역시 중구 성안로 192, 3층 (성안동, 대형빌딩)",
       "phone": "052-248-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -83091,7 +83254,8 @@
       "address": "전북특별자치도 익산시 동서로51길 80, 3층 (어양동)",
       "phone": "063-838-2804",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -85441,7 +85605,8 @@
       "address": "대구광역시 남구 중앙대로 200, 4층 (대명동)",
       "phone": "053-474-2432",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -86221,7 +86386,8 @@
       "address": "인천광역시 미추홀구 제일로 42-1, (도화동)",
       "phone": "032-875-9491",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -86241,7 +86407,8 @@
       "address": "경기도 시흥시 목감우회로 45, 4층 402~404호 (목감동, 한울플러스)",
       "phone": "031-475-0365",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -86726,7 +86893,8 @@
       "address": "대구광역시 수성구 범어천로 186, 303호 (범어동, 범어메디스퀘어)",
       "phone": "053-759-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -86822,7 +86990,8 @@
       "phone": "331-7575",
       "rules": [
         "phone_format_review",
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -87878,7 +88047,8 @@
       "address": "울산광역시 남구 삼산로 287, 12,13층 (삼산동)",
       "phone": "052-260-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -87899,7 +88069,8 @@
       "address": "서울특별시 강북구 숭인로 73, 2층 (미아동, 풍원빌딩)",
       "phone": "02-988-2838",
       "rules": [
-        "website_format_review"
+        "website_format_review",
+        "hours_value_review"
       ]
     },
     {
@@ -87909,7 +88080,8 @@
       "address": "경상남도 김해시 삼계로 30, 411호 (구산동)",
       "phone": "055-338-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -90414,7 +90586,8 @@
       "address": "대구광역시 서구 팔달로 188, 3층 (원대동3가)",
       "phone": "053-355-2275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -91238,7 +91411,8 @@
       "address": "부산광역시 연제구 월드컵대로 140, 4층 (연산동)",
       "phone": "051-855-2511",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -92153,7 +92327,8 @@
       "phone": "563-9860",
       "rules": [
         "phone_format_review",
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -93074,7 +93249,8 @@
       "phone": "02-796-7528",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -93558,7 +93734,8 @@
       "address": "전남광주통합특별시 서구 월드컵4강로 65, 5층 (화정동)",
       "phone": "062-229-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -94868,7 +95045,8 @@
       "phone": "02-996-2275",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -94952,7 +95130,8 @@
       "phone": "02-2606-2875",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -96168,7 +96347,8 @@
       "address": "전남광주통합특별시 여수시 시청로 34, 2층 (학동)",
       "phone": "061-691-0175",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -97417,6 +97597,16 @@
       ]
     },
     {
+      "row": 9124,
+      "id": "c-75b513be6a87",
+      "name": "옥동노블치과의원",
+      "address": "울산광역시 남구 문수로 338, 5층 (옥동)",
+      "phone": "052-266-2879",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 9125,
       "id": "c-75c32a49c5e1",
       "name": "평산그랜드치과의원",
@@ -98153,7 +98343,8 @@
       "address": "경기도 의정부시 신곡로 47, 303호 (신곡동, 우신프라자)",
       "phone": "031-848-9551",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -98548,6 +98739,16 @@
       ]
     },
     {
+      "row": 9234,
+      "id": "c-773c88a52a5f",
+      "name": "에코연합치과의원",
+      "address": "부산광역시 해운대구 중동1로 12, 2층 (우동, 해성빌딩)",
+      "phone": "051-741-5858",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 9235,
       "id": "c-773ca65e0c78",
       "name": "간석서울치과의원",
@@ -98630,7 +98831,8 @@
       "phone": "055-327-2080",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -100867,7 +101069,8 @@
       "address": "서울특별시 관악구 남부순환로 1944, 3층 (봉천동)",
       "phone": "02-875-1812",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -101371,7 +101574,8 @@
       "address": "대전광역시 동구 동서대로 1679, (용전동)",
       "phone": "042-621-5134",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -102615,7 +102819,8 @@
       "address": "경상남도 김해시 내외중앙로 86, (내동)",
       "phone": "055-339-7557",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -103022,7 +103227,8 @@
       "address": "서울특별시 성동구 성덕정길 80, 2층 (성수동2가)",
       "phone": "02-498-6279",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -103087,7 +103293,8 @@
       "address": "대전광역시 대덕구 계족로663번길 23, 201호 (법동)",
       "phone": "042-627-2400",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -104371,7 +104578,8 @@
       "phone": "062-222-7502",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -105624,7 +105832,8 @@
       "address": "충청남도 천안시 동남구 병천면 아우내순대길 41, 용가리노래방 2층",
       "phone": "041-414-2882",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -105976,7 +106185,8 @@
       "address": "서울특별시 성동구 고산자로 255, 지상12층 (도선동, 케이 타워)",
       "phone": "02-2282-5992",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -106745,7 +106955,8 @@
       "address": "서울특별시 성북구 화랑로 246, 지상2층 (석관동)",
       "phone": "02-963-1485",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -106776,7 +106987,8 @@
       "address": "서울특별시 광진구 아차산로 373, 4층 (구의동, 원이빌딩)",
       "phone": "432-2275",
       "rules": [
-        "phone_format_review"
+        "phone_format_review",
+        "hours_value_review"
       ]
     },
     {
@@ -107903,7 +108115,8 @@
       "address": "울산광역시 중구 번영로 462, (복산동)",
       "phone": "052-293-1661",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -108446,7 +108659,8 @@
       "address": "경상북도 구미시 상사서로 31, 201호 (상모동, 윤경빌딩)",
       "phone": "054-465-2217",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -109653,7 +109867,18 @@
       "phone": "052-211-2806",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
+      ]
+    },
+    {
+      "row": 10300,
+      "id": "c-862b37ebff13",
+      "name": "해마루치과의원",
+      "address": "경상북도 구미시 산호대로31길 15, 4공단메디파크 5층 (옥계동)",
+      "phone": "054-473-7528",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -110081,7 +110306,8 @@
       "address": "전남광주통합특별시 남구 제석로 104, 202동 7층 701호 (봉선동)",
       "phone": "062-675-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -110537,7 +110763,8 @@
       "address": "경기도 남양주시 별내중앙로 63, 402호 (별내동, 예스프라자 헤르메스)",
       "phone": "031-574-2858",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -111110,7 +111337,8 @@
       "phone": "053-558-2638",
       "rules": [
         "website_format_review",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -112051,7 +112279,8 @@
       "phone": "043-648-2804",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -112105,7 +112334,8 @@
       "address": "경기도 수원시 장안구 서부로2181번길 55, (율전동)",
       "phone": "031-207-3988",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -112812,7 +113042,8 @@
       "address": "부산광역시 중구 광복로 94, 2, 3, 6층 (광복동1가)",
       "phone": "051-243-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -115381,7 +115612,8 @@
       "address": "서울특별시 송파구 마천로 53, 4층 (오금동, 대경빌딩)",
       "phone": "02-408-7522",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -117177,7 +117409,8 @@
       "phone": "031-256-1036",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -118467,7 +118700,8 @@
       "address": "충청남도 논산시 해월로168번길 2, 4층 (반월동)",
       "phone": "041-733-7199",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -118681,7 +118915,8 @@
       "address": "인천광역시 제물포구 우현로 93-1, 대한서림,뚜레쥬르 4,5,6층 (인현동)",
       "phone": "032-777-7579",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -120840,7 +121075,8 @@
       "address": "서울특별시 동대문구 천호대로 405, 동보빌딩 5층 (장안동)",
       "phone": "02-2247-0002",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -121869,7 +122105,8 @@
       "address": "울산광역시 남구 왕생로 97, 4층 (달동)",
       "phone": "052-227-3706",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -121912,7 +122149,8 @@
       "address": "대구광역시 남구 이천로 16, 2층 (봉덕동)",
       "phone": "053-477-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -122817,6 +123055,16 @@
       ]
     },
     {
+      "row": 11560,
+      "id": "c-9718a4071111",
+      "name": "주드림치과의원",
+      "address": "경기도 부천시 원미구 길주로 275, 203호 (중동, 중동프라자)",
+      "phone": "032-329-7582",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 11561,
       "id": "c-9719dbf847e8",
       "name": "김규석치과의원",
@@ -122880,7 +123128,8 @@
       "phone": "052-236-8900",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -123339,7 +123588,8 @@
       "address": "전북특별자치도 완주군 삼례읍 동학로 23, 은혜빌딩 2층",
       "phone": "063-291-7522",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -123489,7 +123739,8 @@
       "address": "서울특별시 강북구 덕릉로 42, 3층 (수유동)",
       "phone": "02-986-8961",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -123879,7 +124130,8 @@
       "address": "서울특별시 성북구 동소문로 113, (동선동4가)",
       "phone": "02-921-8468",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -124451,7 +124703,8 @@
       "address": "경기도 의정부시 청사로48번길 19, 202호 (금오동, 세하메디칼스타)",
       "phone": "031-853-2870",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -124643,7 +124896,8 @@
       "address": "충청북도 제천시 풍양로 103, (중앙로1가)",
       "phone": "043-643-0668",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -125553,7 +125807,8 @@
       "phone": "054-634-2876",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -126445,7 +126700,8 @@
       "address": "서울특별시 구로구 서해안로 2108, 아이온타워2 303,304호 (항동)",
       "phone": "02-2687-2275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -127034,7 +127290,8 @@
       "phone": "043-292-2875",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -128204,7 +128461,8 @@
       "address": "전북특별자치도 전주시 덕진구 가련산로 17, 202호 (덕진동2가, 리드빌딩)",
       "phone": "063-278-5665",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -128409,7 +128667,8 @@
       "address": "경기도 부천시 원미구 석천로 110, 3층 (중동)",
       "phone": "032-653-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -129935,7 +130194,8 @@
       "address": "대구광역시 달서구 달구벌대로 1542, 8층 (감삼동)",
       "phone": "053-555-2804",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -132913,7 +133173,8 @@
       "phone": "051-894-6435",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -133949,7 +134210,8 @@
       "address": "충청남도 논산시 연무읍 안심로 119, (연무읍)",
       "phone": "041-741-6668",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -134261,7 +134523,8 @@
       "address": "대구광역시 북구 동북로 290, 3층 (복현동)",
       "phone": "053-955-7528",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -136606,6 +136869,16 @@
       ]
     },
     {
+      "row": 12883,
+      "id": "c-a82edb8484eb",
+      "name": "대연숲치과의원",
+      "address": "부산광역시 남구 유엔평화로 4, 2층 201호 (대연동)",
+      "phone": "051-715-8889",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 12884,
       "id": "c-a83176065a03",
       "name": "88월드치과의원",
@@ -137462,7 +137735,8 @@
       "phone": "031-593-2853",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -137856,7 +138130,8 @@
       "phone": "544-1220",
       "rules": [
         "phone_format_review",
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -138691,7 +138966,8 @@
       "address": "대구광역시 동구 팔공로101길 55, 3층 302호 (지묘동, 보성2차아파트상가)",
       "phone": "053-981-0803",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -139524,7 +139800,8 @@
       "phone": "02-762-7528",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -139889,7 +140166,8 @@
       "address": "경기도 남양주시 오남읍 진건오남로 806-6, 2층",
       "phone": "031-573-2752",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -140564,7 +140842,8 @@
       "phone": "042-633-2875",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -141405,7 +141684,8 @@
       "phone": "031-976-3433",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -142193,7 +142473,8 @@
       "address": "서울특별시 관악구 조원로16길 34, (신림동)",
       "phone": "02-830-0220",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -142529,7 +142810,8 @@
       "phone": "041-751-2888",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -142561,7 +142843,8 @@
       "address": "전남광주통합특별시 남구 금화로 403, 4층 401호 (월산동)",
       "phone": "062-267-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -143787,6 +144070,16 @@
       ]
     },
     {
+      "row": 13571,
+      "id": "c-b0c0a0062659",
+      "name": "문치과병원",
+      "address": "서울특별시 은평구 통일로 809-1, (대조동)",
+      "phone": "02-355-7355",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 13572,
       "id": "c-b0c44ea685df",
       "name": "플러스치과의원",
@@ -143968,7 +144261,8 @@
       "address": "울산광역시 중구 번영로 566, (남외동)",
       "phone": "052-281-3700",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -145021,7 +145315,8 @@
       "address": "경기도 수원시 장안구 대평로 72, 2층 202, 203, 204호, 복도 일부 (정자동)",
       "phone": "031-892-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -145151,7 +145446,8 @@
       "phone": "033-521-1646",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -145981,7 +146277,8 @@
       "address": "울산광역시 남구 중앙로 210, 2층 (신정동)",
       "phone": "052-272-9060",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -146111,7 +146408,8 @@
       "address": "경상남도 김해시 활천로267번길 19, (삼방동)",
       "phone": "055-334-8250",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -146252,7 +146550,8 @@
       "address": "충청남도 보령시 중앙로 67, (대천동)",
       "phone": "041-932-2136",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -147348,7 +147647,8 @@
       "phone": "041-735-2875",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -148334,7 +148634,8 @@
       "address": "경기도 평택시 정암로 2, 2층 (서정동)",
       "phone": "031-665-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -150042,7 +150343,8 @@
       "address": "전남광주통합특별시 서구 화개1로79번길 3, 2층 (금호동)",
       "phone": "062-655-2855",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -150204,7 +150506,8 @@
       "phone": "063-442-7979",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -150733,7 +151036,8 @@
       "address": "경기도 수원시 장안구 파장로 63, 2층 (정자동)",
       "phone": "031-246-3116",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -150839,7 +151143,8 @@
       "address": "대전광역시 중구 평촌로 58, 4층 (유천동)",
       "phone": "042-534-3900",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -151947,7 +152252,8 @@
       "address": "서울특별시 영등포구 국회대로37길 25, 301호 (당산동4가, 로얄프라자)",
       "phone": "02-2632-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -153300,7 +153606,8 @@
       "address": "서울특별시 성동구 독서당로 187, 301, 302호 (옥수동, 극동상가)",
       "phone": "02-2297-8588",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -156826,7 +157133,8 @@
       "address": "경기도 고양시 덕양구 권율대로 899, 3층 301, 302호 (신원동)",
       "phone": "02-6338-2828",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -157350,7 +157658,8 @@
       "address": "부산광역시 연제구 중앙대로 1107, 5층 (연산동)",
       "phone": "051-866-2806",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -158917,7 +159226,8 @@
       "address": "제주특별자치도 제주시 동광로 97, (일도이동, 이룸해피안)",
       "phone": "064-721-7522",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -159184,7 +159494,8 @@
       "address": "서울특별시 동대문구 천호대로 2, (신설동)",
       "phone": "02-2232-7875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -159758,6 +160069,16 @@
       ]
     },
     {
+      "row": 15102,
+      "id": "c-c52b38d3910f",
+      "name": "사직뉴욕치과의원",
+      "address": "부산광역시 동래구 사직북로 16, 3층 (사직동, 국민은행)",
+      "phone": "051-505-2378",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 15103,
       "id": "c-c53179974967",
       "name": "달서치과의원",
@@ -159785,7 +160106,8 @@
       "address": "경기도 성남시 분당구 장미로 139, 2층 일부(201호)호 (야탑동, 매화마을공무원아파트)",
       "phone": "031-709-0951",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -160301,7 +160623,8 @@
       "address": "부산광역시 동래구 중앙대로 1523, SKHUBSKY 2층 일부호 (온천동)",
       "phone": "051-556-6607",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -160550,7 +160873,8 @@
       "address": "경기도 광주시 중앙로 107, 3층 (경안동)",
       "phone": "031-769-2880",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -160913,7 +161237,8 @@
       "address": "서울특별시 강서구 화곡로59길 29, (화곡동)",
       "phone": "02-2691-2886",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -161073,7 +161398,8 @@
       "address": "경기도 용인시 기흥구 동백5로 21-11, 4층 409호 (중동, 동백 훼미리프라자 1)",
       "phone": "031-285-7522",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -161636,7 +161962,8 @@
       "phone": "031-959-2275",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -163879,7 +164206,8 @@
       "address": "울산광역시 중구 번영로 568, 2층 (남외동)",
       "phone": "052-700-2275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -164543,7 +164871,8 @@
       "address": "대전광역시 유성구 계룡로 55, (봉명동, 407,408호)",
       "phone": "042-823-1318",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -164723,7 +165052,8 @@
       "phone": "055-282-2875",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -165154,7 +165484,8 @@
       "address": "경기도 용인시 수지구 풍덕천로 110, 중수빌딩 4층 (풍덕천동)",
       "phone": "031-272-7200",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -166090,7 +166421,8 @@
       "rules": [
         "phone_missing",
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -166143,7 +166475,8 @@
       "address": "전남광주통합특별시 광산구 용아로379번길 30, 2층 (하남동)",
       "phone": "062-954-2275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -168069,7 +168402,8 @@
       "address": "대구광역시 남구 현충로 197, (대명동)",
       "phone": "053-622-7582",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -169073,7 +169407,8 @@
       "address": "충청남도 아산시 온천대로 1626-3, 포유치과 4층 (풍기동)",
       "phone": "041-546-2204",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -169421,6 +169756,16 @@
       ]
     },
     {
+      "row": 16036,
+      "id": "c-d123939149ae",
+      "name": "연세신나는아이치과의원",
+      "address": "서울특별시 동작구 동작대로 123, 3층 (사당동)",
+      "phone": "02-599-8227",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 16037,
       "id": "c-d12482952317",
       "name": "올바른연세치과의원",
@@ -169588,7 +169933,8 @@
       "address": "경기도 성남시 수정구 수정로 219-1, 2층 (태평동)",
       "phone": "031-722-2888",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -170623,7 +170969,8 @@
       "address": "강원특별자치도 원주시 서원대로 406, 4층 (단구동, 리더스타워)",
       "phone": "033-765-7928",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -171878,7 +172225,8 @@
       "address": "전남광주통합특별시 북구 하서로 421, 3층 (용두동, 양산빌딩)",
       "phone": "062-574-7528",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -171900,7 +172248,8 @@
       "phone": "02-924-8100",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -171997,7 +172346,8 @@
       "phone": "062-373-7528",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -172209,7 +172559,8 @@
       "address": "경기도 안성시 공도읍 공도로 140, 디자인시티블루밍 상가1동 202~207호",
       "phone": "031-654-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -173260,7 +173611,8 @@
       "phone": "02-701-5872",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -173798,7 +174150,8 @@
       "address": "경상남도 창원시 의창구 평산로 96, 웰빙프라자 2층 209호 (팔용동)",
       "phone": "055-246-2878",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -177690,7 +178043,8 @@
       "phone": "02-2209-7528",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -178114,7 +178468,8 @@
       "address": "경기도 남양주시 화도읍 마석중앙로 67, 2층",
       "phone": "031-559-2828",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -180515,7 +180870,8 @@
       "address": "전남광주통합특별시 진도군 진도읍 남문길 5, (진도읍)",
       "phone": "061-542-2804",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -182602,6 +182958,16 @@
       ]
     },
     {
+      "row": 17298,
+      "id": "c-e153d01faa6d",
+      "name": "범계유디치과의원",
+      "address": "경기도 안양시 동안구 시민대로 167, 309,310호 (비산동, 안양벤처텔)",
+      "phone": "031-389-1515",
+      "rules": [
+        "hours_value_review"
+      ]
+    },
+    {
       "row": 17299,
       "id": "c-e155821d85e5",
       "name": "부평스마트치과의원",
@@ -182618,7 +182984,8 @@
       "address": "경상남도 진주시 진주대로 869, 가야자모병원 6층 (주약동)",
       "phone": "055-761-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -183022,7 +183389,8 @@
       "address": "서울특별시 영등포구 신풍로 44, 2층 (신길동)",
       "phone": "02-836-2080",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -185265,7 +185633,8 @@
       "phone": "031-668-2855",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -187115,7 +187484,8 @@
       "address": "충청남도 아산시 남부로 353, 2층 (풍기동, 동일하이빌상가)",
       "phone": "041-549-2879",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -187642,7 +188012,8 @@
       "address": "경기도 수원시 영통구 영통로 195, 302호 (망포동, 골든스퀘어)",
       "phone": "031-204-2870",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -187881,7 +188252,8 @@
       "phone": "0507-1428-2833",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -188310,6 +188682,16 @@
       "phone": "031-409-9931",
       "rules": [
         "website_missing"
+      ]
+    },
+    {
+      "row": 17854,
+      "id": "c-e816aa223d51",
+      "name": "서울나란이치과교정과치과의원",
+      "address": "서울특별시 관악구 남부순환로 1801, 3층 (봉천동)",
+      "phone": "02-889-2191",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -189353,7 +189735,8 @@
       "address": "경상남도 김해시 무계로 56, 메가시티몰 3층 322호 (무계동)",
       "phone": "055-313-3222",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -192933,7 +193316,8 @@
       "phone": "02-2607-2758",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -193181,7 +193565,8 @@
       "address": "경상남도 진주시 진주대로 1065, 6층 (대안동)",
       "phone": "055-743-2875",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -193399,7 +193784,8 @@
       "address": "강원특별자치도 홍천군 홍천읍 홍천로3길 16, (홍천읍)",
       "phone": "033-436-2804",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -193659,7 +194045,8 @@
       "address": "서울특별시 서대문구 응암로 113, 2층 (북가좌동)",
       "phone": "02-305-0322",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -194057,6 +194444,16 @@
       "rules": [
         "website_missing",
         "hours_missing"
+      ]
+    },
+    {
+      "row": 18403,
+      "id": "c-ef864e08d0ae",
+      "name": "바른해치과교정과치과의원",
+      "address": "서울특별시 강남구 선릉로 225, 도곡렉슬상가 305호 (도곡동)",
+      "phone": "02-575-2885",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -197643,7 +198040,8 @@
       "address": "강원특별자치도 삼척시 진주로 8, (남양동)",
       "phone": "033-574-4020",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -198185,7 +198583,8 @@
       "address": "서울특별시 노원구 상계로 320, (상계동, 불암빌딩)",
       "phone": "02-934-7528",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -199072,7 +199471,8 @@
       "phone": "02-784-3118",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -199159,7 +199559,8 @@
       "address": "대구광역시 북구 신암로 75, 4층 (대현동)",
       "phone": "053-255-2882",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -199288,7 +199689,8 @@
       "address": "인천광역시 서해구 가정로 379, (신현동)",
       "phone": "032-574-2754",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -200400,7 +200802,8 @@
       "address": "인천광역시 계양구 계양대로 101, 4층 402호 (작전동)",
       "phone": "032-545-2275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -200874,6 +201277,16 @@
       "phone": "032-343-2874",
       "rules": [
         "website_missing"
+      ]
+    },
+    {
+      "row": 19060,
+      "id": "c-f7fdf13e059f",
+      "name": "비너스치과의원",
+      "address": "서울특별시 강남구 논현로 841, B105호 (신사동, JB미소빌딩)",
+      "phone": "02-3445-9716",
+      "rules": [
+        "hours_value_review"
       ]
     },
     {
@@ -201408,7 +201821,8 @@
       "address": "전남광주통합특별시 북구 갈마로 45, 5층 (두암동)",
       "phone": "062-263-2887",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -203628,7 +204042,8 @@
       "address": "경기도 안산시 상록구 영화6길 26, 2층 (사동)",
       "phone": "031-415-2228",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -203766,7 +204181,8 @@
       "address": "전남광주통합특별시 북구 하서로 335, 3층 (양산동)",
       "phone": "062-573-2275",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -203971,7 +204387,8 @@
       "phone": "041-333-8778",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -204134,7 +204551,8 @@
       "address": "경상북도 청도군 금천면 금천로 47, 47",
       "phone": "054-371-3841",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -204637,7 +205055,8 @@
       "phone": "033-748-2842",
       "rules": [
         "website_missing",
-        "hours_missing"
+        "hours_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -204816,7 +205235,8 @@
       "address": "대전광역시 대덕구 대덕대로 1580, (석봉동)",
       "phone": "042-931-4712",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -205964,7 +206384,8 @@
       "address": "서울특별시 강동구 성내로 22, 청해빌딩 3층 (성내동)",
       "phone": "02-473-3346",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {
@@ -207210,7 +207631,8 @@
       "address": "경기도 오산시 죽담안로 38-15, 3층 301~303호 (궐동)",
       "phone": "031-376-2870",
       "rules": [
-        "website_missing"
+        "website_missing",
+        "hours_value_review"
       ]
     },
     {

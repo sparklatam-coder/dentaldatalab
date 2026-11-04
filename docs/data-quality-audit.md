@@ -40,7 +40,7 @@ const panel = dataQualityHomePanel(quality);
 
 ## 원본 대조 범위
 
-현재 가공 파일의 SHA-256은 `22ca2821563ec5ba0a78d903e55585ad3a0ecd5da4ed12bb28e667b51b05c5fc`입니다. `docs/input-audit.json`의 독립 재가공 일치 기록과 연결됩니다. `docs/source-verification-recheck.json`에는 2026-10-31의 공식 ZIP 다운로드 해시·원문 CSV 필드 대조 기록이 있습니다. 파일 해시, 자료 기준일, 모집단, 대조 불일치 수, 확인 시각이 맞아야 연결된 과거 기록으로 표시합니다. 과거 기록에 연결됐다는 사실은 이번에 ZIP을 다시 다운로드했다는 뜻이 아닙니다.
+현재 가공 파일의 SHA-256은 `5d1467dcbd65fae48e8c31b1f1cf754f1c29ff3517c78fc718140c28e50fc7a1`입니다. `docs/input-audit.json`의 독립 재가공 일치 기록과 연결됩니다. `docs/source-verification-recheck.json`에는 2026-10-31의 공식 ZIP 다운로드 해시·원문 CSV 필드 대조 기록이 있습니다. 파일 해시, 자료 기준일, 모집단, 대조 불일치 수, 확인 시각이 맞아야 연결된 과거 기록으로 표시합니다. 과거 기록에 연결됐다는 사실은 이번에 ZIP을 다시 다운로드했다는 뜻이 아닙니다.
 
 2026-11-02에 [공식 카탈로그](https://www.data.go.kr/catalog/15051059/fileData.json)를 다시 열어 2026-09-30 자료와 분기 추출·월말 집계 차이 설명을 확인했습니다. 일반 안내 URL은 web 도구의 콘텐츠 형식 오류가 났지만 별도 공식 카탈로그는 읽을 수 있었습니다. 원문 확인 결과는 `data/content/data-quality-source-evidence.json`에 저장했습니다.
 

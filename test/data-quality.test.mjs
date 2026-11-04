@@ -7,7 +7,7 @@ import {collectDataQuality,loadDataQuality,qualityHttpUrl} from '../scripts/data
 import {dataQualityHomePanel,registerDataQualityPage} from '../scripts/data-quality-pages.mjs';
 
 const root=fileURLToPath(new URL('../',import.meta.url));
-const checkedAt='2026-11-02T04:00:00Z';
+const checkedAt='2026-11-05T00:00:00Z'; // must not precede the audit records in docs/ (input-audit 2026-11-04T20:21Z); earlier records are linked, later ones ignored
 const clinic=(i,patch={})=>({id:'c-'+i.toString(16).padStart(12,'0'),name:'기관'+i,typeCode:'51',type:'치과의원',sidoCode:'310000',sido:'경기',cityCode:'312700',city:'양주시',address:`경기도 양주시 옥정로 ${i}, 2층`,phone:'031-123-4567',postalCode:'11473',lat:37.8,lon:127.1,doctors:{total:0,specialist:0},hours:{},website:null,specialties:[],equipment:[],sourceIds:['hira-base'],...patch});
 const data=clinics=>({snapshotDate:'2026-09-30',observedAt:'2026-10-31T10:27:09.045Z',clinics});
 const manifest={snapshotDate:'2026-09-30',archive:{sha256:'archive-hash'},sources:['hira-base','hira-detail','hira-specialties','hira-equipment'].map(id=>({id,url:'https://www.data.go.kr/data/15051059/fileData.do',snapshotDate:'2026-09-30'}))};
@@ -64,13 +64,27 @@ test('quality page escapes fields, exposes IDs/evidence, and downloads detailed 
   assert(!Object.hasOwn(JSON.parse(files.get('data/quality/report.json')),'reviewQueue'));assert(dataQualityHomePanel(r).includes('/data/quality/'));assert(html.includes('현재 영업·연결 확인은 전수 검증하지 않았습니다.'));
 });
 
+test('preserved unclear hours stay visible to the value-review rule instead of vanishing with the nulled day',()=>{
+  const rows=freeze([clinic(1,{hours:{mon:{open:null,close:null}},hoursNotes:{unclearHours:[{day:'mon',open:'09:00',close:null,reason:'한쪽만 유효'}]}}),clinic(2,{hours:{mon:{open:null,close:null}},hoursNotes:{unclearHours:[]}}),clinic(3,{hours:{mon:{open:'21:00',close:'09:00'}}})]);
+  const r=audit(rows);
+  assert.equal(r.rules.hours_value_review.rows,2);
+  assert.deepEqual(r.reviewQueue.filter(row=>row.rules.includes('hours_value_review')).map(row=>row.id),[rows[0].id,rows[2].id]);
+  assert.equal(r.rules.hours_missing.rows,3,'unclear hours never count as available hours');
+});
+
 test('national audit reconciles the complete snapshot, leaves bytes unchanged and finds four conservative candidate pairs',()=>{
   const input=new URL('../data/clinics.json',import.meta.url),before=fs.readFileSync(input),digest=b=>createHash('sha256').update(b).digest('hex');
   const r=loadDataQuality(root,{checkedAt});
-  assert.equal(r.summary.total,19681);assert.equal(r.summary.byLevel.error,0);assert.equal(r.summary.manifestMismatches,0);assert.equal(r.summary.sourceCatalogIssues,0);
-  assert.equal(r.metrics.phone.missing,72);assert.equal(r.metrics.phone.formatReview,833);assert.equal(r.metrics.website.missing,17963);assert.equal(r.metrics.hours.missing,14855);
-  assert.equal(r.summary.candidateGroups,4);assert.equal(r.summary.candidateInstitutions,8);assert.equal(r.summary.candidateRuleGroups,5);assert.equal(r.provenance.linkedHistoricalSourceCheck,true);
+  assert.equal(r.summary.total,JSON.parse(before).clinics.length);assert.equal(r.summary.byLevel.error,0);assert.equal(r.summary.manifestMismatches,0);assert.equal(r.summary.sourceCatalogIssues,0);
+  // These figures are intentionally scoped to the handoff snapshot, not future imports.
+  if(r.scope.snapshotDate==='2026-09-30'){
+    assert.equal(r.summary.total,19681);
+    assert.equal(r.metrics.phone.missing,72);assert.equal(r.metrics.phone.formatReview,833);assert.equal(r.metrics.website.missing,17963);assert.equal(r.metrics.hours.missing,14855);
+    assert.equal(r.rules.hours_value_review.rows,242,'institutions whose original hours are preserved in hoursNotes.unclearHours (859 day entries: non-increasing pairs and one-sided days)');
+    assert.equal(r.summary.candidateGroups,4);assert.equal(r.summary.candidateInstitutions,8);assert.equal(r.summary.candidateRuleGroups,5);assert.equal(r.provenance.linkedHistoricalSourceCheck,true);
+  }
   assert.equal(digest(fs.readFileSync(input)),digest(before));assert.equal(r.scope.sourceDataSha256,digest(before));
   for(const m of Object.values(r.metrics)){assert.equal(m.recorded+m.missing,m.total);assert.equal(m.formatPass+m.formatReview,m.recorded);}
   for(const group of r.duplicates.candidateGroups){assert.equal(group.records.length,2);assert.notEqual(group.records[0].id,group.records[1].id);}
+  assert.equal(r.summary.currentOperatingStatusVerified,0);
 });
