@@ -204,6 +204,7 @@ dialog .dialog-close{border-radius:980px;background:#e8e8ed}
 .page-intro h1{font-size:clamp(36px,4.5vw,56px)}
 .prose h2{font-size:28px;letter-spacing:-.015em}.prose p,.prose li{line-height:1.7}.prose code{background:#e8e8ed;border-radius:6px}
 .timeline time{color:#6e6e73}
+.faq-list{margin:0;display:grid;gap:14px}.faq-list>div{padding:14px 16px;background:#fff;border-radius:14px}.faq-list dt{font-weight:600;margin-bottom:6px}.faq-list dd{margin:0;color:#424245;line-height:1.6}
 .report-heading h1{letter-spacing:-.02em}
 .report-metrics{border:0;background:var(--surface);border-radius:20px}.report-metrics strong{font-weight:600}
 .content-stats strong{color:#1d1d1f;font-weight:600}
