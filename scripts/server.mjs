@@ -49,6 +49,14 @@ export function createPreviewServer({ directory, getDirectory = () => directory 
       res.writeHead(status, { ...headers, 'Content-Type': 'text/plain; charset=utf-8', 'Content-Length': body.length, ...extra });
       res.end(req.method === 'HEAD' ? undefined : body);
     };
+    // Hand-off beacons from src/app.mjs (docs/outbound-measurement.md) are answered like the Pages Worker does,
+    // so local pages log no failed request. The body is discarded unread: nothing is counted or stored locally.
+    // The path is OUTBOUND_ROUTE in outbound-events.mjs; it is spelled out so this file keeps its single import.
+    if (req.method === 'POST' && req.url === '/e/outbound') {
+      req.resume();
+      res.writeHead(204, { ...headers, 'Cache-Control': 'no-store' });
+      return res.end();
+    }
     if (!['GET', 'HEAD'].includes(req.method)) return respond(405, 'Method not allowed', { Allow: 'GET, HEAD' });
     let url, pathname;
     try {

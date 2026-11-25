@@ -47,3 +47,4 @@ async function downloadChartPng(button){
   if(status)status.textContent='PNG 저장을 요청했습니다. 출처·기준일·분모·해석 한계가 이미지에 포함되어 있습니다.';
  }catch{if(status)status.textContent='PNG를 만들지 못했습니다. 그래프 SVG 다운로드를 이용해 주세요.';}finally{button.disabled=false;}
 }
+/* Hand-off count (docs/outbound-measurement.md): institution id, link kind and page path only; no cookie, storage or identifier. Never delays navigation. */export const outboundEvent=(a,page)=>({kind:a.dataset.outbound,clinic:a.dataset.clinic,page});document.addEventListener('click',e=>{try{const a=e.target.closest?.('a[data-outbound]');if(a)navigator.sendBeacon?.('/e/outbound',JSON.stringify(outboundEvent(a,location.pathname)));}catch{}});

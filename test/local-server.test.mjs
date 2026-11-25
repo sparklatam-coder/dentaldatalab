@@ -84,3 +84,43 @@ test('preview serves complete generations with private headers and HTTP semantic
   assert.equal(missing.headers['x-robots-tag'], 'noindex, nofollow');
   assert.equal((await request('/')).status, 200);
 });
+
+test('preview answers hand-off beacons with an empty 204 and keeps nothing', async t => {
+  const { OUTBOUND_ROUTE } = await import('../scripts/outbound-events.mjs');
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'ddl-preview-outbound-'));
+  t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
+  fs.writeFileSync(path.join(dir, 'index.html'), '<h1>홈</h1>');
+  let active = null;
+  const server = createPreviewServer({ getDirectory: () => active });
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  t.after(() => new Promise(resolve => server.close(resolve)));
+  const send = (pathname, method, body) => new Promise((resolve, reject) => {
+    const req = http.request({ hostname: '127.0.0.1', port: server.address().port, path: pathname, method }, res => {
+      const chunks = [];
+      res.on('data', chunk => chunks.push(chunk));
+      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: Buffer.concat(chunks).toString() }));
+    });
+    req.once('error', reject);
+    req.end(body);
+  });
+  const event = JSON.stringify({ kind: 'tel', clinic: 'c-0123456789ab', page: '/clinics/c-0123456789ab/' });
+  // Also while the first dev build is still running: a beacon is never an error.
+  for (const directory of [null, dir]) {
+    active = directory;
+    const response = await send(OUTBOUND_ROUTE, 'POST', event);
+    assert.equal(response.status, 204);
+    assert.equal(response.body, '');
+    assert.equal(response.headers['cache-control'], 'no-store');
+    assert.equal(response.headers['content-security-policy'], CONTENT_SECURITY_POLICY);
+    assert.equal(response.headers['x-robots-tag'], 'noindex, nofollow');
+  }
+  assert.equal((await send(OUTBOUND_ROUTE, 'POST', 'x'.repeat(200000))).status, 204, 'the body is discarded, whatever it is');
+  assert.deepEqual(fs.readdirSync(dir), ['index.html'], 'nothing is stored locally');
+  // Only that exact POST is special; everything else keeps the read-only behaviour.
+  assert.equal((await send(OUTBOUND_ROUTE, 'GET')).status, 404);
+  for (const pathname of [OUTBOUND_ROUTE + '?x=1', '/e/other', '/']) {
+    const refused = await send(pathname, 'POST', event);
+    assert.equal(refused.status, 405, pathname);
+    assert.equal(refused.headers.allow, 'GET, HEAD');
+  }
+});

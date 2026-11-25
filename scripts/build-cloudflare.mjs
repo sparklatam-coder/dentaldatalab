@@ -7,6 +7,10 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { gzipSync } from 'node:zlib';
 import { NOINDEX_ROUTES } from './seo.mjs';
+import {
+  OUTBOUND_ROUTE, OUTBOUND_BINDING, OUTBOUND_KINDS, OUTBOUND_MAX_BYTES, OUTBOUND_CLINIC, OUTBOUND_PAGE,
+  sameOriginRequest, smallBody, outboundDataPoint,
+} from './outbound-events.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -34,6 +38,7 @@ export default {
       return new Response(null, { status: 301, headers: { ...headers, Location: target.href } });
     }
     const responseHeaders = { ...headers, ...(url.hostname.endsWith('.pages.dev') ? { 'X-Robots-Tag': 'noindex, nofollow' } : {}) };
+    if (url.pathname === OUTBOUND_ROUTE) return outbound(request, env, url);
     const html = url.pathname.match(/^\\/clinics\\/(c-([a-f0-9]{3})[a-f0-9]{9})(\\/|\\/index\\.html)?$/);
     const record = url.pathname.match(/^\\/data\\/clinic-assets\\/records\\/(c-([a-f0-9]{3})[a-f0-9]{9})\\.json$/);
     if (!html && !record) return env.ASSETS.fetch(request);
@@ -61,6 +66,31 @@ async function missing(request, env) {
   return new Response(request.method === 'HEAD' ? null : page.body, {
     status: 404, headers: { ...headers, 'X-Robots-Tag': 'noindex, follow', 'Content-Type': 'text/html; charset=utf-8' },
   });
+}
+// Hand-off click count (docs/outbound-measurement.md). The only request data read are the Origin and
+// Sec-Fetch-Site headers (same-origin proof), Content-Length and a body of at most ${OUTBOUND_MAX_BYTES} bytes: no IP
+// address, user agent, cookie or referrer. Every POST gets the same empty 204 whether or not it was counted,
+// and nothing is stored until the ${OUTBOUND_BINDING} Analytics Engine binding exists on the Pages project.
+const OUTBOUND_ROUTE = ${JSON.stringify(OUTBOUND_ROUTE)};
+const OUTBOUND_KINDS = ${JSON.stringify(OUTBOUND_KINDS)};
+const OUTBOUND_MAX_BYTES = ${OUTBOUND_MAX_BYTES};
+const OUTBOUND_CLINIC = ${OUTBOUND_CLINIC};
+const OUTBOUND_PAGE = ${OUTBOUND_PAGE};
+${sameOriginRequest}
+${smallBody}
+${outboundDataPoint}
+async function outbound(request, env, url) {
+  const quiet = { ...headers, 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex, nofollow' };
+  if (request.method !== 'POST') return new Response('Method not allowed', { status: 405, headers: { ...quiet, Allow: 'POST' } });
+  try {
+    // Preview and *.pages.dev hosts are test traffic, never visitors of the public site.
+    if (sameOriginRequest(request.headers, url.origin) && !url.hostname.endsWith('.pages.dev')) {
+      const text = await smallBody(request, OUTBOUND_MAX_BYTES);
+      const point = text === null ? null : outboundDataPoint(text);
+      if (point) env.${OUTBOUND_BINDING}?.writeDataPoint(point);
+    }
+  } catch {}
+  return new Response(null, { status: 204, headers: quiet });
 }
 `;
 }
@@ -109,7 +139,7 @@ export function compactForCloudflare(directory) {
   const pagesHost = process.env.DDL_PAGES_HOST || 'dentaldatalab.pages.dev';
   if (!/^[a-z0-9-]+\.pages\.dev$/.test(pagesHost)) throw new Error('DDL_PAGES_HOST must be the primary project.pages.dev hostname.');
   write('_worker.js', cloudflareWorker({ review: !indexingEnabled, ...(manifest.seoPublic ? { canonicalOrigin: manifest.domain, pagesHost } : {}) }));
-  write('_routes.json', JSON.stringify({ version: 1, include: ['/clinics/*', '/data/clinic-assets/records/*'], exclude: [] }, null, 2));
+  write('_routes.json', JSON.stringify({ version: 1, include: ['/clinics/*', '/data/clinic-assets/records/*', '/e/*'], exclude: [] }, null, 2));
   write('_redirects', '/data/clinic-assets/inventory.json /data/clinic-assets/inventory.json.gz 302\n');
   write('_headers', `/*
 ${Object.entries(SECURITY_HEADERS).map(([name, value]) => `  ${name}: ${value}`).join('\n')}
