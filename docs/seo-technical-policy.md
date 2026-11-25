@@ -40,6 +40,51 @@ sitemap에는 색인 대상의 대표 URL만 넣는다. 공식 자료 기준일�
 
 관련 근거는 [Google 제목 링크](https://developers.google.com/search/docs/appearance/title-link), [Google 설명 문구](https://developers.google.com/search/docs/appearance/snippet), [Google 크롤링 가능한 링크](https://developers.google.com/search/docs/crawling-indexing/links-crawlable), [네이버 사이트 제작 가이드](https://searchadvisor.naver.com/guide/seo-basic-create)다. 구체적이고 해당 문서 내용에 맞는 제목·설명, 실제 링크와 대표 주소를 적용하며 검색엔진의 노출 문구나 순위를 보장하지 않는다.
 
+## 치과의원 상세의 색인 단계 (2026-11-26)
+
+기관 상세 19,681개는 같은 틀을 쓴다. 치과의원(종별코드 51) 가운데 상당수는 기관명·주소·전화·개설일과 0으로 등록된 행만 있어, 새 도메인에서 사이트 전체가 내용이 얇은 문서 묶음으로 평가될 위험이 있다. 그래서 치과의원 상세를 `full`과 `basic` 두 단계로 나눈다. 위 "공개 범위"의 치과 상세 `index,follow`는 아래 정책이 `noindex`인 동안 `full` 단계에만 해당한다. 치과병원(41) 248개는 자료와 무관하게 항상 `full`이다.
+
+`scripts/seo.mjs`의 `clinicIndexTier(clinic, {assetRecord, naverStage})`는 치과의원에 아래 신호가 하나라도 있으면 `full`, 하나도 없으면 `basic`을 돌려준다. 기관의 우열이 아니라 이 페이지에 기본 등록정보 외에 보여줄 자료가 있는지를 본다.
+
+| 신호 | 기준 | 해당 치과의원 |
+|---|---|---:|
+| 진료시간 | 심평원 유효 시간쌍(`quality.hoursAvailable`) 또는 네이버 시간 확보 단계(`hours_available`) | 4,795 |
+| 전문의 | 치과전문의 등록 1명 이상. 0명과 자료 미확인은 신호가 아님 | 7,249 |
+| 확인된 채널 | 에셋 목록에서 `official`(본문·기관 대조) 또는 `linked`(기관 페이지에서 연결)이고 링크가 활성인 주소 | 2,802 |
+| 네이버 관찰 | 기관 기록에 네이버 장소 관찰이 1건 이상 | 104 |
+
+한 기관이 여러 신호를 가질 수 있다. 현재 자료로 측정한 결과는 치과의원 19,433개 중 `full` 10,999개, `basic` 8,434개다. 등록 URL만 있는 경우, 귀속 미확인 후보, 제3자 언급, 본문을 읽지 않은 지도 후보는 신호로 세지 않는다. 수집이 늘어 신호가 생기면 다음 빌드에서 자동으로 `full`이 된다.
+
+### 적용 중인 정책: `noindex`
+
+`THIN_CLINIC_POLICY`가 `'noindex'`이면 `basic` 페이지는 `noindex,follow`로 출력하고 `sitemap.xml`에서 뺀다. 페이지는 그대로 생성하고 지역 목록·검색·비교에서 계속 연결하며 robots.txt로 막지 않는다. 검색 로봇이 지시를 읽고 링크를 따라갈 수 있어야 하기 때문이다. `'index'`이면 아무 페이지도 내리지 않는다.
+
+| 공개 빌드 기준 | `'index'` | `'noindex'` (적용 중) |
+|---|---:|---:|
+| sitemap.xml URL | 20,699 | 12,265 |
+| `index,follow` HTML | 20,699 | 12,265 |
+| `noindex,follow` HTML | 8 | 8,442 |
+| 치과병원 상세 중 noindex | 0 | 0 |
+
+`'index'` 빌드는 이 정책이 없던 커밋의 빌드와 HTML 20,707개·sitemap·robots.txt가 바이트 단위로 같았다. `'noindex'` 빌드는 그 빌드와 비교해, 빌드 시각이 들어가는 파일을 빼면 8,434개 상세의 robots 메타 한 곳과 sitemap만 달랐다. 빌드는 정책·단계별 수·내린 경로 목록을 루트 `seo-indexing.json`에 남긴다. compact 빌드의 Worker로 기관 상세 19,681개를 모두 응답시켜 `index,follow` 11,247개, `noindex,follow` 8,434개와 `X-Robots-Tag` 없음을 확인했다.
+
+### 되돌리는 방법
+
+`scripts/seo.mjs`의 한 줄을 아래처럼 바꾸고 다시 배포한다.
+
+```js
+export const THIN_CLINIC_POLICY = 'index';
+```
+
+사이트 출력은 위 표의 `'index'` 열로 돌아간다. 다만 검색엔진이 이미 내린 URL은 다시 수집한 뒤에야 색인될 수 있으며 그 시점은 보장할 수 없다.
+
+### 구현과 검증
+
+- 색인 여부는 한 곳에서 정한다. 빌드가 `thinClinicPlan`의 목록을 `setNoindexRoutes`로 등록하면 `robotsMeta`, `sitemapXml`, `isIndexedRoute`가 같은 등록부를 읽는다. 등록부는 기관 상세 경로만 받는다.
+- `scripts/qa.mjs`와 `scripts/indexnow.mjs`는 빌드 폴더의 `seo-indexing.json`으로 같은 등록부를 채운 뒤 검사한다. QA는 치과병원 경로가 목록·noindex에 없는지, `'noindex'`일 때 목록의 모든 경로가 sitemap에 없고 HTML이 `noindex,follow`인지, `'index'`일 때 목록이 비어 있고 sitemap이 정책 없는 선택과 같은지 확인한다.
+- compact Worker는 `/clinics/*` HTML을 묶음에서 그대로 응답하고 공개 도메인에서는 `X-Robots-Tag`를 붙이지 않는다. HTML 안의 robots 메타가 유일한 제어이므로 헤더 설정은 바꾸지 않았다.
+- `test/seo-index-tier.test.mjs`가 두 정책값, 단계 판정, 등록부, Worker 응답을 검증한다. 테스트는 정책을 인자로 넘기므로 상수 값에 의존하지 않는다.
+
 ## 검증 및 한계
 
 `test/seo.test.mjs`는 검토본/공개본 정책, 의료초안 제외, sitemap 일치, origin 유효성, compact Worker의 실제 HTML·JSON·404 응답 헤더를 검증한다. 공개 배포 후에는 최종 도메인의 robots.txt, sitemap.xml, HTTP 헤더, canonical, 개별 치과 페이지의 HTML 본문을 다시 확인해야 한다.
