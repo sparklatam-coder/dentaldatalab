@@ -4,7 +4,7 @@ import { siteOrigin, robotsMeta, robotsText, sitemapXml, sitemapFiles, sitemapLo
 import { cloudflareWorker } from '../scripts/build-cloudflare.mjs';
 
 test('public indexing exposes source-backed pages while keeping drafts and interactive tools out', () => {
-  for (const route of ['/', '/clinics/c-abc123456789/', '/regions/110000/page/2/', '/hospitals/', '/hospitals/110000/', '/hospitals/university/', '/reports/national-data-coverage/', '/data/', '/clinic-assets/', '/search-sources/']) {
+  for (const route of ['/', '/clinics/c-abc123456789/', '/regions/110000/page/2/', '/hospitals/', '/hospitals/110000/', '/hospitals/university/', '/reports/national-data-coverage/', '/data/', '/data/open/', '/press/', '/clinic-assets/', '/search-sources/']) {
     assert.equal(robotsMeta(route, true), INDEXABLE_ROBOTS, route);
     assert.match(robotsMeta(route, true), /^index,follow,.*max-image-preview:large/, route);
     assert.equal(robotsMeta(route), 'noindex,nofollow', route);

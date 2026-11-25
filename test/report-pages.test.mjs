@@ -75,12 +75,15 @@ test('downloaded CSV and JSON preserve metric-specific denominators, zero and mi
 
   const rows = parseCsv(files.get('data/reports/northern-gyeonggi-hours.csv'));
   assert.equal(rows.length, 1 + 11 * 6, 'Aggregate plus ten cities, with six metrics each');
-  assert(rows.every(row => row.length === 14));
+  assert(rows.every(row => row.length === 16), 'the 14 data columns plus 이용조건 and 출처표기');
+  assert.deepEqual(rows[0].slice(14), ['이용조건', '출처표기']);
   const night = rows.find(row => row[1] === '경기북부 10개 시·군' && row[3] === '평일 19시 이후 종료 등록');
   assert.deepEqual(night.slice(0, 9), [metadata.snapshotDate, '경기북부 10개 시·군', '4', '평일 19시 이후 종료 등록', '1', '2', '2', '25', '50']);
   assert.match(night[10], /월~금.*하루 이상/);
   assert.match(night[11], /실제 운영 비율이 아/);
-  assert.deepEqual(night.slice(-2), [SOURCE_URL, metadata.sourceSha256]);
+  assert.deepEqual(night.slice(12, 14), [SOURCE_URL, metadata.sourceSha256]);
+  assert.match(night[14], /^CC BY 4\.0 \(https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/\)/);
+  assert.equal(night[15], `출처: 치과데이터랩(${domain}/reports/northern-gyeonggi-hours/) · 원자료: 건강보험심사평가원 「전국 병의원 및 약국 현황」(${metadata.snapshotDate} 기준)`);
   const emptyCity = rows.find(row => row[1] === '가평군');
   assert.equal(emptyCity[2], '0');
   assert.deepEqual(emptyCity.slice(4, 9), ['0', '0', '0', '', ''], 'Undefined ratios are empty cells, not fabricated zero percentages');
@@ -147,7 +150,7 @@ test('HTML escapes labels and hashes while CSV quoted cells and JSON retain exac
   const rows = parseCsv(files.get('data/reports/northern-gyeonggi-hours.csv'));
   assert.equal(rows.length, 67);
   assert.equal(rows[1][1], name);
-  assert.equal(rows[1].at(-1), sourceHash);
+  assert.equal(rows[1][13], sourceHash);
   const json = JSON.parse(files.get('data/reports/northern-gyeonggi-hours.json'));
   assert.equal(json.scope.name, name);
   assert.equal(json.sourceSha256, sourceHash);
@@ -201,7 +204,7 @@ test('dental hospital reports publish computed aggregates with denominators, sou
   assert.equal(json.scope.total, 1);
   assert.equal(json.definitions.cbct, g.definitions.cbct);
   const rows = parseCsv(files.get('data/reports/dental-hospitals.csv'));
-  assert(rows.every(row => row.length === 14));
+  assert(rows.every(row => row.length === 16));
   const mean = rows.find(row => row[1] === '치과병원' && row[3] === '치과전문의 등록 평균');
   assert.deepEqual(mean.slice(2, 10), ['1', '치과전문의 등록 평균', '2', '1', '0', '', '', '명']);
   const share = rows.find(row => row[1] === '치과의원' && row[3] === '전문의 1명 이상 등록');
@@ -246,8 +249,8 @@ test('real snapshot exports reconcile with source provenance and visible report 
   for (const row of rows.slice(1)) {
     assert.equal(Number(row[2]), manifest.stats.totalClinics);
     assert.equal(Number(row[5]) + Number(row[6]), Number(row[2]));
-    assert.equal(row.at(-2), SOURCE_URL);
-    assert.equal(row.at(-1), manifest.archive.sha256);
+    assert.equal(row[12], SOURCE_URL);
+    assert.equal(row[13], manifest.archive.sha256);
     assert.equal(Number(row[7]), Math.round(Number(row[4]) / Number(row[2]) * 1000) / 10);
     assert.equal(Number(row[8]), Math.round(Number(row[4]) / Number(row[5]) * 1000) / 10);
   }
@@ -276,7 +279,7 @@ test('district report counts places from the data, links only region pages and e
   assert.equal(json.groupingNote, g.groupingNote);
   assert.equal(json.faq.length, 3);
   const rows = parseCsv(files.get('data/reports/dental-hospital-districts.csv'));
-  assert(rows.every(row => row.length === 14));
+  assert(rows.every(row => row.length === 16));
   assert.deepEqual(rows.find(row => row[1] === '전국' && row[3] === '치과병원이 있는 시·군·구').slice(2, 9), ['3', '치과병원이 있는 시·군·구', '1', '3', '0', '33.3', '']);
   assert.equal(rows.filter(row => row[3] === '치과병원 수' || row[3] === '치과의원 수').length, g.units.length * 2);
   assert.equal(rows.filter(row => row[3] === '치과병원 수').reduce((sum, row) => sum + Number(row[4]), 0), g.hospitals);
