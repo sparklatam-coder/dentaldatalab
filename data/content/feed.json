@@ -1,0 +1,23 @@
+{
+  "note": "RSS 항목과 최초 공개일. 날짜는 해당 페이지를 처음 배포한 커밋 날짜(KST)이며 빌드 시각이 아닙니다. 새 리포트·가이드·허브를 공개하면 맨 위에 추가합니다.",
+  "items": [
+    {"route": "/conditions/", "publishedOn": "2026-11-26"},
+    {"route": "/conditions/night/", "publishedOn": "2026-11-26"},
+    {"route": "/conditions/saturday/", "publishedOn": "2026-11-26"},
+    {"route": "/conditions/sunday/", "publishedOn": "2026-11-26"},
+    {"route": "/conditions/specialist/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/dental-hospital-30-beds/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/dental-copay-by-institution-type/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/dental-hospital-vs-general-hospital-dentistry/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/university-dental-hospital-referral/", "publishedOn": "2026-11-26"},
+    {"route": "/reports/dental-hospital-districts/", "publishedOn": "2026-11-26"},
+    {"route": "/reports/dental-hospital-vs-clinic/", "publishedOn": "2026-11-26"},
+    {"route": "/reports/dental-hospitals/", "publishedOn": "2026-11-26"},
+    {"route": "/hospitals/", "publishedOn": "2026-11-26"},
+    {"route": "/reports/yangju-hours-evidence/", "publishedOn": "2026-11-02"},
+    {"route": "/reports/national-data-coverage/", "publishedOn": "2026-11-01"},
+    {"route": "/reports/northern-gyeonggi-hours/", "publishedOn": "2026-11-01"},
+    {"route": "/guides/reading-data/", "publishedOn": "2026-11-01"},
+    {"route": "/guides/comparison-checklist/", "publishedOn": "2026-11-01"}
+  ]
+}

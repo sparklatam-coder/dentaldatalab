@@ -106,3 +106,9 @@ Cloudflare production 배포 성공 후 홈페이지·지역 목록·기관 표�
 ## 공유 카드 (2026-11-26)
 
 카카오톡·문자·SNS에 링크를 붙일 때 보이는 1200×630 이미지를 리포트·조건 페이지별로 둔다. 카드 문구와 숫자는 `scripts/share-cards.mjs`가 페이지와 같은 집계에서 만든다. PNG는 로컬 Chrome으로 `node scripts/render-share-cards.mjs`를 실행해 `src/assets/og/`에 저장하며, 빌드는 Chrome 없이 파일만 복사한다. 자료가 바뀌어 카드 문구가 달라지면 빌드가 경고하므로 다시 렌더링한다. 카드가 없는 페이지는 기존 브랜드 이미지(`/assets/og-share.png`)를 쓴다.
+
+## RSS 피드 (2026-11-26)
+
+`/feed.xml`(RSS 2.0)에 리포트·가이드·조건 허브를 최초 공개일 순으로 싣는다. 항목과 날짜는 `data/content/feed.json`에서 관리하며 날짜는 처음 배포한 커밋 날짜(KST)다. 빌드 시각을 수정일로 쓰지 않는다. 제목·설명은 실제로 빌드된 페이지의 메타 정보에서 가져오고, 빌드되지 않은 경로는 경고 후 제외한다. 모든 HTML `<head>`에 `rel="alternate"` 링크를 둔다.
+
+배포 후 네이버 서치어드바이저 → 요청 → RSS 제출에 `https://dentaldatalab.com/feed.xml`을 한 번 등록한다(계정 로그인 필요). 새 리포트·가이드를 공개할 때는 `feed.json` 맨 위에 항목을 추가한다.
