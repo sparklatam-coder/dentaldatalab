@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { buildAssetInventory, loadAssetInventory, assetUrl, detectKind } from '../scripts/clinic-assets.mjs';
-import { clinicAssetsPanel, registerClinicAssetsPages, observedWebsiteRow } from '../scripts/clinic-assets-pages.mjs';
+import { clinicAssetsPanel, registerClinicAssetsPages, observedWebsiteRow, researchNote } from '../scripts/clinic-assets-pages.mjs';
 import { buildNaverHoursCoverage } from '../scripts/naver-hours-coverage.mjs';
 import { nationalHoursPanel, HOURS_STAGES, hoursStatusNotice } from '../scripts/naver-hours-pages.mjs';
 import { esc, SOURCE_URL } from '../src/shared.mjs';
@@ -776,6 +776,12 @@ test('investigation summaries are shown once per record, never as per-query outc
   const html = clinicAssetsPanel(record);
   assert.equal(html.split('<p class="subtle-note">조사 요약').length - 1, 2);
   assert(html.includes(esc('<b>전체</b> 조사 요약')) && !html.includes('<b>전체</b>'));
+  // A memo without Korean text is replaced on the page by its status in Korean; the record keeps the memo for the JSON.
+  assert.equal(researchNote({ summary: 'I searched for the clinic and found no official site.', status: 'not_found' }), '검색으로 이 기관의 공식 홈페이지나 운영 채널 후보를 찾지 못했습니다. 채널이 없다는 뜻은 아닙니다. 조사 메모 원문(영문)은 기관별 JSON에 있습니다.');
+  assert.match(researchNote({ summary: 'Verified homepage body.', status: 'researched' }), /^웹 조사를 했습니다\./);
+  assert.match(researchNote({ summary: 'Blocked.', status: 'access_limited' }), /^접근이 제한되어/);
+  assert.match(researchNote({ summary: 'Legacy note', status: null }), /^웹 조사 기록이 있습니다\./);
+  assert.equal(researchNote({ summary: '한글 메모 with English words', status: 'not_found' }), '한글 메모 with English words');
   assert(!html.includes('— '));
 });
 
