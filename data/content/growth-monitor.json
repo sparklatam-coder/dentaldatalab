@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "definitionVersion": 1,
+  "origin": "https://dentaldatalab.com",
+  "definedOn": "2026-11-26",
+  "note": "매달 같은 조건으로 되풀이하는 측정의 고정 정의입니다. 질문 문장과 기관 표본은 바꾸지 않습니다. 바꾸면 이전 달과 비교할 수 없으므로 definitionVersion을 올리고 새 기록으로 시작합니다. 절차는 docs/growth-monitor.md, 월별 기록은 data/content/growth-observations/YYYY-MM.json 입니다. 측정하지 않은 값은 null로 두며 0이나 false로 바꾸지 않습니다.",
+  "engines": {
+    "aiCitation": [
+      { "id": "chatgpt", "label": "ChatGPT 검색", "startUrl": "https://chatgpt.com/" },
+      { "id": "googleAiOverview", "label": "구글 AI 개요", "startUrl": "https://www.google.com/" },
+      { "id": "naverAiBriefing", "label": "네이버 AI 브리핑", "startUrl": "https://www.naver.com/" }
+    ],
+    "nameSearch": [
+      { "id": "google", "label": "구글 검색", "startUrl": "https://www.google.com/" },
+      { "id": "naver", "label": "네이버 검색", "startUrl": "https://www.naver.com/" }
+    ]
+  },
+  "aiQuestions": [
+    { "id": "q01", "intent": "national-count", "question": "전국 치과 수는 모두 몇 곳인가요?", "expectedPath": "/reports/national-data-coverage/" },
+    { "id": "q02", "intent": "national-count", "question": "전국에 치과병원은 몇 곳 있나요?", "expectedPath": "/hospitals/" },
+    { "id": "q03", "intent": "hospital-vs-clinic", "question": "치과병원과 치과의원은 무엇이 다른가요?", "expectedPath": "/reports/dental-hospital-vs-clinic/" },
+    { "id": "q04", "intent": "hospital-vs-clinic", "question": "치과병원과 종합병원 치과는 무엇이 다른가요?", "expectedPath": "/guides/dental-hospital-vs-general-hospital-dentistry/" },
+    { "id": "q05", "intent": "bed-requirement", "question": "치과병원은 병상이 30개 이상 있어야 하나요?", "expectedPath": "/guides/dental-hospital-30-beds/" },
+    { "id": "q06", "intent": "copay", "question": "치과병원에서 진료받으면 치과의원보다 본인부담률이 높나요?", "expectedPath": "/guides/dental-copay-by-institution-type/" },
+    { "id": "q07", "intent": "referral", "question": "대학 치과병원에 가려면 진료의뢰서가 필요한가요?", "expectedPath": "/guides/university-dental-hospital-referral/" },
+    { "id": "q08", "intent": "disability-care", "question": "장애인이 진료받을 수 있는 치과병원은 어디에 있나요?", "expectedPath": "/guides/disability-dental-centers/" },
+    { "id": "q09", "intent": "disability-care", "question": "권역장애인구강진료센터는 전국에 몇 곳이고 어디에 있나요?", "expectedPath": "/guides/disability-dental-centers/" },
+    { "id": "q10", "intent": "districts-without-hospital", "question": "치과병원이 한 곳도 없는 시·군·구는 얼마나 되나요?", "expectedPath": "/reports/dental-hospital-districts/" },
+    { "id": "q11", "intent": "regional-list", "question": "서울에 있는 치과병원 목록을 알려 주세요.", "expectedPath": "/hospitals/110000/" },
+    { "id": "q12", "intent": "regional-list", "question": "부산에는 치과병원이 몇 곳 있고 어디에 있나요?", "expectedPath": "/hospitals/210000/" },
+    { "id": "q13", "intent": "regional-list", "question": "경기도에 있는 치과병원을 시·군별로 알려 주세요.", "expectedPath": "/hospitals/310000/" },
+    { "id": "q14", "intent": "university-hospitals", "question": "대학교 치과병원은 전국 어디에 있나요?", "expectedPath": "/hospitals/university/" },
+    { "id": "q15", "intent": "hospital-statistics", "question": "치과병원에는 치과 전문의가 평균 몇 명 등록되어 있나요?", "expectedPath": "/reports/dental-hospitals/" },
+    { "id": "q16", "intent": "data-source", "question": "치과 공공데이터는 어디에서 구할 수 있나요?", "expectedPath": "/data/" },
+    { "id": "q17", "intent": "data-source", "question": "전국 치과 데이터를 정리해서 보여 주는 사이트가 있나요?", "expectedPath": "/" },
+    { "id": "q18", "intent": "condition-hours", "question": "양주시에서 일요일에 진료하는 치과병원이 있나요?", "expectedPath": "/reports/yangju-hours-evidence/" },
+    { "id": "q19", "intent": "condition-hours", "question": "경기 북부에서 야간 진료를 하는 치과는 얼마나 되나요?", "expectedPath": "/reports/northern-gyeonggi-hours/" },
+    { "id": "q20", "intent": "condition-hours", "question": "일요일에 진료하는 치과는 전국에 몇 곳인가요?", "expectedPath": "/reports/national-data-coverage/" }
+  ],
+  "nameSearchSample": {
+    "rule": {
+      "source": "data/clinics.json",
+      "snapshotDate": "2026-09-30",
+      "typeCode": "41",
+      "population": 248,
+      "sortBy": "id",
+      "size": 30,
+      "pick": "floor(i * population / size), i = 0..size-1",
+      "description": "심평원 2026-09-30 자료의 치과병원(종별코드 41) 248곳을 id 오름차순(문자 코드 순)으로 놓고 floor(i × 248 ÷ 30)번째(0부터 셈, i = 0…29)를 뽑았습니다. id는 암호화요양기호 해시의 앞 12자리여서 이름·지역·규모와 무관한 순서입니다. 검색할 이름의 목록일 뿐 기관을 평가하거나 순위를 매기는 표본이 아닙니다. sameNameCount는 같은 자료 19,681곳 가운데 기관명이 완전히 같은 기록 수입니다. scripts/growth-monitor.mjs의 drawNameSample()로 다시 만들 수 있고, 이후 분기에 자료가 바뀌어도 표본은 이대로 둡니다."
+    },
+    "institutions": [
+      { "id": "c-000029b3fb02", "name": "유어스치과병원", "sido": "경남", "city": "양산시", "sameNameCount": 1 },
+      { "id": "c-0ba524f4f42b", "name": "비욘드 치과병원", "sido": "경기", "city": "과천시", "sameNameCount": 1 },
+      { "id": "c-0eb4ace601f5", "name": "세계로치과병원", "sido": "부산", "city": "부산해운대구", "sameNameCount": 1 },
+      { "id": "c-16800a9592d4", "name": "예닮치과병원", "sido": "전남광주", "city": "목포시", "sameNameCount": 1 },
+      { "id": "c-21e6aef63fce", "name": "관악서울대학교치과병원", "sido": "서울", "city": "관악구", "sameNameCount": 1 },
+      { "id": "c-279642d2fca0", "name": "서울바로나치과병원", "sido": "서울", "city": "강서구", "sameNameCount": 1 },
+      { "id": "c-2cb6ed258758", "name": "더블유치과병원", "sido": "서울", "city": "중구", "sameNameCount": 1 },
+      { "id": "c-38cecc2210ff", "name": "의료법인 이손의료재단 이손치과병원", "sido": "충남", "city": "당진시", "sameNameCount": 1 },
+      { "id": "c-3e779ad3f64b", "name": "램브란트치과병원", "sido": "경남", "city": "창원성산구", "sameNameCount": 1 },
+      { "id": "c-44ec73c0fa2b", "name": "서울시카고치과병원", "sido": "인천", "city": "인천연수구", "sameNameCount": 1 },
+      { "id": "c-4f3a7eb07b00", "name": "궁치과병원", "sido": "경기", "city": "안산단원구", "sameNameCount": 1 },
+      { "id": "c-5adc915549dd", "name": "탑치과병원", "sido": "경기", "city": "안산단원구", "sameNameCount": 1 },
+      { "id": "c-670f1cecde11", "name": "더바름치과병원", "sido": "서울", "city": "송파구", "sameNameCount": 1 },
+      { "id": "c-6cf60b0fedfe", "name": "에스엠치과병원", "sido": "전남광주", "city": "광주광산구", "sameNameCount": 1 },
+      { "id": "c-730f8f0ba033", "name": "유림치과병원", "sido": "경기", "city": "오산시", "sameNameCount": 1 },
+      { "id": "c-76ec9ebe0dc7", "name": "365아홉가지약속치과병원", "sido": "충남", "city": "아산시", "sameNameCount": 1 },
+      { "id": "c-8642e8113273", "name": "단국대학교 치과대학 세종치과병원", "sido": "세종시", "city": "세종시", "sameNameCount": 1 },
+      { "id": "c-905bf46ad154", "name": "365드림치과병원", "sido": "부산", "city": "부산수영구", "sameNameCount": 1 },
+      { "id": "c-96f9a565a125", "name": "더케이365치과병원", "sido": "인천", "city": "인천계양구", "sameNameCount": 1 },
+      { "id": "c-9fc6f0d5a2dd", "name": "서울대학교치과병원", "sido": "서울", "city": "종로구", "sameNameCount": 1 },
+      { "id": "c-a419f6638db8", "name": "온아치과병원", "sido": "충남", "city": "아산시", "sameNameCount": 1 },
+      { "id": "c-ac5c8614a9f8", "name": "경산라온치과병원", "sido": "경북", "city": "경산시", "sameNameCount": 1 },
+      { "id": "c-b531aabaf76c", "name": "수완더치과병원", "sido": "전남광주", "city": "광주광산구", "sameNameCount": 1 },
+      { "id": "c-be0f1a4ec4b1", "name": "그랜드치과병원", "sido": "강원", "city": "원주시", "sameNameCount": 4 },
+      { "id": "c-c5e545f7e1f0", "name": "연세미래엔미소치과병원", "sido": "서울", "city": "강동구", "sameNameCount": 1 },
+      { "id": "c-d2d8920d48e2", "name": "가온치과병원", "sido": "충남", "city": "천안서북구", "sameNameCount": 1 },
+      { "id": "c-da3695d60fef", "name": "시에스치과병원", "sido": "부산", "city": "부산진구", "sameNameCount": 1 },
+      { "id": "c-e42476244b3a", "name": "연세스카이치과병원", "sido": "경기", "city": "이천시", "sameNameCount": 1 },
+      { "id": "c-edd9d43056c1", "name": "고운가이드치과병원", "sido": "경남", "city": "거제시", "sameNameCount": 1 },
+      { "id": "c-f3e015e5de94", "name": "위례서울치과병원", "sido": "경기", "city": "성남수정구", "sameNameCount": 1 }
+    ]
+  },
+  "gateInputs": [
+    { "id": "bingSiteResults", "label": "Bing site: 결과 수", "source": "Bing에서 site:dentaldatalab.com 을 검색해 표시된 결과 수. 결과가 없으면 0." },
+    { "id": "naverCollectedPages", "label": "네이버 수집 페이지 수", "source": "네이버 서치어드바이저 > 리포트 > 수집 현황" },
+    { "id": "referringDomains", "label": "링크해 주는 외부 도메인 수", "source": "Google Search Console 링크 보고서의 상위 링크 사이트 수와 Bing Webmaster Tools 백링크의 참조 도메인 수 중 큰 값. 자기 도메인은 제외." },
+    { "id": "handoffClicks", "label": "병원으로 가는 클릭 수 (그 달 합계)", "source": "scripts/outbound-report.mjs 의 월 합계. 스크립트가 생기고 그 달이 끝난 뒤에 채웁니다." }
+  ],
+  "phaseGates": [
+    {
+      "phase": 0,
+      "name": "색인 기반",
+      "work": "네이버 수집 요청, Bing IndexNow",
+      "gate": "Bing site: 결과가 생김, 네이버 수집 페이지 1,000개 이상",
+      "combine": "all",
+      "criteria": [
+        { "type": "inputAtLeast", "input": "bingSiteResults", "min": 1 },
+        { "type": "inputAtLeast", "input": "naverCollectedPages", "min": 1000 }
+      ]
+    },
+    {
+      "phase": 1,
+      "name": "정본화",
+      "work": "치과병원 248곳 기관 페이지 보강, 치과병원 리포트, 차이 설명 페이지",
+      "gate": "치과병원 기관명 검색에서 10위 안 비율 30% 이상",
+      "combine": "all",
+      "criteria": [
+        { "type": "nameSearchTop10Share", "engine": "google", "minPercent": 30, "minMeasured": 30 },
+        { "type": "nameSearchTop10Share", "engine": "naver", "minPercent": 30, "minMeasured": 30 }
+      ]
+    },
+    {
+      "phase": 2,
+      "name": "링크 엔진",
+      "work": "데이터 공개, 분기 리포트 보도, 병원 카드 배포",
+      "gate": "링크해 주는 외부 도메인 20개 이상",
+      "combine": "all",
+      "criteria": [
+        { "type": "inputAtLeast", "input": "referringDomains", "min": 20 }
+      ]
+    },
+    {
+      "phase": 3,
+      "name": "환자 유입",
+      "work": "조건 검색 페이지, 병원으로 가는 클릭 측정",
+      "gate": "병원으로 가는 클릭이 매달 늘어남",
+      "combine": "all",
+      "criteria": [
+        { "type": "inputIncreasedFromPreviousMonth", "input": "handoffClicks" }
+      ]
+    }
+  ],
+  "stopRule": {
+    "maxMonthsBelowGate": 2,
+    "text": "한 단계가 두 달 넘게 기준에 못 미치면 다음으로 넘어가지 말고 원인부터 고칩니다."
+  }
+}

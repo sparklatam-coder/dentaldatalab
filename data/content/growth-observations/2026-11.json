@@ -1,0 +1,446 @@
+{
+  "schemaVersion": 1,
+  "definitionVersion": 1,
+  "origin": "https://dentaldatalab.com",
+  "month": "2026-11",
+  "observedOn": null,
+  "observer": null,
+  "conditions": {
+    "chatgpt": null,
+    "googleAiOverview": null,
+    "naverAiBriefing": null,
+    "google": null,
+    "naver": null
+  },
+  "notes": null,
+  "gateInputs": {
+    "bingSiteResults": null,
+    "naverCollectedPages": null,
+    "referringDomains": null,
+    "handoffClicks": null
+  },
+  "aiCitations": [
+    {
+      "id": "q01",
+      "question": "전국 치과 수는 모두 몇 곳인가요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q02",
+      "question": "전국에 치과병원은 몇 곳 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q03",
+      "question": "치과병원과 치과의원은 무엇이 다른가요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q04",
+      "question": "치과병원과 종합병원 치과는 무엇이 다른가요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q05",
+      "question": "치과병원은 병상이 30개 이상 있어야 하나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q06",
+      "question": "치과병원에서 진료받으면 치과의원보다 본인부담률이 높나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q07",
+      "question": "대학 치과병원에 가려면 진료의뢰서가 필요한가요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q08",
+      "question": "장애인이 진료받을 수 있는 치과병원은 어디에 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q09",
+      "question": "권역장애인구강진료센터는 전국에 몇 곳이고 어디에 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q10",
+      "question": "치과병원이 한 곳도 없는 시·군·구는 얼마나 되나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q11",
+      "question": "서울에 있는 치과병원 목록을 알려 주세요.",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q12",
+      "question": "부산에는 치과병원이 몇 곳 있고 어디에 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q13",
+      "question": "경기도에 있는 치과병원을 시·군별로 알려 주세요.",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q14",
+      "question": "대학교 치과병원은 전국 어디에 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q15",
+      "question": "치과병원에는 치과 전문의가 평균 몇 명 등록되어 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q16",
+      "question": "치과 공공데이터는 어디에서 구할 수 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q17",
+      "question": "전국 치과 데이터를 정리해서 보여 주는 사이트가 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q18",
+      "question": "양주시에서 일요일에 진료하는 치과병원이 있나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q19",
+      "question": "경기 북부에서 야간 진료를 하는 치과는 얼마나 되나요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    },
+    {
+      "id": "q20",
+      "question": "일요일에 진료하는 치과는 전국에 몇 곳인가요?",
+      "cells": {
+        "chatgpt": null,
+        "googleAiOverview": null,
+        "naverAiBriefing": null
+      }
+    }
+  ],
+  "nameSearch": [
+    {
+      "id": "c-000029b3fb02",
+      "name": "유어스치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-0ba524f4f42b",
+      "name": "비욘드 치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-0eb4ace601f5",
+      "name": "세계로치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-16800a9592d4",
+      "name": "예닮치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-21e6aef63fce",
+      "name": "관악서울대학교치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-279642d2fca0",
+      "name": "서울바로나치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-2cb6ed258758",
+      "name": "더블유치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-38cecc2210ff",
+      "name": "의료법인 이손의료재단 이손치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-3e779ad3f64b",
+      "name": "램브란트치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-44ec73c0fa2b",
+      "name": "서울시카고치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-4f3a7eb07b00",
+      "name": "궁치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-5adc915549dd",
+      "name": "탑치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-670f1cecde11",
+      "name": "더바름치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-6cf60b0fedfe",
+      "name": "에스엠치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-730f8f0ba033",
+      "name": "유림치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-76ec9ebe0dc7",
+      "name": "365아홉가지약속치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-8642e8113273",
+      "name": "단국대학교 치과대학 세종치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-905bf46ad154",
+      "name": "365드림치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-96f9a565a125",
+      "name": "더케이365치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-9fc6f0d5a2dd",
+      "name": "서울대학교치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-a419f6638db8",
+      "name": "온아치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-ac5c8614a9f8",
+      "name": "경산라온치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-b531aabaf76c",
+      "name": "수완더치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-be0f1a4ec4b1",
+      "name": "그랜드치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-c5e545f7e1f0",
+      "name": "연세미래엔미소치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-d2d8920d48e2",
+      "name": "가온치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-da3695d60fef",
+      "name": "시에스치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-e42476244b3a",
+      "name": "연세스카이치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-edd9d43056c1",
+      "name": "고운가이드치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    },
+    {
+      "id": "c-f3e015e5de94",
+      "name": "위례서울치과병원",
+      "cells": {
+        "google": null,
+        "naver": null
+      }
+    }
+  ]
+}
