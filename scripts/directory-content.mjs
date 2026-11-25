@@ -25,6 +25,11 @@ export function clinicMetadata(clinic, snapshot) {
   const location = [...new Set([clinic.sido, clinic.city, clinic.dong].filter(Boolean))].join(' ');
   const phone = singlePhone(clinic.phone);
   const specialist = clinic.doctors?.specialist;
+  // 치과병원 (종별코드 41): the name first, then the location, then what the page holds. 치과의원 keeps the wording below.
+  if (clinic.typeCode === '41') return {
+    title: `${clinic.name} | ${location} 주소·전화·전문의·진료과목·진료시간 등록 정보`,
+    description: `${clinic.name}: ${location} 치과병원(종별코드 41). 주소 ${clinic.address}. ${phone ? '신고 전화 ' + clinic.phone : clinic.phone ? '신고 전화 원문은 상세에서 확인' : '신고 전화 자료 미확인'}. 치과전문의 등록 ${!knownCount(specialist) ? '자료 미확인' : fmt(specialist) + '명'}, 등록 진료과목 ${Array.isArray(clinic.specialties) && clinic.specialties.length ? fmt(clinic.specialties.length) + '개' : '자료 미확인'}. 진료시간 등록 여부와 항목별 출처도 싣습니다. 심평원 ${snapshot} 기준 등록 정보이며 현재 상태와 다를 수 있습니다.`,
+  };
   return {
     title: `${clinic.name} | ${location} 주소·전화·진료시간 자료`,
     description: `${clinic.type} ${clinic.name}. ${clinic.address}. ${phone ? '신고 전화 ' + clinic.phone : clinic.phone ? '신고 전화 원문은 상세에서 확인' : '신고 전화 자료 미확인'}. 치과전문의 등록 ${!knownCount(specialist) ? '자료 미확인' : fmt(specialist) + '명'}. 심평원 ${snapshot} 기준이며 현재 진료시간·홈페이지 안내는 출처별로 구분합니다.`,

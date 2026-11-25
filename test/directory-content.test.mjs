@@ -50,6 +50,22 @@ test('clinic snippets retain real identity and source phone while distinguishing
   assert.match(multiple.description, /전화 원문은 상세에서 확인/);
 });
 
+test('치과병원 (41) snippets lead with the name and location and say what the page holds; 치과의원 wording is unchanged', () => {
+  const hospital = { name: '검증치과병원', type: '치과병원', typeCode: '41', sido: '경기', city: '양주시', dong: '옥정동', address: '경기도 양주시 옥정로 222', phone: '031-928-5098', doctors: { specialist: 0 }, specialties: [{ name: '치주과', specialists: 0 }, { name: '소아치과', specialists: 1 }] };
+  const metadata = clinicMetadata(hospital, '2026-09-30');
+  assert.equal(metadata.title, '검증치과병원 | 경기 양주시 옥정동 주소·전화·전문의·진료과목·진료시간 등록 정보');
+  assert.match(metadata.description, /^검증치과병원: 경기 양주시 옥정동 치과병원\(종별코드 41\)\. 주소 경기도 양주시 옥정로 222\. 신고 전화 031-928-5098\./);
+  assert.match(metadata.description, /치과전문의 등록 0명, 등록 진료과목 2개\./);
+  assert.match(metadata.description, /심평원 2026-09-30 기준 등록 정보/);
+  const missing = clinicMetadata({ ...hospital, phone: null, doctors: {}, specialties: [] }, '2026-09-30');
+  assert.match(missing.description, /신고 전화 자료 미확인\. 치과전문의 등록 자료 미확인, 등록 진료과목 자료 미확인\./);
+  assert.doesNotMatch(missing.description, /0명|0개|undefined|null/);
+  // The same record as a 치과의원 keeps the earlier title and description.
+  const clinic = clinicMetadata({ ...hospital, name: '검증치과의원', type: '치과의원', typeCode: '51' }, '2026-09-30');
+  assert.equal(clinic.title, '검증치과의원 | 경기 양주시 옥정동 주소·전화·진료시간 자료');
+  assert.match(clinic.description, /^치과의원 검증치과의원\. 경기도 양주시 옥정로 222\./);
+});
+
 test('district pages have unique, visible range descriptions and crawlable adjacent pagination', () => {
   const clinics = Array.from({ length: 26 }, (_, i) => ({ name: `치과${String(i + 1).padStart(2, '0')}` }));
   const opts = { region: '경기', city: '양주시', clinics, snapshot: '2026-09-30' };
