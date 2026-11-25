@@ -92,7 +92,7 @@ registerReportPages({page,put,reports:reportData,domain,clinics,assetInventory,y
 registerOpenDataPages({page,put,reports:reportData,domain,operator:operatorConfig});
 registerPressPages({page,put,reports:reportData,domain,operator:operatorConfig,releases:loadPressReleases(root)});
 registerHospitalPages({page,clinics,domain,snapshotDate:snapshot,indexingEnabled});
-registerAnswerPages({page,clinics,snapshotDate:snapshot,domain});
+registerAnswerPages({page,clinics,snapshotDate:snapshot,domain,reports:reportData});
 registerSearchStatusPage({page,put,status:searchStatus});
 registerInfoCardPages({page,put,clinics,domain,snapshotDate:snapshot});
 registerDataQualityPage({page,put,report:dataQuality});
