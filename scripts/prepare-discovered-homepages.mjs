@@ -8,7 +8,7 @@ const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const canonical=value=>{try{const u=new URL(value);return u.hostname.replace(/^www\./,'').toLowerCase()+(u.pathname.replace(/\/$/,'')||'/')+u.search;}catch{return null;}};
 const data=read('data/clinics.json'),inventory=loadAssetInventory(root,data),attempted=new Set();
-for(const file of ['data/assets/national-homepages.json','data/assets/discovered-homepages.json']){
+for(const file of ['data/assets/national-homepages.json','data/assets/discovered-homepages.json','data/assets/continuous-homepages.json','data/assets/candidate-homepages.json']){
   if(!fs.existsSync(path.join(root,file)))continue;
   for(const r of read(file).results??[])for(const url of [r.url,r.finalUrl])if(canonical(url))attempted.add(canonical(url));
 }

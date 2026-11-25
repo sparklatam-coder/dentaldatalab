@@ -188,15 +188,37 @@ function addLegacyResearch({legacy,byId,add}){
     }
   }
 }
+// Candidate homepages (found by automated web research) are promoted by code, never by the model: the crawler must have
+// read the body and found this institution's phone number AND road address, on a page that lists at most two registered
+// phone numbers (a directory or group page lists many). Anything else stays an unlinked candidate.
+export const CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES=2;
+export function candidateHomepageVerified(check,match){
+  // Same shape as the Naver map rule: the institution name plus its phone number or its road address, read from
+  // the page by code. Many clinic sites print the address only in an image or a map widget, so phone alone
+  // may stand in for it; the dataset-phone count keeps directory and group pages out.
+  return check?.sourceType==='candidate_homepage'&&check.status==='read'&&match?.name===true&&(match?.phone===true||match?.address===true)
+    &&Number.isFinite(check.datasetPhoneCount)&&check.datasetPhoneCount<=CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES;
+}
 // Crawler output is validated like every other asset source before it is stored or parsed; a malformed URL is skipped, never thrown.
 function addHomepageScans({crawl,byId,add}){
-  for(const check of crawl?.results??[]){for(const id of check.clinicIds??[])if(!byId.has(id))throw new Error('Unknown crawler clinic '+id);const checkUrl=assetUrl(check.url);if(!checkUrl)continue;const finalUrl=assetUrl(check.finalUrl)??checkUrl;for(const id of check.clinicIds??[]){const r=byId.get(id);const match=check.matches?.[id]??{},sourceType=check.sourceType??'registered_homepage';r.homepageChecks.push({url:checkUrl,finalUrl,status:check.status,httpStatus:check.httpStatus??null,checkedAt:check.checkedAt,bodySha256:check.bodySha256??null,sourceType,matches:{...match}});if(check.status!=='read')continue;
-    const matched=match.name&&match.phone,proof=[];
-    if(match.name)proof.push({field:'name',value:r.name,sourceUrl:finalUrl});if(match.phone)proof.push({field:'phone',value:r.phone,sourceUrl:finalUrl});
-    add(id,{url:checkUrl,kind:detectKind(checkUrl),ownership:'candidate',bodyStatus:'read',evidenceUrls:[finalUrl],identityEvidence:proof,notes:matched?'본문에서 이름·전화 문자열을 자동 대조했습니다. 수동 귀속 검토 전입니다.':'홈페이지 HTML은 수신했으나 기관 귀속은 미확인입니다.',provenance:[{type:'homepage_scan',sourceType,bodySha256:check.bodySha256}]},check.checkedAt,1);
-    // A parked or unrelated old domain must not donate its social accounts to the clinic.
-    if(match.name||match.phone)for(const a of check.links??[])add(id,{...a,ownership:'candidate',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:'기관명 또는 전화 문자열이 있는 홈페이지 HTML의 href. 운영 주체 수동 확인 전.',sourceUrl:finalUrl}],notes:'홈페이지의 실제 외부 링크입니다. 자동 수집 후보이며 기관 귀속과 대상 본문은 수동 확인 전입니다.',provenance:[{type:'homepage_href',sourceType,bodySha256:check.bodySha256}]},check.checkedAt,1);
-  }}
+  for(const check of crawl?.results??[]){
+    for(const id of check.clinicIds??[])if(!byId.has(id))throw new Error('Unknown crawler clinic '+id);
+    const checkUrl=assetUrl(check.url);if(!checkUrl)continue;const finalUrl=assetUrl(check.finalUrl)??checkUrl;
+    for(const id of check.clinicIds??[]){
+      const r=byId.get(id);const match=check.matches?.[id]??{},sourceType=check.sourceType??'registered_homepage';
+      r.homepageChecks.push({url:checkUrl,finalUrl,status:check.status,httpStatus:check.httpStatus??null,checkedAt:check.checkedAt,bodySha256:check.bodySha256??null,sourceType,matches:{...match}});
+      if(check.status!=='read')continue;
+      const verified=candidateHomepageVerified(check,match)&&detectKind(checkUrl)==='website',matched=match.name&&match.phone,proof=[];
+      if(match.name)proof.push({field:'name',value:r.name,sourceUrl:finalUrl});if(match.phone)proof.push({field:'phone',value:r.phone,sourceUrl:finalUrl});
+      if(verified&&match.address)proof.push({field:'address',value:r.address,sourceUrl:finalUrl});
+      if(verified)add(id,{url:checkUrl,kind:'website',ownership:'official',bodyStatus:'read',evidenceUrls:[finalUrl],identityEvidence:proof,notes:'자동 발굴 후보 홈페이지의 본문에서 기관명과 '+(match.phone&&match.address?'전화번호·도로명 주소':match.phone?'전화번호':'도로명 주소')+'를 공공 원자료와 코드로 대조했습니다. 페이지에 나타난 다른 등록기관 전화는 '+CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES+'개 이하입니다. 모델 판단이 아닌 문자열 대조이며 현재 운영 상태를 확정하지 않습니다.',provenance:[{type:'candidate_homepage_verification',sourceType,bodySha256:check.bodySha256??null,matches:{...match},datasetPhoneCount:check.datasetPhoneCount,hostClinicCount:check.hostClinicCount??null,checkedAt:check.checkedAt}]},check.checkedAt,3);
+      else add(id,{url:checkUrl,kind:detectKind(checkUrl),ownership:'candidate',bodyStatus:'read',evidenceUrls:[finalUrl],identityEvidence:proof,notes:matched?'본문에서 이름·전화 문자열을 자동 대조했습니다. 수동 귀속 검토 전입니다.':'홈페이지 HTML은 수신했으나 기관 귀속은 미확인입니다.',provenance:[{type:'homepage_scan',sourceType,bodySha256:check.bodySha256}]},check.checkedAt,1);
+      // A parked, unrelated or directory page must not donate its social accounts to the clinic. Candidate homepages
+      // donate hrefs only once the page itself passed the verification above.
+      const donateLinks=sourceType==='candidate_homepage'?verified:(match.name||match.phone);
+      if(donateLinks)for(const a of check.links??[])add(id,{...a,ownership:'candidate',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:verified?'전화·주소가 대조된 홈페이지 HTML의 href. 운영 주체 수동 확인 전.':'기관명 또는 전화 문자열이 있는 홈페이지 HTML의 href. 운영 주체 수동 확인 전.',sourceUrl:finalUrl}],notes:'홈페이지의 실제 외부 링크입니다. 자동 수집 후보이며 기관 귀속과 대상 본문은 수동 확인 전입니다.',provenance:[{type:'homepage_href',sourceType,bodySha256:check.bodySha256}]},check.checkedAt,1);
+    }
+  }
 }
 function addResearchBatches({batches,byId,bookingCaptures,add}){
   for(const batch of batches)for(const r of batch.records??[]){
@@ -344,6 +366,7 @@ export function loadAssetInventory(root,data){
   const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
   const dir=path.join(root,'data/assets');const batches=fs.existsSync(dir)?fs.readdirSync(dir).filter(f=>/^yangju-\d+\.json$/.test(f)||/^uijeongbu-web-[a-z]+\d*\.json$/.test(f)||/^national-web-[a-z]+\d*\.json$/.test(f)||/^naver-national-(?:\d+|discovery|owner-\d+)\.json$/.test(f)||/^naver-yangju-(?:owner|booking)-\d+\.json$/.test(f)||f==='naver-browser.json').sort().map(f=>read('data/assets/'+f)):[];
   const researchDir=path.join(root,'data/research');const legacy=fs.existsSync(researchDir)?fs.readdirSync(researchDir).filter(f=>/^yangju-\d+\.json$/.test(f)).sort().map(f=>read('data/research/'+f)):[];
-  const results=['national-homepages.json','discovered-homepages.json','continuous-homepages.json'].flatMap(file=>fs.existsSync(path.join(dir,file))?(read('data/assets/'+file).results??[]).map(check=>({...check,sourceType:check.sourceType??(file==='national-homepages.json'?'registered_homepage':'discovered_homepage')})):[]);
+  const defaultSourceType={'national-homepages.json':'registered_homepage','discovered-homepages.json':'discovered_homepage','continuous-homepages.json':'discovered_homepage','candidate-homepages.json':'candidate_homepage'};
+  const results=Object.entries(defaultSourceType).flatMap(([file,sourceType])=>fs.existsSync(path.join(dir,file))?(read('data/assets/'+file).results??[]).map(check=>({...check,sourceType:check.sourceType??sourceType})):[]);
   return buildAssetInventory(data.clinics,{...data,batches,legacy,crawl:{results}});
 }

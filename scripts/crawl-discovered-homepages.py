@@ -36,6 +36,18 @@ PROVINCE_GROUPS = [('서울', '서울특별시'), ('부산', '부산광역시'),
 locks = {}
 lock_guard = threading.Lock()
 blocked_hosts = set()
+# Directory-page guard: digits of every phone in the public record. A page that lists many
+# institutions' numbers is a listing, not one clinic's homepage. Empty set → no count reported.
+DATASET_PHONES = set()
+PHONE_RE = re.compile(r'(?<!\d)(?:0\d{1,2}[\s().-]*\d{3,4}[\s.-]*\d{4}|1[5-9]\d{2}[\s.-]*\d{4})(?!\d)')
+
+
+def dataset_phone_count(visible, phones=None):
+    """Distinct public-record phone numbers visible on the page (digits-normalised)."""
+    phones = DATASET_PHONES if phones is None else phones
+    if not phones:
+        return 0
+    return len({digits for digits in (re.sub(r'\D', '', m.group(0)) for m in PHONE_RE.finditer(visible)) if digits in phones})
 
 
 class Redirect(web.RevalidatingRedirect):
@@ -66,17 +78,20 @@ def address_match(address, visible):
         return False
     prefix = '(?:' + '|'.join(re.escape(x) for x in sorted(group, key=len, reverse=True)) + ')'
     locality = ''.join(r'\s*' + re.escape(x) for x in jurisdiction)
-    # Keep the province, all jurisdiction tokens, road and number in one short
-    # contiguous address span, not independent matches anywhere on the page.
-    pattern = prefix + locality + r'\s*(?:[가-힣0-9]+[읍면]\s*)?' + re.escape(road.group(1)) + r'\s*' + re.escape(road.group(2)) + r'(?![\d-])'
+    # Keep the jurisdiction tokens, road and number in one short contiguous address span, not
+    # independent matches anywhere on the page. Homepages often omit the province ("청주시 상당구
+    # 청남로 2196"), so the province is optional whenever a jurisdiction token is required.
+    pattern = ('(?:' + prefix + r'\s*)?' if jurisdiction else prefix) + locality + r'\s*(?:[가-힣0-9]+[읍면]\s*)?' + re.escape(road.group(1)) + r'\s*' + re.escape(road.group(2)) + r'(?![\d-])'
     return bool(re.search(pattern, visible))
 
 
 def inspect(seed):
     url, clinics = seed['url'], seed['clinics']
     result = {'url': url, 'checkedAt': now(), 'clinicIds': [c['id'] for c in clinics],
-        'status': 'not_read', 'links': [], 'matches': {}, 'sourceType': 'discovered_homepage',
+        'status': 'not_read', 'links': [], 'matches': {}, 'sourceType': seed.get('sourceType') or 'discovered_homepage',
         'discoveryEvidenceUrls': seed.get('evidenceUrls', [])}
+    if isinstance(seed.get('hostClinicCount'), int):
+        result['hostClinicCount'] = seed['hostClinicCount']
     if platform(url):
         return dict(result, status='platform_separate_review')
     host = host_key(url)
@@ -105,6 +120,8 @@ def inspect(seed):
             parser.feed(body)
             visible = unicodedata.normalize('NFC', ' '.join(parser.text))
             compact = re.sub(r'\s+', '', visible)
+            if DATASET_PHONES:
+                result['datasetPhoneCount'] = dataset_phone_count(visible)
             for clinic in clinics:
                 name = re.sub(r'\s+', '', unicodedata.normalize('NFC', clinic['name'].replace('의원', '')))
                 phone = re.sub(r'\D', '', clinic.get('phone') or '')
