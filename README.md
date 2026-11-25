@@ -29,6 +29,16 @@ npm run preview
 
 ## 이번 버전
 
+2026-11-26 반영: 치과병원(종별코드 41) 248곳을 기준 페이지로 다듬고, 집계 데이터를 출처 표시 조건으로 공개했습니다. 순위·평가·추천, 유료 노출, 건당 수수료는 만들지 않습니다.
+
+- 치과병원 상세: 요약, 항목별 갱신 기록, 기관 확인 정보(`data/content/hospital-confirmed.json`), 기관별 질문 5개의 FAQ 마크업, `Dentist` JSON-LD. 구현은 `scripts/hospital-profile.mjs`, `scripts/hospital-content.mjs`
+- 치과의원 상세의 색인 단계: 진료시간·치과전문의·확인된 채널·네이버 관찰이 하나도 없는 페이지는 `noindex,follow`로 내보내고 sitemap에서 뺍니다. 페이지와 내부 링크는 그대로입니다. 되돌릴 때는 `scripts/seo.mjs`의 `THIN_CLINIC_POLICY`를 `'index'`로 바꿔 다시 배포합니다. 빌드마다 `seo-indexing.json`에 단계별 수를 남깁니다
+- `/data/open/`, `/press/`: 리포트 집계 JSON·CSV를 CC BY 4.0(출처 표시)으로 공개하고, 기사·글에 옮길 주요 수치와 출처 표기 문구를 모았습니다. 기관 단위 자료와 네이버 관찰값은 대상이 아닙니다. 보도자료 초안은 `node scripts/press-release.mjs`로 만들며 `docs/press/`에 둡니다(발송하지 않음)
+- `/hospitals/info-card/`: 치과병원이 자기 홈페이지에 넣는 ‘등록 정보 확인’ 카드. 인증·추천·평가 표시가 아니며 사용 여부가 목록 순서에 영향을 주지 않습니다(`scripts/hospital-info-card.mjs`)
+- 기관 연결 클릭 수: 전화·지도·홈페이지·예약·채널·공유 링크를 누른 횟수만 `/e/outbound`로 셉니다. 방문자 식별값은 받지 않으며 `/privacy/`에 고지합니다. Cloudflare Analytics Engine 바인딩 `OUTBOUND`가 없으면 저장하지 않습니다. 설정과 조회는 [클릭 수 집계 문서](docs/outbound-measurement.md)
+- 짧은 답 11개(`/guides/…`): 첫 문장에 답과 기준일, 이어서 법령·고시 원문과 확인일(`scripts/answer-pages.mjs`)
+- IndexNow 묶음 제출: `node scripts/submit-indexnow.mjs --set hospitals`는 허브와 치과병원 248곳만 고르고 치과의원은 넣지 않습니다. 기본은 모의 실행이며 `--submit`일 때만 전송합니다([IndexNow 문서](docs/indexnow.md))
+
 2026-11-01 반영 기준: 지도 후보 대조 17,667기관, 네이버 주간시간표 92기관(양주 66 + 그 외 26). 전국 19,681기관의 표시·수집 상태를 적용했으며, 시간표 수집 완료는 92기관입니다.
 
 - `/clinic-assets/#national-hours`: 전국 시간표 확보·시간 미확보·기관 대조·접근 실패·지도 후보·지도 조사 전의 6단계와 시도별 현황. 상태 카드로 목록을 필터링하고 각 기관 시간표로 이동

@@ -17,7 +17,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // Every page references these with ?v=<assetVersion> (QA checks it), so a cached copy is never stale.
 export const VERSIONED_ASSETS = ['styles.css', 'app.mjs', 'shared.mjs', 'content-studio.mjs', 'clinic-assets.mjs'];
 // Machine files the pages fetch; report CSV/JSON downloads under /data/reports/ stay crawlable.
-export const INTERNAL_DATA_FILES = ['/data/search-index.json', '/data/regions.json', '/data/source-manifest.json', '/data/official-observations.json', '/data/verification.json', '/data/search-status.json', '/data/search-status/*'];
+export const INTERNAL_DATA_FILES = ['/data/search-index.json', '/data/regions.json', '/data/source-manifest.json', '/data/official-observations.json', '/data/verification.json', '/data/search-status.json', '/data/search-status/*', '/seo-indexing.json'];
 
 export function cloudflareWorker({ review = true, canonicalOrigin = null, pagesHost = null } = {}) {
   return `// Generated Pages advanced-mode Worker. No private data or credentials.
@@ -151,6 +151,8 @@ https://:version.:project.pages.dev/*
 ${NOINDEX_ROUTES.map(route => `${route}*\n  X-Robots-Tag: noindex, follow\n`).join('\n')}
 /assets/*
   Cache-Control: public, max-age=3600
+/badge/*
+  Cache-Control: public, max-age=86400
 ${VERSIONED_ASSETS.map(file => `/assets/${file}\n  ! Cache-Control\n  Cache-Control: public, max-age=31536000, immutable\n`).join('')}${INTERNAL_DATA_FILES.map(file => `${file}\n  X-Robots-Tag: noindex, nofollow\n`).join('')}/data/cloudflare/*
   X-Robots-Tag: noindex, nofollow
 /data/clinic-assets/*
