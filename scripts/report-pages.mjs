@@ -114,9 +114,11 @@ function dentalHospitalsBody(item, g, reports, description, indexingEnabled) {
 
 // CSV layout shared with the coverage reports: columns 8–9 are percentages and stay empty when a ratio is undefined.
 const CSV_HEADER = ['자료기준일', '구분', '전체기관수', '항목', '값', '자료확인기관수', '자료미확인기관수', '전체대비비율(%)', '확인자료대비비율(%)', '단위', '정의', '해석제한', '원본출처', '원본SHA256'];
-function dentalHospitalsCsv(g, reports) {
-  const rows = [CSV_HEADER];
-  const push = (scope, total, label, value, known, unknown, pTotal, pKnown, unit, definition, limitation) => rows.push([reports.snapshotDate, scope, total, label, value, known, unknown, pTotal ?? '', pKnown ?? '', unit, definition, limitation, reports.sourceUrl, reports.sourceSha256]);
+const csvRow = (reports, scope, total, label, value, known, unknown, pTotal, pKnown, unit, definition, limitation) => [reports.snapshotDate, scope, total, label, value, known, unknown, pTotal ?? '', pKnown ?? '', unit, definition, limitation, reports.sourceUrl, reports.sourceSha256];
+// The per-type metric CSV rows shared by the 전수 CSV and the vs-clinic CSV: one definition, no positional slicing.
+function comparisonCsvRows(g, reports) {
+  const rows = [];
+  const push = (...args) => rows.push(csvRow(reports, ...args));
   for (const [scope, p] of [['치과병원', g.hospitals], ['치과의원', g.clinics]]) {
     push(scope, p.total, '치과전문의 등록 평균', p.specialist.mean ?? '', p.specialist.known, p.total - p.specialist.known, null, null, '명', g.definitions.specialist, g.definitions.comparison);
     push(scope, p.total, '치과전문의 등록 중앙값', p.specialist.median ?? '', p.specialist.known, p.total - p.specialist.known, null, null, '명', g.definitions.specialist, g.definitions.comparison);
@@ -127,6 +129,11 @@ function dentalHospitalsCsv(g, reports) {
     push(scope, p.total, '홈페이지 URL 형식 유효', p.website.count, p.website.known, p.website.unknown, p.website.percentOfTotal, p.website.percentOfKnown, '곳', g.definitions.website, g.definitions.comparison);
     push(scope, p.total, '하루 이상 진료시간 확인', p.hours.count, p.hours.known, p.hours.unknown, p.hours.percentOfTotal, p.hours.percentOfKnown, '곳', g.definitions.hours, g.definitions.comparison);
   }
+  return rows;
+}
+function dentalHospitalsCsv(g, reports) {
+  const rows = [CSV_HEADER, ...comparisonCsvRows(g, reports)];
+  const push = (...args) => rows.push(csvRow(reports, ...args));
   for (const [label, group] of [['기관명에 대학 포함', g.university], ['그 밖의 치과병원', g.university.others]]) {
     push('치과병원', g.total, `${label} 기관 수`, group.count, group.count, g.total - group.count, percentage(group.count, g.total), null, '곳', g.definitions.university, g.definitions.comparison);
     push('치과병원', g.total, `${label} 전문의 등록 평균`, group.specialist.mean ?? '', group.specialist.known, group.count - group.specialist.known, null, null, '명', g.definitions.university, g.definitions.specialist);
@@ -172,7 +179,7 @@ function hospitalVsClinicCsv(g, reports) {
     rows.push([reports.snapshotDate, '법령·제도', '', `${fact.topic} · 치과병원`, fact.dentalHospital, '', '', '', '', fact.sourceKind === 'secondary' ? '2차 자료, 고시 원문 대조 전' : '1차 자료', `${fact.title}: ${fact.quote}`, fact.note, fact.sourceUrl, `확인 ${fact.checkedAt}`]);
     rows.push([reports.snapshotDate, '법령·제도', '', `${fact.topic} · 치과의원`, fact.dentalClinic, '', '', '', '', fact.sourceKind === 'secondary' ? '2차 자료, 고시 원문 대조 전' : '1차 자료', `${fact.title}: ${fact.quote}`, fact.note, fact.sourceUrl, `확인 ${fact.checkedAt}`]);
   }
-  for (const row of dentalHospitalsCsv(g, reports).slice(1, 17)) rows.push(row);
+  rows.push(...comparisonCsvRows(g, reports));
   return rows;
 }
 

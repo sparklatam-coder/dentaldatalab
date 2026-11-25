@@ -103,3 +103,29 @@ test('invalid inputs fail loudly', () => {
   assert.throws(() => registerHospitalPages({ page: null, clinics: [] }), TypeError);
   assert.throws(() => registerHospitalPages({ page: () => {}, clinics: 'nope' }), TypeError);
 });
+
+test('a hospital without a sidoCode stays in the national total and is listed on the hub instead of vanishing', () => {
+  const clinics = [...fixture(), clinic('c-000000000009', '미표기치과병원', '41', '', '', '', '')];
+  const g = groupHospitals(clinics);
+  assert.equal(g.hospitals.length, 6);
+  assert.deepEqual(g.unplaced.map(c => c.id), ['c-000000000009']);
+  assert.equal(g.bySido.reduce((n, r) => n + r.count, 0) + g.unplaced.length, g.hospitals.length);
+  const { pages } = render(clinics);
+  const hub = pages.get('/hospitals/');
+  assert.match(hub.title, /치과병원 6곳/);
+  assert.equal(hub.schema[0].numberOfItems, 6);
+  assert.ok(hub.body.includes('시도코드가 비어 있는 치과병원 1곳'));
+  assert.ok(hub.body.includes('미표기치과병원'));
+  // The default fixture has no such section.
+  assert.ok(!render().pages.get('/hospitals/').body.includes('시도코드가 비어 있는'));
+});
+
+test('legal citations on the hospital pages are the EXTERNAL_FACTS records, not a second copy', async () => {
+  const { EXTERNAL_FACTS } = await import('../scripts/report-data.mjs');
+  for (const [key, id] of [['classification', 'medical-service-act-3-2'], ['beds', 'medical-service-act-3-2bis']]) {
+    const fact = EXTERNAL_FACTS.find(f => f.id === id);
+    assert.equal(LEGAL_SOURCES[key].url, fact.sourceUrl, key);
+    assert.equal(LEGAL_SOURCES[key].checkedAt, fact.checkedAt, key);
+    assert.equal(LEGAL_SOURCES[key].title, fact.title, key);
+  }
+});

@@ -2,14 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
-import {loadAssetInventory} from './clinic-assets.mjs';
+import {loadAssetInventory,CRAWL_RESULT_FILES} from './clinic-assets.mjs';
 
 // Seeds for the deterministic verification of homepages the automated web research found.
 // Those assets are model-reported candidates: the collector re-reads every page itself and
 // compares name, phone and address against the public record before any link is promoted.
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
-export const RESULT_FILES=['data/assets/national-homepages.json','data/assets/discovered-homepages.json','data/assets/continuous-homepages.json','data/assets/candidate-homepages.json'];
+export const RESULT_FILES=Object.keys(CRAWL_RESULT_FILES).map(file=>'data/assets/'+file);
 const PLATFORM_DOMAINS=['naver.com','naver.me','modoo.at','instagram.com','facebook.com','youtube.com','kakao.com','daum.net'];
 export const canonical=value=>{try{const u=new URL(value);return u.hostname.replace(/^www\./,'').toLowerCase()+(u.pathname.replace(/\/$/,'')||'/')+u.search;}catch{return null;}};
 export const hostKey=value=>{try{return new URL(value).hostname.replace(/^www\./,'').toLowerCase();}catch{return null;}};

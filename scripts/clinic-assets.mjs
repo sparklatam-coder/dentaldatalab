@@ -191,6 +191,10 @@ function addLegacyResearch({legacy,byId,add}){
 // Candidate homepages (found by automated web research) are promoted by code, never by the model: the crawler must have
 // read the body and found this institution's phone number AND road address, on a page that lists at most two registered
 // phone numbers (a directory or group page lists many). Anything else stays an unlinked candidate.
+// Every collector output the inventory reads, with the sourceType assumed for rows that do not state one. The seed
+// preparers and the status script derive their "already attempted" file lists from this map; the Python collector's
+// RESULT_FILES mirrors it (test/crawl-result-files.test.mjs keeps them equal).
+export const CRAWL_RESULT_FILES=Object.freeze({'national-homepages.json':'registered_homepage','discovered-homepages.json':'discovered_homepage','continuous-homepages.json':'discovered_homepage','candidate-homepages.json':'candidate_homepage'});
 export const CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES=2;
 // Code-verified observations (homepage body matched, channels it links) outrank model-reported research assets, which
 // enter at priority 3: with equal priority the newer checkedAt wins, so a later research run would otherwise demote a
@@ -429,7 +433,7 @@ export function loadAssetInventory(root,data){
   const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
   const dir=path.join(root,'data/assets');const batches=fs.existsSync(dir)?fs.readdirSync(dir).filter(f=>/^yangju-\d+\.json$/.test(f)||/^uijeongbu-web-[a-z]+\d*\.json$/.test(f)||/^national-web-[a-z]+\d*\.json$/.test(f)||/^naver-national-(?:\d+|discovery|owner-\d+)\.json$/.test(f)||/^naver-yangju-(?:owner|booking)-\d+\.json$/.test(f)||f==='naver-browser.json').sort().map(f=>read('data/assets/'+f)):[];
   const researchDir=path.join(root,'data/research');const legacy=fs.existsSync(researchDir)?fs.readdirSync(researchDir).filter(f=>/^yangju-\d+\.json$/.test(f)).sort().map(f=>read('data/research/'+f)):[];
-  const defaultSourceType={'national-homepages.json':'registered_homepage','discovered-homepages.json':'discovered_homepage','continuous-homepages.json':'discovered_homepage','candidate-homepages.json':'candidate_homepage'};
+  const defaultSourceType=CRAWL_RESULT_FILES;
   const results=Object.entries(defaultSourceType).flatMap(([file,sourceType])=>fs.existsSync(path.join(dir,file))?(read('data/assets/'+file).results??[]).map(check=>({...check,sourceType:check.sourceType??sourceType})):[]);
   return buildAssetInventory(data.clinics,{...data,batches,legacy,crawl:{results}});
 }

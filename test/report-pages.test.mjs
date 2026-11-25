@@ -297,3 +297,15 @@ test('the hospital-vs-clinic headline tile and description read the copay figure
   assert.doesNotMatch(src, /<strong>40%<small>vs 30%/, 'copay headline must not be a literal');
   assert.doesNotMatch(src, /치과병원 40%\(읍·면 35%\), 치과의원 30%/, 'copay description must not be a literal');
 });
+
+test('the vs-clinic CSV carries every per-type comparison row of the 전수 CSV, for both institution types', () => {
+  const { files } = render(fixture());
+  const csv = files.get('data/reports/dental-hospital-vs-clinic.csv');
+  const full = files.get('data/reports/dental-hospitals.csv');
+  assert.ok(csv && full, [...files.keys()].join(','));
+  for (const scope of ['치과병원', '치과의원']) for (const label of ['치과전문의 등록 평균', '콘빔CT 등록 기관', '하루 이상 진료시간 확인']) {
+    const line = full.split("\n").find(l => l.includes(`"${scope}"`) && l.includes(label));
+    assert.ok(line, `${scope} ${label} in 전수 CSV`);
+    assert.ok(csv.includes(line), `${scope} ${label} row copied verbatim into vs-clinic CSV`);
+  }
+});

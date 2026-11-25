@@ -5,6 +5,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {candidateHomepageVerified, detectKind} from './clinic-assets.mjs';
+import {canonical} from './prepare-candidate-homepages.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const linked = process.argv.includes('--linked');
@@ -24,12 +26,12 @@ if (fs.existsSync(lockPath)) {
 }
 const byStatus = {};
 for (const r of rows) byStatus[r.status ?? '?'] = (byStatus[r.status ?? '?'] ?? 0) + 1;
-const verifiedShape = rows.filter(r => r.status === 'read' && Number.isFinite(r.datasetPhoneCount) && r.datasetPhoneCount <= 2
-  && Object.values(r.matches ?? {}).some(m => m.name && (m.phone || m.address))).length;
+// The same predicate the build applies (clinic-assets.mjs addHomepageScans), so this count matches what gets promoted.
+const website = url => { try { return detectKind(new URL(url).href) === 'website'; } catch { return false; } };
+const verifiedShape = rows.filter(r => website(r.url) && Object.values(r.matches ?? {}).some(m => candidateHomepageVerified({ ...r, sourceType: r.sourceType ?? 'candidate_homepage' }, m))).length;
 const times = rows.map(r => Date.parse(r.checkedAt)).filter(Number.isFinite).sort((a, b) => a - b);
 const first = times[0], last = times.at(-1);
 // The seed file is the queue as of the last refresh and still lists URLs processed since, so count the union.
-const canonical = url => { try { const u = new URL(url); return u.hostname.replace(/^www\./, '').toLowerCase() + (u.pathname.replace(/\/$/, '') || '/') + u.search; } catch { return null; } };
 const all = new Set(rows.map(r => canonical(r.url)).filter(Boolean));
 const done = all.size;
 for (const s of seeds?.seeds ?? []) { const k = canonical(s.url); if (k) all.add(k); }
