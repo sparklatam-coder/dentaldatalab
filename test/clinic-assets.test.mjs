@@ -851,9 +851,9 @@ test('a malformed crawler URL is skipped instead of aborting the build, while un
   assert.throws(() => inventory([clinic()], { crawl: { results: [{ ...check, clinicIds: ['other-id'] }] } }), /Unknown crawler clinic/);
 });
 
-test('every clinic panel links its own evidence JSON with a same-origin href', () => {
+test('every clinic panel links its own evidence JSON with a same-origin, nofollow href', () => {
   const html = clinicAssetsPanel(inventory([clinic()]).records[0]);
-  assert(html.includes('<a href="/data/clinic-assets/records/clinic-a.json">기관별 JSON</a>'), html.slice(html.indexOf('기관별') - 120, html.indexOf('기관별') + 40));
+  assert(html.includes('<a href="/data/clinic-assets/records/clinic-a.json" rel="nofollow">기관별 JSON</a>'), html.slice(html.indexOf('기관별') - 120, html.indexOf('기관별') + 40));
 });
 
 test('the link policy is decided in the inventory and honoured by the hours status notice too', () => {
@@ -866,4 +866,16 @@ test('the link policy is decided in the inventory and honoured by the hours stat
   assert(status.sourceUrls.includes('https://map.naver.com/p/entry/place/123456'));
   assert(!status.sourceUrls.includes('https://map.naver.com/p/entry/place/654321'), 'unreviewed research candidates are not offered as map links');
   assert(!hoursStatusNotice(status).includes('place/654321'));
+});
+
+test('evidence and third-party links are nofollow while the institution\'s own channels stay followed', () => {
+  const own = asset({ url: 'https://clinic-a.example/', kind: 'website', ownership: 'official' });
+  const mention = asset({ url: 'https://directory.example/clinic-a', kind: 'website', ownership: 'third_party' });
+  const html = clinicAssetsPanel(inventory([clinic()], { batches: [batch([own, mention])] }).records[0]);
+  const anchors = [...html.matchAll(/<a href="([^"]+)"[^>]*rel="([^"]+)"/g)].map(m => ({ href: m[1], rel: m[2] }));
+  const relOf = href => anchors.filter(a => a.href === href).map(a => a.rel);
+  assert(relOf('https://clinic-a.example/').some(rel => !/nofollow/.test(rel)), 'the confirmed own channel keeps a followed link');
+  assert(relOf('https://directory.example/clinic-a').length > 0);
+  assert(relOf('https://directory.example/clinic-a').every(rel => /nofollow/.test(rel)), 'a third-party mention is never a followed link');
+  for (const a of own.identityEvidence ?? []) assert(relOf(a.sourceUrl).every(rel => /nofollow/.test(rel)), 'cross-check sources are nofollow');
 });
