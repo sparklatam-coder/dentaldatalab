@@ -168,7 +168,7 @@ test('panel shows a same-origin preview, copy-ready code and the two usage sente
   assert.equal(count(panel, '<h2'), 1);
   assert.equal(count(panel, '<h1'), 0);
   // Every copy button points at a <pre> that exists, through the handler src/app.mjs already has.
-  const targets = [...panel.matchAll(/<button type="button" class="btn [a-z]+" data-copy-citation data-citation-target="([^"]+)">/g)].map(m => m[1]);
+  const targets = [...panel.matchAll(/<button type="button" class="btn [a-z]+" data-copy-citation data-citation-target="([^"]+)" data-copy-message="코드를 복사했습니다.">/g)].map(m => m[1]);
   assert.deepEqual(targets, ['info-card-code', 'info-card-code-text', 'info-card-code-image', 'info-card-code-image-dark']);
   for (const id of targets) assert.equal(count(panel, `id="${id}"`), 1, id);
   // What the button copies is exactly the snippet for this institution on the canonical origin.

@@ -19,7 +19,7 @@ if(b.matches('[data-close-dialog]'))$('#source-dialog').close();
 if(b.matches('[data-copy-link]'))toast(await copyText(location.href)?'현재 비교 링크를 복사했습니다.':'복사할 수 없습니다. 주소창의 URL을 복사해 주세요.');
 if(b.matches('[data-download-chart]'))await downloadChartPng(b);
 if(b.matches('[data-share]')){const url=location.origin+location.pathname,title=document.title.replace(' | 치과데이터랩','');if(navigator.share){try{await navigator.share({title,url});return;}catch(err){if(err?.name==='AbortError')return;}}toast(await copyText(url)?'페이지 링크를 복사했습니다. 카카오톡·문자에 붙여 넣어 공유하세요.':'복사할 수 없습니다. 주소창의 URL을 복사해 주세요.');}
-if(b.matches('[data-copy-citation]')){const title=document.title.replace(' | 치과데이터랩','');const t=(b.dataset.citationTarget?document.getElementById(b.dataset.citationTarget)?.textContent:null)||`${title}. 출처: 건강보험심사평가원, 전국 병의원 및 약국 현황(${SNAPSHOT} 기준). 치과데이터랩 가공 자료. ${location.href}`;toast(await copyText(t)?'출처와 기준일을 포함한 인용문을 복사했습니다.':'복사할 수 없습니다.');}
+if(b.matches('[data-copy-citation]')){const title=document.title.replace(' | 치과데이터랩','');const t=(b.dataset.citationTarget?document.getElementById(b.dataset.citationTarget)?.textContent:null)||`${title}. 출처: 건강보험심사평가원, 전국 병의원 및 약국 현황(${SNAPSHOT} 기준). 치과데이터랩 가공 자료. ${location.href}`;toast(await copyText(t)?(b.dataset.copyMessage||'출처와 기준일을 포함한 인용문을 복사했습니다.'):'복사할 수 없습니다.');}
 });
 $('#source-dialog')?.addEventListener('click',e=>{if(e.target===$('#source-dialog')){const r=$('#source-dialog').getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)$('#source-dialog').close();}});
 refreshCompare();

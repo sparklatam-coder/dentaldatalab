@@ -53,7 +53,7 @@ export function infoCardBadgeSvg({dark=false}={}){
 const codeText=html=>esc(html).replaceAll('&amp;','&#38;');
 const codeBlock=(id,html)=>`<pre id="${id}" style="white-space:pre-wrap;word-break:break-all;margin:12px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--text);font:12px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace"><code style="font:inherit;background:none;padding:0">${codeText(html)}</code></pre>`;
 // Reuses the existing data-copy-citation handler in src/app.mjs, which copies the target element's textContent.
-const copyButton=(id,label,primary=false)=>`<button type="button" class="btn ${primary?'primary':'small'}" data-copy-citation data-citation-target="${id}">${label}</button>`;
+const copyButton=(id,label,primary=false)=>`<button type="button" class="btn ${primary?'primary':'small'}" data-copy-citation data-citation-target="${id}" data-copy-message="코드를 복사했습니다.">${label}</button>`;
 // The preview box borrows .prose so the unstyled text link shows as a link here, as it would on a typical host page.
 const preview=(html,{dark=false}={})=>`<figure style="margin:14px 0 12px"><figcaption class="subtle-note">미리보기${dark?' · 어두운 배경':''}</figcaption><div class="prose" style="margin-top:6px;padding:16px;border:1px dashed #c7c7cc;border-radius:14px;background:${dark?'#1d1d1f':'#fff'}">${html}</div></figure>`;
 const imageNote=origin=>`style 속성을 지우는 편집기용입니다. 이미지 배지는 방문자의 브라우저가 ${esc(new URL(origin).host)}에서 이미지 파일을 받아 오며, 카드와 텍스트 링크는 외부 파일을 불러오지 않습니다.`;
