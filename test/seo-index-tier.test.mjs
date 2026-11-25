@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import {
   THIN_CLINIC_POLICY, THIN_CLINIC_POLICIES, SEO_INDEXING_FILE, clinicIndexSignals, clinicIndexTier, thinClinicPlan,
-  setNoindexRoutes, isIndexedRoute, isIndexableRoute, primeSeoIndexing, robotsMeta, sitemapXml,
+  setNoindexRoutes, isIndexedRoute, isIndexableRoute, primeSeoIndexing, robotsMeta, sitemapXml, INDEXABLE_ROBOTS,
 } from '../scripts/seo.mjs';
 import { cloudflareWorker } from '../scripts/build-cloudflare.mjs';
 
@@ -105,8 +105,8 @@ test('the registry turns listed routes into noindex,follow and removes them from
     assert.equal(isIndexedRoute(r), isIndexableRoute(r) && !listed, r);
     assert.equal(robotsMeta(r), 'noindex,nofollow', 'a review build is unaffected: ' + r);
   }
-  assert.equal(robotsMeta(route(hospital), true), 'index,follow');
-  assert.equal(robotsMeta(route(hours), true), 'index,follow');
+  assert.equal(robotsMeta(route(hospital), true), INDEXABLE_ROBOTS);
+  assert.equal(robotsMeta(route(hours), true), INDEXABLE_ROBOTS);
   const sitemap = sitemapXml(routes, 'https://example.test', true);
   assert.equal((sitemap.match(/<url>/g) || []).length, (before.sitemap.match(/<url>/g) || []).length - 2);
   for (const r of demoted) {
@@ -128,8 +128,8 @@ test('only institution profile routes can be demoted, and a rejected list leaves
     assert.throws(() => setNoindexRoutes([route(hours), bad]), /Only institution profile routes/, String(bad));
   }
   assert.equal(robotsMeta(route(thin), true), 'noindex,follow');
-  assert.equal(robotsMeta(route(hours), true), 'index,follow');
-  assert.equal(robotsMeta('/hospitals/', true), 'index,follow');
+  assert.equal(robotsMeta(route(hours), true), INDEXABLE_ROBOTS);
+  assert.equal(robotsMeta('/hospitals/', true), INDEXABLE_ROBOTS);
 });
 
 test('a build directory primes the same registry for QA and IndexNow; a directory without the record demotes nothing', t => {
@@ -138,13 +138,13 @@ test('a build directory primes the same registry for QA and IndexNow; a director
   t.after(() => fs.rmSync(dir, { recursive: true, force: true }));
   setNoindexRoutes([route(hours)]);
   assert.equal(primeSeoIndexing(dir), null);
-  assert.equal(robotsMeta(route(hours), true), 'index,follow', 'a stale registry is cleared');
+  assert.equal(robotsMeta(route(hours), true), INDEXABLE_ROBOTS, 'a stale registry is cleared');
   for (const policy of THIN_CLINIC_POLICIES) {
     const record = { ...thinClinicPlan(sample().clinics, { policy }), indexingEnabled: true };
     fs.writeFileSync(path.join(dir, SEO_INDEXING_FILE), JSON.stringify(record));
     assert.deepEqual(primeSeoIndexing(dir), record);
-    assert.equal(robotsMeta(route(thin), true), policy === 'noindex' ? 'noindex,follow' : 'index,follow', policy);
-    assert.equal(robotsMeta(route(hospital), true), 'index,follow', policy);
+    assert.equal(robotsMeta(route(thin), true), policy === 'noindex' ? 'noindex,follow' : INDEXABLE_ROBOTS, policy);
+    assert.equal(robotsMeta(route(hospital), true), INDEXABLE_ROBOTS, policy);
   }
   for (const broken of [{ policy: 'hide', noindexRoutes: [] }, { policy: 'noindex' }, { policy: 'noindex', noindexRoutes: ['/hospitals/'] }]) {
     fs.writeFileSync(path.join(dir, SEO_INDEXING_FILE), JSON.stringify(broken));
