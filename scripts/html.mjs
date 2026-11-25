@@ -1,4 +1,5 @@
 import { esc, icon, safeWebsite } from '../src/shared.mjs';
+import { clinicUrl } from '../src/shared.mjs';
 
 // Absolute http(s) URL without credentials, or null. Relative values and other schemes never become hrefs.
 export const externalUrl = value => typeof value === 'string' && /^https?:\/\//i.test(value) ? safeWebsite(value) : null;
@@ -36,3 +37,11 @@ export function reportTable(headers, rows, caption, { rowHeader = true, escapeCe
 
 // UTF-8 BOM + CRLF CSV with every cell quoted, as spreadsheet imports of Korean text expect. null/undefined become empty cells.
 export const csv = rows => '﻿' + rows.map(row => row.map(value => `"${String(value ?? '').replaceAll('"', '""')}"`).join(',')).join('\r\n') + '\r\n';
+
+// ItemList JSON-LD for a page that lists institutions: one shape for the hospital, condition and district pages.
+// Summary-page form: each ListItem carries only position and url (the institution page holds the entity), so no
+// registered name is repeated in raw JSON-LD and the list never reads as an endorsement of the names in it.
+export const clinicItemList = (domain, route, name, clinics) => ({
+  '@context': 'https://schema.org', '@type': 'ItemList', '@id': domain + route + '#list', name, numberOfItems: clinics.length,
+  itemListElement: clinics.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: domain + clinicUrl(c) })),
+});

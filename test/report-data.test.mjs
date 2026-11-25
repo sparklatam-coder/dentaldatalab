@@ -250,9 +250,9 @@ test('externalFact returns the cited record and refuses an unknown id instead of
 });
 
 test('no page module re-implements the external-fact lookup', () => {
-  for (const file of ['answer-pages.mjs', 'hospital-pages.mjs', 'hospital-content.mjs', 'report-pages.mjs', 'condition-pages.mjs']) {
+  for (const file of ['answer-pages.mjs', 'hospital-pages.mjs', 'hospital-content.mjs', 'report-pages.mjs', 'condition-pages.mjs', 'share-cards.mjs']) {
     const src = fs.readFileSync(new URL('../scripts/' + file, import.meta.url), 'utf8');
-    assert.doesNotMatch(src, /EXTERNAL_FACTS\.find\(/, file);
-    assert.doesNotMatch(src, /externalFacts\.find\(/, file);
+    assert.doesNotMatch(src, /EXTERNAL_FACTS\??\.find\(/, file);
+    assert.doesNotMatch(src, /externalFacts\??\.find\(/, file);
   }
 });

@@ -4,6 +4,7 @@
 // Listings are 가나다순 and never ranked; a district page exists only when MIN_DISTRICT_MATCHES clinics match,
 // so no page is a near-empty shell. Registered hours are not live opening hours and every page says so.
 import {esc, fmt, icon, clinicUrl, singlePhone, closesAtOrAfter, SOURCE_URL} from '../src/shared.mjs';
+import { clinicItemList } from './html.mjs';
 import {hasValidHours, REPORT_DEFINITIONS} from './report-data.mjs';
 
 export const MIN_DISTRICT_MATCHES = 5;
@@ -161,8 +162,7 @@ function hubPage(condition, clinics, groups, regions, {snapshot}) {
   ${definitionBlock(condition, snapshot)}</div>`;
 }
 
-const itemList = (domain, route, name, items) => ({'@context': 'https://schema.org', '@type': 'ItemList', '@id': domain + route + '#list', name, numberOfItems: items.length,
-  itemListElement: items.map((c, i) => ({'@type': 'ListItem', position: i + 1, name: c.name, url: domain + clinicUrl(c)}))});
+const itemList = clinicItemList;
 
 /** shareImages: route → share-card path for cards whose PNG exists (build.mjs shareCardMap). District pages reuse their hub's card. */
 export function registerConditionPages({page, clinics, regions, domain, snapshotDate, shareImages = new Map()}) {

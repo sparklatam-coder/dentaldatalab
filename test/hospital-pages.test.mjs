@@ -130,3 +130,16 @@ test('legal citations on the hospital pages are the EXTERNAL_FACTS records, not 
     assert.equal(LEGAL_SOURCES[key].title, fact.title, key);
   }
 });
+
+test('ItemList schema comes from the shared clinicItemList helper, in one shape across page modules', async () => {
+  const { clinicItemList } = await import('../scripts/html.mjs');
+  const { pages } = render();
+  const hub = pages.get('/hospitals/');
+  const expected = clinicItemList('https://example.test', '/hospitals/', hub.schema[0].name, groupHospitals(fixture()).hospitals);
+  assert.deepEqual(hub.schema[0], expected);
+  assert.deepEqual(Object.keys(expected.itemListElement[0]), ['@type', 'position', 'url']);
+  for (const file of ['hospital-pages.mjs', 'condition-pages.mjs']) {
+    const src = (await import('node:fs')).readFileSync(new URL('../scripts/' + file, import.meta.url), 'utf8');
+    assert.doesNotMatch(src, /'@type': ?'ItemList'/, file);
+  }
+});

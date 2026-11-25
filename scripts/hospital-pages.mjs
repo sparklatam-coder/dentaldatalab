@@ -1,7 +1,7 @@
 // Dental-hospital (종별코드 41) group pages: /hospitals/, /hospitals/<sidoCode>/, /hospitals/university/, /hospitals/disability/.
 // Listings only: every institution is shown as the same card in 가나다순, counts come from the data, no ranking or quality words.
 import {esc,fmt,icon,card,clinicUrl} from '../src/shared.mjs';
-import {externalLink} from './html.mjs';
+import {externalLink,clinicItemList} from './html.mjs';
 import {answerLinks,DISABILITY_CENTERS} from './answer-pages.mjs';
 import {regionLabelSentence} from './region-notes.mjs';
 import {externalFact} from './report-data.mjs';
@@ -43,7 +43,7 @@ const intro=(title,desc,pills='')=>`<div class="page-intro"><div class="pill-row
 const source=s=>`${externalLink(s.url,s.title,{withIcon:true})} · ${esc(s.edition)} · 확인 ${esc(s.checkedAt)}`;
 const legalParagraph=()=>`<section class="section prose" id="definition"><h2>치과병원은 법적으로 어떤 기관인가요?</h2><p>${esc(LEGAL_SOURCES.classification.summary)} 치과병원은 병원급 의료기관의 한 종류입니다.</p><p>${esc(LEGAL_SOURCES.beds.summary)} 종별은 법적 분류이며 진료의 질이나 범위를 뜻하지 않습니다.</p><p class="subtle-note">출처: ${source(LEGAL_SOURCES.classification)}<br>출처: ${source(LEGAL_SOURCES.beds)}</p></section>`;
 // Summary-page lists carry only position and URL; each clinic page holds its own details (keeps the 248-item hub light).
-const itemList=(domain,route,name,items)=>({'@context':'https://schema.org','@type':'ItemList','@id':domain+route+'#list',name,numberOfItems:items.length,itemListElement:items.map((c,i)=>({'@type':'ListItem',position:i+1,url:domain+clinicUrl(c)}))});
+const itemList=clinicItemList;
 const grid=items=>`<div class="card-grid">${items.map(c=>card(c)).join('')}</div>`;
 const crumbs=(...rest)=>[{label:'치과병원',url:'/hospitals/'},...rest];
 
