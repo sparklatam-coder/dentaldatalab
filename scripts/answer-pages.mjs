@@ -2,11 +2,16 @@
 // Administrative and legal questions only (institution types, insurance procedure, copay rates). Every claim is a
 // quoted primary source with its edition and 확인일, or a count computed from the registered data at build time.
 // No institution names, no recommendations, no treatment advice; treatment questions stay in /questions/ until reviewed.
+import fs from 'node:fs';
 import {esc, fmt, icon} from '../src/shared.mjs';
 import {externalLink} from './html.mjs';
 import {EXTERNAL_FACTS} from './report-data.mjs';
 
 const CHECKED_AT = '2026-11-26';
+// 보건복지부 장애인구강진료센터 표: cell strings copied verbatim from the ministry page (see the file's source block).
+export const DISABILITY_CENTERS = JSON.parse(fs.readFileSync(new URL('../data/content/disability-dental-centers.json', import.meta.url), 'utf8'));
+const centers = DISABILITY_CENTERS.centers, centerSource = DISABILITY_CENTERS.source;
+const centralCenters = centers.filter(c => c.level === '중앙'), regionalCenters = centers.filter(c => c.level === '권역');
 const MEDICAL_ACT_EDITION = '법률 제21111호 · 시행 2026-11-12';
 const fact = id => {
   const f = EXTERNAL_FACTS.find(x => x.id === id);
@@ -24,6 +29,10 @@ export const ANSWER_SOURCES = Object.freeze({
     quote: '① 종합병원은 다음 각 호의 요건을 갖추어야 한다. 1. 100개 이상의 병상을 갖출 것 2. 100병상 이상 300병상 이하인 경우에는 내과ㆍ외과ㆍ소아청소년과ㆍ산부인과 중 3개 진료과목, 영상의학과, 마취통증의학과와 진단검사의학과 또는 병리과를 포함한 7개 이상의 진료과목을 갖추고 각 진료과목마다 전속하는 전문의를 둘 것 3. 300병상을 초과하는 경우에는 내과, 외과, 소아청소년과, 산부인과, 영상의학과, 마취통증의학과, 진단검사의학과 또는 병리과, 정신건강의학과 및 치과를 포함한 9개 이상의 진료과목을 갖추고 각 진료과목마다 전속하는 전문의를 둘 것 ② 종합병원은 제1항제2호 또는 제3호에 따른 진료과목(이하 이 항에서 “필수진료과목”이라 한다) 외에 필요하면 추가로 진료과목을 설치ㆍ운영할 수 있다.'},
   benefitSteps: {title: '국민건강보험 요양급여의 기준에 관한 규칙 제2조 (요양급여의 절차)', url: 'https://www.law.go.kr/법령/국민건강보험요양급여의기준에관한규칙/제2조', edition: '보건복지부령 제1209호 · 2026-11-13 일부개정', checkedAt: CHECKED_AT,
     quote: '② 1단계 요양급여는 「의료법」제3조의4에 따른 상급종합병원을 제외한 요양기관에서 받는 요양급여(건강진단 또는 건강검진을 포함한다)를 말하며, 2단계 요양급여는 상급종합병원에서 받는 요양급여를 말한다. ③ … 가입자등이 다음 각호의 1에 해당하는 경우에는 상급종합병원에서 1단계 요양급여를 받을 수 있다. … 3. 치과에서 요양급여를 받는 경우 … ④ 가입자등이 상급종합병원에서 2단계 요양급여를 받고자 하는 때에는 상급종합병원에서의 요양급여가 필요하다는 의사소견이 기재된 건강진단ㆍ건강검진결과서 또는 별지 제4호서식의 요양급여의뢰서를 건강보험증 또는 신분증명서 … 와 함께 제출하여야 한다.'},
+  disabilityCenters: {title: centerSource.title, url: centerSource.url, edition: `${centerSource.department} · 최종수정일 ${centerSource.pageModifiedAt}`, checkedAt: centerSource.checkedAt,
+    quote: [centerSource.purpose, ...centerSource.support, centerSource.supportCondition].join(' / ')},
+  oralHealthAct: {title: '구강보건법 제15조의2 (장애인구강진료센터의 설치 등)', url: 'https://www.law.go.kr/법령/구강보건법/제15조의2', edition: '법률 제19474호 · 시행 2025-06-14', checkedAt: CHECKED_AT,
+    quote: '① 보건복지부장관은 장애인의 구강보건 및 구강건강증진에 관한 다음 각 호의 업무를 수행하기 위하여 중앙장애인구강진료센터를 설치ㆍ운영하여야 한다. … ② 시ㆍ도지사는 장애인의 구강진료 등 구강보건 및 구강건강증진을 효율적으로 추진하기 위하여 권역장애인구강진료센터 및 지역장애인구강진료센터를 설치ㆍ운영할 수 있다. 이 경우 권역장애인구강진료센터는 각 시ㆍ도에 1개소 이상 설치ㆍ운영하여야 한다. ③ 보건복지부장관과 시ㆍ도지사는 … 설치ㆍ운영을 업무에 필요한 전문인력과 시설을 갖춘 기관에 위탁할 수 있다.'},
   copay: {title: '국민건강보험공단 「본인일부부담금」 안내 (외래)', url: fact('nhis-outpatient-copay').sourceUrl, edition: '근거: 국민건강보험법 시행령 제19조 제1항·별표 2', checkedAt: CHECKED_AT,
     quote: '상급종합병원: 진찰료 총액 + (요양급여비용 총액 - 진찰료총액) × 60/100. 종합병원: 동지역 요양급여비용 총액 × 50/100, 읍·면지역 × 45/100. 병원, 치과병원, 한방병원, 요양병원: 동지역 × 40/100, 읍·면지역 × 35/100. 의원, 치과의원, 한의원, 보건의료원: 요양급여비용 총액 × 30/100. (임신부·1세 미만 영유아 외래진료는 별도 비율)'},
 });
@@ -35,6 +44,8 @@ export const OUTPATIENT_COPAY = Object.freeze([
   {type: '종합병원', dong: '50%', eupmyeon: '45%'},
   {type: '상급종합병원', dong: '진찰료 전액 + 나머지의 60%', eupmyeon: '진찰료 전액 + 나머지의 60%'},
 ]);
+
+const centerTable = () => `<div class="table-scroll"><table class="simple-table"><caption class="subtle-note" style="text-align:left;caption-side:bottom;padding-top:8px">${esc(centerSource.department)} 안내 · 최종수정일 ${esc(centerSource.pageModifiedAt)} · 원문 표의 문자열을 그대로 옮겼습니다.</caption><thead><tr><th scope="col">연번</th><th scope="col">센터 · 운영기관</th><th scope="col">주소</th><th scope="col">진료문의</th></tr></thead><tbody>${centers.map(c => `<tr><td>${c.no}</td><th scope="row">${esc([c.region, c.level].filter(Boolean).join(' '))}<small style="display:block;font-weight:400">${esc(c.operator)}</small></th><td>${esc(c.address)}</td><td>${esc(c.phone)}</td></tr>`).join('')}</tbody></table></div>`;
 
 const copayTable = () => `<div class="table-scroll"><table class="simple-table"><caption class="subtle-note" style="text-align:left;caption-side:bottom;padding-top:8px">요양급여비용 총액 중 본인이 내는 비율 · 일반 환자 외래 기준 · 비급여 항목에는 적용되지 않습니다.</caption><thead><tr><th scope="col">기관 종별</th><th scope="col">동 지역</th><th scope="col">읍·면 지역</th></tr></thead><tbody>${OUTPATIENT_COPAY.map(r => `<tr><th scope="row">${esc(r.type)}</th><td>${esc(r.dong)}</td><td>${esc(r.eupmyeon)}</td></tr>`).join('')}</tbody></table></div>`;
 
@@ -94,6 +105,20 @@ export const SHORT_ANSWERS = Object.freeze([
     sources: ['benefitSteps'],
     links: [['/hospitals/university/', '기관명에 ‘대학’이 있는 치과병원'], ['/guides/dental-copay-by-institution-type/', '치과병원은 치과의원보다 본인부담률이 높나요?']],
   },
+  {
+    slug: 'disability-dental-centers', question: '장애인 치과병원은 어디에 있나요?',
+    answer: `보건복지부가 안내하는 장애인구강진료센터는 중앙 ${centralCenters.length}곳(${centralCenters.map(c => c.operator).join('·')})과 권역 ${regionalCenters.length}곳, 모두 ${centers.length}곳입니다. 대학(치과)병원 등에 위탁해 운영하며, 시도별 운영기관과 진료문의 번호는 이 페이지의 표에 있습니다.`,
+    details: [
+      '구강보건법 제15조의2에 따라 보건복지부장관은 중앙장애인구강진료센터를 설치·운영하고, 시·도지사는 권역장애인구강진료센터를 각 시·도에 1곳 이상 설치·운영해야 합니다. 시·도는 지역장애인구강진료센터를 둘 수도 있는데, 보건복지부 표는 중앙·권역센터만 싣고 있어 지역센터는 아래 표에 나오지 않습니다.',
+      `센터에서 진료받는 장애인은 구비서류(장애인 복지카드, 해당자는 기초생활수급자증명서)를 지참하면 예산 범위 안에서 비급여 진료비 일부를 지원받을 수 있습니다. 보건복지부 안내 기준으로 기초생활수급자 장애인은 비급여 진료비 총액의 50%, 치과영역 중증 장애인은 30%, 기타 장애인은 10%입니다.`,
+      '예약 방법과 진료 일정은 센터마다 다르므로 표의 진료문의 번호로 확인하세요.',
+    ],
+    table: centerTable,
+    data: ({hospitals, disability}) => `심평원 자료에는 장애인 진료 지정 여부 항목이 없습니다. 치과병원 ${fmt(hospitals)}곳 중 기관명에 ‘장애인’이 들어간 곳은 ${fmt(disability)}곳이며, 센터 지정과는 별개인 이름 기준 숫자입니다. 센터 운영기관 ${centers.length}곳 중 ${centers.filter(c => !c.operator.includes('치과')).length}곳은 이름에 ‘치과’가 없는 병원·의료원이어서, 치과병원·치과의원만 다루는 이 사이트의 기관 목록에는 나오지 않을 수 있습니다.`,
+    caveats: ['센터 목록은 보건복지부 안내를 그대로 옮긴 것이며, 이 사이트가 각 센터의 현재 운영 상태를 확인한 것은 아닙니다.', '진료비 지원은 비급여 진료비에 대한 것으로 예산 범위 안에서 이뤄집니다. 건강보험 급여 진료의 본인부담은 별도 기준을 따릅니다.'],
+    sources: ['disabilityCenters', 'oralHealthAct'],
+    links: [['/hospitals/disability/', '기관명에 ‘장애인’이 있는 치과병원'], ['/hospitals/', '전국 치과병원 목록']],
+  },
 ]);
 
 export const answerRoute = a => `/guides/${a.slug}/`;
@@ -113,6 +138,7 @@ export function registerAnswerPages({page, clinics, snapshotDate}) {
     hospitals: hospitalsList.length,
     clinics: clinics.filter(c => c?.typeCode === '51').length,
     university: hospitalsList.filter(c => String(c.name ?? '').includes('대학')).length,
+    disability: hospitalsList.filter(c => String(c.name ?? '').includes('장애인')).length,
   };
   for (const a of SHORT_ANSWERS) {
     const route = answerRoute(a);

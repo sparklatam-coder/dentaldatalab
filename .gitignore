@@ -30,3 +30,6 @@ __pycache__/
 # Local project strategy and chronological handoff notes
 /dentaldatalab-plan.md
 /*인수인계*.md
+
+# Quarterly HIRA zips (data.go.kr keeps no past snapshots); hashes are tracked in data/content/hira-snapshots.json
+/snapshots/

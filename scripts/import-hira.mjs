@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // HIRA 전국 병의원 및 약국 현황 zip -> data/clinics.json + data/source-manifest.json
-// Node built-ins only. Usage: node scripts/import-hira.mjs [--zip <path>] [--snapshot 2026-09-30]
+// Node built-ins only. Usage: node scripts/import-hira.mjs [--zip <path>] [--snapshot 2026-09-30] [--out <dir>]
+// --out writes clinics.json + source-manifest.json to another directory (default: data/), e.g. to compare a new quarter first.
 // The pure parts (zip entry reading, CSV parsing, value normalization, row mapping, stats, validation)
 // are exported for tests; only main() touches argv, the clock and the file system.
 import fs from 'node:fs';
@@ -245,6 +246,7 @@ function main(argv) {
   const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
   const SNAPSHOT = opt('--snapshot', '2026-09-30');
   const ZIP = path.resolve(opt('--zip', path.join(root, '..', 'hira_hospital_pharmacy_20260930.zip')));
+  const OUT = path.resolve(opt('--out', path.join(root, 'data')));
 
   const z = readZip(ZIP);
   const F = {
@@ -271,8 +273,8 @@ function main(argv) {
   if (bad.length) { console.error('VALIDATION FAILED', bad); process.exit(1); }
 
   // ---------- write ----------
-  fs.mkdirSync(path.join(root, 'data'), { recursive: true });
-  fs.writeFileSync(path.join(root, 'data', 'clinics.json'), JSON.stringify({ snapshotDate: SNAPSHOT, observedAt, clinics }));
+  fs.mkdirSync(OUT, { recursive: true });
+  fs.writeFileSync(path.join(OUT, 'clinics.json'), JSON.stringify({ snapshotDate: SNAPSHOT, observedAt, clinics }));
   const titles = {
     'hira-base': ['건강보험심사평가원_전국 병의원 및 약국 현황 - 병원정보서비스', F.base],
     'hira-detail': ['건강보험심사평가원_전국 병의원 및 약국 현황 - 의료기관별상세정보 02 세부정보', F.detail],
@@ -304,7 +306,7 @@ function main(argv) {
       '수집 시각 observedAt은 --collected 인수를 우선하며 없으면 원본 ZIP 파일의 수정 시각을 사용. importedAt은 가공 실행 시각임.',
     ],
   };
-  fs.writeFileSync(path.join(root, 'data', 'source-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
+  fs.writeFileSync(path.join(OUT, 'source-manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
   console.log(`clinics=${clinics.length} types=${JSON.stringify(stats.byType)} sido=${stats.regions.sidoCount} city=${stats.regions.cityCount}`);
   console.log(`hours=${stats.fieldCounts.hoursAvailable} specialties=${stats.fieldCounts.withSpecialties} equipment=${stats.fieldCounts.withEquipment} discrepancy=${discrepancyCount}`);
   console.log(`elapsed=${((Date.now() - t0) / 1000).toFixed(1)}s`);

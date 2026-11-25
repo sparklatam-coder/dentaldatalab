@@ -144,11 +144,13 @@ scripts/collect-search-evidence.py 자동완성 관찰 및 접근 제한 기록
 scripts/verify-official-source.py 공식 ZIP 재다운로드·독립 원본 대조
 scripts/audit-research.mjs    채널 상태 검사·전국 조사 대기 목록
 scripts/import-hira.mjs      공공 원본 ZIP 정규화
+scripts/archive-hira-zip.mjs 분기 원본 ZIP 보관·해시 기록 (snapshots/hira/, Git 제외)
+scripts/compare-hira-snapshots.mjs 두 분기 비교: id 유지율·신규·폐업·의원→병원 전환 후보
 scripts/dev.mjs              변경 감지·빌드 전환
 scripts/server.mjs           루프백 HTTP 서버
 scripts/qa.mjs               전체 정적 사이트 검사
 data/                        정규화 데이터·출처·별도 관찰
-data/content/                질문 초안 2개 묶음·실제 검색 신호 기록
+data/content/                질문 초안 2개 묶음·실제 검색 신호 기록·짧은 답 출처·분기 원본 해시 목록
 test/                        집계·출력·서버·재빌드 회귀 검사
 docs/                        데이터 처리·검증·개발 기록
 ```

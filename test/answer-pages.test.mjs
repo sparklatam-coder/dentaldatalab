@@ -1,12 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { registerAnswerPages, SHORT_ANSWERS, ANSWER_SOURCES, OUTPATIENT_COPAY, answerCards, answerLinks, answerRoute } from '../scripts/answer-pages.mjs';
+import { registerAnswerPages, SHORT_ANSWERS, ANSWER_SOURCES, OUTPATIENT_COPAY, DISABILITY_CENTERS, answerCards, answerLinks, answerRoute } from '../scripts/answer-pages.mjs';
 import { EXTERNAL_FACTS } from '../scripts/report-data.mjs';
 
 const marker = '개별기관비공개표식 <script>privateRecord()</script>';
 const clinic = (id, typeCode, name = marker) => ({ id, typeCode, name, address: '개별주소비공개표식', sidoCode: '110000', cityCode: '110001' });
 const clinics = [
-  clinic('h1', '41', `${marker}대학교치과병원`), clinic('h2', '41'), clinic('h3', '41', `${marker}대학치과병원`),
+  clinic('h1', '41', `${marker}대학교치과병원`), clinic('h2', '41', `${marker}장애인치과병원`), clinic('h3', '41', `${marker}대학치과병원`),
   clinic('c1', '51'), clinic('c2', '51'), clinic('c3', '51'), clinic('c4', '51'), clinic('x1', '11'),
 ];
 const render = () => {
@@ -17,7 +17,7 @@ const render = () => {
 
 test('each short answer is one /guides/ page whose first visible sentence answers the question', () => {
   const { pages, result } = render();
-  assert.deepEqual(result, { count: 4, snapshot: '2026-09-30', hospitals: 3, clinics: 4, university: 2 });
+  assert.deepEqual(result, { count: 5, snapshot: '2026-09-30', hospitals: 3, clinics: 4, university: 2, disability: 1 });
   assert.deepEqual([...pages.keys()], SHORT_ANSWERS.map(answerRoute));
   for (const a of SHORT_ANSWERS) {
     const p = pages.get(answerRoute(a));
@@ -52,7 +52,7 @@ test('answer pages count from the data and keep the 대학 count name-based', ()
 
 test('answer sources are primary, dated and consistent with the facts used elsewhere on the site', () => {
   for (const [key, s] of Object.entries(ANSWER_SOURCES)) {
-    assert.match(s.url, /^https:\/\/www\.(law\.go\.kr|nhis\.or\.kr)\//, key);
+    assert.match(s.url, /^https:\/\/www\.(law\.go\.kr|nhis\.or\.kr|mohw\.go\.kr)\//, key);
     assert.match(s.checkedAt, /^\d{4}-\d{2}-\d{2}$/, key);
     assert.ok(s.quote.length > 40 && s.edition, key);
   }
@@ -63,6 +63,25 @@ test('answer sources are primary, dated and consistent with the facts used elsew
   const copay = EXTERNAL_FACTS.find(f => f.id === 'nhis-outpatient-copay');
   assert.equal(copay.dentalClinic, OUTPATIENT_COPAY[0].dong);
   assert.equal(copay.dentalHospital, `동지역 ${OUTPATIENT_COPAY[1].dong} · 읍·면지역 ${OUTPATIENT_COPAY[1].eupmyeon}`);
+});
+
+test('the disability-center answer reproduces the ministry table and keeps 지역센터 and name counts apart', () => {
+  const { centers, source } = DISABILITY_CENTERS;
+  assert.equal(source.url, 'https://www.mohw.go.kr/menu.es?mid=a10706030200');
+  assert.match(source.pageModifiedAt, /^\d{4}-\d{2}-\d{2}$/);
+  assert.deepEqual(centers.map(c => c.no), centers.map((_, i) => i + 1));
+  assert.equal(centers.filter(c => c.level === '중앙').length, 1);
+  for (const c of centers) {
+    assert.ok(c.label.includes(c.operator) && c.label.includes(`${c.level}장애인구강진료센터`), c.label);
+    assert.ok(c.address && c.phone, c.label);
+  }
+  const { pages } = render();
+  const body = pages.get('/guides/disability-dental-centers/').body;
+  for (const c of centers) assert.ok(body.includes(c.address.replaceAll('&', '&amp;')), c.operator);
+  assert.match(body, new RegExp(`중앙 1곳\\(${centers.find(c => c.level === '중앙').operator}\\)과 권역 ${centers.length - 1}곳, 모두 ${centers.length}곳`));
+  assert.match(body, /지역센터는 아래 표에 나오지 않습니다/);
+  assert.match(body, /치과병원 3곳 중 기관명에 ‘장애인’이 들어간 곳은 1곳이며, 센터 지정과는 별개인 이름 기준 숫자입니다/);
+  assert.match(body, /비급여 진료비 총액의 50%/);
 });
 
 test('hub cards and link lists cover every short answer and escape the question text', () => {

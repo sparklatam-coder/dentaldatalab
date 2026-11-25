@@ -85,9 +85,9 @@ export function registerHospitalPages({page,clinics,domain,snapshotDate,indexing
     current:'hospitals',breadcrumb:crumbs({label:'장애인 치과병원'}),
     schema:[itemList(domain,`${hub}disability/`,`기관명에 ‘장애인’이 있는 치과병원 ${fmt(g.disability.length)}곳`,g.disability)],
     body:`<div class="wrap">${intro(`기관명에 ‘장애인’이 있는 치과병원 ${fmt(g.disability.length)}곳`,`치과병원 ${fmt(n)}곳 중 등록 기관명에 ‘장애인’이 들어간 기관 · ${esc(snapshot)} 기준.`,`<span class="pill">종별코드 41</span><span class="pill neutral">기관명 기준 선별</span>`)}
-    <div class="source-banner warning">${icon('info')}<div><strong>공공 원자료에는 장애인 진료 지정 여부 항목이 없습니다.</strong><p>이 목록은 등록 기관명 문자열로만 고른 것입니다. 장애인구강진료센터로 지정된 치과병원·치과의원·공공기관의 공식 명단은 이 자료에 들어 있지 않아 아직 수록하지 않았습니다. 이름에 ‘장애인’이 없는 지정 기관은 여기에 나오지 않습니다.</p></div></div>
+    <div class="source-banner warning">${icon('info')}<div><strong>공공 원자료에는 장애인 진료 지정 여부 항목이 없습니다.</strong><p>이 목록은 등록 기관명 문자열로만 고른 것입니다. 장애인구강진료센터 명단은 심평원 자료에 없는 별도 출처이며, 보건복지부 안내의 중앙·권역센터 목록은 <a href="/guides/disability-dental-centers/">장애인 치과병원은 어디에 있나요?</a>에 정리했습니다. 이름에 ‘장애인’이 없는 센터 운영기관은 여기에 나오지 않습니다.</p></div></div>
     <section class="section" aria-labelledby="disability-list"><h2 id="disability-list">가나다순 목록</h2>${g.disability.length?grid(g.disability):'<p class="empty">해당 기관명이 없습니다.</p>'}</section>
-    <section class="section prose" id="disability-centers"><h2>장애인구강진료센터 제도</h2><p>${esc(d.summary)}</p><p class="subtle-note">별도 공식 안내: ${source(d)}. 지정 기관 명단은 각 시·도와 보건복지부 공지를 확인해야 하며, 확보되면 출처와 확인일을 붙여 추가합니다.</p></section>
+    <section class="section prose" id="disability-centers"><h2>장애인구강진료센터 제도</h2><p>${esc(d.summary)}</p><p class="subtle-note">별도 공식 안내: ${source(d)}. 보건복지부가 안내하는 중앙·권역센터 운영기관 목록과 진료비 지원 기준은 <a href="/guides/disability-dental-centers/">장애인 치과병원은 어디에 있나요?</a>에 출처·확인일과 함께 정리했습니다.</p></section>
     ${note(snapshot)}<p><a class="text-link" href="${hub}">전국 치과병원 ${icon('arrow')}</a></p></div>`,
   });
   return {total:n,sido:g.bySido.length,university:g.university.length,disability:g.disability.length,indexingEnabled};

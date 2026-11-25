@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "source": "https://www.data.go.kr/data/15051059/fileData.do",
+  "note": "공공데이터포털은 현재 파일만 제공하고 과거 시점 자료를 제공하지 않으므로 분기마다 원본 zip을 보관한다. 파일 자체는 snapshots/hira/(Git 제외)에 두고 여기에는 검증용 해시만 기록한다.",
+  "snapshots": [
+    {
+      "snapshotDate": "2026-09-30",
+      "fileName": "hira_hospital_pharmacy_20260930.zip",
+      "originalFileName": "hira_hospital_pharmacy_20260930.zip",
+      "sha256": "ceff684b8eb1dc9059b668ec56bc91d2a643997420733b2996a0bc5d8910f9c3",
+      "size": 20609715,
+      "entryCount": 12,
+      "registeredOn": "2026-10-19",
+      "archivedAt": "2026-11-26",
+      "archivePath": "snapshots/hira/hira_hospital_pharmacy_20260930.zip"
+    }
+  ]
+}
