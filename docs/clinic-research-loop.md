@@ -11,6 +11,34 @@ python3 scripts/clinic-research-loop.py --codex /Users/ax/.local/bin/codex
 
 첫 명령은 병원 한 곳을 조사한다. 두 번째 명령은 조사하지 않은 전체 병원을 계속 처리한다. 의정부시를 먼저 처리하고 나머지는 지역·기관명 순서로 진행한다. 기존 수동 조사 배치와 이 수집기에서 이미 시도한 기관은 건너뛴다. `--max-clinics 10`으로 실행당 기관 수를 제한할 수 있다. 병원당 기본 제한시간은 600초이며 다음 기관까지 5초 대기한다.
 
+## 병렬 실행
+
+```sh
+python3 scripts/clinic-research-loop.py --parallel 5 --interval 2 --codex /Users/ax/.local/bin/codex
+```
+
+`--parallel N`(1~16, 기본 1)은 Codex 워커를 N개 동시에 실행한다. 상태 파일과 결과 파일 기록은 부모 프로세스 한 곳에서만 하며 잠금 파일도 하나다. `--interval`은 새 워커를 띄우는 최소 간격이다. 워커 하나가 실패하면 새 기관은 더 받지 않고 진행 중인 나머지 워커는 끝까지 기다려 결과를 저장한 뒤 `error` 상태로 멈춘다. 재개 방법은 순차 실행과 같다. 2026-11-05 측정에서 5워커는 분당 약 13기관으로 순차(분당 약 2기관)보다 빨랐다. Codex 계정 요청 제한에 걸리면 워커 실패로 멈추므로 로그를 확인한다.
+
+## Claude CLI 워커 풀 추가
+
+```sh
+python3 scripts/clinic-research-loop.py --parallel 15 --claude /Users/ax/.local/bin/claude --claude-parallel 10 --interval 0 --codex /Users/ax/.local/bin/codex
+```
+
+`--claude PATH --claude-parallel N`은 Codex 풀과 별도로 Claude Code CLI 워커를 N개 더 띄운다. 워커는 `claude -p`를 웹검색·웹페치 도구만 허용하고 프로젝트 설정·MCP·세션 저장 없이 실행하며, 같은 JSON 스키마로 결과를 받는다. 기본 모델은 `claude-sonnet-5-5`(`--claude-model`). 이벤트 로그는 Codex와 같은 `<clinicId>.events.jsonl`에 stream-json으로 남고, 최종 `result` 이벤트의 구조화 출력을 `<clinicId>.result.json`으로 저장한다. 기록과 상태에는 `worker.backend`/`worker.model`이 붙는다. 워커 환경변수에 `USER`가 있어야 macOS 키체인의 Claude 로그인을 찾는다.
+
+`access_limited`는 해당 워커 풀만 멈추고(`pool_blocked` 이벤트) 그 기관은 다시 큐에 넣어 다른 풀이 처리한다. 모든 풀이 막히면 `blocked` 상태로 종료한다. 2026-11-05 측정: Codex 15 + Claude 10은 분당 약 72기관(Codex 42, Claude 30).
+
+## Claude 단독 실행과 실패 처리 (2026-11-05)
+
+```sh
+python3 scripts/clinic-research-loop.py --parallel 0 --claude /Users/ax/.local/bin/claude --claude-parallel 30 --interval 0
+```
+
+`--parallel 0`은 Codex 풀 없이 Claude 풀만 쓴다(워커 상한은 풀당 40). Claude 프롬프트는 검색 4회(이름+전화, 이름+주소, 이름+시+홈페이지, 이름+시+블로그/인스타/카카오)를 `extended` 모드로 돌리고, 디렉토리 페이지(모두닥·굿닥·일상킷·당근 등)는 자산이 아니라 홈페이지·블로그 항목을 읽는 근거로만 쓰도록 명시한다. 같은 12곳 표본에서 이 프롬프트는 이전 프롬프트보다 자산 발견 기관이 1곳에서 4곳으로 늘었고, Codex가 찾은 홈페이지 중 3곳은 Claude 검색 결과에 아예 나오지 않아 여전히 놓친다.
+
+워커 하나의 잘못된 출력·타임아웃은 그 기관만 `error`로 남기고(재시도 없음, `failed` 이벤트) 루프는 계속 간다. 연속 실패가 `MAX_FAILURE_STREAK`(5)에 이르면 전체를 `error`로 멈춘다. `--once`/`--max-clinics`는 착수가 아니라 완료(저장 또는 오류) 기관 수를 센다. 이전 Claude 프롬프트로 저장된 662건은 2026-11-05에 결과 파일에서 제거하고 재큐했다.
+
 ## 결과와 상태
 
 - `data/assets/national-web-auto.json`: 화면에서 사용할 수 있는 누적 자동 발굴 후보.
@@ -33,6 +61,10 @@ python3 scripts/clinic-research-loop.py --codex /Users/ax/.local/bin/codex
 python3 scripts/clinic-research-loop.py --resume-after-error --codex /Users/ax/.local/bin/codex
 ```
 
+프로세스가 체크포인트 없이 죽은 경우(kill -9, 전원 차단 등)에는 `in_progress`로 남은 기관이 있다. 다음 실행은 이 기관들을 `interrupted`로 바꿔 다시 큐에 넣되, 먼저 종료 코드 2로 멈춰 점검을 요구한다. 로그를 확인한 뒤 위의 `--resume-after-error` 명령으로 이어가면 해당 기관부터 다시 조사한다. 이전에는 이런 기관이 큐에서 조용히 빠졌다.
+
+각 워커는 저장소 밖의 임시 디렉터리에서, 최소 환경변수(`PATH`, `HOME`, 로케일, 임시 디렉터리, 프록시·인증서 설정, `CODEX_*`/`OPENAI_*`)만 받아 실행된다. 셸에 있는 다른 토큰은 전달되지 않는다. Codex 로그인(`~/.codex/auth.json`)은 `HOME`으로 찾는다.
+
 잠금 파일이 남아 있으면 그 안의 PID가 실제 실행 중인지 먼저 확인한다. 실행 중인 프로세스가 없을 때만 오래된 잠금을 제거한다. 백그라운드 실행은 실행 환경의 프로세스 관리자가 담당한다. 이 스크립트만 작성된 상태가 실제 실행 중이라는 뜻은 아니므로 PID와 로그의 `started`/`saved` 이벤트를 확인한다.
 
-검증: `python3 -m unittest discover -s tests -p test_clinic_research_loop.py`
+검증: `python3 -m unittest discover -s test -p test_clinic_research_loop.py`
