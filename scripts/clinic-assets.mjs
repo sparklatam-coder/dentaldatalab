@@ -200,7 +200,58 @@ export function candidateHomepageVerified(check,match){
     &&Number.isFinite(check.datasetPhoneCount)&&check.datasetPhoneCount<=CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES;
 }
 // Crawler output is validated like every other asset source before it is stored or parsed; a malformed URL is skipped, never thrown.
+// ---- Channels a verified homepage links to -------------------------------------------------------------------------
+// The clinic's own homepage (body matched by candidateHomepageVerified) is the one place that can vouch for which
+// blog, Instagram, YouTube, Kakao channel, booking or map page is the clinic's. We still never fetch the platform:
+// the href is read from the verified HTML, reduced to the profile/channel/place it names, and surfaced as
+// ownership 'linked' ("기관 페이지에서 연결"). Posts, videos, share dialogs and search links are not channels and stay
+// candidates. A channel that several clinics' verified homepages all link is a brand or group channel, not a single
+// clinic's, so it also stays a candidate.
+export const LINKED_CHANNEL_MAX_CLINICS=2;
+const SEGMENT=/^[A-Za-z0-9._-]+$/;
+const NAVER_BLOG_RESERVED=new Set(['postview.naver','postlist.naver','prologue','guestbook','memo','rabbit','common','post','blogid']);
+const FACEBOOK_RESERVED=new Set(['profile.php','sharer.php','share.php','sharer','share','dialog','people','pages','groups','events','login','plugins','hashtag','watch','photo.php','story.php','permalink.php']);
+const INSTAGRAM_RESERVED=new Set(['p','reel','reels','tv','explore','accounts','stories','direct','about','developer','legal']);
+export function channelFromHref(raw){
+  const url=assetUrl(raw);if(!url)return null;
+  const u=new URL(url),h=u.hostname.replace(/^www\./,'').toLowerCase(),segs=u.pathname.split('/').filter(Boolean),kind=detectKind(url);
+  const one=(host,reserved)=>segs.length>=1&&SEGMENT.test(segs[0])&&!reserved.has(segs[0].toLowerCase())?`https://${host}/${segs[0]}`:null;
+  switch(kind){
+    case 'naverBlog':{
+      if(!/^(m\.)?blog\.naver\.com$/.test(h))return null;
+      // PostView.naver?blogId=x&logNo=y → the blog x; blog.naver.com/x or /x/<post> → the blog x.
+      const id=segs[0]?.toLowerCase()==='postview.naver'||segs[0]?.toLowerCase()==='postlist.naver'?u.searchParams.get('blogId'):segs[0];
+      return id&&SEGMENT.test(id)&&!NAVER_BLOG_RESERVED.has(id.toLowerCase())?{kind,url:`https://blog.naver.com/${id}`}:null;
+    }
+    case 'instagram':{const c=h==='instagram.com'?one('www.instagram.com',INSTAGRAM_RESERVED):null;return c?{kind,url:c}:null;}
+    case 'facebook':{const c=['facebook.com','m.facebook.com'].includes(h)?one('www.facebook.com',FACEBOOK_RESERVED):null;return c?{kind,url:c}:null;}
+    case 'youtube':{
+      if(!['youtube.com','m.youtube.com'].includes(h)||!segs.length)return null; // youtu.be and /watch are videos
+      if(/^@[A-Za-z0-9._-]+$/.test(segs[0]))return {kind,url:`https://www.youtube.com/${segs[0]}`};
+      if(['channel','c','user'].includes(segs[0])&&segs[1]&&SEGMENT.test(segs[1]))return {kind,url:`https://www.youtube.com/${segs[0]}/${segs[1]}`};
+      return null;
+    }
+    case 'kakaoChannel':{const c=h==='pf.kakao.com'&&segs[0]&&/^_[A-Za-z0-9]+$/.test(segs[0])?`https://pf.kakao.com/${segs[0]}`:null;return c?{kind,url:c}:null;}
+    case 'booking':{const id=bookingId(url);return id?{kind,url:`https://booking.naver.com/booking/13/bizes/${id}`}:null;}
+    case 'naverMap':{const id=naverPlaceId(url);return id?{kind,url:`https://map.naver.com/p/entry/place/${id}`}:null;}
+    case 'kakaoMap':{const id=h==='place.map.kakao.com'&&segs.length===1&&/^[1-9]\d*$/.test(segs[0])?segs[0]:h==='map.kakao.com'&&segs[0]==='link'&&segs[1]==='map'&&/^[1-9]\d*$/.test(segs[2]??'')?segs[2]:null;return id?{kind,url:`https://place.map.kakao.com/${id}`}:null;}
+    default:return null; // website, blog, googleMap, linkHub, other: no channel identity to vouch for
+  }
+}
+// Which channels every verified homepage links, counted by distinct institution, so a shared one can be held back.
+function linkedChannelClinicCounts(results){
+  const clinicsByChannel=new Map();
+  for(const check of results??[]){
+    if(check.status!=='read')continue;
+    for(const id of check.clinicIds??[]){
+      if(!candidateHomepageVerified(check,check.matches?.[id]))continue;
+      for(const a of check.links??[]){const c=channelFromHref(a?.url);if(!c)continue;if(!clinicsByChannel.has(c.url))clinicsByChannel.set(c.url,new Set());clinicsByChannel.get(c.url).add(id);}
+    }
+  }
+  return new Map([...clinicsByChannel].map(([url,ids])=>[url,ids.size]));
+}
 function addHomepageScans({crawl,byId,add}){
+  const channelClinics=linkedChannelClinicCounts(crawl?.results);
   for(const check of crawl?.results??[]){
     for(const id of check.clinicIds??[])if(!byId.has(id))throw new Error('Unknown crawler clinic '+id);
     const checkUrl=assetUrl(check.url);if(!checkUrl)continue;const finalUrl=assetUrl(check.finalUrl)??checkUrl;
@@ -216,7 +267,15 @@ function addHomepageScans({crawl,byId,add}){
       // A parked, unrelated or directory page must not donate its social accounts to the clinic. Candidate homepages
       // donate hrefs only once the page itself passed the verification above.
       const donateLinks=sourceType==='candidate_homepage'?verified:(match.name||match.phone);
-      if(donateLinks)for(const a of check.links??[])add(id,{...a,ownership:'candidate',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:verified?'전화·주소가 대조된 홈페이지 HTML의 href. 운영 주체 수동 확인 전.':'기관명 또는 전화 문자열이 있는 홈페이지 HTML의 href. 운영 주체 수동 확인 전.',sourceUrl:finalUrl}],notes:'홈페이지의 실제 외부 링크입니다. 자동 수집 후보이며 기관 귀속과 대상 본문은 수동 확인 전입니다.',provenance:[{type:'homepage_href',sourceType,bodySha256:check.bodySha256}]},check.checkedAt,1);
+      if(donateLinks)for(const a of check.links??[]){
+        const channel=verified?channelFromHref(a?.url):null,shared=channel?(channelClinics.get(channel.url)??0)>LINKED_CHANNEL_MAX_CLINICS:false;
+        if(channel&&!shared){
+          // The verified homepage names this profile/channel/place as its own. The platform page itself is not read.
+          add(id,{url:channel.url,kind:channel.kind,ownership:'linked',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:'기관명과 전화·주소가 대조된 홈페이지 HTML이 연결한 채널. 원래 href: '+a.url,sourceUrl:finalUrl}],notes:'본문·기관 대조를 통과한 홈페이지가 직접 연결한 채널입니다. 채널 페이지 본문은 읽지 않았으며 현재 운영 여부는 확인하지 않습니다.',provenance:[{type:'verified_homepage_channel',sourceType,href:a.url,bodySha256:check.bodySha256??null,linkedByClinics:channelClinics.get(channel.url)??1,checkedAt:check.checkedAt}]},check.checkedAt,3);
+          continue;
+        }
+        add(id,{...a,ownership:'candidate',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:verified?'전화·주소가 대조된 홈페이지 HTML의 href. 운영 주체 수동 확인 전.':'기관명 또는 전화 문자열이 있는 홈페이지 HTML의 href. 운영 주체 수동 확인 전.',sourceUrl:finalUrl}],notes:shared?'홈페이지의 실제 외부 링크이지만 '+(channelClinics.get(channel.url))+'개 기관의 검증된 홈페이지가 같은 채널을 연결해 특정 기관의 채널로 보지 않습니다(브랜드·그룹 채널 가능). 수동 확인 전입니다.':'홈페이지의 실제 외부 링크입니다. 자동 수집 후보이며 기관 귀속과 대상 본문은 수동 확인 전입니다.',provenance:[{type:'homepage_href',sourceType,bodySha256:check.bodySha256,...(shared?{sharedByClinics:channelClinics.get(channel.url)}:{})}]},check.checkedAt,1);
+      }
     }
   }
 }

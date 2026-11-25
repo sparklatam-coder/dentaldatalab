@@ -52,11 +52,12 @@ test('a candidate homepage whose body shows the phone and road address becomes a
   assert.equal(superseded.bodyStatus, 'not_read');
   assert.equal(superseded.checkedAt, discovered);
   assert.match(asset.notes, /기관명과 전화번호·도로명 주소/);
-  // The verified page's own hrefs are collected as candidates with the proof attached.
-  assert.deepEqual(links(result).map(a => [a.kind, a.ownership, a.linkable]), [['instagram', 'candidate', false]]);
+  // The verified page's own profile hrefs become linked channels with the proof attached (see linked-channel tests).
+  assert.deepEqual(links(result).map(a => [a.kind, a.ownership, a.linkable]), [['instagram', 'linked', true]]);
   assert(links(result)[0].identityEvidence.some(x => x.field === 'officialLink'));
-  assert.equal(result.records[0].confirmedCount, 1);
+  assert.equal(result.records[0].confirmedCount, 2); // the official homepage plus the Instagram profile it links
   assert.equal(result.summary.byOwnership.official, 1);
+  assert.equal(result.summary.byOwnership.linked, 1);
   // Rendering: the link is live and the pill says the body was matched.
   const item = assetItem(asset);
   assert.match(item, /href="https:\/\/clinic\.example\.com\/"/);
