@@ -57,7 +57,7 @@ function parseCsv(value) {
 test('downloaded CSV and JSON preserve metric-specific denominators, zero and missing data', () => {
   const reports = fixture();
   const { files } = render(reports);
-  assert.equal(files.size, 8, 'CSV and JSON for each of the four reports');
+  assert.equal(files.size, 10, 'CSV and JSON for each of the five reports');
   const data = JSON.parse(files.get('data/reports/northern-gyeonggi-hours.json'));
   assert.deepEqual(data.scope, reports.northernGyeonggi);
   assert.equal(data.scope.total, 4);
@@ -88,7 +88,7 @@ test('downloaded CSV and JSON preserve metric-specific denominators, zero and mi
 
 test('Dataset metadata links the actual aggregate downloads and states date, geography and source', () => {
   const { pages, files } = render(fixture());
-  assert.equal(pages.size, 5);
+  assert.equal(pages.size, 6);
   const hoursReports = ['/reports/national-data-coverage/', '/reports/northern-gyeonggi-hours/'];
   for (const [route, page] of pages) {
     if (route === '/reports/') continue;
@@ -251,4 +251,39 @@ test('real snapshot exports reconcile with source provenance and visible report 
     assert.equal(Number(row[7]), Math.round(Number(row[4]) / Number(row[2]) * 1000) / 10);
     assert.equal(Number(row[8]), Math.round(Number(row[4]) / Number(row[5]) * 1000) / 10);
   }
+});
+
+test('district report counts places from the data, links only region pages and escapes source labels', () => {
+  const reports = fixture();
+  const { pages, files } = render(reports);
+  const g = reports.hospitalDistricts;
+  const page = pages.get('/reports/dental-hospital-districts/');
+  assert.equal(page.title, '시·군·구 3곳 중 치과병원이 있는 곳은 1곳', 'headline counts come from the data');
+  assert.match(page.description, /시·군·구 3곳 중 치과병원이 있는 곳은 1곳\(33\.3%\), 없는 곳은 2곳/);
+  assert.match(page.body, /치과 진료를 받기 어렵다는 뜻으로 읽으면 안 됩니다/);
+  assert.match(page.body, /href="\/regions\/310000\/311901\/"/);
+  assert.match(page.body, /href="\/reports\/dental-hospital-vs-clinic\/"/);
+  assert.doesNotMatch(page.body, /href="\/clinics\//);
+  assert.doesNotMatch(page.body, /더 안전|더 실력|믿을 수 있는|우수한|소외|공백 지역/);
+  assert.equal(page.schema[0]['@type'], 'Dataset', 'Dataset stays first for the shell mainEntity');
+  const faq = page.schema.find(item => item['@type'] === 'FAQPage');
+  assert.equal(faq.mainEntity.length, 3);
+  assert.match(faq.mainEntity[0].acceptedAnswer.text, /3곳 중 2곳에는 치과병원이 없고 1곳에 있습니다/);
+  assert.match(pages.get('/reports/').body, /시·군·구 3곳 · 2026-09-30 기준/);
+
+  const json = JSON.parse(files.get('data/reports/dental-hospital-districts.json'));
+  assert.deepEqual(json.scope, JSON.parse(JSON.stringify(g)));
+  assert.equal(json.groupingNote, g.groupingNote);
+  assert.equal(json.faq.length, 3);
+  const rows = parseCsv(files.get('data/reports/dental-hospital-districts.csv'));
+  assert(rows.every(row => row.length === 14));
+  assert.deepEqual(rows.find(row => row[1] === '전국' && row[3] === '치과병원이 있는 시·군·구').slice(2, 9), ['3', '치과병원이 있는 시·군·구', '1', '3', '0', '33.3', '']);
+  assert.equal(rows.filter(row => row[3] === '치과병원 수' || row[3] === '치과의원 수').length, g.units.length * 2);
+  assert.equal(rows.filter(row => row[3] === '치과병원 수').reduce((sum, row) => sum + Number(row[4]), 0), g.hospitals);
+
+  const hostile = '<img src=x onerror=alert(1)>구';
+  const escaped = collectReports([clinic('x', { city: hostile, cityCode: '310009', typeCode: '41' })], metadata);
+  const hostilePage = render(escaped).pages.get('/reports/dental-hospital-districts/');
+  assert(!hostilePage.body.includes('<img src=x'));
+  assert(hostilePage.body.includes(esc(hostile)));
 });

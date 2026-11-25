@@ -10,6 +10,7 @@ export const REPORTS = [
   { slug: 'northern-gyeonggi-hours', group: 'northernGyeonggi', tag: '경기북부 · 등록시간 현황', title: '경기북부 치과의 야간·주말 등록시간', description: '10개 시·군의 시간 수록 현황과 조건별 등록 건수를 정리했습니다.' },
   { slug: 'dental-hospitals', group: 'dentalHospitals', kind: 'dentalHospitals', tag: '전국 · 치과병원 전수', title: g => `치과병원 ${fmt(g.total)}곳 전수 리포트`, description: '전문의·콘빔CT·지역·개설 시기·빈칸까지, 치과병원 등록 자료 전체를 같은 기준으로 집계했습니다.' },
   { slug: 'dental-hospital-vs-clinic', group: 'dentalHospitals', kind: 'hospitalVsClinic', tag: '종별 · 무엇이 다른가', title: '치과병원과 치과의원, 무엇이 다른가', description: '법령상 구분, 환자 부담, 등록 자료의 차이를 출처와 함께 정리합니다. 우열이 아니라 차이입니다.' },
+  { slug: 'dental-hospital-districts', group: 'hospitalDistricts', kind: 'hospitalDistricts', tag: '전국 · 치과병원 분포', title: g => `시·군·구 ${fmt(g.total)}곳 중 치과병원이 있는 곳은 ${fmt(g.withHospital)}곳`, description: '시·군·구마다 치과병원과 치과의원이 몇 곳인지 같은 기준으로 셌습니다. 치과병원이 없다는 것이 치과 진료 공백을 뜻하지는 않습니다.', count: g => `시·군·구 ${fmt(g.total)}곳` },
 ];
 const reportTitle = (item, g) => typeof item.title === 'function' ? item.title(g) : item.title;
 const metricLabels = {
@@ -23,7 +24,7 @@ const dataPath = (item, ext) => `/data/reports/${item.slug}.${ext}`;
 export function reportCards(reports) {
   return `<div class="report-grid">${REPORTS.map((item, i) => {
     const g = reports[item.group];
-    return `<a class="report-card" href="${route(item)}"><div class="report-card-top"><span class="pill outline">${item.tag}</span><span class="report-number">0${i + 1}</span></div><h3>${reportTitle(item, g)}</h3><p>${item.description}</p><div class="report-card-bottom"><span>${fmt(g.total)}곳 · ${reports.snapshotDate} 기준</span><span class="text-link">리포트 읽기 ${icon('arrow')}</span></div></a>`;
+    return `<a class="report-card" href="${route(item)}"><div class="report-card-top"><span class="pill outline">${item.tag}</span><span class="report-number">0${i + 1}</span></div><h3>${reportTitle(item, g)}</h3><p>${item.description}</p><div class="report-card-bottom"><span>${item.count ? item.count(g) : `${fmt(g.total)}곳`} · ${reports.snapshotDate} 기준</span><span class="text-link">리포트 읽기 ${icon('arrow')}</span></div></a>`;
   }).join('')}</div>`;
 }
 
@@ -103,7 +104,7 @@ function dentalHospitalsBody(item, g, reports, description, indexingEnabled) {
     ['기관명에 ‘대학’ 포함', `${fmt(u.count)}곳<small>${pct(u.percentOfTotal)}</small>`, `${unit(u.specialist.mean, '명')}`, `${unit(u.specialist.median, '명')}`, u.specialist.known ? `${fmt(u.specialist.min)}~${fmt(u.specialist.max)}명` : '산출 불가'],
     ['그 밖의 치과병원', `${fmt(u.others.count)}곳`, `${unit(u.others.specialist.mean, '명')}`, `${unit(u.others.specialist.median, '명')}`, u.others.specialist.known ? `${fmt(u.others.specialist.min)}~${fmt(u.others.specialist.max)}명` : '산출 불가'],
   ], '명칭에 대학이 포함된 치과병원과 그 밖의 치과병원의 전문의 등록 분포')}<p class="subtle-note">개별 기관의 이름이나 순위는 싣지 않습니다. 기관별 등록 정보는 <a href="/find/?type=41">치과병원 전체 목록</a>에서 같은 기준으로 확인할 수 있습니다.</p></section>`;
-  const regions = `<section class="report-section"><h2>어느 지역에 있나요?</h2><p class="report-section-copy">원자료의 시도 표기를 그대로 집계했습니다. ‘전남광주’처럼 혼재된 표기는 현재 행정구역으로 재분류하지 않았습니다.</p>${table(['원자료 시도 표기', '치과병원 수', '전체 대비'], g.regions.map(r => [esc(r.sido), `${fmt(r.count)}곳`, pct(r.percentOfTotal)]), '원자료 시도 표기별 치과병원 수')}${g.topCities.length ? `<h3>치과병원이 많은 시·군·구 ${fmt(g.topCities.length)}곳</h3>${table(['원자료 시도·시군구 표기', '치과병원 수'], g.topCities.map(c => [esc(c.label), `${fmt(c.count)}곳`]), '치과병원 수 상위 시·군·구')}<p class="subtle-note">기관 수가 많다는 뜻이며 지역의 진료 수준이나 접근성을 평가한 것이 아닙니다.</p>` : ''}</section>`;
+  const regions = `<section class="report-section"><h2>어느 지역에 있나요?</h2><p class="report-section-copy">원자료의 시도 표기를 그대로 집계했습니다. ‘전남광주’처럼 혼재된 표기는 현재 행정구역으로 재분류하지 않았습니다.</p>${table(['원자료 시도 표기', '치과병원 수', '전체 대비'], g.regions.map(r => [esc(r.sido), `${fmt(r.count)}곳`, pct(r.percentOfTotal)]), '원자료 시도 표기별 치과병원 수')}${g.topCities.length ? `<h3>치과병원이 많은 시·군·구 ${fmt(g.topCities.length)}곳</h3>${table(['원자료 시도·시군구 표기', '치과병원 수'], g.topCities.map(c => [esc(c.label), `${fmt(c.count)}곳`]), '치과병원 수 상위 시·군·구')}<p class="subtle-note">기관 수가 많다는 뜻이며 지역의 진료 수준이나 접근성을 평가한 것이 아닙니다.</p>` : ''}<a class="text-link" href="/reports/dental-hospital-districts/">시·군·구별 치과병원 분포 전체 보기 ${icon('arrow')}</a></section>`;
   const opening = `<section class="report-section"><h2>언제 개설됐나요?</h2><p class="report-section-copy">원자료 개설일의 연도입니다. 개설일은 현재 운영 여부를 뜻하지 않습니다.</p>${table(['개설 시기', '치과병원 수', '전체 대비'], g.opening.map(b => [esc(b.label), `${fmt(b.count)}곳`, pct(b.percentOfTotal)]), '개설 시기별 치과병원 수')}</section>`;
   const specialties = `<section class="report-section"><h2>과목별 전문의가 1명 이상 등록된 치과병원</h2><p class="report-section-copy">한 기관이 여러 과목에 포함될 수 있으므로 합계는 기관 수와 다릅니다. 과목 표시만 있고 전문의가 0명인 기관은 세지 않았습니다.</p>${g.specialties.length ? table(['진료과목', '전문의 1명 이상 등록 기관', '치과병원 전체 대비'], g.specialties.map(s => [`${esc(s.name)}<small>코드 ${esc(s.code)}</small>`, `${fmt(s.count)}곳`, pct(s.percentOfTotal)]), '과목별 전문의 등록 치과병원 수') : '<p class="subtle-note">과목별 전문의 등록 자료가 없어 산출 불가입니다.</p>'}</section>`;
   const blanks = `<section class="report-section report-reading"><h2>빈칸도 정보입니다</h2><p>치과병원 ${fmt(g.total)}곳 중 홈페이지 URL 형식이 유효한 곳은 ${fmt(h.website.count)}곳(${pct(h.website.percentOfTotal)}), 하루 이상 진료시간이 확인되는 곳은 ${fmt(h.hours.count)}곳(${pct(h.hours.percentOfTotal)})입니다. 나머지는 원자료가 비어 있는 것이지 홈페이지가 없거나 휴진이라는 뜻이 아닙니다.</p><a class="text-link" href="/guides/reading-data/">등록 정보 읽는 법 ${icon('arrow')}</a></section>`;
@@ -194,6 +195,74 @@ function registerDentalHospitalReports({ item, reports, page, put, domain, index
   });
 }
 
+// ---------- 시·군·구별 치과병원 분포 (district names are places; no institution names, ids or detail links) ----------
+const SIX_DIGITS = /^\d{6}$/;
+const KIND_SHORT = Object.freeze({ 시: '시', 군: '군', 구: '자치구' });
+const DISTRICT_DEFINITION_LABELS = Object.freeze({ population: '모집단', unit: '지역 단위', aliases: '중복 코드', kind: '시·군·구 구분', coverage: '치과병원 유무', concentration: '절반이 있는 지역', sido: '시도', noPopulation: '인구 대비' });
+const regionLink = source => SIX_DIGITS.test(source.sidoCode) && SIX_DIGITS.test(source.cityCode)
+  ? `<a href="/regions/${source.sidoCode}/${source.cityCode}/">${esc(source.city)}</a>` : esc(source.city);
+const placeName = unit => `${esc(unit.name)}<small>${esc(unit.sido)}</small>`;
+
+export function hospitalDistrictsFaq(g, reports) {
+  const gun = g.kinds.find(kind => kind.kind === '군');
+  const gunNames = g.gunWithHospital.map(unit => `${unit.name} ${fmt(unit.hospitals)}곳`).join(', ');
+  return [
+    { q: '치과병원이 없는 시·군·구는 몇 곳인가요?', a: `${reports.snapshotDate} 건강보험심사평가원 자료 기준 치과가 등록된 시·군·구 ${fmt(g.total)}곳 중 ${fmt(g.withoutHospital)}곳에는 치과병원이 없고 ${fmt(g.withHospital)}곳에 있습니다.${g.withoutHospital ? ` 치과병원이 없는 ${fmt(g.withoutHospital)}곳에도 치과의원은 모두 1곳 이상 등록되어 있습니다.` : ''}` },
+    { q: '군 지역에도 치과병원이 있나요?', a: gun?.total ? `군 ${fmt(gun.total)}곳 중 치과병원이 있는 곳은 ${fmt(gun.withHospital)}곳${gunNames ? `(${gunNames})` : ''}입니다.` : '이 자료에는 군 지역이 없어 산출 불가입니다.' },
+    { q: '치과병원이 없으면 치과 진료를 받기 어렵다는 뜻인가요?', a: '아니요. 치과병원과 치과의원은 의료법상 병원급과 의원급이라는 분류의 차이이며 진료의 질을 뜻하지 않습니다. 이 집계는 등록된 기관이 어느 지역에 있는지만 세며 접근성이나 진료 수준을 평가하지 않습니다.' },
+  ];
+}
+
+function hospitalDistrictsBody(item, g, reports, description, indexingEnabled, faq) {
+  const gun = g.kinds.find(kind => kind.kind === '군') ?? { total: 0, withHospital: 0, percentWith: null };
+  const c = g.concentration, w = g.withoutHospitalClinics;
+  const summary = `<div class="report-metrics"><div><span>치과병원이 있는 시·군·구</span><strong>${fmt(g.withHospital)}<small>/ ${fmt(g.total)}곳</small></strong><p>${pct(g.percentWith)} · 없는 곳 ${fmt(g.withoutHospital)}곳</p></div><div><span>치과병원이 있는 군</span><strong>${fmt(gun.withHospital)}<small>/ ${fmt(gun.total)}곳</small></strong><p>군 지역 대비 ${pct(gun.percentWith)}</p></div><div><span>치과병원 절반 이상이 있는 지역</span><strong>${c.units == null ? '산출 불가' : `${fmt(c.units)}<small>개 시·군·구</small>`}</strong><p>전국 치과병원 ${fmt(g.hospitals)}곳 중 ${fmt(c.hospitals)}곳 (${pct(c.percentOfHospitals)})</p></div></div>`;
+  const reading = `<section class="report-section report-reading"><h2>치과병원이 없는 곳에도 치과의원은 있습니다</h2>${!g.total ? '<p>집계할 시·군·구가 없어 산출 불가입니다.</p>' : w.units ? `<p>치과병원이 없는 ${fmt(w.units)}곳에는 치과의원이 모두 ${fmt(w.clinics)}곳 등록되어 있습니다. 지역별로는 ${fmt(w.minClinics)}곳부터 ${fmt(w.maxClinics)}곳까지입니다.</p>` : '<p>이 자료에서는 모든 시·군·구에 치과병원이 1곳 이상 등록되어 있습니다.</p>'}<p>이 집계는 치과가 1곳 이상 등록된 시·군·구만 세므로, 치과병원이 없는 지역도 모두 치과의원이 있는 지역입니다. 치과병원은 의료법상 병원급 의료기관이라는 분류이며 진료의 질이나 범위를 뜻하지 않습니다. 치과병원이 없다는 것을 치과 진료를 받기 어렵다는 뜻으로 읽으면 안 됩니다.</p><a class="text-link" href="/reports/dental-hospital-vs-clinic/">치과병원과 치과의원의 법적 차이 ${icon('arrow')}</a></section>`;
+  const kinds = `<section class="report-section"><h2>시·군·자치구로 나눠 보면</h2><p class="report-section-copy">같은 기준으로 시, 군, 자치구를 나눠 셌습니다. 각 비율의 분모는 해당 행의 시·군·구 수입니다.</p>${table(['구분', '시·군·구', '치과병원 있음', '치과병원 없음', '있는 곳의 비율'], g.kinds.map(k => [esc(k.label), `${fmt(k.total)}곳`, `${fmt(k.withHospital)}곳`, `${fmt(k.withoutHospital)}곳`, pct(k.percentWith)]), '시·군·구 종류별 치과병원 등록 여부')}${g.gunWithHospital.length ? `<p class="subtle-note">치과병원이 있는 군: ${g.gunWithHospital.map(u => `${esc(u.name)}(${esc(u.sido)}) ${fmt(u.hospitals)}곳`).join(', ')}. 지역명은 원자료 표기 그대로입니다.</p>` : ''}</section>`;
+  const sido = `<section class="report-section"><h2>시도별로 보면</h2><p class="report-section-copy">막대는 시도 안의 시·군·구 중 치과병원이 1곳 이상 있는 곳의 비율입니다. 시도 이름은 원자료 표기입니다.</p><div class="coverage-chart">${g.bySido.map(s => `<div class="coverage-chart-row"><span>${esc(s.sido)}</span><div class="coverage-track" aria-hidden="true"><span style="width:${s.percentWith ?? 0}%"></span></div><strong>${pct(s.percentWith)}</strong><small>${fmt(s.withHospital)} / ${fmt(s.total)}곳</small></div>`).join('')}</div>${table(['원자료 시도', '시·군·구', '치과병원 있음', '치과병원 없음', '치과병원', '치과의원'], g.bySido.map(s => [esc(s.sido), `${fmt(s.total)}곳`, `${fmt(s.withHospital)}곳<small>${pct(s.percentWith)}</small>`, `${fmt(s.withoutHospital)}곳`, s.hospitals && SIX_DIGITS.test(s.sidoCode) ? `<a href="/hospitals/${s.sidoCode}/">${fmt(s.hospitals)}곳</a>` : `${fmt(s.hospitals)}곳`, `${fmt(s.clinics)}곳`]), '시도별 치과병원 등록 시·군·구 수')}<p class="subtle-note">시도마다 시·군·구 수와 면적, 인구가 다릅니다. 비율이 낮다고 그 시도의 치과 진료 수준이 낮다는 뜻은 아닙니다.</p></section>`;
+  const spread = `<section class="report-section"><h2>시·군·구마다 치과병원은 몇 곳인가요?</h2><p class="report-section-copy">${c.units == null ? '치과병원이 없어 산출 불가입니다.' : `치과병원이 많은 곳부터 더하면 전국 ${fmt(g.hospitals)}곳의 절반 이상인 ${fmt(c.hospitals)}곳이 ${fmt(c.units)}개 시·군·구에 있습니다.`}</p>${table(['시·군·구별 치과병원 수', '시·군·구'], g.hospitalCountBuckets.map(b => [esc(b.label), `${fmt(b.units)}곳`]), '치과병원 등록 수별 시·군·구 수')}${g.manyHospitals.length ? `<h3>치과병원이 4곳 이상 등록된 시·군·구 ${fmt(g.manyHospitals.length)}곳</h3>${table(['시·군·구 (원자료 표기)', '구분', '치과병원', '치과의원'], g.manyHospitals.map(u => [placeName(u), esc(KIND_SHORT[u.kind]), `${fmt(u.hospitals)}곳`, `${fmt(u.clinics)}곳`]), '치과병원이 4곳 이상 등록된 시·군·구')}<p class="subtle-note">치과병원 수가 많은 순이며, 같으면 원자료 시도코드와 이름 순입니다. 기관 수를 센 것이며 지역의 진료 수준이나 접근성을 평가한 순위가 아닙니다.</p>` : ''}</section>`;
+  const list = `<section class="report-section" id="district-list"><h2>전체 시·군·구 목록</h2><p class="report-section-copy">시도를 펼치면 시·군·구마다 치과병원과 치과의원이 몇 곳인지 볼 수 있습니다. 오른쪽 지역명을 누르면 원자료 시군구코드별 치과 목록으로 이동합니다.</p>${g.bySido.map(s => `<details><summary>${esc(s.sido)} · 시·군·구 ${fmt(s.total)}곳 중 ${fmt(s.withHospital)}곳에 치과병원</summary>${table(['시·군·구 (원자료 표기)', '구분', '치과병원', '치과의원', '원자료 지역 목록'], g.units.filter(u => u.sidoCode === s.sidoCode).map(u => [esc(u.name), esc(KIND_SHORT[u.kind]), `${fmt(u.hospitals)}곳`, `${fmt(u.clinics)}곳`, u.sources.map(regionLink).join(' · ')]), `${s.sido} 시·군·구별 치과병원·치과의원 수`)}</details>`).join('')}</section>`;
+  const qa = `<section class="report-section" id="faq"><h2>짧게 묻고 답하기</h2><dl class="prose">${faq.map(({ q, a }) => `<dt><strong>${esc(q)}</strong></dt><dd>${esc(a)}</dd>`).join('')}</dl></section>`;
+  const merged = g.units.filter(u => u.merged || u.sources.length > 1);
+  const method = `<section id="report-methodology" class="report-section prose"><h2>집계 방법과 해석 범위</h2><ol>${Object.entries(g.definitions).map(([key, text]) => `<li><strong>${esc(DISTRICT_DEFINITION_LABELS[key] ?? key)}:</strong> ${esc(text)}.</li>`).join('')}</ol>${merged.length ? `<h3>합산한 원자료 코드</h3>${table(['시·군·구', '합산한 원자료 시도/시군구코드'], merged.map(u => [placeName(u), `<code>${u.sources.map(s => `${esc(s.sidoCode)}/${esc(s.cityCode)} ${esc(s.city)}`).join(', ')}</code>`]), '시·군·구 단위로 합산한 원자료 코드')}` : ''}<p>일반구를 합치지 않고 원자료 시군구코드 그대로 세면 ${fmt(g.codeLevel.total)}개 코드 중 ${fmt(g.codeLevel.withHospital)}개(${pct(g.codeLevel.percentWith)})에 치과병원이 있습니다. 두 방식의 수치는 모두 CSV에 있습니다.</p>${g.issues.length ? `<div class="notice">${g.issues.map(issue => esc(`${issue.kind === 'unplaced' ? `${issue.rows}행` : `${issue.sidoCode}/${issue.cityCode} ${issue.city ?? ''}`}: ${issue.note}`)).join('<br>')}</div>` : ''}<p>별도 표기하지 않은 비율은 해당 시·군·구 수 ÷ 분모 × 100이며 소수 첫째 자리로 반올림합니다. 가격·후기·실시간 운영·예약 가능 여부는 수집하지 않았습니다. 이 자료는 의료적 진단이나 치료 판단을 대체하지 않습니다.</p></section>`;
+  return `<article class="wrap report-article">${reportHeader(item, g, reports, description)}${summary}${registeredBanner}${reading}${kinds}${sido}${spread}${list}${qa}${method}${reportSource(reports, indexingEnabled, reportTitle(item, g))}</article>`;
+}
+
+function hospitalDistrictsCsv(g, reports) {
+  const rows = [CSV_HEADER], d = g.definitions;
+  // known = the row's own denominator and unknown = 0: every 시·군·구 either has a type-41 record or not.
+  const push = (scope, total, label, value, pTotal, unit, definition, limitation) => rows.push([reports.snapshotDate, scope, total, label, value, total, 0, pTotal ?? '', '', unit, definition, limitation, reports.sourceUrl, reports.sourceSha256]);
+  push('전국', g.total, '치과병원이 있는 시·군·구', g.withHospital, g.percentWith, '시·군·구', d.coverage, d.population);
+  push('전국', g.total, '치과병원이 없는 시·군·구', g.withoutHospital, percentage(g.withoutHospital, g.total), '시·군·구', d.coverage, d.population);
+  push('전국 (원자료 시군구코드 그대로)', g.codeLevel.total, '치과병원이 있는 시군구코드', g.codeLevel.withHospital, g.codeLevel.percentWith, '코드', d.coverage, '일반구를 합치지 않은 원자료 코드 기준');
+  for (const k of g.kinds) push(k.label, k.total, '치과병원이 있는 시·군·구', k.withHospital, k.percentWith, '시·군·구', d.coverage, d.kind);
+  for (const s of g.bySido) push(`시도 ${s.sido}`, s.total, '치과병원이 있는 시·군·구', s.withHospital, s.percentWith, '시·군·구', d.coverage, d.sido);
+  for (const b of g.hospitalCountBuckets) push('전국', g.total, `치과병원 ${b.label}인 시·군·구`, b.units, percentage(b.units, g.total), '시·군·구', d.unit, d.coverage);
+  push('전국 치과병원', g.hospitals, '치과병원 절반 이상이 있는 최소 시·군·구 수', g.concentration.units ?? '', null, '시·군·구', d.concentration, `포함된 치과병원 ${g.concentration.hospitals}곳`);
+  for (const u of g.units) {
+    const limitation = `구분 ${KIND_SHORT[u.kind]} · 원자료 시도/시군구코드 ${u.sources.map(s => `${s.sidoCode}/${s.cityCode}`).join(' ')}`;
+    push(`${u.sido} ${u.name}`, u.total, '치과병원 수', u.hospitals, null, '곳', d.unit, limitation);
+    push(`${u.sido} ${u.name}`, u.total, '치과의원 수', u.clinics, null, '곳', d.unit, limitation);
+  }
+  return rows;
+}
+
+function registerHospitalDistrictsReport({ item, reports, page, put, domain, indexingEnabled }) {
+  const g = reports.hospitalDistricts;
+  const gun = g.kinds.find(kind => kind.kind === '군');
+  const description = `${reports.snapshotDate} 심평원 자료에서 치과가 등록된 시·군·구 ${fmt(g.total)}곳 중 치과병원이 있는 곳은 ${fmt(g.withHospital)}곳(${pct(g.percentWith)}), 없는 곳은 ${fmt(g.withoutHospital)}곳입니다.${gun?.total ? ` 군 ${fmt(gun.total)}곳 중에서는 ${fmt(gun.withHospital)}곳에 있습니다.` : ''}${g.withoutHospital ? ' 치과병원이 없는 곳에도 치과의원은 등록되어 있습니다.' : ''}`;
+  const faq = hospitalDistrictsFaq(g, reports);
+  const exportData = { schemaVersion: reports.schemaVersion, title: reportTitle(item, g), snapshotDate: reports.snapshotDate, observedAt: reports.observedAt, sourceUrl: reports.sourceUrl, sourceSha256: reports.sourceSha256, attribution: reports.attribution, population: g.definitions.population, percentageNote: reports.percentageNote, regionIssues: reports.regionIssues, groupingNote: g.groupingNote, definitions: g.definitions, faq, scope: g };
+  put(dataPath(item, 'json').slice(1), JSON.stringify(exportData, null, 2));
+  put(dataPath(item, 'csv').slice(1), csv(hospitalDistrictsCsv(g, reports)));
+  const technique = '원자료 시군구코드별로 종별코드 41·51 기관 수를 세고, 일반구를 둔 시는 명시한 코드만 시 단위로 합산. 치과병원 1곳 이상 등록 여부로 시·군·구를 나누며 인구 대비 수치, 접근성, 진료 수준은 평가하지 않음.';
+  const schema = [datasetSchema({ item, g, reports, domain, description, technique }), { '@context': 'https://schema.org', '@type': 'FAQPage', '@id': domain + route(item) + '#faq', mainEntity: faq.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }];
+  page(route(item), {
+    title: reportTitle(item, g), description, current: 'reports', breadcrumb: [{ label: '데이터 리포트', url: '/reports/' }, { label: '시·군·구별 치과병원 분포' }],
+    schema, body: hospitalDistrictsBody(item, g, reports, description, indexingEnabled, faq),
+  });
+}
+
 // indexingEnabled: public/indexable build. operatorName: public operator shown in citations (falls back to the current value).
 export function registerReportPages({ page, put, reports, domain, clinics, assetInventory, yangjuArchives=[], indexingEnabled = false, operatorName = null }) {
   const yangju = Array.isArray(clinics) && assetInventory?.records
@@ -205,6 +274,7 @@ export function registerReportPages({ page, put, reports, domain, clinics, asset
   });
 
   for (const item of REPORTS) {
+    if (item.kind === 'hospitalDistricts') { registerHospitalDistrictsReport({ item, reports, page, put, domain, indexingEnabled }); continue; }
     if (item.kind) { registerDentalHospitalReports({ item, reports, page, put, domain, indexingEnabled }); continue; }
     const g = reports[item.group], northern = item.group === 'northernGyeonggi';
     const description = `${reports.snapshotDate} 자료에서 ${g.name} 치과 ${fmt(g.total)}곳 중 하루 이상 진료시간이 확인되는 기관은 ${fmt(g.metrics.hours.count)}곳(${pct(g.metrics.hours.percentOfTotal)})입니다.`;

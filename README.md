@@ -76,6 +76,7 @@ v0.3에서 이어지는 검증·조사 기능:
 - `/reports/national-data-coverage/`: 전국 등록 데이터 수록 현황
 - `/reports/northern-gyeonggi-hours/`: 경기북부 10개 시·군 등록시간 집계
 - `/reports/dental-hospitals/`: 치과병원(종별코드 41) 전수 집계 — 전문의·콘빔CT·지역·개설 시기·과목별 전문의·빈칸을 치과의원과 같은 정의로 비교. 집계값만 싣고 기관명·순위는 싣지 않음
+- `/reports/dental-hospital-districts/`: 시·군·구별 치과병원(41)·치과의원(51) 수와 치과병원이 있는 지역 수. 일반구를 둔 13개 시는 명시한 코드만 합산(`GENERAL_DISTRICT_CITIES`), 광주 동구·북구의 중복 코드는 표기가 같을 때만 합침(`DISTRICT_CODE_ALIASES`). 인구 대비·접근성은 산출하지 않음
 - `/reports/dental-hospital-vs-clinic/`: 치과병원과 치과의원의 법령상 구분(의료법 제3조·제3조의2), 외래 본인부담률, 2024년 종별가산율 축소를 출처·확인일과 함께 정리. 우열이 아니라 차이로 쓰며, 외부 사실은 `EXTERNAL_FACTS`(scripts/report-data.mjs)에 출처와 함께 둠
 - CSV·JSON 내려받기: 각 지표의 분모·정의·해석 제한·원본 SHA-256 포함
 - 리포트의 `Dataset` 구조화 데이터, sitemap 연결, `llms.txt`

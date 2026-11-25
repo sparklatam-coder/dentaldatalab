@@ -185,3 +185,61 @@ test('real snapshot reconciles with the source manifest and every city sum', () 
     }
   }
 });
+
+test('district coverage merges only listed 일반구 codes and label-matched duplicate codes, and flags the rest', () => {
+  const at = (sidoCode, sido, cityCode, city, typeCode = '51') => clinic({ sidoCode, sido, cityCode, city, typeCode });
+  const g = collectReports(deepFreeze([
+    at('310000', '경기', '310601', '수원권선구', '41'),
+    at('310000', '경기', '310602', '수원장안구'),
+    at('310000', '경기', '310605', '수원신설구'),
+    at('310000', '경기', '310001', '가평군'),
+    at('110000', '서울', '110001', '강남구', '41'),
+    at('110000', '서울', '110001', '강남구', '41'),
+    at('360000', '전남광주', '360801', '광주동구'),
+    at('240000', '광주', '240001', '광주동구', '41'),
+    at('240000', '광주', '240002', '다른표기'),
+  ]), metadata).hospitalDistricts;
+  const byName = Object.fromEntries(g.units.map(unit => [unit.name, unit]));
+  assert.deepEqual(byName['수원시'].cityCodes, ['310601', '310602'], 'only the listed Suwon codes are merged');
+  assert.equal(byName['수원시'].kind, '시');
+  assert.equal(byName['수원시'].total, 2);
+  assert.equal(byName['수원신설구'].merged, false, 'an unlisted code is never merged by guesswork');
+  assert.deepEqual(g.issues.map(issue => [issue.kind, issue.cityCode]), [['unlisted-general-district', '310605']]);
+  assert.deepEqual(byName['광주동구'].sources.map(source => `${source.sidoCode}/${source.cityCode}`), ['240000/240001', '360000/360801']);
+  assert.equal(byName['광주동구'].sidoCode, '360000');
+  assert.equal(byName['광주동구'].hospitals, 1);
+  assert.equal(byName['다른표기'].sidoCode, '240000', 'a duplicate code with another label stays where the source put it');
+  assert.deepEqual(g.aliasesApplied, [{ from: '240000/240001', to: '360000/360801', city: '광주동구', rows: 1 }]);
+  assert.equal(byName['가평군'].kind, '군');
+  assert.equal(byName['강남구'].kind, '구');
+  assert.deepEqual({ total: g.total, withHospital: g.withHospital, withoutHospital: g.withoutHospital, hospitals: g.hospitals, clinics: g.clinics }, { total: 6, withHospital: 3, withoutHospital: 3, hospitals: 4, clinics: 5 });
+  assert.deepEqual(g.codeLevel, { total: 7, withHospital: 3, withoutHospital: 4, percentWith: 42.9 }, 'code-level count keeps 일반구 apart but still applies the alias');
+  assert.deepEqual(g.concentration, { units: 1, hospitals: 2, percentOfHospitals: 50 }, '강남구 alone holds half of the four hospitals');
+  assert.deepEqual(g.withoutHospitalClinics, { units: 3, clinics: 3, minClinics: 1, maxClinics: 1 });
+  assert.deepEqual(g.gunWithHospital, []);
+  assert.deepEqual(g.kinds.map(kind => [kind.kind, kind.total, kind.withHospital]), [['시', 2, 1], ['군', 1, 0], ['구', 3, 2]], 'a label without 군/구 suffix counts as 시');
+  assert.equal(g.units.reduce((sum, unit) => sum + unit.total, 0), 9, 'every row lands in exactly one district');
+  assert.equal(JSON.stringify(g).includes('개별 기관명'), false, 'district aggregates never carry institution names');
+});
+
+test('real snapshot district coverage reconciles with every institution', () => {
+  const source = JSON.parse(fs.readFileSync(new URL('../data/clinics.json', import.meta.url), 'utf8'));
+  const g = collectReports(source.clinics, { ...source, sourceSha256: 'real' }).hospitalDistricts;
+  assert.equal(g.hospitals, source.clinics.filter(c => c.typeCode === '41').length);
+  assert.equal(g.clinics, source.clinics.filter(c => c.typeCode === '51').length);
+  assert.equal(g.units.reduce((sum, unit) => sum + unit.total, 0), source.clinics.length);
+  assert.equal(g.withHospital + g.withoutHospital, g.total);
+  assert.equal(g.bySido.reduce((sum, sido) => sum + sido.total, 0), g.total);
+  assert.equal(g.kinds.reduce((sum, kind) => sum + kind.total, 0), g.total);
+  assert.equal(g.hospitalCountBuckets.reduce((sum, bucket) => sum + bucket.units, 0), g.total);
+  assert.deepEqual(g.issues, [], 'every 일반구-like source code is either listed or absent');
+  if (source.snapshotDate === '2026-09-30') {
+    assert.deepEqual([g.total, g.withHospital, g.withoutHospital], [230, 102, 128]);
+    assert.deepEqual(g.kinds.map(kind => [kind.kind, kind.total, kind.withHospital]), [['시', 78, 44], ['군', 82, 4], ['구', 70, 54]]);
+    assert.deepEqual(g.gunWithHospital.map(unit => unit.name), ['부산기장군', '태안군', '무안군', '함평군']);
+    assert.deepEqual(g.codeLevel, { total: 256, withHospital: 116, withoutHospital: 140, percentWith: 45.3 });
+    assert.deepEqual(g.concentration, { units: 24, hospitals: 126, percentOfHospitals: 50.8 });
+    assert.deepEqual(g.withoutHospitalClinics, { units: 128, clinics: 4324, minClinics: 1, maxClinics: 235 });
+    assert.equal(g.aliasesApplied.reduce((sum, alias) => sum + alias.rows, 0), 2);
+  }
+});
