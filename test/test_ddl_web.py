@@ -122,6 +122,18 @@ class RedirectTests(unittest.TestCase):
         self.assertEqual((response.read(), response.url), (b'done', 'https://other.test/final'))
         self.assertEqual([c.args[0] for c in validate.call_args_list], ['https://start.test/next', 'https://other.test/final'])
 
+    def test_permanent_308_redirect_is_followed_like_307(self):
+        # Python 3.9 urllib has no 308 support; clinic sites use it for http→https upgrades.
+        responses = [lambda url: canned(url, 308, location='https://other.test/final'), lambda url: canned(url, 200, b'done')]
+        with patch.object(web, 'resolve_public', wraps=web.resolve_public) as validate:
+            calls, response = self.run_opener({'start.test': [PUBLIC], 'other.test': ['8.8.8.8']}, responses)
+        self.assertEqual(calls, ['https://start.test/', 'https://other.test/final'])
+        self.assertEqual((response.read(), response.url), (b'done', 'https://other.test/final'))
+        self.assertEqual([c.args[0] for c in validate.call_args_list], ['https://other.test/final'])
+        # A 308 to a private target is still refused before any second request.
+        with self.assertRaisesRegex(ValueError, 'non_public_ip'):
+            self.run_opener({'start.test': [PUBLIC], 'internal.test': ['10.1.2.3']}, [lambda url: canned(url, 308, location='https://internal.test/')])
+
     def test_redirect_to_non_http_scheme_is_refused(self):
         responses = [lambda url: canned(url, 302, location='file:///etc/passwd')]
         with self.assertRaises((ValueError, urllib.error.URLError)):

@@ -153,10 +153,13 @@ class PinnedHTTPSHandler(urllib.request.HTTPSHandler):
 class RevalidatingRedirect(urllib.request.HTTPRedirectHandler):
     """Validate every redirect target before the next (pinned) connection."""
     max_redirections = 5
+    # Python < 3.11 urllib knows 301/302/303/307 only; 308 (permanent, method-preserving) is common
+    # for http→https upgrades and was being recorded as an unretryable http_error.
+    http_error_308 = urllib.request.HTTPRedirectHandler.http_error_302
 
     def redirect_request(self, req, fp, code, msg, headers, newurl):
         resolve_public(newurl)
-        return super().redirect_request(req, fp, code, msg, headers, newurl)
+        return super().redirect_request(req, fp, 307 if code == 308 else code, msg, headers, newurl)
 
 
 def build_opener(redirect_handler=None):
