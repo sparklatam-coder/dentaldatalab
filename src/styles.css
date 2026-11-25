@@ -242,3 +242,38 @@ h1,h2,h3,.asset-summary-card h2,.card h3{overflow-wrap:anywhere}.sr-only{positio
 @media(max-width:760px){.hero-searchbox input{font-size:16px}.hero-searchbox button{padding:11px 16px}.hero-chips a{font-size:13px;padding:7px 12px}}
 /* Clinic aside: invitation for the clinic's own staff. */
 .owner-cta{background:#fff;border:1px dashed #d2d2d7}.owner-cta h3{margin-top:0}.owner-cta p{font-size:13px;color:#6e6e73}
+/* Find: on phones the advanced filters fold under "상세 조건" so results start on the first screen. */
+.filter-more>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:48px;margin:4px 0 8px;border-top:1px solid var(--hairline,#e5e5ea);font-weight:600;font-size:15px;color:#1d1d1f}.filter-more>summary::-webkit-details-marker{display:none}.filter-more>summary small{font-weight:400;font-size:12px;color:#6e6e73;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.filter-more>summary::after{content:'+';font-size:22px;font-weight:400;color:var(--accent,#0071e3);line-height:1}.filter-more[open]>summary::after{content:'−'}
+@media(min-width:761px){.filter-more>summary{display:none}}
+/* Mobile pass (≤760px): 12px text floor, ≥40px touch targets for standalone controls, compact condition lists. */
+@media(max-width:760px){
+.header-inner::after{content:''}
+.mini-label,.stat-label,.eyebrow,.section-head .eyebrow,.pill,.count-dot,.region-item span,.card-top .mini-label,.card-facts small,.source-tiny,.guide-card small,.filter-note,.results-head span,.fact-table small,.fact-table button,.meta-list div,.source-list p,.metric span,.timeline time,.coverage-legend,.report-card-bottom,.report-metrics p,.report-table thead th,.report-table small,.coverage-chart-row small,.report-source code,.condition-links a,.question-meta .mini-label,.question-foot,.clinic-hours>.pill-row,.condition-table small,.quick-action small,.asset-metrics .metric p,.asset-totals span,.asset-kind-tags span,.asset-item-head .pill,.asset-url,.asset-body-status,.asset-item details,.naver-observation>.pill-row,.asset-field-value,.comparison th:first-child,.comparison td small,.footer-note,.footer-links,.section-head>.text-link,#marketing-assets .section-head>a,.bread,.preview-strip .wrap,li small,th small{font-size:12px}
+.quick-action.primary small{font-size:14px}
+code{overflow-wrap:anywhere;word-break:break-all}
+.bread a{padding:12px 3px;margin:-12px -3px}
+.footer-links a{padding:10px 0}
+.text-link{min-height:40px}
+.btn.small,.pagination a,.pagination button{min-height:44px}
+.compare-button{min-height:40px;padding:8px 14px}
+.hero-chips a{min-height:40px}
+.fact-table button,button[data-source]{padding-block:9px}
+.channel-evidence summary,.channel-facts summary,.question-evidence summary,.hours-original summary,.hours-registered summary,.asset-method summary,.data-details summary,details:not([class])>summary{padding-block:11px}
+.channel-link a{display:inline-block;padding-block:10px}
+.district-list li{padding:0}.district-list a{flex:1;padding:11px 0}.district-list span{align-self:center}
+.filter-panel .check{display:flex;align-items:center;gap:10px;min-height:44px;margin:0}.filter-panel .check input{width:20px;height:20px;margin:0}
+.fact-panel{padding:22px 18px;border-radius:18px}.fact-table th{width:30%}
+.clinic-card h3 a{display:block;padding-block:9px;margin-block:-9px}.question-answer>summary{min-height:44px}
+.condition-table th[scope=row] a{display:inline-block;padding-block:10px;margin-block:-10px}
+/* Condition lists: one compact row per clinic — name, then 동 · 등록시간, call button on the right. */
+.condition-table tr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"name name tel" "place detail tel";column-gap:8px;row-gap:3px;align-items:center;padding:12px 0}
+.condition-table th[scope=row]{grid-area:name;padding:0}
+.condition-table td{display:block;padding:0;font-size:14px}
+.condition-table td::before{content:none}
+.condition-table td:nth-of-type(1){grid-area:place;color:#6e6e73;max-width:9em}
+.condition-table td:nth-of-type(1)::after{content:'·';margin-left:8px;color:#aeaeb2}
+.condition-table td.condition-evidence{grid-area:detail}
+.condition-table td:nth-of-type(3){grid-area:tel;justify-self:end}
+.condition-table td:nth-of-type(3) a{display:inline-flex;align-items:center;min-height:40px;padding:0 12px;border:1px solid #d2d2d7;border-radius:999px;font-size:13px;font-weight:600}
+.condition-table td:nth-of-type(3):not(:has(a)){font-size:12px;color:#6e6e73}
+}
