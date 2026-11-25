@@ -61,7 +61,7 @@ const naverCoverageMap=new Map(naverHoursCoverage.records.map(r=>[r.clinicId,r])
 for(const r of assetInventory.records){const status=naverCoverageMap.get(r.clinicId);r.naverHoursStatus={stage:status.stage,nextAction:status.nextAction,sourceUrls:status.sourceUrls,searchUrl:status.searchUrl,checkedAt:status.checkedAt};}
 const clinicAssetMap=new Map(assetInventory.records.map(r=>[r.clinicId,r]));
 // Thin-page index tier (THIN_CLINIC_POLICY in seo.mjs). Demotions must be registered before the first page renders:
-// robotsMeta inside shell() and sitemapXml below both read this registry. Under the 'index' policy the list is empty.
+// robotsMeta inside shell() and sitemapFiles below both read this registry. Under the 'index' policy the list is empty.
 const seoIndexing=thinClinicPlan(clinics,{assetRecords:clinicAssetMap,naverStages:new Map(naverHoursCoverage.records.map(r=>[r.clinicId,r.stage]))});
 setNoindexRoutes(seoIndexing.noindexRoutes);
 const directoryFile=path.join(root,'data/research/naver-national-directory.json');
