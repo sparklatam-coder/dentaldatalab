@@ -68,9 +68,9 @@ export function directoryPagination(base, current, total) {
     last = page;
     return `${gap}<a href="${url(page)}" aria-label="${page}페이지" ${page === current ? 'aria-current="page"' : ''}>${page}</a>`;
   }).join('');
-  return `<nav class="pagination" aria-label="시군구 치과 목록 페이지">${current > 1 ? `<a href="${url(current - 1)}" aria-label="이전 목록: ${current - 1}페이지">이전</a>` : ''}${numbered}${current < total ? `<a href="${url(current + 1)}" aria-label="다음 목록: ${current + 1}페이지">다음</a>` : ''}</nav>`;
+  return `<nav class="pagination" aria-label="시·군·구 치과 목록 페이지">${current > 1 ? `<a href="${url(current - 1)}" aria-label="이전 목록: ${current - 1}페이지">이전</a>` : ''}${numbered}${current < total ? `<a href="${url(current + 1)}" aria-label="다음 목록: ${current + 1}페이지">다음</a>` : ''}</nav>`;
 }
 
 export function clinicDirectoryLinks(clinic) {
-  return `<div class="fact-panel"><h3>이 지역 치과와 자료 확인</h3><p><a class="text-link" href="/regions/${esc(clinic.sidoCode)}/${esc(clinic.cityCode)}/">${esc(clinic.city)} 치과 전체 목록</a></p><p><a class="text-link" href="/regions/${esc(clinic.sidoCode)}/">${esc(clinic.sido)} 시군구별 치과</a></p><p><a class="text-link" href="#basic">주소·신고 전화 확인</a> · <a class="text-link" href="#hours">출처별 진료시간 자료</a></p><p><a class="text-link" href="#marketing-assets">홈페이지·네이버지도·채널 확인</a></p></div>`;
+  return `<div class="fact-panel"><h3>이 지역 치과와 자료 확인</h3><p><a class="text-link" href="/regions/${esc(clinic.sidoCode)}/${esc(clinic.cityCode)}/">${esc(clinic.city)} 치과 전체 목록</a></p><p><a class="text-link" href="/regions/${esc(clinic.sidoCode)}/">${esc(clinic.sido)} 시·군·구별 치과</a></p><p><a class="text-link" href="#basic">주소·신고 전화 확인</a> · <a class="text-link" href="#hours">출처별 진료시간 자료</a></p><p><a class="text-link" href="#marketing-assets">홈페이지·네이버지도·채널 확인</a></p></div>`;
 }
