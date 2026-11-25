@@ -20,6 +20,7 @@ import {loadSearchGuide,registerSearchSourcePage} from './search-source-pages.mj
 import {buildNaverHoursCoverage} from './naver-hours-coverage.mjs';
 import {clinicHoursPanel} from './clinic-hours.mjs';
 import {loadAssetInventory} from './clinic-assets.mjs';
+import {registerInfoCardPages} from './hospital-info-card.mjs';
 import {registerClinicAssetsPages,clinicAssetsPanel,observedWebsiteRow} from './clinic-assets-pages.mjs';
 import {registerHospitalPages} from './hospital-pages.mjs';
 import {registerAnswerPages,answerCards,answerRoute,SHORT_ANSWERS} from './answer-pages.mjs';
@@ -85,6 +86,7 @@ registerReportPages({page,put,reports:reportData,domain,clinics,assetInventory,y
 registerHospitalPages({page,clinics,domain,snapshotDate:snapshot,indexingEnabled});
 registerAnswerPages({page,clinics,snapshotDate:snapshot,domain});
 registerSearchStatusPage({page,put,status:searchStatus});
+registerInfoCardPages({page,put,clinics,domain,snapshotDate:snapshot});
 registerDataQualityPage({page,put,report:dataQuality});
 registerVerificationPage({page,put,verification,channelResearched:assetInventory.summary.manuallyResearched});
 registerClinicAssetsPages({page,put,inventory:assetInventory,assetVersion,coverage:naverHoursCoverage,directory:naverDirectory});
