@@ -2,8 +2,10 @@
 // Monthly growth ledger for the phased plan: AI-citation checks, institution-name searches and the four phase gates.
 // The fixed definition is data/content/growth-monitor.json; one hand-recorded file per month lives in
 // data/content/growth-observations/YYYY-MM.json. Nothing here opens a search engine or any other network resource:
-// a person (or a browser session) makes the observations by following docs/growth-monitor.md and this script only
-// creates the blank month file, validates what was written and summarises it.
+// a person, or scripts/growth-observe.mjs driving a browser, makes the observations by following docs/growth-monitor.md
+// and this script only creates the blank month file, validates what was written and summarises it.
+// A month file may carry an optional `run` object written by the observer (last run, completion, per-engine outcome,
+// warnings such as "extractor may be stale"); a hand-recorded file simply has none.
 // A cell that was not measured stays null and is never counted as false, 0 or "not cited".
 // The name sample is only a list of names to search; nothing here scores or ranks an institution.
 // Usage:
@@ -34,6 +36,10 @@ const CRITERION_TYPES = ['inputAtLeast', 'inputIncreasedFromPreviousMonth', 'nam
 const AI_CELL_KEYS = ['answerShown', 'cited', 'citedUrls', 'otherDomains', 'note'];
 const NAME_CELL_KEYS = ['rank', 'url'];
 const OBSERVATION_KEYS = ['schemaVersion', 'definitionVersion', 'origin', 'month', 'observedOn', 'observer', 'conditions', 'notes', 'gateInputs', 'aiCitations', 'nameSearch'];
+const RUN_KEYS = ['tool', 'lastRunAt', 'completedAt', 'engineStatus', 'warnings'];
+/** ok: every cell of the engine is recorded · partial: cells are left · stopped: a stop condition ended the run · blocked: a precondition failed. */
+export const ENGINE_RUN_STATUSES = Object.freeze(['ok', 'partial', 'stopped', 'blocked']);
+export const RUN_WARNING_CODES = Object.freeze(['extractor_may_be_stale', 'few_results_parsed', 'conditions_changed']);
 
 const isPlain = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const hasExactKeys = (value, keys) => isPlain(value) && Object.keys(value).length === keys.length && keys.every(key => Object.hasOwn(value, key));
@@ -237,9 +243,58 @@ export function nameCellProblems(cell) {
   return isSiteUrl(cell.url) ? [] : [`url must be the ranked ${ORIGIN}/… result without query or fragment`];
 }
 
+/** A UTC instant exactly as Date#toISOString writes it, e.g. 2026-11-26T05:12:00.000Z. */
+export const isInstant = value => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(value)
+  && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString() === value;
+
+const rowsOf = obs => [...(Array.isArray(obs?.aiCitations) ? obs.aiCitations : []), ...(Array.isArray(obs?.nameSearch) ? obs.nameSearch : [])];
+/** True once every (question × engine) and (institution × engine) cell is recorded. Gate inputs are not part of it. */
+export const isMonthComplete = obs => rowsOf(obs).length > 0 && rowsOf(obs).every(row => isPlain(row?.cells) && Object.values(row.cells).every(cell => cell !== null));
+
+/**
+ * The optional `run` object the observer writes: {tool, lastRunAt, completedAt, engineStatus, warnings}.
+ * completedAt may only be set when no cell is left null, and an engine may only be 'ok' when all of its cells are
+ * recorded, so "complete" can never hide an unmeasured cell.
+ */
+export function runProblems(run, def, obs) {
+  if (!hasExactKeys(run, RUN_KEYS)) return [`run must be an object with exactly: ${RUN_KEYS.join(', ')}`];
+  const problems = [];
+  if (!hasText(run.tool)) problems.push('run.tool must name the tool that wrote it');
+  if (!isInstant(run.lastRunAt)) problems.push('run.lastRunAt must be a UTC instant such as 2026-11-26T05:12:00.000Z');
+  if (run.completedAt !== null && !isInstant(run.completedAt)) problems.push('run.completedAt must be null or a UTC instant');
+  else if (run.completedAt !== null && !isMonthComplete(obs)) problems.push('run.completedAt is set although cells are still null');
+
+  const engines = allEngineIds(def);
+  if (!hasExactKeys(run.engineStatus, engines)) problems.push(`run.engineStatus must hold exactly ${engines.join(', ')}`);
+  else for (const id of engines) {
+    const entry = run.engineStatus[id];
+    if (entry === null) continue;
+    const at = `run.engineStatus.${id}`;
+    if (!hasExactKeys(entry, ['status', 'note']) || !ENGINE_RUN_STATUSES.includes(entry.status) || !(entry.note === null || hasText(entry.note))) {
+      problems.push(`${at} must be null or {status: ${ENGINE_RUN_STATUSES.join(' | ')}, note}`);
+      continue;
+    }
+    if (['stopped', 'blocked'].includes(entry.status) && entry.note === null) problems.push(`${at}.note must say why the engine was ${entry.status}`);
+    const cells = rowsOf(obs).filter(row => isPlain(row?.cells) && Object.hasOwn(row.cells, id)).map(row => row.cells[id]);
+    if (entry.status === 'ok' && cells.some(cell => cell === null)) problems.push(`${at}.status is ok although ${id} cells are still null`);
+  }
+
+  if (!Array.isArray(run.warnings)) problems.push('run.warnings must be a list');
+  else {
+    run.warnings.forEach((warning, i) => {
+      const ok = hasExactKeys(warning, ['code', 'engine', 'message']) && RUN_WARNING_CODES.includes(warning.code)
+        && (warning.engine === null || engines.includes(warning.engine)) && hasText(warning.message);
+      if (!ok) problems.push(`run.warnings[${i}] must be {code: ${RUN_WARNING_CODES.join(' | ')}, engine, message}`);
+    });
+    if (!unique(run.warnings.map(warning => `${warning?.code}/${warning?.engine}`))) problems.push('run.warnings must hold one entry per code and engine');
+  }
+  return problems;
+}
+
 /** Strict check of one month file against the definition. `month` is the month the file name promises. */
 export function observationProblems(obs, def, { month = null } = {}) {
-  if (!hasExactKeys(obs, OBSERVATION_KEYS)) return [`the file must be an object with exactly: ${OBSERVATION_KEYS.join(', ')}`];
+  const keys = isPlain(obs) && Object.hasOwn(obs, 'run') ? [...OBSERVATION_KEYS, 'run'] : OBSERVATION_KEYS;
+  if (!hasExactKeys(obs, keys)) return [`the file must be an object with exactly: ${OBSERVATION_KEYS.join(', ')} (plus an optional run)`];
   const problems = [];
   if (obs.schemaVersion !== 1) problems.push('schemaVersion must be 1');
   if (obs.definitionVersion !== def.definitionVersion) problems.push(`definitionVersion must be ${def.definitionVersion}`);
@@ -283,6 +338,7 @@ export function observationProblems(obs, def, { month = null } = {}) {
   const anyInput = inputsOk && inputIds.some(id => obs.gateInputs[id] !== null);
   if ((measuredEngines.size || anyInput) && (obs.observedOn === null || obs.observer === null)) problems.push('observedOn and observer are required once anything is recorded');
   if (conditionsOk) for (const id of measuredEngines) if (obs.conditions[id] === null) problems.push(`conditions.${id} is required because ${id} cells are recorded`);
+  if (Object.hasOwn(obs, 'run')) problems.push(...runProblems(obs.run, def, obs));
   return problems;
 }
 
@@ -363,6 +419,8 @@ export function summarizeMonth(def, obs, previous = null) {
   }
   return {
     month: obs.month, recorded: true, observedOn: obs.observedOn, observer: obs.observer,
+    complete: isMonthComplete(obs),
+    run: obs.run ? { lastRunAt: obs.run.lastRunAt, completedAt: obs.run.completedAt, engineStatus: obs.run.engineStatus, warnings: obs.run.warnings } : null,
     aiCitations: { engines: aiEngines, otherDomains: ranked(domains) },
     nameSearch: { engines: nameEngines },
     gateInputs: { ...obs.gateInputs },
@@ -439,6 +497,7 @@ export function summarize(def, observations) {
 }
 
 const STATUS_LABEL = { [MET]: '충족', [NOT_MET]: '미달', [NOT_MEASURED]: '측정 안 됨' };
+const RUN_STATUS_LABEL = { ok: '모든 칸 기록', partial: '일부만 기록', stopped: '중단', blocked: '막힘' };
 // Hangul and other full-width characters take two terminal columns.
 const displayWidth = text => [...text].reduce((width, ch) => width + (/[ᄀ-ᅟ⺀-꓏가-힣豈-﫿︰-﹏＀-｠￠-￦]/.test(ch) ? 2 : 1), 0);
 const table = rows => {
@@ -486,6 +545,20 @@ export function formatSummary(summary) {
     : rule.applies === false ? `아직 적용 안 됨 — ${rule.phase}단계(${phase.name}) 미달 연속 ${rule.consecutiveNotMet}개월 (${rule.maxMonthsBelowGate}개월을 넘으면 적용)`
     : `판정 불가 — ${rule.phase}단계(${phase.name}) 기준을 아직 측정하지 않았습니다`;
   lines.push('', `[멈춤 규칙] “${rule.text}”`, `현재 단계: ${rule.phase === null ? '없음' : `${rule.phase} ${phase.name}`}`, verdict);
+
+  const automated = recorded.filter(m => m.run);
+  if (automated.length) {
+    const labels = Object.fromEntries(Object.entries({ ...automated[0].aiCitations.engines, ...automated[0].nameSearch.engines }).map(([id, engine]) => [id, engine.label]));
+    const label = id => labels[id] ?? id;
+    lines.push('', '[자동 실행] scripts/growth-observe.mjs 가 남긴 기록 · 엔진 상태는 마지막 실행 기준');
+    for (const m of automated) {
+      // Instants are stored in UTC; they are shown as such so the day is never mistaken for the local observedOn.
+      const utc = instant => `${instant.slice(0, 10)} ${instant.slice(11, 16)} UTC`;
+      lines.push(`${m.month}: ${m.run.completedAt ? `모든 칸 기록 완료(${utc(m.run.completedAt)})` : '아직 빈 칸 있음'} · 마지막 실행 ${utc(m.run.lastRunAt)}`);
+      for (const [id, entry] of Object.entries(m.run.engineStatus)) if (entry) lines.push(`  ${label(id)}: ${RUN_STATUS_LABEL[entry.status]}${entry.note ? ' — ' + entry.note : ''}`);
+      for (const warning of m.run.warnings) lines.push(`  주의 · ${warning.engine ? label(warning.engine) + ': ' : ''}${warning.message}`);
+    }
+  }
   return lines.join('\n');
 }
 
@@ -534,7 +607,7 @@ function main(argv) {
       const problems = observationProblems(obs, def, { month });
       if (problems.length) return { file, month, valid: false, problems };
       const cells = [...obs.aiCitations, ...obs.nameSearch];
-      return { file, month, valid: true, measuredCells: count(cells, cell => cell !== null), unmeasuredCells: count(cells, cell => cell === null), gateInputsRead: Object.values(obs.gateInputs).filter(v => v !== null).length };
+      return { file, month, valid: true, measuredCells: count(cells, cell => cell !== null), unmeasuredCells: count(cells, cell => cell === null), gateInputsRead: Object.values(obs.gateInputs).filter(v => v !== null).length, complete: isMonthComplete(obs), runWarnings: obs.run ? obs.run.warnings.map(warning => `${warning.engine ?? 'file'}: ${warning.message}`) : [] };
     });
     print(results);
     if (results.some(result => !result.valid)) process.exitCode = 1;
