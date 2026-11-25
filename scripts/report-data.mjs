@@ -7,6 +7,13 @@ import { DAYS, WEEKDAYS, percentage } from './common.mjs';
  * JSON export show the source next to every row. sourceKind 'secondary' rows were not yet
  * compared with the primary 고시 text and are labelled so wherever they are displayed.
  */
+/** The quarter-end date after a snapshot date (HIRA files are 03-31, 06-30, 09-30, 12-31 snapshots). */
+export function nextQuarterEnd(date) {
+  const [y, m] = String(date).split('-').map(Number);
+  const q = Math.floor((m - 1) / 3) + 1, ny = q === 4 ? y + 1 : y, nq = q === 4 ? 1 : q + 1;
+  return `${ny}-${['03-31', '06-30', '09-30', '12-31'][nq - 1]}`;
+}
+
 export const EXTERNAL_FACTS = Object.freeze([
   {
     id: 'medical-service-act-3-2', topic: '법적 구분', title: '의료법 제3조 제2항 (의료기관의 구분)',
@@ -130,7 +137,7 @@ function dentalHospitals(clinics) {
       others: { count: others.length, specialist: distribution(others.map(clinic => clinic.doctors?.specialist)) },
     },
     regions: [...countBy(hospitals, clinic => clinic.sido)].sort(byCountThenLabel).map(([sido, count]) => ({ sido, count, percentOfTotal: percentage(count, total) })),
-    topCities: [...countBy(hospitals, clinic => clinic.sido && clinic.city ? `${clinic.sido} ${clinic.city}` : null)].sort(byCountThenLabel).slice(0, 5).map(([label, count]) => ({ label, count })),
+    topCities: hospitalDistricts(clinics).units.filter(unit => unit.hospitals > 0).map(unit => [`${unit.sido} ${unit.name}`, unit.hospitals]).sort(byCountThenLabel).slice(0, 5).map(([label, count]) => ({ label, count })),
     opening: [
       ...OPENING_BUCKETS.map(bucket => ({ id: bucket.id, label: bucket.label, count: openingYears.filter(year => year !== null && bucket.test(year)).length })),
       { id: 'unknown', label: '미확인', count: openingYears.filter(year => year === null).length },
@@ -173,7 +180,7 @@ export const DISTRICT_CODE_ALIASES = Object.freeze([
 
 export const DISTRICT_DEFINITIONS = Object.freeze({
   population: '심평원 종별코드 41(치과병원)·51(치과의원)이 1곳 이상 등록된 시·군·구. 치과가 한 곳도 등록되지 않은 지역은 집계에 나타나지 않음',
-  unit: '원자료 시군구코드마다 1곳으로 세되, 일반구를 둔 13개 시는 명시한 일반구 코드를 시 하나로 합산. 제주시·서귀포시(행정시)와 세종시도 각각 1곳으로 셈',
+  unit: `원자료 시군구코드마다 1곳으로 세되, 일반구를 둔 ${GENERAL_DISTRICT_CITIES.length}개 시는 명시한 일반구 코드를 시 하나로 합산. 제주시·서귀포시(행정시)와 세종시도 각각 1곳으로 셈`,
   aliases: '광주 동구·북구는 원자료에 시도코드 240000(시군구코드 240001·240002)과 360000(360801·360802) 두 가지로 나타남. 시군구 표기가 같은 행만 360000 쪽으로 합치고 그 밖의 표기는 원문대로 둠',
   kind: '지역명 끝 글자로 구분. 일반구를 합친 시, 세종시, 제주 행정시는 시이고 합치지 않은 구는 자치구',
   coverage: '종별코드 41 기관이 1곳 이상 등록되어 있는지 여부. 치과병원이 없다는 것은 원자료에 41 기관이 없다는 뜻이며 치과 진료를 받을 수 없다는 뜻이 아님',
@@ -269,7 +276,7 @@ function hospitalDistricts(clinics) {
       ...(unplaced ? [{ kind: 'unplaced', rows: unplaced, note: '시도·시군구코드가 없어 지역에 넣지 못한 행입니다.' }] : []),
     ],
     units: list,
-    groupingNote: '원자료 시군구코드 단위. 일반구를 둔 13개 시는 명시한 일반구 코드만 합산하고, 광주 동구·북구의 시도코드 240000 행(240001·240002)은 시군구 표기가 같아 360000의 360801·360802와 합침. 그 밖의 지역 표기는 원문대로 둠',
+    groupingNote: `원자료 시군구코드 단위. 일반구를 둔 ${GENERAL_DISTRICT_CITIES.length}개 시는 명시한 일반구 코드만 합산하고, 광주 동구·북구의 시도코드 240000 행(240001·240002)은 시군구 표기가 같아 360000의 360801·360802와 합침. 그 밖의 지역 표기는 원문대로 둠`,
     definitions: DISTRICT_DEFINITIONS,
   };
 }
@@ -425,7 +432,7 @@ export function collectReports(clinics, { snapshotDate, observedAt, sourceSha256
     definitions: REPORT_DEFINITIONS,
     national: { id: 'national', name: '전국', ...summarize(clinics) },
     northernGyeonggi: {
-      id: 'northern-gyeonggi', name: '경기북부 10개 시·군', sidoCode: '310000',
+      id: 'northern-gyeonggi', name: `경기북부 ${cities.length}개 시·군`, sidoCode: '310000',
       groupingNote: '원자료 경기 시도코드와 명시한 시군구코드를 함께 적용. 고양시는 덕양구·일산서구·일산동구를 합산. 그 밖의 지역은 추정해 포함하지 않음',
       ...summarize(northern), cities,
     },

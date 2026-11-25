@@ -2,7 +2,8 @@
 // Listings only: every institution is shown as the same card in 가나다순, counts come from the data, no ranking or quality words.
 import {esc,fmt,icon,card,clinicUrl} from '../src/shared.mjs';
 import {externalLink} from './html.mjs';
-import {answerLinks} from './answer-pages.mjs';
+import {answerLinks,DISABILITY_CENTERS} from './answer-pages.mjs';
+import {regionLabelSentence} from './region-notes.mjs';
 import {EXTERNAL_FACTS} from './report-data.mjs';
 
 export const HOSPITAL_TYPE='41';
@@ -10,11 +11,13 @@ export const HOSPITAL_TYPE='41';
 // institution panels and answer pages; only the plain-language summary for listings lives here.
 const fact=id=>{const f=EXTERNAL_FACTS.find(x=>x.id===id);if(!f)throw new Error('Missing external fact '+id);return f;};
 const cite=(id,summary)=>{const f=fact(id);return {title:f.title,url:f.sourceUrl,edition:f.sourceTitle,checkedAt:f.checkedAt,summary};};
+const CENTER_LEVELS=[...DISABILITY_CENTERS.centers.reduce((m,c)=>m.set(c.level,(m.get(c.level)??0)+1),new Map())].map(([level,n])=>`${level} ${n}곳`).join('·');
 export const LEGAL_SOURCES=Object.freeze({
   classification:cite('medical-service-act-3-2','의원급 의료기관(의원·치과의원·한의원)은 주로 외래환자를, 병원급 의료기관(병원·치과병원·한방병원·요양병원·정신병원·종합병원)은 주로 입원환자를 대상으로 의료행위를 하는 기관으로 구분합니다.'),
   beds:cite('medical-service-act-3-2bis','30개 이상의 병상 요건은 병원·한방병원만 해당합니다(요양병원은 요양병상). 치과병원에는 병상 수 요건이 없습니다.'),
-  disabilityCenters:{title:'보건복지부 보도자료 「구강보건법 시행규칙」 일부개정령 공포·시행(1.26)',url:'https://m.korea.kr/briefing/pressReleaseView.do?newsId=156549378',edition:'2023-01-26',checkedAt:'2026-11-26',
-    summary:'구강보건법 제15조의2에 따라 보건복지부장관은 중앙장애인구강진료센터를, 시·도지사는 권역·지역장애인구강진료센터를 설치·운영합니다. 이 보도자료는 센터 수(중앙 1곳·권역 14곳, 2023-01 기준)만 밝히고 지정 기관 명단은 싣지 않았습니다.'},
+  // 보건복지부 장애인구강진료센터 page (data/content/disability-dental-centers.json): counts come from its table.
+  disabilityCenters:{title:DISABILITY_CENTERS.source.title,url:DISABILITY_CENTERS.source.url,edition:`${DISABILITY_CENTERS.source.department} · 최종수정일 ${DISABILITY_CENTERS.source.pageModifiedAt}`,checkedAt:DISABILITY_CENTERS.source.checkedAt,
+    summary:`구강보건법 제15조의2에 따라 보건복지부장관은 중앙장애인구강진료센터를, 시·도지사는 권역·지역장애인구강진료센터를 설치·운영합니다. 보건복지부 안내 표에는 ${CENTER_LEVELS}, 모두 ${DISABILITY_CENTERS.centers.length}곳이 있습니다.`},
 });
 const byName=(a,b)=>a.name.localeCompare(b.name,'ko')||String(a.id).localeCompare(String(b.id));
 const labelOf=items=>{const counts=new Map();for(const c of items)counts.set(c,(counts.get(c)??0)+1);return [...counts.entries()].sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'ko')).map(x=>x[0]).join('·');};
@@ -55,7 +58,7 @@ export function registerHospitalPages({page,clinics,domain,snapshotDate,indexing
     schema:[itemList(domain,hub,`전국 치과병원 ${fmt(n)}곳`,g.hospitals)],
     body:`<div class="wrap">${intro(`전국 치과병원 ${fmt(n)}곳`,`치과의원 ${fmt(clinics.length-n)}곳과 구분되는 병원급 치과 ${fmt(n)}곳입니다. ${esc(snapshot)} 원자료 기준 · 시도코드별 목록.`,`<span class="pill">종별코드 41</span><span class="pill neutral">가나다순 · 순위 없음</span>`)}
     ${legalParagraph()}
-    <section class="section" aria-labelledby="hospital-regions"><h2 id="hospital-regions">시도별 치과병원</h2><p class="subtle-note" style="margin:14px 0">원자료 시도코드 기준입니다. ‘전남광주’처럼 과거 표기가 섞인 코드도 그대로 둡니다.</p><div class="region-grid">${g.bySido.map(r=>`<a class="region-item" href="${hub}${esc(r.sidoCode)}/"><strong>${esc(r.name)}</strong><span>${fmt(r.count)}곳</span></a>`).join('')}</div></section>
+    <section class="section" aria-labelledby="hospital-regions"><h2 id="hospital-regions">시도별 치과병원</h2><p class="subtle-note" style="margin:14px 0">원자료 시도코드 기준입니다. ${regionLabelSentence(clinics.filter(c=>c.typeCode===HOSPITAL_TYPE))}</p><div class="region-grid">${g.bySido.map(r=>`<a class="region-item" href="${hub}${esc(r.sidoCode)}/"><strong>${esc(r.name)}</strong><span>${fmt(r.count)}곳</span></a>`).join('')}</div></section>
     ${g.unplaced.length?`<section class="section" aria-labelledby="hospital-unplaced"><h2 id="hospital-unplaced">시도코드가 비어 있는 치과병원 ${fmt(g.unplaced.length)}곳</h2><p class="subtle-note" style="margin:14px 0">원자료에 시도코드가 없어 시도별 목록에 넣지 못한 기관입니다. 전국 합계에는 포함됩니다.</p>${grid(g.unplaced)}</section>`:''}
     <section class="section" aria-labelledby="hospital-groups"><h2 id="hospital-groups">이름으로 묶어 보기</h2><div class="region-grid"><a class="region-item" href="${hub}university/"><strong>기관명에 ‘대학’이 있는 치과병원</strong><span>${fmt(g.university.length)}곳</span></a><a class="region-item" href="${hub}disability/"><strong>기관명에 ‘장애인’이 있는 치과병원</strong><span>${fmt(g.disability.length)}곳</span></a></div><p class="subtle-note">두 묶음 모두 등록된 기관명 문자열로 고른 목록이며 대학 부속 여부나 장애인 진료 지정 여부를 확인한 목록이 아닙니다.</p></section>
     <section class="section" aria-labelledby="hospital-reports"><h2 id="hospital-reports">숫자로 읽기</h2><div class="condition-links"><a href="/reports/dental-hospitals/">치과병원 전수 리포트 ${icon('arrow')}</a><a href="/reports/dental-hospital-vs-clinic/">치과병원과 치과의원, 무엇이 다른가 ${icon('arrow')}</a><a href="/reports/dental-hospital-districts/">시·군·구별 치과병원 분포 ${icon('arrow')}</a><a href="/find/?type=41">조건으로 치과병원 찾기 ${icon('arrow')}</a></div></section>

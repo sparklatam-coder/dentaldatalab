@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-11-04T20:21:12.196Z",
+  "checkedAt": "2026-11-25T17:48:45.441Z",
   "scope": {
     "total": 19681,
     "snapshotDate": "2026-09-30",
@@ -1566,8 +1566,8 @@
       },
       {
         "file": "data/source-manifest.json",
-        "sha256": "776d3fea44c07fdd895aa8684e2b00fc75d0786bfbfa87119902da9d8f156073",
-        "bytes": 6092,
+        "sha256": "8e12296b3f012c2a190c67cc408891c5f0b3d0f0670ae51e18fbc74c53aba7d3",
+        "bytes": 6148,
         "status": "read"
       },
       {

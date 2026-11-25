@@ -35,3 +35,28 @@ export function hospitalListLink({ sidoCode, name, clinics, scope = name }) {
   if (!hospitals) return '';
   return `<p><a class="text-link" href="/hospitals/${esc(sidoCode)}/">${esc(name)} 치과병원 목록 보기</a> <span class="subtle-note">${esc(scope)}에 치과병원 ${fmt(hospitals)}곳 등록</span></p>`;
 }
+
+/**
+ * One sentence, computed from the rows, describing every 시도코드 whose raw label varies or that is part of a
+ * DISTRICT_CODE_ALIASES pair, with the first address word each label uses. Every page that explains the
+ * 광주·전남 labels reuses it, so the counts never drift apart. Returns escaped HTML text ('' when nothing varies).
+ */
+export function regionLabelSentence(clinics) {
+  const aliasCodes = new Set(DISTRICT_CODE_ALIASES.flatMap(a => [a.sidoCode, a.toSidoCode]));
+  const byCode = new Map();
+  for (const c of clinics) {
+    if (!byCode.has(c.sidoCode)) byCode.set(c.sidoCode, new Map());
+    const labels = byCode.get(c.sidoCode);
+    if (!labels.has(c.sido)) labels.set(c.sido, { count: 0, prefixes: new Map() });
+    const entry = labels.get(c.sido), prefix = String(c.address ?? '').trim().split(/\s+/)[0];
+    entry.count++;
+    if (prefix) entry.prefixes.set(prefix, (entry.prefixes.get(prefix) ?? 0) + 1);
+  }
+  const parts = [...byCode].filter(([code, labels]) => labels.size > 1 || aliasCodes.has(code))
+    .sort(([a], [b]) => b.localeCompare(a))
+    .map(([code, labels]) => `시도코드 ${esc(code)}은 ${[...labels].sort((a, b) => b[1].count - a[1].count || a[0].localeCompare(b[0], 'ko')).map(([label, e]) => {
+      const prefix = [...e.prefixes].sort((a, b) => b[1] - a[1])[0]?.[0];
+      return `‘${esc(label)}’ ${fmt(e.count)}곳${prefix ? `(주소 ‘${esc(prefix)}’)` : ''}`;
+    }).join('·')}`);
+  return parts.length ? `원자료에서 ${parts.join(', ')}으로 표기됩니다. 코드와 표기를 합치거나 고치지 않고 원문 그대로 집계했습니다.` : '';
+}

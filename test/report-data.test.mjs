@@ -102,8 +102,8 @@ test('mixed source region names are disclosed without reclassifying the records'
 
 test('dental hospital aggregates keep every denominator explicit and never name an institution', () => {
   const input = deepFreeze([
-    clinic({ typeCode: '41', name: '서울대학교치과병원처럼 보이는 이름', sido: '서울', city: '종로구', doctors: { specialist: 10 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 2 }], openedOn: '1999-12-31', specialties: [{ code: '50', name: '구강악안면외과', specialists: 3 }, { code: '51', name: '치과보철과', specialists: 0 }], website: 'https://valid.org', hours: { mon: interval('09:00', '18:00') } }),
-    clinic({ typeCode: '41', name: '명칭에 그 단어가 없는 치과병원', sido: '서울', city: '강남구', doctors: { specialist: 2 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 1 }, { code: 'B109', name: '콘빔CT', count: 1 }], openedOn: '2021-01-01', specialties: [{ code: '50', name: '구강악안면외과', specialists: 1 }] }),
+    clinic({ typeCode: '41', name: '서울대학교치과병원처럼 보이는 이름', sidoCode: '110000', sido: '서울', cityCode: '110001', city: '종로구', doctors: { specialist: 10 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 2 }], openedOn: '1999-12-31', specialties: [{ code: '50', name: '구강악안면외과', specialists: 3 }, { code: '51', name: '치과보철과', specialists: 0 }], website: 'https://valid.org', hours: { mon: interval('09:00', '18:00') } }),
+    clinic({ typeCode: '41', name: '명칭에 그 단어가 없는 치과병원', sidoCode: '110000', sido: '서울', cityCode: '110023', city: '강남구', doctors: { specialist: 2 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 1 }, { code: 'B109', name: '콘빔CT', count: 1 }], openedOn: '2021-01-01', specialties: [{ code: '50', name: '구강악안면외과', specialists: 1 }] }),
     clinic({ typeCode: '41', name: '세 번째 치과병원', sido: '경기', city: '양주시', doctors: { specialist: null }, equipment: [{ code: 'B109', name: '콘빔CT', count: null }], openedOn: '2010-05-05' }),
     clinic({ typeCode: '41', name: '네 번째 치과병원', sido: '경기', city: '양주시', doctors: { specialist: 0 }, openedOn: 'unknown', specialties: [{ code: '50', name: '구강악안면외과', specialists: 1 }] }),
     clinic({ doctors: { specialist: 1 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 1 }] }),
