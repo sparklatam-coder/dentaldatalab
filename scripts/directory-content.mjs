@@ -21,8 +21,12 @@ export function directorySummaryPanel(clinics, { name, snapshot }) {
   return `<section class="section" id="region-data-summary" aria-labelledby="region-summary-title"><h2 id="region-summary-title">${esc(name)} 치과 등록 자료 한눈에</h2><p>${esc(snapshot)} 심평원 원자료의 이 지역 분류에 포함된 ${fmt(s.total)}곳을 직접 집계했습니다. 현재 영업 중인 전체 치과 수와는 다를 수 있습니다.</p><div class="coverage-grid">${metrics.map(([label, value]) => `<div class="metric"><small>${esc(label)}</small><strong>${fmt(value)}<small>곳</small></strong></div>`).join('')}</div><p class="subtle-note">${s.specialistMissing ? `전문의 수 미확인은 ${fmt(s.specialistMissing)}곳이며, 0명 등록과 구분합니다. ` : ''}하루 이상 시간 확인은 최소 1개 요일의 시작·종료가 확인된 기관 수이며, 현재 진료 여부나 휴진을 뜻하지 않습니다. 종합병원 등의 치과는 이 집계에 포함하지 않습니다.</p><p><a class="text-link" href="${esc(SOURCE_URL)}" target="_blank" rel="noopener noreferrer">심평원 원자료 출처 ↗</a> · <a class="text-link" href="/data/">수록 범위·자료 기준 확인</a> · <a class="text-link" href="/guides/comparison-checklist/">방문 전 확인할 항목</a></p></section>`;
 }
 
+// 시도 · 시군구 · 읍면동 as the record carries them, without repeats. Shown in the page title and beside the name in the H1,
+// because 9,269 institutions share their name with at least one other.
+export const clinicLocation = clinic => [...new Set([clinic.sido, clinic.city, clinic.dong].filter(Boolean))].join(' ');
+
 export function clinicMetadata(clinic, snapshot) {
-  const location = [...new Set([clinic.sido, clinic.city, clinic.dong].filter(Boolean))].join(' ');
+  const location = clinicLocation(clinic);
   const phone = singlePhone(clinic.phone);
   const specialist = clinic.doctors?.specialist;
   // 치과병원 (종별코드 41): the name first, then the location, then what the page holds. 치과의원 keeps the wording below.
@@ -30,9 +34,13 @@ export function clinicMetadata(clinic, snapshot) {
     title: `${clinic.name} | ${location} 주소·전화·전문의·진료과목·진료시간 등록 정보`,
     description: `${clinic.name}: ${location} 치과병원(종별코드 41). 주소 ${clinic.address}. ${phone ? '신고 전화 ' + clinic.phone : clinic.phone ? '신고 전화 원문은 상세에서 확인' : '신고 전화 자료 미확인'}. 치과전문의 등록 ${!knownCount(specialist) ? '자료 미확인' : fmt(specialist) + '명'}, 등록 진료과목 ${Array.isArray(clinic.specialties) && clinic.specialties.length ? fmt(clinic.specialties.length) + '개' : '자료 미확인'}. 진료시간 등록 여부와 항목별 출처도 싣습니다. 심평원 ${snapshot} 기준 등록 정보이며 현재 상태와 다를 수 있습니다.`,
   };
+  // 치과의원: the title names 진료시간 only when the registry has a valid entry for this institution, and the
+  // description ends with what this record holds (hours, 개설일) instead of one sentence repeated on 19,433 pages.
+  const hours = clinic.quality?.hoursAvailable === true;
+  const opened = /^\d{4}-\d{2}-\d{2}$/.test(clinic.openedOn ?? '') ? clinic.openedOn : null;
   return {
-    title: `${clinic.name} | ${location} 주소·전화·진료시간 자료`,
-    description: `${clinic.type} ${clinic.name}. ${clinic.address}. ${phone ? '신고 전화 ' + clinic.phone : clinic.phone ? '신고 전화 원문은 상세에서 확인' : '신고 전화 자료 미확인'}. 치과전문의 등록 ${!knownCount(specialist) ? '자료 미확인' : fmt(specialist) + '명'}. 심평원 ${snapshot} 기준이며 현재 진료시간·홈페이지 안내는 출처별로 구분합니다.`,
+    title: `${clinic.name} | ${location} 주소·전화${hours ? '·진료시간' : ''} 등록 정보`,
+    description: `${clinic.type} ${clinic.name}. ${clinic.address}. ${phone ? '신고 전화 ' + clinic.phone : clinic.phone ? '신고 전화 원문은 상세에서 확인' : '신고 전화 자료 미확인'}. 치과전문의 등록 ${!knownCount(specialist) ? '자료 미확인' : fmt(specialist) + '명'}, 진료시간 ${hours ? '등록 있음' : '등록 자료 미확인'}${opened ? ', 개설일 ' + opened : ''}. 심평원 ${snapshot} 기준 등록 정보이며 현재 상태와 다를 수 있습니다.`,
   };
 }
 

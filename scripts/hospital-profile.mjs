@@ -152,7 +152,7 @@ const NEUTRAL_LISTING = '확인은 무료이며, 확인 여부는 목록 순서�
 export function hospitalConfirmationPanel(c, confirmation = null, {correctionEmail = null} = {}) {
   if (!isDentalHospital(c)) return '';
   // The mailto anchor is exactly mailtoLink(): IndexNow reverses Cloudflare's e-mail obfuscation of that one form only.
-  const contact = `<div class="condition-links"><a href="${esc(correctionHref(c))}">정정·확인 메모 만들기 ${icon('arrow')}</a>${correctionEmail ? mailtoLink(correctionEmail) : ''}</div>`;
+  const contact = `<div class="condition-links"><a href="${esc(correctionHref(c))}" rel="nofollow">정정·확인 메모 만들기 ${icon('arrow')}</a>${correctionEmail ? mailtoLink(correctionEmail) : ''}</div>`;
   const how = correctionEmail ? '아래 메모 양식이나 이메일로 알려 주세요.' : '아래 메모 양식으로 알려 주세요.';
   if (!confirmation) {
     return `<section class="fact-panel" id="hospital-confirmed"><h2>병원이 직접 확인한 정보</h2><p>아직 이 병원이 직접 확인한 정보는 없습니다. 이 병원의 담당 부서라면 전화번호·홈페이지·예약 주소·진료시간·휴진 안내를 확인하거나 바로잡을 수 있습니다. ${how}</p>${contact}<p class="subtle-note">${NEUTRAL_LISTING} 확인한 내용은 확인일을 붙여 심평원 등록값과 따로 표시하며, 등록값을 고치지 않습니다. 환자 정보는 보내지 마세요.</p></section>`;

@@ -199,7 +199,7 @@ dialog::backdrop{background:rgba(0,0,0,.35);-webkit-backdrop-filter:blur(8px);ba
 dialog .dialog-close{border-radius:980px;background:#e8e8ed}
 .empty{border:1px dashed #d2d2d7;background:var(--surface);border-radius:18px}
 .condition-links a{border-color:#d2d2d7;font-size:14px;padding:10px 16px}.condition-links a:hover{color:var(--accent);border-color:var(--accent)}
-.page-intro h1{font-size:clamp(36px,4.5vw,56px)}
+.page-intro h1{font-size:clamp(36px,4.5vw,56px)}.page-intro h1 .h1-locality{display:block;margin-top:8px;font-size:17px;line-height:1.5;font-weight:500;letter-spacing:0;color:#6e6e73}
 .prose h2{font-size:28px;letter-spacing:-.015em}.prose p,.prose li{line-height:1.7}.prose code{background:#e8e8ed;border-radius:6px}
 .timeline time{color:#6e6e73}
 .faq-list{margin:0;display:grid;gap:14px}.faq-list>div{padding:14px 16px;background:#fff;border-radius:14px}.faq-list dt{font-weight:600;margin-bottom:6px}.faq-list dd{margin:0;color:#424245;line-height:1.6}

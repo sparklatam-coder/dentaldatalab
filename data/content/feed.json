@@ -1,6 +1,15 @@
 {
   "note": "RSS 항목과 최초 공개일. 날짜는 해당 페이지를 처음 배포한 커밋 날짜(KST)이며 빌드 시각이 아닙니다. 새 리포트·가이드·허브를 공개하면 맨 위에 추가합니다.",
   "items": [
+    {"route": "/data/open/", "publishedOn": "2026-11-26"},
+    {"route": "/press/", "publishedOn": "2026-11-26"},
+    {"route": "/hospitals/info-card/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/how-many-dental-hospitals/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/how-many-dental-institutions/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/districts-without-dental-hospital/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/dental-hospital-specialist-requirement/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/dental-hospital-name-rule/", "publishedOn": "2026-11-26"},
+    {"route": "/guides/dental-type-surcharge/", "publishedOn": "2026-11-26"},
     {"route": "/conditions/", "publishedOn": "2026-11-26"},
     {"route": "/conditions/night/", "publishedOn": "2026-11-26"},
     {"route": "/conditions/saturday/", "publishedOn": "2026-11-26"},
