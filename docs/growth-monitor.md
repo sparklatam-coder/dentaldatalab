@@ -111,13 +111,21 @@ node scripts/growth-monitor.mjs --check --manifest dist/build-manifest.json   # 
 
 `scripts/growth-monitor-run.sh`는 매일 돌려도 되는 실행기다(bash·git·node만 필요).
 
-1. 자기가 들어 있는 저장소로 이동하고 `git pull --ff-only`를 시도한다(실패해도 계속).
+1. 자기가 들어 있는 저장소로 이동하고 `git pull --ff-only`를 시도한다. 여기서 만든 월 파일 커밋은 push하지 않으므로 origin이 움직이면 fast-forward가 안 되는데, 그때는 작업 폴더가 깨끗할 때에 한해 `git pull --rebase`로 그 커밋을 origin 위에 다시 올린다. 충돌하면 그만두고 원래 상태로 계속한다.
 2. 이번 달 파일의 모든 칸이 채워져 있으면 **아무것도 하지 않고 끝난다**(탭도 열지 않는다).
 3. 아니면 관찰기를 돌려 **빈 칸만** 채우고, `--validate`로 검사하고, 요약을 `data/research/growth-monitor/summary-YYYY-MM.txt`에, 실행 기록을 `run-YYYY-MM.log`에 쓴다.
 4. 새로 기록된 칸이 있으면 **그 달 파일 하나만** 로컬 커밋한다. push는 하지 않는다. 검사에 실패하면 커밋하지 않는다.
 5. macOS 알림 한 줄을 띄운다(예: `2026-11 AI 인용 0/40칸 (측정 40/60) · 기관명 10위 안 0/60 (측정 60/60) · 남음: ChatGPT 검색 0/20(막힘)`). 새로 기록된 것이 없으면 알림도 없다.
 
 환경 변수: `NODE_BIN`, `ASIDE_BIN`(실행 파일 위치), `GROWTH_NOTIFY=0`(알림 끔), `GROWTH_SKIP_PULL=1`(pull 생략). LaunchAgent 등록은 이 저장소가 하지 않는다.
+
+### 이 Mac의 설치 (2026-11-26)
+
+- 실행용 복제본: `~/Library/Application Support/DentalDataLab/growth-monitor/` (GitHub에서 받은 별도 복제본). launchd가 띄운 프로세스는 외장 SSD(`/Volumes/M6_SSD`)에서 git을 쓸 수 없어(`Operation not permitted`) 내장 디스크에 둔다.
+- LaunchAgent: `~/Library/LaunchAgents/com.dentaldatalab.growth-monitor.plist`, 매일 09:10에 `scripts/growth-monitor-run.sh`를 실행한다. 그 시각에 Mac이 잠들어 있었으면 깨어난 뒤 한 번 돈다. Aside 브라우저가 떠 있어야 한다.
+- 월 파일 커밋은 복제본에만 쌓인다. 저장소에 반영하려면 사람이 확인한 뒤 복제본에서 `git push` 하거나, 작업 저장소에서 `git pull "$HOME/Library/Application Support/DentalDataLab/growth-monitor" main`으로 가져온다.
+- 끄기: `launchctl bootout gui/$(id -u)/com.dentaldatalab.growth-monitor`. 다시 켜기: `launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.dentaldatalab.growth-monitor.plist`. 지금 한 번 돌리기: `launchctl kickstart gui/$(id -u)/com.dentaldatalab.growth-monitor`.
+- 로그: 복제본의 `data/research/growth-monitor/run-YYYY-MM.log`, `summary-YYYY-MM.txt`, `launchd.*.log`.
 
 손으로 돌릴 때:
 

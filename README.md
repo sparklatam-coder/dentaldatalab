@@ -37,6 +37,7 @@ npm run preview
 - `/hospitals/info-card/`: 치과병원이 자기 홈페이지에 넣는 ‘등록 정보 확인’ 카드. 인증·추천·평가 표시가 아니며 사용 여부가 목록 순서에 영향을 주지 않습니다(`scripts/hospital-info-card.mjs`)
 - 기관 연결 클릭 수: 전화·지도·홈페이지·예약·채널·공유 링크를 누른 횟수만 `/e/outbound`로 셉니다. 방문자 식별값은 받지 않으며 `/privacy/`에 고지합니다. Cloudflare Analytics Engine 바인딩 `OUTBOUND`가 없으면 저장하지 않습니다. 설정과 조회는 [클릭 수 집계 문서](docs/outbound-measurement.md)
 - 짧은 답 11개(`/guides/…`): 첫 문장에 답과 기준일, 이어서 법령·고시 원문과 확인일(`scripts/answer-pages.mjs`)
+- 월간 성장 점검: 고정 질문 20개(ChatGPT·Google AI 개요·네이버 AI 브리핑)의 인용 여부와 치과병원 30곳의 기관명 검색 순위를 `data/content/growth-observations/YYYY-MM.json`에 적고, 단계 기준과 멈춤 규칙을 계산합니다(`scripts/growth-monitor.mjs`, 자동 관찰은 `scripts/growth-observe.mjs`). 절차와 이 Mac의 자동 실행은 [성장 점검 문서](docs/growth-monitor.md)
 - IndexNow 묶음 제출: `node scripts/submit-indexnow.mjs --set hospitals`는 허브와 치과병원 248곳만 고르고 치과의원은 넣지 않습니다. 기본은 모의 실행이며 `--submit`일 때만 전송합니다([IndexNow 문서](docs/indexnow.md))
 
 2026-11-01 반영 기준: 지도 후보 대조 17,667기관, 네이버 주간시간표 92기관(양주 66 + 그 외 26). 전국 19,681기관의 표시·수집 상태를 적용했으며, 시간표 수집 완료는 92기관입니다.

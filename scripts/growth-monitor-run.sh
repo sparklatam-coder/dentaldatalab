@@ -31,7 +31,15 @@ notify() {
 }
 
 mkdir -p "$LOG_DIR" || exit 1
-if [ "${GROWTH_SKIP_PULL:-0}" != "1" ]; then git pull --ff-only >/dev/null 2>&1 || true; fi
+# Month files committed here are never pushed, so once origin moves a fast-forward stops working. Then replay the
+# local commits on top of origin, and if that does not apply cleanly leave the checkout exactly as it was.
+if [ "${GROWTH_SKIP_PULL:-0}" != "1" ]; then
+  git pull --ff-only >/dev/null 2>&1 || {
+    if [ -z "$(git status --porcelain --untracked-files=no 2>/dev/null)" ]; then
+      git pull --rebase >/dev/null 2>&1 || git rebase --abort >/dev/null 2>&1
+    fi
+  } || true
+fi
 
 # A completed month needs nothing.
 if "$NODE" scripts/growth-observe.mjs --month "$MONTH" --is-complete >/dev/null 2>&1; then exit 0; fi
