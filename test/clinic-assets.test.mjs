@@ -781,7 +781,12 @@ test('investigation summaries are shown once per record, never as per-query outc
   assert.match(researchNote({ summary: 'Verified homepage body.', status: 'researched' }), /^웹 조사를 했습니다\./);
   assert.match(researchNote({ summary: 'Blocked.', status: 'access_limited' }), /^접근이 제한되어/);
   assert.match(researchNote({ summary: 'Legacy note', status: null }), /^웹 조사 기록이 있습니다\./);
-  assert.equal(researchNote({ summary: '한글 메모 with English words', status: 'not_found' }), '한글 메모 with English words');
+  // An English memo that quotes the Korean name and address is still an English memo.
+  assert.match(researchNote({ summary: 'Paju 수치과의원 identity (address and phone) is confirmed by public data. No clinic-operated website was found.', status: 'not_found' }), /^검색으로 이 기관의 공식 홈페이지나 운영 채널 후보를 찾지 못했습니다\./);
+  // A Korean memo with a URL or a few English words is shown as written.
+  const korean = '자체 홈페이지(ecoplusdental.co.kr)를 열어 확인함. 주소와 전화가 공공 기록과 일치함.';
+  assert.equal(researchNote({ summary: korean, status: 'researched' }), korean);
+  assert.match(researchNote({ summary: '031-000-0000', status: null }), /^웹 조사 기록이 있습니다\./);
   assert(!html.includes('— '));
 });
 

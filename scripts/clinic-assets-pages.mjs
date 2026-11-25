@@ -98,9 +98,12 @@ function observation(o,r,{authoredId=null,authoredOpen=false,fieldEntries=null,r
   return `<article class="naver-observation"><div class="pill-row"><span class="pill neutral">${esc(BODY[o.bodyStatus]??'미확인')}</span><span class="mini-label">${date(o.checkedAt)}</span>${external(o.sourceUrl,'네이버지도 원문 ↗')}</div>${!current?'<p class="notice">현재 기관 정보 반영 대상에서 제외된 과거 관찰입니다. 원문 기록을 보존합니다.</p>':''}${current&&o.bodyStatus==='read'&&o.identityMatch===false?'<p class="notice">이름·지역·전화 대조 조건을 충족하지 못했습니다. 아래 관찰값은 이 기관의 확정 정보로 보지 말고 원문을 확인해 주세요.</p>':''}${identity}${o.identityComparison?.nameVariantReviewed?`<p class="subtle-note">명칭 표기 차이 검토: ${esc(o.identityReview.reason)}</p>`:''}${fieldEntries?'<p class="subtle-note">항목별 마지막 확인값입니다. 전화·시간과 업체 안내의 확인일이 다를 수 있으므로 각 항목의 출처와 확인일을 함께 봐주세요.</p>':''}${table}${businessAuthored(o,authored,{id:authoredId,open:authoredOpen,review})}<p class="subtle-note">${esc(o.notes??'')}</p></article>`;
 }
 // 조사 요약 as shown on the page. A memo written in Korean is shown as written. Research batches written in English
-// (14,141 institutions on 2026-11-26) show their status in Korean instead; the memo itself stays in the 기관별 JSON.
+// show their status in Korean instead; the memo itself stays in the 기관별 JSON. An English memo usually quotes the
+// institution's Korean name and address, so the test is the share of Hangul among letters, not its presence: on
+// 2026-11-26 the 19,506 memos split into ≤0.3 (15,499, English) and ≥0.4 (4,007, Korean) with nothing in between.
+const hangulShare=text=>{const hangul=(text.match(/[가-힣]/g)??[]).length,latin=(text.match(/[A-Za-z]/g)??[]).length;return hangul+latin?hangul/(hangul+latin):0;};
 const RESEARCH_STATUS_NOTE={not_found:'검색으로 이 기관의 공식 홈페이지나 운영 채널 후보를 찾지 못했습니다. 채널이 없다는 뜻은 아닙니다.',researched:'웹 조사를 했습니다. 확인한 채널과 후보는 이 목록에 표시합니다.',access_limited:'접근이 제한되어 본문을 확인하지 못했습니다. 채널이 없다는 뜻은 아닙니다.'};
-export const researchNote=r=>/[가-힣]/.test(r.summary)?r.summary:`${RESEARCH_STATUS_NOTE[r.status]??'웹 조사 기록이 있습니다.'} 조사 메모 원문(영문)은 기관별 JSON에 있습니다.`;
+export const researchNote=r=>hangulShare(r.summary)>=0.5?r.summary:`${RESEARCH_STATUS_NOTE[r.status]??'웹 조사 기록이 있습니다.'} 조사 메모 원문(영문)은 기관별 JSON에 있습니다.`;
 export function clinicAssetsPanel(record){
   const own=record.assets.filter(a=>a.ownership!=='third_party'),third=record.assets.filter(a=>a.ownership==='third_party');
   const time=o=>Number.isFinite(Date.parse(o.checkedAt))?Date.parse(o.checkedAt):-Infinity;
