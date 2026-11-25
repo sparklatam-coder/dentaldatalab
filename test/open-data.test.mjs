@@ -80,7 +80,7 @@ test('report JSON, CSV and the visible source block carry the licence and the at
     const body = pages.get(reportRoute(item)).body;
     assert.equal(body.split('id="report-attribution"').length, 2, 'one copy target per page');
     assert(body.includes(`>${esc(cite)}</code><button type="button" class="btn small" data-copy-citation data-citation-target="report-attribution">`), item.slug);
-    assert.match(body, /<a href="https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/deed\.ko" target="_blank" rel="license noopener noreferrer">CC BY 4\.0<\/a>/);
+    assert.match(body, /<a href="https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/deed\.ko" target="_blank" rel="license noopener noreferrer">CC BY 4\.0<span class="sr-only"> \(새 창\)<\/span><\/a>/);
     assert(body.includes(`href="${SOURCE_LICENSE.url}"`) && body.includes('공공누리 제1유형(출처표시)'));
     assert(body.includes(`<a href="${OPEN_DATA_ROUTE}">`) && body.includes(`<a href="${PRESS_ROUTE}">`));
     assert(body.indexOf('id="report-attribution"') > body.indexOf('<h2>출처와 변경 기록</h2>'), 'inside the source block');
@@ -111,7 +111,7 @@ test('the hub lists every aggregate dataset with real download links, plain term
     if (href.startsWith('/reports/')) assert(pages.has(href), href);
   }
   assert(page.body.includes(`<span class="pill neutral">자료 기준일 ${metadata.snapshotDate}</span>`));
-  assert.match(page.body, /rel="license noopener noreferrer">CC BY 4\.0 \(크리에이티브 커먼즈 저작자표시 4\.0 국제\)<\/a>/);
+  assert.match(page.body, /rel="license noopener noreferrer">CC BY 4\.0 \(크리에이티브 커먼즈 저작자표시 4\.0 국제\)<span class="sr-only"> \(새 창\)<\/span><\/a>/);
   assert(page.body.includes(`href="${LICENSE.legalCodeUrl}"`) && page.body.includes(`href="${SOURCE_LICENSE.url}"`));
   assert.match(page.body, /영리 목적의 매체·서비스에서 쓰기/);
   assert.match(page.body, /가공했다는 사실을 밝힙니다/);

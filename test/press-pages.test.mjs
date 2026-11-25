@@ -71,7 +71,7 @@ test('/press/ states each headline number with its 기준일 first and links it 
 
   for (const limit of dataLimits(reports)) assert(press.body.includes(`<li><strong>${esc(limit.label)}:</strong> ${esc(limit.text)}</li>`), limit.label);
   assert(dataLimits(reports).some(limit => limit.text.includes(reports.hospitalDistricts.definitions.coverage)), 'limits reuse the caveats the reports publish');
-  assert.match(press.body, /href="https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/deed\.ko" target="_blank" rel="license noopener noreferrer">CC BY 4\.0<\/a>/);
+  assert.match(press.body, /href="https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/deed\.ko" target="_blank" rel="license noopener noreferrer">CC BY 4\.0<span class="sr-only"> \(새 창\)<\/span><\/a>/);
   assert.match(press.body, /<h2>인용하는 방법<\/h2>/);
   assert.doesNotMatch(press.body, /undefined|NaN|&amp;amp;/);
 });

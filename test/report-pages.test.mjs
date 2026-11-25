@@ -309,6 +309,8 @@ test('the vs-clinic CSV carries every per-type comparison row of the 전수 CSV,
   for (const scope of ['치과병원', '치과의원']) for (const label of ['치과전문의 등록 평균', '콘빔CT 등록 기관', '하루 이상 진료시간 확인']) {
     const line = full.split("\n").find(l => l.includes(`"${scope}"`) && l.includes(label));
     assert.ok(line, `${scope} ${label} in 전수 CSV`);
-    assert.ok(csv.includes(line), `${scope} ${label} row copied verbatim into vs-clinic CSV`);
+    // The last two columns (이용조건, 출처표기) name each report's own page, so compare everything before them.
+    const core = row => row.split(',').slice(0, -2).join(',');
+    assert.ok(csv.split("\n").some(row => core(row) === core(line)), `${scope} ${label} row copied verbatim into vs-clinic CSV`);
   }
 });
