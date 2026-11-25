@@ -28,6 +28,8 @@ DDL_SEO_PUBLIC=1 SITE_ORIGIN=https://dentaldatalab.com npm run build:cloudflare
 
 각 HTML은 WebSite 및 WebPage JSON-LD를 제공한다. 치과 상세는 WebPage의 `mainEntity`로 Dentist 등록정보를 가리킨다. Dentist의 `mainEntityOfPage`는 정보 페이지이며, 이 디렉터리 주소를 해당 치과의 공식 홈페이지 URL로 표시하지 않는다. 진료 성과, 후기 평점, 확인되지 않은 가격이나 영업시간을 구조화 데이터로 만들지 않는다.
 
+치과병원(종별코드 41) 상세의 Dentist에만 `hospitalSchemaExtras`(`scripts/hospital-profile.mjs`)가 속성을 더한다. `additionalProperty`로 종별·치과전문의 등록 수·콘빔CT 등록 수·자료 기준일을 싣되 미확인 수는 0으로 쓰지 않고 항목을 빼며, `medicalSpecialty`는 `https://schema.org/Dentistry`다. `url`은 본문·기관 대조(`official`)를 통과한 활성 홈페이지가 정확히 1개일 때만 넣고, `sameAs`에는 `official`·`linked` 채널 중 기관을 식별하는 페이지(홈페이지·지도·블로그·SNS·카카오 채널)만 넣으며 예약·채팅·링크 모음과 여러 기관에 귀속된 주소는 뺀다. `openingHours`·`foundingDate`·`priceRange`·`aggregateRating`·`review`와 병원이 직접 확인한 정보(`data/content/hospital-confirmed.json`)는 구조화 데이터로 만들지 않는다. 속성의 유효성은 2026-11-26에 schema.org 문서로 확인했다.
+
 sitemap에는 색인 대상의 대표 URL만 넣는다. 공식 자료 기준일이나 매 빌드 시각을 모든 문서의 수정일로 오인하지 않도록 `lastmod`는 생략한다. 실제 내용별 변경 이력을 관리하게 되면 그 날짜를 사용할 수 있다.
 
 ## 기존 목록·상세 콘텐츠 개선
