@@ -105,7 +105,7 @@ function bootClient({ navigator = {}, pathname = `/clinics/${ID}/` } = {}) {
   return { outboundEvent, click: target => listeners[0][1]({ target, preventDefault() { throw new Error('navigation must not be blocked'); }, stopPropagation() { throw new Error('other handlers must still run'); } }) };
 }
 const anchor = dataset => ({ dataset });
-const within = link => ({ closest: selector => selector === 'a[data-outbound]' ? link : null });
+const within = link => ({ closest: selector => selector === '[data-outbound]' ? link : null });
 
 test('the page sends one beacon per tracked link click with only kind, clinic and path', () => {
   assert(clientLine.includes(`sendBeacon?.('${OUTBOUND_ROUTE}'`), 'the appended line posts to the Worker route');
