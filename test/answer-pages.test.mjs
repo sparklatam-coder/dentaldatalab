@@ -11,7 +11,7 @@ const clinics = [
 ];
 const render = () => {
   const pages = new Map();
-  const result = registerAnswerPages({ page: (route, opts) => pages.set(route, opts), clinics, snapshotDate: '2026-09-30' });
+  const result = registerAnswerPages({ page: (route, opts) => pages.set(route, opts), clinics, snapshotDate: '2026-09-30', domain: 'https://example.test' });
   return { pages, result };
 };
 
@@ -30,6 +30,7 @@ test('each short answer is one /guides/ page whose first visible sentence answer
     assert.ok(answer < p.body.indexOf('근거 원문'), `${a.slug}: answer comes before the sources`);
     const [faq] = p.schema;
     assert.equal(faq['@type'], 'FAQPage');
+    assert.equal(faq['@id'], `https://example.test${answerRoute(a)}#faq`, 'absolute @id like every other page');
     assert.equal(faq.mainEntity.length, 1);
     assert.equal(faq.mainEntity[0].name, a.question);
     assert.ok(faq.mainEntity[0].acceptedAnswer.text.startsWith(a.answer));

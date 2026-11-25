@@ -45,9 +45,11 @@ export const OUTPATIENT_COPAY = Object.freeze([
   {type: '상급종합병원', dong: '진찰료 전액 + 나머지의 60%', eupmyeon: '진찰료 전액 + 나머지의 60%'},
 ]);
 
-const centerTable = () => `<div class="table-scroll"><table class="simple-table"><caption class="subtle-note" style="text-align:left;caption-side:bottom;padding-top:8px">${esc(centerSource.department)} 안내 · 최종수정일 ${esc(centerSource.pageModifiedAt)} · 원문 표의 문자열을 그대로 옮겼습니다.</caption><thead><tr><th scope="col">연번</th><th scope="col">센터 · 운영기관</th><th scope="col">주소</th><th scope="col">진료문의</th></tr></thead><tbody>${centers.map(c => `<tr><td>${c.no}</td><th scope="row">${esc([c.region, c.level].filter(Boolean).join(' '))}<small style="display:block;font-weight:400">${esc(c.operator)}</small></th><td>${esc(c.address)}</td><td>${esc(c.phone)}</td></tr>`).join('')}</tbody></table></div>`;
+// Phone numbers stay verbatim; each number inside the cell becomes a tel: link that does not break across lines.
+const telLinks = text => esc(text).replace(/\b(?:0\d{1,2}-\d{3,4}-\d{4}|1\d{3}-\d{4})\b/g, n => `<a href="tel:${n.replaceAll('-', '')}" style="white-space:nowrap">${n}</a>`);
+const centerTable = () => `<div class="table-scroll" tabindex="0" role="region" aria-label="장애인구강진료센터 ${centers.length}곳 표"><table class="simple-table"><caption class="subtle-note" style="text-align:left;caption-side:bottom;padding-top:8px">${esc(centerSource.department)} 안내 · 최종수정일 ${esc(centerSource.pageModifiedAt)} · 원문 표의 문자열을 그대로 옮겼습니다.</caption><thead><tr><th scope="col">연번</th><th scope="col">센터 · 운영기관</th><th scope="col">주소</th><th scope="col">진료문의</th></tr></thead><tbody>${centers.map(c => `<tr><td>${c.no}</td><th scope="row">${esc([c.region, c.level].filter(Boolean).join(' '))}<small style="display:block;font-weight:400">${esc(c.operator)}</small></th><td>${esc(c.address)}</td><td>${telLinks(c.phone)}</td></tr>`).join('')}</tbody></table></div>`;
 
-const copayTable = () => `<div class="table-scroll"><table class="simple-table"><caption class="subtle-note" style="text-align:left;caption-side:bottom;padding-top:8px">요양급여비용 총액 중 본인이 내는 비율 · 일반 환자 외래 기준 · 비급여 항목에는 적용되지 않습니다.</caption><thead><tr><th scope="col">기관 종별</th><th scope="col">동 지역</th><th scope="col">읍·면 지역</th></tr></thead><tbody>${OUTPATIENT_COPAY.map(r => `<tr><th scope="row">${esc(r.type)}</th><td>${esc(r.dong)}</td><td>${esc(r.eupmyeon)}</td></tr>`).join('')}</tbody></table></div>`;
+const copayTable = () => `<div class="table-scroll" tabindex="0" role="region" aria-label="의료기관 종별 외래 본인부담률 표"><table class="simple-table"><caption class="subtle-note" style="text-align:left;caption-side:bottom;padding-top:8px">요양급여비용 총액 중 본인이 내는 비율 · 일반 환자 외래 기준 · 비급여 항목에는 적용되지 않습니다.</caption><thead><tr><th scope="col">기관 종별</th><th scope="col">동 지역</th><th scope="col">읍·면 지역</th></tr></thead><tbody>${OUTPATIENT_COPAY.map(r => `<tr><th scope="row">${esc(r.type)}</th><td>${esc(r.dong)}</td><td>${esc(r.eupmyeon)}</td></tr>`).join('')}</tbody></table></div>`;
 
 /**
  * The published short answers. `answer` is the first sentence(s) and must answer the question on its own;
@@ -130,7 +132,7 @@ export const answerCards = () => `<div class="guide-grid">${SHORT_ANSWERS.map((a
 export const answerLinks = () => `<div class="condition-links">${SHORT_ANSWERS.map(a => `<a href="${answerRoute(a)}">${esc(a.question)} ${icon('arrow')}</a>`).join('')}</div>`;
 
 /** Registers one page per short answer. Counts come from the clinics array; no institution is named. */
-export function registerAnswerPages({page, clinics, snapshotDate}) {
+export function registerAnswerPages({page, clinics, snapshotDate, domain = ''}) {
   if (typeof page !== 'function' || !Array.isArray(clinics)) throw new TypeError('registerAnswerPages needs page() and a clinics array');
   const hospitalsList = clinics.filter(c => c?.typeCode === '41');
   const ctx = {
@@ -150,8 +152,8 @@ export function registerAnswerPages({page, clinics, snapshotDate}) {
       title: a.question,
       description: a.answer,
       current: 'guides',
-      breadcrumb: [{label: '정보 읽기 가이드', url: '/guides/'}, {label: a.question}],
-      schema: [{'@context': 'https://schema.org', '@type': 'FAQPage', '@id': `${route}#faq`, mainEntity: [{'@type': 'Question', name: a.question, acceptedAnswer: {'@type': 'Answer', text: schemaAnswer}}]}],
+      breadcrumb: [{label: '치과 비교 가이드', url: '/guides/'}, {label: a.question}],
+      schema: [{'@context': 'https://schema.org', '@type': 'FAQPage', '@id': `${domain}${route}#faq`, mainEntity: [{'@type': 'Question', name: a.question, acceptedAnswer: {'@type': 'Answer', text: schemaAnswer}}]}],
       body: `<div class="wrap narrow"><div class="page-intro"><div class="pill-row"><span class="pill">짧은 답</span><span class="pill neutral">출처 확인 ${esc(checked)}</span></div><h1>${esc(a.question)}</h1></div>
       <section class="fact-panel" id="answer"><h2>짧은 답</h2><p class="answer-text"><strong>${esc(a.answer)}</strong></p>${a.details.map(d => `<p class="answer-text">${esc(d)}</p>`).join('')}${a.table ? a.table() : ''}</section>
       <section class="fact-panel" id="data"><h2>치과데이터랩 자료로 보면</h2><p class="answer-text">${esc(a.data(ctx))}</p></section>

@@ -35,12 +35,19 @@ export function cityPageDescription({ region, city, clinics, page, size = 24, sn
   const first = (page - 1) * size;
   const shown = clinics.slice(first, first + size);
   if (!shown.length) throw new Error('Cannot describe an empty district list page.');
+  if (page === 1) {
+    // Page 1 summarises the whole district; later pages describe their own range.
+    const s = directorySummary(clinics);
+    return `${region} ${city} 치과 ${fmt(s.total)}곳: 치과의원 ${fmt(s.clinics)}곳·치과병원 ${fmt(s.hospitals)}곳, 치과전문의 등록 ${fmt(s.specialists)}곳, 진료시간 등록 ${fmt(s.hours)}곳. 가나다순 목록과 항목별 출처, 심평원 ${snapshot} 기준이며 순위가 아닙니다.`;
+  }
   return `${region} ${city} 치과 ${fmt(clinics.length)}곳 중 ${fmt(first + 1)}–${fmt(first + shown.length)}번째 목록(${page}페이지). ${shown[0].name}${shown.length > 1 ? '부터 ' + shown.at(-1).name + '까지' : ''} 가나다순으로 주소·종별·등록 정보를 확인하세요. 심평원 ${snapshot} 기준, 추천 순위가 아닙니다.`;
 }
 
 export function directoryPagination(base, current, total) {
   if (total <= 1) return '';
-  const range = [...new Set([1, current - 1, current, current + 1, total])].filter(x => x > 0 && x <= total).sort((a, b) => a - b);
+  // Up to 30 pages every number is shown, so each list page (and each clinic) is one click from page 1.
+  const range = total <= 30 ? Array.from({ length: total }, (_, i) => i + 1)
+    : [...new Set([1, current - 1, current, current + 1, total])].filter(x => x > 0 && x <= total).sort((a, b) => a - b);
   const url = page => page === 1 ? base : base + `page/${page}/`;
   let last = 0;
   const numbered = range.map(page => {

@@ -39,7 +39,8 @@ const note=snapshot=>`<div class="source-banner">${icon('source')}<div><strong>�
 const intro=(title,desc,pills='')=>`<div class="page-intro"><div class="pill-row">${pills}</div><h1>${title}</h1><p>${desc}</p></div>`;
 const source=s=>`${externalLink(s.url,s.title,{withIcon:true})} · ${esc(s.edition)} · 확인 ${esc(s.checkedAt)}`;
 const legalParagraph=()=>`<section class="section prose" id="definition"><h2>치과병원은 법적으로 어떤 기관인가요?</h2><p>${esc(LEGAL_SOURCES.classification.summary)} 치과병원은 병원급 의료기관의 한 종류입니다.</p><p>${esc(LEGAL_SOURCES.beds.summary)} 종별은 법적 분류이며 진료의 질이나 범위를 뜻하지 않습니다.</p><p class="subtle-note">출처: ${source(LEGAL_SOURCES.classification)}<br>출처: ${source(LEGAL_SOURCES.beds)}</p></section>`;
-const itemList=(domain,route,name,items)=>({'@context':'https://schema.org','@type':'ItemList','@id':domain+route+'#list',name,numberOfItems:items.length,itemListElement:items.map((c,i)=>({'@type':'ListItem',position:i+1,name:c.name,url:domain+clinicUrl(c)}))});
+// Summary-page lists carry only position and URL; each clinic page holds its own details (keeps the 248-item hub light).
+const itemList=(domain,route,name,items)=>({'@context':'https://schema.org','@type':'ItemList','@id':domain+route+'#list',name,numberOfItems:items.length,itemListElement:items.map((c,i)=>({'@type':'ListItem',position:i+1,url:domain+clinicUrl(c)}))});
 const grid=items=>`<div class="card-grid">${items.map(c=>card(c)).join('')}</div>`;
 const crumbs=(...rest)=>[{label:'치과병원',url:'/hospitals/'},...rest];
 

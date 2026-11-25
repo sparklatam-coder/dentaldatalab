@@ -1,11 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { siteOrigin, robotsMeta, robotsText, sitemapXml } from '../scripts/seo.mjs';
+import { siteOrigin, robotsMeta, robotsText, sitemapXml, sitemapFiles, sitemapLocs, INDEXABLE_ROBOTS, SITEMAP_CHUNK } from '../scripts/seo.mjs';
 import { cloudflareWorker } from '../scripts/build-cloudflare.mjs';
 
 test('public indexing exposes source-backed pages while keeping drafts and interactive tools out', () => {
   for (const route of ['/', '/clinics/c-abc123456789/', '/regions/110000/page/2/', '/hospitals/', '/hospitals/110000/', '/hospitals/university/', '/reports/national-data-coverage/', '/data/', '/clinic-assets/', '/search-sources/']) {
-    assert.equal(robotsMeta(route, true), 'index,follow', route);
+    assert.equal(robotsMeta(route, true), INDEXABLE_ROBOTS, route);
+    assert.match(robotsMeta(route, true), /^index,follow,.*max-image-preview:large/, route);
     assert.equal(robotsMeta(route), 'noindex,nofollow', route);
   }
   for (const route of ['/questions/', '/find/', '/compare/', '/corrections/', '/verification/', '/privacy/', '/404/', '/unknown/']) {
@@ -20,6 +21,23 @@ test('public indexing exposes source-backed pages while keeping drafts and inter
   const sitemap = sitemapXml(['/', '/clinics/c-abc123456789/', '/questions/', '/find/', '/', '/404/'], 'https://example.test', true);
   assert.equal((sitemap.match(/<url>/g) || []).length, 2);
   assert.doesNotMatch(sitemap, /questions|find|404|lastmod/);
+});
+
+test('the public sitemap is an index of per-type files; every indexable route appears exactly once', () => {
+  const clinics = Array.from({ length: SITEMAP_CHUNK + 5 }, (_, i) => `/clinics/c-${i.toString(16).padStart(12, '0')}/`);
+  const routes = ['/', '/reports/', '/regions/', '/regions/110000/', '/conditions/', '/hospitals/110000/', '/guides/a/', '/find/', '/questions/', ...clinics, '/'];
+  const files = sitemapFiles(routes, 'https://example.test', true);
+  assert.deepEqual(Object.keys(files), ['sitemap-pages.xml', 'sitemap-regions.xml', 'sitemap-clinics-1.xml', 'sitemap-clinics-2.xml', 'sitemap.xml']);
+  assert.match(files['sitemap.xml'], /^<\?xml[^>]+\?><sitemapindex /);
+  assert.equal((files['sitemap-clinics-1.xml'].match(/<url>/g) || []).length, SITEMAP_CHUNK);
+  const locs = sitemapLocs(name => files[name]);
+  assert.equal(locs.length, new Set(locs).size);
+  assert.deepEqual(locs.map(u => new URL(u).pathname).sort(), [...new Set(routes)].filter(r => !['/find/', '/questions/'].includes(r)).sort());
+  // Review builds keep one urlset (nothing is submitted anywhere).
+  const review = sitemapFiles(routes, 'https://example.test');
+  assert.deepEqual(Object.keys(review), ['sitemap.xml']);
+  assert.match(review['sitemap.xml'], /<urlset /);
+  assert.equal(sitemapLocs(name => review[name]).length, sitemapXml(routes, 'https://example.test').match(/<url>/g).length);
 });
 
 test('canonical origin rejects URL components that would corrupt all canonical and sitemap URLs', () => {

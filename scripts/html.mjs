@@ -17,7 +17,7 @@ export function externalLink(url, label, { withIcon = false, rel = 'noopener nor
   const safe = externalUrl(url);
   const text = esc(label ?? safe ?? '');
   if (!safe) return text;
-  return `<a href="${esc(safe)}"${className ? ` class="${esc(className)}"` : ''} target="_blank" rel="${esc(rel)}">${text}${withIcon ? ' ' + icon('link') : ''}</a>`;
+  return `<a href="${esc(safe)}"${className ? ` class="${esc(className)}"` : ''} target="_blank" rel="${esc(rel)}">${text}<span class="sr-only"> (새 창)</span>${withIcon ? ' ' + icon('link') : ''}</a>`;
 }
 
 // Plain text of an HTML fragment built with esc(): tags removed, the five entities esc() emits decoded.

@@ -4,8 +4,8 @@ import { externalLink, externalUrl, internalLink, textContent, reportTable, csv,
 import { esc } from '../src/shared.mjs';
 
 test('externalLink only emits anchors for absolute http(s) URLs and escapes everything', () => {
-  assert.equal(externalLink('https://clinic.example/about?x=1&y=2', '안내 <b>'), '<a href="https://clinic.example/about?x=1&amp;y=2" target="_blank" rel="noopener noreferrer">안내 &lt;b&gt;</a>');
-  assert.match(externalLink('http://clinic.example', 'x', { withIcon: true }), /^<a href="http:\/\/clinic\.example\/"[^>]*>x <svg/);
+  assert.equal(externalLink('https://clinic.example/about?x=1&y=2', '안내 <b>'), '<a href="https://clinic.example/about?x=1&amp;y=2" target="_blank" rel="noopener noreferrer">안내 &lt;b&gt;<span class="sr-only"> (새 창)</span></a>', 'screen readers hear that a new window opens');
+  assert.match(externalLink('http://clinic.example', 'x', { withIcon: true }), /^<a href="http:\/\/clinic\.example\/"[^>]*>x<span class="sr-only"> \(새 창\)<\/span> <svg/);
   for (const bad of ['javascript:alert(1)', 'data:text/html,hi', '/relative/', 'clinic.example', 'https://user:pw@clinic.example/', 'https://localhost', '', null, undefined, 42])
     assert.equal(externalLink(bad, 'label <'), 'label &lt;', String(bad));
   assert.equal(externalLink('javascript:alert(1)'), '');

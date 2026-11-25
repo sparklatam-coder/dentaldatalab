@@ -57,6 +57,7 @@ test('hub counts, titles and links come from the data', () => {
   assert.equal(hub.schema[0]['@type'], 'ItemList');
   assert.equal(hub.schema[0].numberOfItems, 5);
   assert.equal(hub.schema[0].itemListElement[0].url, 'https://example.test/clinics/c-000000000003/');
+  assert.deepEqual(Object.keys(hub.schema[0].itemListElement[0]), ['@type', 'position', 'url'], 'URL-only list items');
 });
 
 test('시도 pages list every hospital of that 시도 grouped by 시군구 and never a 치과의원', () => {

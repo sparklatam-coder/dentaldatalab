@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
-import { isIndexableRoute } from './seo.mjs';
+import { isIndexableRoute, sitemapLocs } from './seo.mjs';
 
 export const INDEXNOW_ORIGIN = 'https://dentaldatalab.com';
 export const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
@@ -41,13 +41,13 @@ export function prepareIndexNow({ root, directory, state = {}, urls = DEFAULT_IN
   const manifest = JSON.parse(fs.readFileSync(path.join(directory, 'build-manifest.json'), 'utf8'));
   if (!manifest.indexingEnabled || manifest.domain !== INDEXNOW_ORIGIN) throw new Error('An SEO public build for the exact allowed HTTPS origin is required.');
   if (!Array.isArray(urls) || !urls.length || urls.length > 8) throw new Error('Submit 1–8 explicitly selected URLs per run. Automatic bulk submission is disabled.');
-  const sitemap = fs.readFileSync(path.join(directory, 'sitemap.xml'), 'utf8');
+  const sitemap = new Set(sitemapLocs(file => fs.readFileSync(path.join(directory, file), 'utf8')));
   const selected = [];
   for (const input of [...new Set(urls)]) {
     const url = new URL(input);
     if (url.origin !== INDEXNOW_ORIGIN || url.username || url.password || url.search || url.hash || url.href !== input
       || !isIndexableRoute(url.pathname) || !manifest.routes.includes(url.pathname)
-      || !sitemap.includes(`<loc>${input}</loc>`)) throw new Error('URL outside the public canonical allowlist: ' + input);
+      || !sitemap.has(input)) throw new Error('URL outside the public canonical allowlist: ' + input);
     const html = localPage(directory, url.pathname);
     assertIndexableHtml(html, input);
     const digest = crypto.createHash('sha256').update(html).digest('hex');

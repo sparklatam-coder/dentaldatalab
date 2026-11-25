@@ -53,8 +53,11 @@ test('clinic snippets retain real identity and source phone while distinguishing
 test('district pages have unique, visible range descriptions and crawlable adjacent pagination', () => {
   const clinics = Array.from({ length: 26 }, (_, i) => ({ name: `치과${String(i + 1).padStart(2, '0')}` }));
   const opts = { region: '경기', city: '양주시', clinics, snapshot: '2026-09-30' };
-  assert.match(cityPageDescription({ ...opts, page: 1 }), /1–24번째.*치과01부터 치과24까지/);
-  assert.match(cityPageDescription({ ...opts, page: 2 }), /25–26번째.*치과25부터 치과26까지/);
+  const withTypes = clinics.map((c, i) => ({ ...c, typeCode: i < 2 ? '41' : '51', doctors: { specialist: i % 2 }, hours: {} }));
+  const first = cityPageDescription({ ...opts, clinics: withTypes, page: 1 });
+  assert.match(first, /^경기 양주시 치과 26곳: 치과의원 24곳·치과병원 2곳, 치과전문의 등록 13곳, 진료시간 등록 0곳\./, 'page 1 summarises the district');
+  assert.doesNotMatch(first, /번째|부터/);
+  assert.match(cityPageDescription({ ...opts, clinics: withTypes, page: 2 }), /25–26번째.*치과25부터 치과26까지/);
   assert.throws(() => cityPageDescription({ ...opts, page: 3 }), /empty/);
   const base = '/regions/310000/312700/';
   assert.equal(directoryPagination(base, 1, 1), '');
@@ -66,6 +69,10 @@ test('district pages have unique, visible range descriptions and crawlable adjac
     if (p < 47) assert.ok(html.includes(`href="${base}page/${p + 1}/" aria-label="다음 목록:`));
     assert.doesNotMatch(html, /page\/0\/|onclick=/);
   }
+  // Up to 30 pages every page is linked directly, so no list page is more than one click from page 1.
+  const all = directoryPagination(base, 1, 23);
+  for (let p = 2; p <= 23; p++) assert.ok(all.includes(`href="${base}page/${p}/" aria-label="${p}페이지"`), `page ${p}`);
+  assert.doesNotMatch(all, /…/);
 });
 
 test('profile navigation points to existing geographic routes and original section IDs', () => {
