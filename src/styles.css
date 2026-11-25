@@ -228,3 +228,7 @@ dialog .dialog-close{border-radius:980px;background:#e8e8ed}
 .bread.wrap{padding-left:32px;padding-right:32px}
 @media(max-width:1050px){.bread.wrap{padding-left:24px;padding-right:24px}}
 @media(max-width:760px){.header-inner{row-gap:0;padding-top:8px;padding-bottom:0}.main-nav{margin-top:6px;padding-bottom:4px}.main-nav .compare-nav{right:18px}.bread.wrap{padding:14px 18px 6px}}
+/* Home hero: search first, condition shortcuts next to it. */
+.hero-searchbox{margin:4px 0 16px;max-width:560px;border-color:var(--accent,#0071e3);border-radius:980px;padding:6px 6px 6px 8px}.hero-searchbox input{font-size:16px}.hero-searchbox button{border-radius:980px;background:var(--accent,#0071e3);padding:12px 22px}.hero-searchbox button:hover{background:#0077ed}
+.hero-chips{display:flex;flex-wrap:wrap;gap:8px;max-width:560px}.hero-chips a{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:980px;border:1px solid #d2d2d7;background:#fff;font-size:14px;color:#1d1d1f}.hero-chips a:hover{border-color:var(--accent,#0071e3);color:var(--accent,#0071e3)}.hero-chips .hero-chip-report{border-color:transparent;background:transparent;color:var(--accent,#0071e3)}.hero-chips svg{width:14px;height:14px}
+@media(max-width:760px){.hero-searchbox input{font-size:16px}.hero-searchbox button{padding:11px 16px}.hero-chips a{font-size:13px;padding:7px 12px}}
