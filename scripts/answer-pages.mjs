@@ -8,7 +8,7 @@ import fs from 'node:fs';
 import {esc, fmt, icon, SOURCE_URL} from '../src/shared.mjs';
 import {percentage} from './common.mjs';
 import {externalLink} from './html.mjs';
-import {EXTERNAL_FACTS} from './report-data.mjs';
+import {EXTERNAL_FACTS, externalFact} from './report-data.mjs';
 
 const CHECKED_AT = '2026-11-26';
 // 보건복지부 장애인구강진료센터 표: cell strings copied verbatim from the ministry page (see the file's source block).
@@ -17,11 +17,7 @@ const centers = DISABILITY_CENTERS.centers, centerSource = DISABILITY_CENTERS.so
 const centralCenters = centers.filter(c => c.level === '중앙'), regionalCenters = centers.filter(c => c.level === '권역');
 const MEDICAL_ACT_EDITION = '법률 제21111호 · 시행 2026-11-12';
 const MEDICAL_RULE_EDITION = '보건복지부령 제1177호 · 시행 2026-06-12';
-const fact = id => {
-  const f = EXTERNAL_FACTS.find(x => x.id === id);
-  if (!f) throw new Error('Missing external fact: ' + id);
-  return f;
-};
+const fact = externalFact;
 
 /** Primary sources quoted on the answer pages. */
 export const ANSWER_SOURCES = Object.freeze({

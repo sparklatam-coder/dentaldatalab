@@ -49,6 +49,8 @@ export const EXTERNAL_FACTS = Object.freeze([
     note: '2차 자료이며 고시 원문과 대조하기 전입니다. 2023년 이전 자료의 “치과병원 20%·치과의원 15%”는 현행 수치가 아닙니다.',
   },
 ]);
+// One lookup for every page that cites a fact; a missing id is a build error, never a silent blank.
+export const externalFact = id => { const f = EXTERNAL_FACTS.find(x => x.id === id); if (!f) throw new Error('Missing external fact: ' + id); return f; };
 
 export const DENTAL_HOSPITAL_DEFINITIONS = Object.freeze({
   population: '심평원 종별코드 41(치과병원)과 51(치과의원). 종합병원·상급종합병원의 치과 진료과목은 포함하지 않음',

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { collectReports, hasValidHours, NORTHERN_GYEONGGI_CITIES } from '../scripts/report-data.mjs';
+import { collectReports, hasValidHours, NORTHERN_GYEONGGI_CITIES, externalFact } from '../scripts/report-data.mjs';
 
 const metadata = {
   snapshotDate: '2026-09-30', observedAt: '2026-10-31T10:27:09.045Z', sourceSha256: 'fixture-hash',
@@ -241,5 +241,18 @@ test('real snapshot district coverage reconciles with every institution', () => 
     assert.deepEqual(g.concentration, { units: 24, hospitals: 126, percentOfHospitals: 50.8 });
     assert.deepEqual(g.withoutHospitalClinics, { units: 128, clinics: 4324, minClinics: 1, maxClinics: 235 });
     assert.equal(g.aliasesApplied.reduce((sum, alias) => sum + alias.rows, 0), 2);
+  }
+});
+
+test('externalFact returns the cited record and refuses an unknown id instead of rendering a blank', () => {
+  assert.equal(externalFact('nhis-outpatient-copay').headline.dentalHospital, '40%');
+  assert.throws(() => externalFact('no-such-fact'), /Missing external fact: no-such-fact/);
+});
+
+test('no page module re-implements the external-fact lookup', () => {
+  for (const file of ['answer-pages.mjs', 'hospital-pages.mjs', 'hospital-content.mjs', 'report-pages.mjs', 'condition-pages.mjs']) {
+    const src = fs.readFileSync(new URL('../scripts/' + file, import.meta.url), 'utf8');
+    assert.doesNotMatch(src, /EXTERNAL_FACTS\.find\(/, file);
+    assert.doesNotMatch(src, /externalFacts\.find\(/, file);
   }
 });

@@ -2,10 +2,10 @@
 // Every statement is either the public record (종별코드, 등록 수) or a cited law with its 확인일;
 // nothing here evaluates the institution or compares it with others.
 import {esc, fmt, icon, DAY_LABELS} from '../src/shared.mjs';
-import {EXTERNAL_FACTS, hasValidHours} from './report-data.mjs';
+import {externalFact, hasValidHours} from './report-data.mjs';
 import {DAYS, hasText} from './common.mjs';
 
-const fact = id => EXTERNAL_FACTS.find(f => f.id === id);
+const fact = externalFact;
 const isCount = value => Number.isSafeInteger(value) && value >= 0;
 export const isDentalHospital = c => c?.typeCode === '41';
 

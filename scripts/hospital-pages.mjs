@@ -4,12 +4,12 @@ import {esc,fmt,icon,card,clinicUrl} from '../src/shared.mjs';
 import {externalLink} from './html.mjs';
 import {answerLinks,DISABILITY_CENTERS} from './answer-pages.mjs';
 import {regionLabelSentence} from './region-notes.mjs';
-import {EXTERNAL_FACTS} from './report-data.mjs';
+import {externalFact} from './report-data.mjs';
 
 export const HOSPITAL_TYPE='41';
 // Citation (title, URL, edition, 확인일) comes from the single EXTERNAL_FACTS record that also drives the reports,
 // institution panels and answer pages; only the plain-language summary for listings lives here.
-const fact=id=>{const f=EXTERNAL_FACTS.find(x=>x.id===id);if(!f)throw new Error('Missing external fact '+id);return f;};
+const fact=externalFact;
 const cite=(id,summary)=>{const f=fact(id);return {title:f.title,url:f.sourceUrl,edition:f.sourceTitle,checkedAt:f.checkedAt,summary};};
 const CENTER_LEVELS=[...DISABILITY_CENTERS.centers.reduce((m,c)=>m.set(c.level,(m.get(c.level)??0)+1),new Map())].map(([level,n])=>`${level} ${n}곳`).join('·');
 export const LEGAL_SOURCES=Object.freeze({
