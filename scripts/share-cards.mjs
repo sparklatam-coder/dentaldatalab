@@ -16,7 +16,10 @@ const REPORT_FIGURES = {
   'national-data-coverage': g => ({figure: `${fmt(g.total)}곳`, label: '전국 치과병원·치과의원 등록 자료'}),
   'northern-gyeonggi-hours': g => ({figure: `${fmt(g.total)}곳`, label: '경기북부 10개 시·군 치과의 등록시간'}),
   'dental-hospitals': g => ({figure: `${fmt(g.total)}곳`, label: '전국 치과병원(종별코드 41) 전수 집계'}),
-  'dental-hospital-vs-clinic': () => ({figure: '30% · 40%', label: '외래 본인부담률 · 치과의원과 치과병원(동 지역)'}),
+  'dental-hospital-vs-clinic': (g, reports) => {
+    const copay = reports.externalFacts?.find(f => f.id === 'nhis-outpatient-copay')?.headline;
+    return copay ? {figure: `${copay.dentalClinic} · ${copay.dentalHospital}`, label: '외래 본인부담률 · 치과의원과 치과병원(동 지역)'} : null;
+  },
   'dental-hospital-districts': g => ({figure: `${fmt(g.withHospital)} / ${fmt(g.total)}`, label: '치과병원이 있는 시·군·구'}),
 };
 
@@ -24,10 +27,10 @@ const REPORT_FIGURES = {
 export function shareCards(reports) {
   const cards = [];
   for (const item of REPORTS) {
-    const figure = REPORT_FIGURES[item.slug];
-    if (!figure) continue;
     const g = reports[item.group];
-    cards.push({file: `report-${item.slug}`, routes: [`/reports/${item.slug}/`], eyebrow: item.tag, title: reportTitle(item, g), ...figure(g), note: `심평원 ${reports.snapshotDate} 기준 · 출처와 집계 기준 공개`});
+    const figure = REPORT_FIGURES[item.slug]?.(g, reports);
+    if (!figure) continue;
+    cards.push({file: `report-${item.slug}`, routes: [`/reports/${item.slug}/`], eyebrow: item.tag, title: reportTitle(item, g), ...figure, note: `심평원 ${reports.snapshotDate} 기준 · 출처와 집계 기준 공개`});
   }
   cards.push({file: 'conditions', routes: ['/conditions/'], eyebrow: '조건별 치과 · 시·군·구별 목록', title: '야간·토요일·일요일 진료,\n치과전문의 등록 치과 찾기', figure: '', label: '', note: `심평원 ${reports.snapshotDate} 등록 자료 기준 · 가나다순, 순위 없음`});
   for (const c of CONDITIONS) {
