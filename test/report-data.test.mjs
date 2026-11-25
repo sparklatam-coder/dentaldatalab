@@ -100,6 +100,49 @@ test('mixed source region names are disclosed without reclassifying the records'
   assert.deepEqual(result.regionIssues[0].labels, [{ name: '전남', count: 1 }, { name: '전남광주', count: 2 }]);
 });
 
+test('dental hospital aggregates keep every denominator explicit and never name an institution', () => {
+  const input = deepFreeze([
+    clinic({ typeCode: '41', name: '서울대학교치과병원처럼 보이는 이름', sido: '서울', city: '종로구', doctors: { specialist: 10 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 2 }], openedOn: '1999-12-31', specialties: [{ code: '50', name: '구강악안면외과', specialists: 3 }, { code: '51', name: '치과보철과', specialists: 0 }], website: 'https://valid.org', hours: { mon: interval('09:00', '18:00') } }),
+    clinic({ typeCode: '41', name: '명칭에 그 단어가 없는 치과병원', sido: '서울', city: '강남구', doctors: { specialist: 2 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 1 }, { code: 'B109', name: '콘빔CT', count: 1 }], openedOn: '2021-01-01', specialties: [{ code: '50', name: '구강악안면외과', specialists: 1 }] }),
+    clinic({ typeCode: '41', name: '세 번째 치과병원', sido: '경기', city: '양주시', doctors: { specialist: null }, equipment: [{ code: 'B109', name: '콘빔CT', count: null }], openedOn: '2010-05-05' }),
+    clinic({ typeCode: '41', name: '네 번째 치과병원', sido: '경기', city: '양주시', doctors: { specialist: 0 }, openedOn: 'unknown', specialties: [{ code: '50', name: '구강악안면외과', specialists: 1 }] }),
+    clinic({ doctors: { specialist: 1 }, equipment: [{ code: 'B109', name: '콘빔CT', count: 1 }] }),
+    clinic({ doctors: { specialist: 0 } }),
+  ]);
+  const g = collectReports(input, metadata).dentalHospitals;
+  assert.equal(g.total, 4);
+  assert.deepEqual(g.types, { hospital: 4, clinic: 2 });
+  assert.deepEqual(g.hospitals.specialist, { known: 3, mean: 4, median: 2, min: 0, max: 10, atLeastOne: { count: 2, known: 3, unknown: 1, total: 4, percentOfTotal: 50, percentOfKnown: 66.7 }, atLeastThree: { count: 1, known: 3, unknown: 1, total: 4, percentOfTotal: 25, percentOfKnown: 33.3 } });
+  assert.deepEqual(g.hospitals.cbct, { known: 2, mean: 2, median: 2, min: 2, max: 2, registered: { count: 2, known: 2, unknown: 2, total: 4, percentOfTotal: 50, percentOfKnown: 100 } }, 'two CT rows add up; a row without a count is unknown');
+  assert.deepEqual(g.clinics.specialist.atLeastOne, { count: 1, known: 2, unknown: 0, total: 2, percentOfTotal: 50, percentOfKnown: 50 });
+  assert.deepEqual(g.university, { count: 1, percentOfTotal: 25, specialist: { known: 1, mean: 10, median: 10, min: 10, max: 10 }, others: { count: 3, specialist: { known: 2, mean: 1, median: 1, min: 0, max: 2 } } });
+  assert.deepEqual(g.regions, [{ sido: '경기', count: 2, percentOfTotal: 50 }, { sido: '서울', count: 2, percentOfTotal: 50 }]);
+  assert.deepEqual(g.topCities, [{ label: '경기 양주시', count: 2 }, { label: '서울 강남구', count: 1 }, { label: '서울 종로구', count: 1 }]);
+  assert.deepEqual(g.opening.map(b => [b.id, b.count]), [['before2000', 1], ['2000s', 0], ['2010s', 1], ['since2020', 1], ['unknown', 1]]);
+  assert.deepEqual(g.specialties, [{ code: '50', name: '구강악안면외과', count: 3, percentOfTotal: 75 }], 'a listed specialty with zero specialists is not counted');
+  assert.deepEqual(g.hospitals.website, { count: 1, known: 1, unknown: 3, total: 4, percentOfTotal: 25, percentOfKnown: 100 });
+  assert.equal(g.hospitals.hours.count, 1);
+  const serialized = JSON.stringify(g);
+  for (const name of input.map(c => c.name)) assert(!serialized.includes(name), name);
+  assert(!serialized.includes('"id":"fixture"'));
+  const empty = collectReports([], metadata).dentalHospitals;
+  assert.deepEqual(empty.hospitals.specialist.mean, null);
+  assert.deepEqual(empty.regions, []);
+  assert.equal(empty.university.percentOfTotal, null);
+});
+
+test('external facts carry a primary or secondary source, a check date and a quote for every row', () => {
+  const { externalFacts } = collectReports([], metadata);
+  assert.equal(externalFacts.length, 4);
+  for (const fact of externalFacts) {
+    assert.match(fact.sourceUrl, /^https:\/\/(www\.law\.go\.kr|www\.nhis\.or\.kr|www\.dentop\.co\.kr)\//, fact.id);
+    assert.match(fact.checkedAt, /^\d{4}-\d{2}-\d{2}$/);
+    assert(['primary', 'secondary'].includes(fact.sourceKind));
+    for (const key of ['topic', 'title', 'quote', 'dentalHospital', 'dentalClinic', 'note']) assert(fact[key].trim().length, fact.id + '.' + key);
+  }
+  assert.equal(externalFacts.filter(fact => fact.sourceKind === 'secondary').length, 1, 'only the 2024 surcharge summary is second-hand');
+});
+
 test('non-dental records fail loudly instead of silently changing the stated population', () => {
   assert.throws(() => collectReports([clinic({ typeCode: '01' })], metadata), /types 41 and 51/);
 });

@@ -1,7 +1,7 @@
 // Public indexing is separate from the full launch review and medical drafts.
 export const NOINDEX_ROUTES = ['/questions/', '/find/', '/compare/', '/corrections/', '/verification/', '/privacy/', '/404/'];
 export function isIndexableRoute(route) {
-  return route === '/' || /^\/(?:reports|regions|clinics|data|methodology|guides|about|clinic-assets|search-sources)\/(?:[^?#]*)$/.test(route);
+  return route === '/' || /^\/(?:reports|regions|hospitals|clinics|data|methodology|guides|about|clinic-assets|search-sources)\/(?:[^?#]*)$/.test(route);
 }
 export function siteOrigin(value = 'https://dentaldatalab.com') {
   const url = new URL(value);
