@@ -127,6 +127,20 @@ test('an unread or non-website candidate row is not promoted', () => {
   assert.equal(asset.ownership, 'candidate');
 });
 
+test('a later model research record cannot demote a code-verified homepage or its linked channels', () => {
+  const later = '2026-12-01T09:00:00Z';
+  const laterBatch = { ...researchBatch(), checkedAt: later, records: [{ ...researchBatch().records[0], checkedAt: later, assets: [
+    { ...researchBatch().records[0].assets[0] },
+    { kind: 'instagram', url: 'https://www.instagram.com/daejo_dental', ownership: 'candidate', bodyStatus: 'not_read', evidenceUrls: ['https://search.example.net/results'], identityEvidence: [], provenance: [{ type: 'automated_web_research' }] },
+  ] }] };
+  const result = buildAssetInventory([clinic()], { ...metadata, batches: [laterBatch], crawl: { results: [check()] } });
+  assert.equal(website(result).ownership, 'official');
+  assert.equal(website(result).linkable, true);
+  assert.equal(website(result).checkedAt, verified);
+  assert.deepEqual(links(result).map(a => [a.kind, a.ownership, a.linkable]), [['instagram', 'linked', true]]);
+  assert.equal(website(result).provenance.find(p => p.type === 'superseded_observation').checkedAt, later);
+});
+
 test('linked-homepage scans keep their existing behaviour: a full match still stays a candidate and still donates links', () => {
   const result = build([check({ sourceType: 'discovered_homepage' })]);
   assert.equal(website(result).ownership, 'candidate');

@@ -30,6 +30,7 @@ export const EXTERNAL_FACTS = Object.freeze([
     sourceUrl: 'https://www.nhis.or.kr/static/html/wbma/c/wbmac0103.html', checkedAt: '2026-11-26',
     quote: '치과병원: 동지역 요양급여비용 총액의 40%, 읍·면지역 35%. 치과의원: 요양급여비용 총액의 30%.',
     dentalHospital: '동지역 40% · 읍·면지역 35%', dentalClinic: '30%',
+    headline: { dentalHospital: '40%', dentalClinic: '30%', note: '치과병원 동지역 기준. 읍·면 35%. 예외 별도' },
     note: '일반 환자 기준입니다. 65세 이상 정액제, 임산부·1세 미만 아동, 의약분업 예외환자 등은 별도 기준이 적용됩니다.',
   },
   {

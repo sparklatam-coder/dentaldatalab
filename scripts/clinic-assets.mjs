@@ -192,6 +192,10 @@ function addLegacyResearch({legacy,byId,add}){
 // read the body and found this institution's phone number AND road address, on a page that lists at most two registered
 // phone numbers (a directory or group page lists many). Anything else stays an unlinked candidate.
 export const CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES=2;
+// Code-verified observations (homepage body matched, channels it links) outrank model-reported research assets, which
+// enter at priority 3: with equal priority the newer checkedAt wins, so a later research run would otherwise demote a
+// verified official/linked asset back to candidate. Only another code verification (same priority, newer) replaces one.
+export const CODE_VERIFIED_PRIORITY=4;
 export function candidateHomepageVerified(check,match){
   // Same shape as the Naver map rule: the institution name plus its phone number or its road address, read from
   // the page by code. Many clinic sites print the address only in an image or a map widget, so phone alone
@@ -210,7 +214,7 @@ export function candidateHomepageVerified(check,match){
 export const LINKED_CHANNEL_MAX_CLINICS=2;
 const SEGMENT=/^[A-Za-z0-9._-]+$/;
 const NAVER_BLOG_RESERVED=new Set(['postview.naver','postlist.naver','prologue','guestbook','memo','rabbit','common','post','blogid']);
-const FACEBOOK_RESERVED=new Set(['profile.php','sharer.php','share.php','sharer','share','dialog','people','pages','groups','events','login','plugins','hashtag','watch','photo.php','story.php','permalink.php']);
+const FACEBOOK_RESERVED=new Set(['profile.php','sharer.php','share.php','sharer','share','dialog','people','pages','pg','groups','events','login','plugins','hashtag','watch','photo','photo.php','photos','video.php','videos','story.php','permalink.php','l.php','home.php','search','posts','notes','reel','reels','stories','marketplace','gaming','help','settings','messages','business','ads','privacy','policies','terms','about','legal','media','tr','public']);
 const INSTAGRAM_RESERVED=new Set(['p','reel','reels','tv','explore','accounts','stories','direct','about','developer','legal']);
 export function channelFromHref(raw){
   const url=assetUrl(raw);if(!url)return null;
@@ -262,7 +266,7 @@ function addHomepageScans({crawl,byId,add}){
       const verified=candidateHomepageVerified(check,match)&&detectKind(checkUrl)==='website',matched=match.name&&match.phone,proof=[];
       if(match.name)proof.push({field:'name',value:r.name,sourceUrl:finalUrl});if(match.phone)proof.push({field:'phone',value:r.phone,sourceUrl:finalUrl});
       if(verified&&match.address)proof.push({field:'address',value:r.address,sourceUrl:finalUrl});
-      if(verified)add(id,{url:checkUrl,kind:'website',ownership:'official',bodyStatus:'read',evidenceUrls:[finalUrl],identityEvidence:proof,notes:'자동 발굴 후보 홈페이지의 본문에서 기관명과 '+(match.phone&&match.address?'전화번호·도로명 주소':match.phone?'전화번호':'도로명 주소')+'를 공공 원자료와 코드로 대조했습니다. 페이지에 나타난 다른 등록기관 전화는 '+CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES+'개 이하입니다. 모델 판단이 아닌 문자열 대조이며 현재 운영 상태를 확정하지 않습니다.',provenance:[{type:'candidate_homepage_verification',sourceType,bodySha256:check.bodySha256??null,matches:{...match},datasetPhoneCount:check.datasetPhoneCount,hostClinicCount:check.hostClinicCount??null,checkedAt:check.checkedAt}]},check.checkedAt,3);
+      if(verified)add(id,{url:checkUrl,kind:'website',ownership:'official',bodyStatus:'read',evidenceUrls:[finalUrl],identityEvidence:proof,notes:'자동 발굴 후보 홈페이지의 본문에서 기관명과 '+(match.phone&&match.address?'전화번호·도로명 주소':match.phone?'전화번호':'도로명 주소')+'를 공공 원자료와 코드로 대조했습니다. 페이지에 나타난 다른 등록기관 전화는 '+CANDIDATE_HOMEPAGE_MAX_DATASET_PHONES+'개 이하입니다. 모델 판단이 아닌 문자열 대조이며 현재 운영 상태를 확정하지 않습니다.',provenance:[{type:'candidate_homepage_verification',sourceType,bodySha256:check.bodySha256??null,matches:{...match},datasetPhoneCount:check.datasetPhoneCount,hostClinicCount:check.hostClinicCount??null,checkedAt:check.checkedAt}]},check.checkedAt,CODE_VERIFIED_PRIORITY);
       else add(id,{url:checkUrl,kind:detectKind(checkUrl),ownership:'candidate',bodyStatus:'read',evidenceUrls:[finalUrl],identityEvidence:proof,notes:matched?'본문에서 이름·전화 문자열을 자동 대조했습니다. 수동 귀속 검토 전입니다.':'홈페이지 HTML은 수신했으나 기관 귀속은 미확인입니다.',provenance:[{type:'homepage_scan',sourceType,bodySha256:check.bodySha256}]},check.checkedAt,1);
       // A parked, unrelated or directory page must not donate its social accounts to the clinic. Candidate homepages
       // donate hrefs only once the page itself passed the verification above.
@@ -271,7 +275,7 @@ function addHomepageScans({crawl,byId,add}){
         const channel=verified?channelFromHref(a?.url):null,shared=channel?(channelClinics.get(channel.url)??0)>LINKED_CHANNEL_MAX_CLINICS:false;
         if(channel&&!shared){
           // The verified homepage names this profile/channel/place as its own. The platform page itself is not read.
-          add(id,{url:channel.url,kind:channel.kind,ownership:'linked',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:'기관명과 전화·주소가 대조된 홈페이지 HTML이 연결한 채널. 원래 href: '+a.url,sourceUrl:finalUrl}],notes:'본문·기관 대조를 통과한 홈페이지가 직접 연결한 채널입니다. 채널 페이지 본문은 읽지 않았으며 현재 운영 여부는 확인하지 않습니다.',provenance:[{type:'verified_homepage_channel',sourceType,href:a.url,bodySha256:check.bodySha256??null,linkedByClinics:channelClinics.get(channel.url)??1,checkedAt:check.checkedAt}]},check.checkedAt,3);
+          add(id,{url:channel.url,kind:channel.kind,ownership:'linked',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:'기관명과 전화·주소가 대조된 홈페이지 HTML이 연결한 채널. 원래 href: '+a.url,sourceUrl:finalUrl}],notes:'본문·기관 대조를 통과한 홈페이지가 직접 연결한 채널입니다. 채널 페이지 본문은 읽지 않았으며 현재 운영 여부는 확인하지 않습니다.',provenance:[{type:'verified_homepage_channel',sourceType,href:a.url,bodySha256:check.bodySha256??null,linkedByClinics:channelClinics.get(channel.url)??1,checkedAt:check.checkedAt}]},check.checkedAt,CODE_VERIFIED_PRIORITY);
           continue;
         }
         add(id,{...a,ownership:'candidate',bodyStatus:'not_read',evidenceUrls:[finalUrl],identityEvidence:[...proof,{field:'officialLink',value:verified?'전화·주소가 대조된 홈페이지 HTML의 href. 운영 주체 수동 확인 전.':'기관명 또는 전화 문자열이 있는 홈페이지 HTML의 href. 운영 주체 수동 확인 전.',sourceUrl:finalUrl}],notes:shared?'홈페이지의 실제 외부 링크이지만 '+(channelClinics.get(channel.url))+'개 기관의 검증된 홈페이지가 같은 채널을 연결해 특정 기관의 채널로 보지 않습니다(브랜드·그룹 채널 가능). 수동 확인 전입니다.':'홈페이지의 실제 외부 링크입니다. 자동 수집 후보이며 기관 귀속과 대상 본문은 수동 확인 전입니다.',provenance:[{type:'homepage_href',sourceType,bodySha256:check.bodySha256,...(shared?{sharedByClinics:channelClinics.get(channel.url)}:{})}]},check.checkedAt,1);

@@ -58,6 +58,16 @@ class AddressSpanTests(unittest.TestCase):
         self.assertFalse(crawler.address_match(self.RECORD, '청주시 상당구 청남로 21960'))
         self.assertFalse(crawler.address_match(self.RECORD, '상당구 청남로 2196'))
         self.assertFalse(crawler.address_match('세종특별자치시 한누리대로 2130', '한누리대로 2130'))
+
+    def test_a_different_province_before_the_span_rejects_a_same_name_branch(self):
+        record = '대구광역시 중구 중앙대로 400'
+        self.assertTrue(crawler.address_match(record, '대구광역시 중구 중앙대로 400'))
+        self.assertTrue(crawler.address_match(record, '주소: 중구 중앙대로 400 2층'))
+        self.assertFalse(crawler.address_match(record, '부산광역시 중구 중앙대로 400'))
+        self.assertFalse(crawler.address_match(record, '부산 중구 중앙대로 400'))
+        # A merged-province record still accepts the older province label on the page.
+        self.assertTrue(crawler.address_match('전남광주통합특별시 북구 금남로 1', '광주광역시 북구 금남로 1'))
+        self.assertTrue(crawler.address_match('전남광주통합특별시 순천시 중앙로 1', '전라남도 순천시 중앙로 1'))
         self.assertTrue(crawler.address_match('세종특별자치시 한누리대로 2130', '세종 한누리대로 2130'))
 
 

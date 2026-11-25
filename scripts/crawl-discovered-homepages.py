@@ -82,7 +82,16 @@ def address_match(address, visible):
     # independent matches anywhere on the page. Homepages often omit the province ("청주시 상당구
     # 청남로 2196"), so the province is optional whenever a jurisdiction token is required.
     pattern = ('(?:' + prefix + r'\s*)?' if jurisdiction else prefix) + locality + r'\s*(?:[가-힣0-9]+[읍면]\s*)?' + re.escape(road.group(1)) + r'\s*' + re.escape(road.group(2)) + r'(?![\d-])'
-    return bool(re.search(pattern, visible))
+    # The optional province must not admit a *different* one: "부산광역시 중구 중앙대로 400" is not a 대구 중구 address
+    # even though 구·로·번지 coincide (same-name branches in other cities). Aliases that overlap this record's own
+    # province (광주 / 전남 inside 전남광주) are not "other".
+    others = [alias for other in PROVINCE_GROUPS if other is not group and not any(a in own or own in a for a in other for own in group) for alias in other]
+    other_before = re.compile('(?:' + '|'.join(re.escape(x) for x in sorted(others, key=len, reverse=True)) + r')\s*$')
+    for found in re.finditer(pattern, visible):
+        if jurisdiction and other_before.search(visible[max(0, found.start() - 12):found.start()]):
+            continue
+        return True
+    return False
 
 
 def inspect(seed):

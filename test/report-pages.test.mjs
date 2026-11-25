@@ -287,3 +287,13 @@ test('district report counts places from the data, links only region pages and e
   assert(!hostilePage.body.includes('<img src=x'));
   assert(hostilePage.body.includes(esc(hostile)));
 });
+
+test('the hospital-vs-clinic headline tile and description read the copay figures from EXTERNAL_FACTS', async () => {
+  const { EXTERNAL_FACTS } = await import('../scripts/report-data.mjs');
+  const copay = EXTERNAL_FACTS.find(f => f.id === 'nhis-outpatient-copay');
+  assert.equal(copay.headline.dentalHospital, '40%');
+  assert.equal(copay.headline.dentalClinic, '30%');
+  const src = fs.readFileSync(new URL('../scripts/report-pages.mjs', import.meta.url), 'utf8');
+  assert.doesNotMatch(src, /<strong>40%<small>vs 30%/, 'copay headline must not be a literal');
+  assert.doesNotMatch(src, /치과병원 40%\(읍·면 35%\), 치과의원 30%/, 'copay description must not be a literal');
+});
