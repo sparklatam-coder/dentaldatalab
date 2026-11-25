@@ -3,18 +3,18 @@
   "definitionVersion": 1,
   "origin": "https://dentaldatalab.com",
   "month": "2026-11",
-  "observedOn": null,
-  "observer": null,
+  "observedOn": "2026-11-26",
+  "observer": "자동 관찰 · scripts/growth-observe.mjs v1 (Aside 브라우저)",
   "conditions": {
     "chatgpt": null,
-    "googleAiOverview": null,
-    "naverAiBriefing": null,
-    "google": null,
-    "naver": null
+    "googleAiOverview": "자동 관찰 · Aside 브라우저 일반 창 · Google 로그인 상태 · www.google.com/search?hl=ko&gl=kr&pws=0 첫 페이지 · 'AI 개요' 영역의 링크(접힌 출처 포함) · 클릭 없음",
+    "naverAiBriefing": "자동 관찰 · Aside 브라우저 일반 창 · 네이버 로그인 상태 · search.naver.com/search.naver 통합검색 첫 페이지 · 'AI 브리핑' 영역의 링크 · 클릭 없음",
+    "google": "자동 관찰 · Aside 브라우저 일반 창 · Google 로그인 상태 · www.google.com/search?hl=ko&gl=kr&pws=0 첫 페이지만 · 제목 링크가 있는 일반 결과 위에서부터 최대 10개(광고·AI 개요·지도 묶음·관련 질문 제외, 2페이지는 열지 않음)",
+    "naver": "자동 관찰 · Aside 브라우저 일반 창 · 네이버 로그인 상태 · search.naver.com/search.naver 통합검색 첫 페이지 · 본문 결과 카드(웹·블로그·카페·지식iN) 위에서부터 10개(파워링크 광고·플레이스·AI 브리핑·이미지·클립 묶음 제외)"
   },
-  "notes": null,
+  "notes": "2026-11-26 첫 자동 기준선(scripts/growth-observe.mjs). (1) ChatGPT 20칸은 임시 채팅 안내 창이 떠 있어 질문을 보내지 못했다(클릭하지 않음) — null. (2) 구글 기관명 검색은 30곳 중 21곳만 쟀다. 같은 실행의 42번째 구글 요청에서 비정상 트래픽 확인 화면(/sorry/)이 나와 구글을 멈췄고 남은 9곳은 null 이다. (3) 네이버 두 엔진의 conditions 는 첫 판독기가 숨겨진 로그인 링크를 읽어 “로그인 안 한 상태”로 적었던 것을, 머리글의 표시 상태를 다시 확인해 “로그인 상태”로 바로잡았다. 칸 값은 다시 재지 않았다. (4) 네이버 수집 페이지·참조 도메인·병원 이동 클릭은 콘솔 로그인이 필요해 재지 않았다 — null.",
   "gateInputs": {
-    "bingSiteResults": null,
+    "bingSiteResults": 1,
     "naverCollectedPages": null,
     "referringDomains": null,
     "handoffClicks": null
@@ -25,8 +25,28 @@
       "question": "전국 치과 수는 모두 몇 곳인가요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "hira.or.kr",
+            "dentalnews.or.kr",
+            "occupationalhealthblog.net"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "dentstat.com",
+            "occupationalhealthblog.net",
+            "blog.naver.com"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -34,8 +54,28 @@
       "question": "전국에 치과병원은 몇 곳 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "hpikda.or.kr",
+            "blog.naver.com",
+            "dailydental.co.kr",
+            "365implant.com",
+            "dentalnews.or.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "dentstat.com"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -43,8 +83,32 @@
       "question": "치과병원과 치과의원은 무엇이 다른가요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "moondental.co.kr",
+            "youtube.com",
+            "blog.naver.com",
+            "a-ha.io",
+            "news.kyobo.com",
+            "365implant.com",
+            "digitalartdc.co.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "blog.naver.com",
+            "today-dental.com",
+            "moondental.co.kr"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -52,8 +116,34 @@
       "question": "치과병원과 종합병원 치과는 무엇이 다른가요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "seoulbro.com",
+            "youtube.com",
+            "blog.naver.com",
+            "seoulstdc.com",
+            "info.singident.com",
+            "365implant.com",
+            "m.blog.naver.com"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "seoulstdc.com",
+            "blog.naver.com",
+            "today-dental.com",
+            "daejeondentist.com",
+            "medimoa.kr"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -61,8 +151,27 @@
       "question": "치과병원은 병상이 30개 이상 있어야 하나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "law.go.kr",
+            "nhis.or.kr",
+            "blog.naver.com",
+            "mymerci.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "blog.naver.com"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -70,8 +179,31 @@
       "question": "치과병원에서 진료받으면 치과의원보다 본인부담률이 높나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "joongang.co.kr",
+            "dentistnews.kr",
+            "circle-dental.co.kr",
+            "hira.or.kr",
+            "blog.naver.com",
+            "m.blog.naver.com",
+            "bdbddc.com"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "blog.naver.com",
+            "dodamdc.kr"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -79,8 +211,29 @@
       "question": "대학 치과병원에 가려면 진료의뢰서가 필요한가요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "snubh.org",
+            "dental.severance.healthcare",
+            "dailymedi.com",
+            "threads.com",
+            "m.kin.naver.com",
+            "blog.sdwoosoo.com"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "blog.naver.com"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -88,8 +241,25 @@
       "question": "장애인이 진료받을 수 있는 치과병원은 어디에 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "news.seoul.go.kr",
+            "nurinet.ddm.go.kr",
+            "kda.or.kr",
+            "nrc.go.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -97,8 +267,31 @@
       "question": "권역장애인구강진료센터는 전국에 몇 곳이고 어디에 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "mohw.go.kr",
+            "sndcc.org",
+            "news.seoul.go.kr",
+            "kda.or.kr",
+            "dental.severance.healthcare",
+            "nrc.go.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "blog.naver.com",
+            "newsin020.com",
+            "dentalweb.co.kr"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -106,8 +299,31 @@
       "question": "치과병원이 한 곳도 없는 시·군·구는 얼마나 되나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "nhis.or.kr",
+            "dentalnews.or.kr",
+            "digitalartdc.co.kr",
+            "kosis.kr",
+            "hira.or.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "golgong.github.io",
+            "mediharu.com",
+            "blog.naver.com",
+            "occupationalhealthblog.net"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -115,8 +331,37 @@
       "question": "서울에 있는 치과병원 목록을 알려 주세요.",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "my-doctor.io",
+            "snudhgw.org",
+            "snudh.org",
+            "blog.naver.com",
+            "dental.severance.healthcare",
+            "news.seoul.go.kr",
+            "khudh.or.kr",
+            "sdh.go.kr",
+            "sadh.co.kr",
+            "kap.or.kr",
+            "bohun.or.kr",
+            "kperio.org",
+            "kda.or.kr",
+            "data.seoul.go.kr",
+            "modoodoc.com",
+            "namu.wiki"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -124,8 +369,25 @@
       "question": "부산에는 치과병원이 몇 곳 있고 어디에 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "hira.or.kr",
+            "my-doctor.io",
+            "doctornow.co.kr",
+            "occupationalhealthblog.net"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -133,8 +395,29 @@
       "question": "경기도에 있는 치과병원을 시·군별로 알려 주세요.",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "gg.go.kr",
+            "modoodoc.com",
+            "data.go.kr",
+            "blog.naver.com",
+            "occupationalhealthblog.net",
+            "goodhosrank.com",
+            "bokjiya.u2.to",
+            "data.edmgr.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -142,8 +425,26 @@
       "question": "대학교 치과병원은 전국 어디에 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "kperio.org",
+            "kdha.net",
+            "state.gwd.go.kr",
+            "youtube.com",
+            "blog.naver.com"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -151,8 +452,32 @@
       "question": "치과병원에는 치과 전문의가 평균 몇 명 등록되어 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "dentalarirang.com",
+            "dentalarchive.tv",
+            "dentistnews.kr",
+            "hira.or.kr",
+            "dailydental.co.kr",
+            "namu.wiki"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "blog.naver.com",
+            "hospital24.kr",
+            "hira.or.kr",
+            "dentalweb.co.kr"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -160,8 +485,36 @@
       "question": "치과 공공데이터는 어디에서 구할 수 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": true,
+          "citedUrls": [
+            "https://dentaldatalab.com/",
+            "https://dentaldatalab.com/reports/"
+          ],
+          "otherDomains": [
+            "data.go.kr",
+            "auth.data.go.kr",
+            "data.seoul.go.kr",
+            "aihub.or.kr",
+            "data.edmgr.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "blog.naver.com",
+            "kin.naver.com",
+            "data.edmgr.kr",
+            "today-dental.com",
+            "dentalweb.co.kr",
+            "medi.kimgoon.kr"
+          ],
+          "note": null
+        }
       }
     },
     {
@@ -169,8 +522,32 @@
       "question": "전국 치과 데이터를 정리해서 보여 주는 사이트가 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": true,
+          "citedUrls": [
+            "https://dentaldatalab.com/",
+            "https://dentaldatalab.com/regions/110000/",
+            "https://dentaldatalab.com/reports/national-data-coverage/"
+          ],
+          "otherDomains": [
+            "hira.or.kr",
+            "auth.data.go.kr",
+            "opendata.hira.or.kr",
+            "data.go.kr",
+            "dailydental.co.kr",
+            "youtube.com",
+            "data.edmgr.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -178,8 +555,28 @@
       "question": "양주시에서 일요일에 진료하는 치과병원이 있나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "my-doctor.io",
+            "yonsei365dental.com",
+            "goodhosrank.com",
+            "blog.naver.com",
+            "ohappyhappy.com",
+            "soul.pitapatmyday.com",
+            "dentistnews.kr"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -187,8 +584,29 @@
       "question": "경기 북부에서 야간 진료를 하는 치과는 얼마나 되나요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "my-doctor.io",
+            "blog.brugdent.com",
+            "kda.or.kr",
+            "sda.or.kr",
+            "oreundental.com",
+            "youtube.com",
+            "m.dailypharm.com",
+            "seoulthenature.com"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     },
     {
@@ -196,8 +614,27 @@
       "question": "일요일에 진료하는 치과는 전국에 몇 곳인가요?",
       "cells": {
         "chatgpt": null,
-        "googleAiOverview": null,
-        "naverAiBriefing": null
+        "googleAiOverview": {
+          "answerShown": true,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [
+            "kda.or.kr",
+            "dailydental.co.kr",
+            "my-doctor.io",
+            "e-medis.nemc.or.kr",
+            "seoulthenature.com",
+            "youtube.com"
+          ],
+          "note": null
+        },
+        "naverAiBriefing": {
+          "answerShown": false,
+          "cited": false,
+          "citedUrls": [],
+          "otherDomains": [],
+          "note": null
+        }
       }
     }
   ],
@@ -206,168 +643,294 @@
       "id": "c-000029b3fb02",
       "name": "유어스치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-0ba524f4f42b",
       "name": "비욘드 치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-0eb4ace601f5",
       "name": "세계로치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-16800a9592d4",
       "name": "예닮치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-21e6aef63fce",
       "name": "관악서울대학교치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-279642d2fca0",
       "name": "서울바로나치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-2cb6ed258758",
       "name": "더블유치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-38cecc2210ff",
       "name": "의료법인 이손의료재단 이손치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-3e779ad3f64b",
       "name": "램브란트치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-44ec73c0fa2b",
       "name": "서울시카고치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-4f3a7eb07b00",
       "name": "궁치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-5adc915549dd",
       "name": "탑치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-670f1cecde11",
       "name": "더바름치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-6cf60b0fedfe",
       "name": "에스엠치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-730f8f0ba033",
       "name": "유림치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-76ec9ebe0dc7",
       "name": "365아홉가지약속치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-8642e8113273",
       "name": "단국대학교 치과대학 세종치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-905bf46ad154",
       "name": "365드림치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-96f9a565a125",
       "name": "더케이365치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-9fc6f0d5a2dd",
       "name": "서울대학교치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
       "id": "c-a419f6638db8",
       "name": "온아치과병원",
       "cells": {
-        "google": null,
-        "naver": null
+        "google": {
+          "rank": "not_in_top10",
+          "url": null
+        },
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -375,7 +938,10 @@
       "name": "경산라온치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -383,7 +949,10 @@
       "name": "수완더치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -391,7 +960,10 @@
       "name": "그랜드치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -399,7 +971,10 @@
       "name": "연세미래엔미소치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -407,7 +982,10 @@
       "name": "가온치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -415,7 +993,10 @@
       "name": "시에스치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -423,7 +1004,10 @@
       "name": "연세스카이치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -431,7 +1015,10 @@
       "name": "고운가이드치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     },
     {
@@ -439,8 +1026,39 @@
       "name": "위례서울치과병원",
       "cells": {
         "google": null,
-        "naver": null
+        "naver": {
+          "rank": "not_in_top10",
+          "url": null
+        }
       }
     }
-  ]
+  ],
+  "run": {
+    "tool": "scripts/growth-observe.mjs v1",
+    "lastRunAt": "2026-11-25T18:18:29.105Z",
+    "completedAt": null,
+    "engineStatus": {
+      "chatgpt": {
+        "status": "blocked",
+        "note": "임시 채팅 안내 창이 떠 있어 질문이 전송되지 않음(닫으려면 클릭이 필요해 자동 실행은 누르지 않음)"
+      },
+      "googleAiOverview": {
+        "status": "ok",
+        "note": null
+      },
+      "naverAiBriefing": {
+        "status": "ok",
+        "note": null
+      },
+      "google": {
+        "status": "stopped",
+        "note": "허용한 페이지 밖으로 이동함(https://www.google.com/sorry)"
+      },
+      "naver": {
+        "status": "ok",
+        "note": null
+      }
+    },
+    "warnings": []
+  }
 }

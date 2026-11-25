@@ -163,12 +163,26 @@ test('the template holds every cell and gate input as null and is itself valid',
   assert.throws(() => buildTemplate(def, '2026-1'), TypeError);
 });
 
-test('the committed month files are valid, and 2026-11 is the untouched blank template', () => {
+test('the committed month files are valid and still ask the fixed questions of the fixed sample', () => {
   const dir = new URL('../data/content/growth-observations/', import.meta.url);
   const files = fs.readdirSync(dir).filter(name => name.endsWith('.json'));
   assert.ok(files.includes('2026-11.json'));
-  for (const name of files) assert.deepEqual(observationProblems(JSON.parse(fs.readFileSync(new URL(name, dir), 'utf8')), def, { month: name.slice(0, 7) }), [], name);
-  assert.deepEqual(JSON.parse(fs.readFileSync(new URL('2026-11.json', dir), 'utf8')), buildTemplate(def, '2026-11'));
+  const rows = list => list.map(({ cells, ...row }) => ({ ...row, engines: Object.keys(cells) }));
+  for (const name of files) {
+    const obs = JSON.parse(fs.readFileSync(new URL(name, dir), 'utf8'));
+    const blank = buildTemplate(def, name.slice(0, 7));
+    assert.deepEqual(observationProblems(obs, def, { month: name.slice(0, 7) }), [], name);
+    assert.deepEqual(rows(obs.aiCitations), rows(blank.aiCitations), name);
+    assert.deepEqual(rows(obs.nameSearch), rows(blank.nameSearch), name);
+    assert.deepEqual(Object.keys(obs.gateInputs), Object.keys(blank.gateInputs), name);
+  }
+  // 2026-11 is the first recorded baseline (docs/growth-monitor.md, "자동 실행"). Google stopped that run with its
+  // unusual-traffic page after 21 names and ChatGPT was blocked, so those cells may still be null.
+  const baseline = JSON.parse(fs.readFileSync(new URL('2026-11.json', dir), 'utf8'));
+  assert.equal(baseline.observedOn, '2026-11-26');
+  for (const engine of ['googleAiOverview', 'naverAiBriefing']) assert.ok(baseline.aiCitations.every(row => row.cells[engine] !== null), engine);
+  assert.ok(baseline.nameSearch.every(row => row.cells.naver !== null), 'naver');
+  assert.ok(baseline.nameSearch.filter(row => row.cells.google !== null).length >= 21, 'google');
 });
 
 test('site URLs and other domains are written in one canonical form', () => {
