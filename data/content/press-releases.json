@@ -1,5 +1,13 @@
 {
   "schemaVersion": 1,
   "note": "status가 released이고 releasedOn(배포일)이 있는 항목만 /press/에 공개됩니다. 제목은 file의 첫 제목 줄에서 읽으므로 이 파일에 숫자나 제목을 직접 적지 않습니다. draft 문서는 사이트에 올라가지 않습니다.",
-  "releases": []
+  "releases": [
+    {
+      "id": "2026-09-30-dental-hospitals",
+      "snapshotDate": "2026-09-30",
+      "file": "docs/press/2026-09-30-dental-hospitals.md",
+      "status": "draft",
+      "releasedOn": null
+    }
+  ]
 }
