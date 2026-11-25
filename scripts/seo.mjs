@@ -97,7 +97,9 @@ export function robotsText(origin, enabled = false) {
 }
 const xmlText = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('"', '&quot;');
 // A demoted route (setNoindexRoutes) is never advertised, in either mode. With no demotions the selection is unchanged.
-export const sitemapRoutes = (routes, enabled) => [...new Set(enabled ? routes.filter(isIndexableRoute) : routes.filter(route => !['/find/', '/compare/', '/corrections/'].includes(route)))].filter(route => !noindexRoutes.has(route));
+// Review builds list every route except the interactive tools.
+export const REVIEW_SITEMAP_EXCLUDED = Object.freeze(['/find/', '/compare/', '/corrections/']);
+export const sitemapRoutes = (routes, enabled) => [...new Set(enabled ? routes.filter(isIndexableRoute) : routes.filter(route => !REVIEW_SITEMAP_EXCLUDED.includes(route)))].filter(route => !noindexRoutes.has(route));
 const urlset = (routes, origin) => '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
   + routes.map(route => `<url><loc>${xmlText(origin + route)}</loc></url>`).join('') + '</urlset>';
 export function sitemapXml(routes, origin, enabled = false) {

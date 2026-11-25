@@ -15,7 +15,8 @@ import {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
 // Every page references these with ?v=<assetVersion> (QA checks it), so a cached copy is never stale.
-export const VERSIONED_ASSETS = ['styles.css', 'app.mjs', 'shared.mjs', 'content-studio.mjs', 'clinic-assets.mjs'];
+import { VERSIONED_ASSETS } from './site-assets.mjs';
+export { VERSIONED_ASSETS };
 // Machine files the pages fetch; report CSV/JSON downloads under /data/reports/ stay crawlable.
 export const INTERNAL_DATA_FILES = ['/data/search-index.json', '/data/regions.json', '/data/source-manifest.json', '/data/official-observations.json', '/data/verification.json', '/data/search-status.json', '/data/search-status/*', '/seo-indexing.json'];
 

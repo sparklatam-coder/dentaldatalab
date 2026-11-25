@@ -247,7 +247,6 @@ h1,h2,h3,.asset-summary-card h2,.card h3{overflow-wrap:anywhere}.sr-only{positio
 @media(min-width:761px){.filter-more>summary{display:none}}
 /* Mobile pass (≤760px): 12px text floor, ≥40px touch targets for standalone controls, compact condition lists. */
 @media(max-width:760px){
-.header-inner::after{content:''}
 .mini-label,.stat-label,.eyebrow,.section-head .eyebrow,.pill,.count-dot,.region-item span,.card-top .mini-label,.card-facts small,.source-tiny,.guide-card small,.filter-note,.results-head span,.fact-table small,.fact-table button,.meta-list div,.source-list p,.metric span,.timeline time,.coverage-legend,.report-card-bottom,.report-metrics p,.report-table thead th,.report-table small,.coverage-chart-row small,.report-source code,.condition-links a,.question-meta .mini-label,.question-foot,.clinic-hours>.pill-row,.condition-table small,.quick-action small,.asset-metrics .metric p,.asset-totals span,.asset-kind-tags span,.asset-item-head .pill,.asset-url,.asset-body-status,.asset-item details,.naver-observation>.pill-row,.asset-field-value,.comparison th:first-child,.comparison td small,.footer-note,.footer-links,.section-head>.text-link,#marketing-assets .section-head>a,.bread,.preview-strip .wrap,li small,th small{font-size:12px}
 .quick-action.primary small{font-size:14px}
 code{overflow-wrap:anywhere;word-break:break-all}
