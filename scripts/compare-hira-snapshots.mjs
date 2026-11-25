@@ -20,9 +20,12 @@ export const CONTINUITY_WARNING = 0.9;
 const TYPES = { '41': '치과병원', '51': '치과의원' };
 
 /** Road address without the 시도 token, floor/unit detail or the parenthesised 동·building note; whitespace removed. */
+// Trailing floor or unit tokens without a comma ('… 123 3층', '지하1층', '301호', '2~3층') are not part of the building.
+const UNIT_TOKEN = /^(?:지하|B)?\d+(?:[~-]\d+)?(?:층|호)/;
 export function roadBase(address) {
   const text = String(address ?? '').split('(')[0].split(',')[0].trim();
   const parts = text.split(/\s+/).filter(Boolean);
+  while (parts.length > 3 && UNIT_TOKEN.test(parts.at(-1))) parts.pop();
   return parts.length >= 3 ? parts.slice(1).join('') : null;
 }
 export const phoneDigits = phone => { const d = String(phone ?? '').replace(/\D/g, ''); return d.length >= 9 ? d : null; };

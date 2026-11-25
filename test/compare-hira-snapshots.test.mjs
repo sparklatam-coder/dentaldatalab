@@ -18,6 +18,10 @@ test('key normalizers drop the 시도 token, floors and notes, and keep one-syll
   assert.equal(roadBase('경상남도 양산시 양산역로 71, 8,9층 (중부동, 노바메디컬케어)'), '양산시양산역로71');
   assert.equal(roadBase('경남 양산시 양산역로 71 (중부동)'), '양산시양산역로71', 'a renamed 시도 label still matches');
   assert.equal(roadBase('주소없음'), null);
+  assert.equal(roadBase('서울특별시 강남구 테헤란로 123 3층'), roadBase('서울 강남구 테헤란로 123 4층'), 'a floor without a comma is not part of the key');
+  assert.equal(roadBase('서울특별시 강남구 테헤란로 123 지하1층 101호'), '강남구테헤란로123');
+  assert.equal(roadBase('서울특별시 강남구 테헤란로 123 2~3층'), '강남구테헤란로123');
+  assert.equal(roadBase('서울특별시 중구 세종대로 110'), '중구세종대로110', 'a building number is kept');
   assert.equal(phoneDigits('031-111-1111'), '0311111111');
   assert.equal(phoneDigits('703-0073'), null, 'numbers without an area code are too short to match on');
   assert.equal(nameStem('수치과의원'), '수');

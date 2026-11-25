@@ -49,6 +49,12 @@ function main(argv) {
   for (const name of entries) z.read(name);
   const fileName = `hira_hospital_pharmacy_${snapshotDate.replaceAll('-', '')}.zip`;
   const target = path.join(ARCHIVE_DIR, fileName);
+  // Validate the registry entry first: a refused run (bad --registered, same date with another file) copies nothing.
+  const registry = fs.existsSync(REGISTRY) ? JSON.parse(fs.readFileSync(REGISTRY, 'utf8')) : emptyRegistry();
+  const { registry: next, added } = upsertSnapshot(registry, {
+    snapshotDate, fileName, originalFileName: path.basename(zip), sha256: z.sha256, size: z.size, entryCount: z.names.length,
+    registeredOn: registeredOn ?? null, archivedAt: new Date().toLocaleDateString('sv-SE'), archivePath: path.relative(root, target),
+  });
   fs.mkdirSync(ARCHIVE_DIR, { recursive: true });
   if (fs.existsSync(target)) {
     if (sha256File(target) !== z.sha256) throw new Error(`${target} already exists with different contents`);
@@ -56,11 +62,6 @@ function main(argv) {
     fs.copyFileSync(path.resolve(zip), target, fs.constants.COPYFILE_EXCL);
     if (sha256File(target) !== z.sha256) { fs.unlinkSync(target); throw new Error('copy verification failed'); }
   }
-  const registry = fs.existsSync(REGISTRY) ? JSON.parse(fs.readFileSync(REGISTRY, 'utf8')) : emptyRegistry();
-  const { registry: next, added } = upsertSnapshot(registry, {
-    snapshotDate, fileName, originalFileName: path.basename(zip), sha256: z.sha256, size: z.size, entryCount: z.names.length,
-    registeredOn: registeredOn ?? null, archivedAt: new Date().toLocaleDateString('sv-SE'), archivePath: path.relative(root, target),
-  });
   if (added) fs.writeFileSync(REGISTRY, JSON.stringify(next, null, 2) + '\n');
   console.log(JSON.stringify({ snapshotDate, archived: path.relative(root, target), sha256: z.sha256, size: z.size, registryUpdated: added }, null, 2));
 }
