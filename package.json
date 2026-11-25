@@ -16,6 +16,7 @@
     "test:full": "npm run build && npm test",
     "verify:research": "node scripts/audit-research.mjs",
     "verify:source": "python3 scripts/verify-official-source.py",
+    "status:collector": "node scripts/collector-status.mjs",
     "collect:linked-homepages": "node scripts/prepare-discovered-homepages.mjs && python3 scripts/crawl-discovered-homepages.py",
     "build:cloudflare": "node scripts/build-cloudflare.mjs"
   },
