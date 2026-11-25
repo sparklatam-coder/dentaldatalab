@@ -13,6 +13,7 @@ import {
 import { registerAnswerPages } from '../scripts/answer-pages.mjs';
 import { registerHospitalPages } from '../scripts/hospital-pages.mjs';
 import { REPORTS } from '../scripts/report-pages.mjs';
+import { collectReports } from '../scripts/report-data.mjs';
 import { YANGJU_REPORT_ROUTE } from '../scripts/yangju-analysis.mjs';
 import { isIndexableRoute } from '../scripts/seo.mjs';
 
@@ -72,7 +73,7 @@ test('every expectedPath is an indexable route that the current page code regist
   const routes = new Set([...REPORTS.map(r => `/reports/${r.slug}/`), YANGJU_REPORT_ROUTE]);
   const page = route => routes.add(route);
   registerHospitalPages({ page, clinics, domain: ORIGIN, snapshotDate });
-  registerAnswerPages({ page, clinics, snapshotDate });
+  registerAnswerPages({ page, clinics, snapshotDate, reports: collectReports(clinics.filter(c => ['41', '51'].includes(c.typeCode)), { snapshotDate, observedAt: snapshotDate + 'T00:00:00+09:00', sourceSha256: 'test' }) });
   // The home and /data/ pages are registered inline by the build script.
   const build = fs.readFileSync(new URL('../scripts/build.mjs', import.meta.url), 'utf8');
   for (const route of ['/', '/data/']) if (build.includes(`page('${route}',`)) routes.add(route);
