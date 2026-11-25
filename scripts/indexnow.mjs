@@ -61,6 +61,17 @@ export function prepareIndexNow({ root, directory, state = {}, urls = DEFAULT_IN
   };
 }
 
+// Cloudflare Email Address Obfuscation rewrites every mailto link at the edge: the anchor becomes an XOR-encoded
+// /cdn-cgi/l/email-protection link and one decode script is inserted. Reverse exactly those two edits, nothing else,
+// so the live page can still be compared byte for byte with the local build. Any other difference still fails.
+const cfDecode = hex => { const bytes = Buffer.from(hex, 'hex'); return Buffer.from(bytes.subarray(1).map(byte => byte ^ bytes[0])).toString('utf8'); };
+export function undoCloudflareEmailObfuscation(html) {
+  return html
+    .replace(/<a href="\/cdn-cgi\/l\/email-protection#((?:[0-9a-f]{2}){2,})"><span class="__cf_email__" data-cfemail="((?:[0-9a-f]{2}){2,})">\[email&#160;protected\]<\/span><\/a>/g,
+      (_, href, text) => `<a href="mailto:${cfDecode(href)}">${cfDecode(text)}</a>`)
+    .replace(/<script data-cfasync="false" src="\/cdn-cgi\/scripts\/[0-9a-f]+\/cloudflare-static\/email-decode\.min\.js"><\/script>/g, '');
+}
+
 export async function submitIndexNow(plan, { fetchImpl = fetch } = {}) {
   if (plan.payload.host !== new URL(INDEXNOW_ORIGIN).hostname
     || !/^[a-zA-Z0-9-]{8,128}$/.test(plan.payload.key)
@@ -77,7 +88,7 @@ export async function submitIndexNow(plan, { fetchImpl = fetch } = {}) {
     const response = await get(item.url);
     if (response.status !== 200 || /noindex/i.test(response.headers.get('X-Robots-Tag') || '')
       || !/text\/html/i.test(response.headers.get('Content-Type') || '')) throw new Error('Live URL is not indexable HTML: ' + item.url);
-    const html = await response.text();
+    const html = undoCloudflareEmailObfuscation(await response.text());
     assertIndexableHtml(html, item.url);
     if (crypto.createHash('sha256').update(html).digest('hex') !== item.digest) throw new Error('Live HTML differs from the selected local build. Deploy that build before submitting: ' + item.url);
   }

@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
 import { spawnSync } from 'node:child_process';
-import { indexNowKey, prepareIndexNow, submitIndexNow, INDEXNOW_ORIGIN, INDEXNOW_ENDPOINT } from '../scripts/indexnow.mjs';
+import { indexNowKey, prepareIndexNow, submitIndexNow, undoCloudflareEmailObfuscation, INDEXNOW_ORIGIN, INDEXNOW_ENDPOINT } from '../scripts/indexnow.mjs';
 
 function fixture(t) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ddl-indexnow-'));
@@ -82,4 +82,28 @@ test('IndexNow CLI dry run is the default and does not create submission logs', 
   assert.equal(run.status, 0, run.stderr);
   assert.equal(JSON.parse(run.stdout).mode, 'dry-run');
   assert.equal(fs.existsSync(log) ? fs.readFileSync(log, 'utf8') : null, before);
+});
+
+test('Cloudflare email obfuscation is reversed exactly, and only that rewrite is tolerated', async t => {
+  // Captured from the live site: the footer mailto link and the injected decode script.
+  const original = '<p>운영 · <a href="mailto:ceo@knockai.click">ceo@knockai.click</a></p><dialog></dialog><script id="site-data"></script>';
+  const live = '<p>운영 · <a href="/cdn-cgi/l/email-protection#5437313b143f3a3b373f353d7a37383d373f"><span class="__cf_email__" data-cfemail="80e3e5efc0ebeeefe3ebe1e9aee3ece9e3eb">[email&#160;protected]</span></a></p><dialog></dialog><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script id="site-data"></script>';
+  assert.equal(undoCloudflareEmailObfuscation(live), original);
+  assert.equal(undoCloudflareEmailObfuscation(original), original, 'pages without the rewrite are untouched');
+
+  const f = fixture(t);
+  const footer = '<a href="mailto:ceo@knockai.click">ceo@knockai.click</a></html>';
+  for (const url of f.urls) f.pages[url] = f.pages[url].replace('</html>', footer);
+  f.write(path.join(f.directory, 'index.html'), f.pages[f.urls[0]]);
+  f.write(path.join(f.directory, 'reports/index.html'), f.pages[f.urls[1]]);
+  f.write(path.join(f.directory, 'data/cloudflare/html/abc.json'), JSON.stringify({ 'c-abc123456789': f.pages[f.urls[2]] }));
+  const plan = prepareIndexNow(f);
+  const edge = html => html.replace('<a href="mailto:ceo@knockai.click">ceo@knockai.click</a>', live.slice(live.indexOf('<a '), live.indexOf('</a>') + 4)).replace('</html>', '<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></html>');
+  const serve = extra => async url => {
+    if (url === plan.payload.keyLocation) return new Response(f.key);
+    if (url === INDEXNOW_ENDPOINT) return new Response('', { status: 200 });
+    return new Response(edge(f.pages[url]) + extra, { headers: { 'Content-Type': 'text/html' } });
+  };
+  assert.deepEqual(await submitIndexNow(plan, { fetchImpl: serve('') }), { status: 'received', httpStatus: 200, submitted: 3 });
+  await assert.rejects(submitIndexNow(plan, { fetchImpl: serve('<!--changed-->') }), /Live HTML differs/);
 });
