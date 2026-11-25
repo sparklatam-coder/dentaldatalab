@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {shareCards, shareCardHtml, shareCardRoutes, staleShareCards, cardHash} from '../scripts/share-cards.mjs';
+import {shareCards, shareCardHtml, shareCardRoutes, staleShareCards, cardHash, nextManifest} from '../scripts/share-cards.mjs';
 import {CONDITIONS} from '../scripts/condition-pages.mjs';
 
 const reports = {
@@ -51,4 +51,14 @@ test('committed card manifest matches the committed PNG files', () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(dir, 'manifest.json'), 'utf8'));
   const pngs = fs.readdirSync(dir).filter(f => f.endsWith('.png')).map(f => f.slice(0, -4)).sort();
   assert.deepEqual(Object.keys(manifest).sort(), pngs);
+});
+
+test('a partial render keeps skipped cards stale and drops removed cards', () => {
+  const a = {file: 'a', eyebrow: 'e', title: 'A', figure: '', label: '', note: 'n'};
+  const b = {file: 'b', eyebrow: 'e', title: 'B changed', figure: '', label: '', note: 'n'};
+  const stored = {a: 'old-a', b: 'old-b', gone: 'x'};
+  const next = nextManifest([a, b], stored, new Set(['a']));
+  assert.equal(next.b, 'old-b', 'skipped card keeps its old hash, so the build still flags it');
+  assert.notEqual(next.a, 'old-a');
+  assert.ok(!('gone' in next));
 });

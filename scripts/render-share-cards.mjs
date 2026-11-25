@@ -8,7 +8,7 @@ import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 import {collectReports} from './report-data.mjs';
-import {shareCards, shareCardHtml, cardHash} from './share-cards.mjs';
+import {shareCards, shareCardHtml, nextManifest} from './share-cards.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const ogDir = path.join(root, 'src/assets/og');
@@ -22,19 +22,22 @@ const cards = shareCards(reports);
 const only = new Set(process.argv.slice(2));
 const work = fs.mkdtempSync(path.join(os.tmpdir(), 'ddl-share-cards-'));
 fs.mkdirSync(ogDir, {recursive: true});
-const hashes = {};
+const manifestFile = path.join(ogDir, 'manifest.json');
+const stored = fs.existsSync(manifestFile) ? JSON.parse(fs.readFileSync(manifestFile, 'utf8')) : {};
+const rendered = new Set();
 try {
   for (const card of cards) {
-    hashes[card.file] = cardHash(card);
     if (only.size && !only.has(card.file)) continue;
     const html = path.join(work, card.file + '.html');
     const out = path.join(ogDir, card.file + '.png');
     fs.writeFileSync(html, shareCardHtml(card));
     const run = spawnSync(chrome, ['--headless=new', '--disable-gpu', '--hide-scrollbars', '--force-device-scale-factor=1', '--window-size=1200,630', `--screenshot=${out}`, 'file://' + html], {encoding: 'utf8'});
     if (run.status !== 0 || !fs.existsSync(out)) throw new Error(`Chrome failed for ${card.file}: ${run.stderr}`);
+    rendered.add(card.file);
     console.log('rendered', path.relative(root, out));
   }
 } finally {
   fs.rmSync(work, {recursive: true, force: true});
 }
-fs.writeFileSync(path.join(ogDir, 'manifest.json'), JSON.stringify(hashes, null, 2) + '\n');
+// A partial run (card names as arguments) keeps the stored hash of every skipped card, so the build still warns about them.
+fs.writeFileSync(manifestFile, JSON.stringify(nextManifest(cards, stored, rendered), null, 2) + '\n');

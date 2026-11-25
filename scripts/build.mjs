@@ -126,7 +126,7 @@ for(const r of regions){
     }
   }
 }
-registerConditionPages({page,clinics,regions,domain,snapshotDate:snapshot});
+registerConditionPages({page,clinics,regions,domain,snapshotDate:snapshot,shareImages:shareCardMap});
 page('/for-clinics/',{title:'치과 관계자 안내 | 우리 치과 정보 확인·정정',description:'치과데이터랩에 표시되는 기관 정보의 출처와 정정 방법을 안내합니다. 광고·순위·유료 노출이 없으며 비용 없이 정정을 요청할 수 있습니다.',current:'for-clinics',breadcrumb:[{label:'치과 관계자 안내'}],body:forClinicsBody({correctionEmail:operatorConfig.correctionEmail,snapshot})});
 // Search. First records are readable without JS; filters use the client search index.
 const specs=[...new Map(clinics.flatMap(c=>c.specialties).filter(s=>Number(s.code)>=50&&Number(s.code)<=61).map(s=>[s.code,s.name])).entries()].sort((a,b)=>Number(a[0])-Number(b[0]));

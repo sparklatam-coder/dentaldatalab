@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {fmt} from '../src/shared.mjs';
 import {REPORTS} from './report-pages.mjs';
+import {externalFact} from './report-data.mjs';
 import {CONDITIONS, conditionHubRoute} from './condition-pages.mjs';
 
 const reportTitle = (item, g) => typeof item.title === 'function' ? item.title(g) : item.title;
@@ -16,9 +17,9 @@ const REPORT_FIGURES = {
   'national-data-coverage': g => ({figure: `${fmt(g.total)}곳`, label: '전국 치과병원·치과의원 등록 자료'}),
   'northern-gyeonggi-hours': g => ({figure: `${fmt(g.total)}곳`, label: '경기북부 10개 시·군 치과의 등록시간'}),
   'dental-hospitals': g => ({figure: `${fmt(g.total)}곳`, label: '전국 치과병원(종별코드 41) 전수 집계'}),
-  'dental-hospital-vs-clinic': (g, reports) => {
-    const copay = reports.externalFacts?.find(f => f.id === 'nhis-outpatient-copay')?.headline;
-    return copay ? {figure: `${copay.dentalClinic} · ${copay.dentalHospital}`, label: '외래 본인부담률 · 치과의원과 치과병원(동 지역)'} : null;
+  'dental-hospital-vs-clinic': () => {
+    const {headline} = externalFact('nhis-outpatient-copay');
+    return {figure: `${headline.dentalClinic} · ${headline.dentalHospital}`, label: '외래 본인부담률 · 치과의원과 치과병원(동 지역)'};
   },
   'dental-hospital-districts': g => ({figure: `${fmt(g.withHospital)} / ${fmt(g.total)}`, label: '치과병원이 있는 시·군·구'}),
 };
@@ -40,6 +41,19 @@ export function shareCards(reports) {
 }
 
 export const cardHash = card => crypto.createHash('sha256').update(JSON.stringify([card.eyebrow, card.title, card.figure, card.label, card.note])).digest('hex').slice(0, 16);
+
+/**
+ * Manifest after a render run: rendered cards get their current hash, skipped cards keep their stored hash (so a
+ * partial run cannot hide a stale card), and cards that no longer exist are dropped.
+ */
+export function nextManifest(cards, stored, rendered) {
+  const out = {};
+  for (const card of cards) {
+    if (rendered.has(card.file)) out[card.file] = cardHash(card);
+    else if (card.file in stored) out[card.file] = stored[card.file];
+  }
+  return out;
+}
 
 /** route → image path for cards whose PNG exists; pages without a card keep the brand image. */
 export function shareCardRoutes(cards, ogDir) {

@@ -79,8 +79,25 @@ export function districtConditionGroups(regions) {
 }
 
 /** Links from an existing district page or clinic page to the condition pages that exist for that district. */
+// Clinic pages call districtConditionLinks once each (~19,700 times), so index the published groups by district once.
+const districtIndex = new WeakMap();
+function publishedByDistrict(groups) {
+  let index = districtIndex.get(groups);
+  if (!index) {
+    index = new Map();
+    for (const g of groups) {
+      if (!g.route) continue;
+      const key = `${g.sidoCode}:${g.cityCode}`;
+      if (!index.has(key)) index.set(key, []);
+      index.get(key).push(g);
+    }
+    districtIndex.set(groups, index);
+  }
+  return index;
+}
+
 export function districtConditionLinks(groups, sidoCode, cityCode, {current = null, label = null} = {}) {
-  const own = groups.filter(g => g.sidoCode === sidoCode && g.cityCode === cityCode && g.route && g.slug !== current);
+  const own = (publishedByDistrict(groups).get(`${sidoCode}:${cityCode}`) ?? []).filter(g => g.slug !== current);
   if (!own.length) return '';
   return `<div class="condition-links">${own.map(g => `<a href="${g.route}">${esc(label ? `${g.city} ${conditionBySlug(g.slug).name}` : conditionBySlug(g.slug).name)} ${fmt(g.matches.length)}곳 ${icon('arrow')}</a>`).join('')}</div>`;
 }
@@ -147,7 +164,8 @@ function hubPage(condition, clinics, groups, regions, {snapshot}) {
 const itemList = (domain, route, name, items) => ({'@context': 'https://schema.org', '@type': 'ItemList', '@id': domain + route + '#list', name, numberOfItems: items.length,
   itemListElement: items.map((c, i) => ({'@type': 'ListItem', position: i + 1, name: c.name, url: domain + clinicUrl(c)}))});
 
-export function registerConditionPages({page, clinics, regions, domain, snapshotDate}) {
+/** shareImages: route → share-card path for cards whose PNG exists (build.mjs shareCardMap). District pages reuse their hub's card. */
+export function registerConditionPages({page, clinics, regions, domain, snapshotDate, shareImages = new Map()}) {
   if (typeof page !== 'function' || !Array.isArray(clinics) || !Array.isArray(regions)) throw new TypeError('registerConditionPages needs page(), clinics and regions');
   const snapshot = snapshotDate;
   const groups = districtConditionGroups(regions);
@@ -166,7 +184,6 @@ export function registerConditionPages({page, clinics, regions, domain, snapshot
       description: `심평원 ${snapshot} 자료에서 ${condition.phrase.replace(/습니다$/, '는')} 치과 ${fmt(n)}곳을 시도·시·군·구별로 정리했습니다. 등록 정보이며 실시간 진료 여부와 추천 순위가 아닙니다.`,
       current: 'conditions', breadcrumb: [{label: '조건별 치과', url: '/conditions/'}, {label: condition.name}],
       schema: n <= HUB_FULL_LIST_LIMIT ? [itemList(domain, route, `전국 ${condition.keyword} ${n}곳`, clinics.filter(condition.test).sort(byName))] : [],
-      ogImage: `/assets/og/condition-${condition.slug}.png`,
       body: hubPage(condition, clinics, groups, regions, {snapshot}),
     });
   }
@@ -179,7 +196,7 @@ export function registerConditionPages({page, clinics, regions, domain, snapshot
       current: 'conditions',
       breadcrumb: [{label: '지역별 보기', url: '/regions/'}, {label: group.sido, url: `/regions/${group.sidoCode}/`}, {label: group.city, url: `/regions/${group.sidoCode}/${group.cityCode}/`}, {label: condition.name}],
       schema: [itemList(domain, group.route, `${group.sido} ${group.city} ${condition.name} 치과 ${group.matches.length}곳`, group.matches)],
-      ogImage: `/assets/og/condition-${condition.slug}.png`,
+      ogImage: shareImages.get(conditionHubRoute(condition.slug)),
       body: districtPage(group, condition, groups, {snapshot}),
     });
   }

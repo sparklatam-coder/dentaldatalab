@@ -33,7 +33,8 @@ function fixture() {
 function render() {
   const {clinics, regions} = fixture();
   const pages = new Map();
-  const result = registerConditionPages({page: (route, opts) => pages.set(route, opts), clinics, regions, domain: 'https://example.test', snapshotDate: '2026-09-30'});
+  const shareImages = new Map([['/conditions/saturday/', '/assets/og/condition-saturday.png']]);
+  const result = registerConditionPages({page: (route, opts) => pages.set(route, opts), clinics, regions, domain: 'https://example.test', snapshotDate: '2026-09-30', shareImages});
   return {pages, result, clinics, regions};
 }
 
@@ -124,4 +125,11 @@ test('table escapes every cell', () => {
   const evil = {...fixture().clinics[0], name: '"><img onerror=1>', dong: '<b>', phone: '<i>'};
   const html = conditionTable(conditionBySlug('saturday'), [evil], {caption: '<c>'});
   assert.doesNotMatch(html, /<img|<b>|<i>|<c>/);
+});
+
+test('district pages reuse the hub share card only when it exists, so a missing PNG falls back instead of failing', () => {
+  const {pages} = render();
+  assert.equal(pages.get('/regions/110000/110001/saturday/').ogImage, '/assets/og/condition-saturday.png');
+  assert.equal(pages.get('/regions/110000/110001/night/').ogImage, undefined, 'no night card in this fixture');
+  assert.equal(pages.get('/conditions/saturday/').ogImage, undefined, 'hubs resolve their own card in build.mjs');
 });
