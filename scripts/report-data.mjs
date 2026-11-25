@@ -25,7 +25,7 @@ export const EXTERNAL_FACTS = Object.freeze([
   },
   {
     id: 'medical-service-act-3-2bis', topic: '병상 요건', title: '의료법 제3조의2 (병원등)',
-    sourceKind: 'primary', sourceTitle: '국가법령정보센터 · 의료법 제3조의2',
+    sourceKind: 'primary', sourceTitle: '국가법령정보센터 · 의료법 제3조의2 (법률 제21111호, 시행 2026-11-12)',
     sourceUrl: 'https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000258963', checkedAt: '2026-11-26',
     quote: '병원ㆍ치과병원ㆍ한방병원 및 요양병원(이하 "병원등"이라 한다)은 30개 이상의 병상(병원ㆍ한방병원만 해당한다) 또는 요양병상(요양병원만 해당하며, 장기입원이 필요한 환자를 대상으로 의료행위를 하기 위하여 설치한 병상을 말한다)을 갖추어야 한다.',
     dentalHospital: '병상 수 요건 없음 (30병상 요건은 병원·한방병원만 해당)', dentalClinic: '해당 없음',
