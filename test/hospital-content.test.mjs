@@ -53,7 +53,12 @@ test('FAQ answers come from the record and the law, and ship as FAQPage JSON-LD'
   assert.match(faq.items[1].a, /치과전문의 3명이 등록/);
   assert.match(faq.items[2].a, /30병상 요건은 병원·한방병원에만/);
   assert.equal(faq.schema['@type'], 'FAQPage');
-  assert.deepEqual(faq.schema.mainEntity.map(x => x.name), faq.items.map(x => x.q));
+  // The generic 치과병원/치과의원 pair repeats on all 248 pages: it stays visible but is marked up only on the comparison report.
+  const marked = faq.items.filter(x => !x.shared);
+  assert.deepEqual(faq.items.filter(x => x.shared).map(x => x.q), ['치과병원은 치과의원과 무엇이 다른가요?']);
+  assert.deepEqual(faq.schema.mainEntity.map(x => x.name), marked.map(x => x.q));
+  assert(faq.schema.mainEntity.every(x => x.name.includes(hospital.name)), 'every marked-up question names this institution');
+  assert.match(faq.html, /치과병원은 치과의원과 무엇이 다른가요\?<\/dt><dd>[^<]+ <a class="text-link" href="\/reports\/dental-hospital-vs-clinic\/">/);
   assert.equal(faq.schema.mainEntity[0].acceptedAnswer.text, faq.items[0].a);
   assert.match(faq.html, /<dt>검증치과병원은 치과병원인가요\?<\/dt>/);
 });
@@ -74,7 +79,7 @@ test('name-search questions answer address, phone, hours and 진료과목 from t
   assert.match(subjects.a, /전문의가 1명 이상 등록된 과목은 구강악안면외과 2명입니다\./);
   assert.match(subjects.a, /1개 과목은 전문의 0명으로 등록돼 있습니다\. 1개 과목은 전문의 수가 기록돼 있지 않습니다\./);
   // The FAQPage node carries the same six answers.
-  assert.deepEqual(faq.schema.mainEntity.map(x => x.acceptedAnswer.text), faq.items.map(x => x.a));
+  assert.deepEqual(faq.schema.mainEntity.map(x => x.acceptedAnswer.text), faq.items.filter(x => !x.shared).map(x => x.a));
   for (const item of faq.items) assert.doesNotMatch(item.a, /undefined|NaN|null/);
 });
 
